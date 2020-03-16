@@ -1,4 +1,4 @@
-# gew-nodejs-api-client
+# gew-api-client-js
 
 Ginco Enterprise Wallet Protocol Buffer for Node.js
 
@@ -9,8 +9,8 @@ Ginco Enterprise Wallet Protocol Buffer for Node.js
 
 ## Installation
 
-Install the gew-nodejs-api-client
+Install the gew-api-client-js
 
 ```
-$ npm install gew-nodejs-api-client
+$ npm install gew-api-client-js
 ```
