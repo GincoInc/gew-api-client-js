@@ -351,17 +351,6 @@ function deserialize_adamant_global_v1_GetAddressRequest(buffer_arg) {
   return gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.GetAddressRequest.deserializeBinary(new Uint8Array(buffer_arg));
 }
 
-function serialize_adamant_global_v1_GetEthereumFeeAddressRequest(arg) {
-  if (!(arg instanceof gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.GetEthereumFeeAddressRequest)) {
-    throw new Error('Expected argument of type adamant.global.v1.GetEthereumFeeAddressRequest');
-  }
-  return Buffer.from(arg.serializeBinary());
-}
-
-function deserialize_adamant_global_v1_GetEthereumFeeAddressRequest(buffer_arg) {
-  return gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.GetEthereumFeeAddressRequest.deserializeBinary(new Uint8Array(buffer_arg));
-}
-
 function serialize_adamant_global_v1_GetLabeledAddressRequest(arg) {
   if (!(arg instanceof gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.GetLabeledAddressRequest)) {
     throw new Error('Expected argument of type adamant.global.v1.GetLabeledAddressRequest');
@@ -371,17 +360,6 @@ function serialize_adamant_global_v1_GetLabeledAddressRequest(arg) {
 
 function deserialize_adamant_global_v1_GetLabeledAddressRequest(buffer_arg) {
   return gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.GetLabeledAddressRequest.deserializeBinary(new Uint8Array(buffer_arg));
-}
-
-function serialize_adamant_global_v1_GetLatestRateSnapshotRequest(arg) {
-  if (!(arg instanceof gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.GetLatestRateSnapshotRequest)) {
-    throw new Error('Expected argument of type adamant.global.v1.GetLatestRateSnapshotRequest');
-  }
-  return Buffer.from(arg.serializeBinary());
-}
-
-function deserialize_adamant_global_v1_GetLatestRateSnapshotRequest(buffer_arg) {
-  return gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.GetLatestRateSnapshotRequest.deserializeBinary(new Uint8Array(buffer_arg));
 }
 
 function serialize_adamant_global_v1_GetMembersDeactivatabilitiesRequest(arg) {
@@ -1194,7 +1172,8 @@ createWallet: {
     responseSerialize: serialize_adamant_global_v1_CreateWalletResponse,
     responseDeserialize: deserialize_adamant_global_v1_CreateWalletResponse,
   },
-  getWallet: {
+  // Get wallet information. the wallet model includes balance, address etc.
+getWallet: {
     path: '/adamant.global.v1.GlobalAPI/GetWallet',
     requestStream: false,
     responseStream: false,
@@ -1306,6 +1285,7 @@ approveWallet: {
     responseDeserialize: deserialize_google_protobuf_Empty,
   },
   // Address
+// Create a new address for an existing wallet
 createAddress: {
     path: '/adamant.global.v1.GlobalAPI/CreateAddress',
     requestStream: false,
@@ -1361,14 +1341,15 @@ createAddress: {
     responseSerialize: serialize_adamant_global_v1_ListAddressesResponse,
     responseDeserialize: deserialize_adamant_global_v1_ListAddressesResponse,
   },
-  getEthereumFeeAddress: {
+  // Get an address which hold ETH for ethereum wallet/address creation etc
+getEthereumFeeAddress: {
     path: '/adamant.global.v1.GlobalAPI/GetEthereumFeeAddress',
     requestStream: false,
     responseStream: false,
-    requestType: gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.GetEthereumFeeAddressRequest,
+    requestType: google_protobuf_empty_pb.Empty,
     responseType: gincoinc_adamant_global_v1_adamantglobalv1_model_pb.EthereumFeeAddress,
-    requestSerialize: serialize_adamant_global_v1_GetEthereumFeeAddressRequest,
-    requestDeserialize: deserialize_adamant_global_v1_GetEthereumFeeAddressRequest,
+    requestSerialize: serialize_google_protobuf_Empty,
+    requestDeserialize: deserialize_google_protobuf_Empty,
     responseSerialize: serialize_adamant_global_v1_EthereumFeeAddress,
     responseDeserialize: deserialize_adamant_global_v1_EthereumFeeAddress,
   },
@@ -1530,6 +1511,7 @@ getSignInfo: {
     responseDeserialize: deserialize_adamant_global_v1_ListXRPInitSignInfoResponse,
   },
   // Transfer
+// List transfers for a given wallet. Ordered by update time desc
 listTransfers: {
     path: '/adamant.global.v1.GlobalAPI/ListTransfers',
     requestStream: false,
@@ -1542,6 +1524,7 @@ listTransfers: {
     responseDeserialize: deserialize_adamant_global_v1_ListTransfersResponse,
   },
   // Rate
+// Get rates by snapshot id
 getRateSnapshot: {
     path: '/adamant.global.v1.GlobalAPI/GetRateSnapshot',
     requestStream: false,
@@ -1553,18 +1536,20 @@ getRateSnapshot: {
     responseSerialize: serialize_adamant_global_v1_RateSnapshot,
     responseDeserialize: deserialize_adamant_global_v1_RateSnapshot,
   },
-  getLatestRateSnapshot: {
+  // Get latest rates set to your organization
+getLatestRateSnapshot: {
     path: '/adamant.global.v1.GlobalAPI/GetLatestRateSnapshot',
     requestStream: false,
     responseStream: false,
-    requestType: gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.GetLatestRateSnapshotRequest,
+    requestType: google_protobuf_empty_pb.Empty,
     responseType: gincoinc_adamant_global_v1_adamantglobalv1_model_pb.RateSnapshot,
-    requestSerialize: serialize_adamant_global_v1_GetLatestRateSnapshotRequest,
-    requestDeserialize: deserialize_adamant_global_v1_GetLatestRateSnapshotRequest,
+    requestSerialize: serialize_google_protobuf_Empty,
+    requestDeserialize: deserialize_google_protobuf_Empty,
     responseSerialize: serialize_adamant_global_v1_RateSnapshot,
     responseDeserialize: deserialize_adamant_global_v1_RateSnapshot,
   },
-  setRates: {
+  // Set rates to your organization
+setRates: {
     path: '/adamant.global.v1.GlobalAPI/SetRates',
     requestStream: false,
     responseStream: false,
@@ -1918,7 +1903,8 @@ getSpendableBalance: {
     responseSerialize: serialize_adamant_global_v1_GetRecommendedFeeRateResponse,
     responseDeserialize: deserialize_adamant_global_v1_GetRecommendedFeeRateResponse,
   },
-  validateAddress: {
+  // Validate format of given address
+validateAddress: {
     path: '/adamant.global.v1.GlobalAPI/ValidateAddress',
     requestStream: false,
     responseStream: false,
