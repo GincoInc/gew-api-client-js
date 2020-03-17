@@ -72,6 +72,12 @@ export class Wallet extends jspb.Message {
     getDestinationWalletId(): string;
     setDestinationWalletId(value: string): void;
 
+    getWatchOnly(): boolean;
+    setWatchOnly(value: boolean): void;
+
+    getAddressNumber(): number;
+    setAddressNumber(value: number): void;
+
 
     hasCreateTime(): boolean;
     clearCreateTime(): void;
@@ -115,6 +121,114 @@ export namespace Wallet {
         policyId: string,
         proposal?: WalletProposal.AsObject,
         destinationWalletId: string,
+        watchOnly: boolean,
+        addressNumber: number,
+        createTime?: google_protobuf_timestamp_pb.Timestamp.AsObject,
+        updateTime?: google_protobuf_timestamp_pb.Timestamp.AsObject,
+    }
+}
+
+export class WalletWithoutBalance extends jspb.Message { 
+    getWalletId(): string;
+    setWalletId(value: string): void;
+
+    getName(): string;
+    setName(value: string): void;
+
+    getCoin(): gincoinc_global_v1_gincoincglobalv1_enum_pb.Coin;
+    setCoin(value: gincoinc_global_v1_gincoincglobalv1_enum_pb.Coin): void;
+
+    getHdAccount(): number;
+    setHdAccount(value: number): void;
+
+    getWalletType(): gincoinc_adamant_global_v1_adamantglobalv1_enum_pb.WalletType;
+    setWalletType(value: gincoinc_adamant_global_v1_adamantglobalv1_enum_pb.WalletType): void;
+
+    getAddressType(): gincoinc_global_v1_gincoincglobalv1_enum_pb.AddressType;
+    setAddressType(value: gincoinc_global_v1_gincoincglobalv1_enum_pb.AddressType): void;
+
+    getM(): number;
+    setM(value: number): void;
+
+    getN(): number;
+    setN(value: number): void;
+
+    getState(): gincoinc_adamant_global_v1_adamantglobalv1_enum_pb.WalletState;
+    setState(value: gincoinc_adamant_global_v1_adamantglobalv1_enum_pb.WalletState): void;
+
+    clearKeysList(): void;
+    getKeysList(): Array<Key>;
+    setKeysList(value: Array<Key>): void;
+    addKeys(value?: Key, index?: number): Key;
+
+    clearMembersList(): void;
+    getMembersList(): Array<WalletMember>;
+    setMembersList(value: Array<WalletMember>): void;
+    addMembers(value?: WalletMember, index?: number): WalletMember;
+
+    getRequiredApprovalCount(): number;
+    setRequiredApprovalCount(value: number): void;
+
+    getAddress(): string;
+    setAddress(value: string): void;
+
+    getPolicyId(): string;
+    setPolicyId(value: string): void;
+
+
+    hasProposal(): boolean;
+    clearProposal(): void;
+    getProposal(): WalletProposal | undefined;
+    setProposal(value?: WalletProposal): void;
+
+    getDestinationWalletId(): string;
+    setDestinationWalletId(value: string): void;
+
+    getWatchOnly(): boolean;
+    setWatchOnly(value: boolean): void;
+
+
+    hasCreateTime(): boolean;
+    clearCreateTime(): void;
+    getCreateTime(): google_protobuf_timestamp_pb.Timestamp | undefined;
+    setCreateTime(value?: google_protobuf_timestamp_pb.Timestamp): void;
+
+
+    hasUpdateTime(): boolean;
+    clearUpdateTime(): void;
+    getUpdateTime(): google_protobuf_timestamp_pb.Timestamp | undefined;
+    setUpdateTime(value?: google_protobuf_timestamp_pb.Timestamp): void;
+
+
+    serializeBinary(): Uint8Array;
+    toObject(includeInstance?: boolean): WalletWithoutBalance.AsObject;
+    static toObject(includeInstance: boolean, msg: WalletWithoutBalance): WalletWithoutBalance.AsObject;
+    static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+    static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+    static serializeBinaryToWriter(message: WalletWithoutBalance, writer: jspb.BinaryWriter): void;
+    static deserializeBinary(bytes: Uint8Array): WalletWithoutBalance;
+    static deserializeBinaryFromReader(message: WalletWithoutBalance, reader: jspb.BinaryReader): WalletWithoutBalance;
+}
+
+export namespace WalletWithoutBalance {
+    export type AsObject = {
+        walletId: string,
+        name: string,
+        coin: gincoinc_global_v1_gincoincglobalv1_enum_pb.Coin,
+        hdAccount: number,
+        walletType: gincoinc_adamant_global_v1_adamantglobalv1_enum_pb.WalletType,
+        addressType: gincoinc_global_v1_gincoincglobalv1_enum_pb.AddressType,
+        m: number,
+        n: number,
+        state: gincoinc_adamant_global_v1_adamantglobalv1_enum_pb.WalletState,
+        keysList: Array<Key.AsObject>,
+        membersList: Array<WalletMember.AsObject>,
+        requiredApprovalCount: number,
+        address: string,
+        policyId: string,
+        proposal?: WalletProposal.AsObject,
+        destinationWalletId: string,
+        watchOnly: boolean,
         createTime?: google_protobuf_timestamp_pb.Timestamp.AsObject,
         updateTime?: google_protobuf_timestamp_pb.Timestamp.AsObject,
     }
@@ -1467,6 +1581,31 @@ export namespace BalanceSnapshot {
         totalBalancesMap: Array<[number, TotalBalanceByCoin.AsObject]>,
 
         ratesMap: Array<[number, Rate.AsObject]>,
+    }
+}
+
+export class Confirmation extends jspb.Message { 
+    getCoin(): gincoinc_global_v1_gincoincglobalv1_enum_pb.Coin;
+    setCoin(value: gincoinc_global_v1_gincoincglobalv1_enum_pb.Coin): void;
+
+    getConfirmation(): number;
+    setConfirmation(value: number): void;
+
+
+    serializeBinary(): Uint8Array;
+    toObject(includeInstance?: boolean): Confirmation.AsObject;
+    static toObject(includeInstance: boolean, msg: Confirmation): Confirmation.AsObject;
+    static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+    static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+    static serializeBinaryToWriter(message: Confirmation, writer: jspb.BinaryWriter): void;
+    static deserializeBinary(bytes: Uint8Array): Confirmation;
+    static deserializeBinaryFromReader(message: Confirmation, reader: jspb.BinaryReader): Confirmation;
+}
+
+export namespace Confirmation {
+    export type AsObject = {
+        coin: gincoinc_global_v1_gincoincglobalv1_enum_pb.Coin,
+        confirmation: number,
     }
 }
 

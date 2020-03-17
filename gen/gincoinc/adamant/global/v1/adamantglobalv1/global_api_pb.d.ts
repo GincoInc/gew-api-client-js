@@ -91,6 +91,9 @@ export class CreateWalletRequest extends jspb.Message {
     getDestinationWalletId(): string;
     setDestinationWalletId(value: string): void;
 
+    getWatchOnly(): boolean;
+    setWatchOnly(value: boolean): void;
+
 
     serializeBinary(): Uint8Array;
     toObject(includeInstance?: boolean): CreateWalletRequest.AsObject;
@@ -114,6 +117,7 @@ export namespace CreateWalletRequest {
         requiredApprovalCount: number,
         policyId: string,
         destinationWalletId: string,
+        watchOnly: boolean,
     }
 }
 
@@ -156,6 +160,52 @@ export class GetWalletRequest extends jspb.Message {
 export namespace GetWalletRequest {
     export type AsObject = {
         walletId: string,
+    }
+}
+
+export class BatchGetWalletsWithoutBalanceRequest extends jspb.Message { 
+    clearWalletIdsList(): void;
+    getWalletIdsList(): Array<string>;
+    setWalletIdsList(value: Array<string>): void;
+    addWalletIds(value: string, index?: number): string;
+
+
+    serializeBinary(): Uint8Array;
+    toObject(includeInstance?: boolean): BatchGetWalletsWithoutBalanceRequest.AsObject;
+    static toObject(includeInstance: boolean, msg: BatchGetWalletsWithoutBalanceRequest): BatchGetWalletsWithoutBalanceRequest.AsObject;
+    static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+    static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+    static serializeBinaryToWriter(message: BatchGetWalletsWithoutBalanceRequest, writer: jspb.BinaryWriter): void;
+    static deserializeBinary(bytes: Uint8Array): BatchGetWalletsWithoutBalanceRequest;
+    static deserializeBinaryFromReader(message: BatchGetWalletsWithoutBalanceRequest, reader: jspb.BinaryReader): BatchGetWalletsWithoutBalanceRequest;
+}
+
+export namespace BatchGetWalletsWithoutBalanceRequest {
+    export type AsObject = {
+        walletIdsList: Array<string>,
+    }
+}
+
+export class BatchGetWalletsWithoutBalanceResponse extends jspb.Message { 
+    clearWalletsList(): void;
+    getWalletsList(): Array<gincoinc_adamant_global_v1_adamantglobalv1_model_pb.WalletWithoutBalance>;
+    setWalletsList(value: Array<gincoinc_adamant_global_v1_adamantglobalv1_model_pb.WalletWithoutBalance>): void;
+    addWallets(value?: gincoinc_adamant_global_v1_adamantglobalv1_model_pb.WalletWithoutBalance, index?: number): gincoinc_adamant_global_v1_adamantglobalv1_model_pb.WalletWithoutBalance;
+
+
+    serializeBinary(): Uint8Array;
+    toObject(includeInstance?: boolean): BatchGetWalletsWithoutBalanceResponse.AsObject;
+    static toObject(includeInstance: boolean, msg: BatchGetWalletsWithoutBalanceResponse): BatchGetWalletsWithoutBalanceResponse.AsObject;
+    static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+    static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+    static serializeBinaryToWriter(message: BatchGetWalletsWithoutBalanceResponse, writer: jspb.BinaryWriter): void;
+    static deserializeBinary(bytes: Uint8Array): BatchGetWalletsWithoutBalanceResponse;
+    static deserializeBinaryFromReader(message: BatchGetWalletsWithoutBalanceResponse, reader: jspb.BinaryReader): BatchGetWalletsWithoutBalanceResponse;
+}
+
+export namespace BatchGetWalletsWithoutBalanceResponse {
+    export type AsObject = {
+        walletsList: Array<gincoinc_adamant_global_v1_adamantglobalv1_model_pb.WalletWithoutBalance.AsObject>,
     }
 }
 
@@ -352,6 +402,48 @@ export namespace ReviewWalletProposalRequest {
     export type AsObject = {
         walletId: string,
         approve: boolean,
+    }
+}
+
+export class ExistsWalletByNameRequest extends jspb.Message { 
+    getName(): string;
+    setName(value: string): void;
+
+
+    serializeBinary(): Uint8Array;
+    toObject(includeInstance?: boolean): ExistsWalletByNameRequest.AsObject;
+    static toObject(includeInstance: boolean, msg: ExistsWalletByNameRequest): ExistsWalletByNameRequest.AsObject;
+    static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+    static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+    static serializeBinaryToWriter(message: ExistsWalletByNameRequest, writer: jspb.BinaryWriter): void;
+    static deserializeBinary(bytes: Uint8Array): ExistsWalletByNameRequest;
+    static deserializeBinaryFromReader(message: ExistsWalletByNameRequest, reader: jspb.BinaryReader): ExistsWalletByNameRequest;
+}
+
+export namespace ExistsWalletByNameRequest {
+    export type AsObject = {
+        name: string,
+    }
+}
+
+export class ExistsWalletByNameResponse extends jspb.Message { 
+    getExists(): boolean;
+    setExists(value: boolean): void;
+
+
+    serializeBinary(): Uint8Array;
+    toObject(includeInstance?: boolean): ExistsWalletByNameResponse.AsObject;
+    static toObject(includeInstance: boolean, msg: ExistsWalletByNameResponse): ExistsWalletByNameResponse.AsObject;
+    static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+    static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+    static serializeBinaryToWriter(message: ExistsWalletByNameResponse, writer: jspb.BinaryWriter): void;
+    static deserializeBinary(bytes: Uint8Array): ExistsWalletByNameResponse;
+    static deserializeBinaryFromReader(message: ExistsWalletByNameResponse, reader: jspb.BinaryReader): ExistsWalletByNameResponse;
+}
+
+export namespace ExistsWalletByNameResponse {
+    export type AsObject = {
+        exists: boolean,
     }
 }
 
@@ -579,23 +671,6 @@ export namespace ListAddressesResponse {
     export type AsObject = {
         addressesList: Array<gincoinc_adamant_global_v1_adamantglobalv1_model_pb.Address.AsObject>,
         nextPageToken: string,
-    }
-}
-
-export class GetEthereumFeeAddressRequest extends jspb.Message { 
-
-    serializeBinary(): Uint8Array;
-    toObject(includeInstance?: boolean): GetEthereumFeeAddressRequest.AsObject;
-    static toObject(includeInstance: boolean, msg: GetEthereumFeeAddressRequest): GetEthereumFeeAddressRequest.AsObject;
-    static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
-    static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
-    static serializeBinaryToWriter(message: GetEthereumFeeAddressRequest, writer: jspb.BinaryWriter): void;
-    static deserializeBinary(bytes: Uint8Array): GetEthereumFeeAddressRequest;
-    static deserializeBinaryFromReader(message: GetEthereumFeeAddressRequest, reader: jspb.BinaryReader): GetEthereumFeeAddressRequest;
-}
-
-export namespace GetEthereumFeeAddressRequest {
-    export type AsObject = {
     }
 }
 
@@ -1166,23 +1241,6 @@ export namespace GetRateSnapshotRequest {
     }
 }
 
-export class GetLatestRateSnapshotRequest extends jspb.Message { 
-
-    serializeBinary(): Uint8Array;
-    toObject(includeInstance?: boolean): GetLatestRateSnapshotRequest.AsObject;
-    static toObject(includeInstance: boolean, msg: GetLatestRateSnapshotRequest): GetLatestRateSnapshotRequest.AsObject;
-    static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
-    static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
-    static serializeBinaryToWriter(message: GetLatestRateSnapshotRequest, writer: jspb.BinaryWriter): void;
-    static deserializeBinary(bytes: Uint8Array): GetLatestRateSnapshotRequest;
-    static deserializeBinaryFromReader(message: GetLatestRateSnapshotRequest, reader: jspb.BinaryReader): GetLatestRateSnapshotRequest;
-}
-
-export namespace GetLatestRateSnapshotRequest {
-    export type AsObject = {
-    }
-}
-
 export class SetRatesRequest extends jspb.Message { 
     clearRatesList(): void;
     getRatesList(): Array<gincoinc_adamant_global_v1_adamantglobalv1_model_pb.RequestRate>;
@@ -1298,6 +1356,9 @@ export namespace GetSpendableBalanceResponse {
 }
 
 export class GetTotalBalanceRequest extends jspb.Message { 
+    getWatchOnly(): boolean;
+    setWatchOnly(value: boolean): void;
+
 
     serializeBinary(): Uint8Array;
     toObject(includeInstance?: boolean): GetTotalBalanceRequest.AsObject;
@@ -1311,10 +1372,14 @@ export class GetTotalBalanceRequest extends jspb.Message {
 
 export namespace GetTotalBalanceRequest {
     export type AsObject = {
+        watchOnly: boolean,
     }
 }
 
 export class ListBalanceSnapshotsRequest extends jspb.Message { 
+    getWatchOnly(): boolean;
+    setWatchOnly(value: boolean): void;
+
 
     hasStartTime(): boolean;
     clearStartTime(): void;
@@ -1340,6 +1405,7 @@ export class ListBalanceSnapshotsRequest extends jspb.Message {
 
 export namespace ListBalanceSnapshotsRequest {
     export type AsObject = {
+        watchOnly: boolean,
         startTime?: google_protobuf_timestamp_pb.Timestamp.AsObject,
         endTime?: google_protobuf_timestamp_pb.Timestamp.AsObject,
     }
@@ -1573,6 +1639,46 @@ export class ValidateAddressResponse extends jspb.Message {
 export namespace ValidateAddressResponse {
     export type AsObject = {
         valid: boolean,
+    }
+}
+
+export class ListConfirmationsRequest extends jspb.Message { 
+
+    serializeBinary(): Uint8Array;
+    toObject(includeInstance?: boolean): ListConfirmationsRequest.AsObject;
+    static toObject(includeInstance: boolean, msg: ListConfirmationsRequest): ListConfirmationsRequest.AsObject;
+    static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+    static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+    static serializeBinaryToWriter(message: ListConfirmationsRequest, writer: jspb.BinaryWriter): void;
+    static deserializeBinary(bytes: Uint8Array): ListConfirmationsRequest;
+    static deserializeBinaryFromReader(message: ListConfirmationsRequest, reader: jspb.BinaryReader): ListConfirmationsRequest;
+}
+
+export namespace ListConfirmationsRequest {
+    export type AsObject = {
+    }
+}
+
+export class ListConfirmationsResponse extends jspb.Message { 
+    clearConfirmationsList(): void;
+    getConfirmationsList(): Array<gincoinc_adamant_global_v1_adamantglobalv1_model_pb.Confirmation>;
+    setConfirmationsList(value: Array<gincoinc_adamant_global_v1_adamantglobalv1_model_pb.Confirmation>): void;
+    addConfirmations(value?: gincoinc_adamant_global_v1_adamantglobalv1_model_pb.Confirmation, index?: number): gincoinc_adamant_global_v1_adamantglobalv1_model_pb.Confirmation;
+
+
+    serializeBinary(): Uint8Array;
+    toObject(includeInstance?: boolean): ListConfirmationsResponse.AsObject;
+    static toObject(includeInstance: boolean, msg: ListConfirmationsResponse): ListConfirmationsResponse.AsObject;
+    static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+    static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+    static serializeBinaryToWriter(message: ListConfirmationsResponse, writer: jspb.BinaryWriter): void;
+    static deserializeBinary(bytes: Uint8Array): ListConfirmationsResponse;
+    static deserializeBinaryFromReader(message: ListConfirmationsResponse, reader: jspb.BinaryReader): ListConfirmationsResponse;
+}
+
+export namespace ListConfirmationsResponse {
+    export type AsObject = {
+        confirmationsList: Array<gincoinc_adamant_global_v1_adamantglobalv1_model_pb.Confirmation.AsObject>,
     }
 }
 

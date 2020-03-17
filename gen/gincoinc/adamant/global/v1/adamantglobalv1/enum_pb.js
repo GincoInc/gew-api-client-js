@@ -15,6 +15,7 @@ goog.exportSymbol('proto.adamant.global.v1.AccountType', null, global);
 goog.exportSymbol('proto.adamant.global.v1.AddressState', null, global);
 goog.exportSymbol('proto.adamant.global.v1.AuditLogGroup', null, global);
 goog.exportSymbol('proto.adamant.global.v1.AuditLogType', null, global);
+goog.exportSymbol('proto.adamant.global.v1.ImportAddressState', null, global);
 goog.exportSymbol('proto.adamant.global.v1.ListFilterType', null, global);
 goog.exportSymbol('proto.adamant.global.v1.MailType', null, global);
 goog.exportSymbol('proto.adamant.global.v1.NotificationType', null, global);
@@ -58,7 +59,10 @@ proto.adamant.global.v1.WalletState = {
   WALLET_STATE_SUBMITTED: 11,
   WALLET_STATE_COMPLETED: 12,
   WALLET_STATE_CANCELLED: 13,
-  WALLET_STATE_ARCHIVED: 14
+  WALLET_STATE_ARCHIVED: 14,
+  WALLET_STATE_ADDRESS_IMPORT_WAITING: 15,
+  WALLET_STATE_ADDRESS_IMPORTING: 16,
+  WALLET_STATE_ADDRESS_IMPORT_FAILED: 17
 };
 
 /**
@@ -291,7 +295,9 @@ proto.adamant.global.v1.PreconditionFailureType = {
   PRECONDITION_FAILURE_TYPE_PROPOSAL_ALREADY_EXISTS: 14,
   PRECONDITION_FAILURE_TYPE_NO_RATE: 15,
   PRECONDITION_FAILURE_TYPE_WHITELIST_OF_BASEPOLICY: 16,
-  PRECONDITION_FAILURE_TYPE_CANNOT_ARCHIVE_WALLET_WITH_BALANCE: 17
+  PRECONDITION_FAILURE_TYPE_CANNOT_ARCHIVE_WALLET_WITH_BALANCE: 17,
+  PRECONDITION_FAILURE_TYPE_TEMPORARY_INCREASE_IN_FEERATE: 18,
+  PRECONDITION_FAILURE_TYPE_PROHIBITED_BY_SUBSCRIPTION: 19
 };
 
 /**
@@ -320,7 +326,18 @@ proto.adamant.global.v1.MailType = {
   MAIL_TYPE_PASSWORD_UPDATED: 3,
   MAIL_TYPE_EMAIL_UPDATE_REQUEST: 4,
   MAIL_TYPE_EMAIL_UPDATED: 5,
-  MAIL_TYPE_FRAUD_TRANSACTION_SUBMITTED: 6
+  MAIL_TYPE_FRAUD_TRANSACTION_SUBMITTED: 6,
+  MAIL_TYPE_IMPORT_ADDRESS_COMPLETED: 7
+};
+
+/**
+ * @enum {number}
+ */
+proto.adamant.global.v1.ImportAddressState = {
+  IMPORT_ADDRESS_STATE_INVALID: 0,
+  IMPORT_ADDRESS_STATE_ADDRESS_IMPORTING: 1,
+  IMPORT_ADDRESS_STATE_ADDRESS_IMPORTED: 2,
+  IMPORT_ADDRESS_STATE_IMPORT_FAILED: 3
 };
 
 goog.object.extend(exports, proto.adamant.global.v1);
