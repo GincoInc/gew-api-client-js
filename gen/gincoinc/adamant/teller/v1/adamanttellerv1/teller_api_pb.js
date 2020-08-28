@@ -125,7 +125,8 @@ proto.adamant.teller.v1.CreateWalletRequest.toObject = function(includeInstance,
     coin: jspb.Message.getFieldWithDefault(msg, 2, 0),
     walletType: jspb.Message.getFieldWithDefault(msg, 3, 0),
     addressType: jspb.Message.getFieldWithDefault(msg, 4, 0),
-    destinationWalletId: jspb.Message.getFieldWithDefault(msg, 5, "")
+    destinationWalletId: jspb.Message.getFieldWithDefault(msg, 5, ""),
+    inheritWalletId: jspb.Message.getFieldWithDefault(msg, 6, "")
   };
 
   if (includeInstance) {
@@ -181,6 +182,10 @@ proto.adamant.teller.v1.CreateWalletRequest.deserializeBinaryFromReader = functi
     case 5:
       var value = /** @type {string} */ (reader.readString());
       msg.setDestinationWalletId(value);
+      break;
+    case 6:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setInheritWalletId(value);
       break;
     default:
       reader.skipField();
@@ -243,6 +248,13 @@ proto.adamant.teller.v1.CreateWalletRequest.serializeBinaryToWriter = function(m
   if (f.length > 0) {
     writer.writeString(
       5,
+      f
+    );
+  }
+  f = message.getInheritWalletId();
+  if (f.length > 0) {
+    writer.writeString(
+      6,
       f
     );
   }
@@ -321,6 +333,21 @@ proto.adamant.teller.v1.CreateWalletRequest.prototype.getDestinationWalletId = f
 /** @param {string} value */
 proto.adamant.teller.v1.CreateWalletRequest.prototype.setDestinationWalletId = function(value) {
   jspb.Message.setProto3StringField(this, 5, value);
+};
+
+
+/**
+ * optional string inherit_wallet_id = 6;
+ * @return {string}
+ */
+proto.adamant.teller.v1.CreateWalletRequest.prototype.getInheritWalletId = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 6, ""));
+};
+
+
+/** @param {string} value */
+proto.adamant.teller.v1.CreateWalletRequest.prototype.setInheritWalletId = function(value) {
+  jspb.Message.setProto3StringField(this, 6, value);
 };
 
 

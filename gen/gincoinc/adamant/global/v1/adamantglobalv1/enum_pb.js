@@ -15,7 +15,6 @@ goog.exportSymbol('proto.adamant.global.v1.AccountType', null, global);
 goog.exportSymbol('proto.adamant.global.v1.AddressState', null, global);
 goog.exportSymbol('proto.adamant.global.v1.AuditLogGroup', null, global);
 goog.exportSymbol('proto.adamant.global.v1.AuditLogType', null, global);
-goog.exportSymbol('proto.adamant.global.v1.ImportAddressState', null, global);
 goog.exportSymbol('proto.adamant.global.v1.ListFilterType', null, global);
 goog.exportSymbol('proto.adamant.global.v1.MailType', null, global);
 goog.exportSymbol('proto.adamant.global.v1.NotificationType', null, global);
@@ -30,6 +29,7 @@ goog.exportSymbol('proto.adamant.global.v1.UserState', null, global);
 goog.exportSymbol('proto.adamant.global.v1.WalletProposalType', null, global);
 goog.exportSymbol('proto.adamant.global.v1.WalletState', null, global);
 goog.exportSymbol('proto.adamant.global.v1.WalletType', null, global);
+goog.exportSymbol('proto.adamant.global.v1.WatchOnlyAddressState', null, global);
 /**
  * @enum {number}
  */
@@ -62,7 +62,10 @@ proto.adamant.global.v1.WalletState = {
   WALLET_STATE_ARCHIVED: 14,
   WALLET_STATE_ADDRESS_IMPORT_WAITING: 15,
   WALLET_STATE_ADDRESS_IMPORTING: 16,
-  WALLET_STATE_ADDRESS_IMPORT_FAILED: 17
+  WALLET_STATE_ADDRESS_IMPORT_FAILED: 17,
+  WALLET_STATE_ADDRESS_DELETING: 18,
+  WALLET_STATE_ADDRESS_DELETE_FAILED: 19,
+  WALLET_STATE_FLUSHING: 20
 };
 
 /**
@@ -333,11 +336,15 @@ proto.adamant.global.v1.MailType = {
 /**
  * @enum {number}
  */
-proto.adamant.global.v1.ImportAddressState = {
-  IMPORT_ADDRESS_STATE_INVALID: 0,
-  IMPORT_ADDRESS_STATE_ADDRESS_IMPORTING: 1,
-  IMPORT_ADDRESS_STATE_ADDRESS_IMPORTED: 2,
-  IMPORT_ADDRESS_STATE_IMPORT_FAILED: 3
+proto.adamant.global.v1.WatchOnlyAddressState = {
+  WATCH_ONLY_ADDRESS_STATE_INVALID: 0,
+  WATCH_ONLY_ADDRESS_STATE_ADDRESS_IMPORTING: 1,
+  WATCH_ONLY_ADDRESS_STATE_ADDRESS_IMPORTED: 2,
+  WATCH_ONLY_ADDRESS_STATE_IMPORT_FAILED: 3,
+  WATCH_ONLY_ADDRESS_STATE_ADDRESS_DELETING: 4,
+  WATCH_ONLY_ADDRESS_STATE_ADDRESS_DELETED: 5,
+  WATCH_ONLY_ADDRESS_STATE_DELETE_FAILED: 6,
+  WATCH_ONLY_ADDRESS_STATE_DOWNLOAD: 7
 };
 
 goog.object.extend(exports, proto.adamant.global.v1);

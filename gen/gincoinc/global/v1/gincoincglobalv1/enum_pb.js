@@ -28,7 +28,8 @@ proto.gincoinc.global.v1.Coin = {
   COIN_ETH: 2,
   COIN_LTC: 3,
   COIN_BCH: 4,
-  COIN_XRP: 5
+  COIN_XRP: 5,
+  COIN_BAT: 6
 };
 
 /**

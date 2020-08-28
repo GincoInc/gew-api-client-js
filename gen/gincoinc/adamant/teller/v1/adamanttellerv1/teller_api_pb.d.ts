@@ -28,6 +28,9 @@ export class CreateWalletRequest extends jspb.Message {
     getDestinationWalletId(): string;
     setDestinationWalletId(value: string): void;
 
+    getInheritWalletId(): string;
+    setInheritWalletId(value: string): void;
+
 
     serializeBinary(): Uint8Array;
     toObject(includeInstance?: boolean): CreateWalletRequest.AsObject;
@@ -46,6 +49,7 @@ export namespace CreateWalletRequest {
         walletType: gincoinc_adamant_global_v1_adamantglobalv1_enum_pb.WalletType,
         addressType: gincoinc_global_v1_gincoincglobalv1_enum_pb.AddressType,
         destinationWalletId: string,
+        inheritWalletId: string,
     }
 }
 

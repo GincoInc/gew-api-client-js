@@ -27,6 +27,7 @@ service GlobalAPI {
     rpc UpdateWalletValidation (UpdateWalletValidationRequest) returns (google.protobuf.Empty) {}
     rpc UpdateWalletPolicy (UpdateWalletPolicyRequest) returns (google.protobuf.Empty) {}
     rpc ReviewWalletProposal (ReviewWalletProposalRequest) returns (google.protobuf.Empty) {}
+    rpc FlushBalance (FlushBalanceRequest) returns (google.protobuf.Empty) {}
 
     // Review
     rpc ApproveWallet (ApproveWalletRequest) returns (google.protobuf.Empty) {}
@@ -40,7 +41,7 @@ service GlobalAPI {
     rpc GetAddressByIndex (GetAddressByIndexRequest) returns (Address) {}
     rpc ListAddresses (ListAddressesRequest) returns (ListAddressesResponse) {}
     // Get an address which hold ETH for ethereum wallet/address creation etc
-    rpc GetEthereumFeeAddress (google.protobuf.Empty) returns (EthereumFeeAddress) {}
+    rpc GetEthereumFeeAddress (GetEthereumFeeAddressRequest) returns (EthereumFeeAddress) {}
 
     // RegisterKey
     rpc RegisterKey (RegisterKeyRequest) returns (RegisterKeyResponse) {}
@@ -70,7 +71,7 @@ service GlobalAPI {
     // Get rates by snapshot id
     rpc GetRateSnapshot (GetRateSnapshotRequest) returns (RateSnapshot) {}
     // Get latest rates set to your organization
-    rpc GetLatestRateSnapshot (google.protobuf.Empty) returns (RateSnapshot) {}
+    rpc GetLatestRateSnapshot (GetLatestRateSnapshotRequest) returns (RateSnapshot) {}
     // Set rates to your organization
     rpc SetRates (SetRatesRequest) returns (SetRatesResponse) {}
 
@@ -153,6 +154,9 @@ message CreateWalletRequest {
     // required when create receive only wallet
     string destination_wallet_id = 9 [(validate.rules).string = {pattern: "^$|^[0-9a-f]{8}-[0-9a-f]{4}-4[0-9a-f]{3}-[89ab][0-9a-f]{3}-[0-9a-f]{12}$"}];
     bool watch_only = 11;
+
+    // optional
+    string inherit_wallet_id = 12 [(validate.rules).string = {pattern: "^$|^[0-9a-f]{8}-[0-9a-f]{4}-4[0-9a-f]{3}-[89ab][0-9a-f]{3}-[0-9a-f]{12}$"}];
 }
 message CreateWalletResponse {
     string wallet_id = 1;
@@ -214,6 +218,10 @@ message ExistsWalletByNameResponse {
     bool exists = 1;
 }
 
+message FlushBalanceRequest {
+    string wallet_id = 1 [(validate.rules).string = {pattern: "^[0-9a-f]{8}-[0-9a-f]{4}-4[0-9a-f]{3}-[89ab][0-9a-f]{3}-[0-9a-f]{12}$"}];
+}
+
 // -----------------------------------------------------------------------------
 // Key
 // -----------------------------------------------------------------------------
@@ -262,6 +270,12 @@ message ListAddressesRequest {
 message ListAddressesResponse {
     repeated Address addresses = 1;
     string next_page_token = 2;
+}
+
+message GetEthereumFeeAddressRequest {}
+
+message DeleteAllWatchOnlyAddressesByWalletIDRequest {
+    string wallet_id = 1 [(validate.rules).string = {pattern: "^[0-9a-f]{8}-[0-9a-f]{4}-4[0-9a-f]{3}-[89ab][0-9a-f]{3}-[0-9a-f]{12}$"}];
 }
 
 // -----------------------------------------------------------------------------
@@ -386,6 +400,8 @@ message GetRateSnapshotRequest {
     string rate_snapshot_id = 1 [(validate.rules).string = {pattern: "^[0-9a-f]{8}-[0-9a-f]{4}-4[0-9a-f]{3}-[89ab][0-9a-f]{3}-[0-9a-f]{12}$"}]; // The id of rate-snapshot
 }
 
+message GetLatestRateSnapshotRequest {}
+
 message SetRatesRequest {
     repeated RequestRate rates = 1; //Array of rate objects
 }
@@ -425,6 +441,36 @@ message ListBalanceSnapshotsRequest {
 
 message ListBalanceSnapshotsResponse {
     repeated BalanceSnapshot balance_snapshots = 1;
+}
+
+message ListWalletBalanceSnapshotsRequest {
+    repeated string wallet_ids = 1 [(validate.rules).repeated.items.string = {pattern: "^[0-9a-f]{8}-[0-9a-f]{4}-4[0-9a-f]{3}-[89ab][0-9a-f]{3}-[0-9a-f]{12}$"}];
+    google.protobuf.Timestamp start_time = 2;
+    google.protobuf.Timestamp end_time = 3;
+}
+
+message ListWalletBalanceSnapshotsResponse {
+    WalletBalanceSnapshotMap wallet_balance_snapshot_map = 1;
+}
+
+message ListTransferVolumeSnapshotsRequest {
+    bool watch_only = 1;
+    google.protobuf.Timestamp start_time = 2 [(validate.rules).timestamp.required = true];
+    google.protobuf.Timestamp end_time = 3 [(validate.rules).timestamp.required = true];
+}
+
+message ListTransferVolumeSnapshotsResponse {
+    TransferVolumeSnapshots transfer_volume_snapshots = 1;
+}
+
+message ListWalletTransferVolumeSnapshotsRequest {
+    repeated string wallet_ids = 1 [(validate.rules).repeated.items.string = {pattern: "^[0-9a-f]{8}-[0-9a-f]{4}-4[0-9a-f]{3}-[89ab][0-9a-f]{3}-[0-9a-f]{12}$"}];
+    google.protobuf.Timestamp start_time = 2 [(validate.rules).timestamp.required = true];
+    google.protobuf.Timestamp end_time = 3 [(validate.rules).timestamp.required = true];
+}
+
+message ListWalletTransferVolumeSnapshotsResponse {
+    WalletTransferVolumeSnapshots wallet_transfer_volume_snapshots = 1;
 }
 
 message CalculateFeeRequest {

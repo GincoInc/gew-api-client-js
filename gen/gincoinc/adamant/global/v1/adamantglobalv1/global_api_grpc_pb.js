@@ -318,6 +318,17 @@ function deserialize_adamant_global_v1_EthereumFeeAddress(buffer_arg) {
   return gincoinc_adamant_global_v1_adamantglobalv1_model_pb.EthereumFeeAddress.deserializeBinary(new Uint8Array(buffer_arg));
 }
 
+function serialize_adamant_global_v1_FlushBalanceRequest(arg) {
+  if (!(arg instanceof gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.FlushBalanceRequest)) {
+    throw new Error('Expected argument of type adamant.global.v1.FlushBalanceRequest');
+  }
+  return Buffer.from(arg.serializeBinary());
+}
+
+function deserialize_adamant_global_v1_FlushBalanceRequest(buffer_arg) {
+  return gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.FlushBalanceRequest.deserializeBinary(new Uint8Array(buffer_arg));
+}
+
 function serialize_adamant_global_v1_GetAddressByAddressRequest(arg) {
   if (!(arg instanceof gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.GetAddressByAddressRequest)) {
     throw new Error('Expected argument of type adamant.global.v1.GetAddressByAddressRequest');
@@ -351,6 +362,17 @@ function deserialize_adamant_global_v1_GetAddressRequest(buffer_arg) {
   return gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.GetAddressRequest.deserializeBinary(new Uint8Array(buffer_arg));
 }
 
+function serialize_adamant_global_v1_GetEthereumFeeAddressRequest(arg) {
+  if (!(arg instanceof gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.GetEthereumFeeAddressRequest)) {
+    throw new Error('Expected argument of type adamant.global.v1.GetEthereumFeeAddressRequest');
+  }
+  return Buffer.from(arg.serializeBinary());
+}
+
+function deserialize_adamant_global_v1_GetEthereumFeeAddressRequest(buffer_arg) {
+  return gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.GetEthereumFeeAddressRequest.deserializeBinary(new Uint8Array(buffer_arg));
+}
+
 function serialize_adamant_global_v1_GetLabeledAddressRequest(arg) {
   if (!(arg instanceof gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.GetLabeledAddressRequest)) {
     throw new Error('Expected argument of type adamant.global.v1.GetLabeledAddressRequest');
@@ -360,6 +382,17 @@ function serialize_adamant_global_v1_GetLabeledAddressRequest(arg) {
 
 function deserialize_adamant_global_v1_GetLabeledAddressRequest(buffer_arg) {
   return gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.GetLabeledAddressRequest.deserializeBinary(new Uint8Array(buffer_arg));
+}
+
+function serialize_adamant_global_v1_GetLatestRateSnapshotRequest(arg) {
+  if (!(arg instanceof gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.GetLatestRateSnapshotRequest)) {
+    throw new Error('Expected argument of type adamant.global.v1.GetLatestRateSnapshotRequest');
+  }
+  return Buffer.from(arg.serializeBinary());
+}
+
+function deserialize_adamant_global_v1_GetLatestRateSnapshotRequest(buffer_arg) {
+  return gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.GetLatestRateSnapshotRequest.deserializeBinary(new Uint8Array(buffer_arg));
 }
 
 function serialize_adamant_global_v1_GetMembersDeactivatabilitiesRequest(arg) {
@@ -1261,6 +1294,17 @@ getWallet: {
     responseSerialize: serialize_google_protobuf_Empty,
     responseDeserialize: deserialize_google_protobuf_Empty,
   },
+  flushBalance: {
+    path: '/adamant.global.v1.GlobalAPI/FlushBalance',
+    requestStream: false,
+    responseStream: false,
+    requestType: gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.FlushBalanceRequest,
+    responseType: google_protobuf_empty_pb.Empty,
+    requestSerialize: serialize_adamant_global_v1_FlushBalanceRequest,
+    requestDeserialize: deserialize_adamant_global_v1_FlushBalanceRequest,
+    responseSerialize: serialize_google_protobuf_Empty,
+    responseDeserialize: deserialize_google_protobuf_Empty,
+  },
   // Review
 approveWallet: {
     path: '/adamant.global.v1.GlobalAPI/ApproveWallet',
@@ -1346,10 +1390,10 @@ getEthereumFeeAddress: {
     path: '/adamant.global.v1.GlobalAPI/GetEthereumFeeAddress',
     requestStream: false,
     responseStream: false,
-    requestType: google_protobuf_empty_pb.Empty,
+    requestType: gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.GetEthereumFeeAddressRequest,
     responseType: gincoinc_adamant_global_v1_adamantglobalv1_model_pb.EthereumFeeAddress,
-    requestSerialize: serialize_google_protobuf_Empty,
-    requestDeserialize: deserialize_google_protobuf_Empty,
+    requestSerialize: serialize_adamant_global_v1_GetEthereumFeeAddressRequest,
+    requestDeserialize: deserialize_adamant_global_v1_GetEthereumFeeAddressRequest,
     responseSerialize: serialize_adamant_global_v1_EthereumFeeAddress,
     responseDeserialize: deserialize_adamant_global_v1_EthereumFeeAddress,
   },
@@ -1541,10 +1585,10 @@ getLatestRateSnapshot: {
     path: '/adamant.global.v1.GlobalAPI/GetLatestRateSnapshot',
     requestStream: false,
     responseStream: false,
-    requestType: google_protobuf_empty_pb.Empty,
+    requestType: gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.GetLatestRateSnapshotRequest,
     responseType: gincoinc_adamant_global_v1_adamantglobalv1_model_pb.RateSnapshot,
-    requestSerialize: serialize_google_protobuf_Empty,
-    requestDeserialize: deserialize_google_protobuf_Empty,
+    requestSerialize: serialize_adamant_global_v1_GetLatestRateSnapshotRequest,
+    requestDeserialize: deserialize_adamant_global_v1_GetLatestRateSnapshotRequest,
     responseSerialize: serialize_adamant_global_v1_RateSnapshot,
     responseDeserialize: deserialize_adamant_global_v1_RateSnapshot,
   },

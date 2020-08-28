@@ -13,6 +13,7 @@ export enum Coin {
     COIN_LTC = 3,
     COIN_BCH = 4,
     COIN_XRP = 5,
+    COIN_BAT = 6,
 }
 
 export enum Network {

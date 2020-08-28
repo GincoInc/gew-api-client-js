@@ -802,6 +802,9 @@ export class EthereumSpecific extends jspb.Message {
     getNonce(): number;
     setNonce(value: number): void;
 
+    getIsnextnonce(): boolean;
+    setIsnextnonce(value: boolean): void;
+
 
     serializeBinary(): Uint8Array;
     toObject(includeInstance?: boolean): EthereumSpecific.AsObject;
@@ -817,6 +820,7 @@ export namespace EthereumSpecific {
     export type AsObject = {
         gasLimit: number,
         nonce: number,
+        isnextnonce: boolean,
     }
 }
 
@@ -829,6 +833,9 @@ export class XrpSpecific extends jspb.Message {
 
     getTxType(): gincoinc_global_v1_gincoincglobalv1_enum_pb.XRPTransactionType;
     setTxType(value: gincoinc_global_v1_gincoincglobalv1_enum_pb.XRPTransactionType): void;
+
+    getIsnextsequencenumber(): boolean;
+    setIsnextsequencenumber(value: boolean): void;
 
 
     serializeBinary(): Uint8Array;
@@ -846,6 +853,7 @@ export namespace XrpSpecific {
         sequenceNumber: number,
         destinationTag: number,
         txType: gincoinc_global_v1_gincoincglobalv1_enum_pb.XRPTransactionType,
+        isnextsequencenumber: boolean,
     }
 }
 
@@ -1581,6 +1589,318 @@ export namespace BalanceSnapshot {
         totalBalancesMap: Array<[number, TotalBalanceByCoin.AsObject]>,
 
         ratesMap: Array<[number, Rate.AsObject]>,
+    }
+}
+
+export class WalletBalanceSnapshotMap extends jspb.Message { 
+
+    getWalletBalanceSnapshotMapMap(): jspb.Map<string, ListWalletBalanceSnapshots>;
+    clearWalletBalanceSnapshotMapMap(): void;
+
+
+    serializeBinary(): Uint8Array;
+    toObject(includeInstance?: boolean): WalletBalanceSnapshotMap.AsObject;
+    static toObject(includeInstance: boolean, msg: WalletBalanceSnapshotMap): WalletBalanceSnapshotMap.AsObject;
+    static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+    static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+    static serializeBinaryToWriter(message: WalletBalanceSnapshotMap, writer: jspb.BinaryWriter): void;
+    static deserializeBinary(bytes: Uint8Array): WalletBalanceSnapshotMap;
+    static deserializeBinaryFromReader(message: WalletBalanceSnapshotMap, reader: jspb.BinaryReader): WalletBalanceSnapshotMap;
+}
+
+export namespace WalletBalanceSnapshotMap {
+    export type AsObject = {
+
+        walletBalanceSnapshotMapMap: Array<[string, ListWalletBalanceSnapshots.AsObject]>,
+    }
+}
+
+export class ListWalletBalanceSnapshots extends jspb.Message { 
+    clearWalletBalanceSnapshotsList(): void;
+    getWalletBalanceSnapshotsList(): Array<WalletBalanceSnapshot>;
+    setWalletBalanceSnapshotsList(value: Array<WalletBalanceSnapshot>): void;
+    addWalletBalanceSnapshots(value?: WalletBalanceSnapshot, index?: number): WalletBalanceSnapshot;
+
+
+    serializeBinary(): Uint8Array;
+    toObject(includeInstance?: boolean): ListWalletBalanceSnapshots.AsObject;
+    static toObject(includeInstance: boolean, msg: ListWalletBalanceSnapshots): ListWalletBalanceSnapshots.AsObject;
+    static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+    static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+    static serializeBinaryToWriter(message: ListWalletBalanceSnapshots, writer: jspb.BinaryWriter): void;
+    static deserializeBinary(bytes: Uint8Array): ListWalletBalanceSnapshots;
+    static deserializeBinaryFromReader(message: ListWalletBalanceSnapshots, reader: jspb.BinaryReader): ListWalletBalanceSnapshots;
+}
+
+export namespace ListWalletBalanceSnapshots {
+    export type AsObject = {
+        walletBalanceSnapshotsList: Array<WalletBalanceSnapshot.AsObject>,
+    }
+}
+
+export class WalletBalanceSnapshot extends jspb.Message { 
+
+    hasCreateTime(): boolean;
+    clearCreateTime(): void;
+    getCreateTime(): google_protobuf_timestamp_pb.Timestamp | undefined;
+    setCreateTime(value?: google_protobuf_timestamp_pb.Timestamp): void;
+
+    getStringBalance(): string;
+    setStringBalance(value: string): void;
+
+    getJpy(): number;
+    setJpy(value: number): void;
+
+
+    serializeBinary(): Uint8Array;
+    toObject(includeInstance?: boolean): WalletBalanceSnapshot.AsObject;
+    static toObject(includeInstance: boolean, msg: WalletBalanceSnapshot): WalletBalanceSnapshot.AsObject;
+    static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+    static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+    static serializeBinaryToWriter(message: WalletBalanceSnapshot, writer: jspb.BinaryWriter): void;
+    static deserializeBinary(bytes: Uint8Array): WalletBalanceSnapshot;
+    static deserializeBinaryFromReader(message: WalletBalanceSnapshot, reader: jspb.BinaryReader): WalletBalanceSnapshot;
+}
+
+export namespace WalletBalanceSnapshot {
+    export type AsObject = {
+        createTime?: google_protobuf_timestamp_pb.Timestamp.AsObject,
+        stringBalance: string,
+        jpy: number,
+    }
+}
+
+export class TransferVolumeSnapshots extends jspb.Message { 
+
+    getTransferVolumeSnapshotByTransferTypeMap(): jspb.Map<number, ListTransferVolumeSnapshots>;
+    clearTransferVolumeSnapshotByTransferTypeMap(): void;
+
+
+    serializeBinary(): Uint8Array;
+    toObject(includeInstance?: boolean): TransferVolumeSnapshots.AsObject;
+    static toObject(includeInstance: boolean, msg: TransferVolumeSnapshots): TransferVolumeSnapshots.AsObject;
+    static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+    static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+    static serializeBinaryToWriter(message: TransferVolumeSnapshots, writer: jspb.BinaryWriter): void;
+    static deserializeBinary(bytes: Uint8Array): TransferVolumeSnapshots;
+    static deserializeBinaryFromReader(message: TransferVolumeSnapshots, reader: jspb.BinaryReader): TransferVolumeSnapshots;
+}
+
+export namespace TransferVolumeSnapshots {
+    export type AsObject = {
+
+        transferVolumeSnapshotByTransferTypeMap: Array<[number, ListTransferVolumeSnapshots.AsObject]>,
+    }
+}
+
+export class ListTransferVolumeSnapshots extends jspb.Message { 
+    clearTransferVolumeSnapshotsList(): void;
+    getTransferVolumeSnapshotsList(): Array<TransferVolumeSnapshot>;
+    setTransferVolumeSnapshotsList(value: Array<TransferVolumeSnapshot>): void;
+    addTransferVolumeSnapshots(value?: TransferVolumeSnapshot, index?: number): TransferVolumeSnapshot;
+
+
+    serializeBinary(): Uint8Array;
+    toObject(includeInstance?: boolean): ListTransferVolumeSnapshots.AsObject;
+    static toObject(includeInstance: boolean, msg: ListTransferVolumeSnapshots): ListTransferVolumeSnapshots.AsObject;
+    static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+    static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+    static serializeBinaryToWriter(message: ListTransferVolumeSnapshots, writer: jspb.BinaryWriter): void;
+    static deserializeBinary(bytes: Uint8Array): ListTransferVolumeSnapshots;
+    static deserializeBinaryFromReader(message: ListTransferVolumeSnapshots, reader: jspb.BinaryReader): ListTransferVolumeSnapshots;
+}
+
+export namespace ListTransferVolumeSnapshots {
+    export type AsObject = {
+        transferVolumeSnapshotsList: Array<TransferVolumeSnapshot.AsObject>,
+    }
+}
+
+export class TransferVolumeSnapshot extends jspb.Message { 
+
+    hasTargetTime(): boolean;
+    clearTargetTime(): void;
+    getTargetTime(): google_protobuf_timestamp_pb.Timestamp | undefined;
+    setTargetTime(value?: google_protobuf_timestamp_pb.Timestamp): void;
+
+
+    getTransferVolumeByCoinMap(): jspb.Map<number, TransferVolume>;
+    clearTransferVolumeByCoinMap(): void;
+
+
+    serializeBinary(): Uint8Array;
+    toObject(includeInstance?: boolean): TransferVolumeSnapshot.AsObject;
+    static toObject(includeInstance: boolean, msg: TransferVolumeSnapshot): TransferVolumeSnapshot.AsObject;
+    static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+    static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+    static serializeBinaryToWriter(message: TransferVolumeSnapshot, writer: jspb.BinaryWriter): void;
+    static deserializeBinary(bytes: Uint8Array): TransferVolumeSnapshot;
+    static deserializeBinaryFromReader(message: TransferVolumeSnapshot, reader: jspb.BinaryReader): TransferVolumeSnapshot;
+}
+
+export namespace TransferVolumeSnapshot {
+    export type AsObject = {
+        targetTime?: google_protobuf_timestamp_pb.Timestamp.AsObject,
+
+        transferVolumeByCoinMap: Array<[number, TransferVolume.AsObject]>,
+    }
+}
+
+export class TransferVolume extends jspb.Message { 
+    getCoin(): gincoinc_global_v1_gincoincglobalv1_enum_pb.Coin;
+    setCoin(value: gincoinc_global_v1_gincoincglobalv1_enum_pb.Coin): void;
+
+    getHotStringVolume(): string;
+    setHotStringVolume(value: string): void;
+
+    getColdStringVolume(): string;
+    setColdStringVolume(value: string): void;
+
+    getHotStringJpyVolume(): string;
+    setHotStringJpyVolume(value: string): void;
+
+    getColdStringJpyVolume(): string;
+    setColdStringJpyVolume(value: string): void;
+
+    getHotNumber(): number;
+    setHotNumber(value: number): void;
+
+    getColdNumber(): number;
+    setColdNumber(value: number): void;
+
+    getTransferType(): gincoinc_global_v1_gincoincglobalv1_enum_pb.TransferType;
+    setTransferType(value: gincoinc_global_v1_gincoincglobalv1_enum_pb.TransferType): void;
+
+
+    serializeBinary(): Uint8Array;
+    toObject(includeInstance?: boolean): TransferVolume.AsObject;
+    static toObject(includeInstance: boolean, msg: TransferVolume): TransferVolume.AsObject;
+    static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+    static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+    static serializeBinaryToWriter(message: TransferVolume, writer: jspb.BinaryWriter): void;
+    static deserializeBinary(bytes: Uint8Array): TransferVolume;
+    static deserializeBinaryFromReader(message: TransferVolume, reader: jspb.BinaryReader): TransferVolume;
+}
+
+export namespace TransferVolume {
+    export type AsObject = {
+        coin: gincoinc_global_v1_gincoincglobalv1_enum_pb.Coin,
+        hotStringVolume: string,
+        coldStringVolume: string,
+        hotStringJpyVolume: string,
+        coldStringJpyVolume: string,
+        hotNumber: number,
+        coldNumber: number,
+        transferType: gincoinc_global_v1_gincoincglobalv1_enum_pb.TransferType,
+    }
+}
+
+export class WalletTransferVolumeSnapshots extends jspb.Message { 
+
+    getWalletTransferVolumeSnapshotByWalletIdMap(): jspb.Map<string, ListWalletTransferVolumeSnapshots>;
+    clearWalletTransferVolumeSnapshotByWalletIdMap(): void;
+
+
+    serializeBinary(): Uint8Array;
+    toObject(includeInstance?: boolean): WalletTransferVolumeSnapshots.AsObject;
+    static toObject(includeInstance: boolean, msg: WalletTransferVolumeSnapshots): WalletTransferVolumeSnapshots.AsObject;
+    static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+    static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+    static serializeBinaryToWriter(message: WalletTransferVolumeSnapshots, writer: jspb.BinaryWriter): void;
+    static deserializeBinary(bytes: Uint8Array): WalletTransferVolumeSnapshots;
+    static deserializeBinaryFromReader(message: WalletTransferVolumeSnapshots, reader: jspb.BinaryReader): WalletTransferVolumeSnapshots;
+}
+
+export namespace WalletTransferVolumeSnapshots {
+    export type AsObject = {
+
+        walletTransferVolumeSnapshotByWalletIdMap: Array<[string, ListWalletTransferVolumeSnapshots.AsObject]>,
+    }
+}
+
+export class ListWalletTransferVolumeSnapshots extends jspb.Message { 
+    clearWalletTransferVolumeSnapshotsList(): void;
+    getWalletTransferVolumeSnapshotsList(): Array<WalletTransferVolumeSnapshot>;
+    setWalletTransferVolumeSnapshotsList(value: Array<WalletTransferVolumeSnapshot>): void;
+    addWalletTransferVolumeSnapshots(value?: WalletTransferVolumeSnapshot, index?: number): WalletTransferVolumeSnapshot;
+
+
+    serializeBinary(): Uint8Array;
+    toObject(includeInstance?: boolean): ListWalletTransferVolumeSnapshots.AsObject;
+    static toObject(includeInstance: boolean, msg: ListWalletTransferVolumeSnapshots): ListWalletTransferVolumeSnapshots.AsObject;
+    static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+    static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+    static serializeBinaryToWriter(message: ListWalletTransferVolumeSnapshots, writer: jspb.BinaryWriter): void;
+    static deserializeBinary(bytes: Uint8Array): ListWalletTransferVolumeSnapshots;
+    static deserializeBinaryFromReader(message: ListWalletTransferVolumeSnapshots, reader: jspb.BinaryReader): ListWalletTransferVolumeSnapshots;
+}
+
+export namespace ListWalletTransferVolumeSnapshots {
+    export type AsObject = {
+        walletTransferVolumeSnapshotsList: Array<WalletTransferVolumeSnapshot.AsObject>,
+    }
+}
+
+export class WalletTransferVolumeSnapshot extends jspb.Message { 
+
+    hasTargetTime(): boolean;
+    clearTargetTime(): void;
+    getTargetTime(): google_protobuf_timestamp_pb.Timestamp | undefined;
+    setTargetTime(value?: google_protobuf_timestamp_pb.Timestamp): void;
+
+
+    getWalletTransferVolumeByTransferTypeMap(): jspb.Map<number, WalletTransferVolume>;
+    clearWalletTransferVolumeByTransferTypeMap(): void;
+
+
+    serializeBinary(): Uint8Array;
+    toObject(includeInstance?: boolean): WalletTransferVolumeSnapshot.AsObject;
+    static toObject(includeInstance: boolean, msg: WalletTransferVolumeSnapshot): WalletTransferVolumeSnapshot.AsObject;
+    static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+    static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+    static serializeBinaryToWriter(message: WalletTransferVolumeSnapshot, writer: jspb.BinaryWriter): void;
+    static deserializeBinary(bytes: Uint8Array): WalletTransferVolumeSnapshot;
+    static deserializeBinaryFromReader(message: WalletTransferVolumeSnapshot, reader: jspb.BinaryReader): WalletTransferVolumeSnapshot;
+}
+
+export namespace WalletTransferVolumeSnapshot {
+    export type AsObject = {
+        targetTime?: google_protobuf_timestamp_pb.Timestamp.AsObject,
+
+        walletTransferVolumeByTransferTypeMap: Array<[number, WalletTransferVolume.AsObject]>,
+    }
+}
+
+export class WalletTransferVolume extends jspb.Message { 
+    getStringVolume(): string;
+    setStringVolume(value: string): void;
+
+    getStringJpyVolume(): string;
+    setStringJpyVolume(value: string): void;
+
+    getNumber(): number;
+    setNumber(value: number): void;
+
+    getTransferType(): gincoinc_global_v1_gincoincglobalv1_enum_pb.TransferType;
+    setTransferType(value: gincoinc_global_v1_gincoincglobalv1_enum_pb.TransferType): void;
+
+
+    serializeBinary(): Uint8Array;
+    toObject(includeInstance?: boolean): WalletTransferVolume.AsObject;
+    static toObject(includeInstance: boolean, msg: WalletTransferVolume): WalletTransferVolume.AsObject;
+    static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+    static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+    static serializeBinaryToWriter(message: WalletTransferVolume, writer: jspb.BinaryWriter): void;
+    static deserializeBinary(bytes: Uint8Array): WalletTransferVolume;
+    static deserializeBinaryFromReader(message: WalletTransferVolume, reader: jspb.BinaryReader): WalletTransferVolume;
+}
+
+export namespace WalletTransferVolume {
+    export type AsObject = {
+        stringVolume: string,
+        stringJpyVolume: string,
+        number: number,
+        transferType: gincoinc_global_v1_gincoincglobalv1_enum_pb.TransferType,
     }
 }
 

@@ -191,6 +191,7 @@ message BitcoincashSpecific {
 message EthereumSpecific {
     uint64 gas_limit = 1;
     uint64 nonce = 2;
+    bool isNextNonce = 3;
 }
 
 // The model of XRP specific fields of transaction
@@ -198,6 +199,7 @@ message XrpSpecific {
     uint32 sequence_number = 1;
     uint32 destination_tag = 2;
     gincoinc.global.v1.XRPTransactionType tx_type = 3;
+    bool isNextSequenceNumber = 4;
 }
 
 // The model of information about signing
@@ -248,7 +250,7 @@ message Rate {
     double jpy = 2;
 }
 
-// The model of rate snapshot. the snapshot contains a set of rates 
+// The model of rate snapshot. the snapshot contains a set of rates
 message RateSnapshot {
     string rate_snapshot_id = 1; // id
     map<uint32, Rate> rates = 2; // RatesEntry: map<k, v> / k: enum number of Coin, v: Rate
@@ -362,6 +364,66 @@ message BalanceSnapshot {
     google.protobuf.Timestamp create_time = 1;
     map<uint32, TotalBalanceByCoin> total_balances = 2 [(validate.rules).map.no_sparse = true]; // map<k, v> ... k: enum number of Coin / v: TotalBalanceByCoin
     map<uint32, Rate> rates = 3 [(validate.rules).map.no_sparse = true]; // map<k, v> ... k: enum number of Coin / v: Rate
+}
+
+message WalletBalanceSnapshotMap {
+    map<string, ListWalletBalanceSnapshots> wallet_balance_snapshot_map = 1 [(validate.rules).map.no_sparse = true]; //map<k, v> ... k: wallet id / v: ListWalletBalanceSnapshot
+}
+
+message ListWalletBalanceSnapshots {
+    repeated WalletBalanceSnapshot wallet_balance_snapshots = 1;
+}
+
+// The model of wallet balance snapshot
+message WalletBalanceSnapshot {
+    google.protobuf.Timestamp create_time = 1;
+    string string_balance = 2 ; //Wallet Balance
+    double jpy = 3; // JPY rate
+}
+
+message TransferVolumeSnapshots {
+    map<int32, ListTransferVolumeSnapshots> transfer_volume_snapshot_by_transfer_type = 1 [(validate.rules).map.no_sparse = true]; //map<k, v> ... k: transfer type / v: ListWalletTransferVolumeSnapshots
+}
+
+message ListTransferVolumeSnapshots {
+    repeated TransferVolumeSnapshot transfer_volume_snapshots = 1;
+}
+
+// The model of transfer volume snapshot
+message TransferVolumeSnapshot {
+    google.protobuf.Timestamp target_time = 1;
+    map<int32, TransferVolume> transfer_volume_by_coin = 2;//map<k, v> ... k: coin / v: TransferVolumeByCoin
+}
+
+message TransferVolume {
+    gincoinc.global.v1.Coin coin = 1; //coin
+    string hot_string_volume = 2 ; //hot volume
+    string cold_string_volume = 3 ; //col volume
+    string hot_string_jpy_volume = 4 ; //hot volume
+    string cold_string_jpy_volume = 5 ; //col volume
+    int64 hot_number = 6; // hot transfer number volume
+    int64 cold_number = 7; // cold transfer number volume
+    gincoinc.global.v1.TransferType transfer_type = 8; // transfer type
+}
+
+message WalletTransferVolumeSnapshots {
+    map<string, ListWalletTransferVolumeSnapshots> wallet_transfer_volume_snapshot_by_wallet_id = 1 [(validate.rules).map.no_sparse = true]; //map<k, v> ... k: wallet id / v: ListWalletTransferVolumeSnapshots
+}
+
+message ListWalletTransferVolumeSnapshots {
+    repeated WalletTransferVolumeSnapshot wallet_transfer_volume_snapshots = 1;
+}
+
+message WalletTransferVolumeSnapshot {
+    google.protobuf.Timestamp target_time = 1;
+    map<int32, WalletTransferVolume> wallet_transfer_volume_by_transfer_type = 2;//map<k, v> ... k: transfer type / v:TransferVolumeByCoin
+}
+
+message WalletTransferVolume {
+    string string_volume = 1; //coin volume
+    string string_jpy_volume = 2 ; //hot volume
+    int64 number = 3; // transfer number volume
+    gincoinc.global.v1.TransferType transfer_type = 4; // transfer type;
 }
 
 // The model of confirmation
