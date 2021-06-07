@@ -1,11 +1,11 @@
 {
   "devDependencies": {
     "grpc-tools": "^1.8.1",
-    "grpc_tools_node_protoc_ts": "^2.5.10"
+    "grpc_tools_node_protoc_ts": "^2.5.11"
   },
   "name": "gew-api-client-js",
   "description": "Ginco Enterprise Wallet Protocol Buffer for Node.js",
-  "version": "1.2.0",
+  "version": "1.3.0",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -14,11 +14,7 @@
     "type": "git",
     "url": "git+https://github.com/GincoInc/gew-api-client-js.git"
   },
-  "keywords": [
-    "ginco",
-    "grpc",
-    "nodejs"
-  ],
+  "keywords": ["ginco", "grpc", "nodejs"],
   "author": "GincoInc.",
   "license": "ISC",
   "bugs": {
