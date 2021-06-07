@@ -12,87 +12,64 @@ import * as gincoinc_adamant_global_v1_adamantglobalv1_enum_pb from "../../../..
 
 export class Wallet extends jspb.Message { 
     getOwnerId(): string;
-    setOwnerId(value: string): void;
-
+    setOwnerId(value: string): Wallet;
     getWalletId(): string;
-    setWalletId(value: string): void;
-
+    setWalletId(value: string): Wallet;
     getName(): string;
-    setName(value: string): void;
-
+    setName(value: string): Wallet;
     getCoin(): gincoinc_global_v1_gincoincglobalv1_enum_pb.Coin;
-    setCoin(value: gincoinc_global_v1_gincoincglobalv1_enum_pb.Coin): void;
-
+    setCoin(value: gincoinc_global_v1_gincoincglobalv1_enum_pb.Coin): Wallet;
     getHdAccount(): number;
-    setHdAccount(value: number): void;
-
+    setHdAccount(value: number): Wallet;
     getWalletType(): gincoinc_adamant_global_v1_adamantglobalv1_enum_pb.WalletType;
-    setWalletType(value: gincoinc_adamant_global_v1_adamantglobalv1_enum_pb.WalletType): void;
-
+    setWalletType(value: gincoinc_adamant_global_v1_adamantglobalv1_enum_pb.WalletType): Wallet;
     getAddressType(): gincoinc_global_v1_gincoincglobalv1_enum_pb.AddressType;
-    setAddressType(value: gincoinc_global_v1_gincoincglobalv1_enum_pb.AddressType): void;
-
+    setAddressType(value: gincoinc_global_v1_gincoincglobalv1_enum_pb.AddressType): Wallet;
     getM(): number;
-    setM(value: number): void;
-
+    setM(value: number): Wallet;
     getN(): number;
-    setN(value: number): void;
-
+    setN(value: number): Wallet;
     getState(): gincoinc_adamant_global_v1_adamantglobalv1_enum_pb.WalletState;
-    setState(value: gincoinc_adamant_global_v1_adamantglobalv1_enum_pb.WalletState): void;
-
+    setState(value: gincoinc_adamant_global_v1_adamantglobalv1_enum_pb.WalletState): Wallet;
     clearKeysList(): void;
     getKeysList(): Array<Key>;
-    setKeysList(value: Array<Key>): void;
+    setKeysList(value: Array<Key>): Wallet;
     addKeys(value?: Key, index?: number): Key;
-
     clearMembersList(): void;
     getMembersList(): Array<WalletMember>;
-    setMembersList(value: Array<WalletMember>): void;
+    setMembersList(value: Array<WalletMember>): Wallet;
     addMembers(value?: WalletMember, index?: number): WalletMember;
-
     getRequiredApprovalCount(): number;
-    setRequiredApprovalCount(value: number): void;
-
+    setRequiredApprovalCount(value: number): Wallet;
     getBalance(): number;
-    setBalance(value: number): void;
-
+    setBalance(value: number): Wallet;
     getStringBalance(): string;
-    setStringBalance(value: string): void;
-
+    setStringBalance(value: string): Wallet;
     getAddress(): string;
-    setAddress(value: string): void;
-
+    setAddress(value: string): Wallet;
     getPolicyId(): string;
-    setPolicyId(value: string): void;
-
+    setPolicyId(value: string): Wallet;
 
     hasProposal(): boolean;
     clearProposal(): void;
     getProposal(): WalletProposal | undefined;
-    setProposal(value?: WalletProposal): void;
-
+    setProposal(value?: WalletProposal): Wallet;
     getDestinationWalletId(): string;
-    setDestinationWalletId(value: string): void;
-
+    setDestinationWalletId(value: string): Wallet;
     getWatchOnly(): boolean;
-    setWatchOnly(value: boolean): void;
-
+    setWatchOnly(value: boolean): Wallet;
     getAddressNumber(): number;
-    setAddressNumber(value: number): void;
-
+    setAddressNumber(value: number): Wallet;
 
     hasCreateTime(): boolean;
     clearCreateTime(): void;
     getCreateTime(): google_protobuf_timestamp_pb.Timestamp | undefined;
-    setCreateTime(value?: google_protobuf_timestamp_pb.Timestamp): void;
-
+    setCreateTime(value?: google_protobuf_timestamp_pb.Timestamp): Wallet;
 
     hasUpdateTime(): boolean;
     clearUpdateTime(): void;
     getUpdateTime(): google_protobuf_timestamp_pb.Timestamp | undefined;
-    setUpdateTime(value?: google_protobuf_timestamp_pb.Timestamp): void;
-
+    setUpdateTime(value?: google_protobuf_timestamp_pb.Timestamp): Wallet;
 
     serializeBinary(): Uint8Array;
     toObject(includeInstance?: boolean): Wallet.AsObject;
@@ -134,78 +111,58 @@ export namespace Wallet {
 
 export class WalletWithoutBalance extends jspb.Message { 
     getOwnerId(): string;
-    setOwnerId(value: string): void;
-
+    setOwnerId(value: string): WalletWithoutBalance;
     getWalletId(): string;
-    setWalletId(value: string): void;
-
+    setWalletId(value: string): WalletWithoutBalance;
     getName(): string;
-    setName(value: string): void;
-
+    setName(value: string): WalletWithoutBalance;
     getCoin(): gincoinc_global_v1_gincoincglobalv1_enum_pb.Coin;
-    setCoin(value: gincoinc_global_v1_gincoincglobalv1_enum_pb.Coin): void;
-
+    setCoin(value: gincoinc_global_v1_gincoincglobalv1_enum_pb.Coin): WalletWithoutBalance;
     getHdAccount(): number;
-    setHdAccount(value: number): void;
-
+    setHdAccount(value: number): WalletWithoutBalance;
     getWalletType(): gincoinc_adamant_global_v1_adamantglobalv1_enum_pb.WalletType;
-    setWalletType(value: gincoinc_adamant_global_v1_adamantglobalv1_enum_pb.WalletType): void;
-
+    setWalletType(value: gincoinc_adamant_global_v1_adamantglobalv1_enum_pb.WalletType): WalletWithoutBalance;
     getAddressType(): gincoinc_global_v1_gincoincglobalv1_enum_pb.AddressType;
-    setAddressType(value: gincoinc_global_v1_gincoincglobalv1_enum_pb.AddressType): void;
-
+    setAddressType(value: gincoinc_global_v1_gincoincglobalv1_enum_pb.AddressType): WalletWithoutBalance;
     getM(): number;
-    setM(value: number): void;
-
+    setM(value: number): WalletWithoutBalance;
     getN(): number;
-    setN(value: number): void;
-
+    setN(value: number): WalletWithoutBalance;
     getState(): gincoinc_adamant_global_v1_adamantglobalv1_enum_pb.WalletState;
-    setState(value: gincoinc_adamant_global_v1_adamantglobalv1_enum_pb.WalletState): void;
-
+    setState(value: gincoinc_adamant_global_v1_adamantglobalv1_enum_pb.WalletState): WalletWithoutBalance;
     clearKeysList(): void;
     getKeysList(): Array<Key>;
-    setKeysList(value: Array<Key>): void;
+    setKeysList(value: Array<Key>): WalletWithoutBalance;
     addKeys(value?: Key, index?: number): Key;
-
     clearMembersList(): void;
     getMembersList(): Array<WalletMember>;
-    setMembersList(value: Array<WalletMember>): void;
+    setMembersList(value: Array<WalletMember>): WalletWithoutBalance;
     addMembers(value?: WalletMember, index?: number): WalletMember;
-
     getRequiredApprovalCount(): number;
-    setRequiredApprovalCount(value: number): void;
-
+    setRequiredApprovalCount(value: number): WalletWithoutBalance;
     getAddress(): string;
-    setAddress(value: string): void;
-
+    setAddress(value: string): WalletWithoutBalance;
     getPolicyId(): string;
-    setPolicyId(value: string): void;
-
+    setPolicyId(value: string): WalletWithoutBalance;
 
     hasProposal(): boolean;
     clearProposal(): void;
     getProposal(): WalletProposal | undefined;
-    setProposal(value?: WalletProposal): void;
-
+    setProposal(value?: WalletProposal): WalletWithoutBalance;
     getDestinationWalletId(): string;
-    setDestinationWalletId(value: string): void;
-
+    setDestinationWalletId(value: string): WalletWithoutBalance;
     getWatchOnly(): boolean;
-    setWatchOnly(value: boolean): void;
-
+    setWatchOnly(value: boolean): WalletWithoutBalance;
 
     hasCreateTime(): boolean;
     clearCreateTime(): void;
     getCreateTime(): google_protobuf_timestamp_pb.Timestamp | undefined;
-    setCreateTime(value?: google_protobuf_timestamp_pb.Timestamp): void;
-
+    setCreateTime(value?: google_protobuf_timestamp_pb.Timestamp): WalletWithoutBalance;
 
     hasUpdateTime(): boolean;
     clearUpdateTime(): void;
     getUpdateTime(): google_protobuf_timestamp_pb.Timestamp | undefined;
-    setUpdateTime(value?: google_protobuf_timestamp_pb.Timestamp): void;
-
+    setUpdateTime(value?: google_protobuf_timestamp_pb.Timestamp): WalletWithoutBalance;
 
     serializeBinary(): Uint8Array;
     toObject(includeInstance?: boolean): WalletWithoutBalance.AsObject;
@@ -244,34 +201,25 @@ export namespace WalletWithoutBalance {
 
 export class WalletProposal extends jspb.Message { 
     getProposalType(): gincoinc_adamant_global_v1_adamantglobalv1_enum_pb.WalletProposalType;
-    setProposalType(value: gincoinc_adamant_global_v1_adamantglobalv1_enum_pb.WalletProposalType): void;
-
+    setProposalType(value: gincoinc_adamant_global_v1_adamantglobalv1_enum_pb.WalletProposalType): WalletProposal;
     getRequesterAccountId(): string;
-    setRequesterAccountId(value: string): void;
-
+    setRequesterAccountId(value: string): WalletProposal;
     getRequesterName(): string;
-    setRequesterName(value: string): void;
-
+    setRequesterName(value: string): WalletProposal;
     getApproverAccountId(): string;
-    setApproverAccountId(value: string): void;
-
+    setApproverAccountId(value: string): WalletProposal;
     getApproverName(): string;
-    setApproverName(value: string): void;
-
+    setApproverName(value: string): WalletProposal;
     getProposedPolicy(): string;
-    setProposedPolicy(value: string): void;
-
+    setProposedPolicy(value: string): WalletProposal;
     clearProposedValidatorsList(): void;
     getProposedValidatorsList(): Array<string>;
-    setProposedValidatorsList(value: Array<string>): void;
+    setProposedValidatorsList(value: Array<string>): WalletProposal;
     addProposedValidators(value: string, index?: number): string;
-
     getProposedRequiredApprovalCount(): number;
-    setProposedRequiredApprovalCount(value: number): void;
-
+    setProposedRequiredApprovalCount(value: number): WalletProposal;
     getIsReviewed(): boolean;
-    setIsReviewed(value: boolean): void;
-
+    setIsReviewed(value: boolean): WalletProposal;
 
     serializeBinary(): Uint8Array;
     toObject(includeInstance?: boolean): WalletProposal.AsObject;
@@ -299,29 +247,21 @@ export namespace WalletProposal {
 
 export class WalletMember extends jspb.Message { 
     getAccountId(): string;
-    setAccountId(value: string): void;
-
+    setAccountId(value: string): WalletMember;
     getAccountType(): gincoinc_adamant_global_v1_adamantglobalv1_enum_pb.AccountType;
-    setAccountType(value: gincoinc_adamant_global_v1_adamantglobalv1_enum_pb.AccountType): void;
-
+    setAccountType(value: gincoinc_adamant_global_v1_adamantglobalv1_enum_pb.AccountType): WalletMember;
     getName(): string;
-    setName(value: string): void;
-
+    setName(value: string): WalletMember;
     getEmail(): string;
-    setEmail(value: string): void;
-
+    setEmail(value: string): WalletMember;
     getRole(): gincoinc_adamant_global_v1_adamantglobalv1_enum_pb.RoleType;
-    setRole(value: gincoinc_adamant_global_v1_adamantglobalv1_enum_pb.RoleType): void;
-
+    setRole(value: gincoinc_adamant_global_v1_adamantglobalv1_enum_pb.RoleType): WalletMember;
     getIsKeyRegistered(): boolean;
-    setIsKeyRegistered(value: boolean): void;
-
+    setIsKeyRegistered(value: boolean): WalletMember;
     getIsMaster(): boolean;
-    setIsMaster(value: boolean): void;
-
+    setIsMaster(value: boolean): WalletMember;
     getIsValidatedToCreateWallet(): boolean;
-    setIsValidatedToCreateWallet(value: boolean): void;
-
+    setIsValidatedToCreateWallet(value: boolean): WalletMember;
 
     serializeBinary(): Uint8Array;
     toObject(includeInstance?: boolean): WalletMember.AsObject;
@@ -348,20 +288,15 @@ export namespace WalletMember {
 
 export class Key extends jspb.Message { 
     getWalletId(): string;
-    setWalletId(value: string): void;
-
+    setWalletId(value: string): Key;
     getAccountId(): string;
-    setAccountId(value: string): void;
-
+    setAccountId(value: string): Key;
     getAccountType(): gincoinc_adamant_global_v1_adamantglobalv1_enum_pb.AccountType;
-    setAccountType(value: gincoinc_adamant_global_v1_adamantglobalv1_enum_pb.AccountType): void;
-
+    setAccountType(value: gincoinc_adamant_global_v1_adamantglobalv1_enum_pb.AccountType): Key;
     getKeyId(): string;
-    setKeyId(value: string): void;
-
+    setKeyId(value: string): Key;
     getKeyIndex(): number;
-    setKeyIndex(value: number): void;
-
+    setKeyIndex(value: number): Key;
 
     serializeBinary(): Uint8Array;
     toObject(includeInstance?: boolean): Key.AsObject;
@@ -385,47 +320,35 @@ export namespace Key {
 
 export class Address extends jspb.Message { 
     getWalletId(): string;
-    setWalletId(value: string): void;
-
+    setWalletId(value: string): Address;
     getAddressId(): string;
-    setAddressId(value: string): void;
-
+    setAddressId(value: string): Address;
     getCoin(): gincoinc_global_v1_gincoincglobalv1_enum_pb.Coin;
-    setCoin(value: gincoinc_global_v1_gincoincglobalv1_enum_pb.Coin): void;
-
+    setCoin(value: gincoinc_global_v1_gincoincglobalv1_enum_pb.Coin): Address;
     getAddress(): string;
-    setAddress(value: string): void;
-
+    setAddress(value: string): Address;
     getIndex(): number;
-    setIndex(value: number): void;
-
+    setIndex(value: number): Address;
     getHdChange(): number;
-    setHdChange(value: number): void;
-
+    setHdChange(value: number): Address;
     getBalance(): number;
-    setBalance(value: number): void;
-
+    setBalance(value: number): Address;
     getStringBalance(): string;
-    setStringBalance(value: string): void;
-
+    setStringBalance(value: string): Address;
     getState(): gincoinc_adamant_global_v1_adamantglobalv1_enum_pb.AddressState;
-    setState(value: gincoinc_adamant_global_v1_adamantglobalv1_enum_pb.AddressState): void;
-
+    setState(value: gincoinc_adamant_global_v1_adamantglobalv1_enum_pb.AddressState): Address;
     getAddressType(): gincoinc_global_v1_gincoincglobalv1_enum_pb.AddressType;
-    setAddressType(value: gincoinc_global_v1_gincoincglobalv1_enum_pb.AddressType): void;
-
+    setAddressType(value: gincoinc_global_v1_gincoincglobalv1_enum_pb.AddressType): Address;
 
     hasCreateTime(): boolean;
     clearCreateTime(): void;
     getCreateTime(): google_protobuf_timestamp_pb.Timestamp | undefined;
-    setCreateTime(value?: google_protobuf_timestamp_pb.Timestamp): void;
-
+    setCreateTime(value?: google_protobuf_timestamp_pb.Timestamp): Address;
 
     hasUpdateTime(): boolean;
     clearUpdateTime(): void;
     getUpdateTime(): google_protobuf_timestamp_pb.Timestamp | undefined;
-    setUpdateTime(value?: google_protobuf_timestamp_pb.Timestamp): void;
-
+    setUpdateTime(value?: google_protobuf_timestamp_pb.Timestamp): Address;
 
     serializeBinary(): Uint8Array;
     toObject(includeInstance?: boolean): Address.AsObject;
@@ -456,41 +379,31 @@ export namespace Address {
 
 export class AddressWithoutBalance extends jspb.Message { 
     getWalletId(): string;
-    setWalletId(value: string): void;
-
+    setWalletId(value: string): AddressWithoutBalance;
     getAddressId(): string;
-    setAddressId(value: string): void;
-
+    setAddressId(value: string): AddressWithoutBalance;
     getCoin(): gincoinc_global_v1_gincoincglobalv1_enum_pb.Coin;
-    setCoin(value: gincoinc_global_v1_gincoincglobalv1_enum_pb.Coin): void;
-
+    setCoin(value: gincoinc_global_v1_gincoincglobalv1_enum_pb.Coin): AddressWithoutBalance;
     getAddress(): string;
-    setAddress(value: string): void;
-
+    setAddress(value: string): AddressWithoutBalance;
     getIndex(): number;
-    setIndex(value: number): void;
-
+    setIndex(value: number): AddressWithoutBalance;
     getHdChange(): number;
-    setHdChange(value: number): void;
-
+    setHdChange(value: number): AddressWithoutBalance;
     getState(): gincoinc_adamant_global_v1_adamantglobalv1_enum_pb.AddressState;
-    setState(value: gincoinc_adamant_global_v1_adamantglobalv1_enum_pb.AddressState): void;
-
+    setState(value: gincoinc_adamant_global_v1_adamantglobalv1_enum_pb.AddressState): AddressWithoutBalance;
     getAddressType(): gincoinc_global_v1_gincoincglobalv1_enum_pb.AddressType;
-    setAddressType(value: gincoinc_global_v1_gincoincglobalv1_enum_pb.AddressType): void;
-
+    setAddressType(value: gincoinc_global_v1_gincoincglobalv1_enum_pb.AddressType): AddressWithoutBalance;
 
     hasCreateTime(): boolean;
     clearCreateTime(): void;
     getCreateTime(): google_protobuf_timestamp_pb.Timestamp | undefined;
-    setCreateTime(value?: google_protobuf_timestamp_pb.Timestamp): void;
-
+    setCreateTime(value?: google_protobuf_timestamp_pb.Timestamp): AddressWithoutBalance;
 
     hasUpdateTime(): boolean;
     clearUpdateTime(): void;
     getUpdateTime(): google_protobuf_timestamp_pb.Timestamp | undefined;
-    setUpdateTime(value?: google_protobuf_timestamp_pb.Timestamp): void;
-
+    setUpdateTime(value?: google_protobuf_timestamp_pb.Timestamp): AddressWithoutBalance;
 
     serializeBinary(): Uint8Array;
     toObject(includeInstance?: boolean): AddressWithoutBalance.AsObject;
@@ -519,32 +432,23 @@ export namespace AddressWithoutBalance {
 
 export class FlushedAddress extends jspb.Message { 
     getWalletId(): string;
-    setWalletId(value: string): void;
-
+    setWalletId(value: string): FlushedAddress;
     getAddressId(): string;
-    setAddressId(value: string): void;
-
+    setAddressId(value: string): FlushedAddress;
     getCoin(): gincoinc_global_v1_gincoincglobalv1_enum_pb.Coin;
-    setCoin(value: gincoinc_global_v1_gincoincglobalv1_enum_pb.Coin): void;
-
+    setCoin(value: gincoinc_global_v1_gincoincglobalv1_enum_pb.Coin): FlushedAddress;
     getAddress(): string;
-    setAddress(value: string): void;
-
+    setAddress(value: string): FlushedAddress;
     getIndex(): number;
-    setIndex(value: number): void;
-
+    setIndex(value: number): FlushedAddress;
     getValue(): number;
-    setValue(value: number): void;
-
+    setValue(value: number): FlushedAddress;
     getStringValue(): string;
-    setStringValue(value: string): void;
-
+    setStringValue(value: string): FlushedAddress;
     getState(): gincoinc_adamant_global_v1_adamantglobalv1_enum_pb.AddressState;
-    setState(value: gincoinc_adamant_global_v1_adamantglobalv1_enum_pb.AddressState): void;
-
+    setState(value: gincoinc_adamant_global_v1_adamantglobalv1_enum_pb.AddressState): FlushedAddress;
     getAddressType(): gincoinc_global_v1_gincoincglobalv1_enum_pb.AddressType;
-    setAddressType(value: gincoinc_global_v1_gincoincglobalv1_enum_pb.AddressType): void;
-
+    setAddressType(value: gincoinc_global_v1_gincoincglobalv1_enum_pb.AddressType): FlushedAddress;
 
     serializeBinary(): Uint8Array;
     toObject(includeInstance?: boolean): FlushedAddress.AsObject;
@@ -572,14 +476,11 @@ export namespace FlushedAddress {
 
 export class EthereumFeeAddress extends jspb.Message { 
     getAddress(): string;
-    setAddress(value: string): void;
-
+    setAddress(value: string): EthereumFeeAddress;
     getBalance(): number;
-    setBalance(value: number): void;
-
+    setBalance(value: number): EthereumFeeAddress;
     getStringBalance(): string;
-    setStringBalance(value: string): void;
-
+    setStringBalance(value: string): EthereumFeeAddress;
 
     serializeBinary(): Uint8Array;
     toObject(includeInstance?: boolean): EthereumFeeAddress.AsObject;
@@ -601,20 +502,15 @@ export namespace EthereumFeeAddress {
 
 export class AddressWithBalance extends jspb.Message { 
     getAddress(): string;
-    setAddress(value: string): void;
-
+    setAddress(value: string): AddressWithBalance;
     getBalance(): number;
-    setBalance(value: number): void;
-
+    setBalance(value: number): AddressWithBalance;
     getStringBalance(): string;
-    setStringBalance(value: string): void;
-
+    setStringBalance(value: string): AddressWithBalance;
     getFeeBalance(): number;
-    setFeeBalance(value: number): void;
-
+    setFeeBalance(value: number): AddressWithBalance;
     getStringFeeBalance(): string;
-    setStringFeeBalance(value: string): void;
-
+    setStringFeeBalance(value: string): AddressWithBalance;
 
     serializeBinary(): Uint8Array;
     toObject(includeInstance?: boolean): AddressWithBalance.AsObject;
@@ -638,105 +534,82 @@ export namespace AddressWithBalance {
 
 export class Transaction extends jspb.Message { 
     getWalletId(): string;
-    setWalletId(value: string): void;
-
+    setWalletId(value: string): Transaction;
     getTransactionId(): string;
-    setTransactionId(value: string): void;
-
+    setTransactionId(value: string): Transaction;
     getCoin(): gincoinc_global_v1_gincoincglobalv1_enum_pb.Coin;
-    setCoin(value: gincoinc_global_v1_gincoincglobalv1_enum_pb.Coin): void;
-
+    setCoin(value: gincoinc_global_v1_gincoincglobalv1_enum_pb.Coin): Transaction;
     getTxId(): string;
-    setTxId(value: string): void;
-
+    setTxId(value: string): Transaction;
     getAddress(): string;
-    setAddress(value: string): void;
-
+    setAddress(value: string): Transaction;
     getValue(): number;
-    setValue(value: number): void;
-
+    setValue(value: number): Transaction;
     getStringValue(): string;
-    setStringValue(value: string): void;
-
+    setStringValue(value: string): Transaction;
     getJpyRate(): number;
-    setJpyRate(value: number): void;
-
+    setJpyRate(value: number): Transaction;
     getFee(): number;
-    setFee(value: number): void;
-
+    setFee(value: number): Transaction;
     getStringFee(): string;
-    setStringFee(value: string): void;
-
+    setStringFee(value: string): Transaction;
     getFeeRate(): number;
-    setFeeRate(value: number): void;
-
+    setFeeRate(value: number): Transaction;
     getState(): gincoinc_adamant_global_v1_adamantglobalv1_enum_pb.TransactionState;
-    setState(value: gincoinc_adamant_global_v1_adamantglobalv1_enum_pb.TransactionState): void;
-
+    setState(value: gincoinc_adamant_global_v1_adamantglobalv1_enum_pb.TransactionState): Transaction;
     clearSignedKeysList(): void;
     getSignedKeysList(): Array<Key>;
-    setSignedKeysList(value: Array<Key>): void;
+    setSignedKeysList(value: Array<Key>): Transaction;
     addSignedKeys(value?: Key, index?: number): Key;
-
     clearMembersList(): void;
     getMembersList(): Array<TransactionMember>;
-    setMembersList(value: Array<TransactionMember>): void;
+    setMembersList(value: Array<TransactionMember>): Transaction;
     addMembers(value?: TransactionMember, index?: number): TransactionMember;
-
 
     hasBitcoinSpecific(): boolean;
     clearBitcoinSpecific(): void;
     getBitcoinSpecific(): BitcoinSpecific | undefined;
-    setBitcoinSpecific(value?: BitcoinSpecific): void;
-
+    setBitcoinSpecific(value?: BitcoinSpecific): Transaction;
 
     hasEthereumSpecific(): boolean;
     clearEthereumSpecific(): void;
     getEthereumSpecific(): EthereumSpecific | undefined;
-    setEthereumSpecific(value?: EthereumSpecific): void;
-
+    setEthereumSpecific(value?: EthereumSpecific): Transaction;
 
     hasLitecoinSpecific(): boolean;
     clearLitecoinSpecific(): void;
     getLitecoinSpecific(): LitecoinSpecific | undefined;
-    setLitecoinSpecific(value?: LitecoinSpecific): void;
-
+    setLitecoinSpecific(value?: LitecoinSpecific): Transaction;
 
     hasBitcoincashSpecific(): boolean;
     clearBitcoincashSpecific(): void;
     getBitcoincashSpecific(): BitcoincashSpecific | undefined;
-    setBitcoincashSpecific(value?: BitcoincashSpecific): void;
-
+    setBitcoincashSpecific(value?: BitcoincashSpecific): Transaction;
 
     hasXrpSpecific(): boolean;
     clearXrpSpecific(): void;
     getXrpSpecific(): XrpSpecific | undefined;
-    setXrpSpecific(value?: XrpSpecific): void;
-
+    setXrpSpecific(value?: XrpSpecific): Transaction;
 
     hasTronSpecific(): boolean;
     clearTronSpecific(): void;
     getTronSpecific(): TronSpecific | undefined;
-    setTronSpecific(value?: TronSpecific): void;
-
+    setTronSpecific(value?: TronSpecific): Transaction;
 
     hasC0banSpecific(): boolean;
     clearC0banSpecific(): void;
     getC0banSpecific(): C0banSpecific | undefined;
-    setC0banSpecific(value?: C0banSpecific): void;
-
+    setC0banSpecific(value?: C0banSpecific): Transaction;
 
     hasCreateTime(): boolean;
     clearCreateTime(): void;
     getCreateTime(): google_protobuf_timestamp_pb.Timestamp | undefined;
-    setCreateTime(value?: google_protobuf_timestamp_pb.Timestamp): void;
-
+    setCreateTime(value?: google_protobuf_timestamp_pb.Timestamp): Transaction;
 
     hasUpdateTime(): boolean;
     clearUpdateTime(): void;
     getUpdateTime(): google_protobuf_timestamp_pb.Timestamp | undefined;
-    setUpdateTime(value?: google_protobuf_timestamp_pb.Timestamp): void;
-
+    setUpdateTime(value?: google_protobuf_timestamp_pb.Timestamp): Transaction;
 
     serializeBinary(): Uint8Array;
     toObject(includeInstance?: boolean): Transaction.AsObject;
@@ -778,26 +651,19 @@ export namespace Transaction {
 
 export class TransactionMember extends jspb.Message { 
     getAccountId(): string;
-    setAccountId(value: string): void;
-
+    setAccountId(value: string): TransactionMember;
     getAccountType(): gincoinc_adamant_global_v1_adamantglobalv1_enum_pb.AccountType;
-    setAccountType(value: gincoinc_adamant_global_v1_adamantglobalv1_enum_pb.AccountType): void;
-
+    setAccountType(value: gincoinc_adamant_global_v1_adamantglobalv1_enum_pb.AccountType): TransactionMember;
     getName(): string;
-    setName(value: string): void;
-
+    setName(value: string): TransactionMember;
     getEmail(): string;
-    setEmail(value: string): void;
-
+    setEmail(value: string): TransactionMember;
     getRole(): gincoinc_adamant_global_v1_adamantglobalv1_enum_pb.RoleType;
-    setRole(value: gincoinc_adamant_global_v1_adamantglobalv1_enum_pb.RoleType): void;
-
+    setRole(value: gincoinc_adamant_global_v1_adamantglobalv1_enum_pb.RoleType): TransactionMember;
     getSigned(): boolean;
-    setSigned(value: boolean): void;
-
+    setSigned(value: boolean): TransactionMember;
     getValidated(): boolean;
-    setValidated(value: boolean): void;
-
+    setValidated(value: boolean): TransactionMember;
 
     serializeBinary(): Uint8Array;
     toObject(includeInstance?: boolean): TransactionMember.AsObject;
@@ -823,17 +689,13 @@ export namespace TransactionMember {
 
 export class TxInput extends jspb.Message { 
     getTxId(): string;
-    setTxId(value: string): void;
-
+    setTxId(value: string): TxInput;
     getTxIndex(): number;
-    setTxIndex(value: number): void;
-
+    setTxIndex(value: number): TxInput;
     getValue(): number;
-    setValue(value: number): void;
-
+    setValue(value: number): TxInput;
     getStringValue(): string;
-    setStringValue(value: string): void;
-
+    setStringValue(value: string): TxInput;
 
     serializeBinary(): Uint8Array;
     toObject(includeInstance?: boolean): TxInput.AsObject;
@@ -856,17 +718,13 @@ export namespace TxInput {
 
 export class TxOutput extends jspb.Message { 
     getAddress(): string;
-    setAddress(value: string): void;
-
+    setAddress(value: string): TxOutput;
     getValue(): number;
-    setValue(value: number): void;
-
+    setValue(value: number): TxOutput;
     getStringValue(): string;
-    setStringValue(value: string): void;
-
+    setStringValue(value: string): TxOutput;
     getIsChange(): boolean;
-    setIsChange(value: boolean): void;
-
+    setIsChange(value: boolean): TxOutput;
 
     serializeBinary(): Uint8Array;
     toObject(includeInstance?: boolean): TxOutput.AsObject;
@@ -890,14 +748,12 @@ export namespace TxOutput {
 export class BitcoinSpecific extends jspb.Message { 
     clearTxInputsList(): void;
     getTxInputsList(): Array<TxInput>;
-    setTxInputsList(value: Array<TxInput>): void;
+    setTxInputsList(value: Array<TxInput>): BitcoinSpecific;
     addTxInputs(value?: TxInput, index?: number): TxInput;
-
     clearTxOutputsList(): void;
     getTxOutputsList(): Array<TxOutput>;
-    setTxOutputsList(value: Array<TxOutput>): void;
+    setTxOutputsList(value: Array<TxOutput>): BitcoinSpecific;
     addTxOutputs(value?: TxOutput, index?: number): TxOutput;
-
 
     serializeBinary(): Uint8Array;
     toObject(includeInstance?: boolean): BitcoinSpecific.AsObject;
@@ -919,14 +775,12 @@ export namespace BitcoinSpecific {
 export class LitecoinSpecific extends jspb.Message { 
     clearTxInputsList(): void;
     getTxInputsList(): Array<TxInput>;
-    setTxInputsList(value: Array<TxInput>): void;
+    setTxInputsList(value: Array<TxInput>): LitecoinSpecific;
     addTxInputs(value?: TxInput, index?: number): TxInput;
-
     clearTxOutputsList(): void;
     getTxOutputsList(): Array<TxOutput>;
-    setTxOutputsList(value: Array<TxOutput>): void;
+    setTxOutputsList(value: Array<TxOutput>): LitecoinSpecific;
     addTxOutputs(value?: TxOutput, index?: number): TxOutput;
-
 
     serializeBinary(): Uint8Array;
     toObject(includeInstance?: boolean): LitecoinSpecific.AsObject;
@@ -948,14 +802,12 @@ export namespace LitecoinSpecific {
 export class BitcoincashSpecific extends jspb.Message { 
     clearTxInputsList(): void;
     getTxInputsList(): Array<TxInput>;
-    setTxInputsList(value: Array<TxInput>): void;
+    setTxInputsList(value: Array<TxInput>): BitcoincashSpecific;
     addTxInputs(value?: TxInput, index?: number): TxInput;
-
     clearTxOutputsList(): void;
     getTxOutputsList(): Array<TxOutput>;
-    setTxOutputsList(value: Array<TxOutput>): void;
+    setTxOutputsList(value: Array<TxOutput>): BitcoincashSpecific;
     addTxOutputs(value?: TxOutput, index?: number): TxOutput;
-
 
     serializeBinary(): Uint8Array;
     toObject(includeInstance?: boolean): BitcoincashSpecific.AsObject;
@@ -976,14 +828,11 @@ export namespace BitcoincashSpecific {
 
 export class EthereumSpecific extends jspb.Message { 
     getGasLimit(): number;
-    setGasLimit(value: number): void;
-
+    setGasLimit(value: number): EthereumSpecific;
     getNonce(): number;
-    setNonce(value: number): void;
-
+    setNonce(value: number): EthereumSpecific;
     getIsNextNonce(): boolean;
-    setIsNextNonce(value: boolean): void;
-
+    setIsNextNonce(value: boolean): EthereumSpecific;
 
     serializeBinary(): Uint8Array;
     toObject(includeInstance?: boolean): EthereumSpecific.AsObject;
@@ -1005,17 +854,13 @@ export namespace EthereumSpecific {
 
 export class XrpSpecific extends jspb.Message { 
     getSequenceNumber(): number;
-    setSequenceNumber(value: number): void;
-
+    setSequenceNumber(value: number): XrpSpecific;
     getDestinationTag(): number;
-    setDestinationTag(value: number): void;
-
+    setDestinationTag(value: number): XrpSpecific;
     getTxType(): gincoinc_global_v1_gincoincglobalv1_enum_pb.XRPTransactionType;
-    setTxType(value: gincoinc_global_v1_gincoincglobalv1_enum_pb.XRPTransactionType): void;
-
+    setTxType(value: gincoinc_global_v1_gincoincglobalv1_enum_pb.XRPTransactionType): XrpSpecific;
     getIsNextSequenceNumber(): boolean;
-    setIsNextSequenceNumber(value: boolean): void;
-
+    setIsNextSequenceNumber(value: boolean): XrpSpecific;
 
     serializeBinary(): Uint8Array;
     toObject(includeInstance?: boolean): XrpSpecific.AsObject;
@@ -1038,8 +883,7 @@ export namespace XrpSpecific {
 
 export class TronSpecific extends jspb.Message { 
     getExpiration(): number;
-    setExpiration(value: number): void;
-
+    setExpiration(value: number): TronSpecific;
 
     serializeBinary(): Uint8Array;
     toObject(includeInstance?: boolean): TronSpecific.AsObject;
@@ -1060,14 +904,12 @@ export namespace TronSpecific {
 export class C0banSpecific extends jspb.Message { 
     clearTxInputsList(): void;
     getTxInputsList(): Array<TxInput>;
-    setTxInputsList(value: Array<TxInput>): void;
+    setTxInputsList(value: Array<TxInput>): C0banSpecific;
     addTxInputs(value?: TxInput, index?: number): TxInput;
-
     clearTxOutputsList(): void;
     getTxOutputsList(): Array<TxOutput>;
-    setTxOutputsList(value: Array<TxOutput>): void;
+    setTxOutputsList(value: Array<TxOutput>): C0banSpecific;
     addTxOutputs(value?: TxOutput, index?: number): TxOutput;
-
 
     serializeBinary(): Uint8Array;
     toObject(includeInstance?: boolean): C0banSpecific.AsObject;
@@ -1088,40 +930,29 @@ export namespace C0banSpecific {
 
 export class SignInfo extends jspb.Message { 
     getWalletId(): string;
-    setWalletId(value: string): void;
-
+    setWalletId(value: string): SignInfo;
     getTransactionId(): string;
-    setTransactionId(value: string): void;
-
+    setTransactionId(value: string): SignInfo;
     getKeyId(): string;
-    setKeyId(value: string): void;
-
+    setKeyId(value: string): SignInfo;
     getHdAccount(): number;
-    setHdAccount(value: number): void;
-
+    setHdAccount(value: number): SignInfo;
     getCoin(): gincoinc_global_v1_gincoincglobalv1_enum_pb.Coin;
-    setCoin(value: gincoinc_global_v1_gincoincglobalv1_enum_pb.Coin): void;
-
+    setCoin(value: gincoinc_global_v1_gincoincglobalv1_enum_pb.Coin): SignInfo;
     getTxId(): string;
-    setTxId(value: string): void;
-
+    setTxId(value: string): SignInfo;
     getSignIndex(): number;
-    setSignIndex(value: number): void;
-
+    setSignIndex(value: number): SignInfo;
     getSignMessage(): string;
-    setSignMessage(value: string): void;
-
+    setSignMessage(value: string): SignInfo;
     getHdChange(): number;
-    setHdChange(value: number): void;
-
+    setHdChange(value: number): SignInfo;
     getHdIndex(): number;
-    setHdIndex(value: number): void;
-
+    setHdIndex(value: number): SignInfo;
     clearSignTxInputsList(): void;
     getSignTxInputsList(): Array<SignTxInput>;
-    setSignTxInputsList(value: Array<SignTxInput>): void;
+    setSignTxInputsList(value: Array<SignTxInput>): SignInfo;
     addSignTxInputs(value?: SignTxInput, index?: number): SignTxInput;
-
 
     serializeBinary(): Uint8Array;
     toObject(includeInstance?: boolean): SignInfo.AsObject;
@@ -1151,17 +982,13 @@ export namespace SignInfo {
 
 export class SignTxInput extends jspb.Message { 
     getTxInputIndex(): number;
-    setTxInputIndex(value: number): void;
-
+    setTxInputIndex(value: number): SignTxInput;
     getSignMessage(): string;
-    setSignMessage(value: string): void;
-
+    setSignMessage(value: string): SignTxInput;
     getHdChange(): number;
-    setHdChange(value: number): void;
-
+    setHdChange(value: number): SignTxInput;
     getHdIndex(): number;
-    setHdIndex(value: number): void;
-
+    setHdIndex(value: number): SignTxInput;
 
     serializeBinary(): Uint8Array;
     toObject(includeInstance?: boolean): SignTxInput.AsObject;
@@ -1184,56 +1011,41 @@ export namespace SignTxInput {
 
 export class Transfer extends jspb.Message { 
     getWalletId(): string;
-    setWalletId(value: string): void;
-
+    setWalletId(value: string): Transfer;
     getTransferId(): string;
-    setTransferId(value: string): void;
-
+    setTransferId(value: string): Transfer;
     getCoin(): gincoinc_global_v1_gincoincglobalv1_enum_pb.Coin;
-    setCoin(value: gincoinc_global_v1_gincoincglobalv1_enum_pb.Coin): void;
-
+    setCoin(value: gincoinc_global_v1_gincoincglobalv1_enum_pb.Coin): Transfer;
     getTxId(): string;
-    setTxId(value: string): void;
-
+    setTxId(value: string): Transfer;
     getTransferType(): gincoinc_global_v1_gincoincglobalv1_enum_pb.TransferType;
-    setTransferType(value: gincoinc_global_v1_gincoincglobalv1_enum_pb.TransferType): void;
-
+    setTransferType(value: gincoinc_global_v1_gincoincglobalv1_enum_pb.TransferType): Transfer;
     getValue(): number;
-    setValue(value: number): void;
-
+    setValue(value: number): Transfer;
     getStringValue(): string;
-    setStringValue(value: string): void;
-
+    setStringValue(value: string): Transfer;
     getJpyRate(): number;
-    setJpyRate(value: number): void;
-
+    setJpyRate(value: number): Transfer;
     getPartnerWalletId(): string;
-    setPartnerWalletId(value: string): void;
-
+    setPartnerWalletId(value: string): Transfer;
     getPartnerAddress(): string;
-    setPartnerAddress(value: string): void;
-
+    setPartnerAddress(value: string): Transfer;
     getDestinationTag(): number;
-    setDestinationTag(value: number): void;
-
+    setDestinationTag(value: number): Transfer;
     getState(): gincoinc_global_v1_gincoincglobalv1_enum_pb.TransactionState;
-    setState(value: gincoinc_global_v1_gincoincglobalv1_enum_pb.TransactionState): void;
-
+    setState(value: gincoinc_global_v1_gincoincglobalv1_enum_pb.TransactionState): Transfer;
     getResult(): gincoinc_global_v1_gincoincglobalv1_enum_pb.TransactionResult;
-    setResult(value: gincoinc_global_v1_gincoincglobalv1_enum_pb.TransactionResult): void;
-
+    setResult(value: gincoinc_global_v1_gincoincglobalv1_enum_pb.TransactionResult): Transfer;
 
     hasCreateTime(): boolean;
     clearCreateTime(): void;
     getCreateTime(): google_protobuf_timestamp_pb.Timestamp | undefined;
-    setCreateTime(value?: google_protobuf_timestamp_pb.Timestamp): void;
-
+    setCreateTime(value?: google_protobuf_timestamp_pb.Timestamp): Transfer;
 
     hasUpdateTime(): boolean;
     clearUpdateTime(): void;
     getUpdateTime(): google_protobuf_timestamp_pb.Timestamp | undefined;
-    setUpdateTime(value?: google_protobuf_timestamp_pb.Timestamp): void;
-
+    setUpdateTime(value?: google_protobuf_timestamp_pb.Timestamp): Transfer;
 
     serializeBinary(): Uint8Array;
     toObject(includeInstance?: boolean): Transfer.AsObject;
@@ -1267,11 +1079,9 @@ export namespace Transfer {
 
 export class Rate extends jspb.Message { 
     getCoin(): gincoinc_global_v1_gincoincglobalv1_enum_pb.Coin;
-    setCoin(value: gincoinc_global_v1_gincoincglobalv1_enum_pb.Coin): void;
-
+    setCoin(value: gincoinc_global_v1_gincoincglobalv1_enum_pb.Coin): Rate;
     getJpy(): number;
-    setJpy(value: number): void;
-
+    setJpy(value: number): Rate;
 
     serializeBinary(): Uint8Array;
     toObject(includeInstance?: boolean): Rate.AsObject;
@@ -1292,12 +1102,10 @@ export namespace Rate {
 
 export class RateSnapshot extends jspb.Message { 
     getRateSnapshotId(): string;
-    setRateSnapshotId(value: string): void;
-
+    setRateSnapshotId(value: string): RateSnapshot;
 
     getRatesMap(): jspb.Map<number, Rate>;
     clearRatesMap(): void;
-
 
     serializeBinary(): Uint8Array;
     toObject(includeInstance?: boolean): RateSnapshot.AsObject;
@@ -1319,11 +1127,9 @@ export namespace RateSnapshot {
 
 export class Deactivatability extends jspb.Message { 
     getAccountId(): string;
-    setAccountId(value: string): void;
-
+    setAccountId(value: string): Deactivatability;
     getDeactivatable(): boolean;
-    setDeactivatable(value: boolean): void;
-
+    setDeactivatable(value: boolean): Deactivatability;
 
     serializeBinary(): Uint8Array;
     toObject(includeInstance?: boolean): Deactivatability.AsObject;
@@ -1344,35 +1150,28 @@ export namespace Deactivatability {
 
 export class LabeledAddress extends jspb.Message { 
     getLabeledAddressId(): string;
-    setLabeledAddressId(value: string): void;
-
+    setLabeledAddressId(value: string): LabeledAddress;
     getName(): string;
-    setName(value: string): void;
-
+    setName(value: string): LabeledAddress;
     getCoin(): gincoinc_global_v1_gincoincglobalv1_enum_pb.Coin;
-    setCoin(value: gincoinc_global_v1_gincoincglobalv1_enum_pb.Coin): void;
-
+    setCoin(value: gincoinc_global_v1_gincoincglobalv1_enum_pb.Coin): LabeledAddress;
     getAddress(): string;
-    setAddress(value: string): void;
-
+    setAddress(value: string): LabeledAddress;
 
     hasProposal(): boolean;
     clearProposal(): void;
     getProposal(): LabeledAddressProposal | undefined;
-    setProposal(value?: LabeledAddressProposal): void;
-
+    setProposal(value?: LabeledAddressProposal): LabeledAddress;
 
     hasCreateTime(): boolean;
     clearCreateTime(): void;
     getCreateTime(): google_protobuf_timestamp_pb.Timestamp | undefined;
-    setCreateTime(value?: google_protobuf_timestamp_pb.Timestamp): void;
-
+    setCreateTime(value?: google_protobuf_timestamp_pb.Timestamp): LabeledAddress;
 
     hasUpdateTime(): boolean;
     clearUpdateTime(): void;
     getUpdateTime(): google_protobuf_timestamp_pb.Timestamp | undefined;
-    setUpdateTime(value?: google_protobuf_timestamp_pb.Timestamp): void;
-
+    setUpdateTime(value?: google_protobuf_timestamp_pb.Timestamp): LabeledAddress;
 
     serializeBinary(): Uint8Array;
     toObject(includeInstance?: boolean): LabeledAddress.AsObject;
@@ -1398,23 +1197,17 @@ export namespace LabeledAddress {
 
 export class LabeledAddressProposal extends jspb.Message { 
     getRequesterAccountId(): string;
-    setRequesterAccountId(value: string): void;
-
+    setRequesterAccountId(value: string): LabeledAddressProposal;
     getRequesterName(): string;
-    setRequesterName(value: string): void;
-
+    setRequesterName(value: string): LabeledAddressProposal;
     getApproverAccountId(): string;
-    setApproverAccountId(value: string): void;
-
+    setApproverAccountId(value: string): LabeledAddressProposal;
     getApproverName(): string;
-    setApproverName(value: string): void;
-
+    setApproverName(value: string): LabeledAddressProposal;
     getProposedAddress(): string;
-    setProposedAddress(value: string): void;
-
+    setProposedAddress(value: string): LabeledAddressProposal;
     getAddressIsReviewed(): boolean;
-    setAddressIsReviewed(value: boolean): void;
-
+    setAddressIsReviewed(value: boolean): LabeledAddressProposal;
 
     serializeBinary(): Uint8Array;
     toObject(includeInstance?: boolean): LabeledAddressProposal.AsObject;
@@ -1439,31 +1232,25 @@ export namespace LabeledAddressProposal {
 
 export class Whitelist extends jspb.Message { 
     getWhitelistId(): string;
-    setWhitelistId(value: string): void;
-
+    setWhitelistId(value: string): Whitelist;
     getName(): string;
-    setName(value: string): void;
-
+    setName(value: string): Whitelist;
     getCoin(): gincoinc_global_v1_gincoincglobalv1_enum_pb.Coin;
-    setCoin(value: gincoinc_global_v1_gincoincglobalv1_enum_pb.Coin): void;
-
+    setCoin(value: gincoinc_global_v1_gincoincglobalv1_enum_pb.Coin): Whitelist;
     clearAddressesList(): void;
     getAddressesList(): Array<LabeledAddress>;
-    setAddressesList(value: Array<LabeledAddress>): void;
+    setAddressesList(value: Array<LabeledAddress>): Whitelist;
     addAddresses(value?: LabeledAddress, index?: number): LabeledAddress;
-
 
     hasCreateTime(): boolean;
     clearCreateTime(): void;
     getCreateTime(): google_protobuf_timestamp_pb.Timestamp | undefined;
-    setCreateTime(value?: google_protobuf_timestamp_pb.Timestamp): void;
-
+    setCreateTime(value?: google_protobuf_timestamp_pb.Timestamp): Whitelist;
 
     hasUpdateTime(): boolean;
     clearUpdateTime(): void;
     getUpdateTime(): google_protobuf_timestamp_pb.Timestamp | undefined;
-    setUpdateTime(value?: google_protobuf_timestamp_pb.Timestamp): void;
-
+    setUpdateTime(value?: google_protobuf_timestamp_pb.Timestamp): Whitelist;
 
     serializeBinary(): Uint8Array;
     toObject(includeInstance?: boolean): Whitelist.AsObject;
@@ -1488,44 +1275,34 @@ export namespace Whitelist {
 
 export class TransferLimit extends jspb.Message { 
     getTransferLimitId(): string;
-    setTransferLimitId(value: string): void;
-
+    setTransferLimitId(value: string): TransferLimit;
     getName(): string;
-    setName(value: string): void;
-
+    setName(value: string): TransferLimit;
     getCoin(): gincoinc_global_v1_gincoincglobalv1_enum_pb.Coin;
-    setCoin(value: gincoinc_global_v1_gincoincglobalv1_enum_pb.Coin): void;
-
+    setCoin(value: gincoinc_global_v1_gincoincglobalv1_enum_pb.Coin): TransferLimit;
     getHourlyLimit(): number;
-    setHourlyLimit(value: number): void;
-
+    setHourlyLimit(value: number): TransferLimit;
     getDailyLimit(): number;
-    setDailyLimit(value: number): void;
-
+    setDailyLimit(value: number): TransferLimit;
     getOneTimeLimit(): number;
-    setOneTimeLimit(value: number): void;
-
+    setOneTimeLimit(value: number): TransferLimit;
 
     hasProposal(): boolean;
     clearProposal(): void;
     getProposal(): TransferLimitProposal | undefined;
-    setProposal(value?: TransferLimitProposal): void;
-
+    setProposal(value?: TransferLimitProposal): TransferLimit;
     getIsReviewed(): boolean;
-    setIsReviewed(value: boolean): void;
-
+    setIsReviewed(value: boolean): TransferLimit;
 
     hasCreateTime(): boolean;
     clearCreateTime(): void;
     getCreateTime(): google_protobuf_timestamp_pb.Timestamp | undefined;
-    setCreateTime(value?: google_protobuf_timestamp_pb.Timestamp): void;
-
+    setCreateTime(value?: google_protobuf_timestamp_pb.Timestamp): TransferLimit;
 
     hasUpdateTime(): boolean;
     clearUpdateTime(): void;
     getUpdateTime(): google_protobuf_timestamp_pb.Timestamp | undefined;
-    setUpdateTime(value?: google_protobuf_timestamp_pb.Timestamp): void;
-
+    setUpdateTime(value?: google_protobuf_timestamp_pb.Timestamp): TransferLimit;
 
     serializeBinary(): Uint8Array;
     toObject(includeInstance?: boolean): TransferLimit.AsObject;
@@ -1554,29 +1331,21 @@ export namespace TransferLimit {
 
 export class TransferLimitProposal extends jspb.Message { 
     getRequesterAccountId(): string;
-    setRequesterAccountId(value: string): void;
-
+    setRequesterAccountId(value: string): TransferLimitProposal;
     getRequesterName(): string;
-    setRequesterName(value: string): void;
-
+    setRequesterName(value: string): TransferLimitProposal;
     getApproverAccountId(): string;
-    setApproverAccountId(value: string): void;
-
+    setApproverAccountId(value: string): TransferLimitProposal;
     getApproverName(): string;
-    setApproverName(value: string): void;
-
+    setApproverName(value: string): TransferLimitProposal;
     getProposedHourlyLimit(): number;
-    setProposedHourlyLimit(value: number): void;
-
+    setProposedHourlyLimit(value: number): TransferLimitProposal;
     getProposedDailyLimit(): number;
-    setProposedDailyLimit(value: number): void;
-
+    setProposedDailyLimit(value: number): TransferLimitProposal;
     getProposedOneTimeLimit(): number;
-    setProposedOneTimeLimit(value: number): void;
-
+    setProposedOneTimeLimit(value: number): TransferLimitProposal;
     getIsReviewed(): boolean;
-    setIsReviewed(value: boolean): void;
-
+    setIsReviewed(value: boolean): TransferLimitProposal;
 
     serializeBinary(): Uint8Array;
     toObject(includeInstance?: boolean): TransferLimitProposal.AsObject;
@@ -1603,50 +1372,40 @@ export namespace TransferLimitProposal {
 
 export class Policy extends jspb.Message { 
     getPolicyId(): string;
-    setPolicyId(value: string): void;
-
+    setPolicyId(value: string): Policy;
     getPolicyType(): gincoinc_adamant_global_v1_adamantglobalv1_enum_pb.PolicyType;
-    setPolicyType(value: gincoinc_adamant_global_v1_adamantglobalv1_enum_pb.PolicyType): void;
-
+    setPolicyType(value: gincoinc_adamant_global_v1_adamantglobalv1_enum_pb.PolicyType): Policy;
     getName(): string;
-    setName(value: string): void;
-
+    setName(value: string): Policy;
     getIsBasePolicy(): boolean;
-    setIsBasePolicy(value: boolean): void;
-
+    setIsBasePolicy(value: boolean): Policy;
     getCoin(): gincoinc_global_v1_gincoincglobalv1_enum_pb.Coin;
-    setCoin(value: gincoinc_global_v1_gincoincglobalv1_enum_pb.Coin): void;
-
+    setCoin(value: gincoinc_global_v1_gincoincglobalv1_enum_pb.Coin): Policy;
 
     hasWhitelist(): boolean;
     clearWhitelist(): void;
     getWhitelist(): Whitelist | undefined;
-    setWhitelist(value?: Whitelist): void;
-
+    setWhitelist(value?: Whitelist): Policy;
 
     hasTransferLimit(): boolean;
     clearTransferLimit(): void;
     getTransferLimit(): TransferLimit | undefined;
-    setTransferLimit(value?: TransferLimit): void;
-
+    setTransferLimit(value?: TransferLimit): Policy;
 
     hasProposal(): boolean;
     clearProposal(): void;
     getProposal(): PolicyProposal | undefined;
-    setProposal(value?: PolicyProposal): void;
-
+    setProposal(value?: PolicyProposal): Policy;
 
     hasCreateTime(): boolean;
     clearCreateTime(): void;
     getCreateTime(): google_protobuf_timestamp_pb.Timestamp | undefined;
-    setCreateTime(value?: google_protobuf_timestamp_pb.Timestamp): void;
-
+    setCreateTime(value?: google_protobuf_timestamp_pb.Timestamp): Policy;
 
     hasUpdateTime(): boolean;
     clearUpdateTime(): void;
     getUpdateTime(): google_protobuf_timestamp_pb.Timestamp | undefined;
-    setUpdateTime(value?: google_protobuf_timestamp_pb.Timestamp): void;
-
+    setUpdateTime(value?: google_protobuf_timestamp_pb.Timestamp): Policy;
 
     serializeBinary(): Uint8Array;
     toObject(includeInstance?: boolean): Policy.AsObject;
@@ -1675,26 +1434,20 @@ export namespace Policy {
 
 export class PolicyProposal extends jspb.Message { 
     getRequesterAccountId(): string;
-    setRequesterAccountId(value: string): void;
-
+    setRequesterAccountId(value: string): PolicyProposal;
     getRequesterName(): string;
-    setRequesterName(value: string): void;
-
+    setRequesterName(value: string): PolicyProposal;
     getApproverAccountId(): string;
-    setApproverAccountId(value: string): void;
-
+    setApproverAccountId(value: string): PolicyProposal;
     getApproverName(): string;
-    setApproverName(value: string): void;
-
+    setApproverName(value: string): PolicyProposal;
 
     hasProposedWhitelist(): boolean;
     clearProposedWhitelist(): void;
     getProposedWhitelist(): Whitelist | undefined;
-    setProposedWhitelist(value?: Whitelist): void;
-
+    setProposedWhitelist(value?: Whitelist): PolicyProposal;
     getIsReviewed(): boolean;
-    setIsReviewed(value: boolean): void;
-
+    setIsReviewed(value: boolean): PolicyProposal;
 
     serializeBinary(): Uint8Array;
     toObject(includeInstance?: boolean): PolicyProposal.AsObject;
@@ -1719,14 +1472,11 @@ export namespace PolicyProposal {
 
 export class TotalBalanceByCoin extends jspb.Message { 
     getCoin(): gincoinc_global_v1_gincoincglobalv1_enum_pb.Coin;
-    setCoin(value: gincoinc_global_v1_gincoincglobalv1_enum_pb.Coin): void;
-
+    setCoin(value: gincoinc_global_v1_gincoincglobalv1_enum_pb.Coin): TotalBalanceByCoin;
     getColdStringBalance(): string;
-    setColdStringBalance(value: string): void;
-
+    setColdStringBalance(value: string): TotalBalanceByCoin;
     getHotStringBalance(): string;
-    setHotStringBalance(value: string): void;
-
+    setHotStringBalance(value: string): TotalBalanceByCoin;
 
     serializeBinary(): Uint8Array;
     toObject(includeInstance?: boolean): TotalBalanceByCoin.AsObject;
@@ -1751,7 +1501,6 @@ export class TotalBalance extends jspb.Message {
     getTotalBalancesMap(): jspb.Map<number, TotalBalanceByCoin>;
     clearTotalBalancesMap(): void;
 
-
     serializeBinary(): Uint8Array;
     toObject(includeInstance?: boolean): TotalBalance.AsObject;
     static toObject(includeInstance: boolean, msg: TotalBalance): TotalBalance.AsObject;
@@ -1774,16 +1523,13 @@ export class BalanceSnapshot extends jspb.Message {
     hasCreateTime(): boolean;
     clearCreateTime(): void;
     getCreateTime(): google_protobuf_timestamp_pb.Timestamp | undefined;
-    setCreateTime(value?: google_protobuf_timestamp_pb.Timestamp): void;
-
+    setCreateTime(value?: google_protobuf_timestamp_pb.Timestamp): BalanceSnapshot;
 
     getTotalBalancesMap(): jspb.Map<number, TotalBalanceByCoin>;
     clearTotalBalancesMap(): void;
 
-
     getRatesMap(): jspb.Map<number, Rate>;
     clearRatesMap(): void;
-
 
     serializeBinary(): Uint8Array;
     toObject(includeInstance?: boolean): BalanceSnapshot.AsObject;
@@ -1810,7 +1556,6 @@ export class WalletBalanceSnapshotMap extends jspb.Message {
     getWalletBalanceSnapshotMapMap(): jspb.Map<string, ListWalletBalanceSnapshots>;
     clearWalletBalanceSnapshotMapMap(): void;
 
-
     serializeBinary(): Uint8Array;
     toObject(includeInstance?: boolean): WalletBalanceSnapshotMap.AsObject;
     static toObject(includeInstance: boolean, msg: WalletBalanceSnapshotMap): WalletBalanceSnapshotMap.AsObject;
@@ -1831,9 +1576,8 @@ export namespace WalletBalanceSnapshotMap {
 export class ListWalletBalanceSnapshots extends jspb.Message { 
     clearWalletBalanceSnapshotsList(): void;
     getWalletBalanceSnapshotsList(): Array<WalletBalanceSnapshot>;
-    setWalletBalanceSnapshotsList(value: Array<WalletBalanceSnapshot>): void;
+    setWalletBalanceSnapshotsList(value: Array<WalletBalanceSnapshot>): ListWalletBalanceSnapshots;
     addWalletBalanceSnapshots(value?: WalletBalanceSnapshot, index?: number): WalletBalanceSnapshot;
-
 
     serializeBinary(): Uint8Array;
     toObject(includeInstance?: boolean): ListWalletBalanceSnapshots.AsObject;
@@ -1856,14 +1600,11 @@ export class WalletBalanceSnapshot extends jspb.Message {
     hasCreateTime(): boolean;
     clearCreateTime(): void;
     getCreateTime(): google_protobuf_timestamp_pb.Timestamp | undefined;
-    setCreateTime(value?: google_protobuf_timestamp_pb.Timestamp): void;
-
+    setCreateTime(value?: google_protobuf_timestamp_pb.Timestamp): WalletBalanceSnapshot;
     getStringBalance(): string;
-    setStringBalance(value: string): void;
-
+    setStringBalance(value: string): WalletBalanceSnapshot;
     getJpy(): number;
-    setJpy(value: number): void;
-
+    setJpy(value: number): WalletBalanceSnapshot;
 
     serializeBinary(): Uint8Array;
     toObject(includeInstance?: boolean): WalletBalanceSnapshot.AsObject;
@@ -1888,7 +1629,6 @@ export class TransferVolumeSnapshots extends jspb.Message {
     getTransferVolumeSnapshotByTransferTypeMap(): jspb.Map<number, ListTransferVolumeSnapshots>;
     clearTransferVolumeSnapshotByTransferTypeMap(): void;
 
-
     serializeBinary(): Uint8Array;
     toObject(includeInstance?: boolean): TransferVolumeSnapshots.AsObject;
     static toObject(includeInstance: boolean, msg: TransferVolumeSnapshots): TransferVolumeSnapshots.AsObject;
@@ -1909,9 +1649,8 @@ export namespace TransferVolumeSnapshots {
 export class ListTransferVolumeSnapshots extends jspb.Message { 
     clearTransferVolumeSnapshotsList(): void;
     getTransferVolumeSnapshotsList(): Array<TransferVolumeSnapshot>;
-    setTransferVolumeSnapshotsList(value: Array<TransferVolumeSnapshot>): void;
+    setTransferVolumeSnapshotsList(value: Array<TransferVolumeSnapshot>): ListTransferVolumeSnapshots;
     addTransferVolumeSnapshots(value?: TransferVolumeSnapshot, index?: number): TransferVolumeSnapshot;
-
 
     serializeBinary(): Uint8Array;
     toObject(includeInstance?: boolean): ListTransferVolumeSnapshots.AsObject;
@@ -1934,12 +1673,10 @@ export class TransferVolumeSnapshot extends jspb.Message {
     hasTargetTime(): boolean;
     clearTargetTime(): void;
     getTargetTime(): google_protobuf_timestamp_pb.Timestamp | undefined;
-    setTargetTime(value?: google_protobuf_timestamp_pb.Timestamp): void;
-
+    setTargetTime(value?: google_protobuf_timestamp_pb.Timestamp): TransferVolumeSnapshot;
 
     getTransferVolumeByCoinMap(): jspb.Map<number, TransferVolume>;
     clearTransferVolumeByCoinMap(): void;
-
 
     serializeBinary(): Uint8Array;
     toObject(includeInstance?: boolean): TransferVolumeSnapshot.AsObject;
@@ -1961,29 +1698,21 @@ export namespace TransferVolumeSnapshot {
 
 export class TransferVolume extends jspb.Message { 
     getCoin(): gincoinc_global_v1_gincoincglobalv1_enum_pb.Coin;
-    setCoin(value: gincoinc_global_v1_gincoincglobalv1_enum_pb.Coin): void;
-
+    setCoin(value: gincoinc_global_v1_gincoincglobalv1_enum_pb.Coin): TransferVolume;
     getHotStringVolume(): string;
-    setHotStringVolume(value: string): void;
-
+    setHotStringVolume(value: string): TransferVolume;
     getColdStringVolume(): string;
-    setColdStringVolume(value: string): void;
-
+    setColdStringVolume(value: string): TransferVolume;
     getHotStringJpyVolume(): string;
-    setHotStringJpyVolume(value: string): void;
-
+    setHotStringJpyVolume(value: string): TransferVolume;
     getColdStringJpyVolume(): string;
-    setColdStringJpyVolume(value: string): void;
-
+    setColdStringJpyVolume(value: string): TransferVolume;
     getHotNumber(): number;
-    setHotNumber(value: number): void;
-
+    setHotNumber(value: number): TransferVolume;
     getColdNumber(): number;
-    setColdNumber(value: number): void;
-
+    setColdNumber(value: number): TransferVolume;
     getTransferType(): gincoinc_global_v1_gincoincglobalv1_enum_pb.TransferType;
-    setTransferType(value: gincoinc_global_v1_gincoincglobalv1_enum_pb.TransferType): void;
-
+    setTransferType(value: gincoinc_global_v1_gincoincglobalv1_enum_pb.TransferType): TransferVolume;
 
     serializeBinary(): Uint8Array;
     toObject(includeInstance?: boolean): TransferVolume.AsObject;
@@ -2013,7 +1742,6 @@ export class WalletTransferVolumeSnapshots extends jspb.Message {
     getWalletTransferVolumeSnapshotByWalletIdMap(): jspb.Map<string, ListWalletTransferVolumeSnapshots>;
     clearWalletTransferVolumeSnapshotByWalletIdMap(): void;
 
-
     serializeBinary(): Uint8Array;
     toObject(includeInstance?: boolean): WalletTransferVolumeSnapshots.AsObject;
     static toObject(includeInstance: boolean, msg: WalletTransferVolumeSnapshots): WalletTransferVolumeSnapshots.AsObject;
@@ -2034,9 +1762,8 @@ export namespace WalletTransferVolumeSnapshots {
 export class ListWalletTransferVolumeSnapshots extends jspb.Message { 
     clearWalletTransferVolumeSnapshotsList(): void;
     getWalletTransferVolumeSnapshotsList(): Array<WalletTransferVolumeSnapshot>;
-    setWalletTransferVolumeSnapshotsList(value: Array<WalletTransferVolumeSnapshot>): void;
+    setWalletTransferVolumeSnapshotsList(value: Array<WalletTransferVolumeSnapshot>): ListWalletTransferVolumeSnapshots;
     addWalletTransferVolumeSnapshots(value?: WalletTransferVolumeSnapshot, index?: number): WalletTransferVolumeSnapshot;
-
 
     serializeBinary(): Uint8Array;
     toObject(includeInstance?: boolean): ListWalletTransferVolumeSnapshots.AsObject;
@@ -2059,12 +1786,10 @@ export class WalletTransferVolumeSnapshot extends jspb.Message {
     hasTargetTime(): boolean;
     clearTargetTime(): void;
     getTargetTime(): google_protobuf_timestamp_pb.Timestamp | undefined;
-    setTargetTime(value?: google_protobuf_timestamp_pb.Timestamp): void;
-
+    setTargetTime(value?: google_protobuf_timestamp_pb.Timestamp): WalletTransferVolumeSnapshot;
 
     getWalletTransferVolumeByTransferTypeMap(): jspb.Map<number, WalletTransferVolume>;
     clearWalletTransferVolumeByTransferTypeMap(): void;
-
 
     serializeBinary(): Uint8Array;
     toObject(includeInstance?: boolean): WalletTransferVolumeSnapshot.AsObject;
@@ -2086,17 +1811,13 @@ export namespace WalletTransferVolumeSnapshot {
 
 export class WalletTransferVolume extends jspb.Message { 
     getStringVolume(): string;
-    setStringVolume(value: string): void;
-
+    setStringVolume(value: string): WalletTransferVolume;
     getStringJpyVolume(): string;
-    setStringJpyVolume(value: string): void;
-
+    setStringJpyVolume(value: string): WalletTransferVolume;
     getNumber(): number;
-    setNumber(value: number): void;
-
+    setNumber(value: number): WalletTransferVolume;
     getTransferType(): gincoinc_global_v1_gincoincglobalv1_enum_pb.TransferType;
-    setTransferType(value: gincoinc_global_v1_gincoincglobalv1_enum_pb.TransferType): void;
-
+    setTransferType(value: gincoinc_global_v1_gincoincglobalv1_enum_pb.TransferType): WalletTransferVolume;
 
     serializeBinary(): Uint8Array;
     toObject(includeInstance?: boolean): WalletTransferVolume.AsObject;
@@ -2119,11 +1840,9 @@ export namespace WalletTransferVolume {
 
 export class Confirmation extends jspb.Message { 
     getCoin(): gincoinc_global_v1_gincoincglobalv1_enum_pb.Coin;
-    setCoin(value: gincoinc_global_v1_gincoincglobalv1_enum_pb.Coin): void;
-
+    setCoin(value: gincoinc_global_v1_gincoincglobalv1_enum_pb.Coin): Confirmation;
     getConfirmation(): number;
-    setConfirmation(value: number): void;
-
+    setConfirmation(value: number): Confirmation;
 
     serializeBinary(): Uint8Array;
     toObject(includeInstance?: boolean): Confirmation.AsObject;
@@ -2144,26 +1863,21 @@ export namespace Confirmation {
 
 export class WalletFlushSetting extends jspb.Message { 
     getOwnerId(): string;
-    setOwnerId(value: string): void;
-
+    setOwnerId(value: string): WalletFlushSetting;
     getCoin(): gincoinc_global_v1_gincoincglobalv1_enum_pb.Coin;
-    setCoin(value: gincoinc_global_v1_gincoincglobalv1_enum_pb.Coin): void;
-
+    setCoin(value: gincoinc_global_v1_gincoincglobalv1_enum_pb.Coin): WalletFlushSetting;
     getDestinationWalletId(): string;
-    setDestinationWalletId(value: string): void;
-
+    setDestinationWalletId(value: string): WalletFlushSetting;
 
     hasCreateTime(): boolean;
     clearCreateTime(): void;
     getCreateTime(): google_protobuf_timestamp_pb.Timestamp | undefined;
-    setCreateTime(value?: google_protobuf_timestamp_pb.Timestamp): void;
-
+    setCreateTime(value?: google_protobuf_timestamp_pb.Timestamp): WalletFlushSetting;
 
     hasUpdateTime(): boolean;
     clearUpdateTime(): void;
     getUpdateTime(): google_protobuf_timestamp_pb.Timestamp | undefined;
-    setUpdateTime(value?: google_protobuf_timestamp_pb.Timestamp): void;
-
+    setUpdateTime(value?: google_protobuf_timestamp_pb.Timestamp): WalletFlushSetting;
 
     serializeBinary(): Uint8Array;
     toObject(includeInstance?: boolean): WalletFlushSetting.AsObject;
@@ -2187,17 +1901,14 @@ export namespace WalletFlushSetting {
 
 export class CompensationFee extends jspb.Message { 
     getStringValue(): string;
-    setStringValue(value: string): void;
-
+    setStringValue(value: string): CompensationFee;
     getIsSpent(): boolean;
-    setIsSpent(value: boolean): void;
-
+    setIsSpent(value: boolean): CompensationFee;
 
     hasCreateTime(): boolean;
     clearCreateTime(): void;
     getCreateTime(): google_protobuf_timestamp_pb.Timestamp | undefined;
-    setCreateTime(value?: google_protobuf_timestamp_pb.Timestamp): void;
-
+    setCreateTime(value?: google_protobuf_timestamp_pb.Timestamp): CompensationFee;
 
     serializeBinary(): Uint8Array;
     toObject(includeInstance?: boolean): CompensationFee.AsObject;
@@ -2219,11 +1930,9 @@ export namespace CompensationFee {
 
 export class RequestTxOutput extends jspb.Message { 
     getAddress(): string;
-    setAddress(value: string): void;
-
+    setAddress(value: string): RequestTxOutput;
     getStringValue(): string;
-    setStringValue(value: string): void;
-
+    setStringValue(value: string): RequestTxOutput;
 
     serializeBinary(): Uint8Array;
     toObject(includeInstance?: boolean): RequestTxOutput.AsObject;
@@ -2245,9 +1954,8 @@ export namespace RequestTxOutput {
 export class RequestSignedInfo extends jspb.Message { 
     clearSignaturesList(): void;
     getSignaturesList(): Array<RequestSignature>;
-    setSignaturesList(value: Array<RequestSignature>): void;
+    setSignaturesList(value: Array<RequestSignature>): RequestSignedInfo;
     addSignatures(value?: RequestSignature, index?: number): RequestSignature;
-
 
     serializeBinary(): Uint8Array;
     toObject(includeInstance?: boolean): RequestSignedInfo.AsObject;
@@ -2267,11 +1975,9 @@ export namespace RequestSignedInfo {
 
 export class RequestSignature extends jspb.Message { 
     getSignIndex(): number;
-    setSignIndex(value: number): void;
-
+    setSignIndex(value: number): RequestSignature;
     getSignature(): string;
-    setSignature(value: string): void;
-
+    setSignature(value: string): RequestSignature;
 
     serializeBinary(): Uint8Array;
     toObject(includeInstance?: boolean): RequestSignature.AsObject;
@@ -2292,11 +1998,9 @@ export namespace RequestSignature {
 
 export class RequestTransferLimitEntry extends jspb.Message { 
     getTransferLimitType(): gincoinc_adamant_global_v1_adamantglobalv1_enum_pb.TransferLimitType;
-    setTransferLimitType(value: gincoinc_adamant_global_v1_adamantglobalv1_enum_pb.TransferLimitType): void;
-
+    setTransferLimitType(value: gincoinc_adamant_global_v1_adamantglobalv1_enum_pb.TransferLimitType): RequestTransferLimitEntry;
     getTransferLimitValue(): number;
-    setTransferLimitValue(value: number): void;
-
+    setTransferLimitValue(value: number): RequestTransferLimitEntry;
 
     serializeBinary(): Uint8Array;
     toObject(includeInstance?: boolean): RequestTransferLimitEntry.AsObject;
@@ -2317,11 +2021,9 @@ export namespace RequestTransferLimitEntry {
 
 export class RequestRate extends jspb.Message { 
     getCoin(): gincoinc_global_v1_gincoincglobalv1_enum_pb.Coin;
-    setCoin(value: gincoinc_global_v1_gincoincglobalv1_enum_pb.Coin): void;
-
+    setCoin(value: gincoinc_global_v1_gincoincglobalv1_enum_pb.Coin): RequestRate;
     getJpy(): number;
-    setJpy(value: number): void;
-
+    setJpy(value: number): RequestRate;
 
     serializeBinary(): Uint8Array;
     toObject(includeInstance?: boolean): RequestRate.AsObject;

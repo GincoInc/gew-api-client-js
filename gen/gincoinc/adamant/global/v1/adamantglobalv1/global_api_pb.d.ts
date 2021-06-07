@@ -14,8 +14,7 @@ import * as gincoinc_adamant_global_v1_adamantglobalv1_model_pb from "../../../.
 
 export class ApproveWalletRequest extends jspb.Message { 
     getWalletId(): string;
-    setWalletId(value: string): void;
-
+    setWalletId(value: string): ApproveWalletRequest;
 
     serializeBinary(): Uint8Array;
     toObject(includeInstance?: boolean): ApproveWalletRequest.AsObject;
@@ -35,11 +34,9 @@ export namespace ApproveWalletRequest {
 
 export class ApproveTransactionRequest extends jspb.Message { 
     getWalletId(): string;
-    setWalletId(value: string): void;
-
+    setWalletId(value: string): ApproveTransactionRequest;
     getTransactionId(): string;
-    setTransactionId(value: string): void;
-
+    setTransactionId(value: string): ApproveTransactionRequest;
 
     serializeBinary(): Uint8Array;
     toObject(includeInstance?: boolean): ApproveTransactionRequest.AsObject;
@@ -60,43 +57,31 @@ export namespace ApproveTransactionRequest {
 
 export class CreateWalletRequest extends jspb.Message { 
     getWalletName(): string;
-    setWalletName(value: string): void;
-
+    setWalletName(value: string): CreateWalletRequest;
     getCoin(): gincoinc_global_v1_gincoincglobalv1_enum_pb.Coin;
-    setCoin(value: gincoinc_global_v1_gincoincglobalv1_enum_pb.Coin): void;
-
+    setCoin(value: gincoinc_global_v1_gincoincglobalv1_enum_pb.Coin): CreateWalletRequest;
     getWalletType(): gincoinc_adamant_global_v1_adamantglobalv1_enum_pb.WalletType;
-    setWalletType(value: gincoinc_adamant_global_v1_adamantglobalv1_enum_pb.WalletType): void;
-
+    setWalletType(value: gincoinc_adamant_global_v1_adamantglobalv1_enum_pb.WalletType): CreateWalletRequest;
     getAddressType(): gincoinc_global_v1_gincoincglobalv1_enum_pb.AddressType;
-    setAddressType(value: gincoinc_global_v1_gincoincglobalv1_enum_pb.AddressType): void;
-
+    setAddressType(value: gincoinc_global_v1_gincoincglobalv1_enum_pb.AddressType): CreateWalletRequest;
     getM(): number;
-    setM(value: number): void;
-
+    setM(value: number): CreateWalletRequest;
     getN(): number;
-    setN(value: number): void;
-
+    setN(value: number): CreateWalletRequest;
     clearMembersList(): void;
     getMembersList(): Array<string>;
-    setMembersList(value: Array<string>): void;
+    setMembersList(value: Array<string>): CreateWalletRequest;
     addMembers(value: string, index?: number): string;
-
     getRequiredApprovalCount(): number;
-    setRequiredApprovalCount(value: number): void;
-
+    setRequiredApprovalCount(value: number): CreateWalletRequest;
     getPolicyId(): string;
-    setPolicyId(value: string): void;
-
+    setPolicyId(value: string): CreateWalletRequest;
     getDestinationWalletId(): string;
-    setDestinationWalletId(value: string): void;
-
+    setDestinationWalletId(value: string): CreateWalletRequest;
     getWatchOnly(): boolean;
-    setWatchOnly(value: boolean): void;
-
+    setWatchOnly(value: boolean): CreateWalletRequest;
     getInheritWalletId(): string;
-    setInheritWalletId(value: string): void;
-
+    setInheritWalletId(value: string): CreateWalletRequest;
 
     serializeBinary(): Uint8Array;
     toObject(includeInstance?: boolean): CreateWalletRequest.AsObject;
@@ -127,8 +112,7 @@ export namespace CreateWalletRequest {
 
 export class CreateWalletResponse extends jspb.Message { 
     getWalletId(): string;
-    setWalletId(value: string): void;
-
+    setWalletId(value: string): CreateWalletResponse;
 
     serializeBinary(): Uint8Array;
     toObject(includeInstance?: boolean): CreateWalletResponse.AsObject;
@@ -148,8 +132,7 @@ export namespace CreateWalletResponse {
 
 export class GetWalletRequest extends jspb.Message { 
     getWalletId(): string;
-    setWalletId(value: string): void;
-
+    setWalletId(value: string): GetWalletRequest;
 
     serializeBinary(): Uint8Array;
     toObject(includeInstance?: boolean): GetWalletRequest.AsObject;
@@ -170,9 +153,8 @@ export namespace GetWalletRequest {
 export class BatchGetWalletsWithoutBalanceRequest extends jspb.Message { 
     clearWalletIdsList(): void;
     getWalletIdsList(): Array<string>;
-    setWalletIdsList(value: Array<string>): void;
+    setWalletIdsList(value: Array<string>): BatchGetWalletsWithoutBalanceRequest;
     addWalletIds(value: string, index?: number): string;
-
 
     serializeBinary(): Uint8Array;
     toObject(includeInstance?: boolean): BatchGetWalletsWithoutBalanceRequest.AsObject;
@@ -193,9 +175,8 @@ export namespace BatchGetWalletsWithoutBalanceRequest {
 export class BatchGetWalletsWithoutBalanceResponse extends jspb.Message { 
     clearWalletsList(): void;
     getWalletsList(): Array<gincoinc_adamant_global_v1_adamantglobalv1_model_pb.WalletWithoutBalance>;
-    setWalletsList(value: Array<gincoinc_adamant_global_v1_adamantglobalv1_model_pb.WalletWithoutBalance>): void;
+    setWalletsList(value: Array<gincoinc_adamant_global_v1_adamantglobalv1_model_pb.WalletWithoutBalance>): BatchGetWalletsWithoutBalanceResponse;
     addWallets(value?: gincoinc_adamant_global_v1_adamantglobalv1_model_pb.WalletWithoutBalance, index?: number): gincoinc_adamant_global_v1_adamantglobalv1_model_pb.WalletWithoutBalance;
-
 
     serializeBinary(): Uint8Array;
     toObject(includeInstance?: boolean): BatchGetWalletsWithoutBalanceResponse.AsObject;
@@ -215,8 +196,7 @@ export namespace BatchGetWalletsWithoutBalanceResponse {
 
 export class CancelWalletRequest extends jspb.Message { 
     getWalletId(): string;
-    setWalletId(value: string): void;
-
+    setWalletId(value: string): CancelWalletRequest;
 
     serializeBinary(): Uint8Array;
     toObject(includeInstance?: boolean): CancelWalletRequest.AsObject;
@@ -236,8 +216,7 @@ export namespace CancelWalletRequest {
 
 export class ArchiveWalletRequest extends jspb.Message { 
     getWalletId(): string;
-    setWalletId(value: string): void;
-
+    setWalletId(value: string): ArchiveWalletRequest;
 
     serializeBinary(): Uint8Array;
     toObject(includeInstance?: boolean): ArchiveWalletRequest.AsObject;
@@ -257,8 +236,7 @@ export namespace ArchiveWalletRequest {
 
 export class UnArchiveWalletRequest extends jspb.Message { 
     getWalletId(): string;
-    setWalletId(value: string): void;
-
+    setWalletId(value: string): UnArchiveWalletRequest;
 
     serializeBinary(): Uint8Array;
     toObject(includeInstance?: boolean): UnArchiveWalletRequest.AsObject;
@@ -278,11 +256,9 @@ export namespace UnArchiveWalletRequest {
 
 export class ListWalletsRequest extends jspb.Message { 
     getPageSize(): number;
-    setPageSize(value: number): void;
-
+    setPageSize(value: number): ListWalletsRequest;
     getPageToken(): string;
-    setPageToken(value: string): void;
-
+    setPageToken(value: string): ListWalletsRequest;
 
     serializeBinary(): Uint8Array;
     toObject(includeInstance?: boolean): ListWalletsRequest.AsObject;
@@ -303,39 +279,29 @@ export namespace ListWalletsRequest {
 
 export class ListWalletsByFilterRequest extends jspb.Message { 
     getFilterType(): gincoinc_adamant_global_v1_adamantglobalv1_enum_pb.ListFilterType;
-    setFilterType(value: gincoinc_adamant_global_v1_adamantglobalv1_enum_pb.ListFilterType): void;
-
+    setFilterType(value: gincoinc_adamant_global_v1_adamantglobalv1_enum_pb.ListFilterType): ListWalletsByFilterRequest;
     getWalletId(): string;
-    setWalletId(value: string): void;
-
+    setWalletId(value: string): ListWalletsByFilterRequest;
     getWalletName(): string;
-    setWalletName(value: string): void;
-
+    setWalletName(value: string): ListWalletsByFilterRequest;
     getAddress(): string;
-    setAddress(value: string): void;
-
+    setAddress(value: string): ListWalletsByFilterRequest;
     getWatchOnly(): boolean;
-    setWatchOnly(value: boolean): void;
-
+    setWatchOnly(value: boolean): ListWalletsByFilterRequest;
     getCoin(): gincoinc_global_v1_gincoincglobalv1_enum_pb.Coin;
-    setCoin(value: gincoinc_global_v1_gincoincglobalv1_enum_pb.Coin): void;
-
+    setCoin(value: gincoinc_global_v1_gincoincglobalv1_enum_pb.Coin): ListWalletsByFilterRequest;
     clearWalletTypeList(): void;
     getWalletTypeList(): Array<gincoinc_adamant_global_v1_adamantglobalv1_enum_pb.WalletType>;
-    setWalletTypeList(value: Array<gincoinc_adamant_global_v1_adamantglobalv1_enum_pb.WalletType>): void;
+    setWalletTypeList(value: Array<gincoinc_adamant_global_v1_adamantglobalv1_enum_pb.WalletType>): ListWalletsByFilterRequest;
     addWalletType(value: gincoinc_adamant_global_v1_adamantglobalv1_enum_pb.WalletType, index?: number): gincoinc_adamant_global_v1_adamantglobalv1_enum_pb.WalletType;
-
     clearWalletStateList(): void;
     getWalletStateList(): Array<gincoinc_adamant_global_v1_adamantglobalv1_enum_pb.WalletState>;
-    setWalletStateList(value: Array<gincoinc_adamant_global_v1_adamantglobalv1_enum_pb.WalletState>): void;
+    setWalletStateList(value: Array<gincoinc_adamant_global_v1_adamantglobalv1_enum_pb.WalletState>): ListWalletsByFilterRequest;
     addWalletState(value: gincoinc_adamant_global_v1_adamantglobalv1_enum_pb.WalletState, index?: number): gincoinc_adamant_global_v1_adamantglobalv1_enum_pb.WalletState;
-
     getPageSize(): number;
-    setPageSize(value: number): void;
-
+    setPageSize(value: number): ListWalletsByFilterRequest;
     getPageToken(): string;
-    setPageToken(value: string): void;
-
+    setPageToken(value: string): ListWalletsByFilterRequest;
 
     serializeBinary(): Uint8Array;
     toObject(includeInstance?: boolean): ListWalletsByFilterRequest.AsObject;
@@ -365,12 +331,10 @@ export namespace ListWalletsByFilterRequest {
 export class ListWalletsResponse extends jspb.Message { 
     clearWalletsList(): void;
     getWalletsList(): Array<gincoinc_adamant_global_v1_adamantglobalv1_model_pb.Wallet>;
-    setWalletsList(value: Array<gincoinc_adamant_global_v1_adamantglobalv1_model_pb.Wallet>): void;
+    setWalletsList(value: Array<gincoinc_adamant_global_v1_adamantglobalv1_model_pb.Wallet>): ListWalletsResponse;
     addWallets(value?: gincoinc_adamant_global_v1_adamantglobalv1_model_pb.Wallet, index?: number): gincoinc_adamant_global_v1_adamantglobalv1_model_pb.Wallet;
-
     getNextPageToken(): string;
-    setNextPageToken(value: string): void;
-
+    setNextPageToken(value: string): ListWalletsResponse;
 
     serializeBinary(): Uint8Array;
     toObject(includeInstance?: boolean): ListWalletsResponse.AsObject;
@@ -409,9 +373,8 @@ export namespace ListBaseWalletsRequest {
 export class ListBaseWalletsResponse extends jspb.Message { 
     clearWalletsList(): void;
     getWalletsList(): Array<gincoinc_adamant_global_v1_adamantglobalv1_model_pb.WalletWithoutBalance>;
-    setWalletsList(value: Array<gincoinc_adamant_global_v1_adamantglobalv1_model_pb.WalletWithoutBalance>): void;
+    setWalletsList(value: Array<gincoinc_adamant_global_v1_adamantglobalv1_model_pb.WalletWithoutBalance>): ListBaseWalletsResponse;
     addWallets(value?: gincoinc_adamant_global_v1_adamantglobalv1_model_pb.WalletWithoutBalance, index?: number): gincoinc_adamant_global_v1_adamantglobalv1_model_pb.WalletWithoutBalance;
-
 
     serializeBinary(): Uint8Array;
     toObject(includeInstance?: boolean): ListBaseWalletsResponse.AsObject;
@@ -431,11 +394,9 @@ export namespace ListBaseWalletsResponse {
 
 export class UpdateWalletNameRequest extends jspb.Message { 
     getWalletId(): string;
-    setWalletId(value: string): void;
-
+    setWalletId(value: string): UpdateWalletNameRequest;
     getName(): string;
-    setName(value: string): void;
-
+    setName(value: string): UpdateWalletNameRequest;
 
     serializeBinary(): Uint8Array;
     toObject(includeInstance?: boolean): UpdateWalletNameRequest.AsObject;
@@ -456,16 +417,13 @@ export namespace UpdateWalletNameRequest {
 
 export class UpdateWalletValidationRequest extends jspb.Message { 
     getWalletId(): string;
-    setWalletId(value: string): void;
-
+    setWalletId(value: string): UpdateWalletValidationRequest;
     clearNewValidatorIdsList(): void;
     getNewValidatorIdsList(): Array<string>;
-    setNewValidatorIdsList(value: Array<string>): void;
+    setNewValidatorIdsList(value: Array<string>): UpdateWalletValidationRequest;
     addNewValidatorIds(value: string, index?: number): string;
-
     getNewRequiredApprovalCount(): number;
-    setNewRequiredApprovalCount(value: number): void;
-
+    setNewRequiredApprovalCount(value: number): UpdateWalletValidationRequest;
 
     serializeBinary(): Uint8Array;
     toObject(includeInstance?: boolean): UpdateWalletValidationRequest.AsObject;
@@ -487,11 +445,9 @@ export namespace UpdateWalletValidationRequest {
 
 export class UpdateWalletPolicyRequest extends jspb.Message { 
     getWalletId(): string;
-    setWalletId(value: string): void;
-
+    setWalletId(value: string): UpdateWalletPolicyRequest;
     getPolicyId(): string;
-    setPolicyId(value: string): void;
-
+    setPolicyId(value: string): UpdateWalletPolicyRequest;
 
     serializeBinary(): Uint8Array;
     toObject(includeInstance?: boolean): UpdateWalletPolicyRequest.AsObject;
@@ -512,11 +468,9 @@ export namespace UpdateWalletPolicyRequest {
 
 export class ReviewWalletProposalRequest extends jspb.Message { 
     getWalletId(): string;
-    setWalletId(value: string): void;
-
+    setWalletId(value: string): ReviewWalletProposalRequest;
     getApprove(): boolean;
-    setApprove(value: boolean): void;
-
+    setApprove(value: boolean): ReviewWalletProposalRequest;
 
     serializeBinary(): Uint8Array;
     toObject(includeInstance?: boolean): ReviewWalletProposalRequest.AsObject;
@@ -537,8 +491,7 @@ export namespace ReviewWalletProposalRequest {
 
 export class ExistsWalletByNameRequest extends jspb.Message { 
     getName(): string;
-    setName(value: string): void;
-
+    setName(value: string): ExistsWalletByNameRequest;
 
     serializeBinary(): Uint8Array;
     toObject(includeInstance?: boolean): ExistsWalletByNameRequest.AsObject;
@@ -558,8 +511,7 @@ export namespace ExistsWalletByNameRequest {
 
 export class ExistsWalletByNameResponse extends jspb.Message { 
     getExists(): boolean;
-    setExists(value: boolean): void;
-
+    setExists(value: boolean): ExistsWalletByNameResponse;
 
     serializeBinary(): Uint8Array;
     toObject(includeInstance?: boolean): ExistsWalletByNameResponse.AsObject;
@@ -579,8 +531,7 @@ export namespace ExistsWalletByNameResponse {
 
 export class FlushBalanceRequest extends jspb.Message { 
     getWalletId(): string;
-    setWalletId(value: string): void;
-
+    setWalletId(value: string): FlushBalanceRequest;
 
     serializeBinary(): Uint8Array;
     toObject(includeInstance?: boolean): FlushBalanceRequest.AsObject;
@@ -601,9 +552,8 @@ export namespace FlushBalanceRequest {
 export class FlushBalanceResponse extends jspb.Message { 
     clearFlushedAddressesList(): void;
     getFlushedAddressesList(): Array<gincoinc_adamant_global_v1_adamantglobalv1_model_pb.FlushedAddress>;
-    setFlushedAddressesList(value: Array<gincoinc_adamant_global_v1_adamantglobalv1_model_pb.FlushedAddress>): void;
+    setFlushedAddressesList(value: Array<gincoinc_adamant_global_v1_adamantglobalv1_model_pb.FlushedAddress>): FlushBalanceResponse;
     addFlushedAddresses(value?: gincoinc_adamant_global_v1_adamantglobalv1_model_pb.FlushedAddress, index?: number): gincoinc_adamant_global_v1_adamantglobalv1_model_pb.FlushedAddress;
-
 
     serializeBinary(): Uint8Array;
     toObject(includeInstance?: boolean): FlushBalanceResponse.AsObject;
@@ -624,9 +574,8 @@ export namespace FlushBalanceResponse {
 export class ListWalletFlushSettingsResponse extends jspb.Message { 
     clearWalletFlushSettingsList(): void;
     getWalletFlushSettingsList(): Array<gincoinc_adamant_global_v1_adamantglobalv1_model_pb.WalletFlushSetting>;
-    setWalletFlushSettingsList(value: Array<gincoinc_adamant_global_v1_adamantglobalv1_model_pb.WalletFlushSetting>): void;
+    setWalletFlushSettingsList(value: Array<gincoinc_adamant_global_v1_adamantglobalv1_model_pb.WalletFlushSetting>): ListWalletFlushSettingsResponse;
     addWalletFlushSettings(value?: gincoinc_adamant_global_v1_adamantglobalv1_model_pb.WalletFlushSetting, index?: number): gincoinc_adamant_global_v1_adamantglobalv1_model_pb.WalletFlushSetting;
-
 
     serializeBinary(): Uint8Array;
     toObject(includeInstance?: boolean): ListWalletFlushSettingsResponse.AsObject;
@@ -646,11 +595,9 @@ export namespace ListWalletFlushSettingsResponse {
 
 export class UpdateWalletFlushSettingRequest extends jspb.Message { 
     getCoin(): gincoinc_global_v1_gincoincglobalv1_enum_pb.Coin;
-    setCoin(value: gincoinc_global_v1_gincoincglobalv1_enum_pb.Coin): void;
-
+    setCoin(value: gincoinc_global_v1_gincoincglobalv1_enum_pb.Coin): UpdateWalletFlushSettingRequest;
     getDestinationWalletId(): string;
-    setDestinationWalletId(value: string): void;
-
+    setDestinationWalletId(value: string): UpdateWalletFlushSettingRequest;
 
     serializeBinary(): Uint8Array;
     toObject(includeInstance?: boolean): UpdateWalletFlushSettingRequest.AsObject;
@@ -671,11 +618,9 @@ export namespace UpdateWalletFlushSettingRequest {
 
 export class ListCompensationFeeHistoriesRequest extends jspb.Message { 
     getWalletId(): string;
-    setWalletId(value: string): void;
-
+    setWalletId(value: string): ListCompensationFeeHistoriesRequest;
     getAddress(): string;
-    setAddress(value: string): void;
-
+    setAddress(value: string): ListCompensationFeeHistoriesRequest;
 
     serializeBinary(): Uint8Array;
     toObject(includeInstance?: boolean): ListCompensationFeeHistoriesRequest.AsObject;
@@ -697,9 +642,8 @@ export namespace ListCompensationFeeHistoriesRequest {
 export class ListCompensationFeeHistoriesResponse extends jspb.Message { 
     clearCompensationFeesList(): void;
     getCompensationFeesList(): Array<gincoinc_adamant_global_v1_adamantglobalv1_model_pb.CompensationFee>;
-    setCompensationFeesList(value: Array<gincoinc_adamant_global_v1_adamantglobalv1_model_pb.CompensationFee>): void;
+    setCompensationFeesList(value: Array<gincoinc_adamant_global_v1_adamantglobalv1_model_pb.CompensationFee>): ListCompensationFeeHistoriesResponse;
     addCompensationFees(value?: gincoinc_adamant_global_v1_adamantglobalv1_model_pb.CompensationFee, index?: number): gincoinc_adamant_global_v1_adamantglobalv1_model_pb.CompensationFee;
-
 
     serializeBinary(): Uint8Array;
     toObject(includeInstance?: boolean): ListCompensationFeeHistoriesResponse.AsObject;
@@ -719,11 +663,9 @@ export namespace ListCompensationFeeHistoriesResponse {
 
 export class RegisterKeyRequest extends jspb.Message { 
     getWalletId(): string;
-    setWalletId(value: string): void;
-
+    setWalletId(value: string): RegisterKeyRequest;
     getPubKey(): string;
-    setPubKey(value: string): void;
-
+    setPubKey(value: string): RegisterKeyRequest;
 
     serializeBinary(): Uint8Array;
     toObject(includeInstance?: boolean): RegisterKeyRequest.AsObject;
@@ -744,8 +686,7 @@ export namespace RegisterKeyRequest {
 
 export class RegisterKeyResponse extends jspb.Message { 
     getKeyId(): string;
-    setKeyId(value: string): void;
-
+    setKeyId(value: string): RegisterKeyResponse;
 
     serializeBinary(): Uint8Array;
     toObject(includeInstance?: boolean): RegisterKeyResponse.AsObject;
@@ -765,11 +706,9 @@ export namespace RegisterKeyResponse {
 
 export class CreateAddressRequest extends jspb.Message { 
     getWalletId(): string;
-    setWalletId(value: string): void;
-
+    setWalletId(value: string): CreateAddressRequest;
     getFeeRate(): number;
-    setFeeRate(value: number): void;
-
+    setFeeRate(value: number): CreateAddressRequest;
 
     serializeBinary(): Uint8Array;
     toObject(includeInstance?: boolean): CreateAddressRequest.AsObject;
@@ -790,8 +729,7 @@ export namespace CreateAddressRequest {
 
 export class CreateAddressResponse extends jspb.Message { 
     getAddressId(): string;
-    setAddressId(value: string): void;
-
+    setAddressId(value: string): CreateAddressResponse;
 
     serializeBinary(): Uint8Array;
     toObject(includeInstance?: boolean): CreateAddressResponse.AsObject;
@@ -811,11 +749,9 @@ export namespace CreateAddressResponse {
 
 export class GetAddressRequest extends jspb.Message { 
     getWalletId(): string;
-    setWalletId(value: string): void;
-
+    setWalletId(value: string): GetAddressRequest;
     getAddressId(): string;
-    setAddressId(value: string): void;
-
+    setAddressId(value: string): GetAddressRequest;
 
     serializeBinary(): Uint8Array;
     toObject(includeInstance?: boolean): GetAddressRequest.AsObject;
@@ -836,11 +772,9 @@ export namespace GetAddressRequest {
 
 export class GetAddressByAddressRequest extends jspb.Message { 
     getWalletId(): string;
-    setWalletId(value: string): void;
-
+    setWalletId(value: string): GetAddressByAddressRequest;
     getAddress(): string;
-    setAddress(value: string): void;
-
+    setAddress(value: string): GetAddressByAddressRequest;
 
     serializeBinary(): Uint8Array;
     toObject(includeInstance?: boolean): GetAddressByAddressRequest.AsObject;
@@ -861,11 +795,9 @@ export namespace GetAddressByAddressRequest {
 
 export class GetAddressByIndexRequest extends jspb.Message { 
     getWalletId(): string;
-    setWalletId(value: string): void;
-
+    setWalletId(value: string): GetAddressByIndexRequest;
     getIndex(): number;
-    setIndex(value: number): void;
-
+    setIndex(value: number): GetAddressByIndexRequest;
 
     serializeBinary(): Uint8Array;
     toObject(includeInstance?: boolean): GetAddressByIndexRequest.AsObject;
@@ -886,11 +818,9 @@ export namespace GetAddressByIndexRequest {
 
 export class GetAddressWithoutBalanceByIndexRequest extends jspb.Message { 
     getWalletId(): string;
-    setWalletId(value: string): void;
-
+    setWalletId(value: string): GetAddressWithoutBalanceByIndexRequest;
     getIndex(): number;
-    setIndex(value: number): void;
-
+    setIndex(value: number): GetAddressWithoutBalanceByIndexRequest;
 
     serializeBinary(): Uint8Array;
     toObject(includeInstance?: boolean): GetAddressWithoutBalanceByIndexRequest.AsObject;
@@ -911,17 +841,13 @@ export namespace GetAddressWithoutBalanceByIndexRequest {
 
 export class ListAddressesRequest extends jspb.Message { 
     getWalletId(): string;
-    setWalletId(value: string): void;
-
+    setWalletId(value: string): ListAddressesRequest;
     getOmitChange(): boolean;
-    setOmitChange(value: boolean): void;
-
+    setOmitChange(value: boolean): ListAddressesRequest;
     getPageSize(): number;
-    setPageSize(value: number): void;
-
+    setPageSize(value: number): ListAddressesRequest;
     getPageToken(): string;
-    setPageToken(value: string): void;
-
+    setPageToken(value: string): ListAddressesRequest;
 
     serializeBinary(): Uint8Array;
     toObject(includeInstance?: boolean): ListAddressesRequest.AsObject;
@@ -945,12 +871,10 @@ export namespace ListAddressesRequest {
 export class ListAddressesResponse extends jspb.Message { 
     clearAddressesList(): void;
     getAddressesList(): Array<gincoinc_adamant_global_v1_adamantglobalv1_model_pb.Address>;
-    setAddressesList(value: Array<gincoinc_adamant_global_v1_adamantglobalv1_model_pb.Address>): void;
+    setAddressesList(value: Array<gincoinc_adamant_global_v1_adamantglobalv1_model_pb.Address>): ListAddressesResponse;
     addAddresses(value?: gincoinc_adamant_global_v1_adamantglobalv1_model_pb.Address, index?: number): gincoinc_adamant_global_v1_adamantglobalv1_model_pb.Address;
-
     getNextPageToken(): string;
-    setNextPageToken(value: string): void;
-
+    setNextPageToken(value: string): ListAddressesResponse;
 
     serializeBinary(): Uint8Array;
     toObject(includeInstance?: boolean): ListAddressesResponse.AsObject;
@@ -971,8 +895,7 @@ export namespace ListAddressesResponse {
 
 export class ListAddressesWithBalanceRequest extends jspb.Message { 
     getWalletId(): string;
-    setWalletId(value: string): void;
-
+    setWalletId(value: string): ListAddressesWithBalanceRequest;
 
     serializeBinary(): Uint8Array;
     toObject(includeInstance?: boolean): ListAddressesWithBalanceRequest.AsObject;
@@ -993,9 +916,8 @@ export namespace ListAddressesWithBalanceRequest {
 export class ListAddressesWithBalanceResponse extends jspb.Message { 
     clearAddressesList(): void;
     getAddressesList(): Array<gincoinc_adamant_global_v1_adamantglobalv1_model_pb.AddressWithBalance>;
-    setAddressesList(value: Array<gincoinc_adamant_global_v1_adamantglobalv1_model_pb.AddressWithBalance>): void;
+    setAddressesList(value: Array<gincoinc_adamant_global_v1_adamantglobalv1_model_pb.AddressWithBalance>): ListAddressesWithBalanceResponse;
     addAddresses(value?: gincoinc_adamant_global_v1_adamantglobalv1_model_pb.AddressWithBalance, index?: number): gincoinc_adamant_global_v1_adamantglobalv1_model_pb.AddressWithBalance;
-
 
     serializeBinary(): Uint8Array;
     toObject(includeInstance?: boolean): ListAddressesWithBalanceResponse.AsObject;
@@ -1015,11 +937,9 @@ export namespace ListAddressesWithBalanceResponse {
 
 export class UpdateAddressBalanceRequest extends jspb.Message { 
     getWalletId(): string;
-    setWalletId(value: string): void;
-
+    setWalletId(value: string): UpdateAddressBalanceRequest;
     getAddress(): string;
-    setAddress(value: string): void;
-
+    setAddress(value: string): UpdateAddressBalanceRequest;
 
     serializeBinary(): Uint8Array;
     toObject(includeInstance?: boolean): UpdateAddressBalanceRequest.AsObject;
@@ -1040,17 +960,13 @@ export namespace UpdateAddressBalanceRequest {
 
 export class ListAddressesWithoutBalanceRequest extends jspb.Message { 
     getWalletId(): string;
-    setWalletId(value: string): void;
-
+    setWalletId(value: string): ListAddressesWithoutBalanceRequest;
     getOmitChange(): boolean;
-    setOmitChange(value: boolean): void;
-
+    setOmitChange(value: boolean): ListAddressesWithoutBalanceRequest;
     getPageSize(): number;
-    setPageSize(value: number): void;
-
+    setPageSize(value: number): ListAddressesWithoutBalanceRequest;
     getPageToken(): string;
-    setPageToken(value: string): void;
-
+    setPageToken(value: string): ListAddressesWithoutBalanceRequest;
 
     serializeBinary(): Uint8Array;
     toObject(includeInstance?: boolean): ListAddressesWithoutBalanceRequest.AsObject;
@@ -1074,12 +990,10 @@ export namespace ListAddressesWithoutBalanceRequest {
 export class ListAddressesWithoutBalanceResponse extends jspb.Message { 
     clearAddressesList(): void;
     getAddressesList(): Array<gincoinc_adamant_global_v1_adamantglobalv1_model_pb.AddressWithoutBalance>;
-    setAddressesList(value: Array<gincoinc_adamant_global_v1_adamantglobalv1_model_pb.AddressWithoutBalance>): void;
+    setAddressesList(value: Array<gincoinc_adamant_global_v1_adamantglobalv1_model_pb.AddressWithoutBalance>): ListAddressesWithoutBalanceResponse;
     addAddresses(value?: gincoinc_adamant_global_v1_adamantglobalv1_model_pb.AddressWithoutBalance, index?: number): gincoinc_adamant_global_v1_adamantglobalv1_model_pb.AddressWithoutBalance;
-
     getNextPageToken(): string;
-    setNextPageToken(value: string): void;
-
+    setNextPageToken(value: string): ListAddressesWithoutBalanceResponse;
 
     serializeBinary(): Uint8Array;
     toObject(includeInstance?: boolean): ListAddressesWithoutBalanceResponse.AsObject;
@@ -1117,8 +1031,7 @@ export namespace GetEthereumFeeAddressRequest {
 
 export class DeleteAllWatchOnlyAddressesByWalletIDRequest extends jspb.Message { 
     getWalletId(): string;
-    setWalletId(value: string): void;
-
+    setWalletId(value: string): DeleteAllWatchOnlyAddressesByWalletIDRequest;
 
     serializeBinary(): Uint8Array;
     toObject(includeInstance?: boolean): DeleteAllWatchOnlyAddressesByWalletIDRequest.AsObject;
@@ -1138,25 +1051,19 @@ export namespace DeleteAllWatchOnlyAddressesByWalletIDRequest {
 
 export class CreateTransactionRequest extends jspb.Message { 
     getWalletId(): string;
-    setWalletId(value: string): void;
-
+    setWalletId(value: string): CreateTransactionRequest;
     getFeeRate(): number;
-    setFeeRate(value: number): void;
-
+    setFeeRate(value: number): CreateTransactionRequest;
     clearTxOutputsList(): void;
     getTxOutputsList(): Array<gincoinc_adamant_global_v1_adamantglobalv1_model_pb.RequestTxOutput>;
-    setTxOutputsList(value: Array<gincoinc_adamant_global_v1_adamantglobalv1_model_pb.RequestTxOutput>): void;
+    setTxOutputsList(value: Array<gincoinc_adamant_global_v1_adamantglobalv1_model_pb.RequestTxOutput>): CreateTransactionRequest;
     addTxOutputs(value?: gincoinc_adamant_global_v1_adamantglobalv1_model_pb.RequestTxOutput, index?: number): gincoinc_adamant_global_v1_adamantglobalv1_model_pb.RequestTxOutput;
-
     getAddress(): string;
-    setAddress(value: string): void;
-
+    setAddress(value: string): CreateTransactionRequest;
     getDestinationTag(): number;
-    setDestinationTag(value: number): void;
-
+    setDestinationTag(value: number): CreateTransactionRequest;
     getStringValue(): string;
-    setStringValue(value: string): void;
-
+    setStringValue(value: string): CreateTransactionRequest;
 
     serializeBinary(): Uint8Array;
     toObject(includeInstance?: boolean): CreateTransactionRequest.AsObject;
@@ -1181,8 +1088,7 @@ export namespace CreateTransactionRequest {
 
 export class CreateTransactionResponse extends jspb.Message { 
     getTransactionId(): string;
-    setTransactionId(value: string): void;
-
+    setTransactionId(value: string): CreateTransactionResponse;
 
     serializeBinary(): Uint8Array;
     toObject(includeInstance?: boolean): CreateTransactionResponse.AsObject;
@@ -1202,8 +1108,7 @@ export namespace CreateTransactionResponse {
 
 export class CreateXRPInitTransactionsRequest extends jspb.Message { 
     getWalletId(): string;
-    setWalletId(value: string): void;
-
+    setWalletId(value: string): CreateXRPInitTransactionsRequest;
 
     serializeBinary(): Uint8Array;
     toObject(includeInstance?: boolean): CreateXRPInitTransactionsRequest.AsObject;
@@ -1223,8 +1128,7 @@ export namespace CreateXRPInitTransactionsRequest {
 
 export class CreateInitTransactionRequest extends jspb.Message { 
     getWalletId(): string;
-    setWalletId(value: string): void;
-
+    setWalletId(value: string): CreateInitTransactionRequest;
 
     serializeBinary(): Uint8Array;
     toObject(includeInstance?: boolean): CreateInitTransactionRequest.AsObject;
@@ -1244,20 +1148,16 @@ export namespace CreateInitTransactionRequest {
 
 export class SignTransactionRequest extends jspb.Message { 
     getWalletId(): string;
-    setWalletId(value: string): void;
-
+    setWalletId(value: string): SignTransactionRequest;
     getTransactionId(): string;
-    setTransactionId(value: string): void;
-
+    setTransactionId(value: string): SignTransactionRequest;
     getKeyId(): string;
-    setKeyId(value: string): void;
-
+    setKeyId(value: string): SignTransactionRequest;
 
     hasSignedInfo(): boolean;
     clearSignedInfo(): void;
     getSignedInfo(): gincoinc_adamant_global_v1_adamantglobalv1_model_pb.RequestSignedInfo | undefined;
-    setSignedInfo(value?: gincoinc_adamant_global_v1_adamantglobalv1_model_pb.RequestSignedInfo): void;
-
+    setSignedInfo(value?: gincoinc_adamant_global_v1_adamantglobalv1_model_pb.RequestSignedInfo): SignTransactionRequest;
 
     serializeBinary(): Uint8Array;
     toObject(includeInstance?: boolean): SignTransactionRequest.AsObject;
@@ -1280,16 +1180,13 @@ export namespace SignTransactionRequest {
 
 export class SignXRPInitTransactionsRequest extends jspb.Message { 
     getWalletId(): string;
-    setWalletId(value: string): void;
-
+    setWalletId(value: string): SignXRPInitTransactionsRequest;
     getKeyId(): string;
-    setKeyId(value: string): void;
-
+    setKeyId(value: string): SignXRPInitTransactionsRequest;
     clearSignedInfoList(): void;
     getSignedInfoList(): Array<gincoinc_adamant_global_v1_adamantglobalv1_model_pb.RequestSignedInfo>;
-    setSignedInfoList(value: Array<gincoinc_adamant_global_v1_adamantglobalv1_model_pb.RequestSignedInfo>): void;
+    setSignedInfoList(value: Array<gincoinc_adamant_global_v1_adamantglobalv1_model_pb.RequestSignedInfo>): SignXRPInitTransactionsRequest;
     addSignedInfo(value?: gincoinc_adamant_global_v1_adamantglobalv1_model_pb.RequestSignedInfo, index?: number): gincoinc_adamant_global_v1_adamantglobalv1_model_pb.RequestSignedInfo;
-
 
     serializeBinary(): Uint8Array;
     toObject(includeInstance?: boolean): SignXRPInitTransactionsRequest.AsObject;
@@ -1311,16 +1208,13 @@ export namespace SignXRPInitTransactionsRequest {
 
 export class SignInitTransactionRequest extends jspb.Message { 
     getWalletId(): string;
-    setWalletId(value: string): void;
-
+    setWalletId(value: string): SignInitTransactionRequest;
     getKeyId(): string;
-    setKeyId(value: string): void;
-
+    setKeyId(value: string): SignInitTransactionRequest;
     clearSignedInfoList(): void;
     getSignedInfoList(): Array<gincoinc_adamant_global_v1_adamantglobalv1_model_pb.RequestSignedInfo>;
-    setSignedInfoList(value: Array<gincoinc_adamant_global_v1_adamantglobalv1_model_pb.RequestSignedInfo>): void;
+    setSignedInfoList(value: Array<gincoinc_adamant_global_v1_adamantglobalv1_model_pb.RequestSignedInfo>): SignInitTransactionRequest;
     addSignedInfo(value?: gincoinc_adamant_global_v1_adamantglobalv1_model_pb.RequestSignedInfo, index?: number): gincoinc_adamant_global_v1_adamantglobalv1_model_pb.RequestSignedInfo;
-
 
     serializeBinary(): Uint8Array;
     toObject(includeInstance?: boolean): SignInitTransactionRequest.AsObject;
@@ -1342,11 +1236,9 @@ export namespace SignInitTransactionRequest {
 
 export class SendTransactionRequest extends jspb.Message { 
     getWalletId(): string;
-    setWalletId(value: string): void;
-
+    setWalletId(value: string): SendTransactionRequest;
     getTransactionId(): string;
-    setTransactionId(value: string): void;
-
+    setTransactionId(value: string): SendTransactionRequest;
 
     serializeBinary(): Uint8Array;
     toObject(includeInstance?: boolean): SendTransactionRequest.AsObject;
@@ -1367,8 +1259,7 @@ export namespace SendTransactionRequest {
 
 export class SendTransactionResponse extends jspb.Message { 
     getTxId(): string;
-    setTxId(value: string): void;
-
+    setTxId(value: string): SendTransactionResponse;
 
     serializeBinary(): Uint8Array;
     toObject(includeInstance?: boolean): SendTransactionResponse.AsObject;
@@ -1388,8 +1279,7 @@ export namespace SendTransactionResponse {
 
 export class SendXRPInitTransactionsRequest extends jspb.Message { 
     getWalletId(): string;
-    setWalletId(value: string): void;
-
+    setWalletId(value: string): SendXRPInitTransactionsRequest;
 
     serializeBinary(): Uint8Array;
     toObject(includeInstance?: boolean): SendXRPInitTransactionsRequest.AsObject;
@@ -1410,9 +1300,8 @@ export namespace SendXRPInitTransactionsRequest {
 export class SendXRPInitTransactionsResponse extends jspb.Message { 
     clearTxIdsList(): void;
     getTxIdsList(): Array<string>;
-    setTxIdsList(value: Array<string>): void;
+    setTxIdsList(value: Array<string>): SendXRPInitTransactionsResponse;
     addTxIds(value: string, index?: number): string;
-
 
     serializeBinary(): Uint8Array;
     toObject(includeInstance?: boolean): SendXRPInitTransactionsResponse.AsObject;
@@ -1432,8 +1321,7 @@ export namespace SendXRPInitTransactionsResponse {
 
 export class SendInitTransactionRequest extends jspb.Message { 
     getWalletId(): string;
-    setWalletId(value: string): void;
-
+    setWalletId(value: string): SendInitTransactionRequest;
 
     serializeBinary(): Uint8Array;
     toObject(includeInstance?: boolean): SendInitTransactionRequest.AsObject;
@@ -1454,9 +1342,8 @@ export namespace SendInitTransactionRequest {
 export class SendInitTransactionResponse extends jspb.Message { 
     clearTxIdsList(): void;
     getTxIdsList(): Array<string>;
-    setTxIdsList(value: Array<string>): void;
+    setTxIdsList(value: Array<string>): SendInitTransactionResponse;
     addTxIds(value: string, index?: number): string;
-
 
     serializeBinary(): Uint8Array;
     toObject(includeInstance?: boolean): SendInitTransactionResponse.AsObject;
@@ -1476,11 +1363,9 @@ export namespace SendInitTransactionResponse {
 
 export class CancelTransactionRequest extends jspb.Message { 
     getWalletId(): string;
-    setWalletId(value: string): void;
-
+    setWalletId(value: string): CancelTransactionRequest;
     getTransactionId(): string;
-    setTransactionId(value: string): void;
-
+    setTransactionId(value: string): CancelTransactionRequest;
 
     serializeBinary(): Uint8Array;
     toObject(includeInstance?: boolean): CancelTransactionRequest.AsObject;
@@ -1501,11 +1386,9 @@ export namespace CancelTransactionRequest {
 
 export class GetTransactionRequest extends jspb.Message { 
     getWalletId(): string;
-    setWalletId(value: string): void;
-
+    setWalletId(value: string): GetTransactionRequest;
     getTransactionId(): string;
-    setTransactionId(value: string): void;
-
+    setTransactionId(value: string): GetTransactionRequest;
 
     serializeBinary(): Uint8Array;
     toObject(includeInstance?: boolean): GetTransactionRequest.AsObject;
@@ -1526,11 +1409,9 @@ export namespace GetTransactionRequest {
 
 export class GetTransactionByTxIDRequest extends jspb.Message { 
     getWalletId(): string;
-    setWalletId(value: string): void;
-
+    setWalletId(value: string): GetTransactionByTxIDRequest;
     getTxId(): string;
-    setTxId(value: string): void;
-
+    setTxId(value: string): GetTransactionByTxIDRequest;
 
     serializeBinary(): Uint8Array;
     toObject(includeInstance?: boolean): GetTransactionByTxIDRequest.AsObject;
@@ -1551,14 +1432,11 @@ export namespace GetTransactionByTxIDRequest {
 
 export class ListTransactionsRequest extends jspb.Message { 
     getWalletId(): string;
-    setWalletId(value: string): void;
-
+    setWalletId(value: string): ListTransactionsRequest;
     getPageSize(): number;
-    setPageSize(value: number): void;
-
+    setPageSize(value: number): ListTransactionsRequest;
     getPageToken(): string;
-    setPageToken(value: string): void;
-
+    setPageToken(value: string): ListTransactionsRequest;
 
     serializeBinary(): Uint8Array;
     toObject(includeInstance?: boolean): ListTransactionsRequest.AsObject;
@@ -1580,45 +1458,33 @@ export namespace ListTransactionsRequest {
 
 export class ListTransactionsByFilterRequest extends jspb.Message { 
     getFilterType(): gincoinc_adamant_global_v1_adamantglobalv1_enum_pb.ListFilterType;
-    setFilterType(value: gincoinc_adamant_global_v1_adamantglobalv1_enum_pb.ListFilterType): void;
-
+    setFilterType(value: gincoinc_adamant_global_v1_adamantglobalv1_enum_pb.ListFilterType): ListTransactionsByFilterRequest;
     getTransactionId(): string;
-    setTransactionId(value: string): void;
-
+    setTransactionId(value: string): ListTransactionsByFilterRequest;
     getWalletId(): string;
-    setWalletId(value: string): void;
-
+    setWalletId(value: string): ListTransactionsByFilterRequest;
     getWalletName(): string;
-    setWalletName(value: string): void;
-
+    setWalletName(value: string): ListTransactionsByFilterRequest;
     getAddressName(): string;
-    setAddressName(value: string): void;
-
+    setAddressName(value: string): ListTransactionsByFilterRequest;
     getAddress(): string;
-    setAddress(value: string): void;
-
+    setAddress(value: string): ListTransactionsByFilterRequest;
     getTxid(): string;
-    setTxid(value: string): void;
-
+    setTxid(value: string): ListTransactionsByFilterRequest;
     getCoin(): gincoinc_global_v1_gincoincglobalv1_enum_pb.Coin;
-    setCoin(value: gincoinc_global_v1_gincoincglobalv1_enum_pb.Coin): void;
-
+    setCoin(value: gincoinc_global_v1_gincoincglobalv1_enum_pb.Coin): ListTransactionsByFilterRequest;
     clearWalletTypeList(): void;
     getWalletTypeList(): Array<gincoinc_adamant_global_v1_adamantglobalv1_enum_pb.WalletType>;
-    setWalletTypeList(value: Array<gincoinc_adamant_global_v1_adamantglobalv1_enum_pb.WalletType>): void;
+    setWalletTypeList(value: Array<gincoinc_adamant_global_v1_adamantglobalv1_enum_pb.WalletType>): ListTransactionsByFilterRequest;
     addWalletType(value: gincoinc_adamant_global_v1_adamantglobalv1_enum_pb.WalletType, index?: number): gincoinc_adamant_global_v1_adamantglobalv1_enum_pb.WalletType;
-
     clearTransactionStateList(): void;
     getTransactionStateList(): Array<gincoinc_adamant_global_v1_adamantglobalv1_enum_pb.TransactionState>;
-    setTransactionStateList(value: Array<gincoinc_adamant_global_v1_adamantglobalv1_enum_pb.TransactionState>): void;
+    setTransactionStateList(value: Array<gincoinc_adamant_global_v1_adamantglobalv1_enum_pb.TransactionState>): ListTransactionsByFilterRequest;
     addTransactionState(value: gincoinc_adamant_global_v1_adamantglobalv1_enum_pb.TransactionState, index?: number): gincoinc_adamant_global_v1_adamantglobalv1_enum_pb.TransactionState;
-
     getPageSize(): number;
-    setPageSize(value: number): void;
-
+    setPageSize(value: number): ListTransactionsByFilterRequest;
     getPageToken(): string;
-    setPageToken(value: string): void;
-
+    setPageToken(value: string): ListTransactionsByFilterRequest;
 
     serializeBinary(): Uint8Array;
     toObject(includeInstance?: boolean): ListTransactionsByFilterRequest.AsObject;
@@ -1650,12 +1516,10 @@ export namespace ListTransactionsByFilterRequest {
 export class ListTransactionsResponse extends jspb.Message { 
     clearTransactionsList(): void;
     getTransactionsList(): Array<gincoinc_adamant_global_v1_adamantglobalv1_model_pb.Transaction>;
-    setTransactionsList(value: Array<gincoinc_adamant_global_v1_adamantglobalv1_model_pb.Transaction>): void;
+    setTransactionsList(value: Array<gincoinc_adamant_global_v1_adamantglobalv1_model_pb.Transaction>): ListTransactionsResponse;
     addTransactions(value?: gincoinc_adamant_global_v1_adamantglobalv1_model_pb.Transaction, index?: number): gincoinc_adamant_global_v1_adamantglobalv1_model_pb.Transaction;
-
     getNextPageToken(): string;
-    setNextPageToken(value: string): void;
-
+    setNextPageToken(value: string): ListTransactionsResponse;
 
     serializeBinary(): Uint8Array;
     toObject(includeInstance?: boolean): ListTransactionsResponse.AsObject;
@@ -1676,11 +1540,9 @@ export namespace ListTransactionsResponse {
 
 export class GetSignInfoRequest extends jspb.Message { 
     getWalletId(): string;
-    setWalletId(value: string): void;
-
+    setWalletId(value: string): GetSignInfoRequest;
     getTransactionId(): string;
-    setTransactionId(value: string): void;
-
+    setTransactionId(value: string): GetSignInfoRequest;
 
     serializeBinary(): Uint8Array;
     toObject(includeInstance?: boolean): GetSignInfoRequest.AsObject;
@@ -1701,11 +1563,9 @@ export namespace GetSignInfoRequest {
 
 export class ListSignInfoRequest extends jspb.Message { 
     getWalletId(): string;
-    setWalletId(value: string): void;
-
+    setWalletId(value: string): ListSignInfoRequest;
     getTransactionId(): string;
-    setTransactionId(value: string): void;
-
+    setTransactionId(value: string): ListSignInfoRequest;
 
     serializeBinary(): Uint8Array;
     toObject(includeInstance?: boolean): ListSignInfoRequest.AsObject;
@@ -1727,9 +1587,8 @@ export namespace ListSignInfoRequest {
 export class ListSignInfoResponse extends jspb.Message { 
     clearSignInfoListList(): void;
     getSignInfoListList(): Array<gincoinc_adamant_global_v1_adamantglobalv1_model_pb.SignInfo>;
-    setSignInfoListList(value: Array<gincoinc_adamant_global_v1_adamantglobalv1_model_pb.SignInfo>): void;
+    setSignInfoListList(value: Array<gincoinc_adamant_global_v1_adamantglobalv1_model_pb.SignInfo>): ListSignInfoResponse;
     addSignInfoList(value?: gincoinc_adamant_global_v1_adamantglobalv1_model_pb.SignInfo, index?: number): gincoinc_adamant_global_v1_adamantglobalv1_model_pb.SignInfo;
-
 
     serializeBinary(): Uint8Array;
     toObject(includeInstance?: boolean): ListSignInfoResponse.AsObject;
@@ -1749,8 +1608,7 @@ export namespace ListSignInfoResponse {
 
 export class ListXRPInitSignInfoRequest extends jspb.Message { 
     getWalletId(): string;
-    setWalletId(value: string): void;
-
+    setWalletId(value: string): ListXRPInitSignInfoRequest;
 
     serializeBinary(): Uint8Array;
     toObject(includeInstance?: boolean): ListXRPInitSignInfoRequest.AsObject;
@@ -1771,9 +1629,8 @@ export namespace ListXRPInitSignInfoRequest {
 export class ListXRPInitSignInfoResponse extends jspb.Message { 
     clearSignInfoListList(): void;
     getSignInfoListList(): Array<gincoinc_adamant_global_v1_adamantglobalv1_model_pb.SignInfo>;
-    setSignInfoListList(value: Array<gincoinc_adamant_global_v1_adamantglobalv1_model_pb.SignInfo>): void;
+    setSignInfoListList(value: Array<gincoinc_adamant_global_v1_adamantglobalv1_model_pb.SignInfo>): ListXRPInitSignInfoResponse;
     addSignInfoList(value?: gincoinc_adamant_global_v1_adamantglobalv1_model_pb.SignInfo, index?: number): gincoinc_adamant_global_v1_adamantglobalv1_model_pb.SignInfo;
-
 
     serializeBinary(): Uint8Array;
     toObject(includeInstance?: boolean): ListXRPInitSignInfoResponse.AsObject;
@@ -1793,8 +1650,7 @@ export namespace ListXRPInitSignInfoResponse {
 
 export class ListInitSignInfoRequest extends jspb.Message { 
     getWalletId(): string;
-    setWalletId(value: string): void;
-
+    setWalletId(value: string): ListInitSignInfoRequest;
 
     serializeBinary(): Uint8Array;
     toObject(includeInstance?: boolean): ListInitSignInfoRequest.AsObject;
@@ -1814,14 +1670,11 @@ export namespace ListInitSignInfoRequest {
 
 export class ListTransfersRequest extends jspb.Message { 
     getWalletId(): string;
-    setWalletId(value: string): void;
-
+    setWalletId(value: string): ListTransfersRequest;
     getPageSize(): number;
-    setPageSize(value: number): void;
-
+    setPageSize(value: number): ListTransfersRequest;
     getPageToken(): string;
-    setPageToken(value: string): void;
-
+    setPageToken(value: string): ListTransfersRequest;
 
     serializeBinary(): Uint8Array;
     toObject(includeInstance?: boolean): ListTransfersRequest.AsObject;
@@ -1843,58 +1696,43 @@ export namespace ListTransfersRequest {
 
 export class ListTransfersByFilterRequest extends jspb.Message { 
     getFilterType(): gincoinc_adamant_global_v1_adamantglobalv1_enum_pb.ListFilterType;
-    setFilterType(value: gincoinc_adamant_global_v1_adamantglobalv1_enum_pb.ListFilterType): void;
-
+    setFilterType(value: gincoinc_adamant_global_v1_adamantglobalv1_enum_pb.ListFilterType): ListTransfersByFilterRequest;
     getTransferId(): string;
-    setTransferId(value: string): void;
-
+    setTransferId(value: string): ListTransfersByFilterRequest;
     getWalletId(): string;
-    setWalletId(value: string): void;
-
+    setWalletId(value: string): ListTransfersByFilterRequest;
     getWalletName(): string;
-    setWalletName(value: string): void;
-
+    setWalletName(value: string): ListTransfersByFilterRequest;
     getAddressName(): string;
-    setAddressName(value: string): void;
-
+    setAddressName(value: string): ListTransfersByFilterRequest;
     getAddress(): string;
-    setAddress(value: string): void;
-
+    setAddress(value: string): ListTransfersByFilterRequest;
     getTxid(): string;
-    setTxid(value: string): void;
-
+    setTxid(value: string): ListTransfersByFilterRequest;
     getWatchOnly(): boolean;
-    setWatchOnly(value: boolean): void;
-
+    setWatchOnly(value: boolean): ListTransfersByFilterRequest;
     getCoin(): gincoinc_global_v1_gincoincglobalv1_enum_pb.Coin;
-    setCoin(value: gincoinc_global_v1_gincoincglobalv1_enum_pb.Coin): void;
-
+    setCoin(value: gincoinc_global_v1_gincoincglobalv1_enum_pb.Coin): ListTransfersByFilterRequest;
     clearWalletTypeList(): void;
     getWalletTypeList(): Array<gincoinc_adamant_global_v1_adamantglobalv1_enum_pb.WalletType>;
-    setWalletTypeList(value: Array<gincoinc_adamant_global_v1_adamantglobalv1_enum_pb.WalletType>): void;
+    setWalletTypeList(value: Array<gincoinc_adamant_global_v1_adamantglobalv1_enum_pb.WalletType>): ListTransfersByFilterRequest;
     addWalletType(value: gincoinc_adamant_global_v1_adamantglobalv1_enum_pb.WalletType, index?: number): gincoinc_adamant_global_v1_adamantglobalv1_enum_pb.WalletType;
-
     getTransferType(): gincoinc_global_v1_gincoincglobalv1_enum_pb.TransferType;
-    setTransferType(value: gincoinc_global_v1_gincoincglobalv1_enum_pb.TransferType): void;
-
+    setTransferType(value: gincoinc_global_v1_gincoincglobalv1_enum_pb.TransferType): ListTransfersByFilterRequest;
     getPageSize(): number;
-    setPageSize(value: number): void;
-
+    setPageSize(value: number): ListTransfersByFilterRequest;
     getPageToken(): string;
-    setPageToken(value: string): void;
-
+    setPageToken(value: string): ListTransfersByFilterRequest;
 
     hasStartTime(): boolean;
     clearStartTime(): void;
     getStartTime(): google_protobuf_timestamp_pb.Timestamp | undefined;
-    setStartTime(value?: google_protobuf_timestamp_pb.Timestamp): void;
-
+    setStartTime(value?: google_protobuf_timestamp_pb.Timestamp): ListTransfersByFilterRequest;
 
     hasEndTime(): boolean;
     clearEndTime(): void;
     getEndTime(): google_protobuf_timestamp_pb.Timestamp | undefined;
-    setEndTime(value?: google_protobuf_timestamp_pb.Timestamp): void;
-
+    setEndTime(value?: google_protobuf_timestamp_pb.Timestamp): ListTransfersByFilterRequest;
 
     serializeBinary(): Uint8Array;
     toObject(includeInstance?: boolean): ListTransfersByFilterRequest.AsObject;
@@ -1929,12 +1767,10 @@ export namespace ListTransfersByFilterRequest {
 export class ListTransfersResponse extends jspb.Message { 
     clearTransfersList(): void;
     getTransfersList(): Array<gincoinc_adamant_global_v1_adamantglobalv1_model_pb.Transfer>;
-    setTransfersList(value: Array<gincoinc_adamant_global_v1_adamantglobalv1_model_pb.Transfer>): void;
+    setTransfersList(value: Array<gincoinc_adamant_global_v1_adamantglobalv1_model_pb.Transfer>): ListTransfersResponse;
     addTransfers(value?: gincoinc_adamant_global_v1_adamantglobalv1_model_pb.Transfer, index?: number): gincoinc_adamant_global_v1_adamantglobalv1_model_pb.Transfer;
-
     getNextPageToken(): string;
-    setNextPageToken(value: string): void;
-
+    setNextPageToken(value: string): ListTransfersResponse;
 
     serializeBinary(): Uint8Array;
     toObject(includeInstance?: boolean): ListTransfersResponse.AsObject;
@@ -1955,8 +1791,7 @@ export namespace ListTransfersResponse {
 
 export class GetRateSnapshotRequest extends jspb.Message { 
     getRateSnapshotId(): string;
-    setRateSnapshotId(value: string): void;
-
+    setRateSnapshotId(value: string): GetRateSnapshotRequest;
 
     serializeBinary(): Uint8Array;
     toObject(includeInstance?: boolean): GetRateSnapshotRequest.AsObject;
@@ -1994,9 +1829,8 @@ export namespace GetLatestRateSnapshotRequest {
 export class SetRatesRequest extends jspb.Message { 
     clearRatesList(): void;
     getRatesList(): Array<gincoinc_adamant_global_v1_adamantglobalv1_model_pb.RequestRate>;
-    setRatesList(value: Array<gincoinc_adamant_global_v1_adamantglobalv1_model_pb.RequestRate>): void;
+    setRatesList(value: Array<gincoinc_adamant_global_v1_adamantglobalv1_model_pb.RequestRate>): SetRatesRequest;
     addRates(value?: gincoinc_adamant_global_v1_adamantglobalv1_model_pb.RequestRate, index?: number): gincoinc_adamant_global_v1_adamantglobalv1_model_pb.RequestRate;
-
 
     serializeBinary(): Uint8Array;
     toObject(includeInstance?: boolean): SetRatesRequest.AsObject;
@@ -2016,8 +1850,7 @@ export namespace SetRatesRequest {
 
 export class SetRatesResponse extends jspb.Message { 
     getRateSnapshotId(): string;
-    setRateSnapshotId(value: string): void;
-
+    setRateSnapshotId(value: string): SetRatesResponse;
 
     serializeBinary(): Uint8Array;
     toObject(includeInstance?: boolean): SetRatesResponse.AsObject;
@@ -2037,8 +1870,7 @@ export namespace SetRatesResponse {
 
 export class GetSpendableBalanceRequest extends jspb.Message { 
     getWalletId(): string;
-    setWalletId(value: string): void;
-
+    setWalletId(value: string): GetSpendableBalanceRequest;
 
     serializeBinary(): Uint8Array;
     toObject(includeInstance?: boolean): GetSpendableBalanceRequest.AsObject;
@@ -2058,29 +1890,21 @@ export namespace GetSpendableBalanceRequest {
 
 export class GetSpendableBalanceResponse extends jspb.Message { 
     getTotalSpendableBalance(): number;
-    setTotalSpendableBalance(value: number): void;
-
+    setTotalSpendableBalance(value: number): GetSpendableBalanceResponse;
     getStringTotalSpendableBalance(): string;
-    setStringTotalSpendableBalance(value: string): void;
-
+    setStringTotalSpendableBalance(value: string): GetSpendableBalanceResponse;
     getDailySpendableBalance(): number;
-    setDailySpendableBalance(value: number): void;
-
+    setDailySpendableBalance(value: number): GetSpendableBalanceResponse;
     getStringDailySpendableBalance(): string;
-    setStringDailySpendableBalance(value: string): void;
-
+    setStringDailySpendableBalance(value: string): GetSpendableBalanceResponse;
     getHourlySpendableBalance(): number;
-    setHourlySpendableBalance(value: number): void;
-
+    setHourlySpendableBalance(value: number): GetSpendableBalanceResponse;
     getStringHourlySpendableBalance(): string;
-    setStringHourlySpendableBalance(value: string): void;
-
+    setStringHourlySpendableBalance(value: string): GetSpendableBalanceResponse;
     getOneTimeSpendableBalance(): number;
-    setOneTimeSpendableBalance(value: number): void;
-
+    setOneTimeSpendableBalance(value: number): GetSpendableBalanceResponse;
     getStringOneTimeSpendableBalance(): string;
-    setStringOneTimeSpendableBalance(value: string): void;
-
+    setStringOneTimeSpendableBalance(value: string): GetSpendableBalanceResponse;
 
     serializeBinary(): Uint8Array;
     toObject(includeInstance?: boolean): GetSpendableBalanceResponse.AsObject;
@@ -2107,8 +1931,7 @@ export namespace GetSpendableBalanceResponse {
 
 export class GetTotalBalanceRequest extends jspb.Message { 
     getWatchOnly(): boolean;
-    setWatchOnly(value: boolean): void;
-
+    setWatchOnly(value: boolean): GetTotalBalanceRequest;
 
     serializeBinary(): Uint8Array;
     toObject(includeInstance?: boolean): GetTotalBalanceRequest.AsObject;
@@ -2128,20 +1951,17 @@ export namespace GetTotalBalanceRequest {
 
 export class ListBalanceSnapshotsRequest extends jspb.Message { 
     getWatchOnly(): boolean;
-    setWatchOnly(value: boolean): void;
-
+    setWatchOnly(value: boolean): ListBalanceSnapshotsRequest;
 
     hasStartTime(): boolean;
     clearStartTime(): void;
     getStartTime(): google_protobuf_timestamp_pb.Timestamp | undefined;
-    setStartTime(value?: google_protobuf_timestamp_pb.Timestamp): void;
-
+    setStartTime(value?: google_protobuf_timestamp_pb.Timestamp): ListBalanceSnapshotsRequest;
 
     hasEndTime(): boolean;
     clearEndTime(): void;
     getEndTime(): google_protobuf_timestamp_pb.Timestamp | undefined;
-    setEndTime(value?: google_protobuf_timestamp_pb.Timestamp): void;
-
+    setEndTime(value?: google_protobuf_timestamp_pb.Timestamp): ListBalanceSnapshotsRequest;
 
     serializeBinary(): Uint8Array;
     toObject(includeInstance?: boolean): ListBalanceSnapshotsRequest.AsObject;
@@ -2164,9 +1984,8 @@ export namespace ListBalanceSnapshotsRequest {
 export class ListBalanceSnapshotsResponse extends jspb.Message { 
     clearBalanceSnapshotsList(): void;
     getBalanceSnapshotsList(): Array<gincoinc_adamant_global_v1_adamantglobalv1_model_pb.BalanceSnapshot>;
-    setBalanceSnapshotsList(value: Array<gincoinc_adamant_global_v1_adamantglobalv1_model_pb.BalanceSnapshot>): void;
+    setBalanceSnapshotsList(value: Array<gincoinc_adamant_global_v1_adamantglobalv1_model_pb.BalanceSnapshot>): ListBalanceSnapshotsResponse;
     addBalanceSnapshots(value?: gincoinc_adamant_global_v1_adamantglobalv1_model_pb.BalanceSnapshot, index?: number): gincoinc_adamant_global_v1_adamantglobalv1_model_pb.BalanceSnapshot;
-
 
     serializeBinary(): Uint8Array;
     toObject(includeInstance?: boolean): ListBalanceSnapshotsResponse.AsObject;
@@ -2187,21 +2006,18 @@ export namespace ListBalanceSnapshotsResponse {
 export class ListWalletBalanceSnapshotsRequest extends jspb.Message { 
     clearWalletIdsList(): void;
     getWalletIdsList(): Array<string>;
-    setWalletIdsList(value: Array<string>): void;
+    setWalletIdsList(value: Array<string>): ListWalletBalanceSnapshotsRequest;
     addWalletIds(value: string, index?: number): string;
-
 
     hasStartTime(): boolean;
     clearStartTime(): void;
     getStartTime(): google_protobuf_timestamp_pb.Timestamp | undefined;
-    setStartTime(value?: google_protobuf_timestamp_pb.Timestamp): void;
-
+    setStartTime(value?: google_protobuf_timestamp_pb.Timestamp): ListWalletBalanceSnapshotsRequest;
 
     hasEndTime(): boolean;
     clearEndTime(): void;
     getEndTime(): google_protobuf_timestamp_pb.Timestamp | undefined;
-    setEndTime(value?: google_protobuf_timestamp_pb.Timestamp): void;
-
+    setEndTime(value?: google_protobuf_timestamp_pb.Timestamp): ListWalletBalanceSnapshotsRequest;
 
     serializeBinary(): Uint8Array;
     toObject(includeInstance?: boolean): ListWalletBalanceSnapshotsRequest.AsObject;
@@ -2226,8 +2042,7 @@ export class ListWalletBalanceSnapshotsResponse extends jspb.Message {
     hasWalletBalanceSnapshotMap(): boolean;
     clearWalletBalanceSnapshotMap(): void;
     getWalletBalanceSnapshotMap(): gincoinc_adamant_global_v1_adamantglobalv1_model_pb.WalletBalanceSnapshotMap | undefined;
-    setWalletBalanceSnapshotMap(value?: gincoinc_adamant_global_v1_adamantglobalv1_model_pb.WalletBalanceSnapshotMap): void;
-
+    setWalletBalanceSnapshotMap(value?: gincoinc_adamant_global_v1_adamantglobalv1_model_pb.WalletBalanceSnapshotMap): ListWalletBalanceSnapshotsResponse;
 
     serializeBinary(): Uint8Array;
     toObject(includeInstance?: boolean): ListWalletBalanceSnapshotsResponse.AsObject;
@@ -2247,20 +2062,17 @@ export namespace ListWalletBalanceSnapshotsResponse {
 
 export class ListTransferVolumeSnapshotsRequest extends jspb.Message { 
     getWatchOnly(): boolean;
-    setWatchOnly(value: boolean): void;
-
+    setWatchOnly(value: boolean): ListTransferVolumeSnapshotsRequest;
 
     hasStartTime(): boolean;
     clearStartTime(): void;
     getStartTime(): google_protobuf_timestamp_pb.Timestamp | undefined;
-    setStartTime(value?: google_protobuf_timestamp_pb.Timestamp): void;
-
+    setStartTime(value?: google_protobuf_timestamp_pb.Timestamp): ListTransferVolumeSnapshotsRequest;
 
     hasEndTime(): boolean;
     clearEndTime(): void;
     getEndTime(): google_protobuf_timestamp_pb.Timestamp | undefined;
-    setEndTime(value?: google_protobuf_timestamp_pb.Timestamp): void;
-
+    setEndTime(value?: google_protobuf_timestamp_pb.Timestamp): ListTransferVolumeSnapshotsRequest;
 
     serializeBinary(): Uint8Array;
     toObject(includeInstance?: boolean): ListTransferVolumeSnapshotsRequest.AsObject;
@@ -2285,8 +2097,7 @@ export class ListTransferVolumeSnapshotsResponse extends jspb.Message {
     hasTransferVolumeSnapshots(): boolean;
     clearTransferVolumeSnapshots(): void;
     getTransferVolumeSnapshots(): gincoinc_adamant_global_v1_adamantglobalv1_model_pb.TransferVolumeSnapshots | undefined;
-    setTransferVolumeSnapshots(value?: gincoinc_adamant_global_v1_adamantglobalv1_model_pb.TransferVolumeSnapshots): void;
-
+    setTransferVolumeSnapshots(value?: gincoinc_adamant_global_v1_adamantglobalv1_model_pb.TransferVolumeSnapshots): ListTransferVolumeSnapshotsResponse;
 
     serializeBinary(): Uint8Array;
     toObject(includeInstance?: boolean): ListTransferVolumeSnapshotsResponse.AsObject;
@@ -2307,21 +2118,18 @@ export namespace ListTransferVolumeSnapshotsResponse {
 export class ListWalletTransferVolumeSnapshotsRequest extends jspb.Message { 
     clearWalletIdsList(): void;
     getWalletIdsList(): Array<string>;
-    setWalletIdsList(value: Array<string>): void;
+    setWalletIdsList(value: Array<string>): ListWalletTransferVolumeSnapshotsRequest;
     addWalletIds(value: string, index?: number): string;
-
 
     hasStartTime(): boolean;
     clearStartTime(): void;
     getStartTime(): google_protobuf_timestamp_pb.Timestamp | undefined;
-    setStartTime(value?: google_protobuf_timestamp_pb.Timestamp): void;
-
+    setStartTime(value?: google_protobuf_timestamp_pb.Timestamp): ListWalletTransferVolumeSnapshotsRequest;
 
     hasEndTime(): boolean;
     clearEndTime(): void;
     getEndTime(): google_protobuf_timestamp_pb.Timestamp | undefined;
-    setEndTime(value?: google_protobuf_timestamp_pb.Timestamp): void;
-
+    setEndTime(value?: google_protobuf_timestamp_pb.Timestamp): ListWalletTransferVolumeSnapshotsRequest;
 
     serializeBinary(): Uint8Array;
     toObject(includeInstance?: boolean): ListWalletTransferVolumeSnapshotsRequest.AsObject;
@@ -2346,8 +2154,7 @@ export class ListWalletTransferVolumeSnapshotsResponse extends jspb.Message {
     hasWalletTransferVolumeSnapshots(): boolean;
     clearWalletTransferVolumeSnapshots(): void;
     getWalletTransferVolumeSnapshots(): gincoinc_adamant_global_v1_adamantglobalv1_model_pb.WalletTransferVolumeSnapshots | undefined;
-    setWalletTransferVolumeSnapshots(value?: gincoinc_adamant_global_v1_adamantglobalv1_model_pb.WalletTransferVolumeSnapshots): void;
-
+    setWalletTransferVolumeSnapshots(value?: gincoinc_adamant_global_v1_adamantglobalv1_model_pb.WalletTransferVolumeSnapshots): ListWalletTransferVolumeSnapshotsResponse;
 
     serializeBinary(): Uint8Array;
     toObject(includeInstance?: boolean): ListWalletTransferVolumeSnapshotsResponse.AsObject;
@@ -2367,25 +2174,19 @@ export namespace ListWalletTransferVolumeSnapshotsResponse {
 
 export class CalculateFeeRequest extends jspb.Message { 
     getWalletId(): string;
-    setWalletId(value: string): void;
-
+    setWalletId(value: string): CalculateFeeRequest;
     getFeeRate(): number;
-    setFeeRate(value: number): void;
-
+    setFeeRate(value: number): CalculateFeeRequest;
     clearTxOutputsList(): void;
     getTxOutputsList(): Array<gincoinc_adamant_global_v1_adamantglobalv1_model_pb.RequestTxOutput>;
-    setTxOutputsList(value: Array<gincoinc_adamant_global_v1_adamantglobalv1_model_pb.RequestTxOutput>): void;
+    setTxOutputsList(value: Array<gincoinc_adamant_global_v1_adamantglobalv1_model_pb.RequestTxOutput>): CalculateFeeRequest;
     addTxOutputs(value?: gincoinc_adamant_global_v1_adamantglobalv1_model_pb.RequestTxOutput, index?: number): gincoinc_adamant_global_v1_adamantglobalv1_model_pb.RequestTxOutput;
-
     getAddress(): string;
-    setAddress(value: string): void;
-
+    setAddress(value: string): CalculateFeeRequest;
     getDestinationTag(): number;
-    setDestinationTag(value: number): void;
-
+    setDestinationTag(value: number): CalculateFeeRequest;
     getStringValue(): string;
-    setStringValue(value: string): void;
-
+    setStringValue(value: string): CalculateFeeRequest;
 
     serializeBinary(): Uint8Array;
     toObject(includeInstance?: boolean): CalculateFeeRequest.AsObject;
@@ -2410,11 +2211,9 @@ export namespace CalculateFeeRequest {
 
 export class CalculateFeeResponse extends jspb.Message { 
     getFee(): number;
-    setFee(value: number): void;
-
+    setFee(value: number): CalculateFeeResponse;
     getStringFee(): string;
-    setStringFee(value: string): void;
-
+    setStringFee(value: string): CalculateFeeResponse;
 
     serializeBinary(): Uint8Array;
     toObject(includeInstance?: boolean): CalculateFeeResponse.AsObject;
@@ -2453,9 +2252,8 @@ export namespace GetMembersDeactivatabilitiesRequest {
 export class GetMembersDeactivatabilitiesResponse extends jspb.Message { 
     clearDeactivatabilitiesList(): void;
     getDeactivatabilitiesList(): Array<gincoinc_adamant_global_v1_adamantglobalv1_model_pb.Deactivatability>;
-    setDeactivatabilitiesList(value: Array<gincoinc_adamant_global_v1_adamantglobalv1_model_pb.Deactivatability>): void;
+    setDeactivatabilitiesList(value: Array<gincoinc_adamant_global_v1_adamantglobalv1_model_pb.Deactivatability>): GetMembersDeactivatabilitiesResponse;
     addDeactivatabilities(value?: gincoinc_adamant_global_v1_adamantglobalv1_model_pb.Deactivatability, index?: number): gincoinc_adamant_global_v1_adamantglobalv1_model_pb.Deactivatability;
-
 
     serializeBinary(): Uint8Array;
     toObject(includeInstance?: boolean): GetMembersDeactivatabilitiesResponse.AsObject;
@@ -2475,8 +2273,7 @@ export namespace GetMembersDeactivatabilitiesResponse {
 
 export class GetRecommendedFeeRateRequest extends jspb.Message { 
     getCoin(): gincoinc_global_v1_gincoincglobalv1_enum_pb.Coin;
-    setCoin(value: gincoinc_global_v1_gincoincglobalv1_enum_pb.Coin): void;
-
+    setCoin(value: gincoinc_global_v1_gincoincglobalv1_enum_pb.Coin): GetRecommendedFeeRateRequest;
 
     serializeBinary(): Uint8Array;
     toObject(includeInstance?: boolean): GetRecommendedFeeRateRequest.AsObject;
@@ -2496,17 +2293,13 @@ export namespace GetRecommendedFeeRateRequest {
 
 export class GetRecommendedFeeRateResponse extends jspb.Message { 
     getFastest(): number;
-    setFastest(value: number): void;
-
+    setFastest(value: number): GetRecommendedFeeRateResponse;
     getFast(): number;
-    setFast(value: number): void;
-
+    setFast(value: number): GetRecommendedFeeRateResponse;
     getAverage(): number;
-    setAverage(value: number): void;
-
+    setAverage(value: number): GetRecommendedFeeRateResponse;
     getSafeLow(): number;
-    setSafeLow(value: number): void;
-
+    setSafeLow(value: number): GetRecommendedFeeRateResponse;
 
     serializeBinary(): Uint8Array;
     toObject(includeInstance?: boolean): GetRecommendedFeeRateResponse.AsObject;
@@ -2529,11 +2322,9 @@ export namespace GetRecommendedFeeRateResponse {
 
 export class ValidateAddressRequest extends jspb.Message { 
     getCoin(): gincoinc_global_v1_gincoincglobalv1_enum_pb.Coin;
-    setCoin(value: gincoinc_global_v1_gincoincglobalv1_enum_pb.Coin): void;
-
+    setCoin(value: gincoinc_global_v1_gincoincglobalv1_enum_pb.Coin): ValidateAddressRequest;
     getAddress(): string;
-    setAddress(value: string): void;
-
+    setAddress(value: string): ValidateAddressRequest;
 
     serializeBinary(): Uint8Array;
     toObject(includeInstance?: boolean): ValidateAddressRequest.AsObject;
@@ -2554,8 +2345,7 @@ export namespace ValidateAddressRequest {
 
 export class ValidateAddressResponse extends jspb.Message { 
     getValid(): boolean;
-    setValid(value: boolean): void;
-
+    setValid(value: boolean): ValidateAddressResponse;
 
     serializeBinary(): Uint8Array;
     toObject(includeInstance?: boolean): ValidateAddressResponse.AsObject;
@@ -2593,9 +2383,8 @@ export namespace ListConfirmationsRequest {
 export class ListConfirmationsResponse extends jspb.Message { 
     clearConfirmationsList(): void;
     getConfirmationsList(): Array<gincoinc_adamant_global_v1_adamantglobalv1_model_pb.Confirmation>;
-    setConfirmationsList(value: Array<gincoinc_adamant_global_v1_adamantglobalv1_model_pb.Confirmation>): void;
+    setConfirmationsList(value: Array<gincoinc_adamant_global_v1_adamantglobalv1_model_pb.Confirmation>): ListConfirmationsResponse;
     addConfirmations(value?: gincoinc_adamant_global_v1_adamantglobalv1_model_pb.Confirmation, index?: number): gincoinc_adamant_global_v1_adamantglobalv1_model_pb.Confirmation;
-
 
     serializeBinary(): Uint8Array;
     toObject(includeInstance?: boolean): ListConfirmationsResponse.AsObject;
@@ -2615,14 +2404,11 @@ export namespace ListConfirmationsResponse {
 
 export class CreateLabeledAddressRequest extends jspb.Message { 
     getName(): string;
-    setName(value: string): void;
-
+    setName(value: string): CreateLabeledAddressRequest;
     getCoin(): gincoinc_global_v1_gincoincglobalv1_enum_pb.Coin;
-    setCoin(value: gincoinc_global_v1_gincoincglobalv1_enum_pb.Coin): void;
-
+    setCoin(value: gincoinc_global_v1_gincoincglobalv1_enum_pb.Coin): CreateLabeledAddressRequest;
     getAddress(): string;
-    setAddress(value: string): void;
-
+    setAddress(value: string): CreateLabeledAddressRequest;
 
     serializeBinary(): Uint8Array;
     toObject(includeInstance?: boolean): CreateLabeledAddressRequest.AsObject;
@@ -2644,8 +2430,7 @@ export namespace CreateLabeledAddressRequest {
 
 export class CreateLabeledAddressResponse extends jspb.Message { 
     getLabeledAddressId(): string;
-    setLabeledAddressId(value: string): void;
-
+    setLabeledAddressId(value: string): CreateLabeledAddressResponse;
 
     serializeBinary(): Uint8Array;
     toObject(includeInstance?: boolean): CreateLabeledAddressResponse.AsObject;
@@ -2665,17 +2450,13 @@ export namespace CreateLabeledAddressResponse {
 
 export class UpdateLabeledAddressRequest extends jspb.Message { 
     getLabeledAddressId(): string;
-    setLabeledAddressId(value: string): void;
-
+    setLabeledAddressId(value: string): UpdateLabeledAddressRequest;
     getName(): string;
-    setName(value: string): void;
-
+    setName(value: string): UpdateLabeledAddressRequest;
     getCoin(): gincoinc_global_v1_gincoincglobalv1_enum_pb.Coin;
-    setCoin(value: gincoinc_global_v1_gincoincglobalv1_enum_pb.Coin): void;
-
+    setCoin(value: gincoinc_global_v1_gincoincglobalv1_enum_pb.Coin): UpdateLabeledAddressRequest;
     getAddress(): string;
-    setAddress(value: string): void;
-
+    setAddress(value: string): UpdateLabeledAddressRequest;
 
     serializeBinary(): Uint8Array;
     toObject(includeInstance?: boolean): UpdateLabeledAddressRequest.AsObject;
@@ -2698,8 +2479,7 @@ export namespace UpdateLabeledAddressRequest {
 
 export class GetLabeledAddressRequest extends jspb.Message { 
     getLabeledAddressId(): string;
-    setLabeledAddressId(value: string): void;
-
+    setLabeledAddressId(value: string): GetLabeledAddressRequest;
 
     serializeBinary(): Uint8Array;
     toObject(includeInstance?: boolean): GetLabeledAddressRequest.AsObject;
@@ -2737,9 +2517,8 @@ export namespace ListLabeledAddressesRequest {
 export class ListLabeledAddressesResponse extends jspb.Message { 
     clearAddressesList(): void;
     getAddressesList(): Array<gincoinc_adamant_global_v1_adamantglobalv1_model_pb.LabeledAddress>;
-    setAddressesList(value: Array<gincoinc_adamant_global_v1_adamantglobalv1_model_pb.LabeledAddress>): void;
+    setAddressesList(value: Array<gincoinc_adamant_global_v1_adamantglobalv1_model_pb.LabeledAddress>): ListLabeledAddressesResponse;
     addAddresses(value?: gincoinc_adamant_global_v1_adamantglobalv1_model_pb.LabeledAddress, index?: number): gincoinc_adamant_global_v1_adamantglobalv1_model_pb.LabeledAddress;
-
 
     serializeBinary(): Uint8Array;
     toObject(includeInstance?: boolean): ListLabeledAddressesResponse.AsObject;
@@ -2759,8 +2538,7 @@ export namespace ListLabeledAddressesResponse {
 
 export class DeleteLabeledAddressRequest extends jspb.Message { 
     getLabeledAddressId(): string;
-    setLabeledAddressId(value: string): void;
-
+    setLabeledAddressId(value: string): DeleteLabeledAddressRequest;
 
     serializeBinary(): Uint8Array;
     toObject(includeInstance?: boolean): DeleteLabeledAddressRequest.AsObject;
@@ -2780,11 +2558,9 @@ export namespace DeleteLabeledAddressRequest {
 
 export class ReviewLabeledAddressProposalRequest extends jspb.Message { 
     getLabeledAddressId(): string;
-    setLabeledAddressId(value: string): void;
-
+    setLabeledAddressId(value: string): ReviewLabeledAddressProposalRequest;
     getApprove(): boolean;
-    setApprove(value: boolean): void;
-
+    setApprove(value: boolean): ReviewLabeledAddressProposalRequest;
 
     serializeBinary(): Uint8Array;
     toObject(includeInstance?: boolean): ReviewLabeledAddressProposalRequest.AsObject;
@@ -2805,16 +2581,13 @@ export namespace ReviewLabeledAddressProposalRequest {
 
 export class CreateWhitelistRequest extends jspb.Message { 
     getName(): string;
-    setName(value: string): void;
-
+    setName(value: string): CreateWhitelistRequest;
     getCoin(): gincoinc_global_v1_gincoincglobalv1_enum_pb.Coin;
-    setCoin(value: gincoinc_global_v1_gincoincglobalv1_enum_pb.Coin): void;
-
+    setCoin(value: gincoinc_global_v1_gincoincglobalv1_enum_pb.Coin): CreateWhitelistRequest;
     clearAddressIdsList(): void;
     getAddressIdsList(): Array<string>;
-    setAddressIdsList(value: Array<string>): void;
+    setAddressIdsList(value: Array<string>): CreateWhitelistRequest;
     addAddressIds(value: string, index?: number): string;
-
 
     serializeBinary(): Uint8Array;
     toObject(includeInstance?: boolean): CreateWhitelistRequest.AsObject;
@@ -2836,8 +2609,7 @@ export namespace CreateWhitelistRequest {
 
 export class CreateWhitelistResponse extends jspb.Message { 
     getWhitelistId(): string;
-    setWhitelistId(value: string): void;
-
+    setWhitelistId(value: string): CreateWhitelistResponse;
 
     serializeBinary(): Uint8Array;
     toObject(includeInstance?: boolean): CreateWhitelistResponse.AsObject;
@@ -2857,8 +2629,7 @@ export namespace CreateWhitelistResponse {
 
 export class GetWhitelistRequest extends jspb.Message { 
     getWhitelistId(): string;
-    setWhitelistId(value: string): void;
-
+    setWhitelistId(value: string): GetWhitelistRequest;
 
     serializeBinary(): Uint8Array;
     toObject(includeInstance?: boolean): GetWhitelistRequest.AsObject;
@@ -2896,9 +2667,8 @@ export namespace ListWhitelistsRequest {
 export class ListWhitelistsResponse extends jspb.Message { 
     clearWhitelistsList(): void;
     getWhitelistsList(): Array<gincoinc_adamant_global_v1_adamantglobalv1_model_pb.Whitelist>;
-    setWhitelistsList(value: Array<gincoinc_adamant_global_v1_adamantglobalv1_model_pb.Whitelist>): void;
+    setWhitelistsList(value: Array<gincoinc_adamant_global_v1_adamantglobalv1_model_pb.Whitelist>): ListWhitelistsResponse;
     addWhitelists(value?: gincoinc_adamant_global_v1_adamantglobalv1_model_pb.Whitelist, index?: number): gincoinc_adamant_global_v1_adamantglobalv1_model_pb.Whitelist;
-
 
     serializeBinary(): Uint8Array;
     toObject(includeInstance?: boolean): ListWhitelistsResponse.AsObject;
@@ -2918,19 +2688,15 @@ export namespace ListWhitelistsResponse {
 
 export class UpdateWhitelistRequest extends jspb.Message { 
     getWhitelistId(): string;
-    setWhitelistId(value: string): void;
-
+    setWhitelistId(value: string): UpdateWhitelistRequest;
     getName(): string;
-    setName(value: string): void;
-
+    setName(value: string): UpdateWhitelistRequest;
     getCoin(): gincoinc_global_v1_gincoincglobalv1_enum_pb.Coin;
-    setCoin(value: gincoinc_global_v1_gincoincglobalv1_enum_pb.Coin): void;
-
+    setCoin(value: gincoinc_global_v1_gincoincglobalv1_enum_pb.Coin): UpdateWhitelistRequest;
     clearAddressIdsList(): void;
     getAddressIdsList(): Array<string>;
-    setAddressIdsList(value: Array<string>): void;
+    setAddressIdsList(value: Array<string>): UpdateWhitelistRequest;
     addAddressIds(value: string, index?: number): string;
-
 
     serializeBinary(): Uint8Array;
     toObject(includeInstance?: boolean): UpdateWhitelistRequest.AsObject;
@@ -2953,13 +2719,11 @@ export namespace UpdateWhitelistRequest {
 
 export class UpdateWhitelistAddressesRequest extends jspb.Message { 
     getWhitelistId(): string;
-    setWhitelistId(value: string): void;
-
+    setWhitelistId(value: string): UpdateWhitelistAddressesRequest;
     clearAddressIdsList(): void;
     getAddressIdsList(): Array<string>;
-    setAddressIdsList(value: Array<string>): void;
+    setAddressIdsList(value: Array<string>): UpdateWhitelistAddressesRequest;
     addAddressIds(value: string, index?: number): string;
-
 
     serializeBinary(): Uint8Array;
     toObject(includeInstance?: boolean): UpdateWhitelistAddressesRequest.AsObject;
@@ -2980,8 +2744,7 @@ export namespace UpdateWhitelistAddressesRequest {
 
 export class DeleteWhitelistRequest extends jspb.Message { 
     getWhitelistId(): string;
-    setWhitelistId(value: string): void;
-
+    setWhitelistId(value: string): DeleteWhitelistRequest;
 
     serializeBinary(): Uint8Array;
     toObject(includeInstance?: boolean): DeleteWhitelistRequest.AsObject;
@@ -3001,16 +2764,13 @@ export namespace DeleteWhitelistRequest {
 
 export class CreateTransferLimitRequest extends jspb.Message { 
     getName(): string;
-    setName(value: string): void;
-
+    setName(value: string): CreateTransferLimitRequest;
     getCoin(): gincoinc_global_v1_gincoincglobalv1_enum_pb.Coin;
-    setCoin(value: gincoinc_global_v1_gincoincglobalv1_enum_pb.Coin): void;
-
+    setCoin(value: gincoinc_global_v1_gincoincglobalv1_enum_pb.Coin): CreateTransferLimitRequest;
     clearTransferLimitsList(): void;
     getTransferLimitsList(): Array<gincoinc_adamant_global_v1_adamantglobalv1_model_pb.RequestTransferLimitEntry>;
-    setTransferLimitsList(value: Array<gincoinc_adamant_global_v1_adamantglobalv1_model_pb.RequestTransferLimitEntry>): void;
+    setTransferLimitsList(value: Array<gincoinc_adamant_global_v1_adamantglobalv1_model_pb.RequestTransferLimitEntry>): CreateTransferLimitRequest;
     addTransferLimits(value?: gincoinc_adamant_global_v1_adamantglobalv1_model_pb.RequestTransferLimitEntry, index?: number): gincoinc_adamant_global_v1_adamantglobalv1_model_pb.RequestTransferLimitEntry;
-
 
     serializeBinary(): Uint8Array;
     toObject(includeInstance?: boolean): CreateTransferLimitRequest.AsObject;
@@ -3032,8 +2792,7 @@ export namespace CreateTransferLimitRequest {
 
 export class CreateTransferLimitResponse extends jspb.Message { 
     getTransferLimitId(): string;
-    setTransferLimitId(value: string): void;
-
+    setTransferLimitId(value: string): CreateTransferLimitResponse;
 
     serializeBinary(): Uint8Array;
     toObject(includeInstance?: boolean): CreateTransferLimitResponse.AsObject;
@@ -3053,8 +2812,7 @@ export namespace CreateTransferLimitResponse {
 
 export class GetTransferLimitRequest extends jspb.Message { 
     getTransferLimitId(): string;
-    setTransferLimitId(value: string): void;
-
+    setTransferLimitId(value: string): GetTransferLimitRequest;
 
     serializeBinary(): Uint8Array;
     toObject(includeInstance?: boolean): GetTransferLimitRequest.AsObject;
@@ -3092,9 +2850,8 @@ export namespace ListTransferLimitsRequest {
 export class ListTransferLimitsResponse extends jspb.Message { 
     clearTransferLimitsList(): void;
     getTransferLimitsList(): Array<gincoinc_adamant_global_v1_adamantglobalv1_model_pb.TransferLimit>;
-    setTransferLimitsList(value: Array<gincoinc_adamant_global_v1_adamantglobalv1_model_pb.TransferLimit>): void;
+    setTransferLimitsList(value: Array<gincoinc_adamant_global_v1_adamantglobalv1_model_pb.TransferLimit>): ListTransferLimitsResponse;
     addTransferLimits(value?: gincoinc_adamant_global_v1_adamantglobalv1_model_pb.TransferLimit, index?: number): gincoinc_adamant_global_v1_adamantglobalv1_model_pb.TransferLimit;
-
 
     serializeBinary(): Uint8Array;
     toObject(includeInstance?: boolean): ListTransferLimitsResponse.AsObject;
@@ -3114,13 +2871,11 @@ export namespace ListTransferLimitsResponse {
 
 export class UpdateTransferLimitRequest extends jspb.Message { 
     getTransferLimitId(): string;
-    setTransferLimitId(value: string): void;
-
+    setTransferLimitId(value: string): UpdateTransferLimitRequest;
     clearTransferLimitsList(): void;
     getTransferLimitsList(): Array<gincoinc_adamant_global_v1_adamantglobalv1_model_pb.RequestTransferLimitEntry>;
-    setTransferLimitsList(value: Array<gincoinc_adamant_global_v1_adamantglobalv1_model_pb.RequestTransferLimitEntry>): void;
+    setTransferLimitsList(value: Array<gincoinc_adamant_global_v1_adamantglobalv1_model_pb.RequestTransferLimitEntry>): UpdateTransferLimitRequest;
     addTransferLimits(value?: gincoinc_adamant_global_v1_adamantglobalv1_model_pb.RequestTransferLimitEntry, index?: number): gincoinc_adamant_global_v1_adamantglobalv1_model_pb.RequestTransferLimitEntry;
-
 
     serializeBinary(): Uint8Array;
     toObject(includeInstance?: boolean): UpdateTransferLimitRequest.AsObject;
@@ -3141,11 +2896,9 @@ export namespace UpdateTransferLimitRequest {
 
 export class UpdateTransferLimitNameRequest extends jspb.Message { 
     getTransferLimitId(): string;
-    setTransferLimitId(value: string): void;
-
+    setTransferLimitId(value: string): UpdateTransferLimitNameRequest;
     getName(): string;
-    setName(value: string): void;
-
+    setName(value: string): UpdateTransferLimitNameRequest;
 
     serializeBinary(): Uint8Array;
     toObject(includeInstance?: boolean): UpdateTransferLimitNameRequest.AsObject;
@@ -3166,8 +2919,7 @@ export namespace UpdateTransferLimitNameRequest {
 
 export class DeleteTransferLimitRequest extends jspb.Message { 
     getTransferLimitId(): string;
-    setTransferLimitId(value: string): void;
-
+    setTransferLimitId(value: string): DeleteTransferLimitRequest;
 
     serializeBinary(): Uint8Array;
     toObject(includeInstance?: boolean): DeleteTransferLimitRequest.AsObject;
@@ -3187,11 +2939,9 @@ export namespace DeleteTransferLimitRequest {
 
 export class ReviewTransferLimitProposalRequest extends jspb.Message { 
     getTransferLimitId(): string;
-    setTransferLimitId(value: string): void;
-
+    setTransferLimitId(value: string): ReviewTransferLimitProposalRequest;
     getApprove(): boolean;
-    setApprove(value: boolean): void;
-
+    setApprove(value: boolean): ReviewTransferLimitProposalRequest;
 
     serializeBinary(): Uint8Array;
     toObject(includeInstance?: boolean): ReviewTransferLimitProposalRequest.AsObject;
@@ -3212,20 +2962,15 @@ export namespace ReviewTransferLimitProposalRequest {
 
 export class CreatePolicyRequest extends jspb.Message { 
     getName(): string;
-    setName(value: string): void;
-
+    setName(value: string): CreatePolicyRequest;
     getCoin(): gincoinc_global_v1_gincoincglobalv1_enum_pb.Coin;
-    setCoin(value: gincoinc_global_v1_gincoincglobalv1_enum_pb.Coin): void;
-
+    setCoin(value: gincoinc_global_v1_gincoincglobalv1_enum_pb.Coin): CreatePolicyRequest;
     getType(): gincoinc_adamant_global_v1_adamantglobalv1_enum_pb.PolicyType;
-    setType(value: gincoinc_adamant_global_v1_adamantglobalv1_enum_pb.PolicyType): void;
-
+    setType(value: gincoinc_adamant_global_v1_adamantglobalv1_enum_pb.PolicyType): CreatePolicyRequest;
     getWhitelistId(): string;
-    setWhitelistId(value: string): void;
-
+    setWhitelistId(value: string): CreatePolicyRequest;
     getTransferLimitId(): string;
-    setTransferLimitId(value: string): void;
-
+    setTransferLimitId(value: string): CreatePolicyRequest;
 
     serializeBinary(): Uint8Array;
     toObject(includeInstance?: boolean): CreatePolicyRequest.AsObject;
@@ -3249,8 +2994,7 @@ export namespace CreatePolicyRequest {
 
 export class CreatePolicyResponse extends jspb.Message { 
     getPolicyId(): string;
-    setPolicyId(value: string): void;
-
+    setPolicyId(value: string): CreatePolicyResponse;
 
     serializeBinary(): Uint8Array;
     toObject(includeInstance?: boolean): CreatePolicyResponse.AsObject;
@@ -3270,8 +3014,7 @@ export namespace CreatePolicyResponse {
 
 export class GetPolicyRequest extends jspb.Message { 
     getPolicyId(): string;
-    setPolicyId(value: string): void;
-
+    setPolicyId(value: string): GetPolicyRequest;
 
     serializeBinary(): Uint8Array;
     toObject(includeInstance?: boolean): GetPolicyRequest.AsObject;
@@ -3308,8 +3051,7 @@ export namespace ListPoliciesRequest {
 
 export class IsDeletablePolicyRequest extends jspb.Message { 
     getPolicyId(): string;
-    setPolicyId(value: string): void;
-
+    setPolicyId(value: string): IsDeletablePolicyRequest;
 
     serializeBinary(): Uint8Array;
     toObject(includeInstance?: boolean): IsDeletablePolicyRequest.AsObject;
@@ -3329,8 +3071,7 @@ export namespace IsDeletablePolicyRequest {
 
 export class IsDeletablePolicyResponse extends jspb.Message { 
     getIsDeletable(): boolean;
-    setIsDeletable(value: boolean): void;
-
+    setIsDeletable(value: boolean): IsDeletablePolicyResponse;
 
     serializeBinary(): Uint8Array;
     toObject(includeInstance?: boolean): IsDeletablePolicyResponse.AsObject;
@@ -3350,8 +3091,7 @@ export namespace IsDeletablePolicyResponse {
 
 export class IsDeletableLabeledAddressRequest extends jspb.Message { 
     getLabeledAddressId(): string;
-    setLabeledAddressId(value: string): void;
-
+    setLabeledAddressId(value: string): IsDeletableLabeledAddressRequest;
 
     serializeBinary(): Uint8Array;
     toObject(includeInstance?: boolean): IsDeletableLabeledAddressRequest.AsObject;
@@ -3371,8 +3111,7 @@ export namespace IsDeletableLabeledAddressRequest {
 
 export class IsDeletableLabeledAddressResponse extends jspb.Message { 
     getIsDeletable(): boolean;
-    setIsDeletable(value: boolean): void;
-
+    setIsDeletable(value: boolean): IsDeletableLabeledAddressResponse;
 
     serializeBinary(): Uint8Array;
     toObject(includeInstance?: boolean): IsDeletableLabeledAddressResponse.AsObject;
@@ -3392,8 +3131,7 @@ export namespace IsDeletableLabeledAddressResponse {
 
 export class IsDeletableWhitelistRequest extends jspb.Message { 
     getWhitelistId(): string;
-    setWhitelistId(value: string): void;
-
+    setWhitelistId(value: string): IsDeletableWhitelistRequest;
 
     serializeBinary(): Uint8Array;
     toObject(includeInstance?: boolean): IsDeletableWhitelistRequest.AsObject;
@@ -3413,8 +3151,7 @@ export namespace IsDeletableWhitelistRequest {
 
 export class IsDeletableWhitelistResponse extends jspb.Message { 
     getIsDeletable(): boolean;
-    setIsDeletable(value: boolean): void;
-
+    setIsDeletable(value: boolean): IsDeletableWhitelistResponse;
 
     serializeBinary(): Uint8Array;
     toObject(includeInstance?: boolean): IsDeletableWhitelistResponse.AsObject;
@@ -3434,8 +3171,7 @@ export namespace IsDeletableWhitelistResponse {
 
 export class IsDeletableTransferLimitRequest extends jspb.Message { 
     getTransferLimitId(): string;
-    setTransferLimitId(value: string): void;
-
+    setTransferLimitId(value: string): IsDeletableTransferLimitRequest;
 
     serializeBinary(): Uint8Array;
     toObject(includeInstance?: boolean): IsDeletableTransferLimitRequest.AsObject;
@@ -3455,8 +3191,7 @@ export namespace IsDeletableTransferLimitRequest {
 
 export class IsDeletableTransferLimitResponse extends jspb.Message { 
     getIsDeletable(): boolean;
-    setIsDeletable(value: boolean): void;
-
+    setIsDeletable(value: boolean): IsDeletableTransferLimitResponse;
 
     serializeBinary(): Uint8Array;
     toObject(includeInstance?: boolean): IsDeletableTransferLimitResponse.AsObject;
@@ -3477,9 +3212,8 @@ export namespace IsDeletableTransferLimitResponse {
 export class ListPoliciesResponse extends jspb.Message { 
     clearPoliciesList(): void;
     getPoliciesList(): Array<gincoinc_adamant_global_v1_adamantglobalv1_model_pb.Policy>;
-    setPoliciesList(value: Array<gincoinc_adamant_global_v1_adamantglobalv1_model_pb.Policy>): void;
+    setPoliciesList(value: Array<gincoinc_adamant_global_v1_adamantglobalv1_model_pb.Policy>): ListPoliciesResponse;
     addPolicies(value?: gincoinc_adamant_global_v1_adamantglobalv1_model_pb.Policy, index?: number): gincoinc_adamant_global_v1_adamantglobalv1_model_pb.Policy;
-
 
     serializeBinary(): Uint8Array;
     toObject(includeInstance?: boolean): ListPoliciesResponse.AsObject;
@@ -3499,17 +3233,13 @@ export namespace ListPoliciesResponse {
 
 export class UpdatePolicyRequest extends jspb.Message { 
     getPolicyId(): string;
-    setPolicyId(value: string): void;
-
+    setPolicyId(value: string): UpdatePolicyRequest;
     getName(): string;
-    setName(value: string): void;
-
+    setName(value: string): UpdatePolicyRequest;
     getWhitelistId(): string;
-    setWhitelistId(value: string): void;
-
+    setWhitelistId(value: string): UpdatePolicyRequest;
     getTransferLimitId(): string;
-    setTransferLimitId(value: string): void;
-
+    setTransferLimitId(value: string): UpdatePolicyRequest;
 
     serializeBinary(): Uint8Array;
     toObject(includeInstance?: boolean): UpdatePolicyRequest.AsObject;
@@ -3532,8 +3262,7 @@ export namespace UpdatePolicyRequest {
 
 export class DeletePolicyRequest extends jspb.Message { 
     getPolicyId(): string;
-    setPolicyId(value: string): void;
-
+    setPolicyId(value: string): DeletePolicyRequest;
 
     serializeBinary(): Uint8Array;
     toObject(includeInstance?: boolean): DeletePolicyRequest.AsObject;
@@ -3553,11 +3282,9 @@ export namespace DeletePolicyRequest {
 
 export class ReviewPolicyProposalRequest extends jspb.Message { 
     getPolicyId(): string;
-    setPolicyId(value: string): void;
-
+    setPolicyId(value: string): ReviewPolicyProposalRequest;
     getApprove(): boolean;
-    setApprove(value: boolean): void;
-
+    setApprove(value: boolean): ReviewPolicyProposalRequest;
 
     serializeBinary(): Uint8Array;
     toObject(includeInstance?: boolean): ReviewPolicyProposalRequest.AsObject;

@@ -96,711 +96,711 @@ interface IGlobalAPIService extends grpc.ServiceDefinition<grpc.UntypedServiceIm
 }
 
 interface IGlobalAPIService_ICreateWallet extends grpc.MethodDefinition<gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.CreateWalletRequest, gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.CreateWalletResponse> {
-    path: string; // "/adamant.global.v1.GlobalAPI/CreateWallet"
-    requestStream: boolean; // false
-    responseStream: boolean; // false
+    path: "/adamant.global.v1.GlobalAPI/CreateWallet";
+    requestStream: false;
+    responseStream: false;
     requestSerialize: grpc.serialize<gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.CreateWalletRequest>;
     requestDeserialize: grpc.deserialize<gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.CreateWalletRequest>;
     responseSerialize: grpc.serialize<gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.CreateWalletResponse>;
     responseDeserialize: grpc.deserialize<gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.CreateWalletResponse>;
 }
 interface IGlobalAPIService_IGetWallet extends grpc.MethodDefinition<gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.GetWalletRequest, gincoinc_adamant_global_v1_adamantglobalv1_model_pb.Wallet> {
-    path: string; // "/adamant.global.v1.GlobalAPI/GetWallet"
-    requestStream: boolean; // false
-    responseStream: boolean; // false
+    path: "/adamant.global.v1.GlobalAPI/GetWallet";
+    requestStream: false;
+    responseStream: false;
     requestSerialize: grpc.serialize<gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.GetWalletRequest>;
     requestDeserialize: grpc.deserialize<gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.GetWalletRequest>;
     responseSerialize: grpc.serialize<gincoinc_adamant_global_v1_adamantglobalv1_model_pb.Wallet>;
     responseDeserialize: grpc.deserialize<gincoinc_adamant_global_v1_adamantglobalv1_model_pb.Wallet>;
 }
 interface IGlobalAPIService_ICancelWallet extends grpc.MethodDefinition<gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.CancelWalletRequest, google_protobuf_empty_pb.Empty> {
-    path: string; // "/adamant.global.v1.GlobalAPI/CancelWallet"
-    requestStream: boolean; // false
-    responseStream: boolean; // false
+    path: "/adamant.global.v1.GlobalAPI/CancelWallet";
+    requestStream: false;
+    responseStream: false;
     requestSerialize: grpc.serialize<gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.CancelWalletRequest>;
     requestDeserialize: grpc.deserialize<gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.CancelWalletRequest>;
     responseSerialize: grpc.serialize<google_protobuf_empty_pb.Empty>;
     responseDeserialize: grpc.deserialize<google_protobuf_empty_pb.Empty>;
 }
 interface IGlobalAPIService_IArchiveWallet extends grpc.MethodDefinition<gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.ArchiveWalletRequest, google_protobuf_empty_pb.Empty> {
-    path: string; // "/adamant.global.v1.GlobalAPI/ArchiveWallet"
-    requestStream: boolean; // false
-    responseStream: boolean; // false
+    path: "/adamant.global.v1.GlobalAPI/ArchiveWallet";
+    requestStream: false;
+    responseStream: false;
     requestSerialize: grpc.serialize<gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.ArchiveWalletRequest>;
     requestDeserialize: grpc.deserialize<gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.ArchiveWalletRequest>;
     responseSerialize: grpc.serialize<google_protobuf_empty_pb.Empty>;
     responseDeserialize: grpc.deserialize<google_protobuf_empty_pb.Empty>;
 }
 interface IGlobalAPIService_IUnArchiveWallet extends grpc.MethodDefinition<gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.UnArchiveWalletRequest, google_protobuf_empty_pb.Empty> {
-    path: string; // "/adamant.global.v1.GlobalAPI/UnArchiveWallet"
-    requestStream: boolean; // false
-    responseStream: boolean; // false
+    path: "/adamant.global.v1.GlobalAPI/UnArchiveWallet";
+    requestStream: false;
+    responseStream: false;
     requestSerialize: grpc.serialize<gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.UnArchiveWalletRequest>;
     requestDeserialize: grpc.deserialize<gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.UnArchiveWalletRequest>;
     responseSerialize: grpc.serialize<google_protobuf_empty_pb.Empty>;
     responseDeserialize: grpc.deserialize<google_protobuf_empty_pb.Empty>;
 }
 interface IGlobalAPIService_IListWallets extends grpc.MethodDefinition<gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.ListWalletsRequest, gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.ListWalletsResponse> {
-    path: string; // "/adamant.global.v1.GlobalAPI/ListWallets"
-    requestStream: boolean; // false
-    responseStream: boolean; // false
+    path: "/adamant.global.v1.GlobalAPI/ListWallets";
+    requestStream: false;
+    responseStream: false;
     requestSerialize: grpc.serialize<gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.ListWalletsRequest>;
     requestDeserialize: grpc.deserialize<gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.ListWalletsRequest>;
     responseSerialize: grpc.serialize<gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.ListWalletsResponse>;
     responseDeserialize: grpc.deserialize<gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.ListWalletsResponse>;
 }
 interface IGlobalAPIService_IListWalletsByFilter extends grpc.MethodDefinition<gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.ListWalletsByFilterRequest, gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.ListWalletsResponse> {
-    path: string; // "/adamant.global.v1.GlobalAPI/ListWalletsByFilter"
-    requestStream: boolean; // false
-    responseStream: boolean; // false
+    path: "/adamant.global.v1.GlobalAPI/ListWalletsByFilter";
+    requestStream: false;
+    responseStream: false;
     requestSerialize: grpc.serialize<gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.ListWalletsByFilterRequest>;
     requestDeserialize: grpc.deserialize<gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.ListWalletsByFilterRequest>;
     responseSerialize: grpc.serialize<gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.ListWalletsResponse>;
     responseDeserialize: grpc.deserialize<gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.ListWalletsResponse>;
 }
 interface IGlobalAPIService_IListBaseWallets extends grpc.MethodDefinition<gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.ListBaseWalletsRequest, gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.ListBaseWalletsResponse> {
-    path: string; // "/adamant.global.v1.GlobalAPI/ListBaseWallets"
-    requestStream: boolean; // false
-    responseStream: boolean; // false
+    path: "/adamant.global.v1.GlobalAPI/ListBaseWallets";
+    requestStream: false;
+    responseStream: false;
     requestSerialize: grpc.serialize<gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.ListBaseWalletsRequest>;
     requestDeserialize: grpc.deserialize<gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.ListBaseWalletsRequest>;
     responseSerialize: grpc.serialize<gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.ListBaseWalletsResponse>;
     responseDeserialize: grpc.deserialize<gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.ListBaseWalletsResponse>;
 }
 interface IGlobalAPIService_IUpdateWalletName extends grpc.MethodDefinition<gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.UpdateWalletNameRequest, google_protobuf_empty_pb.Empty> {
-    path: string; // "/adamant.global.v1.GlobalAPI/UpdateWalletName"
-    requestStream: boolean; // false
-    responseStream: boolean; // false
+    path: "/adamant.global.v1.GlobalAPI/UpdateWalletName";
+    requestStream: false;
+    responseStream: false;
     requestSerialize: grpc.serialize<gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.UpdateWalletNameRequest>;
     requestDeserialize: grpc.deserialize<gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.UpdateWalletNameRequest>;
     responseSerialize: grpc.serialize<google_protobuf_empty_pb.Empty>;
     responseDeserialize: grpc.deserialize<google_protobuf_empty_pb.Empty>;
 }
 interface IGlobalAPIService_IUpdateWalletValidation extends grpc.MethodDefinition<gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.UpdateWalletValidationRequest, google_protobuf_empty_pb.Empty> {
-    path: string; // "/adamant.global.v1.GlobalAPI/UpdateWalletValidation"
-    requestStream: boolean; // false
-    responseStream: boolean; // false
+    path: "/adamant.global.v1.GlobalAPI/UpdateWalletValidation";
+    requestStream: false;
+    responseStream: false;
     requestSerialize: grpc.serialize<gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.UpdateWalletValidationRequest>;
     requestDeserialize: grpc.deserialize<gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.UpdateWalletValidationRequest>;
     responseSerialize: grpc.serialize<google_protobuf_empty_pb.Empty>;
     responseDeserialize: grpc.deserialize<google_protobuf_empty_pb.Empty>;
 }
 interface IGlobalAPIService_IUpdateWalletPolicy extends grpc.MethodDefinition<gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.UpdateWalletPolicyRequest, google_protobuf_empty_pb.Empty> {
-    path: string; // "/adamant.global.v1.GlobalAPI/UpdateWalletPolicy"
-    requestStream: boolean; // false
-    responseStream: boolean; // false
+    path: "/adamant.global.v1.GlobalAPI/UpdateWalletPolicy";
+    requestStream: false;
+    responseStream: false;
     requestSerialize: grpc.serialize<gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.UpdateWalletPolicyRequest>;
     requestDeserialize: grpc.deserialize<gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.UpdateWalletPolicyRequest>;
     responseSerialize: grpc.serialize<google_protobuf_empty_pb.Empty>;
     responseDeserialize: grpc.deserialize<google_protobuf_empty_pb.Empty>;
 }
 interface IGlobalAPIService_IReviewWalletProposal extends grpc.MethodDefinition<gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.ReviewWalletProposalRequest, google_protobuf_empty_pb.Empty> {
-    path: string; // "/adamant.global.v1.GlobalAPI/ReviewWalletProposal"
-    requestStream: boolean; // false
-    responseStream: boolean; // false
+    path: "/adamant.global.v1.GlobalAPI/ReviewWalletProposal";
+    requestStream: false;
+    responseStream: false;
     requestSerialize: grpc.serialize<gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.ReviewWalletProposalRequest>;
     requestDeserialize: grpc.deserialize<gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.ReviewWalletProposalRequest>;
     responseSerialize: grpc.serialize<google_protobuf_empty_pb.Empty>;
     responseDeserialize: grpc.deserialize<google_protobuf_empty_pb.Empty>;
 }
 interface IGlobalAPIService_IFlushBalance extends grpc.MethodDefinition<gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.FlushBalanceRequest, gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.FlushBalanceResponse> {
-    path: string; // "/adamant.global.v1.GlobalAPI/FlushBalance"
-    requestStream: boolean; // false
-    responseStream: boolean; // false
+    path: "/adamant.global.v1.GlobalAPI/FlushBalance";
+    requestStream: false;
+    responseStream: false;
     requestSerialize: grpc.serialize<gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.FlushBalanceRequest>;
     requestDeserialize: grpc.deserialize<gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.FlushBalanceRequest>;
     responseSerialize: grpc.serialize<gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.FlushBalanceResponse>;
     responseDeserialize: grpc.deserialize<gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.FlushBalanceResponse>;
 }
 interface IGlobalAPIService_IApproveWallet extends grpc.MethodDefinition<gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.ApproveWalletRequest, google_protobuf_empty_pb.Empty> {
-    path: string; // "/adamant.global.v1.GlobalAPI/ApproveWallet"
-    requestStream: boolean; // false
-    responseStream: boolean; // false
+    path: "/adamant.global.v1.GlobalAPI/ApproveWallet";
+    requestStream: false;
+    responseStream: false;
     requestSerialize: grpc.serialize<gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.ApproveWalletRequest>;
     requestDeserialize: grpc.deserialize<gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.ApproveWalletRequest>;
     responseSerialize: grpc.serialize<google_protobuf_empty_pb.Empty>;
     responseDeserialize: grpc.deserialize<google_protobuf_empty_pb.Empty>;
 }
 interface IGlobalAPIService_IApproveTransaction extends grpc.MethodDefinition<gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.ApproveTransactionRequest, google_protobuf_empty_pb.Empty> {
-    path: string; // "/adamant.global.v1.GlobalAPI/ApproveTransaction"
-    requestStream: boolean; // false
-    responseStream: boolean; // false
+    path: "/adamant.global.v1.GlobalAPI/ApproveTransaction";
+    requestStream: false;
+    responseStream: false;
     requestSerialize: grpc.serialize<gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.ApproveTransactionRequest>;
     requestDeserialize: grpc.deserialize<gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.ApproveTransactionRequest>;
     responseSerialize: grpc.serialize<google_protobuf_empty_pb.Empty>;
     responseDeserialize: grpc.deserialize<google_protobuf_empty_pb.Empty>;
 }
 interface IGlobalAPIService_ICreateAddress extends grpc.MethodDefinition<gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.CreateAddressRequest, gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.CreateAddressResponse> {
-    path: string; // "/adamant.global.v1.GlobalAPI/CreateAddress"
-    requestStream: boolean; // false
-    responseStream: boolean; // false
+    path: "/adamant.global.v1.GlobalAPI/CreateAddress";
+    requestStream: false;
+    responseStream: false;
     requestSerialize: grpc.serialize<gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.CreateAddressRequest>;
     requestDeserialize: grpc.deserialize<gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.CreateAddressRequest>;
     responseSerialize: grpc.serialize<gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.CreateAddressResponse>;
     responseDeserialize: grpc.deserialize<gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.CreateAddressResponse>;
 }
 interface IGlobalAPIService_IGetAddress extends grpc.MethodDefinition<gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.GetAddressRequest, gincoinc_adamant_global_v1_adamantglobalv1_model_pb.Address> {
-    path: string; // "/adamant.global.v1.GlobalAPI/GetAddress"
-    requestStream: boolean; // false
-    responseStream: boolean; // false
+    path: "/adamant.global.v1.GlobalAPI/GetAddress";
+    requestStream: false;
+    responseStream: false;
     requestSerialize: grpc.serialize<gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.GetAddressRequest>;
     requestDeserialize: grpc.deserialize<gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.GetAddressRequest>;
     responseSerialize: grpc.serialize<gincoinc_adamant_global_v1_adamantglobalv1_model_pb.Address>;
     responseDeserialize: grpc.deserialize<gincoinc_adamant_global_v1_adamantglobalv1_model_pb.Address>;
 }
 interface IGlobalAPIService_IGetAddressByAddress extends grpc.MethodDefinition<gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.GetAddressByAddressRequest, gincoinc_adamant_global_v1_adamantglobalv1_model_pb.Address> {
-    path: string; // "/adamant.global.v1.GlobalAPI/GetAddressByAddress"
-    requestStream: boolean; // false
-    responseStream: boolean; // false
+    path: "/adamant.global.v1.GlobalAPI/GetAddressByAddress";
+    requestStream: false;
+    responseStream: false;
     requestSerialize: grpc.serialize<gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.GetAddressByAddressRequest>;
     requestDeserialize: grpc.deserialize<gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.GetAddressByAddressRequest>;
     responseSerialize: grpc.serialize<gincoinc_adamant_global_v1_adamantglobalv1_model_pb.Address>;
     responseDeserialize: grpc.deserialize<gincoinc_adamant_global_v1_adamantglobalv1_model_pb.Address>;
 }
 interface IGlobalAPIService_IGetAddressByIndex extends grpc.MethodDefinition<gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.GetAddressByIndexRequest, gincoinc_adamant_global_v1_adamantglobalv1_model_pb.Address> {
-    path: string; // "/adamant.global.v1.GlobalAPI/GetAddressByIndex"
-    requestStream: boolean; // false
-    responseStream: boolean; // false
+    path: "/adamant.global.v1.GlobalAPI/GetAddressByIndex";
+    requestStream: false;
+    responseStream: false;
     requestSerialize: grpc.serialize<gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.GetAddressByIndexRequest>;
     requestDeserialize: grpc.deserialize<gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.GetAddressByIndexRequest>;
     responseSerialize: grpc.serialize<gincoinc_adamant_global_v1_adamantglobalv1_model_pb.Address>;
     responseDeserialize: grpc.deserialize<gincoinc_adamant_global_v1_adamantglobalv1_model_pb.Address>;
 }
 interface IGlobalAPIService_IListAddresses extends grpc.MethodDefinition<gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.ListAddressesRequest, gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.ListAddressesResponse> {
-    path: string; // "/adamant.global.v1.GlobalAPI/ListAddresses"
-    requestStream: boolean; // false
-    responseStream: boolean; // false
+    path: "/adamant.global.v1.GlobalAPI/ListAddresses";
+    requestStream: false;
+    responseStream: false;
     requestSerialize: grpc.serialize<gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.ListAddressesRequest>;
     requestDeserialize: grpc.deserialize<gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.ListAddressesRequest>;
     responseSerialize: grpc.serialize<gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.ListAddressesResponse>;
     responseDeserialize: grpc.deserialize<gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.ListAddressesResponse>;
 }
 interface IGlobalAPIService_IListAddressesWithBalance extends grpc.MethodDefinition<gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.ListAddressesWithBalanceRequest, gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.ListAddressesWithBalanceResponse> {
-    path: string; // "/adamant.global.v1.GlobalAPI/ListAddressesWithBalance"
-    requestStream: boolean; // false
-    responseStream: boolean; // false
+    path: "/adamant.global.v1.GlobalAPI/ListAddressesWithBalance";
+    requestStream: false;
+    responseStream: false;
     requestSerialize: grpc.serialize<gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.ListAddressesWithBalanceRequest>;
     requestDeserialize: grpc.deserialize<gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.ListAddressesWithBalanceRequest>;
     responseSerialize: grpc.serialize<gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.ListAddressesWithBalanceResponse>;
     responseDeserialize: grpc.deserialize<gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.ListAddressesWithBalanceResponse>;
 }
 interface IGlobalAPIService_IUpdateAddressBalance extends grpc.MethodDefinition<gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.UpdateAddressBalanceRequest, google_protobuf_empty_pb.Empty> {
-    path: string; // "/adamant.global.v1.GlobalAPI/UpdateAddressBalance"
-    requestStream: boolean; // false
-    responseStream: boolean; // false
+    path: "/adamant.global.v1.GlobalAPI/UpdateAddressBalance";
+    requestStream: false;
+    responseStream: false;
     requestSerialize: grpc.serialize<gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.UpdateAddressBalanceRequest>;
     requestDeserialize: grpc.deserialize<gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.UpdateAddressBalanceRequest>;
     responseSerialize: grpc.serialize<google_protobuf_empty_pb.Empty>;
     responseDeserialize: grpc.deserialize<google_protobuf_empty_pb.Empty>;
 }
 interface IGlobalAPIService_IGetEthereumFeeAddress extends grpc.MethodDefinition<gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.GetEthereumFeeAddressRequest, gincoinc_adamant_global_v1_adamantglobalv1_model_pb.EthereumFeeAddress> {
-    path: string; // "/adamant.global.v1.GlobalAPI/GetEthereumFeeAddress"
-    requestStream: boolean; // false
-    responseStream: boolean; // false
+    path: "/adamant.global.v1.GlobalAPI/GetEthereumFeeAddress";
+    requestStream: false;
+    responseStream: false;
     requestSerialize: grpc.serialize<gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.GetEthereumFeeAddressRequest>;
     requestDeserialize: grpc.deserialize<gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.GetEthereumFeeAddressRequest>;
     responseSerialize: grpc.serialize<gincoinc_adamant_global_v1_adamantglobalv1_model_pb.EthereumFeeAddress>;
     responseDeserialize: grpc.deserialize<gincoinc_adamant_global_v1_adamantglobalv1_model_pb.EthereumFeeAddress>;
 }
 interface IGlobalAPIService_IRegisterKey extends grpc.MethodDefinition<gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.RegisterKeyRequest, gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.RegisterKeyResponse> {
-    path: string; // "/adamant.global.v1.GlobalAPI/RegisterKey"
-    requestStream: boolean; // false
-    responseStream: boolean; // false
+    path: "/adamant.global.v1.GlobalAPI/RegisterKey";
+    requestStream: false;
+    responseStream: false;
     requestSerialize: grpc.serialize<gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.RegisterKeyRequest>;
     requestDeserialize: grpc.deserialize<gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.RegisterKeyRequest>;
     responseSerialize: grpc.serialize<gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.RegisterKeyResponse>;
     responseDeserialize: grpc.deserialize<gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.RegisterKeyResponse>;
 }
 interface IGlobalAPIService_ICreateTransaction extends grpc.MethodDefinition<gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.CreateTransactionRequest, gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.CreateTransactionResponse> {
-    path: string; // "/adamant.global.v1.GlobalAPI/CreateTransaction"
-    requestStream: boolean; // false
-    responseStream: boolean; // false
+    path: "/adamant.global.v1.GlobalAPI/CreateTransaction";
+    requestStream: false;
+    responseStream: false;
     requestSerialize: grpc.serialize<gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.CreateTransactionRequest>;
     requestDeserialize: grpc.deserialize<gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.CreateTransactionRequest>;
     responseSerialize: grpc.serialize<gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.CreateTransactionResponse>;
     responseDeserialize: grpc.deserialize<gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.CreateTransactionResponse>;
 }
 interface IGlobalAPIService_ICreateXRPInitTransactions extends grpc.MethodDefinition<gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.CreateXRPInitTransactionsRequest, google_protobuf_empty_pb.Empty> {
-    path: string; // "/adamant.global.v1.GlobalAPI/CreateXRPInitTransactions"
-    requestStream: boolean; // false
-    responseStream: boolean; // false
+    path: "/adamant.global.v1.GlobalAPI/CreateXRPInitTransactions";
+    requestStream: false;
+    responseStream: false;
     requestSerialize: grpc.serialize<gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.CreateXRPInitTransactionsRequest>;
     requestDeserialize: grpc.deserialize<gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.CreateXRPInitTransactionsRequest>;
     responseSerialize: grpc.serialize<google_protobuf_empty_pb.Empty>;
     responseDeserialize: grpc.deserialize<google_protobuf_empty_pb.Empty>;
 }
 interface IGlobalAPIService_ISignTransaction extends grpc.MethodDefinition<gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.SignTransactionRequest, google_protobuf_empty_pb.Empty> {
-    path: string; // "/adamant.global.v1.GlobalAPI/SignTransaction"
-    requestStream: boolean; // false
-    responseStream: boolean; // false
+    path: "/adamant.global.v1.GlobalAPI/SignTransaction";
+    requestStream: false;
+    responseStream: false;
     requestSerialize: grpc.serialize<gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.SignTransactionRequest>;
     requestDeserialize: grpc.deserialize<gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.SignTransactionRequest>;
     responseSerialize: grpc.serialize<google_protobuf_empty_pb.Empty>;
     responseDeserialize: grpc.deserialize<google_protobuf_empty_pb.Empty>;
 }
 interface IGlobalAPIService_ISignXRPInitTransactions extends grpc.MethodDefinition<gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.SignXRPInitTransactionsRequest, google_protobuf_empty_pb.Empty> {
-    path: string; // "/adamant.global.v1.GlobalAPI/SignXRPInitTransactions"
-    requestStream: boolean; // false
-    responseStream: boolean; // false
+    path: "/adamant.global.v1.GlobalAPI/SignXRPInitTransactions";
+    requestStream: false;
+    responseStream: false;
     requestSerialize: grpc.serialize<gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.SignXRPInitTransactionsRequest>;
     requestDeserialize: grpc.deserialize<gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.SignXRPInitTransactionsRequest>;
     responseSerialize: grpc.serialize<google_protobuf_empty_pb.Empty>;
     responseDeserialize: grpc.deserialize<google_protobuf_empty_pb.Empty>;
 }
 interface IGlobalAPIService_ISendTransaction extends grpc.MethodDefinition<gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.SendTransactionRequest, gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.SendTransactionResponse> {
-    path: string; // "/adamant.global.v1.GlobalAPI/SendTransaction"
-    requestStream: boolean; // false
-    responseStream: boolean; // false
+    path: "/adamant.global.v1.GlobalAPI/SendTransaction";
+    requestStream: false;
+    responseStream: false;
     requestSerialize: grpc.serialize<gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.SendTransactionRequest>;
     requestDeserialize: grpc.deserialize<gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.SendTransactionRequest>;
     responseSerialize: grpc.serialize<gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.SendTransactionResponse>;
     responseDeserialize: grpc.deserialize<gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.SendTransactionResponse>;
 }
 interface IGlobalAPIService_ISendXRPInitTransactions extends grpc.MethodDefinition<gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.SendXRPInitTransactionsRequest, gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.SendXRPInitTransactionsResponse> {
-    path: string; // "/adamant.global.v1.GlobalAPI/SendXRPInitTransactions"
-    requestStream: boolean; // false
-    responseStream: boolean; // false
+    path: "/adamant.global.v1.GlobalAPI/SendXRPInitTransactions";
+    requestStream: false;
+    responseStream: false;
     requestSerialize: grpc.serialize<gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.SendXRPInitTransactionsRequest>;
     requestDeserialize: grpc.deserialize<gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.SendXRPInitTransactionsRequest>;
     responseSerialize: grpc.serialize<gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.SendXRPInitTransactionsResponse>;
     responseDeserialize: grpc.deserialize<gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.SendXRPInitTransactionsResponse>;
 }
 interface IGlobalAPIService_ICancelTransaction extends grpc.MethodDefinition<gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.CancelTransactionRequest, google_protobuf_empty_pb.Empty> {
-    path: string; // "/adamant.global.v1.GlobalAPI/CancelTransaction"
-    requestStream: boolean; // false
-    responseStream: boolean; // false
+    path: "/adamant.global.v1.GlobalAPI/CancelTransaction";
+    requestStream: false;
+    responseStream: false;
     requestSerialize: grpc.serialize<gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.CancelTransactionRequest>;
     requestDeserialize: grpc.deserialize<gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.CancelTransactionRequest>;
     responseSerialize: grpc.serialize<google_protobuf_empty_pb.Empty>;
     responseDeserialize: grpc.deserialize<google_protobuf_empty_pb.Empty>;
 }
 interface IGlobalAPIService_IGetTransaction extends grpc.MethodDefinition<gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.GetTransactionRequest, gincoinc_adamant_global_v1_adamantglobalv1_model_pb.Transaction> {
-    path: string; // "/adamant.global.v1.GlobalAPI/GetTransaction"
-    requestStream: boolean; // false
-    responseStream: boolean; // false
+    path: "/adamant.global.v1.GlobalAPI/GetTransaction";
+    requestStream: false;
+    responseStream: false;
     requestSerialize: grpc.serialize<gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.GetTransactionRequest>;
     requestDeserialize: grpc.deserialize<gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.GetTransactionRequest>;
     responseSerialize: grpc.serialize<gincoinc_adamant_global_v1_adamantglobalv1_model_pb.Transaction>;
     responseDeserialize: grpc.deserialize<gincoinc_adamant_global_v1_adamantglobalv1_model_pb.Transaction>;
 }
 interface IGlobalAPIService_IGetTransactionByTxID extends grpc.MethodDefinition<gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.GetTransactionByTxIDRequest, gincoinc_adamant_global_v1_adamantglobalv1_model_pb.Transaction> {
-    path: string; // "/adamant.global.v1.GlobalAPI/GetTransactionByTxID"
-    requestStream: boolean; // false
-    responseStream: boolean; // false
+    path: "/adamant.global.v1.GlobalAPI/GetTransactionByTxID";
+    requestStream: false;
+    responseStream: false;
     requestSerialize: grpc.serialize<gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.GetTransactionByTxIDRequest>;
     requestDeserialize: grpc.deserialize<gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.GetTransactionByTxIDRequest>;
     responseSerialize: grpc.serialize<gincoinc_adamant_global_v1_adamantglobalv1_model_pb.Transaction>;
     responseDeserialize: grpc.deserialize<gincoinc_adamant_global_v1_adamantglobalv1_model_pb.Transaction>;
 }
 interface IGlobalAPIService_IListTransactions extends grpc.MethodDefinition<gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.ListTransactionsRequest, gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.ListTransactionsResponse> {
-    path: string; // "/adamant.global.v1.GlobalAPI/ListTransactions"
-    requestStream: boolean; // false
-    responseStream: boolean; // false
+    path: "/adamant.global.v1.GlobalAPI/ListTransactions";
+    requestStream: false;
+    responseStream: false;
     requestSerialize: grpc.serialize<gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.ListTransactionsRequest>;
     requestDeserialize: grpc.deserialize<gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.ListTransactionsRequest>;
     responseSerialize: grpc.serialize<gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.ListTransactionsResponse>;
     responseDeserialize: grpc.deserialize<gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.ListTransactionsResponse>;
 }
 interface IGlobalAPIService_IListTransactionsByFilter extends grpc.MethodDefinition<gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.ListTransactionsByFilterRequest, gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.ListTransactionsResponse> {
-    path: string; // "/adamant.global.v1.GlobalAPI/ListTransactionsByFilter"
-    requestStream: boolean; // false
-    responseStream: boolean; // false
+    path: "/adamant.global.v1.GlobalAPI/ListTransactionsByFilter";
+    requestStream: false;
+    responseStream: false;
     requestSerialize: grpc.serialize<gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.ListTransactionsByFilterRequest>;
     requestDeserialize: grpc.deserialize<gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.ListTransactionsByFilterRequest>;
     responseSerialize: grpc.serialize<gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.ListTransactionsResponse>;
     responseDeserialize: grpc.deserialize<gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.ListTransactionsResponse>;
 }
 interface IGlobalAPIService_IGetSignInfo extends grpc.MethodDefinition<gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.GetSignInfoRequest, gincoinc_adamant_global_v1_adamantglobalv1_model_pb.SignInfo> {
-    path: string; // "/adamant.global.v1.GlobalAPI/GetSignInfo"
-    requestStream: boolean; // false
-    responseStream: boolean; // false
+    path: "/adamant.global.v1.GlobalAPI/GetSignInfo";
+    requestStream: false;
+    responseStream: false;
     requestSerialize: grpc.serialize<gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.GetSignInfoRequest>;
     requestDeserialize: grpc.deserialize<gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.GetSignInfoRequest>;
     responseSerialize: grpc.serialize<gincoinc_adamant_global_v1_adamantglobalv1_model_pb.SignInfo>;
     responseDeserialize: grpc.deserialize<gincoinc_adamant_global_v1_adamantglobalv1_model_pb.SignInfo>;
 }
 interface IGlobalAPIService_IListSignInfo extends grpc.MethodDefinition<gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.ListSignInfoRequest, gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.ListSignInfoResponse> {
-    path: string; // "/adamant.global.v1.GlobalAPI/ListSignInfo"
-    requestStream: boolean; // false
-    responseStream: boolean; // false
+    path: "/adamant.global.v1.GlobalAPI/ListSignInfo";
+    requestStream: false;
+    responseStream: false;
     requestSerialize: grpc.serialize<gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.ListSignInfoRequest>;
     requestDeserialize: grpc.deserialize<gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.ListSignInfoRequest>;
     responseSerialize: grpc.serialize<gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.ListSignInfoResponse>;
     responseDeserialize: grpc.deserialize<gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.ListSignInfoResponse>;
 }
 interface IGlobalAPIService_IListXRPInitSignInfo extends grpc.MethodDefinition<gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.ListXRPInitSignInfoRequest, gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.ListXRPInitSignInfoResponse> {
-    path: string; // "/adamant.global.v1.GlobalAPI/ListXRPInitSignInfo"
-    requestStream: boolean; // false
-    responseStream: boolean; // false
+    path: "/adamant.global.v1.GlobalAPI/ListXRPInitSignInfo";
+    requestStream: false;
+    responseStream: false;
     requestSerialize: grpc.serialize<gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.ListXRPInitSignInfoRequest>;
     requestDeserialize: grpc.deserialize<gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.ListXRPInitSignInfoRequest>;
     responseSerialize: grpc.serialize<gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.ListXRPInitSignInfoResponse>;
     responseDeserialize: grpc.deserialize<gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.ListXRPInitSignInfoResponse>;
 }
 interface IGlobalAPIService_IListTransfers extends grpc.MethodDefinition<gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.ListTransfersRequest, gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.ListTransfersResponse> {
-    path: string; // "/adamant.global.v1.GlobalAPI/ListTransfers"
-    requestStream: boolean; // false
-    responseStream: boolean; // false
+    path: "/adamant.global.v1.GlobalAPI/ListTransfers";
+    requestStream: false;
+    responseStream: false;
     requestSerialize: grpc.serialize<gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.ListTransfersRequest>;
     requestDeserialize: grpc.deserialize<gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.ListTransfersRequest>;
     responseSerialize: grpc.serialize<gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.ListTransfersResponse>;
     responseDeserialize: grpc.deserialize<gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.ListTransfersResponse>;
 }
 interface IGlobalAPIService_IListTransfersByFilter extends grpc.MethodDefinition<gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.ListTransfersByFilterRequest, gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.ListTransfersResponse> {
-    path: string; // "/adamant.global.v1.GlobalAPI/ListTransfersByFilter"
-    requestStream: boolean; // false
-    responseStream: boolean; // false
+    path: "/adamant.global.v1.GlobalAPI/ListTransfersByFilter";
+    requestStream: false;
+    responseStream: false;
     requestSerialize: grpc.serialize<gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.ListTransfersByFilterRequest>;
     requestDeserialize: grpc.deserialize<gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.ListTransfersByFilterRequest>;
     responseSerialize: grpc.serialize<gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.ListTransfersResponse>;
     responseDeserialize: grpc.deserialize<gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.ListTransfersResponse>;
 }
 interface IGlobalAPIService_IGetRateSnapshot extends grpc.MethodDefinition<gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.GetRateSnapshotRequest, gincoinc_adamant_global_v1_adamantglobalv1_model_pb.RateSnapshot> {
-    path: string; // "/adamant.global.v1.GlobalAPI/GetRateSnapshot"
-    requestStream: boolean; // false
-    responseStream: boolean; // false
+    path: "/adamant.global.v1.GlobalAPI/GetRateSnapshot";
+    requestStream: false;
+    responseStream: false;
     requestSerialize: grpc.serialize<gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.GetRateSnapshotRequest>;
     requestDeserialize: grpc.deserialize<gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.GetRateSnapshotRequest>;
     responseSerialize: grpc.serialize<gincoinc_adamant_global_v1_adamantglobalv1_model_pb.RateSnapshot>;
     responseDeserialize: grpc.deserialize<gincoinc_adamant_global_v1_adamantglobalv1_model_pb.RateSnapshot>;
 }
 interface IGlobalAPIService_IGetLatestRateSnapshot extends grpc.MethodDefinition<gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.GetLatestRateSnapshotRequest, gincoinc_adamant_global_v1_adamantglobalv1_model_pb.RateSnapshot> {
-    path: string; // "/adamant.global.v1.GlobalAPI/GetLatestRateSnapshot"
-    requestStream: boolean; // false
-    responseStream: boolean; // false
+    path: "/adamant.global.v1.GlobalAPI/GetLatestRateSnapshot";
+    requestStream: false;
+    responseStream: false;
     requestSerialize: grpc.serialize<gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.GetLatestRateSnapshotRequest>;
     requestDeserialize: grpc.deserialize<gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.GetLatestRateSnapshotRequest>;
     responseSerialize: grpc.serialize<gincoinc_adamant_global_v1_adamantglobalv1_model_pb.RateSnapshot>;
     responseDeserialize: grpc.deserialize<gincoinc_adamant_global_v1_adamantglobalv1_model_pb.RateSnapshot>;
 }
 interface IGlobalAPIService_ISetRates extends grpc.MethodDefinition<gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.SetRatesRequest, gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.SetRatesResponse> {
-    path: string; // "/adamant.global.v1.GlobalAPI/SetRates"
-    requestStream: boolean; // false
-    responseStream: boolean; // false
+    path: "/adamant.global.v1.GlobalAPI/SetRates";
+    requestStream: false;
+    responseStream: false;
     requestSerialize: grpc.serialize<gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.SetRatesRequest>;
     requestDeserialize: grpc.deserialize<gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.SetRatesRequest>;
     responseSerialize: grpc.serialize<gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.SetRatesResponse>;
     responseDeserialize: grpc.deserialize<gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.SetRatesResponse>;
 }
 interface IGlobalAPIService_ICreateLabeledAddress extends grpc.MethodDefinition<gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.CreateLabeledAddressRequest, gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.CreateLabeledAddressResponse> {
-    path: string; // "/adamant.global.v1.GlobalAPI/CreateLabeledAddress"
-    requestStream: boolean; // false
-    responseStream: boolean; // false
+    path: "/adamant.global.v1.GlobalAPI/CreateLabeledAddress";
+    requestStream: false;
+    responseStream: false;
     requestSerialize: grpc.serialize<gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.CreateLabeledAddressRequest>;
     requestDeserialize: grpc.deserialize<gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.CreateLabeledAddressRequest>;
     responseSerialize: grpc.serialize<gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.CreateLabeledAddressResponse>;
     responseDeserialize: grpc.deserialize<gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.CreateLabeledAddressResponse>;
 }
 interface IGlobalAPIService_IGetLabeledAddress extends grpc.MethodDefinition<gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.GetLabeledAddressRequest, gincoinc_adamant_global_v1_adamantglobalv1_model_pb.LabeledAddress> {
-    path: string; // "/adamant.global.v1.GlobalAPI/GetLabeledAddress"
-    requestStream: boolean; // false
-    responseStream: boolean; // false
+    path: "/adamant.global.v1.GlobalAPI/GetLabeledAddress";
+    requestStream: false;
+    responseStream: false;
     requestSerialize: grpc.serialize<gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.GetLabeledAddressRequest>;
     requestDeserialize: grpc.deserialize<gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.GetLabeledAddressRequest>;
     responseSerialize: grpc.serialize<gincoinc_adamant_global_v1_adamantglobalv1_model_pb.LabeledAddress>;
     responseDeserialize: grpc.deserialize<gincoinc_adamant_global_v1_adamantglobalv1_model_pb.LabeledAddress>;
 }
 interface IGlobalAPIService_IListLabeledAddresses extends grpc.MethodDefinition<gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.ListLabeledAddressesRequest, gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.ListLabeledAddressesResponse> {
-    path: string; // "/adamant.global.v1.GlobalAPI/ListLabeledAddresses"
-    requestStream: boolean; // false
-    responseStream: boolean; // false
+    path: "/adamant.global.v1.GlobalAPI/ListLabeledAddresses";
+    requestStream: false;
+    responseStream: false;
     requestSerialize: grpc.serialize<gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.ListLabeledAddressesRequest>;
     requestDeserialize: grpc.deserialize<gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.ListLabeledAddressesRequest>;
     responseSerialize: grpc.serialize<gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.ListLabeledAddressesResponse>;
     responseDeserialize: grpc.deserialize<gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.ListLabeledAddressesResponse>;
 }
 interface IGlobalAPIService_IIsDeletableLabeledAddress extends grpc.MethodDefinition<gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.IsDeletableLabeledAddressRequest, gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.IsDeletableLabeledAddressResponse> {
-    path: string; // "/adamant.global.v1.GlobalAPI/IsDeletableLabeledAddress"
-    requestStream: boolean; // false
-    responseStream: boolean; // false
+    path: "/adamant.global.v1.GlobalAPI/IsDeletableLabeledAddress";
+    requestStream: false;
+    responseStream: false;
     requestSerialize: grpc.serialize<gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.IsDeletableLabeledAddressRequest>;
     requestDeserialize: grpc.deserialize<gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.IsDeletableLabeledAddressRequest>;
     responseSerialize: grpc.serialize<gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.IsDeletableLabeledAddressResponse>;
     responseDeserialize: grpc.deserialize<gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.IsDeletableLabeledAddressResponse>;
 }
 interface IGlobalAPIService_IUpdateLabeledAddress extends grpc.MethodDefinition<gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.UpdateLabeledAddressRequest, gincoinc_adamant_global_v1_adamantglobalv1_model_pb.LabeledAddress> {
-    path: string; // "/adamant.global.v1.GlobalAPI/UpdateLabeledAddress"
-    requestStream: boolean; // false
-    responseStream: boolean; // false
+    path: "/adamant.global.v1.GlobalAPI/UpdateLabeledAddress";
+    requestStream: false;
+    responseStream: false;
     requestSerialize: grpc.serialize<gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.UpdateLabeledAddressRequest>;
     requestDeserialize: grpc.deserialize<gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.UpdateLabeledAddressRequest>;
     responseSerialize: grpc.serialize<gincoinc_adamant_global_v1_adamantglobalv1_model_pb.LabeledAddress>;
     responseDeserialize: grpc.deserialize<gincoinc_adamant_global_v1_adamantglobalv1_model_pb.LabeledAddress>;
 }
 interface IGlobalAPIService_IDeleteAddress extends grpc.MethodDefinition<gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.DeleteLabeledAddressRequest, google_protobuf_empty_pb.Empty> {
-    path: string; // "/adamant.global.v1.GlobalAPI/DeleteAddress"
-    requestStream: boolean; // false
-    responseStream: boolean; // false
+    path: "/adamant.global.v1.GlobalAPI/DeleteAddress";
+    requestStream: false;
+    responseStream: false;
     requestSerialize: grpc.serialize<gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.DeleteLabeledAddressRequest>;
     requestDeserialize: grpc.deserialize<gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.DeleteLabeledAddressRequest>;
     responseSerialize: grpc.serialize<google_protobuf_empty_pb.Empty>;
     responseDeserialize: grpc.deserialize<google_protobuf_empty_pb.Empty>;
 }
 interface IGlobalAPIService_IReviewLabeledAddressProposal extends grpc.MethodDefinition<gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.ReviewLabeledAddressProposalRequest, google_protobuf_empty_pb.Empty> {
-    path: string; // "/adamant.global.v1.GlobalAPI/ReviewLabeledAddressProposal"
-    requestStream: boolean; // false
-    responseStream: boolean; // false
+    path: "/adamant.global.v1.GlobalAPI/ReviewLabeledAddressProposal";
+    requestStream: false;
+    responseStream: false;
     requestSerialize: grpc.serialize<gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.ReviewLabeledAddressProposalRequest>;
     requestDeserialize: grpc.deserialize<gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.ReviewLabeledAddressProposalRequest>;
     responseSerialize: grpc.serialize<google_protobuf_empty_pb.Empty>;
     responseDeserialize: grpc.deserialize<google_protobuf_empty_pb.Empty>;
 }
 interface IGlobalAPIService_ICreateWhitelist extends grpc.MethodDefinition<gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.CreateWhitelistRequest, gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.CreateWhitelistResponse> {
-    path: string; // "/adamant.global.v1.GlobalAPI/CreateWhitelist"
-    requestStream: boolean; // false
-    responseStream: boolean; // false
+    path: "/adamant.global.v1.GlobalAPI/CreateWhitelist";
+    requestStream: false;
+    responseStream: false;
     requestSerialize: grpc.serialize<gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.CreateWhitelistRequest>;
     requestDeserialize: grpc.deserialize<gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.CreateWhitelistRequest>;
     responseSerialize: grpc.serialize<gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.CreateWhitelistResponse>;
     responseDeserialize: grpc.deserialize<gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.CreateWhitelistResponse>;
 }
 interface IGlobalAPIService_IGetWhitelist extends grpc.MethodDefinition<gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.GetWhitelistRequest, gincoinc_adamant_global_v1_adamantglobalv1_model_pb.Whitelist> {
-    path: string; // "/adamant.global.v1.GlobalAPI/GetWhitelist"
-    requestStream: boolean; // false
-    responseStream: boolean; // false
+    path: "/adamant.global.v1.GlobalAPI/GetWhitelist";
+    requestStream: false;
+    responseStream: false;
     requestSerialize: grpc.serialize<gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.GetWhitelistRequest>;
     requestDeserialize: grpc.deserialize<gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.GetWhitelistRequest>;
     responseSerialize: grpc.serialize<gincoinc_adamant_global_v1_adamantglobalv1_model_pb.Whitelist>;
     responseDeserialize: grpc.deserialize<gincoinc_adamant_global_v1_adamantglobalv1_model_pb.Whitelist>;
 }
 interface IGlobalAPIService_IListWhitelists extends grpc.MethodDefinition<gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.ListWhitelistsRequest, gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.ListWhitelistsResponse> {
-    path: string; // "/adamant.global.v1.GlobalAPI/ListWhitelists"
-    requestStream: boolean; // false
-    responseStream: boolean; // false
+    path: "/adamant.global.v1.GlobalAPI/ListWhitelists";
+    requestStream: false;
+    responseStream: false;
     requestSerialize: grpc.serialize<gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.ListWhitelistsRequest>;
     requestDeserialize: grpc.deserialize<gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.ListWhitelistsRequest>;
     responseSerialize: grpc.serialize<gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.ListWhitelistsResponse>;
     responseDeserialize: grpc.deserialize<gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.ListWhitelistsResponse>;
 }
 interface IGlobalAPIService_IIsDeletableWhitelist extends grpc.MethodDefinition<gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.IsDeletableWhitelistRequest, gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.IsDeletableWhitelistResponse> {
-    path: string; // "/adamant.global.v1.GlobalAPI/IsDeletableWhitelist"
-    requestStream: boolean; // false
-    responseStream: boolean; // false
+    path: "/adamant.global.v1.GlobalAPI/IsDeletableWhitelist";
+    requestStream: false;
+    responseStream: false;
     requestSerialize: grpc.serialize<gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.IsDeletableWhitelistRequest>;
     requestDeserialize: grpc.deserialize<gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.IsDeletableWhitelistRequest>;
     responseSerialize: grpc.serialize<gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.IsDeletableWhitelistResponse>;
     responseDeserialize: grpc.deserialize<gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.IsDeletableWhitelistResponse>;
 }
 interface IGlobalAPIService_IUpdateWhitelist extends grpc.MethodDefinition<gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.UpdateWhitelistRequest, gincoinc_adamant_global_v1_adamantglobalv1_model_pb.Whitelist> {
-    path: string; // "/adamant.global.v1.GlobalAPI/UpdateWhitelist"
-    requestStream: boolean; // false
-    responseStream: boolean; // false
+    path: "/adamant.global.v1.GlobalAPI/UpdateWhitelist";
+    requestStream: false;
+    responseStream: false;
     requestSerialize: grpc.serialize<gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.UpdateWhitelistRequest>;
     requestDeserialize: grpc.deserialize<gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.UpdateWhitelistRequest>;
     responseSerialize: grpc.serialize<gincoinc_adamant_global_v1_adamantglobalv1_model_pb.Whitelist>;
     responseDeserialize: grpc.deserialize<gincoinc_adamant_global_v1_adamantglobalv1_model_pb.Whitelist>;
 }
 interface IGlobalAPIService_IUpdateWhitelistAddresses extends grpc.MethodDefinition<gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.UpdateWhitelistAddressesRequest, gincoinc_adamant_global_v1_adamantglobalv1_model_pb.Whitelist> {
-    path: string; // "/adamant.global.v1.GlobalAPI/UpdateWhitelistAddresses"
-    requestStream: boolean; // false
-    responseStream: boolean; // false
+    path: "/adamant.global.v1.GlobalAPI/UpdateWhitelistAddresses";
+    requestStream: false;
+    responseStream: false;
     requestSerialize: grpc.serialize<gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.UpdateWhitelistAddressesRequest>;
     requestDeserialize: grpc.deserialize<gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.UpdateWhitelistAddressesRequest>;
     responseSerialize: grpc.serialize<gincoinc_adamant_global_v1_adamantglobalv1_model_pb.Whitelist>;
     responseDeserialize: grpc.deserialize<gincoinc_adamant_global_v1_adamantglobalv1_model_pb.Whitelist>;
 }
 interface IGlobalAPIService_IDeleteWhitelist extends grpc.MethodDefinition<gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.DeleteWhitelistRequest, google_protobuf_empty_pb.Empty> {
-    path: string; // "/adamant.global.v1.GlobalAPI/DeleteWhitelist"
-    requestStream: boolean; // false
-    responseStream: boolean; // false
+    path: "/adamant.global.v1.GlobalAPI/DeleteWhitelist";
+    requestStream: false;
+    responseStream: false;
     requestSerialize: grpc.serialize<gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.DeleteWhitelistRequest>;
     requestDeserialize: grpc.deserialize<gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.DeleteWhitelistRequest>;
     responseSerialize: grpc.serialize<google_protobuf_empty_pb.Empty>;
     responseDeserialize: grpc.deserialize<google_protobuf_empty_pb.Empty>;
 }
 interface IGlobalAPIService_ICreateTransferLimit extends grpc.MethodDefinition<gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.CreateTransferLimitRequest, gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.CreateTransferLimitResponse> {
-    path: string; // "/adamant.global.v1.GlobalAPI/CreateTransferLimit"
-    requestStream: boolean; // false
-    responseStream: boolean; // false
+    path: "/adamant.global.v1.GlobalAPI/CreateTransferLimit";
+    requestStream: false;
+    responseStream: false;
     requestSerialize: grpc.serialize<gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.CreateTransferLimitRequest>;
     requestDeserialize: grpc.deserialize<gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.CreateTransferLimitRequest>;
     responseSerialize: grpc.serialize<gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.CreateTransferLimitResponse>;
     responseDeserialize: grpc.deserialize<gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.CreateTransferLimitResponse>;
 }
 interface IGlobalAPIService_IGetTransferLimit extends grpc.MethodDefinition<gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.GetTransferLimitRequest, gincoinc_adamant_global_v1_adamantglobalv1_model_pb.TransferLimit> {
-    path: string; // "/adamant.global.v1.GlobalAPI/GetTransferLimit"
-    requestStream: boolean; // false
-    responseStream: boolean; // false
+    path: "/adamant.global.v1.GlobalAPI/GetTransferLimit";
+    requestStream: false;
+    responseStream: false;
     requestSerialize: grpc.serialize<gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.GetTransferLimitRequest>;
     requestDeserialize: grpc.deserialize<gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.GetTransferLimitRequest>;
     responseSerialize: grpc.serialize<gincoinc_adamant_global_v1_adamantglobalv1_model_pb.TransferLimit>;
     responseDeserialize: grpc.deserialize<gincoinc_adamant_global_v1_adamantglobalv1_model_pb.TransferLimit>;
 }
 interface IGlobalAPIService_IListTransferLimits extends grpc.MethodDefinition<gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.ListTransferLimitsRequest, gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.ListTransferLimitsResponse> {
-    path: string; // "/adamant.global.v1.GlobalAPI/ListTransferLimits"
-    requestStream: boolean; // false
-    responseStream: boolean; // false
+    path: "/adamant.global.v1.GlobalAPI/ListTransferLimits";
+    requestStream: false;
+    responseStream: false;
     requestSerialize: grpc.serialize<gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.ListTransferLimitsRequest>;
     requestDeserialize: grpc.deserialize<gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.ListTransferLimitsRequest>;
     responseSerialize: grpc.serialize<gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.ListTransferLimitsResponse>;
     responseDeserialize: grpc.deserialize<gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.ListTransferLimitsResponse>;
 }
 interface IGlobalAPIService_IIsDeletableTransferLimit extends grpc.MethodDefinition<gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.IsDeletableTransferLimitRequest, gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.IsDeletableTransferLimitResponse> {
-    path: string; // "/adamant.global.v1.GlobalAPI/IsDeletableTransferLimit"
-    requestStream: boolean; // false
-    responseStream: boolean; // false
+    path: "/adamant.global.v1.GlobalAPI/IsDeletableTransferLimit";
+    requestStream: false;
+    responseStream: false;
     requestSerialize: grpc.serialize<gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.IsDeletableTransferLimitRequest>;
     requestDeserialize: grpc.deserialize<gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.IsDeletableTransferLimitRequest>;
     responseSerialize: grpc.serialize<gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.IsDeletableTransferLimitResponse>;
     responseDeserialize: grpc.deserialize<gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.IsDeletableTransferLimitResponse>;
 }
 interface IGlobalAPIService_IUpdateTransferLimit extends grpc.MethodDefinition<gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.UpdateTransferLimitRequest, gincoinc_adamant_global_v1_adamantglobalv1_model_pb.TransferLimit> {
-    path: string; // "/adamant.global.v1.GlobalAPI/UpdateTransferLimit"
-    requestStream: boolean; // false
-    responseStream: boolean; // false
+    path: "/adamant.global.v1.GlobalAPI/UpdateTransferLimit";
+    requestStream: false;
+    responseStream: false;
     requestSerialize: grpc.serialize<gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.UpdateTransferLimitRequest>;
     requestDeserialize: grpc.deserialize<gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.UpdateTransferLimitRequest>;
     responseSerialize: grpc.serialize<gincoinc_adamant_global_v1_adamantglobalv1_model_pb.TransferLimit>;
     responseDeserialize: grpc.deserialize<gincoinc_adamant_global_v1_adamantglobalv1_model_pb.TransferLimit>;
 }
 interface IGlobalAPIService_IUpdateTransferLimitName extends grpc.MethodDefinition<gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.UpdateTransferLimitNameRequest, gincoinc_adamant_global_v1_adamantglobalv1_model_pb.TransferLimit> {
-    path: string; // "/adamant.global.v1.GlobalAPI/UpdateTransferLimitName"
-    requestStream: boolean; // false
-    responseStream: boolean; // false
+    path: "/adamant.global.v1.GlobalAPI/UpdateTransferLimitName";
+    requestStream: false;
+    responseStream: false;
     requestSerialize: grpc.serialize<gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.UpdateTransferLimitNameRequest>;
     requestDeserialize: grpc.deserialize<gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.UpdateTransferLimitNameRequest>;
     responseSerialize: grpc.serialize<gincoinc_adamant_global_v1_adamantglobalv1_model_pb.TransferLimit>;
     responseDeserialize: grpc.deserialize<gincoinc_adamant_global_v1_adamantglobalv1_model_pb.TransferLimit>;
 }
 interface IGlobalAPIService_IDeleteTransferLimit extends grpc.MethodDefinition<gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.DeleteTransferLimitRequest, google_protobuf_empty_pb.Empty> {
-    path: string; // "/adamant.global.v1.GlobalAPI/DeleteTransferLimit"
-    requestStream: boolean; // false
-    responseStream: boolean; // false
+    path: "/adamant.global.v1.GlobalAPI/DeleteTransferLimit";
+    requestStream: false;
+    responseStream: false;
     requestSerialize: grpc.serialize<gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.DeleteTransferLimitRequest>;
     requestDeserialize: grpc.deserialize<gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.DeleteTransferLimitRequest>;
     responseSerialize: grpc.serialize<google_protobuf_empty_pb.Empty>;
     responseDeserialize: grpc.deserialize<google_protobuf_empty_pb.Empty>;
 }
 interface IGlobalAPIService_IReviewTransferLimitProposal extends grpc.MethodDefinition<gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.ReviewTransferLimitProposalRequest, google_protobuf_empty_pb.Empty> {
-    path: string; // "/adamant.global.v1.GlobalAPI/ReviewTransferLimitProposal"
-    requestStream: boolean; // false
-    responseStream: boolean; // false
+    path: "/adamant.global.v1.GlobalAPI/ReviewTransferLimitProposal";
+    requestStream: false;
+    responseStream: false;
     requestSerialize: grpc.serialize<gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.ReviewTransferLimitProposalRequest>;
     requestDeserialize: grpc.deserialize<gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.ReviewTransferLimitProposalRequest>;
     responseSerialize: grpc.serialize<google_protobuf_empty_pb.Empty>;
     responseDeserialize: grpc.deserialize<google_protobuf_empty_pb.Empty>;
 }
 interface IGlobalAPIService_ICreatePolicy extends grpc.MethodDefinition<gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.CreatePolicyRequest, gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.CreatePolicyResponse> {
-    path: string; // "/adamant.global.v1.GlobalAPI/CreatePolicy"
-    requestStream: boolean; // false
-    responseStream: boolean; // false
+    path: "/adamant.global.v1.GlobalAPI/CreatePolicy";
+    requestStream: false;
+    responseStream: false;
     requestSerialize: grpc.serialize<gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.CreatePolicyRequest>;
     requestDeserialize: grpc.deserialize<gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.CreatePolicyRequest>;
     responseSerialize: grpc.serialize<gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.CreatePolicyResponse>;
     responseDeserialize: grpc.deserialize<gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.CreatePolicyResponse>;
 }
 interface IGlobalAPIService_IGetPolicy extends grpc.MethodDefinition<gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.GetPolicyRequest, gincoinc_adamant_global_v1_adamantglobalv1_model_pb.Policy> {
-    path: string; // "/adamant.global.v1.GlobalAPI/GetPolicy"
-    requestStream: boolean; // false
-    responseStream: boolean; // false
+    path: "/adamant.global.v1.GlobalAPI/GetPolicy";
+    requestStream: false;
+    responseStream: false;
     requestSerialize: grpc.serialize<gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.GetPolicyRequest>;
     requestDeserialize: grpc.deserialize<gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.GetPolicyRequest>;
     responseSerialize: grpc.serialize<gincoinc_adamant_global_v1_adamantglobalv1_model_pb.Policy>;
     responseDeserialize: grpc.deserialize<gincoinc_adamant_global_v1_adamantglobalv1_model_pb.Policy>;
 }
 interface IGlobalAPIService_IListPolicies extends grpc.MethodDefinition<gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.ListPoliciesRequest, gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.ListPoliciesResponse> {
-    path: string; // "/adamant.global.v1.GlobalAPI/ListPolicies"
-    requestStream: boolean; // false
-    responseStream: boolean; // false
+    path: "/adamant.global.v1.GlobalAPI/ListPolicies";
+    requestStream: false;
+    responseStream: false;
     requestSerialize: grpc.serialize<gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.ListPoliciesRequest>;
     requestDeserialize: grpc.deserialize<gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.ListPoliciesRequest>;
     responseSerialize: grpc.serialize<gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.ListPoliciesResponse>;
     responseDeserialize: grpc.deserialize<gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.ListPoliciesResponse>;
 }
 interface IGlobalAPIService_IIsDeletablePolicy extends grpc.MethodDefinition<gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.IsDeletablePolicyRequest, gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.IsDeletablePolicyResponse> {
-    path: string; // "/adamant.global.v1.GlobalAPI/IsDeletablePolicy"
-    requestStream: boolean; // false
-    responseStream: boolean; // false
+    path: "/adamant.global.v1.GlobalAPI/IsDeletablePolicy";
+    requestStream: false;
+    responseStream: false;
     requestSerialize: grpc.serialize<gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.IsDeletablePolicyRequest>;
     requestDeserialize: grpc.deserialize<gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.IsDeletablePolicyRequest>;
     responseSerialize: grpc.serialize<gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.IsDeletablePolicyResponse>;
     responseDeserialize: grpc.deserialize<gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.IsDeletablePolicyResponse>;
 }
 interface IGlobalAPIService_IUpdatePolicy extends grpc.MethodDefinition<gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.UpdatePolicyRequest, gincoinc_adamant_global_v1_adamantglobalv1_model_pb.Policy> {
-    path: string; // "/adamant.global.v1.GlobalAPI/UpdatePolicy"
-    requestStream: boolean; // false
-    responseStream: boolean; // false
+    path: "/adamant.global.v1.GlobalAPI/UpdatePolicy";
+    requestStream: false;
+    responseStream: false;
     requestSerialize: grpc.serialize<gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.UpdatePolicyRequest>;
     requestDeserialize: grpc.deserialize<gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.UpdatePolicyRequest>;
     responseSerialize: grpc.serialize<gincoinc_adamant_global_v1_adamantglobalv1_model_pb.Policy>;
     responseDeserialize: grpc.deserialize<gincoinc_adamant_global_v1_adamantglobalv1_model_pb.Policy>;
 }
 interface IGlobalAPIService_IDeletePolicy extends grpc.MethodDefinition<gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.DeletePolicyRequest, google_protobuf_empty_pb.Empty> {
-    path: string; // "/adamant.global.v1.GlobalAPI/DeletePolicy"
-    requestStream: boolean; // false
-    responseStream: boolean; // false
+    path: "/adamant.global.v1.GlobalAPI/DeletePolicy";
+    requestStream: false;
+    responseStream: false;
     requestSerialize: grpc.serialize<gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.DeletePolicyRequest>;
     requestDeserialize: grpc.deserialize<gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.DeletePolicyRequest>;
     responseSerialize: grpc.serialize<google_protobuf_empty_pb.Empty>;
     responseDeserialize: grpc.deserialize<google_protobuf_empty_pb.Empty>;
 }
 interface IGlobalAPIService_IReviewPolicyProposal extends grpc.MethodDefinition<gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.ReviewPolicyProposalRequest, google_protobuf_empty_pb.Empty> {
-    path: string; // "/adamant.global.v1.GlobalAPI/ReviewPolicyProposal"
-    requestStream: boolean; // false
-    responseStream: boolean; // false
+    path: "/adamant.global.v1.GlobalAPI/ReviewPolicyProposal";
+    requestStream: false;
+    responseStream: false;
     requestSerialize: grpc.serialize<gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.ReviewPolicyProposalRequest>;
     requestDeserialize: grpc.deserialize<gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.ReviewPolicyProposalRequest>;
     responseSerialize: grpc.serialize<google_protobuf_empty_pb.Empty>;
     responseDeserialize: grpc.deserialize<google_protobuf_empty_pb.Empty>;
 }
 interface IGlobalAPIService_IGetSpendableBalance extends grpc.MethodDefinition<gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.GetSpendableBalanceRequest, gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.GetSpendableBalanceResponse> {
-    path: string; // "/adamant.global.v1.GlobalAPI/GetSpendableBalance"
-    requestStream: boolean; // false
-    responseStream: boolean; // false
+    path: "/adamant.global.v1.GlobalAPI/GetSpendableBalance";
+    requestStream: false;
+    responseStream: false;
     requestSerialize: grpc.serialize<gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.GetSpendableBalanceRequest>;
     requestDeserialize: grpc.deserialize<gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.GetSpendableBalanceRequest>;
     responseSerialize: grpc.serialize<gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.GetSpendableBalanceResponse>;
     responseDeserialize: grpc.deserialize<gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.GetSpendableBalanceResponse>;
 }
 interface IGlobalAPIService_IGetTotalBalance extends grpc.MethodDefinition<gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.GetTotalBalanceRequest, gincoinc_adamant_global_v1_adamantglobalv1_model_pb.TotalBalance> {
-    path: string; // "/adamant.global.v1.GlobalAPI/GetTotalBalance"
-    requestStream: boolean; // false
-    responseStream: boolean; // false
+    path: "/adamant.global.v1.GlobalAPI/GetTotalBalance";
+    requestStream: false;
+    responseStream: false;
     requestSerialize: grpc.serialize<gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.GetTotalBalanceRequest>;
     requestDeserialize: grpc.deserialize<gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.GetTotalBalanceRequest>;
     responseSerialize: grpc.serialize<gincoinc_adamant_global_v1_adamantglobalv1_model_pb.TotalBalance>;
     responseDeserialize: grpc.deserialize<gincoinc_adamant_global_v1_adamantglobalv1_model_pb.TotalBalance>;
 }
 interface IGlobalAPIService_IListBalanceSnapshots extends grpc.MethodDefinition<gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.ListBalanceSnapshotsRequest, gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.ListBalanceSnapshotsResponse> {
-    path: string; // "/adamant.global.v1.GlobalAPI/ListBalanceSnapshots"
-    requestStream: boolean; // false
-    responseStream: boolean; // false
+    path: "/adamant.global.v1.GlobalAPI/ListBalanceSnapshots";
+    requestStream: false;
+    responseStream: false;
     requestSerialize: grpc.serialize<gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.ListBalanceSnapshotsRequest>;
     requestDeserialize: grpc.deserialize<gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.ListBalanceSnapshotsRequest>;
     responseSerialize: grpc.serialize<gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.ListBalanceSnapshotsResponse>;
     responseDeserialize: grpc.deserialize<gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.ListBalanceSnapshotsResponse>;
 }
 interface IGlobalAPIService_ICalculateFee extends grpc.MethodDefinition<gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.CalculateFeeRequest, gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.CalculateFeeResponse> {
-    path: string; // "/adamant.global.v1.GlobalAPI/CalculateFee"
-    requestStream: boolean; // false
-    responseStream: boolean; // false
+    path: "/adamant.global.v1.GlobalAPI/CalculateFee";
+    requestStream: false;
+    responseStream: false;
     requestSerialize: grpc.serialize<gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.CalculateFeeRequest>;
     requestDeserialize: grpc.deserialize<gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.CalculateFeeRequest>;
     responseSerialize: grpc.serialize<gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.CalculateFeeResponse>;
     responseDeserialize: grpc.deserialize<gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.CalculateFeeResponse>;
 }
 interface IGlobalAPIService_IGetMembersDeactivatabilities extends grpc.MethodDefinition<gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.GetMembersDeactivatabilitiesRequest, gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.GetMembersDeactivatabilitiesResponse> {
-    path: string; // "/adamant.global.v1.GlobalAPI/GetMembersDeactivatabilities"
-    requestStream: boolean; // false
-    responseStream: boolean; // false
+    path: "/adamant.global.v1.GlobalAPI/GetMembersDeactivatabilities";
+    requestStream: false;
+    responseStream: false;
     requestSerialize: grpc.serialize<gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.GetMembersDeactivatabilitiesRequest>;
     requestDeserialize: grpc.deserialize<gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.GetMembersDeactivatabilitiesRequest>;
     responseSerialize: grpc.serialize<gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.GetMembersDeactivatabilitiesResponse>;
     responseDeserialize: grpc.deserialize<gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.GetMembersDeactivatabilitiesResponse>;
 }
 interface IGlobalAPIService_IGetRecommendedFeeRate extends grpc.MethodDefinition<gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.GetRecommendedFeeRateRequest, gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.GetRecommendedFeeRateResponse> {
-    path: string; // "/adamant.global.v1.GlobalAPI/GetRecommendedFeeRate"
-    requestStream: boolean; // false
-    responseStream: boolean; // false
+    path: "/adamant.global.v1.GlobalAPI/GetRecommendedFeeRate";
+    requestStream: false;
+    responseStream: false;
     requestSerialize: grpc.serialize<gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.GetRecommendedFeeRateRequest>;
     requestDeserialize: grpc.deserialize<gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.GetRecommendedFeeRateRequest>;
     responseSerialize: grpc.serialize<gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.GetRecommendedFeeRateResponse>;
     responseDeserialize: grpc.deserialize<gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.GetRecommendedFeeRateResponse>;
 }
 interface IGlobalAPIService_IValidateAddress extends grpc.MethodDefinition<gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.ValidateAddressRequest, gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.ValidateAddressResponse> {
-    path: string; // "/adamant.global.v1.GlobalAPI/ValidateAddress"
-    requestStream: boolean; // false
-    responseStream: boolean; // false
+    path: "/adamant.global.v1.GlobalAPI/ValidateAddress";
+    requestStream: false;
+    responseStream: false;
     requestSerialize: grpc.serialize<gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.ValidateAddressRequest>;
     requestDeserialize: grpc.deserialize<gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.ValidateAddressRequest>;
     responseSerialize: grpc.serialize<gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.ValidateAddressResponse>;

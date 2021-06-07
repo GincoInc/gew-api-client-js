@@ -8,25 +8,19 @@ import * as jspb from "google-protobuf";
 
 export class Event extends jspb.Message { 
     getAggregateId(): string;
-    setAggregateId(value: string): void;
-
+    setAggregateId(value: string): Event;
     getEventId(): string;
-    setEventId(value: string): void;
-
+    setEventId(value: string): Event;
     getEventType(): string;
-    setEventType(value: string): void;
-
+    setEventType(value: string): Event;
     getPayload(): Uint8Array | string;
     getPayload_asU8(): Uint8Array;
     getPayload_asB64(): string;
-    setPayload(value: Uint8Array | string): void;
-
+    setPayload(value: Uint8Array | string): Event;
     getVersion(): number;
-    setVersion(value: number): void;
-
+    setVersion(value: number): Event;
     getCreateTime(): number;
-    setCreateTime(value: number): void;
-
+    setCreateTime(value: number): Event;
 
     serializeBinary(): Uint8Array;
     toObject(includeInstance?: boolean): Event.AsObject;

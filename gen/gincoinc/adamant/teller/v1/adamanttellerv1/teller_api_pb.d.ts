@@ -14,23 +14,17 @@ import * as gincoinc_adamant_global_v1_adamantglobalv1_model_pb from "../../../.
 
 export class CreateWalletRequest extends jspb.Message { 
     getWalletName(): string;
-    setWalletName(value: string): void;
-
+    setWalletName(value: string): CreateWalletRequest;
     getCoin(): gincoinc_global_v1_gincoincglobalv1_enum_pb.Coin;
-    setCoin(value: gincoinc_global_v1_gincoincglobalv1_enum_pb.Coin): void;
-
+    setCoin(value: gincoinc_global_v1_gincoincglobalv1_enum_pb.Coin): CreateWalletRequest;
     getWalletType(): gincoinc_adamant_global_v1_adamantglobalv1_enum_pb.WalletType;
-    setWalletType(value: gincoinc_adamant_global_v1_adamantglobalv1_enum_pb.WalletType): void;
-
+    setWalletType(value: gincoinc_adamant_global_v1_adamantglobalv1_enum_pb.WalletType): CreateWalletRequest;
     getAddressType(): gincoinc_global_v1_gincoincglobalv1_enum_pb.AddressType;
-    setAddressType(value: gincoinc_global_v1_gincoincglobalv1_enum_pb.AddressType): void;
-
+    setAddressType(value: gincoinc_global_v1_gincoincglobalv1_enum_pb.AddressType): CreateWalletRequest;
     getDestinationWalletId(): string;
-    setDestinationWalletId(value: string): void;
-
+    setDestinationWalletId(value: string): CreateWalletRequest;
     getInheritWalletId(): string;
-    setInheritWalletId(value: string): void;
-
+    setInheritWalletId(value: string): CreateWalletRequest;
 
     serializeBinary(): Uint8Array;
     toObject(includeInstance?: boolean): CreateWalletRequest.AsObject;
@@ -55,8 +49,7 @@ export namespace CreateWalletRequest {
 
 export class InitializeXRPWalletRequest extends jspb.Message { 
     getWalletId(): string;
-    setWalletId(value: string): void;
-
+    setWalletId(value: string): InitializeXRPWalletRequest;
 
     serializeBinary(): Uint8Array;
     toObject(includeInstance?: boolean): InitializeXRPWalletRequest.AsObject;
@@ -76,11 +69,9 @@ export namespace InitializeXRPWalletRequest {
 
 export class SignTransactionRequest extends jspb.Message { 
     getWalletId(): string;
-    setWalletId(value: string): void;
-
+    setWalletId(value: string): SignTransactionRequest;
     getTransactionId(): string;
-    setTransactionId(value: string): void;
-
+    setTransactionId(value: string): SignTransactionRequest;
 
     serializeBinary(): Uint8Array;
     toObject(includeInstance?: boolean): SignTransactionRequest.AsObject;
