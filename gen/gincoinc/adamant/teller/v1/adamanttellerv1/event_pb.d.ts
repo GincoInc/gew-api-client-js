@@ -10,44 +10,31 @@ import * as gincoinc_global_v1_gincoincglobalv1_enum_pb from "../../../../../gin
 
 export class TransferUpdated extends jspb.Message { 
     getWalletId(): string;
-    setWalletId(value: string): void;
-
+    setWalletId(value: string): TransferUpdated;
     getTransferId(): string;
-    setTransferId(value: string): void;
-
+    setTransferId(value: string): TransferUpdated;
     getCoin(): gincoinc_global_v1_gincoincglobalv1_enum_pb.Coin;
-    setCoin(value: gincoinc_global_v1_gincoincglobalv1_enum_pb.Coin): void;
-
+    setCoin(value: gincoinc_global_v1_gincoincglobalv1_enum_pb.Coin): TransferUpdated;
     getTxId(): string;
-    setTxId(value: string): void;
-
+    setTxId(value: string): TransferUpdated;
     getTxIndex(): number;
-    setTxIndex(value: number): void;
-
+    setTxIndex(value: number): TransferUpdated;
     getValue(): number;
-    setValue(value: number): void;
-
+    setValue(value: number): TransferUpdated;
     getStringValue(): string;
-    setStringValue(value: string): void;
-
+    setStringValue(value: string): TransferUpdated;
     getJpyRate(): number;
-    setJpyRate(value: number): void;
-
+    setJpyRate(value: number): TransferUpdated;
     getAddress(): string;
-    setAddress(value: string): void;
-
+    setAddress(value: string): TransferUpdated;
     getDestinationTag(): number;
-    setDestinationTag(value: number): void;
-
+    setDestinationTag(value: number): TransferUpdated;
     getState(): gincoinc_global_v1_gincoincglobalv1_enum_pb.TransactionState;
-    setState(value: gincoinc_global_v1_gincoincglobalv1_enum_pb.TransactionState): void;
-
+    setState(value: gincoinc_global_v1_gincoincglobalv1_enum_pb.TransactionState): TransferUpdated;
     getResult(): gincoinc_global_v1_gincoincglobalv1_enum_pb.TransactionResult;
-    setResult(value: gincoinc_global_v1_gincoincglobalv1_enum_pb.TransactionResult): void;
-
+    setResult(value: gincoinc_global_v1_gincoincglobalv1_enum_pb.TransactionResult): TransferUpdated;
     getTransferType(): gincoinc_global_v1_gincoincglobalv1_enum_pb.TransferType;
-    setTransferType(value: gincoinc_global_v1_gincoincglobalv1_enum_pb.TransferType): void;
-
+    setTransferType(value: gincoinc_global_v1_gincoincglobalv1_enum_pb.TransferType): TransferUpdated;
 
     serializeBinary(): Uint8Array;
     toObject(includeInstance?: boolean): TransferUpdated.AsObject;
@@ -79,50 +66,36 @@ export namespace TransferUpdated {
 
 export class TransferUpdateEvent extends jspb.Message { 
     getEventId(): string;
-    setEventId(value: string): void;
-
+    setEventId(value: string): TransferUpdateEvent;
     getWalletId(): string;
-    setWalletId(value: string): void;
-
+    setWalletId(value: string): TransferUpdateEvent;
     getCoin(): gincoinc_global_v1_gincoincglobalv1_enum_pb.Coin;
-    setCoin(value: gincoinc_global_v1_gincoincglobalv1_enum_pb.Coin): void;
-
+    setCoin(value: gincoinc_global_v1_gincoincglobalv1_enum_pb.Coin): TransferUpdateEvent;
     getTxId(): string;
-    setTxId(value: string): void;
-
+    setTxId(value: string): TransferUpdateEvent;
     getTxIndex(): number;
-    setTxIndex(value: number): void;
-
+    setTxIndex(value: number): TransferUpdateEvent;
     getValue(): number;
-    setValue(value: number): void;
-
+    setValue(value: number): TransferUpdateEvent;
     getStringValue(): string;
-    setStringValue(value: string): void;
-
+    setStringValue(value: string): TransferUpdateEvent;
     getJpyRate(): number;
-    setJpyRate(value: number): void;
-
+    setJpyRate(value: number): TransferUpdateEvent;
     getAddress(): string;
-    setAddress(value: string): void;
-
+    setAddress(value: string): TransferUpdateEvent;
     getDestinationTag(): number;
-    setDestinationTag(value: number): void;
-
+    setDestinationTag(value: number): TransferUpdateEvent;
     getState(): gincoinc_global_v1_gincoincglobalv1_enum_pb.TransactionState;
-    setState(value: gincoinc_global_v1_gincoincglobalv1_enum_pb.TransactionState): void;
-
+    setState(value: gincoinc_global_v1_gincoincglobalv1_enum_pb.TransactionState): TransferUpdateEvent;
     getResult(): gincoinc_global_v1_gincoincglobalv1_enum_pb.TransactionResult;
-    setResult(value: gincoinc_global_v1_gincoincglobalv1_enum_pb.TransactionResult): void;
-
+    setResult(value: gincoinc_global_v1_gincoincglobalv1_enum_pb.TransactionResult): TransferUpdateEvent;
     getTransferType(): gincoinc_global_v1_gincoincglobalv1_enum_pb.TransferType;
-    setTransferType(value: gincoinc_global_v1_gincoincglobalv1_enum_pb.TransferType): void;
-
+    setTransferType(value: gincoinc_global_v1_gincoincglobalv1_enum_pb.TransferType): TransferUpdateEvent;
 
     hasTime(): boolean;
     clearTime(): void;
     getTime(): google_protobuf_timestamp_pb.Timestamp | undefined;
-    setTime(value?: google_protobuf_timestamp_pb.Timestamp): void;
-
+    setTime(value?: google_protobuf_timestamp_pb.Timestamp): TransferUpdateEvent;
 
     serializeBinary(): Uint8Array;
     toObject(includeInstance?: boolean): TransferUpdateEvent.AsObject;
