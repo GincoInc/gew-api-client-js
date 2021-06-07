@@ -14,6 +14,12 @@ export enum Coin {
     COIN_BCH = 4,
     COIN_XRP = 5,
     COIN_BAT = 6,
+    COIN_TRX = 7,
+    COIN_USDT = 8,
+    COIN_RYO = 9,
+    COIN_JASMY = 10,
+    COIN_ENJ = 11,
+    COIN_OMG = 12,
 }
 
 export enum Network {
@@ -28,6 +34,10 @@ export enum Network {
     NETWORK_BITCOINCASH_TESTNET = 8,
     NETWORK_RIPPLE_MAINNET = 9,
     NETWORK_RIPPLE_TESTNET = 10,
+    NETWORK_TRON_MAINNET = 11,
+    NETWORK_TRON_TESTNET = 12,
+    NETWORK_C0BAN_MAINNET = 13,
+    NETWORK_C0BAN_TESTNET = 14,
 }
 
 export enum AddressType {
@@ -44,6 +54,7 @@ export enum TransactionState {
     TRANSACTION_STATE_PENDING = 2,
     TRANSACTION_STATE_PROCESSING = 3,
     TRANSACTION_STATE_CONFIRMED = 4,
+    TRANSACTION_STATE_DROPPED = 5,
 }
 
 export enum UTXOState {

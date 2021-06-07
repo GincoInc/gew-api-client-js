@@ -329,6 +329,17 @@ function deserialize_adamant_global_v1_FlushBalanceRequest(buffer_arg) {
   return gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.FlushBalanceRequest.deserializeBinary(new Uint8Array(buffer_arg));
 }
 
+function serialize_adamant_global_v1_FlushBalanceResponse(arg) {
+  if (!(arg instanceof gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.FlushBalanceResponse)) {
+    throw new Error('Expected argument of type adamant.global.v1.FlushBalanceResponse');
+  }
+  return Buffer.from(arg.serializeBinary());
+}
+
+function deserialize_adamant_global_v1_FlushBalanceResponse(buffer_arg) {
+  return gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.FlushBalanceResponse.deserializeBinary(new Uint8Array(buffer_arg));
+}
+
 function serialize_adamant_global_v1_GetAddressByAddressRequest(arg) {
   if (!(arg instanceof gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.GetAddressByAddressRequest)) {
     throw new Error('Expected argument of type adamant.global.v1.GetAddressByAddressRequest');
@@ -560,6 +571,94 @@ function deserialize_adamant_global_v1_GetWhitelistRequest(buffer_arg) {
   return gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.GetWhitelistRequest.deserializeBinary(new Uint8Array(buffer_arg));
 }
 
+function serialize_adamant_global_v1_IsDeletableLabeledAddressRequest(arg) {
+  if (!(arg instanceof gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.IsDeletableLabeledAddressRequest)) {
+    throw new Error('Expected argument of type adamant.global.v1.IsDeletableLabeledAddressRequest');
+  }
+  return Buffer.from(arg.serializeBinary());
+}
+
+function deserialize_adamant_global_v1_IsDeletableLabeledAddressRequest(buffer_arg) {
+  return gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.IsDeletableLabeledAddressRequest.deserializeBinary(new Uint8Array(buffer_arg));
+}
+
+function serialize_adamant_global_v1_IsDeletableLabeledAddressResponse(arg) {
+  if (!(arg instanceof gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.IsDeletableLabeledAddressResponse)) {
+    throw new Error('Expected argument of type adamant.global.v1.IsDeletableLabeledAddressResponse');
+  }
+  return Buffer.from(arg.serializeBinary());
+}
+
+function deserialize_adamant_global_v1_IsDeletableLabeledAddressResponse(buffer_arg) {
+  return gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.IsDeletableLabeledAddressResponse.deserializeBinary(new Uint8Array(buffer_arg));
+}
+
+function serialize_adamant_global_v1_IsDeletablePolicyRequest(arg) {
+  if (!(arg instanceof gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.IsDeletablePolicyRequest)) {
+    throw new Error('Expected argument of type adamant.global.v1.IsDeletablePolicyRequest');
+  }
+  return Buffer.from(arg.serializeBinary());
+}
+
+function deserialize_adamant_global_v1_IsDeletablePolicyRequest(buffer_arg) {
+  return gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.IsDeletablePolicyRequest.deserializeBinary(new Uint8Array(buffer_arg));
+}
+
+function serialize_adamant_global_v1_IsDeletablePolicyResponse(arg) {
+  if (!(arg instanceof gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.IsDeletablePolicyResponse)) {
+    throw new Error('Expected argument of type adamant.global.v1.IsDeletablePolicyResponse');
+  }
+  return Buffer.from(arg.serializeBinary());
+}
+
+function deserialize_adamant_global_v1_IsDeletablePolicyResponse(buffer_arg) {
+  return gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.IsDeletablePolicyResponse.deserializeBinary(new Uint8Array(buffer_arg));
+}
+
+function serialize_adamant_global_v1_IsDeletableTransferLimitRequest(arg) {
+  if (!(arg instanceof gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.IsDeletableTransferLimitRequest)) {
+    throw new Error('Expected argument of type adamant.global.v1.IsDeletableTransferLimitRequest');
+  }
+  return Buffer.from(arg.serializeBinary());
+}
+
+function deserialize_adamant_global_v1_IsDeletableTransferLimitRequest(buffer_arg) {
+  return gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.IsDeletableTransferLimitRequest.deserializeBinary(new Uint8Array(buffer_arg));
+}
+
+function serialize_adamant_global_v1_IsDeletableTransferLimitResponse(arg) {
+  if (!(arg instanceof gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.IsDeletableTransferLimitResponse)) {
+    throw new Error('Expected argument of type adamant.global.v1.IsDeletableTransferLimitResponse');
+  }
+  return Buffer.from(arg.serializeBinary());
+}
+
+function deserialize_adamant_global_v1_IsDeletableTransferLimitResponse(buffer_arg) {
+  return gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.IsDeletableTransferLimitResponse.deserializeBinary(new Uint8Array(buffer_arg));
+}
+
+function serialize_adamant_global_v1_IsDeletableWhitelistRequest(arg) {
+  if (!(arg instanceof gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.IsDeletableWhitelistRequest)) {
+    throw new Error('Expected argument of type adamant.global.v1.IsDeletableWhitelistRequest');
+  }
+  return Buffer.from(arg.serializeBinary());
+}
+
+function deserialize_adamant_global_v1_IsDeletableWhitelistRequest(buffer_arg) {
+  return gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.IsDeletableWhitelistRequest.deserializeBinary(new Uint8Array(buffer_arg));
+}
+
+function serialize_adamant_global_v1_IsDeletableWhitelistResponse(arg) {
+  if (!(arg instanceof gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.IsDeletableWhitelistResponse)) {
+    throw new Error('Expected argument of type adamant.global.v1.IsDeletableWhitelistResponse');
+  }
+  return Buffer.from(arg.serializeBinary());
+}
+
+function deserialize_adamant_global_v1_IsDeletableWhitelistResponse(buffer_arg) {
+  return gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.IsDeletableWhitelistResponse.deserializeBinary(new Uint8Array(buffer_arg));
+}
+
 function serialize_adamant_global_v1_LabeledAddress(arg) {
   if (!(arg instanceof gincoinc_adamant_global_v1_adamantglobalv1_model_pb.LabeledAddress)) {
     throw new Error('Expected argument of type adamant.global.v1.LabeledAddress');
@@ -593,6 +692,28 @@ function deserialize_adamant_global_v1_ListAddressesResponse(buffer_arg) {
   return gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.ListAddressesResponse.deserializeBinary(new Uint8Array(buffer_arg));
 }
 
+function serialize_adamant_global_v1_ListAddressesWithBalanceRequest(arg) {
+  if (!(arg instanceof gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.ListAddressesWithBalanceRequest)) {
+    throw new Error('Expected argument of type adamant.global.v1.ListAddressesWithBalanceRequest');
+  }
+  return Buffer.from(arg.serializeBinary());
+}
+
+function deserialize_adamant_global_v1_ListAddressesWithBalanceRequest(buffer_arg) {
+  return gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.ListAddressesWithBalanceRequest.deserializeBinary(new Uint8Array(buffer_arg));
+}
+
+function serialize_adamant_global_v1_ListAddressesWithBalanceResponse(arg) {
+  if (!(arg instanceof gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.ListAddressesWithBalanceResponse)) {
+    throw new Error('Expected argument of type adamant.global.v1.ListAddressesWithBalanceResponse');
+  }
+  return Buffer.from(arg.serializeBinary());
+}
+
+function deserialize_adamant_global_v1_ListAddressesWithBalanceResponse(buffer_arg) {
+  return gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.ListAddressesWithBalanceResponse.deserializeBinary(new Uint8Array(buffer_arg));
+}
+
 function serialize_adamant_global_v1_ListBalanceSnapshotsRequest(arg) {
   if (!(arg instanceof gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.ListBalanceSnapshotsRequest)) {
     throw new Error('Expected argument of type adamant.global.v1.ListBalanceSnapshotsRequest');
@@ -613,6 +734,28 @@ function serialize_adamant_global_v1_ListBalanceSnapshotsResponse(arg) {
 
 function deserialize_adamant_global_v1_ListBalanceSnapshotsResponse(buffer_arg) {
   return gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.ListBalanceSnapshotsResponse.deserializeBinary(new Uint8Array(buffer_arg));
+}
+
+function serialize_adamant_global_v1_ListBaseWalletsRequest(arg) {
+  if (!(arg instanceof gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.ListBaseWalletsRequest)) {
+    throw new Error('Expected argument of type adamant.global.v1.ListBaseWalletsRequest');
+  }
+  return Buffer.from(arg.serializeBinary());
+}
+
+function deserialize_adamant_global_v1_ListBaseWalletsRequest(buffer_arg) {
+  return gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.ListBaseWalletsRequest.deserializeBinary(new Uint8Array(buffer_arg));
+}
+
+function serialize_adamant_global_v1_ListBaseWalletsResponse(arg) {
+  if (!(arg instanceof gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.ListBaseWalletsResponse)) {
+    throw new Error('Expected argument of type adamant.global.v1.ListBaseWalletsResponse');
+  }
+  return Buffer.from(arg.serializeBinary());
+}
+
+function deserialize_adamant_global_v1_ListBaseWalletsResponse(buffer_arg) {
+  return gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.ListBaseWalletsResponse.deserializeBinary(new Uint8Array(buffer_arg));
 }
 
 function serialize_adamant_global_v1_ListLabeledAddressesRequest(arg) {
@@ -681,6 +824,17 @@ function deserialize_adamant_global_v1_ListSignInfoResponse(buffer_arg) {
   return gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.ListSignInfoResponse.deserializeBinary(new Uint8Array(buffer_arg));
 }
 
+function serialize_adamant_global_v1_ListTransactionsByFilterRequest(arg) {
+  if (!(arg instanceof gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.ListTransactionsByFilterRequest)) {
+    throw new Error('Expected argument of type adamant.global.v1.ListTransactionsByFilterRequest');
+  }
+  return Buffer.from(arg.serializeBinary());
+}
+
+function deserialize_adamant_global_v1_ListTransactionsByFilterRequest(buffer_arg) {
+  return gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.ListTransactionsByFilterRequest.deserializeBinary(new Uint8Array(buffer_arg));
+}
+
 function serialize_adamant_global_v1_ListTransactionsRequest(arg) {
   if (!(arg instanceof gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.ListTransactionsRequest)) {
     throw new Error('Expected argument of type adamant.global.v1.ListTransactionsRequest');
@@ -725,6 +879,17 @@ function deserialize_adamant_global_v1_ListTransferLimitsResponse(buffer_arg) {
   return gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.ListTransferLimitsResponse.deserializeBinary(new Uint8Array(buffer_arg));
 }
 
+function serialize_adamant_global_v1_ListTransfersByFilterRequest(arg) {
+  if (!(arg instanceof gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.ListTransfersByFilterRequest)) {
+    throw new Error('Expected argument of type adamant.global.v1.ListTransfersByFilterRequest');
+  }
+  return Buffer.from(arg.serializeBinary());
+}
+
+function deserialize_adamant_global_v1_ListTransfersByFilterRequest(buffer_arg) {
+  return gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.ListTransfersByFilterRequest.deserializeBinary(new Uint8Array(buffer_arg));
+}
+
 function serialize_adamant_global_v1_ListTransfersRequest(arg) {
   if (!(arg instanceof gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.ListTransfersRequest)) {
     throw new Error('Expected argument of type adamant.global.v1.ListTransfersRequest');
@@ -745,6 +910,17 @@ function serialize_adamant_global_v1_ListTransfersResponse(arg) {
 
 function deserialize_adamant_global_v1_ListTransfersResponse(buffer_arg) {
   return gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.ListTransfersResponse.deserializeBinary(new Uint8Array(buffer_arg));
+}
+
+function serialize_adamant_global_v1_ListWalletsByFilterRequest(arg) {
+  if (!(arg instanceof gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.ListWalletsByFilterRequest)) {
+    throw new Error('Expected argument of type adamant.global.v1.ListWalletsByFilterRequest');
+  }
+  return Buffer.from(arg.serializeBinary());
+}
+
+function deserialize_adamant_global_v1_ListWalletsByFilterRequest(buffer_arg) {
+  return gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.ListWalletsByFilterRequest.deserializeBinary(new Uint8Array(buffer_arg));
 }
 
 function serialize_adamant_global_v1_ListWalletsRequest(arg) {
@@ -1044,6 +1220,17 @@ function deserialize_adamant_global_v1_UnArchiveWalletRequest(buffer_arg) {
   return gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.UnArchiveWalletRequest.deserializeBinary(new Uint8Array(buffer_arg));
 }
 
+function serialize_adamant_global_v1_UpdateAddressBalanceRequest(arg) {
+  if (!(arg instanceof gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.UpdateAddressBalanceRequest)) {
+    throw new Error('Expected argument of type adamant.global.v1.UpdateAddressBalanceRequest');
+  }
+  return Buffer.from(arg.serializeBinary());
+}
+
+function deserialize_adamant_global_v1_UpdateAddressBalanceRequest(buffer_arg) {
+  return gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.UpdateAddressBalanceRequest.deserializeBinary(new Uint8Array(buffer_arg));
+}
+
 function serialize_adamant_global_v1_UpdateLabeledAddressRequest(arg) {
   if (!(arg instanceof gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.UpdateLabeledAddressRequest)) {
     throw new Error('Expected argument of type adamant.global.v1.UpdateLabeledAddressRequest');
@@ -1086,6 +1273,17 @@ function serialize_adamant_global_v1_UpdateTransferLimitRequest(arg) {
 
 function deserialize_adamant_global_v1_UpdateTransferLimitRequest(buffer_arg) {
   return gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.UpdateTransferLimitRequest.deserializeBinary(new Uint8Array(buffer_arg));
+}
+
+function serialize_adamant_global_v1_UpdateWalletNameRequest(arg) {
+  if (!(arg instanceof gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.UpdateWalletNameRequest)) {
+    throw new Error('Expected argument of type adamant.global.v1.UpdateWalletNameRequest');
+  }
+  return Buffer.from(arg.serializeBinary());
+}
+
+function deserialize_adamant_global_v1_UpdateWalletNameRequest(buffer_arg) {
+  return gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.UpdateWalletNameRequest.deserializeBinary(new Uint8Array(buffer_arg));
 }
 
 function serialize_adamant_global_v1_UpdateWalletPolicyRequest(arg) {
@@ -1261,6 +1459,39 @@ getWallet: {
     responseSerialize: serialize_adamant_global_v1_ListWalletsResponse,
     responseDeserialize: deserialize_adamant_global_v1_ListWalletsResponse,
   },
+  listWalletsByFilter: {
+    path: '/adamant.global.v1.GlobalAPI/ListWalletsByFilter',
+    requestStream: false,
+    responseStream: false,
+    requestType: gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.ListWalletsByFilterRequest,
+    responseType: gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.ListWalletsResponse,
+    requestSerialize: serialize_adamant_global_v1_ListWalletsByFilterRequest,
+    requestDeserialize: deserialize_adamant_global_v1_ListWalletsByFilterRequest,
+    responseSerialize: serialize_adamant_global_v1_ListWalletsResponse,
+    responseDeserialize: deserialize_adamant_global_v1_ListWalletsResponse,
+  },
+  listBaseWallets: {
+    path: '/adamant.global.v1.GlobalAPI/ListBaseWallets',
+    requestStream: false,
+    responseStream: false,
+    requestType: gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.ListBaseWalletsRequest,
+    responseType: gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.ListBaseWalletsResponse,
+    requestSerialize: serialize_adamant_global_v1_ListBaseWalletsRequest,
+    requestDeserialize: deserialize_adamant_global_v1_ListBaseWalletsRequest,
+    responseSerialize: serialize_adamant_global_v1_ListBaseWalletsResponse,
+    responseDeserialize: deserialize_adamant_global_v1_ListBaseWalletsResponse,
+  },
+  updateWalletName: {
+    path: '/adamant.global.v1.GlobalAPI/UpdateWalletName',
+    requestStream: false,
+    responseStream: false,
+    requestType: gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.UpdateWalletNameRequest,
+    responseType: google_protobuf_empty_pb.Empty,
+    requestSerialize: serialize_adamant_global_v1_UpdateWalletNameRequest,
+    requestDeserialize: deserialize_adamant_global_v1_UpdateWalletNameRequest,
+    responseSerialize: serialize_google_protobuf_Empty,
+    responseDeserialize: deserialize_google_protobuf_Empty,
+  },
   updateWalletValidation: {
     path: '/adamant.global.v1.GlobalAPI/UpdateWalletValidation',
     requestStream: false,
@@ -1299,11 +1530,11 @@ getWallet: {
     requestStream: false,
     responseStream: false,
     requestType: gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.FlushBalanceRequest,
-    responseType: google_protobuf_empty_pb.Empty,
+    responseType: gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.FlushBalanceResponse,
     requestSerialize: serialize_adamant_global_v1_FlushBalanceRequest,
     requestDeserialize: deserialize_adamant_global_v1_FlushBalanceRequest,
-    responseSerialize: serialize_google_protobuf_Empty,
-    responseDeserialize: deserialize_google_protobuf_Empty,
+    responseSerialize: serialize_adamant_global_v1_FlushBalanceResponse,
+    responseDeserialize: deserialize_adamant_global_v1_FlushBalanceResponse,
   },
   // Review
 approveWallet: {
@@ -1384,6 +1615,28 @@ createAddress: {
     requestDeserialize: deserialize_adamant_global_v1_ListAddressesRequest,
     responseSerialize: serialize_adamant_global_v1_ListAddressesResponse,
     responseDeserialize: deserialize_adamant_global_v1_ListAddressesResponse,
+  },
+  listAddressesWithBalance: {
+    path: '/adamant.global.v1.GlobalAPI/ListAddressesWithBalance',
+    requestStream: false,
+    responseStream: false,
+    requestType: gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.ListAddressesWithBalanceRequest,
+    responseType: gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.ListAddressesWithBalanceResponse,
+    requestSerialize: serialize_adamant_global_v1_ListAddressesWithBalanceRequest,
+    requestDeserialize: deserialize_adamant_global_v1_ListAddressesWithBalanceRequest,
+    responseSerialize: serialize_adamant_global_v1_ListAddressesWithBalanceResponse,
+    responseDeserialize: deserialize_adamant_global_v1_ListAddressesWithBalanceResponse,
+  },
+  updateAddressBalance: {
+    path: '/adamant.global.v1.GlobalAPI/UpdateAddressBalance',
+    requestStream: false,
+    responseStream: false,
+    requestType: gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.UpdateAddressBalanceRequest,
+    responseType: google_protobuf_empty_pb.Empty,
+    requestSerialize: serialize_adamant_global_v1_UpdateAddressBalanceRequest,
+    requestDeserialize: deserialize_adamant_global_v1_UpdateAddressBalanceRequest,
+    responseSerialize: serialize_google_protobuf_Empty,
+    responseDeserialize: deserialize_google_protobuf_Empty,
   },
   // Get an address which hold ETH for ethereum wallet/address creation etc
 getEthereumFeeAddress: {
@@ -1520,6 +1773,17 @@ createTransaction: {
     responseSerialize: serialize_adamant_global_v1_ListTransactionsResponse,
     responseDeserialize: deserialize_adamant_global_v1_ListTransactionsResponse,
   },
+  listTransactionsByFilter: {
+    path: '/adamant.global.v1.GlobalAPI/ListTransactionsByFilter',
+    requestStream: false,
+    responseStream: false,
+    requestType: gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.ListTransactionsByFilterRequest,
+    responseType: gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.ListTransactionsResponse,
+    requestSerialize: serialize_adamant_global_v1_ListTransactionsByFilterRequest,
+    requestDeserialize: deserialize_adamant_global_v1_ListTransactionsByFilterRequest,
+    responseSerialize: serialize_adamant_global_v1_ListTransactionsResponse,
+    responseDeserialize: deserialize_adamant_global_v1_ListTransactionsResponse,
+  },
   // SignInfo
 getSignInfo: {
     path: '/adamant.global.v1.GlobalAPI/GetSignInfo',
@@ -1564,6 +1828,17 @@ listTransfers: {
     responseType: gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.ListTransfersResponse,
     requestSerialize: serialize_adamant_global_v1_ListTransfersRequest,
     requestDeserialize: deserialize_adamant_global_v1_ListTransfersRequest,
+    responseSerialize: serialize_adamant_global_v1_ListTransfersResponse,
+    responseDeserialize: deserialize_adamant_global_v1_ListTransfersResponse,
+  },
+  listTransfersByFilter: {
+    path: '/adamant.global.v1.GlobalAPI/ListTransfersByFilter',
+    requestStream: false,
+    responseStream: false,
+    requestType: gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.ListTransfersByFilterRequest,
+    responseType: gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.ListTransfersResponse,
+    requestSerialize: serialize_adamant_global_v1_ListTransfersByFilterRequest,
+    requestDeserialize: deserialize_adamant_global_v1_ListTransfersByFilterRequest,
     responseSerialize: serialize_adamant_global_v1_ListTransfersResponse,
     responseDeserialize: deserialize_adamant_global_v1_ListTransfersResponse,
   },
@@ -1638,6 +1913,17 @@ createLabeledAddress: {
     responseSerialize: serialize_adamant_global_v1_ListLabeledAddressesResponse,
     responseDeserialize: deserialize_adamant_global_v1_ListLabeledAddressesResponse,
   },
+  isDeletableLabeledAddress: {
+    path: '/adamant.global.v1.GlobalAPI/IsDeletableLabeledAddress',
+    requestStream: false,
+    responseStream: false,
+    requestType: gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.IsDeletableLabeledAddressRequest,
+    responseType: gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.IsDeletableLabeledAddressResponse,
+    requestSerialize: serialize_adamant_global_v1_IsDeletableLabeledAddressRequest,
+    requestDeserialize: deserialize_adamant_global_v1_IsDeletableLabeledAddressRequest,
+    responseSerialize: serialize_adamant_global_v1_IsDeletableLabeledAddressResponse,
+    responseDeserialize: deserialize_adamant_global_v1_IsDeletableLabeledAddressResponse,
+  },
   updateLabeledAddress: {
     path: '/adamant.global.v1.GlobalAPI/UpdateLabeledAddress',
     requestStream: false,
@@ -1704,6 +1990,17 @@ createLabeledAddress: {
     responseSerialize: serialize_adamant_global_v1_ListWhitelistsResponse,
     responseDeserialize: deserialize_adamant_global_v1_ListWhitelistsResponse,
   },
+  isDeletableWhitelist: {
+    path: '/adamant.global.v1.GlobalAPI/IsDeletableWhitelist',
+    requestStream: false,
+    responseStream: false,
+    requestType: gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.IsDeletableWhitelistRequest,
+    responseType: gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.IsDeletableWhitelistResponse,
+    requestSerialize: serialize_adamant_global_v1_IsDeletableWhitelistRequest,
+    requestDeserialize: deserialize_adamant_global_v1_IsDeletableWhitelistRequest,
+    responseSerialize: serialize_adamant_global_v1_IsDeletableWhitelistResponse,
+    responseDeserialize: deserialize_adamant_global_v1_IsDeletableWhitelistResponse,
+  },
   updateWhitelist: {
     path: '/adamant.global.v1.GlobalAPI/UpdateWhitelist',
     requestStream: false,
@@ -1769,6 +2066,17 @@ createLabeledAddress: {
     requestDeserialize: deserialize_adamant_global_v1_ListTransferLimitsRequest,
     responseSerialize: serialize_adamant_global_v1_ListTransferLimitsResponse,
     responseDeserialize: deserialize_adamant_global_v1_ListTransferLimitsResponse,
+  },
+  isDeletableTransferLimit: {
+    path: '/adamant.global.v1.GlobalAPI/IsDeletableTransferLimit',
+    requestStream: false,
+    responseStream: false,
+    requestType: gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.IsDeletableTransferLimitRequest,
+    responseType: gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.IsDeletableTransferLimitResponse,
+    requestSerialize: serialize_adamant_global_v1_IsDeletableTransferLimitRequest,
+    requestDeserialize: deserialize_adamant_global_v1_IsDeletableTransferLimitRequest,
+    responseSerialize: serialize_adamant_global_v1_IsDeletableTransferLimitResponse,
+    responseDeserialize: deserialize_adamant_global_v1_IsDeletableTransferLimitResponse,
   },
   updateTransferLimit: {
     path: '/adamant.global.v1.GlobalAPI/UpdateTransferLimit',
@@ -1846,6 +2154,17 @@ createLabeledAddress: {
     requestDeserialize: deserialize_adamant_global_v1_ListPoliciesRequest,
     responseSerialize: serialize_adamant_global_v1_ListPoliciesResponse,
     responseDeserialize: deserialize_adamant_global_v1_ListPoliciesResponse,
+  },
+  isDeletablePolicy: {
+    path: '/adamant.global.v1.GlobalAPI/IsDeletablePolicy',
+    requestStream: false,
+    responseStream: false,
+    requestType: gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.IsDeletablePolicyRequest,
+    responseType: gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.IsDeletablePolicyResponse,
+    requestSerialize: serialize_adamant_global_v1_IsDeletablePolicyRequest,
+    requestDeserialize: deserialize_adamant_global_v1_IsDeletablePolicyRequest,
+    responseSerialize: serialize_adamant_global_v1_IsDeletablePolicyResponse,
+    responseDeserialize: deserialize_adamant_global_v1_IsDeletablePolicyResponse,
   },
   updatePolicy: {
     path: '/adamant.global.v1.GlobalAPI/UpdatePolicy',

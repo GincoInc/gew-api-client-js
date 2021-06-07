@@ -11,6 +11,9 @@ import * as gincoinc_global_v1_gincoincglobalv1_enum_pb from "../../../../../gin
 import * as gincoinc_adamant_global_v1_adamantglobalv1_enum_pb from "../../../../../gincoinc/adamant/global/v1/adamantglobalv1/enum_pb";
 
 export class Wallet extends jspb.Message { 
+    getOwnerId(): string;
+    setOwnerId(value: string): void;
+
     getWalletId(): string;
     setWalletId(value: string): void;
 
@@ -103,6 +106,7 @@ export class Wallet extends jspb.Message {
 
 export namespace Wallet {
     export type AsObject = {
+        ownerId: string,
         walletId: string,
         name: string,
         coin: gincoinc_global_v1_gincoincglobalv1_enum_pb.Coin,
@@ -129,6 +133,9 @@ export namespace Wallet {
 }
 
 export class WalletWithoutBalance extends jspb.Message { 
+    getOwnerId(): string;
+    setOwnerId(value: string): void;
+
     getWalletId(): string;
     setWalletId(value: string): void;
 
@@ -212,6 +219,7 @@ export class WalletWithoutBalance extends jspb.Message {
 
 export namespace WalletWithoutBalance {
     export type AsObject = {
+        ownerId: string,
         walletId: string,
         name: string,
         coin: gincoinc_global_v1_gincoincglobalv1_enum_pb.Coin,
@@ -391,6 +399,9 @@ export class Address extends jspb.Message {
     getIndex(): number;
     setIndex(value: number): void;
 
+    getHdChange(): number;
+    setHdChange(value: number): void;
+
     getBalance(): number;
     setBalance(value: number): void;
 
@@ -433,12 +444,129 @@ export namespace Address {
         coin: gincoinc_global_v1_gincoincglobalv1_enum_pb.Coin,
         address: string,
         index: number,
+        hdChange: number,
         balance: number,
         stringBalance: string,
         state: gincoinc_adamant_global_v1_adamantglobalv1_enum_pb.AddressState,
         addressType: gincoinc_global_v1_gincoincglobalv1_enum_pb.AddressType,
         createTime?: google_protobuf_timestamp_pb.Timestamp.AsObject,
         updateTime?: google_protobuf_timestamp_pb.Timestamp.AsObject,
+    }
+}
+
+export class AddressWithoutBalance extends jspb.Message { 
+    getWalletId(): string;
+    setWalletId(value: string): void;
+
+    getAddressId(): string;
+    setAddressId(value: string): void;
+
+    getCoin(): gincoinc_global_v1_gincoincglobalv1_enum_pb.Coin;
+    setCoin(value: gincoinc_global_v1_gincoincglobalv1_enum_pb.Coin): void;
+
+    getAddress(): string;
+    setAddress(value: string): void;
+
+    getIndex(): number;
+    setIndex(value: number): void;
+
+    getHdChange(): number;
+    setHdChange(value: number): void;
+
+    getState(): gincoinc_adamant_global_v1_adamantglobalv1_enum_pb.AddressState;
+    setState(value: gincoinc_adamant_global_v1_adamantglobalv1_enum_pb.AddressState): void;
+
+    getAddressType(): gincoinc_global_v1_gincoincglobalv1_enum_pb.AddressType;
+    setAddressType(value: gincoinc_global_v1_gincoincglobalv1_enum_pb.AddressType): void;
+
+
+    hasCreateTime(): boolean;
+    clearCreateTime(): void;
+    getCreateTime(): google_protobuf_timestamp_pb.Timestamp | undefined;
+    setCreateTime(value?: google_protobuf_timestamp_pb.Timestamp): void;
+
+
+    hasUpdateTime(): boolean;
+    clearUpdateTime(): void;
+    getUpdateTime(): google_protobuf_timestamp_pb.Timestamp | undefined;
+    setUpdateTime(value?: google_protobuf_timestamp_pb.Timestamp): void;
+
+
+    serializeBinary(): Uint8Array;
+    toObject(includeInstance?: boolean): AddressWithoutBalance.AsObject;
+    static toObject(includeInstance: boolean, msg: AddressWithoutBalance): AddressWithoutBalance.AsObject;
+    static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+    static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+    static serializeBinaryToWriter(message: AddressWithoutBalance, writer: jspb.BinaryWriter): void;
+    static deserializeBinary(bytes: Uint8Array): AddressWithoutBalance;
+    static deserializeBinaryFromReader(message: AddressWithoutBalance, reader: jspb.BinaryReader): AddressWithoutBalance;
+}
+
+export namespace AddressWithoutBalance {
+    export type AsObject = {
+        walletId: string,
+        addressId: string,
+        coin: gincoinc_global_v1_gincoincglobalv1_enum_pb.Coin,
+        address: string,
+        index: number,
+        hdChange: number,
+        state: gincoinc_adamant_global_v1_adamantglobalv1_enum_pb.AddressState,
+        addressType: gincoinc_global_v1_gincoincglobalv1_enum_pb.AddressType,
+        createTime?: google_protobuf_timestamp_pb.Timestamp.AsObject,
+        updateTime?: google_protobuf_timestamp_pb.Timestamp.AsObject,
+    }
+}
+
+export class FlushedAddress extends jspb.Message { 
+    getWalletId(): string;
+    setWalletId(value: string): void;
+
+    getAddressId(): string;
+    setAddressId(value: string): void;
+
+    getCoin(): gincoinc_global_v1_gincoincglobalv1_enum_pb.Coin;
+    setCoin(value: gincoinc_global_v1_gincoincglobalv1_enum_pb.Coin): void;
+
+    getAddress(): string;
+    setAddress(value: string): void;
+
+    getIndex(): number;
+    setIndex(value: number): void;
+
+    getValue(): number;
+    setValue(value: number): void;
+
+    getStringValue(): string;
+    setStringValue(value: string): void;
+
+    getState(): gincoinc_adamant_global_v1_adamantglobalv1_enum_pb.AddressState;
+    setState(value: gincoinc_adamant_global_v1_adamantglobalv1_enum_pb.AddressState): void;
+
+    getAddressType(): gincoinc_global_v1_gincoincglobalv1_enum_pb.AddressType;
+    setAddressType(value: gincoinc_global_v1_gincoincglobalv1_enum_pb.AddressType): void;
+
+
+    serializeBinary(): Uint8Array;
+    toObject(includeInstance?: boolean): FlushedAddress.AsObject;
+    static toObject(includeInstance: boolean, msg: FlushedAddress): FlushedAddress.AsObject;
+    static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+    static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+    static serializeBinaryToWriter(message: FlushedAddress, writer: jspb.BinaryWriter): void;
+    static deserializeBinary(bytes: Uint8Array): FlushedAddress;
+    static deserializeBinaryFromReader(message: FlushedAddress, reader: jspb.BinaryReader): FlushedAddress;
+}
+
+export namespace FlushedAddress {
+    export type AsObject = {
+        walletId: string,
+        addressId: string,
+        coin: gincoinc_global_v1_gincoincglobalv1_enum_pb.Coin,
+        address: string,
+        index: number,
+        value: number,
+        stringValue: string,
+        state: gincoinc_adamant_global_v1_adamantglobalv1_enum_pb.AddressState,
+        addressType: gincoinc_global_v1_gincoincglobalv1_enum_pb.AddressType,
     }
 }
 
@@ -468,6 +596,43 @@ export namespace EthereumFeeAddress {
         address: string,
         balance: number,
         stringBalance: string,
+    }
+}
+
+export class AddressWithBalance extends jspb.Message { 
+    getAddress(): string;
+    setAddress(value: string): void;
+
+    getBalance(): number;
+    setBalance(value: number): void;
+
+    getStringBalance(): string;
+    setStringBalance(value: string): void;
+
+    getFeeBalance(): number;
+    setFeeBalance(value: number): void;
+
+    getStringFeeBalance(): string;
+    setStringFeeBalance(value: string): void;
+
+
+    serializeBinary(): Uint8Array;
+    toObject(includeInstance?: boolean): AddressWithBalance.AsObject;
+    static toObject(includeInstance: boolean, msg: AddressWithBalance): AddressWithBalance.AsObject;
+    static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+    static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+    static serializeBinaryToWriter(message: AddressWithBalance, writer: jspb.BinaryWriter): void;
+    static deserializeBinary(bytes: Uint8Array): AddressWithBalance;
+    static deserializeBinaryFromReader(message: AddressWithBalance, reader: jspb.BinaryReader): AddressWithBalance;
+}
+
+export namespace AddressWithBalance {
+    export type AsObject = {
+        address: string,
+        balance: number,
+        stringBalance: string,
+        feeBalance: number,
+        stringFeeBalance: string,
     }
 }
 
@@ -549,6 +714,18 @@ export class Transaction extends jspb.Message {
     setXrpSpecific(value?: XrpSpecific): void;
 
 
+    hasTronSpecific(): boolean;
+    clearTronSpecific(): void;
+    getTronSpecific(): TronSpecific | undefined;
+    setTronSpecific(value?: TronSpecific): void;
+
+
+    hasC0banSpecific(): boolean;
+    clearC0banSpecific(): void;
+    getC0banSpecific(): C0banSpecific | undefined;
+    setC0banSpecific(value?: C0banSpecific): void;
+
+
     hasCreateTime(): boolean;
     clearCreateTime(): void;
     getCreateTime(): google_protobuf_timestamp_pb.Timestamp | undefined;
@@ -592,6 +769,8 @@ export namespace Transaction {
         litecoinSpecific?: LitecoinSpecific.AsObject,
         bitcoincashSpecific?: BitcoincashSpecific.AsObject,
         xrpSpecific?: XrpSpecific.AsObject,
+        tronSpecific?: TronSpecific.AsObject,
+        c0banSpecific?: C0banSpecific.AsObject,
         createTime?: google_protobuf_timestamp_pb.Timestamp.AsObject,
         updateTime?: google_protobuf_timestamp_pb.Timestamp.AsObject,
     }
@@ -802,8 +981,8 @@ export class EthereumSpecific extends jspb.Message {
     getNonce(): number;
     setNonce(value: number): void;
 
-    getIsnextnonce(): boolean;
-    setIsnextnonce(value: boolean): void;
+    getIsNextNonce(): boolean;
+    setIsNextNonce(value: boolean): void;
 
 
     serializeBinary(): Uint8Array;
@@ -820,7 +999,7 @@ export namespace EthereumSpecific {
     export type AsObject = {
         gasLimit: number,
         nonce: number,
-        isnextnonce: boolean,
+        isNextNonce: boolean,
     }
 }
 
@@ -834,8 +1013,8 @@ export class XrpSpecific extends jspb.Message {
     getTxType(): gincoinc_global_v1_gincoincglobalv1_enum_pb.XRPTransactionType;
     setTxType(value: gincoinc_global_v1_gincoincglobalv1_enum_pb.XRPTransactionType): void;
 
-    getIsnextsequencenumber(): boolean;
-    setIsnextsequencenumber(value: boolean): void;
+    getIsNextSequenceNumber(): boolean;
+    setIsNextSequenceNumber(value: boolean): void;
 
 
     serializeBinary(): Uint8Array;
@@ -853,7 +1032,57 @@ export namespace XrpSpecific {
         sequenceNumber: number,
         destinationTag: number,
         txType: gincoinc_global_v1_gincoincglobalv1_enum_pb.XRPTransactionType,
-        isnextsequencenumber: boolean,
+        isNextSequenceNumber: boolean,
+    }
+}
+
+export class TronSpecific extends jspb.Message { 
+    getExpiration(): number;
+    setExpiration(value: number): void;
+
+
+    serializeBinary(): Uint8Array;
+    toObject(includeInstance?: boolean): TronSpecific.AsObject;
+    static toObject(includeInstance: boolean, msg: TronSpecific): TronSpecific.AsObject;
+    static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+    static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+    static serializeBinaryToWriter(message: TronSpecific, writer: jspb.BinaryWriter): void;
+    static deserializeBinary(bytes: Uint8Array): TronSpecific;
+    static deserializeBinaryFromReader(message: TronSpecific, reader: jspb.BinaryReader): TronSpecific;
+}
+
+export namespace TronSpecific {
+    export type AsObject = {
+        expiration: number,
+    }
+}
+
+export class C0banSpecific extends jspb.Message { 
+    clearTxInputsList(): void;
+    getTxInputsList(): Array<TxInput>;
+    setTxInputsList(value: Array<TxInput>): void;
+    addTxInputs(value?: TxInput, index?: number): TxInput;
+
+    clearTxOutputsList(): void;
+    getTxOutputsList(): Array<TxOutput>;
+    setTxOutputsList(value: Array<TxOutput>): void;
+    addTxOutputs(value?: TxOutput, index?: number): TxOutput;
+
+
+    serializeBinary(): Uint8Array;
+    toObject(includeInstance?: boolean): C0banSpecific.AsObject;
+    static toObject(includeInstance: boolean, msg: C0banSpecific): C0banSpecific.AsObject;
+    static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+    static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+    static serializeBinaryToWriter(message: C0banSpecific, writer: jspb.BinaryWriter): void;
+    static deserializeBinary(bytes: Uint8Array): C0banSpecific;
+    static deserializeBinaryFromReader(message: C0banSpecific, reader: jspb.BinaryReader): C0banSpecific;
+}
+
+export namespace C0banSpecific {
+    export type AsObject = {
+        txInputsList: Array<TxInput.AsObject>,
+        txOutputsList: Array<TxOutput.AsObject>,
     }
 }
 
@@ -1132,9 +1361,6 @@ export class LabeledAddress extends jspb.Message {
     getProposal(): LabeledAddressProposal | undefined;
     setProposal(value?: LabeledAddressProposal): void;
 
-    getIsDeletable(): boolean;
-    setIsDeletable(value: boolean): void;
-
 
     hasCreateTime(): boolean;
     clearCreateTime(): void;
@@ -1165,7 +1391,6 @@ export namespace LabeledAddress {
         coin: gincoinc_global_v1_gincoincglobalv1_enum_pb.Coin,
         address: string,
         proposal?: LabeledAddressProposal.AsObject,
-        isDeletable: boolean,
         createTime?: google_protobuf_timestamp_pb.Timestamp.AsObject,
         updateTime?: google_protobuf_timestamp_pb.Timestamp.AsObject,
     }
@@ -1227,9 +1452,6 @@ export class Whitelist extends jspb.Message {
     setAddressesList(value: Array<LabeledAddress>): void;
     addAddresses(value?: LabeledAddress, index?: number): LabeledAddress;
 
-    getIsDeletable(): boolean;
-    setIsDeletable(value: boolean): void;
-
 
     hasCreateTime(): boolean;
     clearCreateTime(): void;
@@ -1259,7 +1481,6 @@ export namespace Whitelist {
         name: string,
         coin: gincoinc_global_v1_gincoincglobalv1_enum_pb.Coin,
         addressesList: Array<LabeledAddress.AsObject>,
-        isDeletable: boolean,
         createTime?: google_protobuf_timestamp_pb.Timestamp.AsObject,
         updateTime?: google_protobuf_timestamp_pb.Timestamp.AsObject,
     }
@@ -1292,9 +1513,6 @@ export class TransferLimit extends jspb.Message {
 
     getIsReviewed(): boolean;
     setIsReviewed(value: boolean): void;
-
-    getIsDeletable(): boolean;
-    setIsDeletable(value: boolean): void;
 
 
     hasCreateTime(): boolean;
@@ -1329,7 +1547,6 @@ export namespace TransferLimit {
         oneTimeLimit: number,
         proposal?: TransferLimitProposal.AsObject,
         isReviewed: boolean,
-        isDeletable: boolean,
         createTime?: google_protobuf_timestamp_pb.Timestamp.AsObject,
         updateTime?: google_protobuf_timestamp_pb.Timestamp.AsObject,
     }
@@ -1412,9 +1629,6 @@ export class Policy extends jspb.Message {
     getTransferLimit(): TransferLimit | undefined;
     setTransferLimit(value?: TransferLimit): void;
 
-    getIsDeletable(): boolean;
-    setIsDeletable(value: boolean): void;
-
 
     hasProposal(): boolean;
     clearProposal(): void;
@@ -1453,7 +1667,6 @@ export namespace Policy {
         coin: gincoinc_global_v1_gincoincglobalv1_enum_pb.Coin,
         whitelist?: Whitelist.AsObject,
         transferLimit?: TransferLimit.AsObject,
-        isDeletable: boolean,
         proposal?: PolicyProposal.AsObject,
         createTime?: google_protobuf_timestamp_pb.Timestamp.AsObject,
         updateTime?: google_protobuf_timestamp_pb.Timestamp.AsObject,
@@ -1926,6 +2139,81 @@ export namespace Confirmation {
     export type AsObject = {
         coin: gincoinc_global_v1_gincoincglobalv1_enum_pb.Coin,
         confirmation: number,
+    }
+}
+
+export class WalletFlushSetting extends jspb.Message { 
+    getOwnerId(): string;
+    setOwnerId(value: string): void;
+
+    getCoin(): gincoinc_global_v1_gincoincglobalv1_enum_pb.Coin;
+    setCoin(value: gincoinc_global_v1_gincoincglobalv1_enum_pb.Coin): void;
+
+    getDestinationWalletId(): string;
+    setDestinationWalletId(value: string): void;
+
+
+    hasCreateTime(): boolean;
+    clearCreateTime(): void;
+    getCreateTime(): google_protobuf_timestamp_pb.Timestamp | undefined;
+    setCreateTime(value?: google_protobuf_timestamp_pb.Timestamp): void;
+
+
+    hasUpdateTime(): boolean;
+    clearUpdateTime(): void;
+    getUpdateTime(): google_protobuf_timestamp_pb.Timestamp | undefined;
+    setUpdateTime(value?: google_protobuf_timestamp_pb.Timestamp): void;
+
+
+    serializeBinary(): Uint8Array;
+    toObject(includeInstance?: boolean): WalletFlushSetting.AsObject;
+    static toObject(includeInstance: boolean, msg: WalletFlushSetting): WalletFlushSetting.AsObject;
+    static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+    static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+    static serializeBinaryToWriter(message: WalletFlushSetting, writer: jspb.BinaryWriter): void;
+    static deserializeBinary(bytes: Uint8Array): WalletFlushSetting;
+    static deserializeBinaryFromReader(message: WalletFlushSetting, reader: jspb.BinaryReader): WalletFlushSetting;
+}
+
+export namespace WalletFlushSetting {
+    export type AsObject = {
+        ownerId: string,
+        coin: gincoinc_global_v1_gincoincglobalv1_enum_pb.Coin,
+        destinationWalletId: string,
+        createTime?: google_protobuf_timestamp_pb.Timestamp.AsObject,
+        updateTime?: google_protobuf_timestamp_pb.Timestamp.AsObject,
+    }
+}
+
+export class CompensationFee extends jspb.Message { 
+    getStringValue(): string;
+    setStringValue(value: string): void;
+
+    getIsSpent(): boolean;
+    setIsSpent(value: boolean): void;
+
+
+    hasCreateTime(): boolean;
+    clearCreateTime(): void;
+    getCreateTime(): google_protobuf_timestamp_pb.Timestamp | undefined;
+    setCreateTime(value?: google_protobuf_timestamp_pb.Timestamp): void;
+
+
+    serializeBinary(): Uint8Array;
+    toObject(includeInstance?: boolean): CompensationFee.AsObject;
+    static toObject(includeInstance: boolean, msg: CompensationFee): CompensationFee.AsObject;
+    static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+    static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+    static serializeBinaryToWriter(message: CompensationFee, writer: jspb.BinaryWriter): void;
+    static deserializeBinary(bytes: Uint8Array): CompensationFee;
+    static deserializeBinaryFromReader(message: CompensationFee, reader: jspb.BinaryReader): CompensationFee;
+}
+
+export namespace CompensationFee {
+    export type AsObject = {
+        stringValue: string,
+        isSpent: boolean,
+        createTime?: google_protobuf_timestamp_pb.Timestamp.AsObject,
     }
 }
 
