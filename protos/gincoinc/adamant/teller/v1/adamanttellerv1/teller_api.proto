@@ -20,6 +20,8 @@ service TellerAPI {
     // Get wallet information. the wallet model includes balance, address etc.
     rpc GetWallet (adamant.global.v1.GetWalletRequest) returns (adamant.global.v1.Wallet) {}
     rpc ListWallets (adamant.global.v1.ListWalletsRequest) returns (adamant.global.v1.ListWalletsResponse) {}
+    rpc ListWalletsByFilter (adamant.global.v1.ListWalletsByFilterRequest) returns (adamant.global.v1.ListWalletsResponse) {}
+    rpc ListBaseWallets (adamant.global.v1.ListBaseWalletsRequest) returns (adamant.global.v1.ListBaseWalletsResponse) {}
     rpc GetSpendableBalance (adamant.global.v1.GetSpendableBalanceRequest) returns (adamant.global.v1.GetSpendableBalanceResponse) {}
     rpc InitializeXRPWallet (InitializeXRPWalletRequest) returns (google.protobuf.Empty) {}
 
@@ -32,6 +34,8 @@ service TellerAPI {
     // Get an address which hold ETH for ethereum wallet/address creation etc
     rpc GetEthereumFeeAddress (adamant.global.v1.GetEthereumFeeAddressRequest) returns (adamant.global.v1.EthereumFeeAddress) {}
 
+    rpc UpdateAddressBalance (adamant.global.v1.UpdateAddressBalanceRequest) returns (google.protobuf.Empty) {}
+
     rpc CreateTransaction (adamant.global.v1.CreateTransactionRequest) returns (adamant.global.v1.CreateTransactionResponse) {}
     rpc SignTransaction (SignTransactionRequest) returns (google.protobuf.Empty) {}
     rpc SendTransaction (adamant.global.v1.SendTransactionRequest) returns (adamant.global.v1.SendTransactionResponse) {}
@@ -39,9 +43,11 @@ service TellerAPI {
     rpc GetTransaction (adamant.global.v1.GetTransactionRequest) returns (adamant.global.v1.Transaction) {}
     rpc GetTransactionByTxID (adamant.global.v1.GetTransactionByTxIDRequest) returns (adamant.global.v1.Transaction) {}
     rpc ListTransactions (adamant.global.v1.ListTransactionsRequest) returns (adamant.global.v1.ListTransactionsResponse) {}
+    rpc ListTransactionsByFilter (adamant.global.v1.ListTransactionsByFilterRequest) returns (adamant.global.v1.ListTransactionsResponse) {}
 
     // List transfers for a given wallet. Ordered by update time desc
     rpc ListTransfers (adamant.global.v1.ListTransfersRequest) returns (adamant.global.v1.ListTransfersResponse) {}
+    rpc ListTransfersByFilter (adamant.global.v1.ListTransfersByFilterRequest) returns (adamant.global.v1.ListTransfersResponse) {}
 
     // Get rates by snapshot id
     rpc GetRateSnapshot (adamant.global.v1.GetRateSnapshotRequest) returns (adamant.global.v1.RateSnapshot) {}
@@ -54,7 +60,7 @@ service TellerAPI {
     rpc GetRecommendedFeeRate (adamant.global.v1.GetRecommendedFeeRateRequest) returns (adamant.global.v1.GetRecommendedFeeRateResponse) {}
     // Validate format of given address
     rpc ValidateAddress (adamant.global.v1.ValidateAddressRequest) returns (adamant.global.v1.ValidateAddressResponse) {}
-    rpc FlushBalance (adamant.global.v1.FlushBalanceRequest) returns (google.protobuf.Empty) {}
+    rpc FlushBalance (adamant.global.v1.FlushBalanceRequest) returns (adamant.global.v1.FlushBalanceResponse) {}
 }
 
 message CreateWalletRequest {

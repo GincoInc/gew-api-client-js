@@ -6,21 +6,25 @@ proto_outdir = "./vendor"
   branch = ""
   path = ""
   ignores = ["gogoproto", "java", "tests", "vendor"]
+  protocol = ""
 
 [[dependencies]]
   target = "github.com/GincoInc/protobuf/gincoinc/global"
-  revision = "921894f9e1603be9dfa9c54d50fa90bb63a18abf"
+  revision = "ec4a0d1fc8212755211994d9e1c6ba9dad843281"
   branch = ""
   path = "gincoinc/global"
+  protocol = ""
 
 [[dependencies]]
   target = "github.com/GincoInc/protobuf/gincoinc/adamant/global"
-  revision = "921894f9e1603be9dfa9c54d50fa90bb63a18abf"
+  revision = "ec4a0d1fc8212755211994d9e1c6ba9dad843281"
   branch = ""
   path = "gincoinc/adamant/global"
+  protocol = ""
 
 [[dependencies]]
   target = "github.com/GincoInc/protobuf/gincoinc/adamant/teller"
-  revision = "921894f9e1603be9dfa9c54d50fa90bb63a18abf"
+  revision = "ec4a0d1fc8212755211994d9e1c6ba9dad843281"
   branch = ""
   path = "gincoinc/adamant/teller"
+  protocol = ""
