@@ -1,21 +1,21 @@
-proto_outdir = "./vendor"
+proto_outdir = "./proto"
 
 [[dependencies]]
     target = "github.com/envoyproxy/protoc-gen-validate"
-    revision = "2fe48adf079caf32135cb3327377a7b5488e350b"
-    ignores = ["gogoproto", "java", "tests", "vendor"]
+    tag = "v0.2.0-java"
+    ignores = ["gogoproto", "java", "tests", "vendor", "example-workspace"]
 
 [[dependencies]]
-    target = "github.com/GincoInc/protobuf/gincoinc/global"
-    revision = "v1.52.0"
+    target = "github.com/GincoInc/protobuf/proto/gincoinc/global"
+    tag = "v1.68.0"
     path = "gincoinc/global"
 
 [[dependencies]]
-    target = "github.com/GincoInc/protobuf/gincoinc/adamant/global"
-    revision = "v1.52.0"
+    target = "github.com/GincoInc/protobuf/proto/gincoinc/adamant/global"
+    tag = "v1.68.0"
     path = "gincoinc/adamant/global"
 
 [[dependencies]]
-    target = "github.com/GincoInc/protobuf/gincoinc/adamant/teller"
-    revision = "v1.52.0"
+    target = "github.com/GincoInc/protobuf/proto/gincoinc/adamant/teller"
+    tag = "v1.68.0"
     path = "gincoinc/adamant/teller"

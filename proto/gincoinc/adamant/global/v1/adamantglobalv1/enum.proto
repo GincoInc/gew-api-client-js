@@ -2,7 +2,7 @@ syntax = "proto3";
 
 package adamant.global.v1;
 
-option go_package = "adamantglobalv1";
+option go_package = "github.com/GincoInc/protobuf/gen/go/gincoinc/adamant/global/v1/adamantglobalv1";
 
 // =============================================================================
 // Enum
@@ -19,31 +19,33 @@ enum WalletType {
   WALLET_TYPE_SELF_CUSTODY_COLD = 2;
   WALLET_TYPE_SELF_CUSTODY_HOT_SINGLE_SIG = 3;
   WALLET_TYPE_SELF_CUSTODY_HOT_RECEIVE_ONLY = 4;
+  WALLET_TYPE_SELF_CUSTODY_COLD_SINGLE_SIG = 5;
 }
 
 // WalletState is a state of wallet.
 enum WalletState {
   WALLET_STATE_INVALID = 0;
   WALLET_STATE_PROPOSED = 1;
-  WALLET_STATE_KEY_REGISTERING = 2;//Waiting for key register
-  WALLET_STATE_KEY_REGISTERED = 3;//Key was registed to Wallet
-  WALLET_STATE_VALIDATOR_REVIEWING = 4;//Waiting for review for validator
-  WALLET_STATE_VALIDATOR_REVIEWED = 5;//Validator reviewd
-  WALLET_STATE_ACTIVATING = 6;// Waiting for activate
-  WALLET_STATE_ACTIVATED = 7;// Wallet was activated
-  WALLET_STATE_SIGNING = 8;// Waiting for sign
-  WALLET_STATE_SIGNED = 9;// was signed
-  WALLET_STATE_SUBMITTING = 10;//Waiting for submit transaction which regist public key to contract
-  WALLET_STATE_SUBMITTED = 11;//Transaction was submitted
-  WALLET_STATE_COMPLETED = 12;//Creating wallet successfuly completed
-  WALLET_STATE_CANCELLED = 13;//Wallet was cancelled
-  WALLET_STATE_ARCHIVED = 14;//Wallet was archived
-  WALLET_STATE_ADDRESS_IMPORT_WAITING = 15;//Waiting for import address
-  WALLET_STATE_ADDRESS_IMPORTING = 16;//Importing address
-  WALLET_STATE_ADDRESS_IMPORT_FAILED = 17;// Failed import address
-  WALLET_STATE_ADDRESS_DELETING = 18;// Deleting address
-  WALLET_STATE_ADDRESS_DELETE_FAILED = 19;// Failed delete address
-  WALLET_STATE_FLUSHING = 20;// Balance flushing
+  WALLET_STATE_KEY_REGISTERING = 2; // Waiting for key register
+  WALLET_STATE_KEY_REGISTERED = 3; // Key was registed to Wallet
+  WALLET_STATE_VALIDATOR_REVIEWING = 4; // Waiting for review for validator
+  WALLET_STATE_VALIDATOR_REVIEWED = 5; // Validator reviewd
+  WALLET_STATE_ACTIVATING = 6; // Waiting for activate
+  WALLET_STATE_ACTIVATED = 7; // Wallet was activated
+  WALLET_STATE_SIGNING = 8; // Waiting for sign
+  WALLET_STATE_SIGNED = 9; // was signed
+  WALLET_STATE_SUBMITTING = 10; // Waiting for submit transaction which regist public key to contract
+  WALLET_STATE_SUBMITTED = 11; // Transaction was submitted
+  WALLET_STATE_COMPLETED = 12; // Creating wallet successfuly completed
+  WALLET_STATE_CANCELLED = 13; // Wallet was cancelled
+  WALLET_STATE_ARCHIVED = 14; // Wallet was archived
+  WALLET_STATE_ADDRESS_IMPORT_WAITING = 15; // Waiting for import address
+  WALLET_STATE_ADDRESS_IMPORTING = 16; // Importing address
+  WALLET_STATE_ADDRESS_IMPORT_FAILED = 17; // Failed import address
+  WALLET_STATE_ADDRESS_DELETING = 18; // Deleting address
+  WALLET_STATE_ADDRESS_DELETE_FAILED = 19; // Failed delete address
+  WALLET_STATE_FLUSHING = 20; // Balance flushing
+  WALLET_STATE_ACCOUNT_CREATING = 21; // Waiting for create account
 }
 
 // WalletProposalType is a type of proposal
@@ -74,13 +76,14 @@ enum AddressState {
 // TransactionState is a state of transaction.
 enum TransactionState {
   TRANSACTION_STATE_INVALID = 0;
-  TRANSACTION_STATE_SIGNING = 1; //Waiting for sign
-  TRANSACTION_STATE_SIGNED = 2; //Transaction was Signed
-  TRANSACTION_STATE_REVIEWING = 3; //Waiting for review
-  TRANSACTION_STATE_REVIEWED = 4; //Transaction was reviewd
-  TRANSACTION_STATE_SUBMITTING = 5; //Waiting for submit
-  TRANSACTION_STATE_SUBMITTED = 6; //Transaction was submitted
-  TRANSACTION_STATE_CANCELLED = 7; //Transaction was cancelled
+  TRANSACTION_STATE_SIGNING = 1; // Waiting for sign
+  TRANSACTION_STATE_SIGNED = 2; // Transaction was Signed
+  TRANSACTION_STATE_REVIEWING = 3; // Waiting for review
+  TRANSACTION_STATE_REVIEWED = 4; // Transaction was reviewd
+  TRANSACTION_STATE_SUBMITTING = 5; // Waiting for submit
+  TRANSACTION_STATE_SUBMITTED = 6; // Transaction was submitted
+  TRANSACTION_STATE_CANCELLING = 8; // Waiting for cancel
+  TRANSACTION_STATE_CANCELLED = 7; // Transaction was cancelled
 }
 
 // -----------------------------------------------------------------------------
@@ -212,6 +215,7 @@ enum AuditLogGroup {
   AUDIT_LOG_GROUP_WALLET = 4;
   AUDIT_LOG_GROUP_TRANSACTION = 5;
   AUDIT_LOG_GROUP_POLICY = 6;
+  AUDIT_LOG_GROUP_WALLET_GROUP = 7;
 }
 
 // AuditLogType is a type of AuditLog
@@ -235,6 +239,9 @@ enum AuditLogType {
   AUDIT_LOG_TYPE_WALLET_ADDRESS_UPLOAD = 51;
   AUDIT_LOG_TYPE_WALLET_ADDRESS_DOWNLOAD = 52;
   AUDIT_LOG_TYPE_WALLET_ADDRESS_DELETE = 53;
+  AUDIT_LOG_TYPE_WALLET_GROUP_CREATE = 54;
+  AUDIT_LOG_TYPE_WALLET_GROUP_NAME_CHANGE = 55;
+  AUDIT_LOG_TYPE_WALLET_GROUP_CHANGE = 56;
   AUDIT_LOG_TYPE_TRANSACTION_CREATE = 15;
   AUDIT_LOG_TYPE_TRANSACTION_APPROVE = 16;
   AUDIT_LOG_TYPE_TRANSACTION_CANCEL = 17;
@@ -276,7 +283,8 @@ enum AuditLogType {
 // Error Detail Type
 // -----------------------------------------------------------------------------
 
-// ErrDetailViolationType define violation type of errdetails.PreconditionFailure of grpc
+// ErrDetailViolationType define violation type of
+// errdetails.PreconditionFailure of grpc
 enum PreconditionFailureType {
   PRECONDITION_FAILURE_TYPE_INVALID = 0;
 
@@ -286,6 +294,8 @@ enum PreconditionFailureType {
   PRECONDITION_FAILURE_TYPE_USER_NOT_ACTIVE = 3;
   PRECONDITION_FAILURE_TYPE_USER_IS_ARCHIVED = 4;
   PRECONDITION_FAILURE_TYPE_EMAIL_IS_ALREADY_USED = 5;
+  PRECONDITION_FAILURE_TYPE_INVITATION_TOKEN_IS_INVALID = 27;
+  PRECONDITION_FAILURE_TYPE_INVITATION_TOKEN_IS_EXPIRED = 28;
 
   // treasurer/gatekeeper
   PRECONDITION_FAILURE_TYPE_INSUFFICIENT_SPENDABLE_BALANCE = 6;
@@ -308,6 +318,7 @@ enum PreconditionFailureType {
   PRECONDITION_FAILURE_TYPE_TRANSACTION_ALREADY_CANCELED = 24;
   PRECONDITION_FAILURE_TYPE_TRANSACTION_ALREADY_SUBMITTED = 25;
   PRECONDITION_FAILURE_TYPE_CANNOT_OPERATE_TRANSACTION_DUE_TO_WALLET_STATE_IS_CREATING = 26;
+  PRECONDITION_FAILURE_TYPE_TRANSACTION_INCLUDE_SELF_ADDRESS = 29;
 
   // subscription
   PRECONDITION_FAILURE_TYPE_PROHIBITED_BY_SUBSCRIPTION = 19;
@@ -345,6 +356,8 @@ enum MailType {
   MAIL_TYPE_FRAUD_TRANSACTION_SUBMITTED = 6;
   MAIL_TYPE_IMPORT_ADDRESS_COMPLETED = 7;
   MAIL_TYPE_VALIDATOR_CHANGE_REQUESTED = 8;
+  MAIL_TYPE_UNCHECKED_TRANSFER_EXISTS = 9;
+  MAIL_TYPE_DOWNLOAD_RESOURCE = 10;
 }
 
 // -----------------------------------------------------------------------------
@@ -360,4 +373,62 @@ enum WatchOnlyAddressState {
   WATCH_ONLY_ADDRESS_STATE_ADDRESS_DELETED = 5;
   WATCH_ONLY_ADDRESS_STATE_DELETE_FAILED = 6;
   WATCH_ONLY_ADDRESS_STATE_DOWNLOAD = 7;
+}
+
+// -----------------------------------------------------------------------------
+// Substrate Call Type
+// -----------------------------------------------------------------------------
+
+enum SubstrateCallType {
+  SUBSTRATE_CALL_TYPE_INVALID = 0;
+  SUBSTRATE_CALL_TYPE_TRANSFER = 1;
+  SUBSTRATE_CALL_TYPE_TRANSFER_ALL = 2;
+  SUBSTRATE_CALL_TYPE_TRANSFER_KEEP_ALIVE = 3;
+  SUBSTRATE_CALL_TYPE_APPROVE_AS_MULTI = 4;
+  SUBSTRATE_CALL_TYPE_AS_MULTI = 5;
+  SUBSTRATE_CALL_TYPE_AS_MULTI_THRESHOLD1 = 6;
+  SUBSTRATE_CALL_TYPE_CANCEL_AS_MULTI = 7;
+}
+
+// -----------------------------------------------------------------------------
+// Download Resource Type
+// -----------------------------------------------------------------------------
+
+enum DownloadResourceType {
+  DOWNLOAD_RESOURCE_TYPE_INVALID = 0;
+  DOWNLOAD_RESOURCE_TYPE_ALL_WALLET_BALANCE_SNAPSHOT_EOD = 1;
+  DOWNLOAD_RESOURCE_TYPE_ALL_WALLET_GROUP_BALANCE_SNAPSHOT_EOD = 2;
+  DOWNLOAD_RESOURCE_TYPE_ALL_WALLET_BALANCE_SNAPSHOT_ON_DEMAND = 3;
+  DOWNLOAD_RESOURCE_TYPE_ALL_WALLET_GROUP_BALANCE_SNAPSHOT_ON_DEMAND = 4;
+  DOWNLOAD_RESOURCE_TYPE_WALLET_TRANSFER = 5;
+}
+
+// -----------------------------------------------------------------------------
+// Event Triggered Message Type
+// -----------------------------------------------------------------------------
+
+enum EventTriggeredMessageType {
+  EVENT_TRIGGERED_MESSAGE_TYPE_INVALID = 0;
+  EVENT_TRIGGERED_MESSAGE_TYPE_UNCHECKED_TRANSFER_ALERT = 1;
+  EVENT_TRIGGERED_MESSAGE_TYPE_FRAUDULENT_TRANSFER_ALERT = 2;
+}
+
+// -----------------------------------------------------------------------------
+// Wallet Connect Call Request Type
+// -----------------------------------------------------------------------------
+
+enum WalletConnectCallRequestType {
+  WALLET_CONNECT_CALL_REQUEST_TYPE_INVALID = 0;
+  WALLET_CONNECT_CALL_REQUEST_TYPE_ETH_SEND_TRANSACTION = 1;
+  WALLET_CONNECT_CALL_REQUEST_TYPE_ETH_SIGN_TYPED_DATA = 2;
+}
+
+// -----------------------------------------------------------------------------
+// Ethereum Contract Method ID Type
+// -----------------------------------------------------------------------------
+
+enum EthereumContractMethodIDType {
+  ETHEREUM_CONTRACT_METHOD_ID_TYPE_INVALID = 0;
+  ETHEREUM_CONTRACT_METHOD_ID_TYPE_ERC20_APPROVE = 1;
+  ETHEREUM_CONTRACT_METHOD_ID_TYPE_UNISWAP_MULTICALL = 2;
 }

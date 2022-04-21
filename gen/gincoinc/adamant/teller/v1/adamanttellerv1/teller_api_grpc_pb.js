@@ -3,12 +3,12 @@
 'use strict';
 var grpc = require('grpc');
 var gincoinc_adamant_teller_v1_adamanttellerv1_teller_api_pb = require('../../../../../gincoinc/adamant/teller/v1/adamanttellerv1/teller_api_pb.js');
-var google_protobuf_empty_pb = require('google-protobuf/google/protobuf/empty_pb.js');
-var validate_validate_pb = require('../../../../../validate/validate_pb.js');
-var gincoinc_global_v1_gincoincglobalv1_enum_pb = require('../../../../../gincoinc/global/v1/gincoincglobalv1/enum_pb.js');
 var gincoinc_adamant_global_v1_adamantglobalv1_enum_pb = require('../../../../../gincoinc/adamant/global/v1/adamantglobalv1/enum_pb.js');
 var gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb = require('../../../../../gincoinc/adamant/global/v1/adamantglobalv1/global_api_pb.js');
 var gincoinc_adamant_global_v1_adamantglobalv1_model_pb = require('../../../../../gincoinc/adamant/global/v1/adamantglobalv1/model_pb.js');
+var gincoinc_global_v1_gincoincglobalv1_enum_pb = require('../../../../../gincoinc/global/v1/gincoincglobalv1/enum_pb.js');
+var google_protobuf_empty_pb = require('google-protobuf/google/protobuf/empty_pb.js');
+var validate_validate_pb = require('../../../../../validate/validate_pb.js');
 
 function serialize_adamant_global_v1_Address(arg) {
   if (!(arg instanceof gincoinc_adamant_global_v1_adamantglobalv1_model_pb.Address)) {
@@ -285,6 +285,28 @@ function deserialize_adamant_global_v1_GetWalletRequest(buffer_arg) {
   return gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.GetWalletRequest.deserializeBinary(new Uint8Array(buffer_arg));
 }
 
+function serialize_adamant_global_v1_ImportAddressRequest(arg) {
+  if (!(arg instanceof gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.ImportAddressRequest)) {
+    throw new Error('Expected argument of type adamant.global.v1.ImportAddressRequest');
+  }
+  return Buffer.from(arg.serializeBinary());
+}
+
+function deserialize_adamant_global_v1_ImportAddressRequest(buffer_arg) {
+  return gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.ImportAddressRequest.deserializeBinary(new Uint8Array(buffer_arg));
+}
+
+function serialize_adamant_global_v1_ImportAddressResponse(arg) {
+  if (!(arg instanceof gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.ImportAddressResponse)) {
+    throw new Error('Expected argument of type adamant.global.v1.ImportAddressResponse');
+  }
+  return Buffer.from(arg.serializeBinary());
+}
+
+function deserialize_adamant_global_v1_ImportAddressResponse(buffer_arg) {
+  return gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.ImportAddressResponse.deserializeBinary(new Uint8Array(buffer_arg));
+}
+
 function serialize_adamant_global_v1_ListAddressesRequest(arg) {
   if (!(arg instanceof gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.ListAddressesRequest)) {
     throw new Error('Expected argument of type adamant.global.v1.ListAddressesRequest');
@@ -549,6 +571,17 @@ function deserialize_adamant_teller_v1_CreateWalletRequest(buffer_arg) {
   return gincoinc_adamant_teller_v1_adamanttellerv1_teller_api_pb.CreateWalletRequest.deserializeBinary(new Uint8Array(buffer_arg));
 }
 
+function serialize_adamant_teller_v1_InitializeWalletRequest(arg) {
+  if (!(arg instanceof gincoinc_adamant_teller_v1_adamanttellerv1_teller_api_pb.InitializeWalletRequest)) {
+    throw new Error('Expected argument of type adamant.teller.v1.InitializeWalletRequest');
+  }
+  return Buffer.from(arg.serializeBinary());
+}
+
+function deserialize_adamant_teller_v1_InitializeWalletRequest(buffer_arg) {
+  return gincoinc_adamant_teller_v1_adamanttellerv1_teller_api_pb.InitializeWalletRequest.deserializeBinary(new Uint8Array(buffer_arg));
+}
+
 function serialize_adamant_teller_v1_InitializeXRPWalletRequest(arg) {
   if (!(arg instanceof gincoinc_adamant_teller_v1_adamanttellerv1_teller_api_pb.InitializeXRPWalletRequest)) {
     throw new Error('Expected argument of type adamant.teller.v1.InitializeXRPWalletRequest');
@@ -666,6 +699,17 @@ getWallet: {
     responseSerialize: serialize_google_protobuf_Empty,
     responseDeserialize: deserialize_google_protobuf_Empty,
   },
+  initializeWallet: {
+    path: '/adamant.teller.v1.TellerAPI/InitializeWallet',
+    requestStream: false,
+    responseStream: false,
+    requestType: gincoinc_adamant_teller_v1_adamanttellerv1_teller_api_pb.InitializeWalletRequest,
+    responseType: google_protobuf_empty_pb.Empty,
+    requestSerialize: serialize_adamant_teller_v1_InitializeWalletRequest,
+    requestDeserialize: deserialize_adamant_teller_v1_InitializeWalletRequest,
+    responseSerialize: serialize_google_protobuf_Empty,
+    responseDeserialize: deserialize_google_protobuf_Empty,
+  },
   // Create a new address for an existing wallet
 createAddress: {
     path: '/adamant.teller.v1.TellerAPI/CreateAddress',
@@ -721,6 +765,17 @@ createAddress: {
     requestDeserialize: deserialize_adamant_global_v1_ListAddressesRequest,
     responseSerialize: serialize_adamant_global_v1_ListAddressesResponse,
     responseDeserialize: deserialize_adamant_global_v1_ListAddressesResponse,
+  },
+  importAddress: {
+    path: '/adamant.teller.v1.TellerAPI/ImportAddress',
+    requestStream: false,
+    responseStream: false,
+    requestType: gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.ImportAddressRequest,
+    responseType: gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.ImportAddressResponse,
+    requestSerialize: serialize_adamant_global_v1_ImportAddressRequest,
+    requestDeserialize: deserialize_adamant_global_v1_ImportAddressRequest,
+    responseSerialize: serialize_adamant_global_v1_ImportAddressResponse,
+    responseDeserialize: deserialize_adamant_global_v1_ImportAddressResponse,
   },
   // Get an address which hold ETH for ethereum wallet/address creation etc
 getEthereumFeeAddress: {

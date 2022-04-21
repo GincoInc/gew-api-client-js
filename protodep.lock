@@ -1,30 +1,34 @@
-proto_outdir = "./vendor"
+proto_outdir = "./proto"
 
 [[dependencies]]
   target = "github.com/envoyproxy/protoc-gen-validate"
-  revision = "2fe48adf079caf32135cb3327377a7b5488e350b"
+  subgroup = ""
+  revision = "dfcdc5ea103dda467963fb7079e4df28debcfd28"
   branch = ""
   path = ""
-  ignores = ["gogoproto", "java", "tests", "vendor"]
+  ignores = ["gogoproto", "java", "tests", "vendor", "example-workspace"]
   protocol = ""
 
 [[dependencies]]
-  target = "github.com/GincoInc/protobuf/gincoinc/global"
-  revision = "ec4a0d1fc8212755211994d9e1c6ba9dad843281"
+  target = "github.com/GincoInc/protobuf/proto/gincoinc/global"
+  subgroup = ""
+  revision = "9b1805c8568bc8117b5994c985d2663d88079664"
   branch = ""
   path = "gincoinc/global"
   protocol = ""
 
 [[dependencies]]
-  target = "github.com/GincoInc/protobuf/gincoinc/adamant/global"
-  revision = "ec4a0d1fc8212755211994d9e1c6ba9dad843281"
+  target = "github.com/GincoInc/protobuf/proto/gincoinc/adamant/global"
+  subgroup = ""
+  revision = "9b1805c8568bc8117b5994c985d2663d88079664"
   branch = ""
   path = "gincoinc/adamant/global"
   protocol = ""
 
 [[dependencies]]
-  target = "github.com/GincoInc/protobuf/gincoinc/adamant/teller"
-  revision = "ec4a0d1fc8212755211994d9e1c6ba9dad843281"
+  target = "github.com/GincoInc/protobuf/proto/gincoinc/adamant/teller"
+  subgroup = ""
+  revision = "9b1805c8568bc8117b5994c985d2663d88079664"
   branch = ""
   path = "gincoinc/adamant/teller"
   protocol = ""

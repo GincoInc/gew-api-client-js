@@ -1,20 +1,30 @@
+// source: gincoinc/adamant/teller/v1/adamanttellerv1/event.proto
 /**
  * @fileoverview
  * @enhanceable
+ * @suppress {missingRequire} reports error on implicit type usages.
  * @suppress {messageConventions} JS Compiler reports an error if a variable or
  *     field starts with 'MSG_' and isn't a translatable message.
  * @public
  */
 // GENERATED CODE -- DO NOT EDIT!
+/* eslint-disable */
+// @ts-nocheck
 
 var jspb = require('google-protobuf');
 var goog = jspb;
-var global = Function('return this')();
+var global = (function() {
+  if (this) { return this; }
+  if (typeof window !== 'undefined') { return window; }
+  if (typeof global !== 'undefined') { return global; }
+  if (typeof self !== 'undefined') { return self; }
+  return Function('return this')();
+}.call(null));
 
-var google_protobuf_timestamp_pb = require('google-protobuf/google/protobuf/timestamp_pb.js');
-goog.object.extend(proto, google_protobuf_timestamp_pb);
 var gincoinc_global_v1_gincoincglobalv1_enum_pb = require('../../../../../gincoinc/global/v1/gincoincglobalv1/enum_pb.js');
 goog.object.extend(proto, gincoinc_global_v1_gincoincglobalv1_enum_pb);
+var google_protobuf_timestamp_pb = require('google-protobuf/google/protobuf/timestamp_pb.js');
+goog.object.extend(proto, google_protobuf_timestamp_pb);
 goog.exportSymbol('proto.adamant.teller.v1.TransferUpdateEvent', null, global);
 goog.exportSymbol('proto.adamant.teller.v1.TransferUpdated', null, global);
 /**
@@ -101,9 +111,14 @@ proto.adamant.teller.v1.TransferUpdated.toObject = function(includeInstance, msg
     jpyRate: jspb.Message.getFloatingPointFieldWithDefault(msg, 8, 0.0),
     address: jspb.Message.getFieldWithDefault(msg, 9, ""),
     destinationTag: jspb.Message.getFieldWithDefault(msg, 10, 0),
+    memoId: jspb.Message.getFieldWithDefault(msg, 14, 0),
     state: jspb.Message.getFieldWithDefault(msg, 11, 0),
     result: jspb.Message.getFieldWithDefault(msg, 12, 0),
-    transferType: jspb.Message.getFieldWithDefault(msg, 13, 0)
+    transferType: jspb.Message.getFieldWithDefault(msg, 13, 0),
+    from: jspb.Message.getFieldWithDefault(msg, 15, ""),
+    to: jspb.Message.getFieldWithDefault(msg, 16, ""),
+    time: (f = msg.getTime()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f),
+    eventId: jspb.Message.getFieldWithDefault(msg, 18, "")
   };
 
   if (includeInstance) {
@@ -180,6 +195,10 @@ proto.adamant.teller.v1.TransferUpdated.deserializeBinaryFromReader = function(m
       var value = /** @type {number} */ (reader.readUint32());
       msg.setDestinationTag(value);
       break;
+    case 14:
+      var value = /** @type {number} */ (reader.readUint64());
+      msg.setMemoId(value);
+      break;
     case 11:
       var value = /** @type {!proto.gincoinc.global.v1.TransactionState} */ (reader.readEnum());
       msg.setState(value);
@@ -191,6 +210,23 @@ proto.adamant.teller.v1.TransferUpdated.deserializeBinaryFromReader = function(m
     case 13:
       var value = /** @type {!proto.gincoinc.global.v1.TransferType} */ (reader.readEnum());
       msg.setTransferType(value);
+      break;
+    case 15:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setFrom(value);
+      break;
+    case 16:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setTo(value);
+      break;
+    case 17:
+      var value = new google_protobuf_timestamp_pb.Timestamp;
+      reader.readMessage(value,google_protobuf_timestamp_pb.Timestamp.deserializeBinaryFromReader);
+      msg.setTime(value);
+      break;
+    case 18:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setEventId(value);
       break;
     default:
       reader.skipField();
@@ -291,6 +327,13 @@ proto.adamant.teller.v1.TransferUpdated.serializeBinaryToWriter = function(messa
       f
     );
   }
+  f = message.getMemoId();
+  if (f !== 0) {
+    writer.writeUint64(
+      14,
+      f
+    );
+  }
   f = message.getState();
   if (f !== 0.0) {
     writer.writeEnum(
@@ -312,6 +355,35 @@ proto.adamant.teller.v1.TransferUpdated.serializeBinaryToWriter = function(messa
       f
     );
   }
+  f = message.getFrom();
+  if (f.length > 0) {
+    writer.writeString(
+      15,
+      f
+    );
+  }
+  f = message.getTo();
+  if (f.length > 0) {
+    writer.writeString(
+      16,
+      f
+    );
+  }
+  f = message.getTime();
+  if (f != null) {
+    writer.writeMessage(
+      17,
+      f,
+      google_protobuf_timestamp_pb.Timestamp.serializeBinaryToWriter
+    );
+  }
+  f = message.getEventId();
+  if (f.length > 0) {
+    writer.writeString(
+      18,
+      f
+    );
+  }
 };
 
 
@@ -324,9 +396,12 @@ proto.adamant.teller.v1.TransferUpdated.prototype.getWalletId = function() {
 };
 
 
-/** @param {string} value */
+/**
+ * @param {string} value
+ * @return {!proto.adamant.teller.v1.TransferUpdated} returns this
+ */
 proto.adamant.teller.v1.TransferUpdated.prototype.setWalletId = function(value) {
-  jspb.Message.setProto3StringField(this, 1, value);
+  return jspb.Message.setProto3StringField(this, 1, value);
 };
 
 
@@ -339,9 +414,12 @@ proto.adamant.teller.v1.TransferUpdated.prototype.getTransferId = function() {
 };
 
 
-/** @param {string} value */
+/**
+ * @param {string} value
+ * @return {!proto.adamant.teller.v1.TransferUpdated} returns this
+ */
 proto.adamant.teller.v1.TransferUpdated.prototype.setTransferId = function(value) {
-  jspb.Message.setProto3StringField(this, 2, value);
+  return jspb.Message.setProto3StringField(this, 2, value);
 };
 
 
@@ -354,9 +432,12 @@ proto.adamant.teller.v1.TransferUpdated.prototype.getCoin = function() {
 };
 
 
-/** @param {!proto.gincoinc.global.v1.Coin} value */
+/**
+ * @param {!proto.gincoinc.global.v1.Coin} value
+ * @return {!proto.adamant.teller.v1.TransferUpdated} returns this
+ */
 proto.adamant.teller.v1.TransferUpdated.prototype.setCoin = function(value) {
-  jspb.Message.setProto3EnumField(this, 3, value);
+  return jspb.Message.setProto3EnumField(this, 3, value);
 };
 
 
@@ -369,9 +450,12 @@ proto.adamant.teller.v1.TransferUpdated.prototype.getTxId = function() {
 };
 
 
-/** @param {string} value */
+/**
+ * @param {string} value
+ * @return {!proto.adamant.teller.v1.TransferUpdated} returns this
+ */
 proto.adamant.teller.v1.TransferUpdated.prototype.setTxId = function(value) {
-  jspb.Message.setProto3StringField(this, 4, value);
+  return jspb.Message.setProto3StringField(this, 4, value);
 };
 
 
@@ -384,9 +468,12 @@ proto.adamant.teller.v1.TransferUpdated.prototype.getTxIndex = function() {
 };
 
 
-/** @param {number} value */
+/**
+ * @param {number} value
+ * @return {!proto.adamant.teller.v1.TransferUpdated} returns this
+ */
 proto.adamant.teller.v1.TransferUpdated.prototype.setTxIndex = function(value) {
-  jspb.Message.setProto3IntField(this, 5, value);
+  return jspb.Message.setProto3IntField(this, 5, value);
 };
 
 
@@ -399,9 +486,12 @@ proto.adamant.teller.v1.TransferUpdated.prototype.getValue = function() {
 };
 
 
-/** @param {number} value */
+/**
+ * @param {number} value
+ * @return {!proto.adamant.teller.v1.TransferUpdated} returns this
+ */
 proto.adamant.teller.v1.TransferUpdated.prototype.setValue = function(value) {
-  jspb.Message.setProto3FloatField(this, 6, value);
+  return jspb.Message.setProto3FloatField(this, 6, value);
 };
 
 
@@ -414,9 +504,12 @@ proto.adamant.teller.v1.TransferUpdated.prototype.getStringValue = function() {
 };
 
 
-/** @param {string} value */
+/**
+ * @param {string} value
+ * @return {!proto.adamant.teller.v1.TransferUpdated} returns this
+ */
 proto.adamant.teller.v1.TransferUpdated.prototype.setStringValue = function(value) {
-  jspb.Message.setProto3StringField(this, 7, value);
+  return jspb.Message.setProto3StringField(this, 7, value);
 };
 
 
@@ -429,9 +522,12 @@ proto.adamant.teller.v1.TransferUpdated.prototype.getJpyRate = function() {
 };
 
 
-/** @param {number} value */
+/**
+ * @param {number} value
+ * @return {!proto.adamant.teller.v1.TransferUpdated} returns this
+ */
 proto.adamant.teller.v1.TransferUpdated.prototype.setJpyRate = function(value) {
-  jspb.Message.setProto3FloatField(this, 8, value);
+  return jspb.Message.setProto3FloatField(this, 8, value);
 };
 
 
@@ -444,9 +540,12 @@ proto.adamant.teller.v1.TransferUpdated.prototype.getAddress = function() {
 };
 
 
-/** @param {string} value */
+/**
+ * @param {string} value
+ * @return {!proto.adamant.teller.v1.TransferUpdated} returns this
+ */
 proto.adamant.teller.v1.TransferUpdated.prototype.setAddress = function(value) {
-  jspb.Message.setProto3StringField(this, 9, value);
+  return jspb.Message.setProto3StringField(this, 9, value);
 };
 
 
@@ -459,9 +558,30 @@ proto.adamant.teller.v1.TransferUpdated.prototype.getDestinationTag = function()
 };
 
 
-/** @param {number} value */
+/**
+ * @param {number} value
+ * @return {!proto.adamant.teller.v1.TransferUpdated} returns this
+ */
 proto.adamant.teller.v1.TransferUpdated.prototype.setDestinationTag = function(value) {
-  jspb.Message.setProto3IntField(this, 10, value);
+  return jspb.Message.setProto3IntField(this, 10, value);
+};
+
+
+/**
+ * optional uint64 memo_id = 14;
+ * @return {number}
+ */
+proto.adamant.teller.v1.TransferUpdated.prototype.getMemoId = function() {
+  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 14, 0));
+};
+
+
+/**
+ * @param {number} value
+ * @return {!proto.adamant.teller.v1.TransferUpdated} returns this
+ */
+proto.adamant.teller.v1.TransferUpdated.prototype.setMemoId = function(value) {
+  return jspb.Message.setProto3IntField(this, 14, value);
 };
 
 
@@ -474,9 +594,12 @@ proto.adamant.teller.v1.TransferUpdated.prototype.getState = function() {
 };
 
 
-/** @param {!proto.gincoinc.global.v1.TransactionState} value */
+/**
+ * @param {!proto.gincoinc.global.v1.TransactionState} value
+ * @return {!proto.adamant.teller.v1.TransferUpdated} returns this
+ */
 proto.adamant.teller.v1.TransferUpdated.prototype.setState = function(value) {
-  jspb.Message.setProto3EnumField(this, 11, value);
+  return jspb.Message.setProto3EnumField(this, 11, value);
 };
 
 
@@ -489,9 +612,12 @@ proto.adamant.teller.v1.TransferUpdated.prototype.getResult = function() {
 };
 
 
-/** @param {!proto.gincoinc.global.v1.TransactionResult} value */
+/**
+ * @param {!proto.gincoinc.global.v1.TransactionResult} value
+ * @return {!proto.adamant.teller.v1.TransferUpdated} returns this
+ */
 proto.adamant.teller.v1.TransferUpdated.prototype.setResult = function(value) {
-  jspb.Message.setProto3EnumField(this, 12, value);
+  return jspb.Message.setProto3EnumField(this, 12, value);
 };
 
 
@@ -504,9 +630,103 @@ proto.adamant.teller.v1.TransferUpdated.prototype.getTransferType = function() {
 };
 
 
-/** @param {!proto.gincoinc.global.v1.TransferType} value */
+/**
+ * @param {!proto.gincoinc.global.v1.TransferType} value
+ * @return {!proto.adamant.teller.v1.TransferUpdated} returns this
+ */
 proto.adamant.teller.v1.TransferUpdated.prototype.setTransferType = function(value) {
-  jspb.Message.setProto3EnumField(this, 13, value);
+  return jspb.Message.setProto3EnumField(this, 13, value);
+};
+
+
+/**
+ * optional string from = 15;
+ * @return {string}
+ */
+proto.adamant.teller.v1.TransferUpdated.prototype.getFrom = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 15, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.adamant.teller.v1.TransferUpdated} returns this
+ */
+proto.adamant.teller.v1.TransferUpdated.prototype.setFrom = function(value) {
+  return jspb.Message.setProto3StringField(this, 15, value);
+};
+
+
+/**
+ * optional string to = 16;
+ * @return {string}
+ */
+proto.adamant.teller.v1.TransferUpdated.prototype.getTo = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 16, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.adamant.teller.v1.TransferUpdated} returns this
+ */
+proto.adamant.teller.v1.TransferUpdated.prototype.setTo = function(value) {
+  return jspb.Message.setProto3StringField(this, 16, value);
+};
+
+
+/**
+ * optional google.protobuf.Timestamp time = 17;
+ * @return {?proto.google.protobuf.Timestamp}
+ */
+proto.adamant.teller.v1.TransferUpdated.prototype.getTime = function() {
+  return /** @type{?proto.google.protobuf.Timestamp} */ (
+    jspb.Message.getWrapperField(this, google_protobuf_timestamp_pb.Timestamp, 17));
+};
+
+
+/**
+ * @param {?proto.google.protobuf.Timestamp|undefined} value
+ * @return {!proto.adamant.teller.v1.TransferUpdated} returns this
+*/
+proto.adamant.teller.v1.TransferUpdated.prototype.setTime = function(value) {
+  return jspb.Message.setWrapperField(this, 17, value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
+ * @return {!proto.adamant.teller.v1.TransferUpdated} returns this
+ */
+proto.adamant.teller.v1.TransferUpdated.prototype.clearTime = function() {
+  return this.setTime(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.adamant.teller.v1.TransferUpdated.prototype.hasTime = function() {
+  return jspb.Message.getField(this, 17) != null;
+};
+
+
+/**
+ * optional string event_id = 18;
+ * @return {string}
+ */
+proto.adamant.teller.v1.TransferUpdated.prototype.getEventId = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 18, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.adamant.teller.v1.TransferUpdated} returns this
+ */
+proto.adamant.teller.v1.TransferUpdated.prototype.setEventId = function(value) {
+  return jspb.Message.setProto3StringField(this, 18, value);
 };
 
 
@@ -552,6 +772,7 @@ proto.adamant.teller.v1.TransferUpdateEvent.toObject = function(includeInstance,
     jpyRate: jspb.Message.getFloatingPointFieldWithDefault(msg, 13, 0.0),
     address: jspb.Message.getFieldWithDefault(msg, 7, ""),
     destinationTag: jspb.Message.getFieldWithDefault(msg, 8, 0),
+    memoId: jspb.Message.getFieldWithDefault(msg, 15, 0),
     state: jspb.Message.getFieldWithDefault(msg, 9, 0),
     result: jspb.Message.getFieldWithDefault(msg, 10, 0),
     transferType: jspb.Message.getFieldWithDefault(msg, 11, 0),
@@ -631,6 +852,10 @@ proto.adamant.teller.v1.TransferUpdateEvent.deserializeBinaryFromReader = functi
     case 8:
       var value = /** @type {number} */ (reader.readUint32());
       msg.setDestinationTag(value);
+      break;
+    case 15:
+      var value = /** @type {number} */ (reader.readUint64());
+      msg.setMemoId(value);
       break;
     case 9:
       var value = /** @type {!proto.gincoinc.global.v1.TransactionState} */ (reader.readEnum());
@@ -748,6 +973,13 @@ proto.adamant.teller.v1.TransferUpdateEvent.serializeBinaryToWriter = function(m
       f
     );
   }
+  f = message.getMemoId();
+  if (f !== 0) {
+    writer.writeUint64(
+      15,
+      f
+    );
+  }
   f = message.getState();
   if (f !== 0.0) {
     writer.writeEnum(
@@ -789,9 +1021,12 @@ proto.adamant.teller.v1.TransferUpdateEvent.prototype.getEventId = function() {
 };
 
 
-/** @param {string} value */
+/**
+ * @param {string} value
+ * @return {!proto.adamant.teller.v1.TransferUpdateEvent} returns this
+ */
 proto.adamant.teller.v1.TransferUpdateEvent.prototype.setEventId = function(value) {
-  jspb.Message.setProto3StringField(this, 1, value);
+  return jspb.Message.setProto3StringField(this, 1, value);
 };
 
 
@@ -804,9 +1039,12 @@ proto.adamant.teller.v1.TransferUpdateEvent.prototype.getWalletId = function() {
 };
 
 
-/** @param {string} value */
+/**
+ * @param {string} value
+ * @return {!proto.adamant.teller.v1.TransferUpdateEvent} returns this
+ */
 proto.adamant.teller.v1.TransferUpdateEvent.prototype.setWalletId = function(value) {
-  jspb.Message.setProto3StringField(this, 14, value);
+  return jspb.Message.setProto3StringField(this, 14, value);
 };
 
 
@@ -819,9 +1057,12 @@ proto.adamant.teller.v1.TransferUpdateEvent.prototype.getCoin = function() {
 };
 
 
-/** @param {!proto.gincoinc.global.v1.Coin} value */
+/**
+ * @param {!proto.gincoinc.global.v1.Coin} value
+ * @return {!proto.adamant.teller.v1.TransferUpdateEvent} returns this
+ */
 proto.adamant.teller.v1.TransferUpdateEvent.prototype.setCoin = function(value) {
-  jspb.Message.setProto3EnumField(this, 2, value);
+  return jspb.Message.setProto3EnumField(this, 2, value);
 };
 
 
@@ -834,9 +1075,12 @@ proto.adamant.teller.v1.TransferUpdateEvent.prototype.getTxId = function() {
 };
 
 
-/** @param {string} value */
+/**
+ * @param {string} value
+ * @return {!proto.adamant.teller.v1.TransferUpdateEvent} returns this
+ */
 proto.adamant.teller.v1.TransferUpdateEvent.prototype.setTxId = function(value) {
-  jspb.Message.setProto3StringField(this, 3, value);
+  return jspb.Message.setProto3StringField(this, 3, value);
 };
 
 
@@ -849,9 +1093,12 @@ proto.adamant.teller.v1.TransferUpdateEvent.prototype.getTxIndex = function() {
 };
 
 
-/** @param {number} value */
+/**
+ * @param {number} value
+ * @return {!proto.adamant.teller.v1.TransferUpdateEvent} returns this
+ */
 proto.adamant.teller.v1.TransferUpdateEvent.prototype.setTxIndex = function(value) {
-  jspb.Message.setProto3IntField(this, 4, value);
+  return jspb.Message.setProto3IntField(this, 4, value);
 };
 
 
@@ -864,9 +1111,12 @@ proto.adamant.teller.v1.TransferUpdateEvent.prototype.getValue = function() {
 };
 
 
-/** @param {number} value */
+/**
+ * @param {number} value
+ * @return {!proto.adamant.teller.v1.TransferUpdateEvent} returns this
+ */
 proto.adamant.teller.v1.TransferUpdateEvent.prototype.setValue = function(value) {
-  jspb.Message.setProto3FloatField(this, 5, value);
+  return jspb.Message.setProto3FloatField(this, 5, value);
 };
 
 
@@ -879,9 +1129,12 @@ proto.adamant.teller.v1.TransferUpdateEvent.prototype.getStringValue = function(
 };
 
 
-/** @param {string} value */
+/**
+ * @param {string} value
+ * @return {!proto.adamant.teller.v1.TransferUpdateEvent} returns this
+ */
 proto.adamant.teller.v1.TransferUpdateEvent.prototype.setStringValue = function(value) {
-  jspb.Message.setProto3StringField(this, 6, value);
+  return jspb.Message.setProto3StringField(this, 6, value);
 };
 
 
@@ -894,9 +1147,12 @@ proto.adamant.teller.v1.TransferUpdateEvent.prototype.getJpyRate = function() {
 };
 
 
-/** @param {number} value */
+/**
+ * @param {number} value
+ * @return {!proto.adamant.teller.v1.TransferUpdateEvent} returns this
+ */
 proto.adamant.teller.v1.TransferUpdateEvent.prototype.setJpyRate = function(value) {
-  jspb.Message.setProto3FloatField(this, 13, value);
+  return jspb.Message.setProto3FloatField(this, 13, value);
 };
 
 
@@ -909,9 +1165,12 @@ proto.adamant.teller.v1.TransferUpdateEvent.prototype.getAddress = function() {
 };
 
 
-/** @param {string} value */
+/**
+ * @param {string} value
+ * @return {!proto.adamant.teller.v1.TransferUpdateEvent} returns this
+ */
 proto.adamant.teller.v1.TransferUpdateEvent.prototype.setAddress = function(value) {
-  jspb.Message.setProto3StringField(this, 7, value);
+  return jspb.Message.setProto3StringField(this, 7, value);
 };
 
 
@@ -924,9 +1183,30 @@ proto.adamant.teller.v1.TransferUpdateEvent.prototype.getDestinationTag = functi
 };
 
 
-/** @param {number} value */
+/**
+ * @param {number} value
+ * @return {!proto.adamant.teller.v1.TransferUpdateEvent} returns this
+ */
 proto.adamant.teller.v1.TransferUpdateEvent.prototype.setDestinationTag = function(value) {
-  jspb.Message.setProto3IntField(this, 8, value);
+  return jspb.Message.setProto3IntField(this, 8, value);
+};
+
+
+/**
+ * optional uint64 memo_id = 15;
+ * @return {number}
+ */
+proto.adamant.teller.v1.TransferUpdateEvent.prototype.getMemoId = function() {
+  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 15, 0));
+};
+
+
+/**
+ * @param {number} value
+ * @return {!proto.adamant.teller.v1.TransferUpdateEvent} returns this
+ */
+proto.adamant.teller.v1.TransferUpdateEvent.prototype.setMemoId = function(value) {
+  return jspb.Message.setProto3IntField(this, 15, value);
 };
 
 
@@ -939,9 +1219,12 @@ proto.adamant.teller.v1.TransferUpdateEvent.prototype.getState = function() {
 };
 
 
-/** @param {!proto.gincoinc.global.v1.TransactionState} value */
+/**
+ * @param {!proto.gincoinc.global.v1.TransactionState} value
+ * @return {!proto.adamant.teller.v1.TransferUpdateEvent} returns this
+ */
 proto.adamant.teller.v1.TransferUpdateEvent.prototype.setState = function(value) {
-  jspb.Message.setProto3EnumField(this, 9, value);
+  return jspb.Message.setProto3EnumField(this, 9, value);
 };
 
 
@@ -954,9 +1237,12 @@ proto.adamant.teller.v1.TransferUpdateEvent.prototype.getResult = function() {
 };
 
 
-/** @param {!proto.gincoinc.global.v1.TransactionResult} value */
+/**
+ * @param {!proto.gincoinc.global.v1.TransactionResult} value
+ * @return {!proto.adamant.teller.v1.TransferUpdateEvent} returns this
+ */
 proto.adamant.teller.v1.TransferUpdateEvent.prototype.setResult = function(value) {
-  jspb.Message.setProto3EnumField(this, 10, value);
+  return jspb.Message.setProto3EnumField(this, 10, value);
 };
 
 
@@ -969,9 +1255,12 @@ proto.adamant.teller.v1.TransferUpdateEvent.prototype.getTransferType = function
 };
 
 
-/** @param {!proto.gincoinc.global.v1.TransferType} value */
+/**
+ * @param {!proto.gincoinc.global.v1.TransferType} value
+ * @return {!proto.adamant.teller.v1.TransferUpdateEvent} returns this
+ */
 proto.adamant.teller.v1.TransferUpdateEvent.prototype.setTransferType = function(value) {
-  jspb.Message.setProto3EnumField(this, 11, value);
+  return jspb.Message.setProto3EnumField(this, 11, value);
 };
 
 
@@ -985,17 +1274,21 @@ proto.adamant.teller.v1.TransferUpdateEvent.prototype.getTime = function() {
 };
 
 
-/** @param {?proto.google.protobuf.Timestamp|undefined} value */
+/**
+ * @param {?proto.google.protobuf.Timestamp|undefined} value
+ * @return {!proto.adamant.teller.v1.TransferUpdateEvent} returns this
+*/
 proto.adamant.teller.v1.TransferUpdateEvent.prototype.setTime = function(value) {
-  jspb.Message.setWrapperField(this, 12, value);
+  return jspb.Message.setWrapperField(this, 12, value);
 };
 
 
 /**
  * Clears the message field making it undefined.
+ * @return {!proto.adamant.teller.v1.TransferUpdateEvent} returns this
  */
 proto.adamant.teller.v1.TransferUpdateEvent.prototype.clearTime = function() {
-  this.setTime(undefined);
+  return this.setTime(undefined);
 };
 
 

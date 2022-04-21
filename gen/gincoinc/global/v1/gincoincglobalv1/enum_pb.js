@@ -1,18 +1,29 @@
+// source: gincoinc/global/v1/gincoincglobalv1/enum.proto
 /**
  * @fileoverview
  * @enhanceable
+ * @suppress {missingRequire} reports error on implicit type usages.
  * @suppress {messageConventions} JS Compiler reports an error if a variable or
  *     field starts with 'MSG_' and isn't a translatable message.
  * @public
  */
 // GENERATED CODE -- DO NOT EDIT!
+/* eslint-disable */
+// @ts-nocheck
 
 var jspb = require('google-protobuf');
 var goog = jspb;
-var global = Function('return this')();
+var global = (function() {
+  if (this) { return this; }
+  if (typeof window !== 'undefined') { return window; }
+  if (typeof global !== 'undefined') { return global; }
+  if (typeof self !== 'undefined') { return self; }
+  return Function('return this')();
+}.call(null));
 
 goog.exportSymbol('proto.gincoinc.global.v1.AddressType', null, global);
 goog.exportSymbol('proto.gincoinc.global.v1.Coin', null, global);
+goog.exportSymbol('proto.gincoinc.global.v1.NemTransactionType', null, global);
 goog.exportSymbol('proto.gincoinc.global.v1.Network', null, global);
 goog.exportSymbol('proto.gincoinc.global.v1.TransactionResult', null, global);
 goog.exportSymbol('proto.gincoinc.global.v1.TransactionState', null, global);
@@ -35,7 +46,21 @@ proto.gincoinc.global.v1.Coin = {
   COIN_RYO: 9,
   COIN_JASMY: 10,
   COIN_ENJ: 11,
-  COIN_OMG: 12
+  COIN_OMG: 12,
+  COIN_XLM: 13,
+  COIN_ADA: 14,
+  COIN_DOT: 15,
+  COIN_LINK: 16,
+  COIN_DEP: 17,
+  COIN_USDC: 18,
+  COIN_GYEN: 19,
+  COIN_ZAIF: 20,
+  COIN_FSCC: 21,
+  COIN_CMS: 22,
+  COIN_CICC: 23,
+  COIN_NCXC: 24,
+  COIN_COT: 25,
+  COIN_XEM: 26
 };
 
 /**
@@ -56,7 +81,15 @@ proto.gincoinc.global.v1.Network = {
   NETWORK_TRON_MAINNET: 11,
   NETWORK_TRON_TESTNET: 12,
   NETWORK_C0BAN_MAINNET: 13,
-  NETWORK_C0BAN_TESTNET: 14
+  NETWORK_C0BAN_TESTNET: 14,
+  NETWORK_STELLAR_MAINNET: 15,
+  NETWORK_STELLAR_TESTNET: 16,
+  NETWORK_CARDANO_MAINNET: 17,
+  NETWORK_CARDANO_TESTNET: 18,
+  NETWORK_POLKADOT_MAINNET: 19,
+  NETWORK_POLKADOT_TESTNET: 20,
+  NETWORK_NEM_MAINNET: 21,
+  NETWORK_NEM_TESTNET: 22
 };
 
 /**
@@ -123,6 +156,21 @@ proto.gincoinc.global.v1.TransactionResult = {
   TRANSACTION_RESULT_SUCCESS: 2,
   TRANSACTION_RESULT_FAILURE: 3,
   TRANSACTION_RESULT_NONE: 100
+};
+
+/**
+ * @enum {number}
+ */
+proto.gincoinc.global.v1.NemTransactionType = {
+  NEM_TRANSACTION_TYPE_INVALID: 0,
+  NEM_TRANSACTION_TYPE_TRANSFER_TYPE: 1,
+  NEM_TRANSACTION_TYPE_IMPORTANCE_TRANSFER_TYPE: 2,
+  NEM_TRANSACTION_TYPE_MULTISIG_MODIFICATION_TYPE: 3,
+  NEM_TRANSACTION_TYPE_MULTISIG_SIGNATURE_TYPE: 4,
+  NEM_TRANSACTION_TYPE_MULTISIG_TRANSACTION_TYPE: 5,
+  NEM_TRANSACTION_TYPE_PROVISION_NAMESPACE_TYPE: 6,
+  NEM_TRANSACTION_TYPE_MOSAIC_DEFINITION_TYPE: 7,
+  NEM_TRANSACTION_TYPE_MOSAIC_SUPPLY_TYPE: 8
 };
 
 goog.object.extend(exports, proto.gincoinc.global.v1);

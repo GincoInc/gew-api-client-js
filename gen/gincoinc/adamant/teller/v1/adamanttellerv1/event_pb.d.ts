@@ -5,8 +5,8 @@
 /* eslint-disable */
 
 import * as jspb from "google-protobuf";
-import * as google_protobuf_timestamp_pb from "google-protobuf/google/protobuf/timestamp_pb";
 import * as gincoinc_global_v1_gincoincglobalv1_enum_pb from "../../../../../gincoinc/global/v1/gincoincglobalv1/enum_pb";
+import * as google_protobuf_timestamp_pb from "google-protobuf/google/protobuf/timestamp_pb";
 
 export class TransferUpdated extends jspb.Message { 
     getWalletId(): string;
@@ -29,12 +29,25 @@ export class TransferUpdated extends jspb.Message {
     setAddress(value: string): TransferUpdated;
     getDestinationTag(): number;
     setDestinationTag(value: number): TransferUpdated;
+    getMemoId(): number;
+    setMemoId(value: number): TransferUpdated;
     getState(): gincoinc_global_v1_gincoincglobalv1_enum_pb.TransactionState;
     setState(value: gincoinc_global_v1_gincoincglobalv1_enum_pb.TransactionState): TransferUpdated;
     getResult(): gincoinc_global_v1_gincoincglobalv1_enum_pb.TransactionResult;
     setResult(value: gincoinc_global_v1_gincoincglobalv1_enum_pb.TransactionResult): TransferUpdated;
     getTransferType(): gincoinc_global_v1_gincoincglobalv1_enum_pb.TransferType;
     setTransferType(value: gincoinc_global_v1_gincoincglobalv1_enum_pb.TransferType): TransferUpdated;
+    getFrom(): string;
+    setFrom(value: string): TransferUpdated;
+    getTo(): string;
+    setTo(value: string): TransferUpdated;
+
+    hasTime(): boolean;
+    clearTime(): void;
+    getTime(): google_protobuf_timestamp_pb.Timestamp | undefined;
+    setTime(value?: google_protobuf_timestamp_pb.Timestamp): TransferUpdated;
+    getEventId(): string;
+    setEventId(value: string): TransferUpdated;
 
     serializeBinary(): Uint8Array;
     toObject(includeInstance?: boolean): TransferUpdated.AsObject;
@@ -58,9 +71,14 @@ export namespace TransferUpdated {
         jpyRate: number,
         address: string,
         destinationTag: number,
+        memoId: number,
         state: gincoinc_global_v1_gincoincglobalv1_enum_pb.TransactionState,
         result: gincoinc_global_v1_gincoincglobalv1_enum_pb.TransactionResult,
         transferType: gincoinc_global_v1_gincoincglobalv1_enum_pb.TransferType,
+        from: string,
+        to: string,
+        time?: google_protobuf_timestamp_pb.Timestamp.AsObject,
+        eventId: string,
     }
 }
 
@@ -85,6 +103,8 @@ export class TransferUpdateEvent extends jspb.Message {
     setAddress(value: string): TransferUpdateEvent;
     getDestinationTag(): number;
     setDestinationTag(value: number): TransferUpdateEvent;
+    getMemoId(): number;
+    setMemoId(value: number): TransferUpdateEvent;
     getState(): gincoinc_global_v1_gincoincglobalv1_enum_pb.TransactionState;
     setState(value: gincoinc_global_v1_gincoincglobalv1_enum_pb.TransactionState): TransferUpdateEvent;
     getResult(): gincoinc_global_v1_gincoincglobalv1_enum_pb.TransactionResult;
@@ -119,6 +139,7 @@ export namespace TransferUpdateEvent {
         jpyRate: number,
         address: string,
         destinationTag: number,
+        memoId: number,
         state: gincoinc_global_v1_gincoincglobalv1_enum_pb.TransactionState,
         result: gincoinc_global_v1_gincoincglobalv1_enum_pb.TransactionResult,
         transferType: gincoinc_global_v1_gincoincglobalv1_enum_pb.TransferType,

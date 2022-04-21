@@ -6,12 +6,12 @@
 
 import * as grpc from "grpc";
 import * as gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb from "../../../../../gincoinc/adamant/global/v1/adamantglobalv1/global_api_pb";
-import * as google_protobuf_timestamp_pb from "google-protobuf/google/protobuf/timestamp_pb";
-import * as google_protobuf_empty_pb from "google-protobuf/google/protobuf/empty_pb";
-import * as validate_validate_pb from "../../../../../validate/validate_pb";
-import * as gincoinc_global_v1_gincoincglobalv1_enum_pb from "../../../../../gincoinc/global/v1/gincoincglobalv1/enum_pb";
 import * as gincoinc_adamant_global_v1_adamantglobalv1_enum_pb from "../../../../../gincoinc/adamant/global/v1/adamantglobalv1/enum_pb";
 import * as gincoinc_adamant_global_v1_adamantglobalv1_model_pb from "../../../../../gincoinc/adamant/global/v1/adamantglobalv1/model_pb";
+import * as gincoinc_global_v1_gincoincglobalv1_enum_pb from "../../../../../gincoinc/global/v1/gincoincglobalv1/enum_pb";
+import * as google_protobuf_empty_pb from "google-protobuf/google/protobuf/empty_pb";
+import * as google_protobuf_timestamp_pb from "google-protobuf/google/protobuf/timestamp_pb";
+import * as validate_validate_pb from "../../../../../validate/validate_pb";
 
 interface IGlobalAPIService extends grpc.ServiceDefinition<grpc.UntypedServiceImplementation> {
     createWallet: IGlobalAPIService_ICreateWallet;
@@ -27,6 +27,11 @@ interface IGlobalAPIService extends grpc.ServiceDefinition<grpc.UntypedServiceIm
     updateWalletPolicy: IGlobalAPIService_IUpdateWalletPolicy;
     reviewWalletProposal: IGlobalAPIService_IReviewWalletProposal;
     flushBalance: IGlobalAPIService_IFlushBalance;
+    createWalletGroup: IGlobalAPIService_ICreateWalletGroup;
+    updateWalletGroupName: IGlobalAPIService_IUpdateWalletGroupName;
+    updateWalletGroup: IGlobalAPIService_IUpdateWalletGroup;
+    getWalletGroup: IGlobalAPIService_IGetWalletGroup;
+    listWalletGroups: IGlobalAPIService_IListWalletGroups;
     approveWallet: IGlobalAPIService_IApproveWallet;
     approveTransaction: IGlobalAPIService_IApproveTransaction;
     createAddress: IGlobalAPIService_ICreateAddress;
@@ -37,6 +42,8 @@ interface IGlobalAPIService extends grpc.ServiceDefinition<grpc.UntypedServiceIm
     listAddressesWithBalance: IGlobalAPIService_IListAddressesWithBalance;
     updateAddressBalance: IGlobalAPIService_IUpdateAddressBalance;
     getEthereumFeeAddress: IGlobalAPIService_IGetEthereumFeeAddress;
+    listSubstrateChildAddresses: IGlobalAPIService_IListSubstrateChildAddresses;
+    importAddress: IGlobalAPIService_IImportAddress;
     registerKey: IGlobalAPIService_IRegisterKey;
     createTransaction: IGlobalAPIService_ICreateTransaction;
     createXRPInitTransactions: IGlobalAPIService_ICreateXRPInitTransactions;
@@ -57,6 +64,7 @@ interface IGlobalAPIService extends grpc.ServiceDefinition<grpc.UntypedServiceIm
     getRateSnapshot: IGlobalAPIService_IGetRateSnapshot;
     getLatestRateSnapshot: IGlobalAPIService_IGetLatestRateSnapshot;
     setRates: IGlobalAPIService_ISetRates;
+    setDefaultRates: IGlobalAPIService_ISetDefaultRates;
     createLabeledAddress: IGlobalAPIService_ICreateLabeledAddress;
     getLabeledAddress: IGlobalAPIService_IGetLabeledAddress;
     listLabeledAddresses: IGlobalAPIService_IListLabeledAddresses;
@@ -212,6 +220,51 @@ interface IGlobalAPIService_IFlushBalance extends grpc.MethodDefinition<gincoinc
     responseSerialize: grpc.serialize<gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.FlushBalanceResponse>;
     responseDeserialize: grpc.deserialize<gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.FlushBalanceResponse>;
 }
+interface IGlobalAPIService_ICreateWalletGroup extends grpc.MethodDefinition<gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.CreateWalletGroupRequest, gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.CreateWalletGroupResponse> {
+    path: "/adamant.global.v1.GlobalAPI/CreateWalletGroup";
+    requestStream: false;
+    responseStream: false;
+    requestSerialize: grpc.serialize<gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.CreateWalletGroupRequest>;
+    requestDeserialize: grpc.deserialize<gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.CreateWalletGroupRequest>;
+    responseSerialize: grpc.serialize<gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.CreateWalletGroupResponse>;
+    responseDeserialize: grpc.deserialize<gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.CreateWalletGroupResponse>;
+}
+interface IGlobalAPIService_IUpdateWalletGroupName extends grpc.MethodDefinition<gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.UpdateWalletGroupNameRequest, google_protobuf_empty_pb.Empty> {
+    path: "/adamant.global.v1.GlobalAPI/UpdateWalletGroupName";
+    requestStream: false;
+    responseStream: false;
+    requestSerialize: grpc.serialize<gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.UpdateWalletGroupNameRequest>;
+    requestDeserialize: grpc.deserialize<gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.UpdateWalletGroupNameRequest>;
+    responseSerialize: grpc.serialize<google_protobuf_empty_pb.Empty>;
+    responseDeserialize: grpc.deserialize<google_protobuf_empty_pb.Empty>;
+}
+interface IGlobalAPIService_IUpdateWalletGroup extends grpc.MethodDefinition<gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.UpdateWalletGroupRequest, google_protobuf_empty_pb.Empty> {
+    path: "/adamant.global.v1.GlobalAPI/UpdateWalletGroup";
+    requestStream: false;
+    responseStream: false;
+    requestSerialize: grpc.serialize<gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.UpdateWalletGroupRequest>;
+    requestDeserialize: grpc.deserialize<gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.UpdateWalletGroupRequest>;
+    responseSerialize: grpc.serialize<google_protobuf_empty_pb.Empty>;
+    responseDeserialize: grpc.deserialize<google_protobuf_empty_pb.Empty>;
+}
+interface IGlobalAPIService_IGetWalletGroup extends grpc.MethodDefinition<gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.GetWalletGroupRequest, gincoinc_adamant_global_v1_adamantglobalv1_model_pb.WalletGroup> {
+    path: "/adamant.global.v1.GlobalAPI/GetWalletGroup";
+    requestStream: false;
+    responseStream: false;
+    requestSerialize: grpc.serialize<gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.GetWalletGroupRequest>;
+    requestDeserialize: grpc.deserialize<gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.GetWalletGroupRequest>;
+    responseSerialize: grpc.serialize<gincoinc_adamant_global_v1_adamantglobalv1_model_pb.WalletGroup>;
+    responseDeserialize: grpc.deserialize<gincoinc_adamant_global_v1_adamantglobalv1_model_pb.WalletGroup>;
+}
+interface IGlobalAPIService_IListWalletGroups extends grpc.MethodDefinition<gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.ListWalletGroupsRequest, gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.ListWalletGroupsResponse> {
+    path: "/adamant.global.v1.GlobalAPI/ListWalletGroups";
+    requestStream: false;
+    responseStream: false;
+    requestSerialize: grpc.serialize<gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.ListWalletGroupsRequest>;
+    requestDeserialize: grpc.deserialize<gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.ListWalletGroupsRequest>;
+    responseSerialize: grpc.serialize<gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.ListWalletGroupsResponse>;
+    responseDeserialize: grpc.deserialize<gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.ListWalletGroupsResponse>;
+}
 interface IGlobalAPIService_IApproveWallet extends grpc.MethodDefinition<gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.ApproveWalletRequest, google_protobuf_empty_pb.Empty> {
     path: "/adamant.global.v1.GlobalAPI/ApproveWallet";
     requestStream: false;
@@ -301,6 +354,24 @@ interface IGlobalAPIService_IGetEthereumFeeAddress extends grpc.MethodDefinition
     requestDeserialize: grpc.deserialize<gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.GetEthereumFeeAddressRequest>;
     responseSerialize: grpc.serialize<gincoinc_adamant_global_v1_adamantglobalv1_model_pb.EthereumFeeAddress>;
     responseDeserialize: grpc.deserialize<gincoinc_adamant_global_v1_adamantglobalv1_model_pb.EthereumFeeAddress>;
+}
+interface IGlobalAPIService_IListSubstrateChildAddresses extends grpc.MethodDefinition<gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.ListSubstrateChildAddressesRequest, gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.ListSubstrateChildAddressesResponse> {
+    path: "/adamant.global.v1.GlobalAPI/ListSubstrateChildAddresses";
+    requestStream: false;
+    responseStream: false;
+    requestSerialize: grpc.serialize<gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.ListSubstrateChildAddressesRequest>;
+    requestDeserialize: grpc.deserialize<gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.ListSubstrateChildAddressesRequest>;
+    responseSerialize: grpc.serialize<gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.ListSubstrateChildAddressesResponse>;
+    responseDeserialize: grpc.deserialize<gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.ListSubstrateChildAddressesResponse>;
+}
+interface IGlobalAPIService_IImportAddress extends grpc.MethodDefinition<gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.ImportAddressRequest, gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.ImportAddressResponse> {
+    path: "/adamant.global.v1.GlobalAPI/ImportAddress";
+    requestStream: false;
+    responseStream: false;
+    requestSerialize: grpc.serialize<gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.ImportAddressRequest>;
+    requestDeserialize: grpc.deserialize<gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.ImportAddressRequest>;
+    responseSerialize: grpc.serialize<gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.ImportAddressResponse>;
+    responseDeserialize: grpc.deserialize<gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.ImportAddressResponse>;
 }
 interface IGlobalAPIService_IRegisterKey extends grpc.MethodDefinition<gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.RegisterKeyRequest, gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.RegisterKeyResponse> {
     path: "/adamant.global.v1.GlobalAPI/RegisterKey";
@@ -481,6 +552,15 @@ interface IGlobalAPIService_ISetRates extends grpc.MethodDefinition<gincoinc_ada
     requestDeserialize: grpc.deserialize<gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.SetRatesRequest>;
     responseSerialize: grpc.serialize<gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.SetRatesResponse>;
     responseDeserialize: grpc.deserialize<gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.SetRatesResponse>;
+}
+interface IGlobalAPIService_ISetDefaultRates extends grpc.MethodDefinition<gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.SetDefaultRatesRequest, gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.SetDefaultRatesResponse> {
+    path: "/adamant.global.v1.GlobalAPI/SetDefaultRates";
+    requestStream: false;
+    responseStream: false;
+    requestSerialize: grpc.serialize<gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.SetDefaultRatesRequest>;
+    requestDeserialize: grpc.deserialize<gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.SetDefaultRatesRequest>;
+    responseSerialize: grpc.serialize<gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.SetDefaultRatesResponse>;
+    responseDeserialize: grpc.deserialize<gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.SetDefaultRatesResponse>;
 }
 interface IGlobalAPIService_ICreateLabeledAddress extends grpc.MethodDefinition<gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.CreateLabeledAddressRequest, gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.CreateLabeledAddressResponse> {
     path: "/adamant.global.v1.GlobalAPI/CreateLabeledAddress";
@@ -823,6 +903,11 @@ export interface IGlobalAPIServer {
     updateWalletPolicy: grpc.handleUnaryCall<gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.UpdateWalletPolicyRequest, google_protobuf_empty_pb.Empty>;
     reviewWalletProposal: grpc.handleUnaryCall<gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.ReviewWalletProposalRequest, google_protobuf_empty_pb.Empty>;
     flushBalance: grpc.handleUnaryCall<gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.FlushBalanceRequest, gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.FlushBalanceResponse>;
+    createWalletGroup: grpc.handleUnaryCall<gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.CreateWalletGroupRequest, gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.CreateWalletGroupResponse>;
+    updateWalletGroupName: grpc.handleUnaryCall<gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.UpdateWalletGroupNameRequest, google_protobuf_empty_pb.Empty>;
+    updateWalletGroup: grpc.handleUnaryCall<gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.UpdateWalletGroupRequest, google_protobuf_empty_pb.Empty>;
+    getWalletGroup: grpc.handleUnaryCall<gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.GetWalletGroupRequest, gincoinc_adamant_global_v1_adamantglobalv1_model_pb.WalletGroup>;
+    listWalletGroups: grpc.handleUnaryCall<gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.ListWalletGroupsRequest, gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.ListWalletGroupsResponse>;
     approveWallet: grpc.handleUnaryCall<gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.ApproveWalletRequest, google_protobuf_empty_pb.Empty>;
     approveTransaction: grpc.handleUnaryCall<gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.ApproveTransactionRequest, google_protobuf_empty_pb.Empty>;
     createAddress: grpc.handleUnaryCall<gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.CreateAddressRequest, gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.CreateAddressResponse>;
@@ -833,6 +918,8 @@ export interface IGlobalAPIServer {
     listAddressesWithBalance: grpc.handleUnaryCall<gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.ListAddressesWithBalanceRequest, gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.ListAddressesWithBalanceResponse>;
     updateAddressBalance: grpc.handleUnaryCall<gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.UpdateAddressBalanceRequest, google_protobuf_empty_pb.Empty>;
     getEthereumFeeAddress: grpc.handleUnaryCall<gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.GetEthereumFeeAddressRequest, gincoinc_adamant_global_v1_adamantglobalv1_model_pb.EthereumFeeAddress>;
+    listSubstrateChildAddresses: grpc.handleUnaryCall<gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.ListSubstrateChildAddressesRequest, gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.ListSubstrateChildAddressesResponse>;
+    importAddress: grpc.handleUnaryCall<gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.ImportAddressRequest, gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.ImportAddressResponse>;
     registerKey: grpc.handleUnaryCall<gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.RegisterKeyRequest, gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.RegisterKeyResponse>;
     createTransaction: grpc.handleUnaryCall<gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.CreateTransactionRequest, gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.CreateTransactionResponse>;
     createXRPInitTransactions: grpc.handleUnaryCall<gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.CreateXRPInitTransactionsRequest, google_protobuf_empty_pb.Empty>;
@@ -853,6 +940,7 @@ export interface IGlobalAPIServer {
     getRateSnapshot: grpc.handleUnaryCall<gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.GetRateSnapshotRequest, gincoinc_adamant_global_v1_adamantglobalv1_model_pb.RateSnapshot>;
     getLatestRateSnapshot: grpc.handleUnaryCall<gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.GetLatestRateSnapshotRequest, gincoinc_adamant_global_v1_adamantglobalv1_model_pb.RateSnapshot>;
     setRates: grpc.handleUnaryCall<gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.SetRatesRequest, gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.SetRatesResponse>;
+    setDefaultRates: grpc.handleUnaryCall<gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.SetDefaultRatesRequest, gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.SetDefaultRatesResponse>;
     createLabeledAddress: grpc.handleUnaryCall<gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.CreateLabeledAddressRequest, gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.CreateLabeledAddressResponse>;
     getLabeledAddress: grpc.handleUnaryCall<gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.GetLabeledAddressRequest, gincoinc_adamant_global_v1_adamantglobalv1_model_pb.LabeledAddress>;
     listLabeledAddresses: grpc.handleUnaryCall<gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.ListLabeledAddressesRequest, gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.ListLabeledAddressesResponse>;
@@ -931,6 +1019,21 @@ export interface IGlobalAPIClient {
     flushBalance(request: gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.FlushBalanceRequest, callback: (error: grpc.ServiceError | null, response: gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.FlushBalanceResponse) => void): grpc.ClientUnaryCall;
     flushBalance(request: gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.FlushBalanceRequest, metadata: grpc.Metadata, callback: (error: grpc.ServiceError | null, response: gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.FlushBalanceResponse) => void): grpc.ClientUnaryCall;
     flushBalance(request: gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.FlushBalanceRequest, metadata: grpc.Metadata, options: Partial<grpc.CallOptions>, callback: (error: grpc.ServiceError | null, response: gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.FlushBalanceResponse) => void): grpc.ClientUnaryCall;
+    createWalletGroup(request: gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.CreateWalletGroupRequest, callback: (error: grpc.ServiceError | null, response: gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.CreateWalletGroupResponse) => void): grpc.ClientUnaryCall;
+    createWalletGroup(request: gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.CreateWalletGroupRequest, metadata: grpc.Metadata, callback: (error: grpc.ServiceError | null, response: gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.CreateWalletGroupResponse) => void): grpc.ClientUnaryCall;
+    createWalletGroup(request: gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.CreateWalletGroupRequest, metadata: grpc.Metadata, options: Partial<grpc.CallOptions>, callback: (error: grpc.ServiceError | null, response: gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.CreateWalletGroupResponse) => void): grpc.ClientUnaryCall;
+    updateWalletGroupName(request: gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.UpdateWalletGroupNameRequest, callback: (error: grpc.ServiceError | null, response: google_protobuf_empty_pb.Empty) => void): grpc.ClientUnaryCall;
+    updateWalletGroupName(request: gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.UpdateWalletGroupNameRequest, metadata: grpc.Metadata, callback: (error: grpc.ServiceError | null, response: google_protobuf_empty_pb.Empty) => void): grpc.ClientUnaryCall;
+    updateWalletGroupName(request: gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.UpdateWalletGroupNameRequest, metadata: grpc.Metadata, options: Partial<grpc.CallOptions>, callback: (error: grpc.ServiceError | null, response: google_protobuf_empty_pb.Empty) => void): grpc.ClientUnaryCall;
+    updateWalletGroup(request: gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.UpdateWalletGroupRequest, callback: (error: grpc.ServiceError | null, response: google_protobuf_empty_pb.Empty) => void): grpc.ClientUnaryCall;
+    updateWalletGroup(request: gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.UpdateWalletGroupRequest, metadata: grpc.Metadata, callback: (error: grpc.ServiceError | null, response: google_protobuf_empty_pb.Empty) => void): grpc.ClientUnaryCall;
+    updateWalletGroup(request: gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.UpdateWalletGroupRequest, metadata: grpc.Metadata, options: Partial<grpc.CallOptions>, callback: (error: grpc.ServiceError | null, response: google_protobuf_empty_pb.Empty) => void): grpc.ClientUnaryCall;
+    getWalletGroup(request: gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.GetWalletGroupRequest, callback: (error: grpc.ServiceError | null, response: gincoinc_adamant_global_v1_adamantglobalv1_model_pb.WalletGroup) => void): grpc.ClientUnaryCall;
+    getWalletGroup(request: gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.GetWalletGroupRequest, metadata: grpc.Metadata, callback: (error: grpc.ServiceError | null, response: gincoinc_adamant_global_v1_adamantglobalv1_model_pb.WalletGroup) => void): grpc.ClientUnaryCall;
+    getWalletGroup(request: gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.GetWalletGroupRequest, metadata: grpc.Metadata, options: Partial<grpc.CallOptions>, callback: (error: grpc.ServiceError | null, response: gincoinc_adamant_global_v1_adamantglobalv1_model_pb.WalletGroup) => void): grpc.ClientUnaryCall;
+    listWalletGroups(request: gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.ListWalletGroupsRequest, callback: (error: grpc.ServiceError | null, response: gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.ListWalletGroupsResponse) => void): grpc.ClientUnaryCall;
+    listWalletGroups(request: gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.ListWalletGroupsRequest, metadata: grpc.Metadata, callback: (error: grpc.ServiceError | null, response: gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.ListWalletGroupsResponse) => void): grpc.ClientUnaryCall;
+    listWalletGroups(request: gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.ListWalletGroupsRequest, metadata: grpc.Metadata, options: Partial<grpc.CallOptions>, callback: (error: grpc.ServiceError | null, response: gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.ListWalletGroupsResponse) => void): grpc.ClientUnaryCall;
     approveWallet(request: gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.ApproveWalletRequest, callback: (error: grpc.ServiceError | null, response: google_protobuf_empty_pb.Empty) => void): grpc.ClientUnaryCall;
     approveWallet(request: gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.ApproveWalletRequest, metadata: grpc.Metadata, callback: (error: grpc.ServiceError | null, response: google_protobuf_empty_pb.Empty) => void): grpc.ClientUnaryCall;
     approveWallet(request: gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.ApproveWalletRequest, metadata: grpc.Metadata, options: Partial<grpc.CallOptions>, callback: (error: grpc.ServiceError | null, response: google_protobuf_empty_pb.Empty) => void): grpc.ClientUnaryCall;
@@ -961,6 +1064,12 @@ export interface IGlobalAPIClient {
     getEthereumFeeAddress(request: gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.GetEthereumFeeAddressRequest, callback: (error: grpc.ServiceError | null, response: gincoinc_adamant_global_v1_adamantglobalv1_model_pb.EthereumFeeAddress) => void): grpc.ClientUnaryCall;
     getEthereumFeeAddress(request: gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.GetEthereumFeeAddressRequest, metadata: grpc.Metadata, callback: (error: grpc.ServiceError | null, response: gincoinc_adamant_global_v1_adamantglobalv1_model_pb.EthereumFeeAddress) => void): grpc.ClientUnaryCall;
     getEthereumFeeAddress(request: gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.GetEthereumFeeAddressRequest, metadata: grpc.Metadata, options: Partial<grpc.CallOptions>, callback: (error: grpc.ServiceError | null, response: gincoinc_adamant_global_v1_adamantglobalv1_model_pb.EthereumFeeAddress) => void): grpc.ClientUnaryCall;
+    listSubstrateChildAddresses(request: gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.ListSubstrateChildAddressesRequest, callback: (error: grpc.ServiceError | null, response: gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.ListSubstrateChildAddressesResponse) => void): grpc.ClientUnaryCall;
+    listSubstrateChildAddresses(request: gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.ListSubstrateChildAddressesRequest, metadata: grpc.Metadata, callback: (error: grpc.ServiceError | null, response: gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.ListSubstrateChildAddressesResponse) => void): grpc.ClientUnaryCall;
+    listSubstrateChildAddresses(request: gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.ListSubstrateChildAddressesRequest, metadata: grpc.Metadata, options: Partial<grpc.CallOptions>, callback: (error: grpc.ServiceError | null, response: gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.ListSubstrateChildAddressesResponse) => void): grpc.ClientUnaryCall;
+    importAddress(request: gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.ImportAddressRequest, callback: (error: grpc.ServiceError | null, response: gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.ImportAddressResponse) => void): grpc.ClientUnaryCall;
+    importAddress(request: gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.ImportAddressRequest, metadata: grpc.Metadata, callback: (error: grpc.ServiceError | null, response: gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.ImportAddressResponse) => void): grpc.ClientUnaryCall;
+    importAddress(request: gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.ImportAddressRequest, metadata: grpc.Metadata, options: Partial<grpc.CallOptions>, callback: (error: grpc.ServiceError | null, response: gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.ImportAddressResponse) => void): grpc.ClientUnaryCall;
     registerKey(request: gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.RegisterKeyRequest, callback: (error: grpc.ServiceError | null, response: gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.RegisterKeyResponse) => void): grpc.ClientUnaryCall;
     registerKey(request: gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.RegisterKeyRequest, metadata: grpc.Metadata, callback: (error: grpc.ServiceError | null, response: gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.RegisterKeyResponse) => void): grpc.ClientUnaryCall;
     registerKey(request: gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.RegisterKeyRequest, metadata: grpc.Metadata, options: Partial<grpc.CallOptions>, callback: (error: grpc.ServiceError | null, response: gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.RegisterKeyResponse) => void): grpc.ClientUnaryCall;
@@ -1021,6 +1130,9 @@ export interface IGlobalAPIClient {
     setRates(request: gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.SetRatesRequest, callback: (error: grpc.ServiceError | null, response: gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.SetRatesResponse) => void): grpc.ClientUnaryCall;
     setRates(request: gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.SetRatesRequest, metadata: grpc.Metadata, callback: (error: grpc.ServiceError | null, response: gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.SetRatesResponse) => void): grpc.ClientUnaryCall;
     setRates(request: gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.SetRatesRequest, metadata: grpc.Metadata, options: Partial<grpc.CallOptions>, callback: (error: grpc.ServiceError | null, response: gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.SetRatesResponse) => void): grpc.ClientUnaryCall;
+    setDefaultRates(request: gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.SetDefaultRatesRequest, callback: (error: grpc.ServiceError | null, response: gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.SetDefaultRatesResponse) => void): grpc.ClientUnaryCall;
+    setDefaultRates(request: gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.SetDefaultRatesRequest, metadata: grpc.Metadata, callback: (error: grpc.ServiceError | null, response: gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.SetDefaultRatesResponse) => void): grpc.ClientUnaryCall;
+    setDefaultRates(request: gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.SetDefaultRatesRequest, metadata: grpc.Metadata, options: Partial<grpc.CallOptions>, callback: (error: grpc.ServiceError | null, response: gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.SetDefaultRatesResponse) => void): grpc.ClientUnaryCall;
     createLabeledAddress(request: gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.CreateLabeledAddressRequest, callback: (error: grpc.ServiceError | null, response: gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.CreateLabeledAddressResponse) => void): grpc.ClientUnaryCall;
     createLabeledAddress(request: gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.CreateLabeledAddressRequest, metadata: grpc.Metadata, callback: (error: grpc.ServiceError | null, response: gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.CreateLabeledAddressResponse) => void): grpc.ClientUnaryCall;
     createLabeledAddress(request: gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.CreateLabeledAddressRequest, metadata: grpc.Metadata, options: Partial<grpc.CallOptions>, callback: (error: grpc.ServiceError | null, response: gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.CreateLabeledAddressResponse) => void): grpc.ClientUnaryCall;
@@ -1172,6 +1284,21 @@ export class GlobalAPIClient extends grpc.Client implements IGlobalAPIClient {
     public flushBalance(request: gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.FlushBalanceRequest, callback: (error: grpc.ServiceError | null, response: gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.FlushBalanceResponse) => void): grpc.ClientUnaryCall;
     public flushBalance(request: gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.FlushBalanceRequest, metadata: grpc.Metadata, callback: (error: grpc.ServiceError | null, response: gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.FlushBalanceResponse) => void): grpc.ClientUnaryCall;
     public flushBalance(request: gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.FlushBalanceRequest, metadata: grpc.Metadata, options: Partial<grpc.CallOptions>, callback: (error: grpc.ServiceError | null, response: gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.FlushBalanceResponse) => void): grpc.ClientUnaryCall;
+    public createWalletGroup(request: gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.CreateWalletGroupRequest, callback: (error: grpc.ServiceError | null, response: gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.CreateWalletGroupResponse) => void): grpc.ClientUnaryCall;
+    public createWalletGroup(request: gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.CreateWalletGroupRequest, metadata: grpc.Metadata, callback: (error: grpc.ServiceError | null, response: gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.CreateWalletGroupResponse) => void): grpc.ClientUnaryCall;
+    public createWalletGroup(request: gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.CreateWalletGroupRequest, metadata: grpc.Metadata, options: Partial<grpc.CallOptions>, callback: (error: grpc.ServiceError | null, response: gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.CreateWalletGroupResponse) => void): grpc.ClientUnaryCall;
+    public updateWalletGroupName(request: gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.UpdateWalletGroupNameRequest, callback: (error: grpc.ServiceError | null, response: google_protobuf_empty_pb.Empty) => void): grpc.ClientUnaryCall;
+    public updateWalletGroupName(request: gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.UpdateWalletGroupNameRequest, metadata: grpc.Metadata, callback: (error: grpc.ServiceError | null, response: google_protobuf_empty_pb.Empty) => void): grpc.ClientUnaryCall;
+    public updateWalletGroupName(request: gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.UpdateWalletGroupNameRequest, metadata: grpc.Metadata, options: Partial<grpc.CallOptions>, callback: (error: grpc.ServiceError | null, response: google_protobuf_empty_pb.Empty) => void): grpc.ClientUnaryCall;
+    public updateWalletGroup(request: gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.UpdateWalletGroupRequest, callback: (error: grpc.ServiceError | null, response: google_protobuf_empty_pb.Empty) => void): grpc.ClientUnaryCall;
+    public updateWalletGroup(request: gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.UpdateWalletGroupRequest, metadata: grpc.Metadata, callback: (error: grpc.ServiceError | null, response: google_protobuf_empty_pb.Empty) => void): grpc.ClientUnaryCall;
+    public updateWalletGroup(request: gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.UpdateWalletGroupRequest, metadata: grpc.Metadata, options: Partial<grpc.CallOptions>, callback: (error: grpc.ServiceError | null, response: google_protobuf_empty_pb.Empty) => void): grpc.ClientUnaryCall;
+    public getWalletGroup(request: gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.GetWalletGroupRequest, callback: (error: grpc.ServiceError | null, response: gincoinc_adamant_global_v1_adamantglobalv1_model_pb.WalletGroup) => void): grpc.ClientUnaryCall;
+    public getWalletGroup(request: gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.GetWalletGroupRequest, metadata: grpc.Metadata, callback: (error: grpc.ServiceError | null, response: gincoinc_adamant_global_v1_adamantglobalv1_model_pb.WalletGroup) => void): grpc.ClientUnaryCall;
+    public getWalletGroup(request: gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.GetWalletGroupRequest, metadata: grpc.Metadata, options: Partial<grpc.CallOptions>, callback: (error: grpc.ServiceError | null, response: gincoinc_adamant_global_v1_adamantglobalv1_model_pb.WalletGroup) => void): grpc.ClientUnaryCall;
+    public listWalletGroups(request: gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.ListWalletGroupsRequest, callback: (error: grpc.ServiceError | null, response: gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.ListWalletGroupsResponse) => void): grpc.ClientUnaryCall;
+    public listWalletGroups(request: gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.ListWalletGroupsRequest, metadata: grpc.Metadata, callback: (error: grpc.ServiceError | null, response: gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.ListWalletGroupsResponse) => void): grpc.ClientUnaryCall;
+    public listWalletGroups(request: gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.ListWalletGroupsRequest, metadata: grpc.Metadata, options: Partial<grpc.CallOptions>, callback: (error: grpc.ServiceError | null, response: gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.ListWalletGroupsResponse) => void): grpc.ClientUnaryCall;
     public approveWallet(request: gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.ApproveWalletRequest, callback: (error: grpc.ServiceError | null, response: google_protobuf_empty_pb.Empty) => void): grpc.ClientUnaryCall;
     public approveWallet(request: gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.ApproveWalletRequest, metadata: grpc.Metadata, callback: (error: grpc.ServiceError | null, response: google_protobuf_empty_pb.Empty) => void): grpc.ClientUnaryCall;
     public approveWallet(request: gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.ApproveWalletRequest, metadata: grpc.Metadata, options: Partial<grpc.CallOptions>, callback: (error: grpc.ServiceError | null, response: google_protobuf_empty_pb.Empty) => void): grpc.ClientUnaryCall;
@@ -1202,6 +1329,12 @@ export class GlobalAPIClient extends grpc.Client implements IGlobalAPIClient {
     public getEthereumFeeAddress(request: gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.GetEthereumFeeAddressRequest, callback: (error: grpc.ServiceError | null, response: gincoinc_adamant_global_v1_adamantglobalv1_model_pb.EthereumFeeAddress) => void): grpc.ClientUnaryCall;
     public getEthereumFeeAddress(request: gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.GetEthereumFeeAddressRequest, metadata: grpc.Metadata, callback: (error: grpc.ServiceError | null, response: gincoinc_adamant_global_v1_adamantglobalv1_model_pb.EthereumFeeAddress) => void): grpc.ClientUnaryCall;
     public getEthereumFeeAddress(request: gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.GetEthereumFeeAddressRequest, metadata: grpc.Metadata, options: Partial<grpc.CallOptions>, callback: (error: grpc.ServiceError | null, response: gincoinc_adamant_global_v1_adamantglobalv1_model_pb.EthereumFeeAddress) => void): grpc.ClientUnaryCall;
+    public listSubstrateChildAddresses(request: gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.ListSubstrateChildAddressesRequest, callback: (error: grpc.ServiceError | null, response: gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.ListSubstrateChildAddressesResponse) => void): grpc.ClientUnaryCall;
+    public listSubstrateChildAddresses(request: gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.ListSubstrateChildAddressesRequest, metadata: grpc.Metadata, callback: (error: grpc.ServiceError | null, response: gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.ListSubstrateChildAddressesResponse) => void): grpc.ClientUnaryCall;
+    public listSubstrateChildAddresses(request: gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.ListSubstrateChildAddressesRequest, metadata: grpc.Metadata, options: Partial<grpc.CallOptions>, callback: (error: grpc.ServiceError | null, response: gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.ListSubstrateChildAddressesResponse) => void): grpc.ClientUnaryCall;
+    public importAddress(request: gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.ImportAddressRequest, callback: (error: grpc.ServiceError | null, response: gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.ImportAddressResponse) => void): grpc.ClientUnaryCall;
+    public importAddress(request: gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.ImportAddressRequest, metadata: grpc.Metadata, callback: (error: grpc.ServiceError | null, response: gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.ImportAddressResponse) => void): grpc.ClientUnaryCall;
+    public importAddress(request: gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.ImportAddressRequest, metadata: grpc.Metadata, options: Partial<grpc.CallOptions>, callback: (error: grpc.ServiceError | null, response: gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.ImportAddressResponse) => void): grpc.ClientUnaryCall;
     public registerKey(request: gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.RegisterKeyRequest, callback: (error: grpc.ServiceError | null, response: gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.RegisterKeyResponse) => void): grpc.ClientUnaryCall;
     public registerKey(request: gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.RegisterKeyRequest, metadata: grpc.Metadata, callback: (error: grpc.ServiceError | null, response: gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.RegisterKeyResponse) => void): grpc.ClientUnaryCall;
     public registerKey(request: gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.RegisterKeyRequest, metadata: grpc.Metadata, options: Partial<grpc.CallOptions>, callback: (error: grpc.ServiceError | null, response: gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.RegisterKeyResponse) => void): grpc.ClientUnaryCall;
@@ -1262,6 +1395,9 @@ export class GlobalAPIClient extends grpc.Client implements IGlobalAPIClient {
     public setRates(request: gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.SetRatesRequest, callback: (error: grpc.ServiceError | null, response: gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.SetRatesResponse) => void): grpc.ClientUnaryCall;
     public setRates(request: gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.SetRatesRequest, metadata: grpc.Metadata, callback: (error: grpc.ServiceError | null, response: gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.SetRatesResponse) => void): grpc.ClientUnaryCall;
     public setRates(request: gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.SetRatesRequest, metadata: grpc.Metadata, options: Partial<grpc.CallOptions>, callback: (error: grpc.ServiceError | null, response: gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.SetRatesResponse) => void): grpc.ClientUnaryCall;
+    public setDefaultRates(request: gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.SetDefaultRatesRequest, callback: (error: grpc.ServiceError | null, response: gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.SetDefaultRatesResponse) => void): grpc.ClientUnaryCall;
+    public setDefaultRates(request: gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.SetDefaultRatesRequest, metadata: grpc.Metadata, callback: (error: grpc.ServiceError | null, response: gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.SetDefaultRatesResponse) => void): grpc.ClientUnaryCall;
+    public setDefaultRates(request: gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.SetDefaultRatesRequest, metadata: grpc.Metadata, options: Partial<grpc.CallOptions>, callback: (error: grpc.ServiceError | null, response: gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.SetDefaultRatesResponse) => void): grpc.ClientUnaryCall;
     public createLabeledAddress(request: gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.CreateLabeledAddressRequest, callback: (error: grpc.ServiceError | null, response: gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.CreateLabeledAddressResponse) => void): grpc.ClientUnaryCall;
     public createLabeledAddress(request: gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.CreateLabeledAddressRequest, metadata: grpc.Metadata, callback: (error: grpc.ServiceError | null, response: gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.CreateLabeledAddressResponse) => void): grpc.ClientUnaryCall;
     public createLabeledAddress(request: gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.CreateLabeledAddressRequest, metadata: grpc.Metadata, options: Partial<grpc.CallOptions>, callback: (error: grpc.ServiceError | null, response: gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.CreateLabeledAddressResponse) => void): grpc.ClientUnaryCall;

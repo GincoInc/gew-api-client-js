@@ -1,20 +1,33 @@
+// source: gincoinc/adamant/global/v1/adamantglobalv1/enum.proto
 /**
  * @fileoverview
  * @enhanceable
+ * @suppress {missingRequire} reports error on implicit type usages.
  * @suppress {messageConventions} JS Compiler reports an error if a variable or
  *     field starts with 'MSG_' and isn't a translatable message.
  * @public
  */
 // GENERATED CODE -- DO NOT EDIT!
+/* eslint-disable */
+// @ts-nocheck
 
 var jspb = require('google-protobuf');
 var goog = jspb;
-var global = Function('return this')();
+var global = (function() {
+  if (this) { return this; }
+  if (typeof window !== 'undefined') { return window; }
+  if (typeof global !== 'undefined') { return global; }
+  if (typeof self !== 'undefined') { return self; }
+  return Function('return this')();
+}.call(null));
 
 goog.exportSymbol('proto.adamant.global.v1.AccountType', null, global);
 goog.exportSymbol('proto.adamant.global.v1.AddressState', null, global);
 goog.exportSymbol('proto.adamant.global.v1.AuditLogGroup', null, global);
 goog.exportSymbol('proto.adamant.global.v1.AuditLogType', null, global);
+goog.exportSymbol('proto.adamant.global.v1.DownloadResourceType', null, global);
+goog.exportSymbol('proto.adamant.global.v1.EthereumContractMethodIDType', null, global);
+goog.exportSymbol('proto.adamant.global.v1.EventTriggeredMessageType', null, global);
 goog.exportSymbol('proto.adamant.global.v1.ListFilterType', null, global);
 goog.exportSymbol('proto.adamant.global.v1.MailType', null, global);
 goog.exportSymbol('proto.adamant.global.v1.NotificationType', null, global);
@@ -22,10 +35,12 @@ goog.exportSymbol('proto.adamant.global.v1.PolicyType', null, global);
 goog.exportSymbol('proto.adamant.global.v1.PreconditionFailureType', null, global);
 goog.exportSymbol('proto.adamant.global.v1.ResourceType', null, global);
 goog.exportSymbol('proto.adamant.global.v1.RoleType', null, global);
+goog.exportSymbol('proto.adamant.global.v1.SubstrateCallType', null, global);
 goog.exportSymbol('proto.adamant.global.v1.TokenType', null, global);
 goog.exportSymbol('proto.adamant.global.v1.TransactionState', null, global);
 goog.exportSymbol('proto.adamant.global.v1.TransferLimitType', null, global);
 goog.exportSymbol('proto.adamant.global.v1.UserState', null, global);
+goog.exportSymbol('proto.adamant.global.v1.WalletConnectCallRequestType', null, global);
 goog.exportSymbol('proto.adamant.global.v1.WalletProposalType', null, global);
 goog.exportSymbol('proto.adamant.global.v1.WalletState', null, global);
 goog.exportSymbol('proto.adamant.global.v1.WalletType', null, global);
@@ -38,7 +53,8 @@ proto.adamant.global.v1.WalletType = {
   WALLET_TYPE_SELF_CUSTODY_HOT: 1,
   WALLET_TYPE_SELF_CUSTODY_COLD: 2,
   WALLET_TYPE_SELF_CUSTODY_HOT_SINGLE_SIG: 3,
-  WALLET_TYPE_SELF_CUSTODY_HOT_RECEIVE_ONLY: 4
+  WALLET_TYPE_SELF_CUSTODY_HOT_RECEIVE_ONLY: 4,
+  WALLET_TYPE_SELF_CUSTODY_COLD_SINGLE_SIG: 5
 };
 
 /**
@@ -65,7 +81,8 @@ proto.adamant.global.v1.WalletState = {
   WALLET_STATE_ADDRESS_IMPORT_FAILED: 17,
   WALLET_STATE_ADDRESS_DELETING: 18,
   WALLET_STATE_ADDRESS_DELETE_FAILED: 19,
-  WALLET_STATE_FLUSHING: 20
+  WALLET_STATE_FLUSHING: 20,
+  WALLET_STATE_ACCOUNT_CREATING: 21
 };
 
 /**
@@ -98,6 +115,7 @@ proto.adamant.global.v1.TransactionState = {
   TRANSACTION_STATE_REVIEWED: 4,
   TRANSACTION_STATE_SUBMITTING: 5,
   TRANSACTION_STATE_SUBMITTED: 6,
+  TRANSACTION_STATE_CANCELLING: 8,
   TRANSACTION_STATE_CANCELLED: 7
 };
 
@@ -219,7 +237,8 @@ proto.adamant.global.v1.AuditLogGroup = {
   AUDIT_LOG_GROUP_SERVICE_ACCOUNT: 3,
   AUDIT_LOG_GROUP_WALLET: 4,
   AUDIT_LOG_GROUP_TRANSACTION: 5,
-  AUDIT_LOG_GROUP_POLICY: 6
+  AUDIT_LOG_GROUP_POLICY: 6,
+  AUDIT_LOG_GROUP_WALLET_GROUP: 7
 };
 
 /**
@@ -245,6 +264,9 @@ proto.adamant.global.v1.AuditLogType = {
   AUDIT_LOG_TYPE_WALLET_ADDRESS_UPLOAD: 51,
   AUDIT_LOG_TYPE_WALLET_ADDRESS_DOWNLOAD: 52,
   AUDIT_LOG_TYPE_WALLET_ADDRESS_DELETE: 53,
+  AUDIT_LOG_TYPE_WALLET_GROUP_CREATE: 54,
+  AUDIT_LOG_TYPE_WALLET_GROUP_NAME_CHANGE: 55,
+  AUDIT_LOG_TYPE_WALLET_GROUP_CHANGE: 56,
   AUDIT_LOG_TYPE_TRANSACTION_CREATE: 15,
   AUDIT_LOG_TYPE_TRANSACTION_APPROVE: 16,
   AUDIT_LOG_TYPE_TRANSACTION_CANCEL: 17,
@@ -292,6 +314,8 @@ proto.adamant.global.v1.PreconditionFailureType = {
   PRECONDITION_FAILURE_TYPE_USER_NOT_ACTIVE: 3,
   PRECONDITION_FAILURE_TYPE_USER_IS_ARCHIVED: 4,
   PRECONDITION_FAILURE_TYPE_EMAIL_IS_ALREADY_USED: 5,
+  PRECONDITION_FAILURE_TYPE_INVITATION_TOKEN_IS_INVALID: 27,
+  PRECONDITION_FAILURE_TYPE_INVITATION_TOKEN_IS_EXPIRED: 28,
   PRECONDITION_FAILURE_TYPE_INSUFFICIENT_SPENDABLE_BALANCE: 6,
   PRECONDITION_FAILURE_TYPE_HOURLY_LIMIT_EXCEEDED: 7,
   PRECONDITION_FAILURE_TYPE_DAILY_LIMIT_EXCEEDED: 8,
@@ -312,6 +336,7 @@ proto.adamant.global.v1.PreconditionFailureType = {
   PRECONDITION_FAILURE_TYPE_TRANSACTION_ALREADY_CANCELED: 24,
   PRECONDITION_FAILURE_TYPE_TRANSACTION_ALREADY_SUBMITTED: 25,
   PRECONDITION_FAILURE_TYPE_CANNOT_OPERATE_TRANSACTION_DUE_TO_WALLET_STATE_IS_CREATING: 26,
+  PRECONDITION_FAILURE_TYPE_TRANSACTION_INCLUDE_SELF_ADDRESS: 29,
   PRECONDITION_FAILURE_TYPE_PROHIBITED_BY_SUBSCRIPTION: 19
 };
 
@@ -344,7 +369,9 @@ proto.adamant.global.v1.MailType = {
   MAIL_TYPE_EMAIL_UPDATED: 5,
   MAIL_TYPE_FRAUD_TRANSACTION_SUBMITTED: 6,
   MAIL_TYPE_IMPORT_ADDRESS_COMPLETED: 7,
-  MAIL_TYPE_VALIDATOR_CHANGE_REQUESTED: 8
+  MAIL_TYPE_VALIDATOR_CHANGE_REQUESTED: 8,
+  MAIL_TYPE_UNCHECKED_TRANSFER_EXISTS: 9,
+  MAIL_TYPE_DOWNLOAD_RESOURCE: 10
 };
 
 /**
@@ -359,6 +386,59 @@ proto.adamant.global.v1.WatchOnlyAddressState = {
   WATCH_ONLY_ADDRESS_STATE_ADDRESS_DELETED: 5,
   WATCH_ONLY_ADDRESS_STATE_DELETE_FAILED: 6,
   WATCH_ONLY_ADDRESS_STATE_DOWNLOAD: 7
+};
+
+/**
+ * @enum {number}
+ */
+proto.adamant.global.v1.SubstrateCallType = {
+  SUBSTRATE_CALL_TYPE_INVALID: 0,
+  SUBSTRATE_CALL_TYPE_TRANSFER: 1,
+  SUBSTRATE_CALL_TYPE_TRANSFER_ALL: 2,
+  SUBSTRATE_CALL_TYPE_TRANSFER_KEEP_ALIVE: 3,
+  SUBSTRATE_CALL_TYPE_APPROVE_AS_MULTI: 4,
+  SUBSTRATE_CALL_TYPE_AS_MULTI: 5,
+  SUBSTRATE_CALL_TYPE_AS_MULTI_THRESHOLD1: 6,
+  SUBSTRATE_CALL_TYPE_CANCEL_AS_MULTI: 7
+};
+
+/**
+ * @enum {number}
+ */
+proto.adamant.global.v1.DownloadResourceType = {
+  DOWNLOAD_RESOURCE_TYPE_INVALID: 0,
+  DOWNLOAD_RESOURCE_TYPE_ALL_WALLET_BALANCE_SNAPSHOT_EOD: 1,
+  DOWNLOAD_RESOURCE_TYPE_ALL_WALLET_GROUP_BALANCE_SNAPSHOT_EOD: 2,
+  DOWNLOAD_RESOURCE_TYPE_ALL_WALLET_BALANCE_SNAPSHOT_ON_DEMAND: 3,
+  DOWNLOAD_RESOURCE_TYPE_ALL_WALLET_GROUP_BALANCE_SNAPSHOT_ON_DEMAND: 4,
+  DOWNLOAD_RESOURCE_TYPE_WALLET_TRANSFER: 5
+};
+
+/**
+ * @enum {number}
+ */
+proto.adamant.global.v1.EventTriggeredMessageType = {
+  EVENT_TRIGGERED_MESSAGE_TYPE_INVALID: 0,
+  EVENT_TRIGGERED_MESSAGE_TYPE_UNCHECKED_TRANSFER_ALERT: 1,
+  EVENT_TRIGGERED_MESSAGE_TYPE_FRAUDULENT_TRANSFER_ALERT: 2
+};
+
+/**
+ * @enum {number}
+ */
+proto.adamant.global.v1.WalletConnectCallRequestType = {
+  WALLET_CONNECT_CALL_REQUEST_TYPE_INVALID: 0,
+  WALLET_CONNECT_CALL_REQUEST_TYPE_ETH_SEND_TRANSACTION: 1,
+  WALLET_CONNECT_CALL_REQUEST_TYPE_ETH_SIGN_TYPED_DATA: 2
+};
+
+/**
+ * @enum {number}
+ */
+proto.adamant.global.v1.EthereumContractMethodIDType = {
+  ETHEREUM_CONTRACT_METHOD_ID_TYPE_INVALID: 0,
+  ETHEREUM_CONTRACT_METHOD_ID_TYPE_ERC20_APPROVE: 1,
+  ETHEREUM_CONTRACT_METHOD_ID_TYPE_UNISWAP_MULTICALL: 2
 };
 
 goog.object.extend(exports, proto.adamant.global.v1);

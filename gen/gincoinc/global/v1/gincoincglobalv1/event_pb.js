@@ -1,15 +1,25 @@
+// source: gincoinc/global/v1/gincoincglobalv1/event.proto
 /**
  * @fileoverview
  * @enhanceable
+ * @suppress {missingRequire} reports error on implicit type usages.
  * @suppress {messageConventions} JS Compiler reports an error if a variable or
  *     field starts with 'MSG_' and isn't a translatable message.
  * @public
  */
 // GENERATED CODE -- DO NOT EDIT!
+/* eslint-disable */
+// @ts-nocheck
 
 var jspb = require('google-protobuf');
 var goog = jspb;
-var global = Function('return this')();
+var global = (function() {
+  if (this) { return this; }
+  if (typeof window !== 'undefined') { return window; }
+  if (typeof global !== 'undefined') { return global; }
+  if (typeof self !== 'undefined') { return self; }
+  return Function('return this')();
+}.call(null));
 
 goog.exportSymbol('proto.gincoinc.global.v1.Event', null, global);
 /**
@@ -214,9 +224,12 @@ proto.gincoinc.global.v1.Event.prototype.getAggregateId = function() {
 };
 
 
-/** @param {string} value */
+/**
+ * @param {string} value
+ * @return {!proto.gincoinc.global.v1.Event} returns this
+ */
 proto.gincoinc.global.v1.Event.prototype.setAggregateId = function(value) {
-  jspb.Message.setProto3StringField(this, 1, value);
+  return jspb.Message.setProto3StringField(this, 1, value);
 };
 
 
@@ -229,9 +242,12 @@ proto.gincoinc.global.v1.Event.prototype.getEventId = function() {
 };
 
 
-/** @param {string} value */
+/**
+ * @param {string} value
+ * @return {!proto.gincoinc.global.v1.Event} returns this
+ */
 proto.gincoinc.global.v1.Event.prototype.setEventId = function(value) {
-  jspb.Message.setProto3StringField(this, 2, value);
+  return jspb.Message.setProto3StringField(this, 2, value);
 };
 
 
@@ -244,9 +260,12 @@ proto.gincoinc.global.v1.Event.prototype.getEventType = function() {
 };
 
 
-/** @param {string} value */
+/**
+ * @param {string} value
+ * @return {!proto.gincoinc.global.v1.Event} returns this
+ */
 proto.gincoinc.global.v1.Event.prototype.setEventType = function(value) {
-  jspb.Message.setProto3StringField(this, 3, value);
+  return jspb.Message.setProto3StringField(this, 3, value);
 };
 
 
@@ -283,9 +302,12 @@ proto.gincoinc.global.v1.Event.prototype.getPayload_asU8 = function() {
 };
 
 
-/** @param {!(string|Uint8Array)} value */
+/**
+ * @param {!(string|Uint8Array)} value
+ * @return {!proto.gincoinc.global.v1.Event} returns this
+ */
 proto.gincoinc.global.v1.Event.prototype.setPayload = function(value) {
-  jspb.Message.setProto3BytesField(this, 4, value);
+  return jspb.Message.setProto3BytesField(this, 4, value);
 };
 
 
@@ -298,9 +320,12 @@ proto.gincoinc.global.v1.Event.prototype.getVersion = function() {
 };
 
 
-/** @param {number} value */
+/**
+ * @param {number} value
+ * @return {!proto.gincoinc.global.v1.Event} returns this
+ */
 proto.gincoinc.global.v1.Event.prototype.setVersion = function(value) {
-  jspb.Message.setProto3IntField(this, 5, value);
+  return jspb.Message.setProto3IntField(this, 5, value);
 };
 
 
@@ -313,9 +338,12 @@ proto.gincoinc.global.v1.Event.prototype.getCreateTime = function() {
 };
 
 
-/** @param {number} value */
+/**
+ * @param {number} value
+ * @return {!proto.gincoinc.global.v1.Event} returns this
+ */
 proto.gincoinc.global.v1.Event.prototype.setCreateTime = function(value) {
-  jspb.Message.setProto3IntField(this, 6, value);
+  return jspb.Message.setProto3IntField(this, 6, value);
 };
 
 
