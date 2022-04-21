@@ -14,7 +14,11 @@
     "type": "git",
     "url": "git+https://github.com/GincoInc/gew-api-client-js.git"
   },
-  "keywords": ["ginco", "grpc", "nodejs"],
+  "keywords": [
+    "ginco",
+    "grpc",
+    "nodejs"
+  ],
   "author": "GincoInc.",
   "license": "ISC",
   "bugs": {
