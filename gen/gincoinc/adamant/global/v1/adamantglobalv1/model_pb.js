@@ -1,24 +1,34 @@
+// source: gincoinc/adamant/global/v1/adamantglobalv1/model.proto
 /**
  * @fileoverview
  * @enhanceable
+ * @suppress {missingRequire} reports error on implicit type usages.
  * @suppress {messageConventions} JS Compiler reports an error if a variable or
  *     field starts with 'MSG_' and isn't a translatable message.
  * @public
  */
 // GENERATED CODE -- DO NOT EDIT!
+/* eslint-disable */
+// @ts-nocheck
 
 var jspb = require('google-protobuf');
 var goog = jspb;
-var global = Function('return this')();
+var global = (function() {
+  if (this) { return this; }
+  if (typeof window !== 'undefined') { return window; }
+  if (typeof global !== 'undefined') { return global; }
+  if (typeof self !== 'undefined') { return self; }
+  return Function('return this')();
+}.call(null));
 
+var gincoinc_adamant_global_v1_adamantglobalv1_enum_pb = require('../../../../../gincoinc/adamant/global/v1/adamantglobalv1/enum_pb.js');
+goog.object.extend(proto, gincoinc_adamant_global_v1_adamantglobalv1_enum_pb);
+var gincoinc_global_v1_gincoincglobalv1_enum_pb = require('../../../../../gincoinc/global/v1/gincoincglobalv1/enum_pb.js');
+goog.object.extend(proto, gincoinc_global_v1_gincoincglobalv1_enum_pb);
 var google_protobuf_timestamp_pb = require('google-protobuf/google/protobuf/timestamp_pb.js');
 goog.object.extend(proto, google_protobuf_timestamp_pb);
 var validate_validate_pb = require('../../../../../validate/validate_pb.js');
 goog.object.extend(proto, validate_validate_pb);
-var gincoinc_global_v1_gincoincglobalv1_enum_pb = require('../../../../../gincoinc/global/v1/gincoincglobalv1/enum_pb.js');
-goog.object.extend(proto, gincoinc_global_v1_gincoincglobalv1_enum_pb);
-var gincoinc_adamant_global_v1_adamantglobalv1_enum_pb = require('../../../../../gincoinc/adamant/global/v1/adamantglobalv1/enum_pb.js');
-goog.object.extend(proto, gincoinc_adamant_global_v1_adamantglobalv1_enum_pb);
 goog.exportSymbol('proto.adamant.global.v1.Address', null, global);
 goog.exportSymbol('proto.adamant.global.v1.AddressWithBalance', null, global);
 goog.exportSymbol('proto.adamant.global.v1.AddressWithoutBalance', null, global);
@@ -26,11 +36,15 @@ goog.exportSymbol('proto.adamant.global.v1.BalanceSnapshot', null, global);
 goog.exportSymbol('proto.adamant.global.v1.BitcoinSpecific', null, global);
 goog.exportSymbol('proto.adamant.global.v1.BitcoincashSpecific', null, global);
 goog.exportSymbol('proto.adamant.global.v1.C0banSpecific', null, global);
+goog.exportSymbol('proto.adamant.global.v1.CardanoSpecific', null, global);
 goog.exportSymbol('proto.adamant.global.v1.CompensationFee', null, global);
 goog.exportSymbol('proto.adamant.global.v1.Confirmation', null, global);
+goog.exportSymbol('proto.adamant.global.v1.CreateTransactionSubstrateSpecific', null, global);
+goog.exportSymbol('proto.adamant.global.v1.CreateTransactionWalletConnectSpecific', null, global);
 goog.exportSymbol('proto.adamant.global.v1.Deactivatability', null, global);
 goog.exportSymbol('proto.adamant.global.v1.EthereumFeeAddress', null, global);
 goog.exportSymbol('proto.adamant.global.v1.EthereumSpecific', null, global);
+goog.exportSymbol('proto.adamant.global.v1.EventTriggeredMessage', null, global);
 goog.exportSymbol('proto.adamant.global.v1.FlushedAddress', null, global);
 goog.exportSymbol('proto.adamant.global.v1.Key', null, global);
 goog.exportSymbol('proto.adamant.global.v1.LabeledAddress', null, global);
@@ -50,6 +64,10 @@ goog.exportSymbol('proto.adamant.global.v1.RequestTransferLimitEntry', null, glo
 goog.exportSymbol('proto.adamant.global.v1.RequestTxOutput', null, global);
 goog.exportSymbol('proto.adamant.global.v1.SignInfo', null, global);
 goog.exportSymbol('proto.adamant.global.v1.SignTxInput', null, global);
+goog.exportSymbol('proto.adamant.global.v1.StellarSpecific', null, global);
+goog.exportSymbol('proto.adamant.global.v1.SubstrateChildAddress', null, global);
+goog.exportSymbol('proto.adamant.global.v1.SubstrateMultisigTransaction', null, global);
+goog.exportSymbol('proto.adamant.global.v1.SubstrateSpecific', null, global);
 goog.exportSymbol('proto.adamant.global.v1.TotalBalance', null, global);
 goog.exportSymbol('proto.adamant.global.v1.TotalBalanceByCoin', null, global);
 goog.exportSymbol('proto.adamant.global.v1.Transaction', null, global);
@@ -63,10 +81,13 @@ goog.exportSymbol('proto.adamant.global.v1.TransferVolumeSnapshots', null, globa
 goog.exportSymbol('proto.adamant.global.v1.TronSpecific', null, global);
 goog.exportSymbol('proto.adamant.global.v1.TxInput', null, global);
 goog.exportSymbol('proto.adamant.global.v1.TxOutput', null, global);
+goog.exportSymbol('proto.adamant.global.v1.UTXO', null, global);
+goog.exportSymbol('proto.adamant.global.v1.UncheckedTransfer', null, global);
 goog.exportSymbol('proto.adamant.global.v1.Wallet', null, global);
 goog.exportSymbol('proto.adamant.global.v1.WalletBalanceSnapshot', null, global);
 goog.exportSymbol('proto.adamant.global.v1.WalletBalanceSnapshotMap', null, global);
 goog.exportSymbol('proto.adamant.global.v1.WalletFlushSetting', null, global);
+goog.exportSymbol('proto.adamant.global.v1.WalletGroup', null, global);
 goog.exportSymbol('proto.adamant.global.v1.WalletMember', null, global);
 goog.exportSymbol('proto.adamant.global.v1.WalletProposal', null, global);
 goog.exportSymbol('proto.adamant.global.v1.WalletTransferVolume', null, global);
@@ -379,6 +400,27 @@ if (goog.DEBUG && !COMPILED) {
  * @extends {jspb.Message}
  * @constructor
  */
+proto.adamant.global.v1.UTXO = function(opt_data) {
+  jspb.Message.initialize(this, opt_data, 0, -1, null, null);
+};
+goog.inherits(proto.adamant.global.v1.UTXO, jspb.Message);
+if (goog.DEBUG && !COMPILED) {
+  /**
+   * @public
+   * @override
+   */
+  proto.adamant.global.v1.UTXO.displayName = 'proto.adamant.global.v1.UTXO';
+}
+/**
+ * Generated by JsPbCodeGenerator.
+ * @param {Array=} opt_data Optional initial data array, typically from a
+ * server response, or constructed directly in Javascript. The array is used
+ * in place and becomes part of the constructed object. It is not cloned.
+ * If no data is provided, the constructed object will be empty, but still
+ * valid.
+ * @extends {jspb.Message}
+ * @constructor
+ */
 proto.adamant.global.v1.BitcoinSpecific = function(opt_data) {
   jspb.Message.initialize(this, opt_data, 0, -1, proto.adamant.global.v1.BitcoinSpecific.repeatedFields_, null);
 };
@@ -526,6 +568,132 @@ if (goog.DEBUG && !COMPILED) {
  * @extends {jspb.Message}
  * @constructor
  */
+proto.adamant.global.v1.StellarSpecific = function(opt_data) {
+  jspb.Message.initialize(this, opt_data, 0, -1, null, null);
+};
+goog.inherits(proto.adamant.global.v1.StellarSpecific, jspb.Message);
+if (goog.DEBUG && !COMPILED) {
+  /**
+   * @public
+   * @override
+   */
+  proto.adamant.global.v1.StellarSpecific.displayName = 'proto.adamant.global.v1.StellarSpecific';
+}
+/**
+ * Generated by JsPbCodeGenerator.
+ * @param {Array=} opt_data Optional initial data array, typically from a
+ * server response, or constructed directly in Javascript. The array is used
+ * in place and becomes part of the constructed object. It is not cloned.
+ * If no data is provided, the constructed object will be empty, but still
+ * valid.
+ * @extends {jspb.Message}
+ * @constructor
+ */
+proto.adamant.global.v1.CardanoSpecific = function(opt_data) {
+  jspb.Message.initialize(this, opt_data, 0, -1, proto.adamant.global.v1.CardanoSpecific.repeatedFields_, null);
+};
+goog.inherits(proto.adamant.global.v1.CardanoSpecific, jspb.Message);
+if (goog.DEBUG && !COMPILED) {
+  /**
+   * @public
+   * @override
+   */
+  proto.adamant.global.v1.CardanoSpecific.displayName = 'proto.adamant.global.v1.CardanoSpecific';
+}
+/**
+ * Generated by JsPbCodeGenerator.
+ * @param {Array=} opt_data Optional initial data array, typically from a
+ * server response, or constructed directly in Javascript. The array is used
+ * in place and becomes part of the constructed object. It is not cloned.
+ * If no data is provided, the constructed object will be empty, but still
+ * valid.
+ * @extends {jspb.Message}
+ * @constructor
+ */
+proto.adamant.global.v1.SubstrateSpecific = function(opt_data) {
+  jspb.Message.initialize(this, opt_data, 0, -1, proto.adamant.global.v1.SubstrateSpecific.repeatedFields_, null);
+};
+goog.inherits(proto.adamant.global.v1.SubstrateSpecific, jspb.Message);
+if (goog.DEBUG && !COMPILED) {
+  /**
+   * @public
+   * @override
+   */
+  proto.adamant.global.v1.SubstrateSpecific.displayName = 'proto.adamant.global.v1.SubstrateSpecific';
+}
+/**
+ * Generated by JsPbCodeGenerator.
+ * @param {Array=} opt_data Optional initial data array, typically from a
+ * server response, or constructed directly in Javascript. The array is used
+ * in place and becomes part of the constructed object. It is not cloned.
+ * If no data is provided, the constructed object will be empty, but still
+ * valid.
+ * @extends {jspb.Message}
+ * @constructor
+ */
+proto.adamant.global.v1.CreateTransactionSubstrateSpecific = function(opt_data) {
+  jspb.Message.initialize(this, opt_data, 0, -1, null, null);
+};
+goog.inherits(proto.adamant.global.v1.CreateTransactionSubstrateSpecific, jspb.Message);
+if (goog.DEBUG && !COMPILED) {
+  /**
+   * @public
+   * @override
+   */
+  proto.adamant.global.v1.CreateTransactionSubstrateSpecific.displayName = 'proto.adamant.global.v1.CreateTransactionSubstrateSpecific';
+}
+/**
+ * Generated by JsPbCodeGenerator.
+ * @param {Array=} opt_data Optional initial data array, typically from a
+ * server response, or constructed directly in Javascript. The array is used
+ * in place and becomes part of the constructed object. It is not cloned.
+ * If no data is provided, the constructed object will be empty, but still
+ * valid.
+ * @extends {jspb.Message}
+ * @constructor
+ */
+proto.adamant.global.v1.CreateTransactionWalletConnectSpecific = function(opt_data) {
+  jspb.Message.initialize(this, opt_data, 0, -1, null, null);
+};
+goog.inherits(proto.adamant.global.v1.CreateTransactionWalletConnectSpecific, jspb.Message);
+if (goog.DEBUG && !COMPILED) {
+  /**
+   * @public
+   * @override
+   */
+  proto.adamant.global.v1.CreateTransactionWalletConnectSpecific.displayName = 'proto.adamant.global.v1.CreateTransactionWalletConnectSpecific';
+}
+/**
+ * Generated by JsPbCodeGenerator.
+ * @param {Array=} opt_data Optional initial data array, typically from a
+ * server response, or constructed directly in Javascript. The array is used
+ * in place and becomes part of the constructed object. It is not cloned.
+ * If no data is provided, the constructed object will be empty, but still
+ * valid.
+ * @extends {jspb.Message}
+ * @constructor
+ */
+proto.adamant.global.v1.SubstrateMultisigTransaction = function(opt_data) {
+  jspb.Message.initialize(this, opt_data, 0, -1, null, null);
+};
+goog.inherits(proto.adamant.global.v1.SubstrateMultisigTransaction, jspb.Message);
+if (goog.DEBUG && !COMPILED) {
+  /**
+   * @public
+   * @override
+   */
+  proto.adamant.global.v1.SubstrateMultisigTransaction.displayName = 'proto.adamant.global.v1.SubstrateMultisigTransaction';
+}
+/**
+ * Generated by JsPbCodeGenerator.
+ * @param {Array=} opt_data Optional initial data array, typically from a
+ * server response, or constructed directly in Javascript. The array is used
+ * in place and becomes part of the constructed object. It is not cloned.
+ * If no data is provided, the constructed object will be empty, but still
+ * valid.
+ * @extends {jspb.Message}
+ * @constructor
+ */
 proto.adamant.global.v1.SignInfo = function(opt_data) {
   jspb.Message.initialize(this, opt_data, 0, -1, proto.adamant.global.v1.SignInfo.repeatedFields_, null);
 };
@@ -578,6 +746,48 @@ if (goog.DEBUG && !COMPILED) {
    * @override
    */
   proto.adamant.global.v1.Transfer.displayName = 'proto.adamant.global.v1.Transfer';
+}
+/**
+ * Generated by JsPbCodeGenerator.
+ * @param {Array=} opt_data Optional initial data array, typically from a
+ * server response, or constructed directly in Javascript. The array is used
+ * in place and becomes part of the constructed object. It is not cloned.
+ * If no data is provided, the constructed object will be empty, but still
+ * valid.
+ * @extends {jspb.Message}
+ * @constructor
+ */
+proto.adamant.global.v1.UncheckedTransfer = function(opt_data) {
+  jspb.Message.initialize(this, opt_data, 0, -1, null, null);
+};
+goog.inherits(proto.adamant.global.v1.UncheckedTransfer, jspb.Message);
+if (goog.DEBUG && !COMPILED) {
+  /**
+   * @public
+   * @override
+   */
+  proto.adamant.global.v1.UncheckedTransfer.displayName = 'proto.adamant.global.v1.UncheckedTransfer';
+}
+/**
+ * Generated by JsPbCodeGenerator.
+ * @param {Array=} opt_data Optional initial data array, typically from a
+ * server response, or constructed directly in Javascript. The array is used
+ * in place and becomes part of the constructed object. It is not cloned.
+ * If no data is provided, the constructed object will be empty, but still
+ * valid.
+ * @extends {jspb.Message}
+ * @constructor
+ */
+proto.adamant.global.v1.EventTriggeredMessage = function(opt_data) {
+  jspb.Message.initialize(this, opt_data, 0, -1, null, null);
+};
+goog.inherits(proto.adamant.global.v1.EventTriggeredMessage, jspb.Message);
+if (goog.DEBUG && !COMPILED) {
+  /**
+   * @public
+   * @override
+   */
+  proto.adamant.global.v1.EventTriggeredMessage.displayName = 'proto.adamant.global.v1.EventTriggeredMessage';
 }
 /**
  * Generated by JsPbCodeGenerator.
@@ -1156,6 +1366,27 @@ if (goog.DEBUG && !COMPILED) {
  * @extends {jspb.Message}
  * @constructor
  */
+proto.adamant.global.v1.WalletGroup = function(opt_data) {
+  jspb.Message.initialize(this, opt_data, 0, -1, proto.adamant.global.v1.WalletGroup.repeatedFields_, null);
+};
+goog.inherits(proto.adamant.global.v1.WalletGroup, jspb.Message);
+if (goog.DEBUG && !COMPILED) {
+  /**
+   * @public
+   * @override
+   */
+  proto.adamant.global.v1.WalletGroup.displayName = 'proto.adamant.global.v1.WalletGroup';
+}
+/**
+ * Generated by JsPbCodeGenerator.
+ * @param {Array=} opt_data Optional initial data array, typically from a
+ * server response, or constructed directly in Javascript. The array is used
+ * in place and becomes part of the constructed object. It is not cloned.
+ * If no data is provided, the constructed object will be empty, but still
+ * valid.
+ * @extends {jspb.Message}
+ * @constructor
+ */
 proto.adamant.global.v1.RequestTxOutput = function(opt_data) {
   jspb.Message.initialize(this, opt_data, 0, -1, null, null);
 };
@@ -1251,6 +1482,27 @@ if (goog.DEBUG && !COMPILED) {
    */
   proto.adamant.global.v1.RequestRate.displayName = 'proto.adamant.global.v1.RequestRate';
 }
+/**
+ * Generated by JsPbCodeGenerator.
+ * @param {Array=} opt_data Optional initial data array, typically from a
+ * server response, or constructed directly in Javascript. The array is used
+ * in place and becomes part of the constructed object. It is not cloned.
+ * If no data is provided, the constructed object will be empty, but still
+ * valid.
+ * @extends {jspb.Message}
+ * @constructor
+ */
+proto.adamant.global.v1.SubstrateChildAddress = function(opt_data) {
+  jspb.Message.initialize(this, opt_data, 0, -1, null, null);
+};
+goog.inherits(proto.adamant.global.v1.SubstrateChildAddress, jspb.Message);
+if (goog.DEBUG && !COMPILED) {
+  /**
+   * @public
+   * @override
+   */
+  proto.adamant.global.v1.SubstrateChildAddress.displayName = 'proto.adamant.global.v1.SubstrateChildAddress';
+}
 
 /**
  * List of repeated fields within this message type.
@@ -1313,6 +1565,8 @@ proto.adamant.global.v1.Wallet.toObject = function(includeInstance, msg) {
     destinationWalletId: jspb.Message.getFieldWithDefault(msg, 19, ""),
     watchOnly: jspb.Message.getBooleanFieldWithDefault(msg, 21, false),
     addressNumber: jspb.Message.getFieldWithDefault(msg, 22, 0),
+    shouldCheckRemittance: jspb.Message.getBooleanFieldWithDefault(msg, 24, false),
+    inheritWalletId: jspb.Message.getFieldWithDefault(msg, 25, ""),
     createTime: (f = msg.getCreateTime()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f),
     updateTime: (f = msg.getUpdateTime()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f)
   };
@@ -1437,6 +1691,14 @@ proto.adamant.global.v1.Wallet.deserializeBinaryFromReader = function(msg, reade
     case 22:
       var value = /** @type {number} */ (reader.readUint32());
       msg.setAddressNumber(value);
+      break;
+    case 24:
+      var value = /** @type {boolean} */ (reader.readBool());
+      msg.setShouldCheckRemittance(value);
+      break;
+    case 25:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setInheritWalletId(value);
       break;
     case 15:
       var value = new google_protobuf_timestamp_pb.Timestamp;
@@ -1627,6 +1889,20 @@ proto.adamant.global.v1.Wallet.serializeBinaryToWriter = function(message, write
       f
     );
   }
+  f = message.getShouldCheckRemittance();
+  if (f) {
+    writer.writeBool(
+      24,
+      f
+    );
+  }
+  f = message.getInheritWalletId();
+  if (f.length > 0) {
+    writer.writeString(
+      25,
+      f
+    );
+  }
   f = message.getCreateTime();
   if (f != null) {
     writer.writeMessage(
@@ -1655,9 +1931,12 @@ proto.adamant.global.v1.Wallet.prototype.getOwnerId = function() {
 };
 
 
-/** @param {string} value */
+/**
+ * @param {string} value
+ * @return {!proto.adamant.global.v1.Wallet} returns this
+ */
 proto.adamant.global.v1.Wallet.prototype.setOwnerId = function(value) {
-  jspb.Message.setProto3StringField(this, 23, value);
+  return jspb.Message.setProto3StringField(this, 23, value);
 };
 
 
@@ -1670,9 +1949,12 @@ proto.adamant.global.v1.Wallet.prototype.getWalletId = function() {
 };
 
 
-/** @param {string} value */
+/**
+ * @param {string} value
+ * @return {!proto.adamant.global.v1.Wallet} returns this
+ */
 proto.adamant.global.v1.Wallet.prototype.setWalletId = function(value) {
-  jspb.Message.setProto3StringField(this, 1, value);
+  return jspb.Message.setProto3StringField(this, 1, value);
 };
 
 
@@ -1685,9 +1967,12 @@ proto.adamant.global.v1.Wallet.prototype.getName = function() {
 };
 
 
-/** @param {string} value */
+/**
+ * @param {string} value
+ * @return {!proto.adamant.global.v1.Wallet} returns this
+ */
 proto.adamant.global.v1.Wallet.prototype.setName = function(value) {
-  jspb.Message.setProto3StringField(this, 2, value);
+  return jspb.Message.setProto3StringField(this, 2, value);
 };
 
 
@@ -1700,9 +1985,12 @@ proto.adamant.global.v1.Wallet.prototype.getCoin = function() {
 };
 
 
-/** @param {!proto.gincoinc.global.v1.Coin} value */
+/**
+ * @param {!proto.gincoinc.global.v1.Coin} value
+ * @return {!proto.adamant.global.v1.Wallet} returns this
+ */
 proto.adamant.global.v1.Wallet.prototype.setCoin = function(value) {
-  jspb.Message.setProto3EnumField(this, 3, value);
+  return jspb.Message.setProto3EnumField(this, 3, value);
 };
 
 
@@ -1715,9 +2003,12 @@ proto.adamant.global.v1.Wallet.prototype.getHdAccount = function() {
 };
 
 
-/** @param {number} value */
+/**
+ * @param {number} value
+ * @return {!proto.adamant.global.v1.Wallet} returns this
+ */
 proto.adamant.global.v1.Wallet.prototype.setHdAccount = function(value) {
-  jspb.Message.setProto3IntField(this, 17, value);
+  return jspb.Message.setProto3IntField(this, 17, value);
 };
 
 
@@ -1730,9 +2021,12 @@ proto.adamant.global.v1.Wallet.prototype.getWalletType = function() {
 };
 
 
-/** @param {!proto.adamant.global.v1.WalletType} value */
+/**
+ * @param {!proto.adamant.global.v1.WalletType} value
+ * @return {!proto.adamant.global.v1.Wallet} returns this
+ */
 proto.adamant.global.v1.Wallet.prototype.setWalletType = function(value) {
-  jspb.Message.setProto3EnumField(this, 4, value);
+  return jspb.Message.setProto3EnumField(this, 4, value);
 };
 
 
@@ -1745,9 +2039,12 @@ proto.adamant.global.v1.Wallet.prototype.getAddressType = function() {
 };
 
 
-/** @param {!proto.gincoinc.global.v1.AddressType} value */
+/**
+ * @param {!proto.gincoinc.global.v1.AddressType} value
+ * @return {!proto.adamant.global.v1.Wallet} returns this
+ */
 proto.adamant.global.v1.Wallet.prototype.setAddressType = function(value) {
-  jspb.Message.setProto3EnumField(this, 5, value);
+  return jspb.Message.setProto3EnumField(this, 5, value);
 };
 
 
@@ -1760,9 +2057,12 @@ proto.adamant.global.v1.Wallet.prototype.getM = function() {
 };
 
 
-/** @param {number} value */
+/**
+ * @param {number} value
+ * @return {!proto.adamant.global.v1.Wallet} returns this
+ */
 proto.adamant.global.v1.Wallet.prototype.setM = function(value) {
-  jspb.Message.setProto3IntField(this, 6, value);
+  return jspb.Message.setProto3IntField(this, 6, value);
 };
 
 
@@ -1775,9 +2075,12 @@ proto.adamant.global.v1.Wallet.prototype.getN = function() {
 };
 
 
-/** @param {number} value */
+/**
+ * @param {number} value
+ * @return {!proto.adamant.global.v1.Wallet} returns this
+ */
 proto.adamant.global.v1.Wallet.prototype.setN = function(value) {
-  jspb.Message.setProto3IntField(this, 7, value);
+  return jspb.Message.setProto3IntField(this, 7, value);
 };
 
 
@@ -1790,9 +2093,12 @@ proto.adamant.global.v1.Wallet.prototype.getState = function() {
 };
 
 
-/** @param {!proto.adamant.global.v1.WalletState} value */
+/**
+ * @param {!proto.adamant.global.v1.WalletState} value
+ * @return {!proto.adamant.global.v1.Wallet} returns this
+ */
 proto.adamant.global.v1.Wallet.prototype.setState = function(value) {
-  jspb.Message.setProto3EnumField(this, 8, value);
+  return jspb.Message.setProto3EnumField(this, 8, value);
 };
 
 
@@ -1806,9 +2112,12 @@ proto.adamant.global.v1.Wallet.prototype.getKeysList = function() {
 };
 
 
-/** @param {!Array<!proto.adamant.global.v1.Key>} value */
+/**
+ * @param {!Array<!proto.adamant.global.v1.Key>} value
+ * @return {!proto.adamant.global.v1.Wallet} returns this
+*/
 proto.adamant.global.v1.Wallet.prototype.setKeysList = function(value) {
-  jspb.Message.setRepeatedWrapperField(this, 9, value);
+  return jspb.Message.setRepeatedWrapperField(this, 9, value);
 };
 
 
@@ -1824,9 +2133,10 @@ proto.adamant.global.v1.Wallet.prototype.addKeys = function(opt_value, opt_index
 
 /**
  * Clears the list making it empty but non-null.
+ * @return {!proto.adamant.global.v1.Wallet} returns this
  */
 proto.adamant.global.v1.Wallet.prototype.clearKeysList = function() {
-  this.setKeysList([]);
+  return this.setKeysList([]);
 };
 
 
@@ -1840,9 +2150,12 @@ proto.adamant.global.v1.Wallet.prototype.getMembersList = function() {
 };
 
 
-/** @param {!Array<!proto.adamant.global.v1.WalletMember>} value */
+/**
+ * @param {!Array<!proto.adamant.global.v1.WalletMember>} value
+ * @return {!proto.adamant.global.v1.Wallet} returns this
+*/
 proto.adamant.global.v1.Wallet.prototype.setMembersList = function(value) {
-  jspb.Message.setRepeatedWrapperField(this, 10, value);
+  return jspb.Message.setRepeatedWrapperField(this, 10, value);
 };
 
 
@@ -1858,9 +2171,10 @@ proto.adamant.global.v1.Wallet.prototype.addMembers = function(opt_value, opt_in
 
 /**
  * Clears the list making it empty but non-null.
+ * @return {!proto.adamant.global.v1.Wallet} returns this
  */
 proto.adamant.global.v1.Wallet.prototype.clearMembersList = function() {
-  this.setMembersList([]);
+  return this.setMembersList([]);
 };
 
 
@@ -1873,9 +2187,12 @@ proto.adamant.global.v1.Wallet.prototype.getRequiredApprovalCount = function() {
 };
 
 
-/** @param {number} value */
+/**
+ * @param {number} value
+ * @return {!proto.adamant.global.v1.Wallet} returns this
+ */
 proto.adamant.global.v1.Wallet.prototype.setRequiredApprovalCount = function(value) {
-  jspb.Message.setProto3IntField(this, 20, value);
+  return jspb.Message.setProto3IntField(this, 20, value);
 };
 
 
@@ -1888,9 +2205,12 @@ proto.adamant.global.v1.Wallet.prototype.getBalance = function() {
 };
 
 
-/** @param {number} value */
+/**
+ * @param {number} value
+ * @return {!proto.adamant.global.v1.Wallet} returns this
+ */
 proto.adamant.global.v1.Wallet.prototype.setBalance = function(value) {
-  jspb.Message.setProto3FloatField(this, 11, value);
+  return jspb.Message.setProto3FloatField(this, 11, value);
 };
 
 
@@ -1903,9 +2223,12 @@ proto.adamant.global.v1.Wallet.prototype.getStringBalance = function() {
 };
 
 
-/** @param {string} value */
+/**
+ * @param {string} value
+ * @return {!proto.adamant.global.v1.Wallet} returns this
+ */
 proto.adamant.global.v1.Wallet.prototype.setStringBalance = function(value) {
-  jspb.Message.setProto3StringField(this, 12, value);
+  return jspb.Message.setProto3StringField(this, 12, value);
 };
 
 
@@ -1918,9 +2241,12 @@ proto.adamant.global.v1.Wallet.prototype.getAddress = function() {
 };
 
 
-/** @param {string} value */
+/**
+ * @param {string} value
+ * @return {!proto.adamant.global.v1.Wallet} returns this
+ */
 proto.adamant.global.v1.Wallet.prototype.setAddress = function(value) {
-  jspb.Message.setProto3StringField(this, 13, value);
+  return jspb.Message.setProto3StringField(this, 13, value);
 };
 
 
@@ -1933,9 +2259,12 @@ proto.adamant.global.v1.Wallet.prototype.getPolicyId = function() {
 };
 
 
-/** @param {string} value */
+/**
+ * @param {string} value
+ * @return {!proto.adamant.global.v1.Wallet} returns this
+ */
 proto.adamant.global.v1.Wallet.prototype.setPolicyId = function(value) {
-  jspb.Message.setProto3StringField(this, 14, value);
+  return jspb.Message.setProto3StringField(this, 14, value);
 };
 
 
@@ -1949,17 +2278,21 @@ proto.adamant.global.v1.Wallet.prototype.getProposal = function() {
 };
 
 
-/** @param {?proto.adamant.global.v1.WalletProposal|undefined} value */
+/**
+ * @param {?proto.adamant.global.v1.WalletProposal|undefined} value
+ * @return {!proto.adamant.global.v1.Wallet} returns this
+*/
 proto.adamant.global.v1.Wallet.prototype.setProposal = function(value) {
-  jspb.Message.setWrapperField(this, 18, value);
+  return jspb.Message.setWrapperField(this, 18, value);
 };
 
 
 /**
  * Clears the message field making it undefined.
+ * @return {!proto.adamant.global.v1.Wallet} returns this
  */
 proto.adamant.global.v1.Wallet.prototype.clearProposal = function() {
-  this.setProposal(undefined);
+  return this.setProposal(undefined);
 };
 
 
@@ -1981,9 +2314,12 @@ proto.adamant.global.v1.Wallet.prototype.getDestinationWalletId = function() {
 };
 
 
-/** @param {string} value */
+/**
+ * @param {string} value
+ * @return {!proto.adamant.global.v1.Wallet} returns this
+ */
 proto.adamant.global.v1.Wallet.prototype.setDestinationWalletId = function(value) {
-  jspb.Message.setProto3StringField(this, 19, value);
+  return jspb.Message.setProto3StringField(this, 19, value);
 };
 
 
@@ -1996,9 +2332,12 @@ proto.adamant.global.v1.Wallet.prototype.getWatchOnly = function() {
 };
 
 
-/** @param {boolean} value */
+/**
+ * @param {boolean} value
+ * @return {!proto.adamant.global.v1.Wallet} returns this
+ */
 proto.adamant.global.v1.Wallet.prototype.setWatchOnly = function(value) {
-  jspb.Message.setProto3BooleanField(this, 21, value);
+  return jspb.Message.setProto3BooleanField(this, 21, value);
 };
 
 
@@ -2011,9 +2350,48 @@ proto.adamant.global.v1.Wallet.prototype.getAddressNumber = function() {
 };
 
 
-/** @param {number} value */
+/**
+ * @param {number} value
+ * @return {!proto.adamant.global.v1.Wallet} returns this
+ */
 proto.adamant.global.v1.Wallet.prototype.setAddressNumber = function(value) {
-  jspb.Message.setProto3IntField(this, 22, value);
+  return jspb.Message.setProto3IntField(this, 22, value);
+};
+
+
+/**
+ * optional bool should_check_remittance = 24;
+ * @return {boolean}
+ */
+proto.adamant.global.v1.Wallet.prototype.getShouldCheckRemittance = function() {
+  return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 24, false));
+};
+
+
+/**
+ * @param {boolean} value
+ * @return {!proto.adamant.global.v1.Wallet} returns this
+ */
+proto.adamant.global.v1.Wallet.prototype.setShouldCheckRemittance = function(value) {
+  return jspb.Message.setProto3BooleanField(this, 24, value);
+};
+
+
+/**
+ * optional string inherit_wallet_id = 25;
+ * @return {string}
+ */
+proto.adamant.global.v1.Wallet.prototype.getInheritWalletId = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 25, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.adamant.global.v1.Wallet} returns this
+ */
+proto.adamant.global.v1.Wallet.prototype.setInheritWalletId = function(value) {
+  return jspb.Message.setProto3StringField(this, 25, value);
 };
 
 
@@ -2027,17 +2405,21 @@ proto.adamant.global.v1.Wallet.prototype.getCreateTime = function() {
 };
 
 
-/** @param {?proto.google.protobuf.Timestamp|undefined} value */
+/**
+ * @param {?proto.google.protobuf.Timestamp|undefined} value
+ * @return {!proto.adamant.global.v1.Wallet} returns this
+*/
 proto.adamant.global.v1.Wallet.prototype.setCreateTime = function(value) {
-  jspb.Message.setWrapperField(this, 15, value);
+  return jspb.Message.setWrapperField(this, 15, value);
 };
 
 
 /**
  * Clears the message field making it undefined.
+ * @return {!proto.adamant.global.v1.Wallet} returns this
  */
 proto.adamant.global.v1.Wallet.prototype.clearCreateTime = function() {
-  this.setCreateTime(undefined);
+  return this.setCreateTime(undefined);
 };
 
 
@@ -2060,17 +2442,21 @@ proto.adamant.global.v1.Wallet.prototype.getUpdateTime = function() {
 };
 
 
-/** @param {?proto.google.protobuf.Timestamp|undefined} value */
+/**
+ * @param {?proto.google.protobuf.Timestamp|undefined} value
+ * @return {!proto.adamant.global.v1.Wallet} returns this
+*/
 proto.adamant.global.v1.Wallet.prototype.setUpdateTime = function(value) {
-  jspb.Message.setWrapperField(this, 16, value);
+  return jspb.Message.setWrapperField(this, 16, value);
 };
 
 
 /**
  * Clears the message field making it undefined.
+ * @return {!proto.adamant.global.v1.Wallet} returns this
  */
 proto.adamant.global.v1.Wallet.prototype.clearUpdateTime = function() {
-  this.setUpdateTime(undefined);
+  return this.setUpdateTime(undefined);
 };
 
 
@@ -2142,6 +2528,8 @@ proto.adamant.global.v1.WalletWithoutBalance.toObject = function(includeInstance
     proposal: (f = msg.getProposal()) && proto.adamant.global.v1.WalletProposal.toObject(includeInstance, f),
     destinationWalletId: jspb.Message.getFieldWithDefault(msg, 16, ""),
     watchOnly: jspb.Message.getBooleanFieldWithDefault(msg, 19, false),
+    shouldCheckRemittance: jspb.Message.getBooleanFieldWithDefault(msg, 21, false),
+    inheritWalletId: jspb.Message.getFieldWithDefault(msg, 22, ""),
     createTime: (f = msg.getCreateTime()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f),
     updateTime: (f = msg.getUpdateTime()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f)
   };
@@ -2254,6 +2642,14 @@ proto.adamant.global.v1.WalletWithoutBalance.deserializeBinaryFromReader = funct
     case 19:
       var value = /** @type {boolean} */ (reader.readBool());
       msg.setWatchOnly(value);
+      break;
+    case 21:
+      var value = /** @type {boolean} */ (reader.readBool());
+      msg.setShouldCheckRemittance(value);
+      break;
+    case 22:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setInheritWalletId(value);
       break;
     case 17:
       var value = new google_protobuf_timestamp_pb.Timestamp;
@@ -2423,6 +2819,20 @@ proto.adamant.global.v1.WalletWithoutBalance.serializeBinaryToWriter = function(
       f
     );
   }
+  f = message.getShouldCheckRemittance();
+  if (f) {
+    writer.writeBool(
+      21,
+      f
+    );
+  }
+  f = message.getInheritWalletId();
+  if (f.length > 0) {
+    writer.writeString(
+      22,
+      f
+    );
+  }
   f = message.getCreateTime();
   if (f != null) {
     writer.writeMessage(
@@ -2451,9 +2861,12 @@ proto.adamant.global.v1.WalletWithoutBalance.prototype.getOwnerId = function() {
 };
 
 
-/** @param {string} value */
+/**
+ * @param {string} value
+ * @return {!proto.adamant.global.v1.WalletWithoutBalance} returns this
+ */
 proto.adamant.global.v1.WalletWithoutBalance.prototype.setOwnerId = function(value) {
-  jspb.Message.setProto3StringField(this, 20, value);
+  return jspb.Message.setProto3StringField(this, 20, value);
 };
 
 
@@ -2466,9 +2879,12 @@ proto.adamant.global.v1.WalletWithoutBalance.prototype.getWalletId = function() 
 };
 
 
-/** @param {string} value */
+/**
+ * @param {string} value
+ * @return {!proto.adamant.global.v1.WalletWithoutBalance} returns this
+ */
 proto.adamant.global.v1.WalletWithoutBalance.prototype.setWalletId = function(value) {
-  jspb.Message.setProto3StringField(this, 1, value);
+  return jspb.Message.setProto3StringField(this, 1, value);
 };
 
 
@@ -2481,9 +2897,12 @@ proto.adamant.global.v1.WalletWithoutBalance.prototype.getName = function() {
 };
 
 
-/** @param {string} value */
+/**
+ * @param {string} value
+ * @return {!proto.adamant.global.v1.WalletWithoutBalance} returns this
+ */
 proto.adamant.global.v1.WalletWithoutBalance.prototype.setName = function(value) {
-  jspb.Message.setProto3StringField(this, 2, value);
+  return jspb.Message.setProto3StringField(this, 2, value);
 };
 
 
@@ -2496,9 +2915,12 @@ proto.adamant.global.v1.WalletWithoutBalance.prototype.getCoin = function() {
 };
 
 
-/** @param {!proto.gincoinc.global.v1.Coin} value */
+/**
+ * @param {!proto.gincoinc.global.v1.Coin} value
+ * @return {!proto.adamant.global.v1.WalletWithoutBalance} returns this
+ */
 proto.adamant.global.v1.WalletWithoutBalance.prototype.setCoin = function(value) {
-  jspb.Message.setProto3EnumField(this, 3, value);
+  return jspb.Message.setProto3EnumField(this, 3, value);
 };
 
 
@@ -2511,9 +2933,12 @@ proto.adamant.global.v1.WalletWithoutBalance.prototype.getHdAccount = function()
 };
 
 
-/** @param {number} value */
+/**
+ * @param {number} value
+ * @return {!proto.adamant.global.v1.WalletWithoutBalance} returns this
+ */
 proto.adamant.global.v1.WalletWithoutBalance.prototype.setHdAccount = function(value) {
-  jspb.Message.setProto3IntField(this, 4, value);
+  return jspb.Message.setProto3IntField(this, 4, value);
 };
 
 
@@ -2526,9 +2951,12 @@ proto.adamant.global.v1.WalletWithoutBalance.prototype.getWalletType = function(
 };
 
 
-/** @param {!proto.adamant.global.v1.WalletType} value */
+/**
+ * @param {!proto.adamant.global.v1.WalletType} value
+ * @return {!proto.adamant.global.v1.WalletWithoutBalance} returns this
+ */
 proto.adamant.global.v1.WalletWithoutBalance.prototype.setWalletType = function(value) {
-  jspb.Message.setProto3EnumField(this, 5, value);
+  return jspb.Message.setProto3EnumField(this, 5, value);
 };
 
 
@@ -2541,9 +2969,12 @@ proto.adamant.global.v1.WalletWithoutBalance.prototype.getAddressType = function
 };
 
 
-/** @param {!proto.gincoinc.global.v1.AddressType} value */
+/**
+ * @param {!proto.gincoinc.global.v1.AddressType} value
+ * @return {!proto.adamant.global.v1.WalletWithoutBalance} returns this
+ */
 proto.adamant.global.v1.WalletWithoutBalance.prototype.setAddressType = function(value) {
-  jspb.Message.setProto3EnumField(this, 6, value);
+  return jspb.Message.setProto3EnumField(this, 6, value);
 };
 
 
@@ -2556,9 +2987,12 @@ proto.adamant.global.v1.WalletWithoutBalance.prototype.getM = function() {
 };
 
 
-/** @param {number} value */
+/**
+ * @param {number} value
+ * @return {!proto.adamant.global.v1.WalletWithoutBalance} returns this
+ */
 proto.adamant.global.v1.WalletWithoutBalance.prototype.setM = function(value) {
-  jspb.Message.setProto3IntField(this, 7, value);
+  return jspb.Message.setProto3IntField(this, 7, value);
 };
 
 
@@ -2571,9 +3005,12 @@ proto.adamant.global.v1.WalletWithoutBalance.prototype.getN = function() {
 };
 
 
-/** @param {number} value */
+/**
+ * @param {number} value
+ * @return {!proto.adamant.global.v1.WalletWithoutBalance} returns this
+ */
 proto.adamant.global.v1.WalletWithoutBalance.prototype.setN = function(value) {
-  jspb.Message.setProto3IntField(this, 8, value);
+  return jspb.Message.setProto3IntField(this, 8, value);
 };
 
 
@@ -2586,9 +3023,12 @@ proto.adamant.global.v1.WalletWithoutBalance.prototype.getState = function() {
 };
 
 
-/** @param {!proto.adamant.global.v1.WalletState} value */
+/**
+ * @param {!proto.adamant.global.v1.WalletState} value
+ * @return {!proto.adamant.global.v1.WalletWithoutBalance} returns this
+ */
 proto.adamant.global.v1.WalletWithoutBalance.prototype.setState = function(value) {
-  jspb.Message.setProto3EnumField(this, 9, value);
+  return jspb.Message.setProto3EnumField(this, 9, value);
 };
 
 
@@ -2602,9 +3042,12 @@ proto.adamant.global.v1.WalletWithoutBalance.prototype.getKeysList = function() 
 };
 
 
-/** @param {!Array<!proto.adamant.global.v1.Key>} value */
+/**
+ * @param {!Array<!proto.adamant.global.v1.Key>} value
+ * @return {!proto.adamant.global.v1.WalletWithoutBalance} returns this
+*/
 proto.adamant.global.v1.WalletWithoutBalance.prototype.setKeysList = function(value) {
-  jspb.Message.setRepeatedWrapperField(this, 10, value);
+  return jspb.Message.setRepeatedWrapperField(this, 10, value);
 };
 
 
@@ -2620,9 +3063,10 @@ proto.adamant.global.v1.WalletWithoutBalance.prototype.addKeys = function(opt_va
 
 /**
  * Clears the list making it empty but non-null.
+ * @return {!proto.adamant.global.v1.WalletWithoutBalance} returns this
  */
 proto.adamant.global.v1.WalletWithoutBalance.prototype.clearKeysList = function() {
-  this.setKeysList([]);
+  return this.setKeysList([]);
 };
 
 
@@ -2636,9 +3080,12 @@ proto.adamant.global.v1.WalletWithoutBalance.prototype.getMembersList = function
 };
 
 
-/** @param {!Array<!proto.adamant.global.v1.WalletMember>} value */
+/**
+ * @param {!Array<!proto.adamant.global.v1.WalletMember>} value
+ * @return {!proto.adamant.global.v1.WalletWithoutBalance} returns this
+*/
 proto.adamant.global.v1.WalletWithoutBalance.prototype.setMembersList = function(value) {
-  jspb.Message.setRepeatedWrapperField(this, 11, value);
+  return jspb.Message.setRepeatedWrapperField(this, 11, value);
 };
 
 
@@ -2654,9 +3101,10 @@ proto.adamant.global.v1.WalletWithoutBalance.prototype.addMembers = function(opt
 
 /**
  * Clears the list making it empty but non-null.
+ * @return {!proto.adamant.global.v1.WalletWithoutBalance} returns this
  */
 proto.adamant.global.v1.WalletWithoutBalance.prototype.clearMembersList = function() {
-  this.setMembersList([]);
+  return this.setMembersList([]);
 };
 
 
@@ -2669,9 +3117,12 @@ proto.adamant.global.v1.WalletWithoutBalance.prototype.getRequiredApprovalCount 
 };
 
 
-/** @param {number} value */
+/**
+ * @param {number} value
+ * @return {!proto.adamant.global.v1.WalletWithoutBalance} returns this
+ */
 proto.adamant.global.v1.WalletWithoutBalance.prototype.setRequiredApprovalCount = function(value) {
-  jspb.Message.setProto3IntField(this, 12, value);
+  return jspb.Message.setProto3IntField(this, 12, value);
 };
 
 
@@ -2684,9 +3135,12 @@ proto.adamant.global.v1.WalletWithoutBalance.prototype.getAddress = function() {
 };
 
 
-/** @param {string} value */
+/**
+ * @param {string} value
+ * @return {!proto.adamant.global.v1.WalletWithoutBalance} returns this
+ */
 proto.adamant.global.v1.WalletWithoutBalance.prototype.setAddress = function(value) {
-  jspb.Message.setProto3StringField(this, 13, value);
+  return jspb.Message.setProto3StringField(this, 13, value);
 };
 
 
@@ -2699,9 +3153,12 @@ proto.adamant.global.v1.WalletWithoutBalance.prototype.getPolicyId = function() 
 };
 
 
-/** @param {string} value */
+/**
+ * @param {string} value
+ * @return {!proto.adamant.global.v1.WalletWithoutBalance} returns this
+ */
 proto.adamant.global.v1.WalletWithoutBalance.prototype.setPolicyId = function(value) {
-  jspb.Message.setProto3StringField(this, 14, value);
+  return jspb.Message.setProto3StringField(this, 14, value);
 };
 
 
@@ -2715,17 +3172,21 @@ proto.adamant.global.v1.WalletWithoutBalance.prototype.getProposal = function() 
 };
 
 
-/** @param {?proto.adamant.global.v1.WalletProposal|undefined} value */
+/**
+ * @param {?proto.adamant.global.v1.WalletProposal|undefined} value
+ * @return {!proto.adamant.global.v1.WalletWithoutBalance} returns this
+*/
 proto.adamant.global.v1.WalletWithoutBalance.prototype.setProposal = function(value) {
-  jspb.Message.setWrapperField(this, 15, value);
+  return jspb.Message.setWrapperField(this, 15, value);
 };
 
 
 /**
  * Clears the message field making it undefined.
+ * @return {!proto.adamant.global.v1.WalletWithoutBalance} returns this
  */
 proto.adamant.global.v1.WalletWithoutBalance.prototype.clearProposal = function() {
-  this.setProposal(undefined);
+  return this.setProposal(undefined);
 };
 
 
@@ -2747,9 +3208,12 @@ proto.adamant.global.v1.WalletWithoutBalance.prototype.getDestinationWalletId = 
 };
 
 
-/** @param {string} value */
+/**
+ * @param {string} value
+ * @return {!proto.adamant.global.v1.WalletWithoutBalance} returns this
+ */
 proto.adamant.global.v1.WalletWithoutBalance.prototype.setDestinationWalletId = function(value) {
-  jspb.Message.setProto3StringField(this, 16, value);
+  return jspb.Message.setProto3StringField(this, 16, value);
 };
 
 
@@ -2762,9 +3226,48 @@ proto.adamant.global.v1.WalletWithoutBalance.prototype.getWatchOnly = function()
 };
 
 
-/** @param {boolean} value */
+/**
+ * @param {boolean} value
+ * @return {!proto.adamant.global.v1.WalletWithoutBalance} returns this
+ */
 proto.adamant.global.v1.WalletWithoutBalance.prototype.setWatchOnly = function(value) {
-  jspb.Message.setProto3BooleanField(this, 19, value);
+  return jspb.Message.setProto3BooleanField(this, 19, value);
+};
+
+
+/**
+ * optional bool should_check_remittance = 21;
+ * @return {boolean}
+ */
+proto.adamant.global.v1.WalletWithoutBalance.prototype.getShouldCheckRemittance = function() {
+  return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 21, false));
+};
+
+
+/**
+ * @param {boolean} value
+ * @return {!proto.adamant.global.v1.WalletWithoutBalance} returns this
+ */
+proto.adamant.global.v1.WalletWithoutBalance.prototype.setShouldCheckRemittance = function(value) {
+  return jspb.Message.setProto3BooleanField(this, 21, value);
+};
+
+
+/**
+ * optional string inherit_wallet_id = 22;
+ * @return {string}
+ */
+proto.adamant.global.v1.WalletWithoutBalance.prototype.getInheritWalletId = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 22, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.adamant.global.v1.WalletWithoutBalance} returns this
+ */
+proto.adamant.global.v1.WalletWithoutBalance.prototype.setInheritWalletId = function(value) {
+  return jspb.Message.setProto3StringField(this, 22, value);
 };
 
 
@@ -2778,17 +3281,21 @@ proto.adamant.global.v1.WalletWithoutBalance.prototype.getCreateTime = function(
 };
 
 
-/** @param {?proto.google.protobuf.Timestamp|undefined} value */
+/**
+ * @param {?proto.google.protobuf.Timestamp|undefined} value
+ * @return {!proto.adamant.global.v1.WalletWithoutBalance} returns this
+*/
 proto.adamant.global.v1.WalletWithoutBalance.prototype.setCreateTime = function(value) {
-  jspb.Message.setWrapperField(this, 17, value);
+  return jspb.Message.setWrapperField(this, 17, value);
 };
 
 
 /**
  * Clears the message field making it undefined.
+ * @return {!proto.adamant.global.v1.WalletWithoutBalance} returns this
  */
 proto.adamant.global.v1.WalletWithoutBalance.prototype.clearCreateTime = function() {
-  this.setCreateTime(undefined);
+  return this.setCreateTime(undefined);
 };
 
 
@@ -2811,17 +3318,21 @@ proto.adamant.global.v1.WalletWithoutBalance.prototype.getUpdateTime = function(
 };
 
 
-/** @param {?proto.google.protobuf.Timestamp|undefined} value */
+/**
+ * @param {?proto.google.protobuf.Timestamp|undefined} value
+ * @return {!proto.adamant.global.v1.WalletWithoutBalance} returns this
+*/
 proto.adamant.global.v1.WalletWithoutBalance.prototype.setUpdateTime = function(value) {
-  jspb.Message.setWrapperField(this, 18, value);
+  return jspb.Message.setWrapperField(this, 18, value);
 };
 
 
 /**
  * Clears the message field making it undefined.
+ * @return {!proto.adamant.global.v1.WalletWithoutBalance} returns this
  */
 proto.adamant.global.v1.WalletWithoutBalance.prototype.clearUpdateTime = function() {
-  this.setUpdateTime(undefined);
+  return this.setUpdateTime(undefined);
 };
 
 
@@ -3058,9 +3569,12 @@ proto.adamant.global.v1.WalletProposal.prototype.getProposalType = function() {
 };
 
 
-/** @param {!proto.adamant.global.v1.WalletProposalType} value */
+/**
+ * @param {!proto.adamant.global.v1.WalletProposalType} value
+ * @return {!proto.adamant.global.v1.WalletProposal} returns this
+ */
 proto.adamant.global.v1.WalletProposal.prototype.setProposalType = function(value) {
-  jspb.Message.setProto3EnumField(this, 7, value);
+  return jspb.Message.setProto3EnumField(this, 7, value);
 };
 
 
@@ -3073,9 +3587,12 @@ proto.adamant.global.v1.WalletProposal.prototype.getRequesterAccountId = functio
 };
 
 
-/** @param {string} value */
+/**
+ * @param {string} value
+ * @return {!proto.adamant.global.v1.WalletProposal} returns this
+ */
 proto.adamant.global.v1.WalletProposal.prototype.setRequesterAccountId = function(value) {
-  jspb.Message.setProto3StringField(this, 1, value);
+  return jspb.Message.setProto3StringField(this, 1, value);
 };
 
 
@@ -3088,9 +3605,12 @@ proto.adamant.global.v1.WalletProposal.prototype.getRequesterName = function() {
 };
 
 
-/** @param {string} value */
+/**
+ * @param {string} value
+ * @return {!proto.adamant.global.v1.WalletProposal} returns this
+ */
 proto.adamant.global.v1.WalletProposal.prototype.setRequesterName = function(value) {
-  jspb.Message.setProto3StringField(this, 2, value);
+  return jspb.Message.setProto3StringField(this, 2, value);
 };
 
 
@@ -3103,9 +3623,12 @@ proto.adamant.global.v1.WalletProposal.prototype.getApproverAccountId = function
 };
 
 
-/** @param {string} value */
+/**
+ * @param {string} value
+ * @return {!proto.adamant.global.v1.WalletProposal} returns this
+ */
 proto.adamant.global.v1.WalletProposal.prototype.setApproverAccountId = function(value) {
-  jspb.Message.setProto3StringField(this, 3, value);
+  return jspb.Message.setProto3StringField(this, 3, value);
 };
 
 
@@ -3118,9 +3641,12 @@ proto.adamant.global.v1.WalletProposal.prototype.getApproverName = function() {
 };
 
 
-/** @param {string} value */
+/**
+ * @param {string} value
+ * @return {!proto.adamant.global.v1.WalletProposal} returns this
+ */
 proto.adamant.global.v1.WalletProposal.prototype.setApproverName = function(value) {
-  jspb.Message.setProto3StringField(this, 4, value);
+  return jspb.Message.setProto3StringField(this, 4, value);
 };
 
 
@@ -3133,9 +3659,12 @@ proto.adamant.global.v1.WalletProposal.prototype.getProposedPolicy = function() 
 };
 
 
-/** @param {string} value */
+/**
+ * @param {string} value
+ * @return {!proto.adamant.global.v1.WalletProposal} returns this
+ */
 proto.adamant.global.v1.WalletProposal.prototype.setProposedPolicy = function(value) {
-  jspb.Message.setProto3StringField(this, 5, value);
+  return jspb.Message.setProto3StringField(this, 5, value);
 };
 
 
@@ -3148,26 +3677,31 @@ proto.adamant.global.v1.WalletProposal.prototype.getProposedValidatorsList = fun
 };
 
 
-/** @param {!Array<string>} value */
+/**
+ * @param {!Array<string>} value
+ * @return {!proto.adamant.global.v1.WalletProposal} returns this
+ */
 proto.adamant.global.v1.WalletProposal.prototype.setProposedValidatorsList = function(value) {
-  jspb.Message.setField(this, 8, value || []);
+  return jspb.Message.setField(this, 8, value || []);
 };
 
 
 /**
  * @param {string} value
  * @param {number=} opt_index
+ * @return {!proto.adamant.global.v1.WalletProposal} returns this
  */
 proto.adamant.global.v1.WalletProposal.prototype.addProposedValidators = function(value, opt_index) {
-  jspb.Message.addToRepeatedField(this, 8, value, opt_index);
+  return jspb.Message.addToRepeatedField(this, 8, value, opt_index);
 };
 
 
 /**
  * Clears the list making it empty but non-null.
+ * @return {!proto.adamant.global.v1.WalletProposal} returns this
  */
 proto.adamant.global.v1.WalletProposal.prototype.clearProposedValidatorsList = function() {
-  this.setProposedValidatorsList([]);
+  return this.setProposedValidatorsList([]);
 };
 
 
@@ -3180,9 +3714,12 @@ proto.adamant.global.v1.WalletProposal.prototype.getProposedRequiredApprovalCoun
 };
 
 
-/** @param {number} value */
+/**
+ * @param {number} value
+ * @return {!proto.adamant.global.v1.WalletProposal} returns this
+ */
 proto.adamant.global.v1.WalletProposal.prototype.setProposedRequiredApprovalCount = function(value) {
-  jspb.Message.setProto3IntField(this, 9, value);
+  return jspb.Message.setProto3IntField(this, 9, value);
 };
 
 
@@ -3195,9 +3732,12 @@ proto.adamant.global.v1.WalletProposal.prototype.getIsReviewed = function() {
 };
 
 
-/** @param {boolean} value */
+/**
+ * @param {boolean} value
+ * @return {!proto.adamant.global.v1.WalletProposal} returns this
+ */
 proto.adamant.global.v1.WalletProposal.prototype.setIsReviewed = function(value) {
-  jspb.Message.setProto3BooleanField(this, 6, value);
+  return jspb.Message.setProto3BooleanField(this, 6, value);
 };
 
 
@@ -3406,9 +3946,12 @@ proto.adamant.global.v1.WalletMember.prototype.getAccountId = function() {
 };
 
 
-/** @param {string} value */
+/**
+ * @param {string} value
+ * @return {!proto.adamant.global.v1.WalletMember} returns this
+ */
 proto.adamant.global.v1.WalletMember.prototype.setAccountId = function(value) {
-  jspb.Message.setProto3StringField(this, 1, value);
+  return jspb.Message.setProto3StringField(this, 1, value);
 };
 
 
@@ -3421,9 +3964,12 @@ proto.adamant.global.v1.WalletMember.prototype.getAccountType = function() {
 };
 
 
-/** @param {!proto.adamant.global.v1.AccountType} value */
+/**
+ * @param {!proto.adamant.global.v1.AccountType} value
+ * @return {!proto.adamant.global.v1.WalletMember} returns this
+ */
 proto.adamant.global.v1.WalletMember.prototype.setAccountType = function(value) {
-  jspb.Message.setProto3EnumField(this, 2, value);
+  return jspb.Message.setProto3EnumField(this, 2, value);
 };
 
 
@@ -3436,9 +3982,12 @@ proto.adamant.global.v1.WalletMember.prototype.getName = function() {
 };
 
 
-/** @param {string} value */
+/**
+ * @param {string} value
+ * @return {!proto.adamant.global.v1.WalletMember} returns this
+ */
 proto.adamant.global.v1.WalletMember.prototype.setName = function(value) {
-  jspb.Message.setProto3StringField(this, 3, value);
+  return jspb.Message.setProto3StringField(this, 3, value);
 };
 
 
@@ -3451,9 +4000,12 @@ proto.adamant.global.v1.WalletMember.prototype.getEmail = function() {
 };
 
 
-/** @param {string} value */
+/**
+ * @param {string} value
+ * @return {!proto.adamant.global.v1.WalletMember} returns this
+ */
 proto.adamant.global.v1.WalletMember.prototype.setEmail = function(value) {
-  jspb.Message.setProto3StringField(this, 4, value);
+  return jspb.Message.setProto3StringField(this, 4, value);
 };
 
 
@@ -3466,9 +4018,12 @@ proto.adamant.global.v1.WalletMember.prototype.getRole = function() {
 };
 
 
-/** @param {!proto.adamant.global.v1.RoleType} value */
+/**
+ * @param {!proto.adamant.global.v1.RoleType} value
+ * @return {!proto.adamant.global.v1.WalletMember} returns this
+ */
 proto.adamant.global.v1.WalletMember.prototype.setRole = function(value) {
-  jspb.Message.setProto3EnumField(this, 5, value);
+  return jspb.Message.setProto3EnumField(this, 5, value);
 };
 
 
@@ -3481,9 +4036,12 @@ proto.adamant.global.v1.WalletMember.prototype.getIsKeyRegistered = function() {
 };
 
 
-/** @param {boolean} value */
+/**
+ * @param {boolean} value
+ * @return {!proto.adamant.global.v1.WalletMember} returns this
+ */
 proto.adamant.global.v1.WalletMember.prototype.setIsKeyRegistered = function(value) {
-  jspb.Message.setProto3BooleanField(this, 6, value);
+  return jspb.Message.setProto3BooleanField(this, 6, value);
 };
 
 
@@ -3496,9 +4054,12 @@ proto.adamant.global.v1.WalletMember.prototype.getIsMaster = function() {
 };
 
 
-/** @param {boolean} value */
+/**
+ * @param {boolean} value
+ * @return {!proto.adamant.global.v1.WalletMember} returns this
+ */
 proto.adamant.global.v1.WalletMember.prototype.setIsMaster = function(value) {
-  jspb.Message.setProto3BooleanField(this, 7, value);
+  return jspb.Message.setProto3BooleanField(this, 7, value);
 };
 
 
@@ -3511,9 +4072,12 @@ proto.adamant.global.v1.WalletMember.prototype.getIsValidatedToCreateWallet = fu
 };
 
 
-/** @param {boolean} value */
+/**
+ * @param {boolean} value
+ * @return {!proto.adamant.global.v1.WalletMember} returns this
+ */
 proto.adamant.global.v1.WalletMember.prototype.setIsValidatedToCreateWallet = function(value) {
-  jspb.Message.setProto3BooleanField(this, 8, value);
+  return jspb.Message.setProto3BooleanField(this, 8, value);
 };
 
 
@@ -3686,9 +4250,12 @@ proto.adamant.global.v1.Key.prototype.getWalletId = function() {
 };
 
 
-/** @param {string} value */
+/**
+ * @param {string} value
+ * @return {!proto.adamant.global.v1.Key} returns this
+ */
 proto.adamant.global.v1.Key.prototype.setWalletId = function(value) {
-  jspb.Message.setProto3StringField(this, 1, value);
+  return jspb.Message.setProto3StringField(this, 1, value);
 };
 
 
@@ -3701,9 +4268,12 @@ proto.adamant.global.v1.Key.prototype.getAccountId = function() {
 };
 
 
-/** @param {string} value */
+/**
+ * @param {string} value
+ * @return {!proto.adamant.global.v1.Key} returns this
+ */
 proto.adamant.global.v1.Key.prototype.setAccountId = function(value) {
-  jspb.Message.setProto3StringField(this, 2, value);
+  return jspb.Message.setProto3StringField(this, 2, value);
 };
 
 
@@ -3716,9 +4286,12 @@ proto.adamant.global.v1.Key.prototype.getAccountType = function() {
 };
 
 
-/** @param {!proto.adamant.global.v1.AccountType} value */
+/**
+ * @param {!proto.adamant.global.v1.AccountType} value
+ * @return {!proto.adamant.global.v1.Key} returns this
+ */
 proto.adamant.global.v1.Key.prototype.setAccountType = function(value) {
-  jspb.Message.setProto3EnumField(this, 3, value);
+  return jspb.Message.setProto3EnumField(this, 3, value);
 };
 
 
@@ -3731,9 +4304,12 @@ proto.adamant.global.v1.Key.prototype.getKeyId = function() {
 };
 
 
-/** @param {string} value */
+/**
+ * @param {string} value
+ * @return {!proto.adamant.global.v1.Key} returns this
+ */
 proto.adamant.global.v1.Key.prototype.setKeyId = function(value) {
-  jspb.Message.setProto3StringField(this, 4, value);
+  return jspb.Message.setProto3StringField(this, 4, value);
 };
 
 
@@ -3746,9 +4322,12 @@ proto.adamant.global.v1.Key.prototype.getKeyIndex = function() {
 };
 
 
-/** @param {number} value */
+/**
+ * @param {number} value
+ * @return {!proto.adamant.global.v1.Key} returns this
+ */
 proto.adamant.global.v1.Key.prototype.setKeyIndex = function(value) {
-  jspb.Message.setProto3IntField(this, 5, value);
+  return jspb.Message.setProto3IntField(this, 5, value);
 };
 
 
@@ -4009,9 +4588,12 @@ proto.adamant.global.v1.Address.prototype.getWalletId = function() {
 };
 
 
-/** @param {string} value */
+/**
+ * @param {string} value
+ * @return {!proto.adamant.global.v1.Address} returns this
+ */
 proto.adamant.global.v1.Address.prototype.setWalletId = function(value) {
-  jspb.Message.setProto3StringField(this, 1, value);
+  return jspb.Message.setProto3StringField(this, 1, value);
 };
 
 
@@ -4024,9 +4606,12 @@ proto.adamant.global.v1.Address.prototype.getAddressId = function() {
 };
 
 
-/** @param {string} value */
+/**
+ * @param {string} value
+ * @return {!proto.adamant.global.v1.Address} returns this
+ */
 proto.adamant.global.v1.Address.prototype.setAddressId = function(value) {
-  jspb.Message.setProto3StringField(this, 2, value);
+  return jspb.Message.setProto3StringField(this, 2, value);
 };
 
 
@@ -4039,9 +4624,12 @@ proto.adamant.global.v1.Address.prototype.getCoin = function() {
 };
 
 
-/** @param {!proto.gincoinc.global.v1.Coin} value */
+/**
+ * @param {!proto.gincoinc.global.v1.Coin} value
+ * @return {!proto.adamant.global.v1.Address} returns this
+ */
 proto.adamant.global.v1.Address.prototype.setCoin = function(value) {
-  jspb.Message.setProto3EnumField(this, 3, value);
+  return jspb.Message.setProto3EnumField(this, 3, value);
 };
 
 
@@ -4054,9 +4642,12 @@ proto.adamant.global.v1.Address.prototype.getAddress = function() {
 };
 
 
-/** @param {string} value */
+/**
+ * @param {string} value
+ * @return {!proto.adamant.global.v1.Address} returns this
+ */
 proto.adamant.global.v1.Address.prototype.setAddress = function(value) {
-  jspb.Message.setProto3StringField(this, 4, value);
+  return jspb.Message.setProto3StringField(this, 4, value);
 };
 
 
@@ -4069,9 +4660,12 @@ proto.adamant.global.v1.Address.prototype.getIndex = function() {
 };
 
 
-/** @param {number} value */
+/**
+ * @param {number} value
+ * @return {!proto.adamant.global.v1.Address} returns this
+ */
 proto.adamant.global.v1.Address.prototype.setIndex = function(value) {
-  jspb.Message.setProto3IntField(this, 5, value);
+  return jspb.Message.setProto3IntField(this, 5, value);
 };
 
 
@@ -4084,9 +4678,12 @@ proto.adamant.global.v1.Address.prototype.getHdChange = function() {
 };
 
 
-/** @param {number} value */
+/**
+ * @param {number} value
+ * @return {!proto.adamant.global.v1.Address} returns this
+ */
 proto.adamant.global.v1.Address.prototype.setHdChange = function(value) {
-  jspb.Message.setProto3IntField(this, 13, value);
+  return jspb.Message.setProto3IntField(this, 13, value);
 };
 
 
@@ -4099,9 +4696,12 @@ proto.adamant.global.v1.Address.prototype.getBalance = function() {
 };
 
 
-/** @param {number} value */
+/**
+ * @param {number} value
+ * @return {!proto.adamant.global.v1.Address} returns this
+ */
 proto.adamant.global.v1.Address.prototype.setBalance = function(value) {
-  jspb.Message.setProto3FloatField(this, 6, value);
+  return jspb.Message.setProto3FloatField(this, 6, value);
 };
 
 
@@ -4114,9 +4714,12 @@ proto.adamant.global.v1.Address.prototype.getStringBalance = function() {
 };
 
 
-/** @param {string} value */
+/**
+ * @param {string} value
+ * @return {!proto.adamant.global.v1.Address} returns this
+ */
 proto.adamant.global.v1.Address.prototype.setStringBalance = function(value) {
-  jspb.Message.setProto3StringField(this, 7, value);
+  return jspb.Message.setProto3StringField(this, 7, value);
 };
 
 
@@ -4129,9 +4732,12 @@ proto.adamant.global.v1.Address.prototype.getState = function() {
 };
 
 
-/** @param {!proto.adamant.global.v1.AddressState} value */
+/**
+ * @param {!proto.adamant.global.v1.AddressState} value
+ * @return {!proto.adamant.global.v1.Address} returns this
+ */
 proto.adamant.global.v1.Address.prototype.setState = function(value) {
-  jspb.Message.setProto3EnumField(this, 8, value);
+  return jspb.Message.setProto3EnumField(this, 8, value);
 };
 
 
@@ -4144,9 +4750,12 @@ proto.adamant.global.v1.Address.prototype.getAddressType = function() {
 };
 
 
-/** @param {!proto.gincoinc.global.v1.AddressType} value */
+/**
+ * @param {!proto.gincoinc.global.v1.AddressType} value
+ * @return {!proto.adamant.global.v1.Address} returns this
+ */
 proto.adamant.global.v1.Address.prototype.setAddressType = function(value) {
-  jspb.Message.setProto3EnumField(this, 9, value);
+  return jspb.Message.setProto3EnumField(this, 9, value);
 };
 
 
@@ -4160,17 +4769,21 @@ proto.adamant.global.v1.Address.prototype.getCreateTime = function() {
 };
 
 
-/** @param {?proto.google.protobuf.Timestamp|undefined} value */
+/**
+ * @param {?proto.google.protobuf.Timestamp|undefined} value
+ * @return {!proto.adamant.global.v1.Address} returns this
+*/
 proto.adamant.global.v1.Address.prototype.setCreateTime = function(value) {
-  jspb.Message.setWrapperField(this, 11, value);
+  return jspb.Message.setWrapperField(this, 11, value);
 };
 
 
 /**
  * Clears the message field making it undefined.
+ * @return {!proto.adamant.global.v1.Address} returns this
  */
 proto.adamant.global.v1.Address.prototype.clearCreateTime = function() {
-  this.setCreateTime(undefined);
+  return this.setCreateTime(undefined);
 };
 
 
@@ -4193,17 +4806,21 @@ proto.adamant.global.v1.Address.prototype.getUpdateTime = function() {
 };
 
 
-/** @param {?proto.google.protobuf.Timestamp|undefined} value */
+/**
+ * @param {?proto.google.protobuf.Timestamp|undefined} value
+ * @return {!proto.adamant.global.v1.Address} returns this
+*/
 proto.adamant.global.v1.Address.prototype.setUpdateTime = function(value) {
-  jspb.Message.setWrapperField(this, 12, value);
+  return jspb.Message.setWrapperField(this, 12, value);
 };
 
 
 /**
  * Clears the message field making it undefined.
+ * @return {!proto.adamant.global.v1.Address} returns this
  */
 proto.adamant.global.v1.Address.prototype.clearUpdateTime = function() {
-  this.setUpdateTime(undefined);
+  return this.setUpdateTime(undefined);
 };
 
 
@@ -4449,9 +5066,12 @@ proto.adamant.global.v1.AddressWithoutBalance.prototype.getWalletId = function()
 };
 
 
-/** @param {string} value */
+/**
+ * @param {string} value
+ * @return {!proto.adamant.global.v1.AddressWithoutBalance} returns this
+ */
 proto.adamant.global.v1.AddressWithoutBalance.prototype.setWalletId = function(value) {
-  jspb.Message.setProto3StringField(this, 1, value);
+  return jspb.Message.setProto3StringField(this, 1, value);
 };
 
 
@@ -4464,9 +5084,12 @@ proto.adamant.global.v1.AddressWithoutBalance.prototype.getAddressId = function(
 };
 
 
-/** @param {string} value */
+/**
+ * @param {string} value
+ * @return {!proto.adamant.global.v1.AddressWithoutBalance} returns this
+ */
 proto.adamant.global.v1.AddressWithoutBalance.prototype.setAddressId = function(value) {
-  jspb.Message.setProto3StringField(this, 2, value);
+  return jspb.Message.setProto3StringField(this, 2, value);
 };
 
 
@@ -4479,9 +5102,12 @@ proto.adamant.global.v1.AddressWithoutBalance.prototype.getCoin = function() {
 };
 
 
-/** @param {!proto.gincoinc.global.v1.Coin} value */
+/**
+ * @param {!proto.gincoinc.global.v1.Coin} value
+ * @return {!proto.adamant.global.v1.AddressWithoutBalance} returns this
+ */
 proto.adamant.global.v1.AddressWithoutBalance.prototype.setCoin = function(value) {
-  jspb.Message.setProto3EnumField(this, 3, value);
+  return jspb.Message.setProto3EnumField(this, 3, value);
 };
 
 
@@ -4494,9 +5120,12 @@ proto.adamant.global.v1.AddressWithoutBalance.prototype.getAddress = function() 
 };
 
 
-/** @param {string} value */
+/**
+ * @param {string} value
+ * @return {!proto.adamant.global.v1.AddressWithoutBalance} returns this
+ */
 proto.adamant.global.v1.AddressWithoutBalance.prototype.setAddress = function(value) {
-  jspb.Message.setProto3StringField(this, 4, value);
+  return jspb.Message.setProto3StringField(this, 4, value);
 };
 
 
@@ -4509,9 +5138,12 @@ proto.adamant.global.v1.AddressWithoutBalance.prototype.getIndex = function() {
 };
 
 
-/** @param {number} value */
+/**
+ * @param {number} value
+ * @return {!proto.adamant.global.v1.AddressWithoutBalance} returns this
+ */
 proto.adamant.global.v1.AddressWithoutBalance.prototype.setIndex = function(value) {
-  jspb.Message.setProto3IntField(this, 5, value);
+  return jspb.Message.setProto3IntField(this, 5, value);
 };
 
 
@@ -4524,9 +5156,12 @@ proto.adamant.global.v1.AddressWithoutBalance.prototype.getHdChange = function()
 };
 
 
-/** @param {number} value */
+/**
+ * @param {number} value
+ * @return {!proto.adamant.global.v1.AddressWithoutBalance} returns this
+ */
 proto.adamant.global.v1.AddressWithoutBalance.prototype.setHdChange = function(value) {
-  jspb.Message.setProto3IntField(this, 10, value);
+  return jspb.Message.setProto3IntField(this, 10, value);
 };
 
 
@@ -4539,9 +5174,12 @@ proto.adamant.global.v1.AddressWithoutBalance.prototype.getState = function() {
 };
 
 
-/** @param {!proto.adamant.global.v1.AddressState} value */
+/**
+ * @param {!proto.adamant.global.v1.AddressState} value
+ * @return {!proto.adamant.global.v1.AddressWithoutBalance} returns this
+ */
 proto.adamant.global.v1.AddressWithoutBalance.prototype.setState = function(value) {
-  jspb.Message.setProto3EnumField(this, 6, value);
+  return jspb.Message.setProto3EnumField(this, 6, value);
 };
 
 
@@ -4554,9 +5192,12 @@ proto.adamant.global.v1.AddressWithoutBalance.prototype.getAddressType = functio
 };
 
 
-/** @param {!proto.gincoinc.global.v1.AddressType} value */
+/**
+ * @param {!proto.gincoinc.global.v1.AddressType} value
+ * @return {!proto.adamant.global.v1.AddressWithoutBalance} returns this
+ */
 proto.adamant.global.v1.AddressWithoutBalance.prototype.setAddressType = function(value) {
-  jspb.Message.setProto3EnumField(this, 7, value);
+  return jspb.Message.setProto3EnumField(this, 7, value);
 };
 
 
@@ -4570,17 +5211,21 @@ proto.adamant.global.v1.AddressWithoutBalance.prototype.getCreateTime = function
 };
 
 
-/** @param {?proto.google.protobuf.Timestamp|undefined} value */
+/**
+ * @param {?proto.google.protobuf.Timestamp|undefined} value
+ * @return {!proto.adamant.global.v1.AddressWithoutBalance} returns this
+*/
 proto.adamant.global.v1.AddressWithoutBalance.prototype.setCreateTime = function(value) {
-  jspb.Message.setWrapperField(this, 8, value);
+  return jspb.Message.setWrapperField(this, 8, value);
 };
 
 
 /**
  * Clears the message field making it undefined.
+ * @return {!proto.adamant.global.v1.AddressWithoutBalance} returns this
  */
 proto.adamant.global.v1.AddressWithoutBalance.prototype.clearCreateTime = function() {
-  this.setCreateTime(undefined);
+  return this.setCreateTime(undefined);
 };
 
 
@@ -4603,17 +5248,21 @@ proto.adamant.global.v1.AddressWithoutBalance.prototype.getUpdateTime = function
 };
 
 
-/** @param {?proto.google.protobuf.Timestamp|undefined} value */
+/**
+ * @param {?proto.google.protobuf.Timestamp|undefined} value
+ * @return {!proto.adamant.global.v1.AddressWithoutBalance} returns this
+*/
 proto.adamant.global.v1.AddressWithoutBalance.prototype.setUpdateTime = function(value) {
-  jspb.Message.setWrapperField(this, 9, value);
+  return jspb.Message.setWrapperField(this, 9, value);
 };
 
 
 /**
  * Clears the message field making it undefined.
+ * @return {!proto.adamant.global.v1.AddressWithoutBalance} returns this
  */
 proto.adamant.global.v1.AddressWithoutBalance.prototype.clearUpdateTime = function() {
-  this.setUpdateTime(undefined);
+  return this.setUpdateTime(undefined);
 };
 
 
@@ -4843,9 +5492,12 @@ proto.adamant.global.v1.FlushedAddress.prototype.getWalletId = function() {
 };
 
 
-/** @param {string} value */
+/**
+ * @param {string} value
+ * @return {!proto.adamant.global.v1.FlushedAddress} returns this
+ */
 proto.adamant.global.v1.FlushedAddress.prototype.setWalletId = function(value) {
-  jspb.Message.setProto3StringField(this, 1, value);
+  return jspb.Message.setProto3StringField(this, 1, value);
 };
 
 
@@ -4858,9 +5510,12 @@ proto.adamant.global.v1.FlushedAddress.prototype.getAddressId = function() {
 };
 
 
-/** @param {string} value */
+/**
+ * @param {string} value
+ * @return {!proto.adamant.global.v1.FlushedAddress} returns this
+ */
 proto.adamant.global.v1.FlushedAddress.prototype.setAddressId = function(value) {
-  jspb.Message.setProto3StringField(this, 2, value);
+  return jspb.Message.setProto3StringField(this, 2, value);
 };
 
 
@@ -4873,9 +5528,12 @@ proto.adamant.global.v1.FlushedAddress.prototype.getCoin = function() {
 };
 
 
-/** @param {!proto.gincoinc.global.v1.Coin} value */
+/**
+ * @param {!proto.gincoinc.global.v1.Coin} value
+ * @return {!proto.adamant.global.v1.FlushedAddress} returns this
+ */
 proto.adamant.global.v1.FlushedAddress.prototype.setCoin = function(value) {
-  jspb.Message.setProto3EnumField(this, 3, value);
+  return jspb.Message.setProto3EnumField(this, 3, value);
 };
 
 
@@ -4888,9 +5546,12 @@ proto.adamant.global.v1.FlushedAddress.prototype.getAddress = function() {
 };
 
 
-/** @param {string} value */
+/**
+ * @param {string} value
+ * @return {!proto.adamant.global.v1.FlushedAddress} returns this
+ */
 proto.adamant.global.v1.FlushedAddress.prototype.setAddress = function(value) {
-  jspb.Message.setProto3StringField(this, 4, value);
+  return jspb.Message.setProto3StringField(this, 4, value);
 };
 
 
@@ -4903,9 +5564,12 @@ proto.adamant.global.v1.FlushedAddress.prototype.getIndex = function() {
 };
 
 
-/** @param {number} value */
+/**
+ * @param {number} value
+ * @return {!proto.adamant.global.v1.FlushedAddress} returns this
+ */
 proto.adamant.global.v1.FlushedAddress.prototype.setIndex = function(value) {
-  jspb.Message.setProto3IntField(this, 5, value);
+  return jspb.Message.setProto3IntField(this, 5, value);
 };
 
 
@@ -4918,9 +5582,12 @@ proto.adamant.global.v1.FlushedAddress.prototype.getValue = function() {
 };
 
 
-/** @param {number} value */
+/**
+ * @param {number} value
+ * @return {!proto.adamant.global.v1.FlushedAddress} returns this
+ */
 proto.adamant.global.v1.FlushedAddress.prototype.setValue = function(value) {
-  jspb.Message.setProto3FloatField(this, 6, value);
+  return jspb.Message.setProto3FloatField(this, 6, value);
 };
 
 
@@ -4933,9 +5600,12 @@ proto.adamant.global.v1.FlushedAddress.prototype.getStringValue = function() {
 };
 
 
-/** @param {string} value */
+/**
+ * @param {string} value
+ * @return {!proto.adamant.global.v1.FlushedAddress} returns this
+ */
 proto.adamant.global.v1.FlushedAddress.prototype.setStringValue = function(value) {
-  jspb.Message.setProto3StringField(this, 7, value);
+  return jspb.Message.setProto3StringField(this, 7, value);
 };
 
 
@@ -4948,9 +5618,12 @@ proto.adamant.global.v1.FlushedAddress.prototype.getState = function() {
 };
 
 
-/** @param {!proto.adamant.global.v1.AddressState} value */
+/**
+ * @param {!proto.adamant.global.v1.AddressState} value
+ * @return {!proto.adamant.global.v1.FlushedAddress} returns this
+ */
 proto.adamant.global.v1.FlushedAddress.prototype.setState = function(value) {
-  jspb.Message.setProto3EnumField(this, 9, value);
+  return jspb.Message.setProto3EnumField(this, 9, value);
 };
 
 
@@ -4963,9 +5636,12 @@ proto.adamant.global.v1.FlushedAddress.prototype.getAddressType = function() {
 };
 
 
-/** @param {!proto.gincoinc.global.v1.AddressType} value */
+/**
+ * @param {!proto.gincoinc.global.v1.AddressType} value
+ * @return {!proto.adamant.global.v1.FlushedAddress} returns this
+ */
 proto.adamant.global.v1.FlushedAddress.prototype.setAddressType = function(value) {
-  jspb.Message.setProto3EnumField(this, 10, value);
+  return jspb.Message.setProto3EnumField(this, 10, value);
 };
 
 
@@ -5114,9 +5790,12 @@ proto.adamant.global.v1.EthereumFeeAddress.prototype.getAddress = function() {
 };
 
 
-/** @param {string} value */
+/**
+ * @param {string} value
+ * @return {!proto.adamant.global.v1.EthereumFeeAddress} returns this
+ */
 proto.adamant.global.v1.EthereumFeeAddress.prototype.setAddress = function(value) {
-  jspb.Message.setProto3StringField(this, 1, value);
+  return jspb.Message.setProto3StringField(this, 1, value);
 };
 
 
@@ -5129,9 +5808,12 @@ proto.adamant.global.v1.EthereumFeeAddress.prototype.getBalance = function() {
 };
 
 
-/** @param {number} value */
+/**
+ * @param {number} value
+ * @return {!proto.adamant.global.v1.EthereumFeeAddress} returns this
+ */
 proto.adamant.global.v1.EthereumFeeAddress.prototype.setBalance = function(value) {
-  jspb.Message.setProto3FloatField(this, 2, value);
+  return jspb.Message.setProto3FloatField(this, 2, value);
 };
 
 
@@ -5144,9 +5826,12 @@ proto.adamant.global.v1.EthereumFeeAddress.prototype.getStringBalance = function
 };
 
 
-/** @param {string} value */
+/**
+ * @param {string} value
+ * @return {!proto.adamant.global.v1.EthereumFeeAddress} returns this
+ */
 proto.adamant.global.v1.EthereumFeeAddress.prototype.setStringBalance = function(value) {
-  jspb.Message.setProto3StringField(this, 3, value);
+  return jspb.Message.setProto3StringField(this, 3, value);
 };
 
 
@@ -5319,9 +6004,12 @@ proto.adamant.global.v1.AddressWithBalance.prototype.getAddress = function() {
 };
 
 
-/** @param {string} value */
+/**
+ * @param {string} value
+ * @return {!proto.adamant.global.v1.AddressWithBalance} returns this
+ */
 proto.adamant.global.v1.AddressWithBalance.prototype.setAddress = function(value) {
-  jspb.Message.setProto3StringField(this, 1, value);
+  return jspb.Message.setProto3StringField(this, 1, value);
 };
 
 
@@ -5334,9 +6022,12 @@ proto.adamant.global.v1.AddressWithBalance.prototype.getBalance = function() {
 };
 
 
-/** @param {number} value */
+/**
+ * @param {number} value
+ * @return {!proto.adamant.global.v1.AddressWithBalance} returns this
+ */
 proto.adamant.global.v1.AddressWithBalance.prototype.setBalance = function(value) {
-  jspb.Message.setProto3FloatField(this, 2, value);
+  return jspb.Message.setProto3FloatField(this, 2, value);
 };
 
 
@@ -5349,9 +6040,12 @@ proto.adamant.global.v1.AddressWithBalance.prototype.getStringBalance = function
 };
 
 
-/** @param {string} value */
+/**
+ * @param {string} value
+ * @return {!proto.adamant.global.v1.AddressWithBalance} returns this
+ */
 proto.adamant.global.v1.AddressWithBalance.prototype.setStringBalance = function(value) {
-  jspb.Message.setProto3StringField(this, 3, value);
+  return jspb.Message.setProto3StringField(this, 3, value);
 };
 
 
@@ -5364,9 +6058,12 @@ proto.adamant.global.v1.AddressWithBalance.prototype.getFeeBalance = function() 
 };
 
 
-/** @param {number} value */
+/**
+ * @param {number} value
+ * @return {!proto.adamant.global.v1.AddressWithBalance} returns this
+ */
 proto.adamant.global.v1.AddressWithBalance.prototype.setFeeBalance = function(value) {
-  jspb.Message.setProto3FloatField(this, 4, value);
+  return jspb.Message.setProto3FloatField(this, 4, value);
 };
 
 
@@ -5379,9 +6076,12 @@ proto.adamant.global.v1.AddressWithBalance.prototype.getStringFeeBalance = funct
 };
 
 
-/** @param {string} value */
+/**
+ * @param {string} value
+ * @return {!proto.adamant.global.v1.AddressWithBalance} returns this
+ */
 proto.adamant.global.v1.AddressWithBalance.prototype.setStringFeeBalance = function(value) {
-  jspb.Message.setProto3StringField(this, 5, value);
+  return jspb.Message.setProto3StringField(this, 5, value);
 };
 
 
@@ -5447,6 +6147,9 @@ proto.adamant.global.v1.Transaction.toObject = function(includeInstance, msg) {
     xrpSpecific: (f = msg.getXrpSpecific()) && proto.adamant.global.v1.XrpSpecific.toObject(includeInstance, f),
     tronSpecific: (f = msg.getTronSpecific()) && proto.adamant.global.v1.TronSpecific.toObject(includeInstance, f),
     c0banSpecific: (f = msg.getC0banSpecific()) && proto.adamant.global.v1.C0banSpecific.toObject(includeInstance, f),
+    stellarSpecific: (f = msg.getStellarSpecific()) && proto.adamant.global.v1.StellarSpecific.toObject(includeInstance, f),
+    cardanoSpecific: (f = msg.getCardanoSpecific()) && proto.adamant.global.v1.CardanoSpecific.toObject(includeInstance, f),
+    substrateSpecific: (f = msg.getSubstrateSpecific()) && proto.adamant.global.v1.SubstrateSpecific.toObject(includeInstance, f),
     createTime: (f = msg.getCreateTime()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f),
     updateTime: (f = msg.getUpdateTime()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f)
   };
@@ -5577,6 +6280,21 @@ proto.adamant.global.v1.Transaction.deserializeBinaryFromReader = function(msg, 
       var value = new proto.adamant.global.v1.C0banSpecific;
       reader.readMessage(value,proto.adamant.global.v1.C0banSpecific.deserializeBinaryFromReader);
       msg.setC0banSpecific(value);
+      break;
+    case 27:
+      var value = new proto.adamant.global.v1.StellarSpecific;
+      reader.readMessage(value,proto.adamant.global.v1.StellarSpecific.deserializeBinaryFromReader);
+      msg.setStellarSpecific(value);
+      break;
+    case 28:
+      var value = new proto.adamant.global.v1.CardanoSpecific;
+      reader.readMessage(value,proto.adamant.global.v1.CardanoSpecific.deserializeBinaryFromReader);
+      msg.setCardanoSpecific(value);
+      break;
+    case 29:
+      var value = new proto.adamant.global.v1.SubstrateSpecific;
+      reader.readMessage(value,proto.adamant.global.v1.SubstrateSpecific.deserializeBinaryFromReader);
+      msg.setSubstrateSpecific(value);
       break;
     case 18:
       var value = new google_protobuf_timestamp_pb.Timestamp;
@@ -5773,6 +6491,30 @@ proto.adamant.global.v1.Transaction.serializeBinaryToWriter = function(message, 
       proto.adamant.global.v1.C0banSpecific.serializeBinaryToWriter
     );
   }
+  f = message.getStellarSpecific();
+  if (f != null) {
+    writer.writeMessage(
+      27,
+      f,
+      proto.adamant.global.v1.StellarSpecific.serializeBinaryToWriter
+    );
+  }
+  f = message.getCardanoSpecific();
+  if (f != null) {
+    writer.writeMessage(
+      28,
+      f,
+      proto.adamant.global.v1.CardanoSpecific.serializeBinaryToWriter
+    );
+  }
+  f = message.getSubstrateSpecific();
+  if (f != null) {
+    writer.writeMessage(
+      29,
+      f,
+      proto.adamant.global.v1.SubstrateSpecific.serializeBinaryToWriter
+    );
+  }
   f = message.getCreateTime();
   if (f != null) {
     writer.writeMessage(
@@ -5801,9 +6543,12 @@ proto.adamant.global.v1.Transaction.prototype.getWalletId = function() {
 };
 
 
-/** @param {string} value */
+/**
+ * @param {string} value
+ * @return {!proto.adamant.global.v1.Transaction} returns this
+ */
 proto.adamant.global.v1.Transaction.prototype.setWalletId = function(value) {
-  jspb.Message.setProto3StringField(this, 1, value);
+  return jspb.Message.setProto3StringField(this, 1, value);
 };
 
 
@@ -5816,9 +6561,12 @@ proto.adamant.global.v1.Transaction.prototype.getTransactionId = function() {
 };
 
 
-/** @param {string} value */
+/**
+ * @param {string} value
+ * @return {!proto.adamant.global.v1.Transaction} returns this
+ */
 proto.adamant.global.v1.Transaction.prototype.setTransactionId = function(value) {
-  jspb.Message.setProto3StringField(this, 2, value);
+  return jspb.Message.setProto3StringField(this, 2, value);
 };
 
 
@@ -5831,9 +6579,12 @@ proto.adamant.global.v1.Transaction.prototype.getCoin = function() {
 };
 
 
-/** @param {!proto.gincoinc.global.v1.Coin} value */
+/**
+ * @param {!proto.gincoinc.global.v1.Coin} value
+ * @return {!proto.adamant.global.v1.Transaction} returns this
+ */
 proto.adamant.global.v1.Transaction.prototype.setCoin = function(value) {
-  jspb.Message.setProto3EnumField(this, 3, value);
+  return jspb.Message.setProto3EnumField(this, 3, value);
 };
 
 
@@ -5846,9 +6597,12 @@ proto.adamant.global.v1.Transaction.prototype.getTxId = function() {
 };
 
 
-/** @param {string} value */
+/**
+ * @param {string} value
+ * @return {!proto.adamant.global.v1.Transaction} returns this
+ */
 proto.adamant.global.v1.Transaction.prototype.setTxId = function(value) {
-  jspb.Message.setProto3StringField(this, 4, value);
+  return jspb.Message.setProto3StringField(this, 4, value);
 };
 
 
@@ -5861,9 +6615,12 @@ proto.adamant.global.v1.Transaction.prototype.getAddress = function() {
 };
 
 
-/** @param {string} value */
+/**
+ * @param {string} value
+ * @return {!proto.adamant.global.v1.Transaction} returns this
+ */
 proto.adamant.global.v1.Transaction.prototype.setAddress = function(value) {
-  jspb.Message.setProto3StringField(this, 5, value);
+  return jspb.Message.setProto3StringField(this, 5, value);
 };
 
 
@@ -5876,9 +6633,12 @@ proto.adamant.global.v1.Transaction.prototype.getValue = function() {
 };
 
 
-/** @param {number} value */
+/**
+ * @param {number} value
+ * @return {!proto.adamant.global.v1.Transaction} returns this
+ */
 proto.adamant.global.v1.Transaction.prototype.setValue = function(value) {
-  jspb.Message.setProto3FloatField(this, 6, value);
+  return jspb.Message.setProto3FloatField(this, 6, value);
 };
 
 
@@ -5891,9 +6651,12 @@ proto.adamant.global.v1.Transaction.prototype.getStringValue = function() {
 };
 
 
-/** @param {string} value */
+/**
+ * @param {string} value
+ * @return {!proto.adamant.global.v1.Transaction} returns this
+ */
 proto.adamant.global.v1.Transaction.prototype.setStringValue = function(value) {
-  jspb.Message.setProto3StringField(this, 7, value);
+  return jspb.Message.setProto3StringField(this, 7, value);
 };
 
 
@@ -5906,9 +6669,12 @@ proto.adamant.global.v1.Transaction.prototype.getJpyRate = function() {
 };
 
 
-/** @param {number} value */
+/**
+ * @param {number} value
+ * @return {!proto.adamant.global.v1.Transaction} returns this
+ */
 proto.adamant.global.v1.Transaction.prototype.setJpyRate = function(value) {
-  jspb.Message.setProto3FloatField(this, 9, value);
+  return jspb.Message.setProto3FloatField(this, 9, value);
 };
 
 
@@ -5921,9 +6687,12 @@ proto.adamant.global.v1.Transaction.prototype.getFee = function() {
 };
 
 
-/** @param {number} value */
+/**
+ * @param {number} value
+ * @return {!proto.adamant.global.v1.Transaction} returns this
+ */
 proto.adamant.global.v1.Transaction.prototype.setFee = function(value) {
-  jspb.Message.setProto3FloatField(this, 10, value);
+  return jspb.Message.setProto3FloatField(this, 10, value);
 };
 
 
@@ -5936,9 +6705,12 @@ proto.adamant.global.v1.Transaction.prototype.getStringFee = function() {
 };
 
 
-/** @param {string} value */
+/**
+ * @param {string} value
+ * @return {!proto.adamant.global.v1.Transaction} returns this
+ */
 proto.adamant.global.v1.Transaction.prototype.setStringFee = function(value) {
-  jspb.Message.setProto3StringField(this, 11, value);
+  return jspb.Message.setProto3StringField(this, 11, value);
 };
 
 
@@ -5951,9 +6723,12 @@ proto.adamant.global.v1.Transaction.prototype.getFeeRate = function() {
 };
 
 
-/** @param {number} value */
+/**
+ * @param {number} value
+ * @return {!proto.adamant.global.v1.Transaction} returns this
+ */
 proto.adamant.global.v1.Transaction.prototype.setFeeRate = function(value) {
-  jspb.Message.setProto3IntField(this, 12, value);
+  return jspb.Message.setProto3IntField(this, 12, value);
 };
 
 
@@ -5966,9 +6741,12 @@ proto.adamant.global.v1.Transaction.prototype.getState = function() {
 };
 
 
-/** @param {!proto.adamant.global.v1.TransactionState} value */
+/**
+ * @param {!proto.adamant.global.v1.TransactionState} value
+ * @return {!proto.adamant.global.v1.Transaction} returns this
+ */
 proto.adamant.global.v1.Transaction.prototype.setState = function(value) {
-  jspb.Message.setProto3EnumField(this, 13, value);
+  return jspb.Message.setProto3EnumField(this, 13, value);
 };
 
 
@@ -5982,9 +6760,12 @@ proto.adamant.global.v1.Transaction.prototype.getSignedKeysList = function() {
 };
 
 
-/** @param {!Array<!proto.adamant.global.v1.Key>} value */
+/**
+ * @param {!Array<!proto.adamant.global.v1.Key>} value
+ * @return {!proto.adamant.global.v1.Transaction} returns this
+*/
 proto.adamant.global.v1.Transaction.prototype.setSignedKeysList = function(value) {
-  jspb.Message.setRepeatedWrapperField(this, 14, value);
+  return jspb.Message.setRepeatedWrapperField(this, 14, value);
 };
 
 
@@ -6000,9 +6781,10 @@ proto.adamant.global.v1.Transaction.prototype.addSignedKeys = function(opt_value
 
 /**
  * Clears the list making it empty but non-null.
+ * @return {!proto.adamant.global.v1.Transaction} returns this
  */
 proto.adamant.global.v1.Transaction.prototype.clearSignedKeysList = function() {
-  this.setSignedKeysList([]);
+  return this.setSignedKeysList([]);
 };
 
 
@@ -6016,9 +6798,12 @@ proto.adamant.global.v1.Transaction.prototype.getMembersList = function() {
 };
 
 
-/** @param {!Array<!proto.adamant.global.v1.TransactionMember>} value */
+/**
+ * @param {!Array<!proto.adamant.global.v1.TransactionMember>} value
+ * @return {!proto.adamant.global.v1.Transaction} returns this
+*/
 proto.adamant.global.v1.Transaction.prototype.setMembersList = function(value) {
-  jspb.Message.setRepeatedWrapperField(this, 17, value);
+  return jspb.Message.setRepeatedWrapperField(this, 17, value);
 };
 
 
@@ -6034,9 +6819,10 @@ proto.adamant.global.v1.Transaction.prototype.addMembers = function(opt_value, o
 
 /**
  * Clears the list making it empty but non-null.
+ * @return {!proto.adamant.global.v1.Transaction} returns this
  */
 proto.adamant.global.v1.Transaction.prototype.clearMembersList = function() {
-  this.setMembersList([]);
+  return this.setMembersList([]);
 };
 
 
@@ -6050,17 +6836,21 @@ proto.adamant.global.v1.Transaction.prototype.getBitcoinSpecific = function() {
 };
 
 
-/** @param {?proto.adamant.global.v1.BitcoinSpecific|undefined} value */
+/**
+ * @param {?proto.adamant.global.v1.BitcoinSpecific|undefined} value
+ * @return {!proto.adamant.global.v1.Transaction} returns this
+*/
 proto.adamant.global.v1.Transaction.prototype.setBitcoinSpecific = function(value) {
-  jspb.Message.setWrapperField(this, 22, value);
+  return jspb.Message.setWrapperField(this, 22, value);
 };
 
 
 /**
  * Clears the message field making it undefined.
+ * @return {!proto.adamant.global.v1.Transaction} returns this
  */
 proto.adamant.global.v1.Transaction.prototype.clearBitcoinSpecific = function() {
-  this.setBitcoinSpecific(undefined);
+  return this.setBitcoinSpecific(undefined);
 };
 
 
@@ -6083,17 +6873,21 @@ proto.adamant.global.v1.Transaction.prototype.getEthereumSpecific = function() {
 };
 
 
-/** @param {?proto.adamant.global.v1.EthereumSpecific|undefined} value */
+/**
+ * @param {?proto.adamant.global.v1.EthereumSpecific|undefined} value
+ * @return {!proto.adamant.global.v1.Transaction} returns this
+*/
 proto.adamant.global.v1.Transaction.prototype.setEthereumSpecific = function(value) {
-  jspb.Message.setWrapperField(this, 20, value);
+  return jspb.Message.setWrapperField(this, 20, value);
 };
 
 
 /**
  * Clears the message field making it undefined.
+ * @return {!proto.adamant.global.v1.Transaction} returns this
  */
 proto.adamant.global.v1.Transaction.prototype.clearEthereumSpecific = function() {
-  this.setEthereumSpecific(undefined);
+  return this.setEthereumSpecific(undefined);
 };
 
 
@@ -6116,17 +6910,21 @@ proto.adamant.global.v1.Transaction.prototype.getLitecoinSpecific = function() {
 };
 
 
-/** @param {?proto.adamant.global.v1.LitecoinSpecific|undefined} value */
+/**
+ * @param {?proto.adamant.global.v1.LitecoinSpecific|undefined} value
+ * @return {!proto.adamant.global.v1.Transaction} returns this
+*/
 proto.adamant.global.v1.Transaction.prototype.setLitecoinSpecific = function(value) {
-  jspb.Message.setWrapperField(this, 23, value);
+  return jspb.Message.setWrapperField(this, 23, value);
 };
 
 
 /**
  * Clears the message field making it undefined.
+ * @return {!proto.adamant.global.v1.Transaction} returns this
  */
 proto.adamant.global.v1.Transaction.prototype.clearLitecoinSpecific = function() {
-  this.setLitecoinSpecific(undefined);
+  return this.setLitecoinSpecific(undefined);
 };
 
 
@@ -6149,17 +6947,21 @@ proto.adamant.global.v1.Transaction.prototype.getBitcoincashSpecific = function(
 };
 
 
-/** @param {?proto.adamant.global.v1.BitcoincashSpecific|undefined} value */
+/**
+ * @param {?proto.adamant.global.v1.BitcoincashSpecific|undefined} value
+ * @return {!proto.adamant.global.v1.Transaction} returns this
+*/
 proto.adamant.global.v1.Transaction.prototype.setBitcoincashSpecific = function(value) {
-  jspb.Message.setWrapperField(this, 24, value);
+  return jspb.Message.setWrapperField(this, 24, value);
 };
 
 
 /**
  * Clears the message field making it undefined.
+ * @return {!proto.adamant.global.v1.Transaction} returns this
  */
 proto.adamant.global.v1.Transaction.prototype.clearBitcoincashSpecific = function() {
-  this.setBitcoincashSpecific(undefined);
+  return this.setBitcoincashSpecific(undefined);
 };
 
 
@@ -6182,17 +6984,21 @@ proto.adamant.global.v1.Transaction.prototype.getXrpSpecific = function() {
 };
 
 
-/** @param {?proto.adamant.global.v1.XrpSpecific|undefined} value */
+/**
+ * @param {?proto.adamant.global.v1.XrpSpecific|undefined} value
+ * @return {!proto.adamant.global.v1.Transaction} returns this
+*/
 proto.adamant.global.v1.Transaction.prototype.setXrpSpecific = function(value) {
-  jspb.Message.setWrapperField(this, 21, value);
+  return jspb.Message.setWrapperField(this, 21, value);
 };
 
 
 /**
  * Clears the message field making it undefined.
+ * @return {!proto.adamant.global.v1.Transaction} returns this
  */
 proto.adamant.global.v1.Transaction.prototype.clearXrpSpecific = function() {
-  this.setXrpSpecific(undefined);
+  return this.setXrpSpecific(undefined);
 };
 
 
@@ -6215,17 +7021,21 @@ proto.adamant.global.v1.Transaction.prototype.getTronSpecific = function() {
 };
 
 
-/** @param {?proto.adamant.global.v1.TronSpecific|undefined} value */
+/**
+ * @param {?proto.adamant.global.v1.TronSpecific|undefined} value
+ * @return {!proto.adamant.global.v1.Transaction} returns this
+*/
 proto.adamant.global.v1.Transaction.prototype.setTronSpecific = function(value) {
-  jspb.Message.setWrapperField(this, 25, value);
+  return jspb.Message.setWrapperField(this, 25, value);
 };
 
 
 /**
  * Clears the message field making it undefined.
+ * @return {!proto.adamant.global.v1.Transaction} returns this
  */
 proto.adamant.global.v1.Transaction.prototype.clearTronSpecific = function() {
-  this.setTronSpecific(undefined);
+  return this.setTronSpecific(undefined);
 };
 
 
@@ -6248,17 +7058,21 @@ proto.adamant.global.v1.Transaction.prototype.getC0banSpecific = function() {
 };
 
 
-/** @param {?proto.adamant.global.v1.C0banSpecific|undefined} value */
+/**
+ * @param {?proto.adamant.global.v1.C0banSpecific|undefined} value
+ * @return {!proto.adamant.global.v1.Transaction} returns this
+*/
 proto.adamant.global.v1.Transaction.prototype.setC0banSpecific = function(value) {
-  jspb.Message.setWrapperField(this, 26, value);
+  return jspb.Message.setWrapperField(this, 26, value);
 };
 
 
 /**
  * Clears the message field making it undefined.
+ * @return {!proto.adamant.global.v1.Transaction} returns this
  */
 proto.adamant.global.v1.Transaction.prototype.clearC0banSpecific = function() {
-  this.setC0banSpecific(undefined);
+  return this.setC0banSpecific(undefined);
 };
 
 
@@ -6272,6 +7086,117 @@ proto.adamant.global.v1.Transaction.prototype.hasC0banSpecific = function() {
 
 
 /**
+ * optional StellarSpecific stellar_specific = 27;
+ * @return {?proto.adamant.global.v1.StellarSpecific}
+ */
+proto.adamant.global.v1.Transaction.prototype.getStellarSpecific = function() {
+  return /** @type{?proto.adamant.global.v1.StellarSpecific} */ (
+    jspb.Message.getWrapperField(this, proto.adamant.global.v1.StellarSpecific, 27));
+};
+
+
+/**
+ * @param {?proto.adamant.global.v1.StellarSpecific|undefined} value
+ * @return {!proto.adamant.global.v1.Transaction} returns this
+*/
+proto.adamant.global.v1.Transaction.prototype.setStellarSpecific = function(value) {
+  return jspb.Message.setWrapperField(this, 27, value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
+ * @return {!proto.adamant.global.v1.Transaction} returns this
+ */
+proto.adamant.global.v1.Transaction.prototype.clearStellarSpecific = function() {
+  return this.setStellarSpecific(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.adamant.global.v1.Transaction.prototype.hasStellarSpecific = function() {
+  return jspb.Message.getField(this, 27) != null;
+};
+
+
+/**
+ * optional CardanoSpecific cardano_specific = 28;
+ * @return {?proto.adamant.global.v1.CardanoSpecific}
+ */
+proto.adamant.global.v1.Transaction.prototype.getCardanoSpecific = function() {
+  return /** @type{?proto.adamant.global.v1.CardanoSpecific} */ (
+    jspb.Message.getWrapperField(this, proto.adamant.global.v1.CardanoSpecific, 28));
+};
+
+
+/**
+ * @param {?proto.adamant.global.v1.CardanoSpecific|undefined} value
+ * @return {!proto.adamant.global.v1.Transaction} returns this
+*/
+proto.adamant.global.v1.Transaction.prototype.setCardanoSpecific = function(value) {
+  return jspb.Message.setWrapperField(this, 28, value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
+ * @return {!proto.adamant.global.v1.Transaction} returns this
+ */
+proto.adamant.global.v1.Transaction.prototype.clearCardanoSpecific = function() {
+  return this.setCardanoSpecific(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.adamant.global.v1.Transaction.prototype.hasCardanoSpecific = function() {
+  return jspb.Message.getField(this, 28) != null;
+};
+
+
+/**
+ * optional SubstrateSpecific substrate_specific = 29;
+ * @return {?proto.adamant.global.v1.SubstrateSpecific}
+ */
+proto.adamant.global.v1.Transaction.prototype.getSubstrateSpecific = function() {
+  return /** @type{?proto.adamant.global.v1.SubstrateSpecific} */ (
+    jspb.Message.getWrapperField(this, proto.adamant.global.v1.SubstrateSpecific, 29));
+};
+
+
+/**
+ * @param {?proto.adamant.global.v1.SubstrateSpecific|undefined} value
+ * @return {!proto.adamant.global.v1.Transaction} returns this
+*/
+proto.adamant.global.v1.Transaction.prototype.setSubstrateSpecific = function(value) {
+  return jspb.Message.setWrapperField(this, 29, value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
+ * @return {!proto.adamant.global.v1.Transaction} returns this
+ */
+proto.adamant.global.v1.Transaction.prototype.clearSubstrateSpecific = function() {
+  return this.setSubstrateSpecific(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.adamant.global.v1.Transaction.prototype.hasSubstrateSpecific = function() {
+  return jspb.Message.getField(this, 29) != null;
+};
+
+
+/**
  * optional google.protobuf.Timestamp create_time = 18;
  * @return {?proto.google.protobuf.Timestamp}
  */
@@ -6281,17 +7206,21 @@ proto.adamant.global.v1.Transaction.prototype.getCreateTime = function() {
 };
 
 
-/** @param {?proto.google.protobuf.Timestamp|undefined} value */
+/**
+ * @param {?proto.google.protobuf.Timestamp|undefined} value
+ * @return {!proto.adamant.global.v1.Transaction} returns this
+*/
 proto.adamant.global.v1.Transaction.prototype.setCreateTime = function(value) {
-  jspb.Message.setWrapperField(this, 18, value);
+  return jspb.Message.setWrapperField(this, 18, value);
 };
 
 
 /**
  * Clears the message field making it undefined.
+ * @return {!proto.adamant.global.v1.Transaction} returns this
  */
 proto.adamant.global.v1.Transaction.prototype.clearCreateTime = function() {
-  this.setCreateTime(undefined);
+  return this.setCreateTime(undefined);
 };
 
 
@@ -6314,17 +7243,21 @@ proto.adamant.global.v1.Transaction.prototype.getUpdateTime = function() {
 };
 
 
-/** @param {?proto.google.protobuf.Timestamp|undefined} value */
+/**
+ * @param {?proto.google.protobuf.Timestamp|undefined} value
+ * @return {!proto.adamant.global.v1.Transaction} returns this
+*/
 proto.adamant.global.v1.Transaction.prototype.setUpdateTime = function(value) {
-  jspb.Message.setWrapperField(this, 19, value);
+  return jspb.Message.setWrapperField(this, 19, value);
 };
 
 
 /**
  * Clears the message field making it undefined.
+ * @return {!proto.adamant.global.v1.Transaction} returns this
  */
 proto.adamant.global.v1.Transaction.prototype.clearUpdateTime = function() {
-  this.setUpdateTime(undefined);
+  return this.setUpdateTime(undefined);
 };
 
 
@@ -6530,9 +7463,12 @@ proto.adamant.global.v1.TransactionMember.prototype.getAccountId = function() {
 };
 
 
-/** @param {string} value */
+/**
+ * @param {string} value
+ * @return {!proto.adamant.global.v1.TransactionMember} returns this
+ */
 proto.adamant.global.v1.TransactionMember.prototype.setAccountId = function(value) {
-  jspb.Message.setProto3StringField(this, 1, value);
+  return jspb.Message.setProto3StringField(this, 1, value);
 };
 
 
@@ -6545,9 +7481,12 @@ proto.adamant.global.v1.TransactionMember.prototype.getAccountType = function() 
 };
 
 
-/** @param {!proto.adamant.global.v1.AccountType} value */
+/**
+ * @param {!proto.adamant.global.v1.AccountType} value
+ * @return {!proto.adamant.global.v1.TransactionMember} returns this
+ */
 proto.adamant.global.v1.TransactionMember.prototype.setAccountType = function(value) {
-  jspb.Message.setProto3EnumField(this, 2, value);
+  return jspb.Message.setProto3EnumField(this, 2, value);
 };
 
 
@@ -6560,9 +7499,12 @@ proto.adamant.global.v1.TransactionMember.prototype.getName = function() {
 };
 
 
-/** @param {string} value */
+/**
+ * @param {string} value
+ * @return {!proto.adamant.global.v1.TransactionMember} returns this
+ */
 proto.adamant.global.v1.TransactionMember.prototype.setName = function(value) {
-  jspb.Message.setProto3StringField(this, 3, value);
+  return jspb.Message.setProto3StringField(this, 3, value);
 };
 
 
@@ -6575,9 +7517,12 @@ proto.adamant.global.v1.TransactionMember.prototype.getEmail = function() {
 };
 
 
-/** @param {string} value */
+/**
+ * @param {string} value
+ * @return {!proto.adamant.global.v1.TransactionMember} returns this
+ */
 proto.adamant.global.v1.TransactionMember.prototype.setEmail = function(value) {
-  jspb.Message.setProto3StringField(this, 4, value);
+  return jspb.Message.setProto3StringField(this, 4, value);
 };
 
 
@@ -6590,9 +7535,12 @@ proto.adamant.global.v1.TransactionMember.prototype.getRole = function() {
 };
 
 
-/** @param {!proto.adamant.global.v1.RoleType} value */
+/**
+ * @param {!proto.adamant.global.v1.RoleType} value
+ * @return {!proto.adamant.global.v1.TransactionMember} returns this
+ */
 proto.adamant.global.v1.TransactionMember.prototype.setRole = function(value) {
-  jspb.Message.setProto3EnumField(this, 5, value);
+  return jspb.Message.setProto3EnumField(this, 5, value);
 };
 
 
@@ -6605,9 +7553,12 @@ proto.adamant.global.v1.TransactionMember.prototype.getSigned = function() {
 };
 
 
-/** @param {boolean} value */
+/**
+ * @param {boolean} value
+ * @return {!proto.adamant.global.v1.TransactionMember} returns this
+ */
 proto.adamant.global.v1.TransactionMember.prototype.setSigned = function(value) {
-  jspb.Message.setProto3BooleanField(this, 6, value);
+  return jspb.Message.setProto3BooleanField(this, 6, value);
 };
 
 
@@ -6620,9 +7571,12 @@ proto.adamant.global.v1.TransactionMember.prototype.getValidated = function() {
 };
 
 
-/** @param {boolean} value */
+/**
+ * @param {boolean} value
+ * @return {!proto.adamant.global.v1.TransactionMember} returns this
+ */
 proto.adamant.global.v1.TransactionMember.prototype.setValidated = function(value) {
-  jspb.Message.setProto3BooleanField(this, 7, value);
+  return jspb.Message.setProto3BooleanField(this, 7, value);
 };
 
 
@@ -6783,9 +7737,12 @@ proto.adamant.global.v1.TxInput.prototype.getTxId = function() {
 };
 
 
-/** @param {string} value */
+/**
+ * @param {string} value
+ * @return {!proto.adamant.global.v1.TxInput} returns this
+ */
 proto.adamant.global.v1.TxInput.prototype.setTxId = function(value) {
-  jspb.Message.setProto3StringField(this, 1, value);
+  return jspb.Message.setProto3StringField(this, 1, value);
 };
 
 
@@ -6798,9 +7755,12 @@ proto.adamant.global.v1.TxInput.prototype.getTxIndex = function() {
 };
 
 
-/** @param {number} value */
+/**
+ * @param {number} value
+ * @return {!proto.adamant.global.v1.TxInput} returns this
+ */
 proto.adamant.global.v1.TxInput.prototype.setTxIndex = function(value) {
-  jspb.Message.setProto3IntField(this, 2, value);
+  return jspb.Message.setProto3IntField(this, 2, value);
 };
 
 
@@ -6813,9 +7773,12 @@ proto.adamant.global.v1.TxInput.prototype.getValue = function() {
 };
 
 
-/** @param {number} value */
+/**
+ * @param {number} value
+ * @return {!proto.adamant.global.v1.TxInput} returns this
+ */
 proto.adamant.global.v1.TxInput.prototype.setValue = function(value) {
-  jspb.Message.setProto3FloatField(this, 3, value);
+  return jspb.Message.setProto3FloatField(this, 3, value);
 };
 
 
@@ -6828,9 +7791,12 @@ proto.adamant.global.v1.TxInput.prototype.getStringValue = function() {
 };
 
 
-/** @param {string} value */
+/**
+ * @param {string} value
+ * @return {!proto.adamant.global.v1.TxInput} returns this
+ */
 proto.adamant.global.v1.TxInput.prototype.setStringValue = function(value) {
-  jspb.Message.setProto3StringField(this, 4, value);
+  return jspb.Message.setProto3StringField(this, 4, value);
 };
 
 
@@ -6991,9 +7957,12 @@ proto.adamant.global.v1.TxOutput.prototype.getAddress = function() {
 };
 
 
-/** @param {string} value */
+/**
+ * @param {string} value
+ * @return {!proto.adamant.global.v1.TxOutput} returns this
+ */
 proto.adamant.global.v1.TxOutput.prototype.setAddress = function(value) {
-  jspb.Message.setProto3StringField(this, 1, value);
+  return jspb.Message.setProto3StringField(this, 1, value);
 };
 
 
@@ -7006,9 +7975,12 @@ proto.adamant.global.v1.TxOutput.prototype.getValue = function() {
 };
 
 
-/** @param {number} value */
+/**
+ * @param {number} value
+ * @return {!proto.adamant.global.v1.TxOutput} returns this
+ */
 proto.adamant.global.v1.TxOutput.prototype.setValue = function(value) {
-  jspb.Message.setProto3FloatField(this, 2, value);
+  return jspb.Message.setProto3FloatField(this, 2, value);
 };
 
 
@@ -7021,9 +7993,12 @@ proto.adamant.global.v1.TxOutput.prototype.getStringValue = function() {
 };
 
 
-/** @param {string} value */
+/**
+ * @param {string} value
+ * @return {!proto.adamant.global.v1.TxOutput} returns this
+ */
 proto.adamant.global.v1.TxOutput.prototype.setStringValue = function(value) {
-  jspb.Message.setProto3StringField(this, 3, value);
+  return jspb.Message.setProto3StringField(this, 3, value);
 };
 
 
@@ -7036,9 +8011,292 @@ proto.adamant.global.v1.TxOutput.prototype.getIsChange = function() {
 };
 
 
-/** @param {boolean} value */
+/**
+ * @param {boolean} value
+ * @return {!proto.adamant.global.v1.TxOutput} returns this
+ */
 proto.adamant.global.v1.TxOutput.prototype.setIsChange = function(value) {
-  jspb.Message.setProto3BooleanField(this, 4, value);
+  return jspb.Message.setProto3BooleanField(this, 4, value);
+};
+
+
+
+
+
+if (jspb.Message.GENERATE_TO_OBJECT) {
+/**
+ * Creates an object representation of this proto.
+ * Field names that are reserved in JavaScript and will be renamed to pb_name.
+ * Optional fields that are not set will be set to undefined.
+ * To access a reserved field use, foo.pb_<name>, eg, foo.pb_default.
+ * For the list of reserved names please see:
+ *     net/proto2/compiler/js/internal/generator.cc#kKeyword.
+ * @param {boolean=} opt_includeInstance Deprecated. whether to include the
+ *     JSPB instance for transitional soy proto support:
+ *     http://goto/soy-param-migration
+ * @return {!Object}
+ */
+proto.adamant.global.v1.UTXO.prototype.toObject = function(opt_includeInstance) {
+  return proto.adamant.global.v1.UTXO.toObject(opt_includeInstance, this);
+};
+
+
+/**
+ * Static version of the {@see toObject} method.
+ * @param {boolean|undefined} includeInstance Deprecated. Whether to include
+ *     the JSPB instance for transitional soy proto support:
+ *     http://goto/soy-param-migration
+ * @param {!proto.adamant.global.v1.UTXO} msg The msg instance to transform.
+ * @return {!Object}
+ * @suppress {unusedLocalVariables} f is only used for nested messages
+ */
+proto.adamant.global.v1.UTXO.toObject = function(includeInstance, msg) {
+  var f, obj = {
+    txId: jspb.Message.getFieldWithDefault(msg, 1, ""),
+    vout: jspb.Message.getFieldWithDefault(msg, 2, 0),
+    value: jspb.Message.getFloatingPointFieldWithDefault(msg, 3, 0.0),
+    stringValue: jspb.Message.getFieldWithDefault(msg, 4, ""),
+    address: jspb.Message.getFieldWithDefault(msg, 5, ""),
+    transactionId: jspb.Message.getFieldWithDefault(msg, 6, "")
+  };
+
+  if (includeInstance) {
+    obj.$jspbMessageInstance = msg;
+  }
+  return obj;
+};
+}
+
+
+/**
+ * Deserializes binary data (in protobuf wire format).
+ * @param {jspb.ByteSource} bytes The bytes to deserialize.
+ * @return {!proto.adamant.global.v1.UTXO}
+ */
+proto.adamant.global.v1.UTXO.deserializeBinary = function(bytes) {
+  var reader = new jspb.BinaryReader(bytes);
+  var msg = new proto.adamant.global.v1.UTXO;
+  return proto.adamant.global.v1.UTXO.deserializeBinaryFromReader(msg, reader);
+};
+
+
+/**
+ * Deserializes binary data (in protobuf wire format) from the
+ * given reader into the given message object.
+ * @param {!proto.adamant.global.v1.UTXO} msg The message object to deserialize into.
+ * @param {!jspb.BinaryReader} reader The BinaryReader to use.
+ * @return {!proto.adamant.global.v1.UTXO}
+ */
+proto.adamant.global.v1.UTXO.deserializeBinaryFromReader = function(msg, reader) {
+  while (reader.nextField()) {
+    if (reader.isEndGroup()) {
+      break;
+    }
+    var field = reader.getFieldNumber();
+    switch (field) {
+    case 1:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setTxId(value);
+      break;
+    case 2:
+      var value = /** @type {number} */ (reader.readUint32());
+      msg.setVout(value);
+      break;
+    case 3:
+      var value = /** @type {number} */ (reader.readDouble());
+      msg.setValue(value);
+      break;
+    case 4:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setStringValue(value);
+      break;
+    case 5:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setAddress(value);
+      break;
+    case 6:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setTransactionId(value);
+      break;
+    default:
+      reader.skipField();
+      break;
+    }
+  }
+  return msg;
+};
+
+
+/**
+ * Serializes the message to binary data (in protobuf wire format).
+ * @return {!Uint8Array}
+ */
+proto.adamant.global.v1.UTXO.prototype.serializeBinary = function() {
+  var writer = new jspb.BinaryWriter();
+  proto.adamant.global.v1.UTXO.serializeBinaryToWriter(this, writer);
+  return writer.getResultBuffer();
+};
+
+
+/**
+ * Serializes the given message to binary data (in protobuf wire
+ * format), writing to the given BinaryWriter.
+ * @param {!proto.adamant.global.v1.UTXO} message
+ * @param {!jspb.BinaryWriter} writer
+ * @suppress {unusedLocalVariables} f is only used for nested messages
+ */
+proto.adamant.global.v1.UTXO.serializeBinaryToWriter = function(message, writer) {
+  var f = undefined;
+  f = message.getTxId();
+  if (f.length > 0) {
+    writer.writeString(
+      1,
+      f
+    );
+  }
+  f = message.getVout();
+  if (f !== 0) {
+    writer.writeUint32(
+      2,
+      f
+    );
+  }
+  f = message.getValue();
+  if (f !== 0.0) {
+    writer.writeDouble(
+      3,
+      f
+    );
+  }
+  f = message.getStringValue();
+  if (f.length > 0) {
+    writer.writeString(
+      4,
+      f
+    );
+  }
+  f = message.getAddress();
+  if (f.length > 0) {
+    writer.writeString(
+      5,
+      f
+    );
+  }
+  f = message.getTransactionId();
+  if (f.length > 0) {
+    writer.writeString(
+      6,
+      f
+    );
+  }
+};
+
+
+/**
+ * optional string tx_id = 1;
+ * @return {string}
+ */
+proto.adamant.global.v1.UTXO.prototype.getTxId = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 1, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.adamant.global.v1.UTXO} returns this
+ */
+proto.adamant.global.v1.UTXO.prototype.setTxId = function(value) {
+  return jspb.Message.setProto3StringField(this, 1, value);
+};
+
+
+/**
+ * optional uint32 vout = 2;
+ * @return {number}
+ */
+proto.adamant.global.v1.UTXO.prototype.getVout = function() {
+  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 2, 0));
+};
+
+
+/**
+ * @param {number} value
+ * @return {!proto.adamant.global.v1.UTXO} returns this
+ */
+proto.adamant.global.v1.UTXO.prototype.setVout = function(value) {
+  return jspb.Message.setProto3IntField(this, 2, value);
+};
+
+
+/**
+ * optional double value = 3;
+ * @return {number}
+ */
+proto.adamant.global.v1.UTXO.prototype.getValue = function() {
+  return /** @type {number} */ (jspb.Message.getFloatingPointFieldWithDefault(this, 3, 0.0));
+};
+
+
+/**
+ * @param {number} value
+ * @return {!proto.adamant.global.v1.UTXO} returns this
+ */
+proto.adamant.global.v1.UTXO.prototype.setValue = function(value) {
+  return jspb.Message.setProto3FloatField(this, 3, value);
+};
+
+
+/**
+ * optional string string_value = 4;
+ * @return {string}
+ */
+proto.adamant.global.v1.UTXO.prototype.getStringValue = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 4, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.adamant.global.v1.UTXO} returns this
+ */
+proto.adamant.global.v1.UTXO.prototype.setStringValue = function(value) {
+  return jspb.Message.setProto3StringField(this, 4, value);
+};
+
+
+/**
+ * optional string address = 5;
+ * @return {string}
+ */
+proto.adamant.global.v1.UTXO.prototype.getAddress = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 5, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.adamant.global.v1.UTXO} returns this
+ */
+proto.adamant.global.v1.UTXO.prototype.setAddress = function(value) {
+  return jspb.Message.setProto3StringField(this, 5, value);
+};
+
+
+/**
+ * optional string transaction_id = 6;
+ * @return {string}
+ */
+proto.adamant.global.v1.UTXO.prototype.getTransactionId = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 6, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.adamant.global.v1.UTXO} returns this
+ */
+proto.adamant.global.v1.UTXO.prototype.setTransactionId = function(value) {
+  return jspb.Message.setProto3StringField(this, 6, value);
 };
 
 
@@ -7189,9 +8447,12 @@ proto.adamant.global.v1.BitcoinSpecific.prototype.getTxInputsList = function() {
 };
 
 
-/** @param {!Array<!proto.adamant.global.v1.TxInput>} value */
+/**
+ * @param {!Array<!proto.adamant.global.v1.TxInput>} value
+ * @return {!proto.adamant.global.v1.BitcoinSpecific} returns this
+*/
 proto.adamant.global.v1.BitcoinSpecific.prototype.setTxInputsList = function(value) {
-  jspb.Message.setRepeatedWrapperField(this, 1, value);
+  return jspb.Message.setRepeatedWrapperField(this, 1, value);
 };
 
 
@@ -7207,9 +8468,10 @@ proto.adamant.global.v1.BitcoinSpecific.prototype.addTxInputs = function(opt_val
 
 /**
  * Clears the list making it empty but non-null.
+ * @return {!proto.adamant.global.v1.BitcoinSpecific} returns this
  */
 proto.adamant.global.v1.BitcoinSpecific.prototype.clearTxInputsList = function() {
-  this.setTxInputsList([]);
+  return this.setTxInputsList([]);
 };
 
 
@@ -7223,9 +8485,12 @@ proto.adamant.global.v1.BitcoinSpecific.prototype.getTxOutputsList = function() 
 };
 
 
-/** @param {!Array<!proto.adamant.global.v1.TxOutput>} value */
+/**
+ * @param {!Array<!proto.adamant.global.v1.TxOutput>} value
+ * @return {!proto.adamant.global.v1.BitcoinSpecific} returns this
+*/
 proto.adamant.global.v1.BitcoinSpecific.prototype.setTxOutputsList = function(value) {
-  jspb.Message.setRepeatedWrapperField(this, 2, value);
+  return jspb.Message.setRepeatedWrapperField(this, 2, value);
 };
 
 
@@ -7241,9 +8506,10 @@ proto.adamant.global.v1.BitcoinSpecific.prototype.addTxOutputs = function(opt_va
 
 /**
  * Clears the list making it empty but non-null.
+ * @return {!proto.adamant.global.v1.BitcoinSpecific} returns this
  */
 proto.adamant.global.v1.BitcoinSpecific.prototype.clearTxOutputsList = function() {
-  this.setTxOutputsList([]);
+  return this.setTxOutputsList([]);
 };
 
 
@@ -7394,9 +8660,12 @@ proto.adamant.global.v1.LitecoinSpecific.prototype.getTxInputsList = function() 
 };
 
 
-/** @param {!Array<!proto.adamant.global.v1.TxInput>} value */
+/**
+ * @param {!Array<!proto.adamant.global.v1.TxInput>} value
+ * @return {!proto.adamant.global.v1.LitecoinSpecific} returns this
+*/
 proto.adamant.global.v1.LitecoinSpecific.prototype.setTxInputsList = function(value) {
-  jspb.Message.setRepeatedWrapperField(this, 1, value);
+  return jspb.Message.setRepeatedWrapperField(this, 1, value);
 };
 
 
@@ -7412,9 +8681,10 @@ proto.adamant.global.v1.LitecoinSpecific.prototype.addTxInputs = function(opt_va
 
 /**
  * Clears the list making it empty but non-null.
+ * @return {!proto.adamant.global.v1.LitecoinSpecific} returns this
  */
 proto.adamant.global.v1.LitecoinSpecific.prototype.clearTxInputsList = function() {
-  this.setTxInputsList([]);
+  return this.setTxInputsList([]);
 };
 
 
@@ -7428,9 +8698,12 @@ proto.adamant.global.v1.LitecoinSpecific.prototype.getTxOutputsList = function()
 };
 
 
-/** @param {!Array<!proto.adamant.global.v1.TxOutput>} value */
+/**
+ * @param {!Array<!proto.adamant.global.v1.TxOutput>} value
+ * @return {!proto.adamant.global.v1.LitecoinSpecific} returns this
+*/
 proto.adamant.global.v1.LitecoinSpecific.prototype.setTxOutputsList = function(value) {
-  jspb.Message.setRepeatedWrapperField(this, 2, value);
+  return jspb.Message.setRepeatedWrapperField(this, 2, value);
 };
 
 
@@ -7446,9 +8719,10 @@ proto.adamant.global.v1.LitecoinSpecific.prototype.addTxOutputs = function(opt_v
 
 /**
  * Clears the list making it empty but non-null.
+ * @return {!proto.adamant.global.v1.LitecoinSpecific} returns this
  */
 proto.adamant.global.v1.LitecoinSpecific.prototype.clearTxOutputsList = function() {
-  this.setTxOutputsList([]);
+  return this.setTxOutputsList([]);
 };
 
 
@@ -7599,9 +8873,12 @@ proto.adamant.global.v1.BitcoincashSpecific.prototype.getTxInputsList = function
 };
 
 
-/** @param {!Array<!proto.adamant.global.v1.TxInput>} value */
+/**
+ * @param {!Array<!proto.adamant.global.v1.TxInput>} value
+ * @return {!proto.adamant.global.v1.BitcoincashSpecific} returns this
+*/
 proto.adamant.global.v1.BitcoincashSpecific.prototype.setTxInputsList = function(value) {
-  jspb.Message.setRepeatedWrapperField(this, 1, value);
+  return jspb.Message.setRepeatedWrapperField(this, 1, value);
 };
 
 
@@ -7617,9 +8894,10 @@ proto.adamant.global.v1.BitcoincashSpecific.prototype.addTxInputs = function(opt
 
 /**
  * Clears the list making it empty but non-null.
+ * @return {!proto.adamant.global.v1.BitcoincashSpecific} returns this
  */
 proto.adamant.global.v1.BitcoincashSpecific.prototype.clearTxInputsList = function() {
-  this.setTxInputsList([]);
+  return this.setTxInputsList([]);
 };
 
 
@@ -7633,9 +8911,12 @@ proto.adamant.global.v1.BitcoincashSpecific.prototype.getTxOutputsList = functio
 };
 
 
-/** @param {!Array<!proto.adamant.global.v1.TxOutput>} value */
+/**
+ * @param {!Array<!proto.adamant.global.v1.TxOutput>} value
+ * @return {!proto.adamant.global.v1.BitcoincashSpecific} returns this
+*/
 proto.adamant.global.v1.BitcoincashSpecific.prototype.setTxOutputsList = function(value) {
-  jspb.Message.setRepeatedWrapperField(this, 2, value);
+  return jspb.Message.setRepeatedWrapperField(this, 2, value);
 };
 
 
@@ -7651,9 +8932,10 @@ proto.adamant.global.v1.BitcoincashSpecific.prototype.addTxOutputs = function(op
 
 /**
  * Clears the list making it empty but non-null.
+ * @return {!proto.adamant.global.v1.BitcoincashSpecific} returns this
  */
 proto.adamant.global.v1.BitcoincashSpecific.prototype.clearTxOutputsList = function() {
-  this.setTxOutputsList([]);
+  return this.setTxOutputsList([]);
 };
 
 
@@ -7691,7 +8973,9 @@ proto.adamant.global.v1.EthereumSpecific.toObject = function(includeInstance, ms
   var f, obj = {
     gasLimit: jspb.Message.getFieldWithDefault(msg, 1, 0),
     nonce: jspb.Message.getFieldWithDefault(msg, 2, 0),
-    isNextNonce: jspb.Message.getBooleanFieldWithDefault(msg, 3, false)
+    isNextNonce: jspb.Message.getBooleanFieldWithDefault(msg, 3, false),
+    methodIdType: jspb.Message.getFieldWithDefault(msg, 4, 0),
+    expiration: jspb.Message.getFieldWithDefault(msg, 5, 0)
   };
 
   if (includeInstance) {
@@ -7739,6 +9023,14 @@ proto.adamant.global.v1.EthereumSpecific.deserializeBinaryFromReader = function(
     case 3:
       var value = /** @type {boolean} */ (reader.readBool());
       msg.setIsNextNonce(value);
+      break;
+    case 4:
+      var value = /** @type {!proto.adamant.global.v1.EthereumContractMethodIDType} */ (reader.readEnum());
+      msg.setMethodIdType(value);
+      break;
+    case 5:
+      var value = /** @type {number} */ (reader.readUint64());
+      msg.setExpiration(value);
       break;
     default:
       reader.skipField();
@@ -7790,6 +9082,20 @@ proto.adamant.global.v1.EthereumSpecific.serializeBinaryToWriter = function(mess
       f
     );
   }
+  f = message.getMethodIdType();
+  if (f !== 0.0) {
+    writer.writeEnum(
+      4,
+      f
+    );
+  }
+  f = message.getExpiration();
+  if (f !== 0) {
+    writer.writeUint64(
+      5,
+      f
+    );
+  }
 };
 
 
@@ -7802,9 +9108,12 @@ proto.adamant.global.v1.EthereumSpecific.prototype.getGasLimit = function() {
 };
 
 
-/** @param {number} value */
+/**
+ * @param {number} value
+ * @return {!proto.adamant.global.v1.EthereumSpecific} returns this
+ */
 proto.adamant.global.v1.EthereumSpecific.prototype.setGasLimit = function(value) {
-  jspb.Message.setProto3IntField(this, 1, value);
+  return jspb.Message.setProto3IntField(this, 1, value);
 };
 
 
@@ -7817,9 +9126,12 @@ proto.adamant.global.v1.EthereumSpecific.prototype.getNonce = function() {
 };
 
 
-/** @param {number} value */
+/**
+ * @param {number} value
+ * @return {!proto.adamant.global.v1.EthereumSpecific} returns this
+ */
 proto.adamant.global.v1.EthereumSpecific.prototype.setNonce = function(value) {
-  jspb.Message.setProto3IntField(this, 2, value);
+  return jspb.Message.setProto3IntField(this, 2, value);
 };
 
 
@@ -7832,9 +9144,48 @@ proto.adamant.global.v1.EthereumSpecific.prototype.getIsNextNonce = function() {
 };
 
 
-/** @param {boolean} value */
+/**
+ * @param {boolean} value
+ * @return {!proto.adamant.global.v1.EthereumSpecific} returns this
+ */
 proto.adamant.global.v1.EthereumSpecific.prototype.setIsNextNonce = function(value) {
-  jspb.Message.setProto3BooleanField(this, 3, value);
+  return jspb.Message.setProto3BooleanField(this, 3, value);
+};
+
+
+/**
+ * optional EthereumContractMethodIDType method_id_type = 4;
+ * @return {!proto.adamant.global.v1.EthereumContractMethodIDType}
+ */
+proto.adamant.global.v1.EthereumSpecific.prototype.getMethodIdType = function() {
+  return /** @type {!proto.adamant.global.v1.EthereumContractMethodIDType} */ (jspb.Message.getFieldWithDefault(this, 4, 0));
+};
+
+
+/**
+ * @param {!proto.adamant.global.v1.EthereumContractMethodIDType} value
+ * @return {!proto.adamant.global.v1.EthereumSpecific} returns this
+ */
+proto.adamant.global.v1.EthereumSpecific.prototype.setMethodIdType = function(value) {
+  return jspb.Message.setProto3EnumField(this, 4, value);
+};
+
+
+/**
+ * optional uint64 expiration = 5;
+ * @return {number}
+ */
+proto.adamant.global.v1.EthereumSpecific.prototype.getExpiration = function() {
+  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 5, 0));
+};
+
+
+/**
+ * @param {number} value
+ * @return {!proto.adamant.global.v1.EthereumSpecific} returns this
+ */
+proto.adamant.global.v1.EthereumSpecific.prototype.setExpiration = function(value) {
+  return jspb.Message.setProto3IntField(this, 5, value);
 };
 
 
@@ -7995,9 +9346,12 @@ proto.adamant.global.v1.XrpSpecific.prototype.getSequenceNumber = function() {
 };
 
 
-/** @param {number} value */
+/**
+ * @param {number} value
+ * @return {!proto.adamant.global.v1.XrpSpecific} returns this
+ */
 proto.adamant.global.v1.XrpSpecific.prototype.setSequenceNumber = function(value) {
-  jspb.Message.setProto3IntField(this, 1, value);
+  return jspb.Message.setProto3IntField(this, 1, value);
 };
 
 
@@ -8010,9 +9364,12 @@ proto.adamant.global.v1.XrpSpecific.prototype.getDestinationTag = function() {
 };
 
 
-/** @param {number} value */
+/**
+ * @param {number} value
+ * @return {!proto.adamant.global.v1.XrpSpecific} returns this
+ */
 proto.adamant.global.v1.XrpSpecific.prototype.setDestinationTag = function(value) {
-  jspb.Message.setProto3IntField(this, 2, value);
+  return jspb.Message.setProto3IntField(this, 2, value);
 };
 
 
@@ -8025,9 +9382,12 @@ proto.adamant.global.v1.XrpSpecific.prototype.getTxType = function() {
 };
 
 
-/** @param {!proto.gincoinc.global.v1.XRPTransactionType} value */
+/**
+ * @param {!proto.gincoinc.global.v1.XRPTransactionType} value
+ * @return {!proto.adamant.global.v1.XrpSpecific} returns this
+ */
 proto.adamant.global.v1.XrpSpecific.prototype.setTxType = function(value) {
-  jspb.Message.setProto3EnumField(this, 3, value);
+  return jspb.Message.setProto3EnumField(this, 3, value);
 };
 
 
@@ -8040,9 +9400,12 @@ proto.adamant.global.v1.XrpSpecific.prototype.getIsNextSequenceNumber = function
 };
 
 
-/** @param {boolean} value */
+/**
+ * @param {boolean} value
+ * @return {!proto.adamant.global.v1.XrpSpecific} returns this
+ */
 proto.adamant.global.v1.XrpSpecific.prototype.setIsNextSequenceNumber = function(value) {
-  jspb.Message.setProto3BooleanField(this, 4, value);
+  return jspb.Message.setProto3BooleanField(this, 4, value);
 };
 
 
@@ -8167,9 +9530,12 @@ proto.adamant.global.v1.TronSpecific.prototype.getExpiration = function() {
 };
 
 
-/** @param {number} value */
+/**
+ * @param {number} value
+ * @return {!proto.adamant.global.v1.TronSpecific} returns this
+ */
 proto.adamant.global.v1.TronSpecific.prototype.setExpiration = function(value) {
-  jspb.Message.setProto3IntField(this, 1, value);
+  return jspb.Message.setProto3IntField(this, 1, value);
 };
 
 
@@ -8320,9 +9686,12 @@ proto.adamant.global.v1.C0banSpecific.prototype.getTxInputsList = function() {
 };
 
 
-/** @param {!Array<!proto.adamant.global.v1.TxInput>} value */
+/**
+ * @param {!Array<!proto.adamant.global.v1.TxInput>} value
+ * @return {!proto.adamant.global.v1.C0banSpecific} returns this
+*/
 proto.adamant.global.v1.C0banSpecific.prototype.setTxInputsList = function(value) {
-  jspb.Message.setRepeatedWrapperField(this, 1, value);
+  return jspb.Message.setRepeatedWrapperField(this, 1, value);
 };
 
 
@@ -8338,9 +9707,10 @@ proto.adamant.global.v1.C0banSpecific.prototype.addTxInputs = function(opt_value
 
 /**
  * Clears the list making it empty but non-null.
+ * @return {!proto.adamant.global.v1.C0banSpecific} returns this
  */
 proto.adamant.global.v1.C0banSpecific.prototype.clearTxInputsList = function() {
-  this.setTxInputsList([]);
+  return this.setTxInputsList([]);
 };
 
 
@@ -8354,9 +9724,12 @@ proto.adamant.global.v1.C0banSpecific.prototype.getTxOutputsList = function() {
 };
 
 
-/** @param {!Array<!proto.adamant.global.v1.TxOutput>} value */
+/**
+ * @param {!Array<!proto.adamant.global.v1.TxOutput>} value
+ * @return {!proto.adamant.global.v1.C0banSpecific} returns this
+*/
 proto.adamant.global.v1.C0banSpecific.prototype.setTxOutputsList = function(value) {
-  jspb.Message.setRepeatedWrapperField(this, 2, value);
+  return jspb.Message.setRepeatedWrapperField(this, 2, value);
 };
 
 
@@ -8372,9 +9745,1545 @@ proto.adamant.global.v1.C0banSpecific.prototype.addTxOutputs = function(opt_valu
 
 /**
  * Clears the list making it empty but non-null.
+ * @return {!proto.adamant.global.v1.C0banSpecific} returns this
  */
 proto.adamant.global.v1.C0banSpecific.prototype.clearTxOutputsList = function() {
-  this.setTxOutputsList([]);
+  return this.setTxOutputsList([]);
+};
+
+
+
+
+
+if (jspb.Message.GENERATE_TO_OBJECT) {
+/**
+ * Creates an object representation of this proto.
+ * Field names that are reserved in JavaScript and will be renamed to pb_name.
+ * Optional fields that are not set will be set to undefined.
+ * To access a reserved field use, foo.pb_<name>, eg, foo.pb_default.
+ * For the list of reserved names please see:
+ *     net/proto2/compiler/js/internal/generator.cc#kKeyword.
+ * @param {boolean=} opt_includeInstance Deprecated. whether to include the
+ *     JSPB instance for transitional soy proto support:
+ *     http://goto/soy-param-migration
+ * @return {!Object}
+ */
+proto.adamant.global.v1.StellarSpecific.prototype.toObject = function(opt_includeInstance) {
+  return proto.adamant.global.v1.StellarSpecific.toObject(opt_includeInstance, this);
+};
+
+
+/**
+ * Static version of the {@see toObject} method.
+ * @param {boolean|undefined} includeInstance Deprecated. Whether to include
+ *     the JSPB instance for transitional soy proto support:
+ *     http://goto/soy-param-migration
+ * @param {!proto.adamant.global.v1.StellarSpecific} msg The msg instance to transform.
+ * @return {!Object}
+ * @suppress {unusedLocalVariables} f is only used for nested messages
+ */
+proto.adamant.global.v1.StellarSpecific.toObject = function(includeInstance, msg) {
+  var f, obj = {
+    sequenceNumber: jspb.Message.getFieldWithDefault(msg, 1, 0),
+    memoId: jspb.Message.getFieldWithDefault(msg, 2, "0"),
+    isNextSequenceNumber: jspb.Message.getBooleanFieldWithDefault(msg, 3, false)
+  };
+
+  if (includeInstance) {
+    obj.$jspbMessageInstance = msg;
+  }
+  return obj;
+};
+}
+
+
+/**
+ * Deserializes binary data (in protobuf wire format).
+ * @param {jspb.ByteSource} bytes The bytes to deserialize.
+ * @return {!proto.adamant.global.v1.StellarSpecific}
+ */
+proto.adamant.global.v1.StellarSpecific.deserializeBinary = function(bytes) {
+  var reader = new jspb.BinaryReader(bytes);
+  var msg = new proto.adamant.global.v1.StellarSpecific;
+  return proto.adamant.global.v1.StellarSpecific.deserializeBinaryFromReader(msg, reader);
+};
+
+
+/**
+ * Deserializes binary data (in protobuf wire format) from the
+ * given reader into the given message object.
+ * @param {!proto.adamant.global.v1.StellarSpecific} msg The message object to deserialize into.
+ * @param {!jspb.BinaryReader} reader The BinaryReader to use.
+ * @return {!proto.adamant.global.v1.StellarSpecific}
+ */
+proto.adamant.global.v1.StellarSpecific.deserializeBinaryFromReader = function(msg, reader) {
+  while (reader.nextField()) {
+    if (reader.isEndGroup()) {
+      break;
+    }
+    var field = reader.getFieldNumber();
+    switch (field) {
+    case 1:
+      var value = /** @type {number} */ (reader.readInt64());
+      msg.setSequenceNumber(value);
+      break;
+    case 2:
+      var value = /** @type {string} */ (reader.readUint64String());
+      msg.setMemoId(value);
+      break;
+    case 3:
+      var value = /** @type {boolean} */ (reader.readBool());
+      msg.setIsNextSequenceNumber(value);
+      break;
+    default:
+      reader.skipField();
+      break;
+    }
+  }
+  return msg;
+};
+
+
+/**
+ * Serializes the message to binary data (in protobuf wire format).
+ * @return {!Uint8Array}
+ */
+proto.adamant.global.v1.StellarSpecific.prototype.serializeBinary = function() {
+  var writer = new jspb.BinaryWriter();
+  proto.adamant.global.v1.StellarSpecific.serializeBinaryToWriter(this, writer);
+  return writer.getResultBuffer();
+};
+
+
+/**
+ * Serializes the given message to binary data (in protobuf wire
+ * format), writing to the given BinaryWriter.
+ * @param {!proto.adamant.global.v1.StellarSpecific} message
+ * @param {!jspb.BinaryWriter} writer
+ * @suppress {unusedLocalVariables} f is only used for nested messages
+ */
+proto.adamant.global.v1.StellarSpecific.serializeBinaryToWriter = function(message, writer) {
+  var f = undefined;
+  f = message.getSequenceNumber();
+  if (f !== 0) {
+    writer.writeInt64(
+      1,
+      f
+    );
+  }
+  f = message.getMemoId();
+  if (parseInt(f, 10) !== 0) {
+    writer.writeUint64String(
+      2,
+      f
+    );
+  }
+  f = message.getIsNextSequenceNumber();
+  if (f) {
+    writer.writeBool(
+      3,
+      f
+    );
+  }
+};
+
+
+/**
+ * optional int64 sequence_number = 1;
+ * @return {number}
+ */
+proto.adamant.global.v1.StellarSpecific.prototype.getSequenceNumber = function() {
+  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 1, 0));
+};
+
+
+/**
+ * @param {number} value
+ * @return {!proto.adamant.global.v1.StellarSpecific} returns this
+ */
+proto.adamant.global.v1.StellarSpecific.prototype.setSequenceNumber = function(value) {
+  return jspb.Message.setProto3IntField(this, 1, value);
+};
+
+
+/**
+ * optional uint64 memo_id = 2;
+ * @return {string}
+ */
+proto.adamant.global.v1.StellarSpecific.prototype.getMemoId = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 2, "0"));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.adamant.global.v1.StellarSpecific} returns this
+ */
+proto.adamant.global.v1.StellarSpecific.prototype.setMemoId = function(value) {
+  return jspb.Message.setProto3StringIntField(this, 2, value);
+};
+
+
+/**
+ * optional bool is_next_sequence_number = 3;
+ * @return {boolean}
+ */
+proto.adamant.global.v1.StellarSpecific.prototype.getIsNextSequenceNumber = function() {
+  return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 3, false));
+};
+
+
+/**
+ * @param {boolean} value
+ * @return {!proto.adamant.global.v1.StellarSpecific} returns this
+ */
+proto.adamant.global.v1.StellarSpecific.prototype.setIsNextSequenceNumber = function(value) {
+  return jspb.Message.setProto3BooleanField(this, 3, value);
+};
+
+
+
+/**
+ * List of repeated fields within this message type.
+ * @private {!Array<number>}
+ * @const
+ */
+proto.adamant.global.v1.CardanoSpecific.repeatedFields_ = [1,2];
+
+
+
+if (jspb.Message.GENERATE_TO_OBJECT) {
+/**
+ * Creates an object representation of this proto.
+ * Field names that are reserved in JavaScript and will be renamed to pb_name.
+ * Optional fields that are not set will be set to undefined.
+ * To access a reserved field use, foo.pb_<name>, eg, foo.pb_default.
+ * For the list of reserved names please see:
+ *     net/proto2/compiler/js/internal/generator.cc#kKeyword.
+ * @param {boolean=} opt_includeInstance Deprecated. whether to include the
+ *     JSPB instance for transitional soy proto support:
+ *     http://goto/soy-param-migration
+ * @return {!Object}
+ */
+proto.adamant.global.v1.CardanoSpecific.prototype.toObject = function(opt_includeInstance) {
+  return proto.adamant.global.v1.CardanoSpecific.toObject(opt_includeInstance, this);
+};
+
+
+/**
+ * Static version of the {@see toObject} method.
+ * @param {boolean|undefined} includeInstance Deprecated. Whether to include
+ *     the JSPB instance for transitional soy proto support:
+ *     http://goto/soy-param-migration
+ * @param {!proto.adamant.global.v1.CardanoSpecific} msg The msg instance to transform.
+ * @return {!Object}
+ * @suppress {unusedLocalVariables} f is only used for nested messages
+ */
+proto.adamant.global.v1.CardanoSpecific.toObject = function(includeInstance, msg) {
+  var f, obj = {
+    txInputsList: jspb.Message.toObjectList(msg.getTxInputsList(),
+    proto.adamant.global.v1.TxInput.toObject, includeInstance),
+    txOutputsList: jspb.Message.toObjectList(msg.getTxOutputsList(),
+    proto.adamant.global.v1.TxOutput.toObject, includeInstance)
+  };
+
+  if (includeInstance) {
+    obj.$jspbMessageInstance = msg;
+  }
+  return obj;
+};
+}
+
+
+/**
+ * Deserializes binary data (in protobuf wire format).
+ * @param {jspb.ByteSource} bytes The bytes to deserialize.
+ * @return {!proto.adamant.global.v1.CardanoSpecific}
+ */
+proto.adamant.global.v1.CardanoSpecific.deserializeBinary = function(bytes) {
+  var reader = new jspb.BinaryReader(bytes);
+  var msg = new proto.adamant.global.v1.CardanoSpecific;
+  return proto.adamant.global.v1.CardanoSpecific.deserializeBinaryFromReader(msg, reader);
+};
+
+
+/**
+ * Deserializes binary data (in protobuf wire format) from the
+ * given reader into the given message object.
+ * @param {!proto.adamant.global.v1.CardanoSpecific} msg The message object to deserialize into.
+ * @param {!jspb.BinaryReader} reader The BinaryReader to use.
+ * @return {!proto.adamant.global.v1.CardanoSpecific}
+ */
+proto.adamant.global.v1.CardanoSpecific.deserializeBinaryFromReader = function(msg, reader) {
+  while (reader.nextField()) {
+    if (reader.isEndGroup()) {
+      break;
+    }
+    var field = reader.getFieldNumber();
+    switch (field) {
+    case 1:
+      var value = new proto.adamant.global.v1.TxInput;
+      reader.readMessage(value,proto.adamant.global.v1.TxInput.deserializeBinaryFromReader);
+      msg.addTxInputs(value);
+      break;
+    case 2:
+      var value = new proto.adamant.global.v1.TxOutput;
+      reader.readMessage(value,proto.adamant.global.v1.TxOutput.deserializeBinaryFromReader);
+      msg.addTxOutputs(value);
+      break;
+    default:
+      reader.skipField();
+      break;
+    }
+  }
+  return msg;
+};
+
+
+/**
+ * Serializes the message to binary data (in protobuf wire format).
+ * @return {!Uint8Array}
+ */
+proto.adamant.global.v1.CardanoSpecific.prototype.serializeBinary = function() {
+  var writer = new jspb.BinaryWriter();
+  proto.adamant.global.v1.CardanoSpecific.serializeBinaryToWriter(this, writer);
+  return writer.getResultBuffer();
+};
+
+
+/**
+ * Serializes the given message to binary data (in protobuf wire
+ * format), writing to the given BinaryWriter.
+ * @param {!proto.adamant.global.v1.CardanoSpecific} message
+ * @param {!jspb.BinaryWriter} writer
+ * @suppress {unusedLocalVariables} f is only used for nested messages
+ */
+proto.adamant.global.v1.CardanoSpecific.serializeBinaryToWriter = function(message, writer) {
+  var f = undefined;
+  f = message.getTxInputsList();
+  if (f.length > 0) {
+    writer.writeRepeatedMessage(
+      1,
+      f,
+      proto.adamant.global.v1.TxInput.serializeBinaryToWriter
+    );
+  }
+  f = message.getTxOutputsList();
+  if (f.length > 0) {
+    writer.writeRepeatedMessage(
+      2,
+      f,
+      proto.adamant.global.v1.TxOutput.serializeBinaryToWriter
+    );
+  }
+};
+
+
+/**
+ * repeated TxInput tx_inputs = 1;
+ * @return {!Array<!proto.adamant.global.v1.TxInput>}
+ */
+proto.adamant.global.v1.CardanoSpecific.prototype.getTxInputsList = function() {
+  return /** @type{!Array<!proto.adamant.global.v1.TxInput>} */ (
+    jspb.Message.getRepeatedWrapperField(this, proto.adamant.global.v1.TxInput, 1));
+};
+
+
+/**
+ * @param {!Array<!proto.adamant.global.v1.TxInput>} value
+ * @return {!proto.adamant.global.v1.CardanoSpecific} returns this
+*/
+proto.adamant.global.v1.CardanoSpecific.prototype.setTxInputsList = function(value) {
+  return jspb.Message.setRepeatedWrapperField(this, 1, value);
+};
+
+
+/**
+ * @param {!proto.adamant.global.v1.TxInput=} opt_value
+ * @param {number=} opt_index
+ * @return {!proto.adamant.global.v1.TxInput}
+ */
+proto.adamant.global.v1.CardanoSpecific.prototype.addTxInputs = function(opt_value, opt_index) {
+  return jspb.Message.addToRepeatedWrapperField(this, 1, opt_value, proto.adamant.global.v1.TxInput, opt_index);
+};
+
+
+/**
+ * Clears the list making it empty but non-null.
+ * @return {!proto.adamant.global.v1.CardanoSpecific} returns this
+ */
+proto.adamant.global.v1.CardanoSpecific.prototype.clearTxInputsList = function() {
+  return this.setTxInputsList([]);
+};
+
+
+/**
+ * repeated TxOutput tx_outputs = 2;
+ * @return {!Array<!proto.adamant.global.v1.TxOutput>}
+ */
+proto.adamant.global.v1.CardanoSpecific.prototype.getTxOutputsList = function() {
+  return /** @type{!Array<!proto.adamant.global.v1.TxOutput>} */ (
+    jspb.Message.getRepeatedWrapperField(this, proto.adamant.global.v1.TxOutput, 2));
+};
+
+
+/**
+ * @param {!Array<!proto.adamant.global.v1.TxOutput>} value
+ * @return {!proto.adamant.global.v1.CardanoSpecific} returns this
+*/
+proto.adamant.global.v1.CardanoSpecific.prototype.setTxOutputsList = function(value) {
+  return jspb.Message.setRepeatedWrapperField(this, 2, value);
+};
+
+
+/**
+ * @param {!proto.adamant.global.v1.TxOutput=} opt_value
+ * @param {number=} opt_index
+ * @return {!proto.adamant.global.v1.TxOutput}
+ */
+proto.adamant.global.v1.CardanoSpecific.prototype.addTxOutputs = function(opt_value, opt_index) {
+  return jspb.Message.addToRepeatedWrapperField(this, 2, opt_value, proto.adamant.global.v1.TxOutput, opt_index);
+};
+
+
+/**
+ * Clears the list making it empty but non-null.
+ * @return {!proto.adamant.global.v1.CardanoSpecific} returns this
+ */
+proto.adamant.global.v1.CardanoSpecific.prototype.clearTxOutputsList = function() {
+  return this.setTxOutputsList([]);
+};
+
+
+
+/**
+ * List of repeated fields within this message type.
+ * @private {!Array<number>}
+ * @const
+ */
+proto.adamant.global.v1.SubstrateSpecific.repeatedFields_ = [4];
+
+
+
+if (jspb.Message.GENERATE_TO_OBJECT) {
+/**
+ * Creates an object representation of this proto.
+ * Field names that are reserved in JavaScript and will be renamed to pb_name.
+ * Optional fields that are not set will be set to undefined.
+ * To access a reserved field use, foo.pb_<name>, eg, foo.pb_default.
+ * For the list of reserved names please see:
+ *     net/proto2/compiler/js/internal/generator.cc#kKeyword.
+ * @param {boolean=} opt_includeInstance Deprecated. whether to include the
+ *     JSPB instance for transitional soy proto support:
+ *     http://goto/soy-param-migration
+ * @return {!Object}
+ */
+proto.adamant.global.v1.SubstrateSpecific.prototype.toObject = function(opt_includeInstance) {
+  return proto.adamant.global.v1.SubstrateSpecific.toObject(opt_includeInstance, this);
+};
+
+
+/**
+ * Static version of the {@see toObject} method.
+ * @param {boolean|undefined} includeInstance Deprecated. Whether to include
+ *     the JSPB instance for transitional soy proto support:
+ *     http://goto/soy-param-migration
+ * @param {!proto.adamant.global.v1.SubstrateSpecific} msg The msg instance to transform.
+ * @return {!Object}
+ * @suppress {unusedLocalVariables} f is only used for nested messages
+ */
+proto.adamant.global.v1.SubstrateSpecific.toObject = function(includeInstance, msg) {
+  var f, obj = {
+    nonce: jspb.Message.getFieldWithDefault(msg, 1, 0),
+    isNextNonce: jspb.Message.getBooleanFieldWithDefault(msg, 2, false),
+    substrateMultisigTransactionsList: jspb.Message.toObjectList(msg.getSubstrateMultisigTransactionsList(),
+    proto.adamant.global.v1.SubstrateMultisigTransaction.toObject, includeInstance)
+  };
+
+  if (includeInstance) {
+    obj.$jspbMessageInstance = msg;
+  }
+  return obj;
+};
+}
+
+
+/**
+ * Deserializes binary data (in protobuf wire format).
+ * @param {jspb.ByteSource} bytes The bytes to deserialize.
+ * @return {!proto.adamant.global.v1.SubstrateSpecific}
+ */
+proto.adamant.global.v1.SubstrateSpecific.deserializeBinary = function(bytes) {
+  var reader = new jspb.BinaryReader(bytes);
+  var msg = new proto.adamant.global.v1.SubstrateSpecific;
+  return proto.adamant.global.v1.SubstrateSpecific.deserializeBinaryFromReader(msg, reader);
+};
+
+
+/**
+ * Deserializes binary data (in protobuf wire format) from the
+ * given reader into the given message object.
+ * @param {!proto.adamant.global.v1.SubstrateSpecific} msg The message object to deserialize into.
+ * @param {!jspb.BinaryReader} reader The BinaryReader to use.
+ * @return {!proto.adamant.global.v1.SubstrateSpecific}
+ */
+proto.adamant.global.v1.SubstrateSpecific.deserializeBinaryFromReader = function(msg, reader) {
+  while (reader.nextField()) {
+    if (reader.isEndGroup()) {
+      break;
+    }
+    var field = reader.getFieldNumber();
+    switch (field) {
+    case 1:
+      var value = /** @type {number} */ (reader.readUint64());
+      msg.setNonce(value);
+      break;
+    case 2:
+      var value = /** @type {boolean} */ (reader.readBool());
+      msg.setIsNextNonce(value);
+      break;
+    case 4:
+      var value = new proto.adamant.global.v1.SubstrateMultisigTransaction;
+      reader.readMessage(value,proto.adamant.global.v1.SubstrateMultisigTransaction.deserializeBinaryFromReader);
+      msg.addSubstrateMultisigTransactions(value);
+      break;
+    default:
+      reader.skipField();
+      break;
+    }
+  }
+  return msg;
+};
+
+
+/**
+ * Serializes the message to binary data (in protobuf wire format).
+ * @return {!Uint8Array}
+ */
+proto.adamant.global.v1.SubstrateSpecific.prototype.serializeBinary = function() {
+  var writer = new jspb.BinaryWriter();
+  proto.adamant.global.v1.SubstrateSpecific.serializeBinaryToWriter(this, writer);
+  return writer.getResultBuffer();
+};
+
+
+/**
+ * Serializes the given message to binary data (in protobuf wire
+ * format), writing to the given BinaryWriter.
+ * @param {!proto.adamant.global.v1.SubstrateSpecific} message
+ * @param {!jspb.BinaryWriter} writer
+ * @suppress {unusedLocalVariables} f is only used for nested messages
+ */
+proto.adamant.global.v1.SubstrateSpecific.serializeBinaryToWriter = function(message, writer) {
+  var f = undefined;
+  f = message.getNonce();
+  if (f !== 0) {
+    writer.writeUint64(
+      1,
+      f
+    );
+  }
+  f = message.getIsNextNonce();
+  if (f) {
+    writer.writeBool(
+      2,
+      f
+    );
+  }
+  f = message.getSubstrateMultisigTransactionsList();
+  if (f.length > 0) {
+    writer.writeRepeatedMessage(
+      4,
+      f,
+      proto.adamant.global.v1.SubstrateMultisigTransaction.serializeBinaryToWriter
+    );
+  }
+};
+
+
+/**
+ * optional uint64 nonce = 1;
+ * @return {number}
+ */
+proto.adamant.global.v1.SubstrateSpecific.prototype.getNonce = function() {
+  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 1, 0));
+};
+
+
+/**
+ * @param {number} value
+ * @return {!proto.adamant.global.v1.SubstrateSpecific} returns this
+ */
+proto.adamant.global.v1.SubstrateSpecific.prototype.setNonce = function(value) {
+  return jspb.Message.setProto3IntField(this, 1, value);
+};
+
+
+/**
+ * optional bool is_next_nonce = 2;
+ * @return {boolean}
+ */
+proto.adamant.global.v1.SubstrateSpecific.prototype.getIsNextNonce = function() {
+  return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 2, false));
+};
+
+
+/**
+ * @param {boolean} value
+ * @return {!proto.adamant.global.v1.SubstrateSpecific} returns this
+ */
+proto.adamant.global.v1.SubstrateSpecific.prototype.setIsNextNonce = function(value) {
+  return jspb.Message.setProto3BooleanField(this, 2, value);
+};
+
+
+/**
+ * repeated SubstrateMultisigTransaction substrate_multisig_transactions = 4;
+ * @return {!Array<!proto.adamant.global.v1.SubstrateMultisigTransaction>}
+ */
+proto.adamant.global.v1.SubstrateSpecific.prototype.getSubstrateMultisigTransactionsList = function() {
+  return /** @type{!Array<!proto.adamant.global.v1.SubstrateMultisigTransaction>} */ (
+    jspb.Message.getRepeatedWrapperField(this, proto.adamant.global.v1.SubstrateMultisigTransaction, 4));
+};
+
+
+/**
+ * @param {!Array<!proto.adamant.global.v1.SubstrateMultisigTransaction>} value
+ * @return {!proto.adamant.global.v1.SubstrateSpecific} returns this
+*/
+proto.adamant.global.v1.SubstrateSpecific.prototype.setSubstrateMultisigTransactionsList = function(value) {
+  return jspb.Message.setRepeatedWrapperField(this, 4, value);
+};
+
+
+/**
+ * @param {!proto.adamant.global.v1.SubstrateMultisigTransaction=} opt_value
+ * @param {number=} opt_index
+ * @return {!proto.adamant.global.v1.SubstrateMultisigTransaction}
+ */
+proto.adamant.global.v1.SubstrateSpecific.prototype.addSubstrateMultisigTransactions = function(opt_value, opt_index) {
+  return jspb.Message.addToRepeatedWrapperField(this, 4, opt_value, proto.adamant.global.v1.SubstrateMultisigTransaction, opt_index);
+};
+
+
+/**
+ * Clears the list making it empty but non-null.
+ * @return {!proto.adamant.global.v1.SubstrateSpecific} returns this
+ */
+proto.adamant.global.v1.SubstrateSpecific.prototype.clearSubstrateMultisigTransactionsList = function() {
+  return this.setSubstrateMultisigTransactionsList([]);
+};
+
+
+
+
+
+if (jspb.Message.GENERATE_TO_OBJECT) {
+/**
+ * Creates an object representation of this proto.
+ * Field names that are reserved in JavaScript and will be renamed to pb_name.
+ * Optional fields that are not set will be set to undefined.
+ * To access a reserved field use, foo.pb_<name>, eg, foo.pb_default.
+ * For the list of reserved names please see:
+ *     net/proto2/compiler/js/internal/generator.cc#kKeyword.
+ * @param {boolean=} opt_includeInstance Deprecated. whether to include the
+ *     JSPB instance for transitional soy proto support:
+ *     http://goto/soy-param-migration
+ * @return {!Object}
+ */
+proto.adamant.global.v1.CreateTransactionSubstrateSpecific.prototype.toObject = function(opt_includeInstance) {
+  return proto.adamant.global.v1.CreateTransactionSubstrateSpecific.toObject(opt_includeInstance, this);
+};
+
+
+/**
+ * Static version of the {@see toObject} method.
+ * @param {boolean|undefined} includeInstance Deprecated. Whether to include
+ *     the JSPB instance for transitional soy proto support:
+ *     http://goto/soy-param-migration
+ * @param {!proto.adamant.global.v1.CreateTransactionSubstrateSpecific} msg The msg instance to transform.
+ * @return {!Object}
+ * @suppress {unusedLocalVariables} f is only used for nested messages
+ */
+proto.adamant.global.v1.CreateTransactionSubstrateSpecific.toObject = function(includeInstance, msg) {
+  var f, obj = {
+    transactionId: jspb.Message.getFieldWithDefault(msg, 1, ""),
+    callType: jspb.Message.getFieldWithDefault(msg, 2, 0),
+    multisigCallType: jspb.Message.getFieldWithDefault(msg, 3, 0)
+  };
+
+  if (includeInstance) {
+    obj.$jspbMessageInstance = msg;
+  }
+  return obj;
+};
+}
+
+
+/**
+ * Deserializes binary data (in protobuf wire format).
+ * @param {jspb.ByteSource} bytes The bytes to deserialize.
+ * @return {!proto.adamant.global.v1.CreateTransactionSubstrateSpecific}
+ */
+proto.adamant.global.v1.CreateTransactionSubstrateSpecific.deserializeBinary = function(bytes) {
+  var reader = new jspb.BinaryReader(bytes);
+  var msg = new proto.adamant.global.v1.CreateTransactionSubstrateSpecific;
+  return proto.adamant.global.v1.CreateTransactionSubstrateSpecific.deserializeBinaryFromReader(msg, reader);
+};
+
+
+/**
+ * Deserializes binary data (in protobuf wire format) from the
+ * given reader into the given message object.
+ * @param {!proto.adamant.global.v1.CreateTransactionSubstrateSpecific} msg The message object to deserialize into.
+ * @param {!jspb.BinaryReader} reader The BinaryReader to use.
+ * @return {!proto.adamant.global.v1.CreateTransactionSubstrateSpecific}
+ */
+proto.adamant.global.v1.CreateTransactionSubstrateSpecific.deserializeBinaryFromReader = function(msg, reader) {
+  while (reader.nextField()) {
+    if (reader.isEndGroup()) {
+      break;
+    }
+    var field = reader.getFieldNumber();
+    switch (field) {
+    case 1:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setTransactionId(value);
+      break;
+    case 2:
+      var value = /** @type {!proto.adamant.global.v1.SubstrateCallType} */ (reader.readEnum());
+      msg.setCallType(value);
+      break;
+    case 3:
+      var value = /** @type {!proto.adamant.global.v1.SubstrateCallType} */ (reader.readEnum());
+      msg.setMultisigCallType(value);
+      break;
+    default:
+      reader.skipField();
+      break;
+    }
+  }
+  return msg;
+};
+
+
+/**
+ * Serializes the message to binary data (in protobuf wire format).
+ * @return {!Uint8Array}
+ */
+proto.adamant.global.v1.CreateTransactionSubstrateSpecific.prototype.serializeBinary = function() {
+  var writer = new jspb.BinaryWriter();
+  proto.adamant.global.v1.CreateTransactionSubstrateSpecific.serializeBinaryToWriter(this, writer);
+  return writer.getResultBuffer();
+};
+
+
+/**
+ * Serializes the given message to binary data (in protobuf wire
+ * format), writing to the given BinaryWriter.
+ * @param {!proto.adamant.global.v1.CreateTransactionSubstrateSpecific} message
+ * @param {!jspb.BinaryWriter} writer
+ * @suppress {unusedLocalVariables} f is only used for nested messages
+ */
+proto.adamant.global.v1.CreateTransactionSubstrateSpecific.serializeBinaryToWriter = function(message, writer) {
+  var f = undefined;
+  f = message.getTransactionId();
+  if (f.length > 0) {
+    writer.writeString(
+      1,
+      f
+    );
+  }
+  f = message.getCallType();
+  if (f !== 0.0) {
+    writer.writeEnum(
+      2,
+      f
+    );
+  }
+  f = message.getMultisigCallType();
+  if (f !== 0.0) {
+    writer.writeEnum(
+      3,
+      f
+    );
+  }
+};
+
+
+/**
+ * optional string transaction_id = 1;
+ * @return {string}
+ */
+proto.adamant.global.v1.CreateTransactionSubstrateSpecific.prototype.getTransactionId = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 1, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.adamant.global.v1.CreateTransactionSubstrateSpecific} returns this
+ */
+proto.adamant.global.v1.CreateTransactionSubstrateSpecific.prototype.setTransactionId = function(value) {
+  return jspb.Message.setProto3StringField(this, 1, value);
+};
+
+
+/**
+ * optional SubstrateCallType call_type = 2;
+ * @return {!proto.adamant.global.v1.SubstrateCallType}
+ */
+proto.adamant.global.v1.CreateTransactionSubstrateSpecific.prototype.getCallType = function() {
+  return /** @type {!proto.adamant.global.v1.SubstrateCallType} */ (jspb.Message.getFieldWithDefault(this, 2, 0));
+};
+
+
+/**
+ * @param {!proto.adamant.global.v1.SubstrateCallType} value
+ * @return {!proto.adamant.global.v1.CreateTransactionSubstrateSpecific} returns this
+ */
+proto.adamant.global.v1.CreateTransactionSubstrateSpecific.prototype.setCallType = function(value) {
+  return jspb.Message.setProto3EnumField(this, 2, value);
+};
+
+
+/**
+ * optional SubstrateCallType multisig_call_type = 3;
+ * @return {!proto.adamant.global.v1.SubstrateCallType}
+ */
+proto.adamant.global.v1.CreateTransactionSubstrateSpecific.prototype.getMultisigCallType = function() {
+  return /** @type {!proto.adamant.global.v1.SubstrateCallType} */ (jspb.Message.getFieldWithDefault(this, 3, 0));
+};
+
+
+/**
+ * @param {!proto.adamant.global.v1.SubstrateCallType} value
+ * @return {!proto.adamant.global.v1.CreateTransactionSubstrateSpecific} returns this
+ */
+proto.adamant.global.v1.CreateTransactionSubstrateSpecific.prototype.setMultisigCallType = function(value) {
+  return jspb.Message.setProto3EnumField(this, 3, value);
+};
+
+
+
+
+
+if (jspb.Message.GENERATE_TO_OBJECT) {
+/**
+ * Creates an object representation of this proto.
+ * Field names that are reserved in JavaScript and will be renamed to pb_name.
+ * Optional fields that are not set will be set to undefined.
+ * To access a reserved field use, foo.pb_<name>, eg, foo.pb_default.
+ * For the list of reserved names please see:
+ *     net/proto2/compiler/js/internal/generator.cc#kKeyword.
+ * @param {boolean=} opt_includeInstance Deprecated. whether to include the
+ *     JSPB instance for transitional soy proto support:
+ *     http://goto/soy-param-migration
+ * @return {!Object}
+ */
+proto.adamant.global.v1.CreateTransactionWalletConnectSpecific.prototype.toObject = function(opt_includeInstance) {
+  return proto.adamant.global.v1.CreateTransactionWalletConnectSpecific.toObject(opt_includeInstance, this);
+};
+
+
+/**
+ * Static version of the {@see toObject} method.
+ * @param {boolean|undefined} includeInstance Deprecated. Whether to include
+ *     the JSPB instance for transitional soy proto support:
+ *     http://goto/soy-param-migration
+ * @param {!proto.adamant.global.v1.CreateTransactionWalletConnectSpecific} msg The msg instance to transform.
+ * @return {!Object}
+ * @suppress {unusedLocalVariables} f is only used for nested messages
+ */
+proto.adamant.global.v1.CreateTransactionWalletConnectSpecific.toObject = function(includeInstance, msg) {
+  var f, obj = {
+    callRequestType: jspb.Message.getFieldWithDefault(msg, 1, 0),
+    callRequestParams: jspb.Message.getFieldWithDefault(msg, 2, "")
+  };
+
+  if (includeInstance) {
+    obj.$jspbMessageInstance = msg;
+  }
+  return obj;
+};
+}
+
+
+/**
+ * Deserializes binary data (in protobuf wire format).
+ * @param {jspb.ByteSource} bytes The bytes to deserialize.
+ * @return {!proto.adamant.global.v1.CreateTransactionWalletConnectSpecific}
+ */
+proto.adamant.global.v1.CreateTransactionWalletConnectSpecific.deserializeBinary = function(bytes) {
+  var reader = new jspb.BinaryReader(bytes);
+  var msg = new proto.adamant.global.v1.CreateTransactionWalletConnectSpecific;
+  return proto.adamant.global.v1.CreateTransactionWalletConnectSpecific.deserializeBinaryFromReader(msg, reader);
+};
+
+
+/**
+ * Deserializes binary data (in protobuf wire format) from the
+ * given reader into the given message object.
+ * @param {!proto.adamant.global.v1.CreateTransactionWalletConnectSpecific} msg The message object to deserialize into.
+ * @param {!jspb.BinaryReader} reader The BinaryReader to use.
+ * @return {!proto.adamant.global.v1.CreateTransactionWalletConnectSpecific}
+ */
+proto.adamant.global.v1.CreateTransactionWalletConnectSpecific.deserializeBinaryFromReader = function(msg, reader) {
+  while (reader.nextField()) {
+    if (reader.isEndGroup()) {
+      break;
+    }
+    var field = reader.getFieldNumber();
+    switch (field) {
+    case 1:
+      var value = /** @type {!proto.adamant.global.v1.WalletConnectCallRequestType} */ (reader.readEnum());
+      msg.setCallRequestType(value);
+      break;
+    case 2:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setCallRequestParams(value);
+      break;
+    default:
+      reader.skipField();
+      break;
+    }
+  }
+  return msg;
+};
+
+
+/**
+ * Serializes the message to binary data (in protobuf wire format).
+ * @return {!Uint8Array}
+ */
+proto.adamant.global.v1.CreateTransactionWalletConnectSpecific.prototype.serializeBinary = function() {
+  var writer = new jspb.BinaryWriter();
+  proto.adamant.global.v1.CreateTransactionWalletConnectSpecific.serializeBinaryToWriter(this, writer);
+  return writer.getResultBuffer();
+};
+
+
+/**
+ * Serializes the given message to binary data (in protobuf wire
+ * format), writing to the given BinaryWriter.
+ * @param {!proto.adamant.global.v1.CreateTransactionWalletConnectSpecific} message
+ * @param {!jspb.BinaryWriter} writer
+ * @suppress {unusedLocalVariables} f is only used for nested messages
+ */
+proto.adamant.global.v1.CreateTransactionWalletConnectSpecific.serializeBinaryToWriter = function(message, writer) {
+  var f = undefined;
+  f = message.getCallRequestType();
+  if (f !== 0.0) {
+    writer.writeEnum(
+      1,
+      f
+    );
+  }
+  f = message.getCallRequestParams();
+  if (f.length > 0) {
+    writer.writeString(
+      2,
+      f
+    );
+  }
+};
+
+
+/**
+ * optional WalletConnectCallRequestType call_request_type = 1;
+ * @return {!proto.adamant.global.v1.WalletConnectCallRequestType}
+ */
+proto.adamant.global.v1.CreateTransactionWalletConnectSpecific.prototype.getCallRequestType = function() {
+  return /** @type {!proto.adamant.global.v1.WalletConnectCallRequestType} */ (jspb.Message.getFieldWithDefault(this, 1, 0));
+};
+
+
+/**
+ * @param {!proto.adamant.global.v1.WalletConnectCallRequestType} value
+ * @return {!proto.adamant.global.v1.CreateTransactionWalletConnectSpecific} returns this
+ */
+proto.adamant.global.v1.CreateTransactionWalletConnectSpecific.prototype.setCallRequestType = function(value) {
+  return jspb.Message.setProto3EnumField(this, 1, value);
+};
+
+
+/**
+ * optional string call_request_params = 2;
+ * @return {string}
+ */
+proto.adamant.global.v1.CreateTransactionWalletConnectSpecific.prototype.getCallRequestParams = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 2, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.adamant.global.v1.CreateTransactionWalletConnectSpecific} returns this
+ */
+proto.adamant.global.v1.CreateTransactionWalletConnectSpecific.prototype.setCallRequestParams = function(value) {
+  return jspb.Message.setProto3StringField(this, 2, value);
+};
+
+
+
+
+
+if (jspb.Message.GENERATE_TO_OBJECT) {
+/**
+ * Creates an object representation of this proto.
+ * Field names that are reserved in JavaScript and will be renamed to pb_name.
+ * Optional fields that are not set will be set to undefined.
+ * To access a reserved field use, foo.pb_<name>, eg, foo.pb_default.
+ * For the list of reserved names please see:
+ *     net/proto2/compiler/js/internal/generator.cc#kKeyword.
+ * @param {boolean=} opt_includeInstance Deprecated. whether to include the
+ *     JSPB instance for transitional soy proto support:
+ *     http://goto/soy-param-migration
+ * @return {!Object}
+ */
+proto.adamant.global.v1.SubstrateMultisigTransaction.prototype.toObject = function(opt_includeInstance) {
+  return proto.adamant.global.v1.SubstrateMultisigTransaction.toObject(opt_includeInstance, this);
+};
+
+
+/**
+ * Static version of the {@see toObject} method.
+ * @param {boolean|undefined} includeInstance Deprecated. Whether to include
+ *     the JSPB instance for transitional soy proto support:
+ *     http://goto/soy-param-migration
+ * @param {!proto.adamant.global.v1.SubstrateMultisigTransaction} msg The msg instance to transform.
+ * @return {!Object}
+ * @suppress {unusedLocalVariables} f is only used for nested messages
+ */
+proto.adamant.global.v1.SubstrateMultisigTransaction.toObject = function(includeInstance, msg) {
+  var f, obj = {
+    walletId: jspb.Message.getFieldWithDefault(msg, 1, ""),
+    transactionId: jspb.Message.getFieldWithDefault(msg, 2, ""),
+    substrateMultisigTransactionId: jspb.Message.getFieldWithDefault(msg, 3, ""),
+    accountId: jspb.Message.getFieldWithDefault(msg, 4, ""),
+    txId: jspb.Message.getFieldWithDefault(msg, 5, ""),
+    extrinsicId: jspb.Message.getFieldWithDefault(msg, 6, ""),
+    jpyRate: jspb.Message.getFloatingPointFieldWithDefault(msg, 7, 0.0),
+    fee: jspb.Message.getFloatingPointFieldWithDefault(msg, 8, 0.0),
+    stringFee: jspb.Message.getFieldWithDefault(msg, 9, ""),
+    nonce: jspb.Message.getFieldWithDefault(msg, 10, 0),
+    multisigCallType: jspb.Message.getFieldWithDefault(msg, 11, 0),
+    state: jspb.Message.getFieldWithDefault(msg, 12, 0),
+    createTime: (f = msg.getCreateTime()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f),
+    updateTime: (f = msg.getUpdateTime()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f)
+  };
+
+  if (includeInstance) {
+    obj.$jspbMessageInstance = msg;
+  }
+  return obj;
+};
+}
+
+
+/**
+ * Deserializes binary data (in protobuf wire format).
+ * @param {jspb.ByteSource} bytes The bytes to deserialize.
+ * @return {!proto.adamant.global.v1.SubstrateMultisigTransaction}
+ */
+proto.adamant.global.v1.SubstrateMultisigTransaction.deserializeBinary = function(bytes) {
+  var reader = new jspb.BinaryReader(bytes);
+  var msg = new proto.adamant.global.v1.SubstrateMultisigTransaction;
+  return proto.adamant.global.v1.SubstrateMultisigTransaction.deserializeBinaryFromReader(msg, reader);
+};
+
+
+/**
+ * Deserializes binary data (in protobuf wire format) from the
+ * given reader into the given message object.
+ * @param {!proto.adamant.global.v1.SubstrateMultisigTransaction} msg The message object to deserialize into.
+ * @param {!jspb.BinaryReader} reader The BinaryReader to use.
+ * @return {!proto.adamant.global.v1.SubstrateMultisigTransaction}
+ */
+proto.adamant.global.v1.SubstrateMultisigTransaction.deserializeBinaryFromReader = function(msg, reader) {
+  while (reader.nextField()) {
+    if (reader.isEndGroup()) {
+      break;
+    }
+    var field = reader.getFieldNumber();
+    switch (field) {
+    case 1:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setWalletId(value);
+      break;
+    case 2:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setTransactionId(value);
+      break;
+    case 3:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setSubstrateMultisigTransactionId(value);
+      break;
+    case 4:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setAccountId(value);
+      break;
+    case 5:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setTxId(value);
+      break;
+    case 6:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setExtrinsicId(value);
+      break;
+    case 7:
+      var value = /** @type {number} */ (reader.readDouble());
+      msg.setJpyRate(value);
+      break;
+    case 8:
+      var value = /** @type {number} */ (reader.readDouble());
+      msg.setFee(value);
+      break;
+    case 9:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setStringFee(value);
+      break;
+    case 10:
+      var value = /** @type {number} */ (reader.readUint64());
+      msg.setNonce(value);
+      break;
+    case 11:
+      var value = /** @type {!proto.adamant.global.v1.SubstrateCallType} */ (reader.readEnum());
+      msg.setMultisigCallType(value);
+      break;
+    case 12:
+      var value = /** @type {!proto.adamant.global.v1.TransactionState} */ (reader.readEnum());
+      msg.setState(value);
+      break;
+    case 13:
+      var value = new google_protobuf_timestamp_pb.Timestamp;
+      reader.readMessage(value,google_protobuf_timestamp_pb.Timestamp.deserializeBinaryFromReader);
+      msg.setCreateTime(value);
+      break;
+    case 14:
+      var value = new google_protobuf_timestamp_pb.Timestamp;
+      reader.readMessage(value,google_protobuf_timestamp_pb.Timestamp.deserializeBinaryFromReader);
+      msg.setUpdateTime(value);
+      break;
+    default:
+      reader.skipField();
+      break;
+    }
+  }
+  return msg;
+};
+
+
+/**
+ * Serializes the message to binary data (in protobuf wire format).
+ * @return {!Uint8Array}
+ */
+proto.adamant.global.v1.SubstrateMultisigTransaction.prototype.serializeBinary = function() {
+  var writer = new jspb.BinaryWriter();
+  proto.adamant.global.v1.SubstrateMultisigTransaction.serializeBinaryToWriter(this, writer);
+  return writer.getResultBuffer();
+};
+
+
+/**
+ * Serializes the given message to binary data (in protobuf wire
+ * format), writing to the given BinaryWriter.
+ * @param {!proto.adamant.global.v1.SubstrateMultisigTransaction} message
+ * @param {!jspb.BinaryWriter} writer
+ * @suppress {unusedLocalVariables} f is only used for nested messages
+ */
+proto.adamant.global.v1.SubstrateMultisigTransaction.serializeBinaryToWriter = function(message, writer) {
+  var f = undefined;
+  f = message.getWalletId();
+  if (f.length > 0) {
+    writer.writeString(
+      1,
+      f
+    );
+  }
+  f = message.getTransactionId();
+  if (f.length > 0) {
+    writer.writeString(
+      2,
+      f
+    );
+  }
+  f = message.getSubstrateMultisigTransactionId();
+  if (f.length > 0) {
+    writer.writeString(
+      3,
+      f
+    );
+  }
+  f = message.getAccountId();
+  if (f.length > 0) {
+    writer.writeString(
+      4,
+      f
+    );
+  }
+  f = message.getTxId();
+  if (f.length > 0) {
+    writer.writeString(
+      5,
+      f
+    );
+  }
+  f = message.getExtrinsicId();
+  if (f.length > 0) {
+    writer.writeString(
+      6,
+      f
+    );
+  }
+  f = message.getJpyRate();
+  if (f !== 0.0) {
+    writer.writeDouble(
+      7,
+      f
+    );
+  }
+  f = message.getFee();
+  if (f !== 0.0) {
+    writer.writeDouble(
+      8,
+      f
+    );
+  }
+  f = message.getStringFee();
+  if (f.length > 0) {
+    writer.writeString(
+      9,
+      f
+    );
+  }
+  f = message.getNonce();
+  if (f !== 0) {
+    writer.writeUint64(
+      10,
+      f
+    );
+  }
+  f = message.getMultisigCallType();
+  if (f !== 0.0) {
+    writer.writeEnum(
+      11,
+      f
+    );
+  }
+  f = message.getState();
+  if (f !== 0.0) {
+    writer.writeEnum(
+      12,
+      f
+    );
+  }
+  f = message.getCreateTime();
+  if (f != null) {
+    writer.writeMessage(
+      13,
+      f,
+      google_protobuf_timestamp_pb.Timestamp.serializeBinaryToWriter
+    );
+  }
+  f = message.getUpdateTime();
+  if (f != null) {
+    writer.writeMessage(
+      14,
+      f,
+      google_protobuf_timestamp_pb.Timestamp.serializeBinaryToWriter
+    );
+  }
+};
+
+
+/**
+ * optional string wallet_id = 1;
+ * @return {string}
+ */
+proto.adamant.global.v1.SubstrateMultisigTransaction.prototype.getWalletId = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 1, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.adamant.global.v1.SubstrateMultisigTransaction} returns this
+ */
+proto.adamant.global.v1.SubstrateMultisigTransaction.prototype.setWalletId = function(value) {
+  return jspb.Message.setProto3StringField(this, 1, value);
+};
+
+
+/**
+ * optional string transaction_id = 2;
+ * @return {string}
+ */
+proto.adamant.global.v1.SubstrateMultisigTransaction.prototype.getTransactionId = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 2, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.adamant.global.v1.SubstrateMultisigTransaction} returns this
+ */
+proto.adamant.global.v1.SubstrateMultisigTransaction.prototype.setTransactionId = function(value) {
+  return jspb.Message.setProto3StringField(this, 2, value);
+};
+
+
+/**
+ * optional string substrate_multisig_transaction_id = 3;
+ * @return {string}
+ */
+proto.adamant.global.v1.SubstrateMultisigTransaction.prototype.getSubstrateMultisigTransactionId = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 3, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.adamant.global.v1.SubstrateMultisigTransaction} returns this
+ */
+proto.adamant.global.v1.SubstrateMultisigTransaction.prototype.setSubstrateMultisigTransactionId = function(value) {
+  return jspb.Message.setProto3StringField(this, 3, value);
+};
+
+
+/**
+ * optional string account_id = 4;
+ * @return {string}
+ */
+proto.adamant.global.v1.SubstrateMultisigTransaction.prototype.getAccountId = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 4, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.adamant.global.v1.SubstrateMultisigTransaction} returns this
+ */
+proto.adamant.global.v1.SubstrateMultisigTransaction.prototype.setAccountId = function(value) {
+  return jspb.Message.setProto3StringField(this, 4, value);
+};
+
+
+/**
+ * optional string tx_id = 5;
+ * @return {string}
+ */
+proto.adamant.global.v1.SubstrateMultisigTransaction.prototype.getTxId = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 5, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.adamant.global.v1.SubstrateMultisigTransaction} returns this
+ */
+proto.adamant.global.v1.SubstrateMultisigTransaction.prototype.setTxId = function(value) {
+  return jspb.Message.setProto3StringField(this, 5, value);
+};
+
+
+/**
+ * optional string extrinsic_id = 6;
+ * @return {string}
+ */
+proto.adamant.global.v1.SubstrateMultisigTransaction.prototype.getExtrinsicId = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 6, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.adamant.global.v1.SubstrateMultisigTransaction} returns this
+ */
+proto.adamant.global.v1.SubstrateMultisigTransaction.prototype.setExtrinsicId = function(value) {
+  return jspb.Message.setProto3StringField(this, 6, value);
+};
+
+
+/**
+ * optional double jpy_rate = 7;
+ * @return {number}
+ */
+proto.adamant.global.v1.SubstrateMultisigTransaction.prototype.getJpyRate = function() {
+  return /** @type {number} */ (jspb.Message.getFloatingPointFieldWithDefault(this, 7, 0.0));
+};
+
+
+/**
+ * @param {number} value
+ * @return {!proto.adamant.global.v1.SubstrateMultisigTransaction} returns this
+ */
+proto.adamant.global.v1.SubstrateMultisigTransaction.prototype.setJpyRate = function(value) {
+  return jspb.Message.setProto3FloatField(this, 7, value);
+};
+
+
+/**
+ * optional double fee = 8;
+ * @return {number}
+ */
+proto.adamant.global.v1.SubstrateMultisigTransaction.prototype.getFee = function() {
+  return /** @type {number} */ (jspb.Message.getFloatingPointFieldWithDefault(this, 8, 0.0));
+};
+
+
+/**
+ * @param {number} value
+ * @return {!proto.adamant.global.v1.SubstrateMultisigTransaction} returns this
+ */
+proto.adamant.global.v1.SubstrateMultisigTransaction.prototype.setFee = function(value) {
+  return jspb.Message.setProto3FloatField(this, 8, value);
+};
+
+
+/**
+ * optional string string_fee = 9;
+ * @return {string}
+ */
+proto.adamant.global.v1.SubstrateMultisigTransaction.prototype.getStringFee = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 9, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.adamant.global.v1.SubstrateMultisigTransaction} returns this
+ */
+proto.adamant.global.v1.SubstrateMultisigTransaction.prototype.setStringFee = function(value) {
+  return jspb.Message.setProto3StringField(this, 9, value);
+};
+
+
+/**
+ * optional uint64 nonce = 10;
+ * @return {number}
+ */
+proto.adamant.global.v1.SubstrateMultisigTransaction.prototype.getNonce = function() {
+  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 10, 0));
+};
+
+
+/**
+ * @param {number} value
+ * @return {!proto.adamant.global.v1.SubstrateMultisigTransaction} returns this
+ */
+proto.adamant.global.v1.SubstrateMultisigTransaction.prototype.setNonce = function(value) {
+  return jspb.Message.setProto3IntField(this, 10, value);
+};
+
+
+/**
+ * optional SubstrateCallType multisig_call_type = 11;
+ * @return {!proto.adamant.global.v1.SubstrateCallType}
+ */
+proto.adamant.global.v1.SubstrateMultisigTransaction.prototype.getMultisigCallType = function() {
+  return /** @type {!proto.adamant.global.v1.SubstrateCallType} */ (jspb.Message.getFieldWithDefault(this, 11, 0));
+};
+
+
+/**
+ * @param {!proto.adamant.global.v1.SubstrateCallType} value
+ * @return {!proto.adamant.global.v1.SubstrateMultisigTransaction} returns this
+ */
+proto.adamant.global.v1.SubstrateMultisigTransaction.prototype.setMultisigCallType = function(value) {
+  return jspb.Message.setProto3EnumField(this, 11, value);
+};
+
+
+/**
+ * optional TransactionState state = 12;
+ * @return {!proto.adamant.global.v1.TransactionState}
+ */
+proto.adamant.global.v1.SubstrateMultisigTransaction.prototype.getState = function() {
+  return /** @type {!proto.adamant.global.v1.TransactionState} */ (jspb.Message.getFieldWithDefault(this, 12, 0));
+};
+
+
+/**
+ * @param {!proto.adamant.global.v1.TransactionState} value
+ * @return {!proto.adamant.global.v1.SubstrateMultisigTransaction} returns this
+ */
+proto.adamant.global.v1.SubstrateMultisigTransaction.prototype.setState = function(value) {
+  return jspb.Message.setProto3EnumField(this, 12, value);
+};
+
+
+/**
+ * optional google.protobuf.Timestamp create_time = 13;
+ * @return {?proto.google.protobuf.Timestamp}
+ */
+proto.adamant.global.v1.SubstrateMultisigTransaction.prototype.getCreateTime = function() {
+  return /** @type{?proto.google.protobuf.Timestamp} */ (
+    jspb.Message.getWrapperField(this, google_protobuf_timestamp_pb.Timestamp, 13));
+};
+
+
+/**
+ * @param {?proto.google.protobuf.Timestamp|undefined} value
+ * @return {!proto.adamant.global.v1.SubstrateMultisigTransaction} returns this
+*/
+proto.adamant.global.v1.SubstrateMultisigTransaction.prototype.setCreateTime = function(value) {
+  return jspb.Message.setWrapperField(this, 13, value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
+ * @return {!proto.adamant.global.v1.SubstrateMultisigTransaction} returns this
+ */
+proto.adamant.global.v1.SubstrateMultisigTransaction.prototype.clearCreateTime = function() {
+  return this.setCreateTime(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.adamant.global.v1.SubstrateMultisigTransaction.prototype.hasCreateTime = function() {
+  return jspb.Message.getField(this, 13) != null;
+};
+
+
+/**
+ * optional google.protobuf.Timestamp update_time = 14;
+ * @return {?proto.google.protobuf.Timestamp}
+ */
+proto.adamant.global.v1.SubstrateMultisigTransaction.prototype.getUpdateTime = function() {
+  return /** @type{?proto.google.protobuf.Timestamp} */ (
+    jspb.Message.getWrapperField(this, google_protobuf_timestamp_pb.Timestamp, 14));
+};
+
+
+/**
+ * @param {?proto.google.protobuf.Timestamp|undefined} value
+ * @return {!proto.adamant.global.v1.SubstrateMultisigTransaction} returns this
+*/
+proto.adamant.global.v1.SubstrateMultisigTransaction.prototype.setUpdateTime = function(value) {
+  return jspb.Message.setWrapperField(this, 14, value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
+ * @return {!proto.adamant.global.v1.SubstrateMultisigTransaction} returns this
+ */
+proto.adamant.global.v1.SubstrateMultisigTransaction.prototype.clearUpdateTime = function() {
+  return this.setUpdateTime(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.adamant.global.v1.SubstrateMultisigTransaction.prototype.hasUpdateTime = function() {
+  return jspb.Message.getField(this, 14) != null;
 };
 
 
@@ -8629,9 +11538,12 @@ proto.adamant.global.v1.SignInfo.prototype.getWalletId = function() {
 };
 
 
-/** @param {string} value */
+/**
+ * @param {string} value
+ * @return {!proto.adamant.global.v1.SignInfo} returns this
+ */
 proto.adamant.global.v1.SignInfo.prototype.setWalletId = function(value) {
-  jspb.Message.setProto3StringField(this, 1, value);
+  return jspb.Message.setProto3StringField(this, 1, value);
 };
 
 
@@ -8644,9 +11556,12 @@ proto.adamant.global.v1.SignInfo.prototype.getTransactionId = function() {
 };
 
 
-/** @param {string} value */
+/**
+ * @param {string} value
+ * @return {!proto.adamant.global.v1.SignInfo} returns this
+ */
 proto.adamant.global.v1.SignInfo.prototype.setTransactionId = function(value) {
-  jspb.Message.setProto3StringField(this, 2, value);
+  return jspb.Message.setProto3StringField(this, 2, value);
 };
 
 
@@ -8659,9 +11574,12 @@ proto.adamant.global.v1.SignInfo.prototype.getKeyId = function() {
 };
 
 
-/** @param {string} value */
+/**
+ * @param {string} value
+ * @return {!proto.adamant.global.v1.SignInfo} returns this
+ */
 proto.adamant.global.v1.SignInfo.prototype.setKeyId = function(value) {
-  jspb.Message.setProto3StringField(this, 3, value);
+  return jspb.Message.setProto3StringField(this, 3, value);
 };
 
 
@@ -8674,9 +11592,12 @@ proto.adamant.global.v1.SignInfo.prototype.getHdAccount = function() {
 };
 
 
-/** @param {number} value */
+/**
+ * @param {number} value
+ * @return {!proto.adamant.global.v1.SignInfo} returns this
+ */
 proto.adamant.global.v1.SignInfo.prototype.setHdAccount = function(value) {
-  jspb.Message.setProto3IntField(this, 4, value);
+  return jspb.Message.setProto3IntField(this, 4, value);
 };
 
 
@@ -8689,9 +11610,12 @@ proto.adamant.global.v1.SignInfo.prototype.getCoin = function() {
 };
 
 
-/** @param {!proto.gincoinc.global.v1.Coin} value */
+/**
+ * @param {!proto.gincoinc.global.v1.Coin} value
+ * @return {!proto.adamant.global.v1.SignInfo} returns this
+ */
 proto.adamant.global.v1.SignInfo.prototype.setCoin = function(value) {
-  jspb.Message.setProto3EnumField(this, 5, value);
+  return jspb.Message.setProto3EnumField(this, 5, value);
 };
 
 
@@ -8704,9 +11628,12 @@ proto.adamant.global.v1.SignInfo.prototype.getTxId = function() {
 };
 
 
-/** @param {string} value */
+/**
+ * @param {string} value
+ * @return {!proto.adamant.global.v1.SignInfo} returns this
+ */
 proto.adamant.global.v1.SignInfo.prototype.setTxId = function(value) {
-  jspb.Message.setProto3StringField(this, 6, value);
+  return jspb.Message.setProto3StringField(this, 6, value);
 };
 
 
@@ -8719,9 +11646,12 @@ proto.adamant.global.v1.SignInfo.prototype.getSignIndex = function() {
 };
 
 
-/** @param {number} value */
+/**
+ * @param {number} value
+ * @return {!proto.adamant.global.v1.SignInfo} returns this
+ */
 proto.adamant.global.v1.SignInfo.prototype.setSignIndex = function(value) {
-  jspb.Message.setProto3IntField(this, 11, value);
+  return jspb.Message.setProto3IntField(this, 11, value);
 };
 
 
@@ -8734,9 +11664,12 @@ proto.adamant.global.v1.SignInfo.prototype.getSignMessage = function() {
 };
 
 
-/** @param {string} value */
+/**
+ * @param {string} value
+ * @return {!proto.adamant.global.v1.SignInfo} returns this
+ */
 proto.adamant.global.v1.SignInfo.prototype.setSignMessage = function(value) {
-  jspb.Message.setProto3StringField(this, 7, value);
+  return jspb.Message.setProto3StringField(this, 7, value);
 };
 
 
@@ -8749,9 +11682,12 @@ proto.adamant.global.v1.SignInfo.prototype.getHdChange = function() {
 };
 
 
-/** @param {number} value */
+/**
+ * @param {number} value
+ * @return {!proto.adamant.global.v1.SignInfo} returns this
+ */
 proto.adamant.global.v1.SignInfo.prototype.setHdChange = function(value) {
-  jspb.Message.setProto3IntField(this, 8, value);
+  return jspb.Message.setProto3IntField(this, 8, value);
 };
 
 
@@ -8764,9 +11700,12 @@ proto.adamant.global.v1.SignInfo.prototype.getHdIndex = function() {
 };
 
 
-/** @param {number} value */
+/**
+ * @param {number} value
+ * @return {!proto.adamant.global.v1.SignInfo} returns this
+ */
 proto.adamant.global.v1.SignInfo.prototype.setHdIndex = function(value) {
-  jspb.Message.setProto3IntField(this, 9, value);
+  return jspb.Message.setProto3IntField(this, 9, value);
 };
 
 
@@ -8780,9 +11719,12 @@ proto.adamant.global.v1.SignInfo.prototype.getSignTxInputsList = function() {
 };
 
 
-/** @param {!Array<!proto.adamant.global.v1.SignTxInput>} value */
+/**
+ * @param {!Array<!proto.adamant.global.v1.SignTxInput>} value
+ * @return {!proto.adamant.global.v1.SignInfo} returns this
+*/
 proto.adamant.global.v1.SignInfo.prototype.setSignTxInputsList = function(value) {
-  jspb.Message.setRepeatedWrapperField(this, 10, value);
+  return jspb.Message.setRepeatedWrapperField(this, 10, value);
 };
 
 
@@ -8798,9 +11740,10 @@ proto.adamant.global.v1.SignInfo.prototype.addSignTxInputs = function(opt_value,
 
 /**
  * Clears the list making it empty but non-null.
+ * @return {!proto.adamant.global.v1.SignInfo} returns this
  */
 proto.adamant.global.v1.SignInfo.prototype.clearSignTxInputsList = function() {
-  this.setSignTxInputsList([]);
+  return this.setSignTxInputsList([]);
 };
 
 
@@ -8961,9 +11904,12 @@ proto.adamant.global.v1.SignTxInput.prototype.getTxInputIndex = function() {
 };
 
 
-/** @param {number} value */
+/**
+ * @param {number} value
+ * @return {!proto.adamant.global.v1.SignTxInput} returns this
+ */
 proto.adamant.global.v1.SignTxInput.prototype.setTxInputIndex = function(value) {
-  jspb.Message.setProto3IntField(this, 1, value);
+  return jspb.Message.setProto3IntField(this, 1, value);
 };
 
 
@@ -8976,9 +11922,12 @@ proto.adamant.global.v1.SignTxInput.prototype.getSignMessage = function() {
 };
 
 
-/** @param {string} value */
+/**
+ * @param {string} value
+ * @return {!proto.adamant.global.v1.SignTxInput} returns this
+ */
 proto.adamant.global.v1.SignTxInput.prototype.setSignMessage = function(value) {
-  jspb.Message.setProto3StringField(this, 2, value);
+  return jspb.Message.setProto3StringField(this, 2, value);
 };
 
 
@@ -8991,9 +11940,12 @@ proto.adamant.global.v1.SignTxInput.prototype.getHdChange = function() {
 };
 
 
-/** @param {number} value */
+/**
+ * @param {number} value
+ * @return {!proto.adamant.global.v1.SignTxInput} returns this
+ */
 proto.adamant.global.v1.SignTxInput.prototype.setHdChange = function(value) {
-  jspb.Message.setProto3IntField(this, 3, value);
+  return jspb.Message.setProto3IntField(this, 3, value);
 };
 
 
@@ -9006,9 +11958,12 @@ proto.adamant.global.v1.SignTxInput.prototype.getHdIndex = function() {
 };
 
 
-/** @param {number} value */
+/**
+ * @param {number} value
+ * @return {!proto.adamant.global.v1.SignTxInput} returns this
+ */
 proto.adamant.global.v1.SignTxInput.prototype.setHdIndex = function(value) {
-  jspb.Message.setProto3IntField(this, 4, value);
+  return jspb.Message.setProto3IntField(this, 4, value);
 };
 
 
@@ -9055,6 +12010,7 @@ proto.adamant.global.v1.Transfer.toObject = function(includeInstance, msg) {
     partnerWalletId: jspb.Message.getFieldWithDefault(msg, 10, ""),
     partnerAddress: jspb.Message.getFieldWithDefault(msg, 11, ""),
     destinationTag: jspb.Message.getFieldWithDefault(msg, 15, 0),
+    memoId: jspb.Message.getFieldWithDefault(msg, 17, "0"),
     state: jspb.Message.getFieldWithDefault(msg, 12, 0),
     result: jspb.Message.getFieldWithDefault(msg, 16, 0),
     createTime: (f = msg.getCreateTime()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f),
@@ -9138,6 +12094,10 @@ proto.adamant.global.v1.Transfer.deserializeBinaryFromReader = function(msg, rea
     case 15:
       var value = /** @type {number} */ (reader.readUint32());
       msg.setDestinationTag(value);
+      break;
+    case 17:
+      var value = /** @type {string} */ (reader.readUint64String());
+      msg.setMemoId(value);
       break;
     case 12:
       var value = /** @type {!proto.gincoinc.global.v1.TransactionState} */ (reader.readEnum());
@@ -9263,6 +12223,13 @@ proto.adamant.global.v1.Transfer.serializeBinaryToWriter = function(message, wri
       f
     );
   }
+  f = message.getMemoId();
+  if (parseInt(f, 10) !== 0) {
+    writer.writeUint64String(
+      17,
+      f
+    );
+  }
   f = message.getState();
   if (f !== 0.0) {
     writer.writeEnum(
@@ -9305,9 +12272,12 @@ proto.adamant.global.v1.Transfer.prototype.getWalletId = function() {
 };
 
 
-/** @param {string} value */
+/**
+ * @param {string} value
+ * @return {!proto.adamant.global.v1.Transfer} returns this
+ */
 proto.adamant.global.v1.Transfer.prototype.setWalletId = function(value) {
-  jspb.Message.setProto3StringField(this, 1, value);
+  return jspb.Message.setProto3StringField(this, 1, value);
 };
 
 
@@ -9320,9 +12290,12 @@ proto.adamant.global.v1.Transfer.prototype.getTransferId = function() {
 };
 
 
-/** @param {string} value */
+/**
+ * @param {string} value
+ * @return {!proto.adamant.global.v1.Transfer} returns this
+ */
 proto.adamant.global.v1.Transfer.prototype.setTransferId = function(value) {
-  jspb.Message.setProto3StringField(this, 2, value);
+  return jspb.Message.setProto3StringField(this, 2, value);
 };
 
 
@@ -9335,9 +12308,12 @@ proto.adamant.global.v1.Transfer.prototype.getCoin = function() {
 };
 
 
-/** @param {!proto.gincoinc.global.v1.Coin} value */
+/**
+ * @param {!proto.gincoinc.global.v1.Coin} value
+ * @return {!proto.adamant.global.v1.Transfer} returns this
+ */
 proto.adamant.global.v1.Transfer.prototype.setCoin = function(value) {
-  jspb.Message.setProto3EnumField(this, 3, value);
+  return jspb.Message.setProto3EnumField(this, 3, value);
 };
 
 
@@ -9350,9 +12326,12 @@ proto.adamant.global.v1.Transfer.prototype.getTxId = function() {
 };
 
 
-/** @param {string} value */
+/**
+ * @param {string} value
+ * @return {!proto.adamant.global.v1.Transfer} returns this
+ */
 proto.adamant.global.v1.Transfer.prototype.setTxId = function(value) {
-  jspb.Message.setProto3StringField(this, 4, value);
+  return jspb.Message.setProto3StringField(this, 4, value);
 };
 
 
@@ -9365,9 +12344,12 @@ proto.adamant.global.v1.Transfer.prototype.getTransferType = function() {
 };
 
 
-/** @param {!proto.gincoinc.global.v1.TransferType} value */
+/**
+ * @param {!proto.gincoinc.global.v1.TransferType} value
+ * @return {!proto.adamant.global.v1.Transfer} returns this
+ */
 proto.adamant.global.v1.Transfer.prototype.setTransferType = function(value) {
-  jspb.Message.setProto3EnumField(this, 5, value);
+  return jspb.Message.setProto3EnumField(this, 5, value);
 };
 
 
@@ -9380,9 +12362,12 @@ proto.adamant.global.v1.Transfer.prototype.getValue = function() {
 };
 
 
-/** @param {number} value */
+/**
+ * @param {number} value
+ * @return {!proto.adamant.global.v1.Transfer} returns this
+ */
 proto.adamant.global.v1.Transfer.prototype.setValue = function(value) {
-  jspb.Message.setProto3FloatField(this, 6, value);
+  return jspb.Message.setProto3FloatField(this, 6, value);
 };
 
 
@@ -9395,9 +12380,12 @@ proto.adamant.global.v1.Transfer.prototype.getStringValue = function() {
 };
 
 
-/** @param {string} value */
+/**
+ * @param {string} value
+ * @return {!proto.adamant.global.v1.Transfer} returns this
+ */
 proto.adamant.global.v1.Transfer.prototype.setStringValue = function(value) {
-  jspb.Message.setProto3StringField(this, 7, value);
+  return jspb.Message.setProto3StringField(this, 7, value);
 };
 
 
@@ -9410,9 +12398,12 @@ proto.adamant.global.v1.Transfer.prototype.getJpyRate = function() {
 };
 
 
-/** @param {number} value */
+/**
+ * @param {number} value
+ * @return {!proto.adamant.global.v1.Transfer} returns this
+ */
 proto.adamant.global.v1.Transfer.prototype.setJpyRate = function(value) {
-  jspb.Message.setProto3FloatField(this, 9, value);
+  return jspb.Message.setProto3FloatField(this, 9, value);
 };
 
 
@@ -9425,9 +12416,12 @@ proto.adamant.global.v1.Transfer.prototype.getPartnerWalletId = function() {
 };
 
 
-/** @param {string} value */
+/**
+ * @param {string} value
+ * @return {!proto.adamant.global.v1.Transfer} returns this
+ */
 proto.adamant.global.v1.Transfer.prototype.setPartnerWalletId = function(value) {
-  jspb.Message.setProto3StringField(this, 10, value);
+  return jspb.Message.setProto3StringField(this, 10, value);
 };
 
 
@@ -9440,9 +12434,12 @@ proto.adamant.global.v1.Transfer.prototype.getPartnerAddress = function() {
 };
 
 
-/** @param {string} value */
+/**
+ * @param {string} value
+ * @return {!proto.adamant.global.v1.Transfer} returns this
+ */
 proto.adamant.global.v1.Transfer.prototype.setPartnerAddress = function(value) {
-  jspb.Message.setProto3StringField(this, 11, value);
+  return jspb.Message.setProto3StringField(this, 11, value);
 };
 
 
@@ -9455,9 +12452,30 @@ proto.adamant.global.v1.Transfer.prototype.getDestinationTag = function() {
 };
 
 
-/** @param {number} value */
+/**
+ * @param {number} value
+ * @return {!proto.adamant.global.v1.Transfer} returns this
+ */
 proto.adamant.global.v1.Transfer.prototype.setDestinationTag = function(value) {
-  jspb.Message.setProto3IntField(this, 15, value);
+  return jspb.Message.setProto3IntField(this, 15, value);
+};
+
+
+/**
+ * optional uint64 memo_id = 17;
+ * @return {string}
+ */
+proto.adamant.global.v1.Transfer.prototype.getMemoId = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 17, "0"));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.adamant.global.v1.Transfer} returns this
+ */
+proto.adamant.global.v1.Transfer.prototype.setMemoId = function(value) {
+  return jspb.Message.setProto3StringIntField(this, 17, value);
 };
 
 
@@ -9470,9 +12488,12 @@ proto.adamant.global.v1.Transfer.prototype.getState = function() {
 };
 
 
-/** @param {!proto.gincoinc.global.v1.TransactionState} value */
+/**
+ * @param {!proto.gincoinc.global.v1.TransactionState} value
+ * @return {!proto.adamant.global.v1.Transfer} returns this
+ */
 proto.adamant.global.v1.Transfer.prototype.setState = function(value) {
-  jspb.Message.setProto3EnumField(this, 12, value);
+  return jspb.Message.setProto3EnumField(this, 12, value);
 };
 
 
@@ -9485,9 +12506,12 @@ proto.adamant.global.v1.Transfer.prototype.getResult = function() {
 };
 
 
-/** @param {!proto.gincoinc.global.v1.TransactionResult} value */
+/**
+ * @param {!proto.gincoinc.global.v1.TransactionResult} value
+ * @return {!proto.adamant.global.v1.Transfer} returns this
+ */
 proto.adamant.global.v1.Transfer.prototype.setResult = function(value) {
-  jspb.Message.setProto3EnumField(this, 16, value);
+  return jspb.Message.setProto3EnumField(this, 16, value);
 };
 
 
@@ -9501,17 +12525,21 @@ proto.adamant.global.v1.Transfer.prototype.getCreateTime = function() {
 };
 
 
-/** @param {?proto.google.protobuf.Timestamp|undefined} value */
+/**
+ * @param {?proto.google.protobuf.Timestamp|undefined} value
+ * @return {!proto.adamant.global.v1.Transfer} returns this
+*/
 proto.adamant.global.v1.Transfer.prototype.setCreateTime = function(value) {
-  jspb.Message.setWrapperField(this, 13, value);
+  return jspb.Message.setWrapperField(this, 13, value);
 };
 
 
 /**
  * Clears the message field making it undefined.
+ * @return {!proto.adamant.global.v1.Transfer} returns this
  */
 proto.adamant.global.v1.Transfer.prototype.clearCreateTime = function() {
-  this.setCreateTime(undefined);
+  return this.setCreateTime(undefined);
 };
 
 
@@ -9534,17 +12562,21 @@ proto.adamant.global.v1.Transfer.prototype.getUpdateTime = function() {
 };
 
 
-/** @param {?proto.google.protobuf.Timestamp|undefined} value */
+/**
+ * @param {?proto.google.protobuf.Timestamp|undefined} value
+ * @return {!proto.adamant.global.v1.Transfer} returns this
+*/
 proto.adamant.global.v1.Transfer.prototype.setUpdateTime = function(value) {
-  jspb.Message.setWrapperField(this, 14, value);
+  return jspb.Message.setWrapperField(this, 14, value);
 };
 
 
 /**
  * Clears the message field making it undefined.
+ * @return {!proto.adamant.global.v1.Transfer} returns this
  */
 proto.adamant.global.v1.Transfer.prototype.clearUpdateTime = function() {
-  this.setUpdateTime(undefined);
+  return this.setUpdateTime(undefined);
 };
 
 
@@ -9554,6 +12586,980 @@ proto.adamant.global.v1.Transfer.prototype.clearUpdateTime = function() {
  */
 proto.adamant.global.v1.Transfer.prototype.hasUpdateTime = function() {
   return jspb.Message.getField(this, 14) != null;
+};
+
+
+
+
+
+if (jspb.Message.GENERATE_TO_OBJECT) {
+/**
+ * Creates an object representation of this proto.
+ * Field names that are reserved in JavaScript and will be renamed to pb_name.
+ * Optional fields that are not set will be set to undefined.
+ * To access a reserved field use, foo.pb_<name>, eg, foo.pb_default.
+ * For the list of reserved names please see:
+ *     net/proto2/compiler/js/internal/generator.cc#kKeyword.
+ * @param {boolean=} opt_includeInstance Deprecated. whether to include the
+ *     JSPB instance for transitional soy proto support:
+ *     http://goto/soy-param-migration
+ * @return {!Object}
+ */
+proto.adamant.global.v1.UncheckedTransfer.prototype.toObject = function(opt_includeInstance) {
+  return proto.adamant.global.v1.UncheckedTransfer.toObject(opt_includeInstance, this);
+};
+
+
+/**
+ * Static version of the {@see toObject} method.
+ * @param {boolean|undefined} includeInstance Deprecated. Whether to include
+ *     the JSPB instance for transitional soy proto support:
+ *     http://goto/soy-param-migration
+ * @param {!proto.adamant.global.v1.UncheckedTransfer} msg The msg instance to transform.
+ * @return {!Object}
+ * @suppress {unusedLocalVariables} f is only used for nested messages
+ */
+proto.adamant.global.v1.UncheckedTransfer.toObject = function(includeInstance, msg) {
+  var f, obj = {
+    walletId: jspb.Message.getFieldWithDefault(msg, 1, ""),
+    transferId: jspb.Message.getFieldWithDefault(msg, 2, ""),
+    coin: jspb.Message.getFieldWithDefault(msg, 3, 0),
+    txId: jspb.Message.getFieldWithDefault(msg, 4, ""),
+    transferType: jspb.Message.getFieldWithDefault(msg, 5, 0),
+    state: jspb.Message.getFieldWithDefault(msg, 6, 0),
+    result: jspb.Message.getFieldWithDefault(msg, 7, 0),
+    value: jspb.Message.getFloatingPointFieldWithDefault(msg, 8, 0.0),
+    stringValue: jspb.Message.getFieldWithDefault(msg, 9, ""),
+    jpyRate: jspb.Message.getFloatingPointFieldWithDefault(msg, 10, 0.0),
+    partnerWalletId: jspb.Message.getFieldWithDefault(msg, 11, ""),
+    partnerAddress: jspb.Message.getFieldWithDefault(msg, 12, ""),
+    destinationTag: jspb.Message.getFieldWithDefault(msg, 13, 0),
+    memoId: jspb.Message.getFieldWithDefault(msg, 14, "0"),
+    hasChecked: jspb.Message.getBooleanFieldWithDefault(msg, 15, false),
+    createTime: (f = msg.getCreateTime()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f),
+    updateTime: (f = msg.getUpdateTime()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f)
+  };
+
+  if (includeInstance) {
+    obj.$jspbMessageInstance = msg;
+  }
+  return obj;
+};
+}
+
+
+/**
+ * Deserializes binary data (in protobuf wire format).
+ * @param {jspb.ByteSource} bytes The bytes to deserialize.
+ * @return {!proto.adamant.global.v1.UncheckedTransfer}
+ */
+proto.adamant.global.v1.UncheckedTransfer.deserializeBinary = function(bytes) {
+  var reader = new jspb.BinaryReader(bytes);
+  var msg = new proto.adamant.global.v1.UncheckedTransfer;
+  return proto.adamant.global.v1.UncheckedTransfer.deserializeBinaryFromReader(msg, reader);
+};
+
+
+/**
+ * Deserializes binary data (in protobuf wire format) from the
+ * given reader into the given message object.
+ * @param {!proto.adamant.global.v1.UncheckedTransfer} msg The message object to deserialize into.
+ * @param {!jspb.BinaryReader} reader The BinaryReader to use.
+ * @return {!proto.adamant.global.v1.UncheckedTransfer}
+ */
+proto.adamant.global.v1.UncheckedTransfer.deserializeBinaryFromReader = function(msg, reader) {
+  while (reader.nextField()) {
+    if (reader.isEndGroup()) {
+      break;
+    }
+    var field = reader.getFieldNumber();
+    switch (field) {
+    case 1:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setWalletId(value);
+      break;
+    case 2:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setTransferId(value);
+      break;
+    case 3:
+      var value = /** @type {!proto.gincoinc.global.v1.Coin} */ (reader.readEnum());
+      msg.setCoin(value);
+      break;
+    case 4:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setTxId(value);
+      break;
+    case 5:
+      var value = /** @type {!proto.gincoinc.global.v1.TransferType} */ (reader.readEnum());
+      msg.setTransferType(value);
+      break;
+    case 6:
+      var value = /** @type {!proto.gincoinc.global.v1.TransactionState} */ (reader.readEnum());
+      msg.setState(value);
+      break;
+    case 7:
+      var value = /** @type {!proto.gincoinc.global.v1.TransactionResult} */ (reader.readEnum());
+      msg.setResult(value);
+      break;
+    case 8:
+      var value = /** @type {number} */ (reader.readDouble());
+      msg.setValue(value);
+      break;
+    case 9:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setStringValue(value);
+      break;
+    case 10:
+      var value = /** @type {number} */ (reader.readDouble());
+      msg.setJpyRate(value);
+      break;
+    case 11:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setPartnerWalletId(value);
+      break;
+    case 12:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setPartnerAddress(value);
+      break;
+    case 13:
+      var value = /** @type {number} */ (reader.readUint32());
+      msg.setDestinationTag(value);
+      break;
+    case 14:
+      var value = /** @type {string} */ (reader.readUint64String());
+      msg.setMemoId(value);
+      break;
+    case 15:
+      var value = /** @type {boolean} */ (reader.readBool());
+      msg.setHasChecked(value);
+      break;
+    case 16:
+      var value = new google_protobuf_timestamp_pb.Timestamp;
+      reader.readMessage(value,google_protobuf_timestamp_pb.Timestamp.deserializeBinaryFromReader);
+      msg.setCreateTime(value);
+      break;
+    case 17:
+      var value = new google_protobuf_timestamp_pb.Timestamp;
+      reader.readMessage(value,google_protobuf_timestamp_pb.Timestamp.deserializeBinaryFromReader);
+      msg.setUpdateTime(value);
+      break;
+    default:
+      reader.skipField();
+      break;
+    }
+  }
+  return msg;
+};
+
+
+/**
+ * Serializes the message to binary data (in protobuf wire format).
+ * @return {!Uint8Array}
+ */
+proto.adamant.global.v1.UncheckedTransfer.prototype.serializeBinary = function() {
+  var writer = new jspb.BinaryWriter();
+  proto.adamant.global.v1.UncheckedTransfer.serializeBinaryToWriter(this, writer);
+  return writer.getResultBuffer();
+};
+
+
+/**
+ * Serializes the given message to binary data (in protobuf wire
+ * format), writing to the given BinaryWriter.
+ * @param {!proto.adamant.global.v1.UncheckedTransfer} message
+ * @param {!jspb.BinaryWriter} writer
+ * @suppress {unusedLocalVariables} f is only used for nested messages
+ */
+proto.adamant.global.v1.UncheckedTransfer.serializeBinaryToWriter = function(message, writer) {
+  var f = undefined;
+  f = message.getWalletId();
+  if (f.length > 0) {
+    writer.writeString(
+      1,
+      f
+    );
+  }
+  f = message.getTransferId();
+  if (f.length > 0) {
+    writer.writeString(
+      2,
+      f
+    );
+  }
+  f = message.getCoin();
+  if (f !== 0.0) {
+    writer.writeEnum(
+      3,
+      f
+    );
+  }
+  f = message.getTxId();
+  if (f.length > 0) {
+    writer.writeString(
+      4,
+      f
+    );
+  }
+  f = message.getTransferType();
+  if (f !== 0.0) {
+    writer.writeEnum(
+      5,
+      f
+    );
+  }
+  f = message.getState();
+  if (f !== 0.0) {
+    writer.writeEnum(
+      6,
+      f
+    );
+  }
+  f = message.getResult();
+  if (f !== 0.0) {
+    writer.writeEnum(
+      7,
+      f
+    );
+  }
+  f = message.getValue();
+  if (f !== 0.0) {
+    writer.writeDouble(
+      8,
+      f
+    );
+  }
+  f = message.getStringValue();
+  if (f.length > 0) {
+    writer.writeString(
+      9,
+      f
+    );
+  }
+  f = message.getJpyRate();
+  if (f !== 0.0) {
+    writer.writeDouble(
+      10,
+      f
+    );
+  }
+  f = message.getPartnerWalletId();
+  if (f.length > 0) {
+    writer.writeString(
+      11,
+      f
+    );
+  }
+  f = message.getPartnerAddress();
+  if (f.length > 0) {
+    writer.writeString(
+      12,
+      f
+    );
+  }
+  f = message.getDestinationTag();
+  if (f !== 0) {
+    writer.writeUint32(
+      13,
+      f
+    );
+  }
+  f = message.getMemoId();
+  if (parseInt(f, 10) !== 0) {
+    writer.writeUint64String(
+      14,
+      f
+    );
+  }
+  f = message.getHasChecked();
+  if (f) {
+    writer.writeBool(
+      15,
+      f
+    );
+  }
+  f = message.getCreateTime();
+  if (f != null) {
+    writer.writeMessage(
+      16,
+      f,
+      google_protobuf_timestamp_pb.Timestamp.serializeBinaryToWriter
+    );
+  }
+  f = message.getUpdateTime();
+  if (f != null) {
+    writer.writeMessage(
+      17,
+      f,
+      google_protobuf_timestamp_pb.Timestamp.serializeBinaryToWriter
+    );
+  }
+};
+
+
+/**
+ * optional string wallet_id = 1;
+ * @return {string}
+ */
+proto.adamant.global.v1.UncheckedTransfer.prototype.getWalletId = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 1, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.adamant.global.v1.UncheckedTransfer} returns this
+ */
+proto.adamant.global.v1.UncheckedTransfer.prototype.setWalletId = function(value) {
+  return jspb.Message.setProto3StringField(this, 1, value);
+};
+
+
+/**
+ * optional string transfer_id = 2;
+ * @return {string}
+ */
+proto.adamant.global.v1.UncheckedTransfer.prototype.getTransferId = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 2, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.adamant.global.v1.UncheckedTransfer} returns this
+ */
+proto.adamant.global.v1.UncheckedTransfer.prototype.setTransferId = function(value) {
+  return jspb.Message.setProto3StringField(this, 2, value);
+};
+
+
+/**
+ * optional gincoinc.global.v1.Coin coin = 3;
+ * @return {!proto.gincoinc.global.v1.Coin}
+ */
+proto.adamant.global.v1.UncheckedTransfer.prototype.getCoin = function() {
+  return /** @type {!proto.gincoinc.global.v1.Coin} */ (jspb.Message.getFieldWithDefault(this, 3, 0));
+};
+
+
+/**
+ * @param {!proto.gincoinc.global.v1.Coin} value
+ * @return {!proto.adamant.global.v1.UncheckedTransfer} returns this
+ */
+proto.adamant.global.v1.UncheckedTransfer.prototype.setCoin = function(value) {
+  return jspb.Message.setProto3EnumField(this, 3, value);
+};
+
+
+/**
+ * optional string tx_id = 4;
+ * @return {string}
+ */
+proto.adamant.global.v1.UncheckedTransfer.prototype.getTxId = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 4, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.adamant.global.v1.UncheckedTransfer} returns this
+ */
+proto.adamant.global.v1.UncheckedTransfer.prototype.setTxId = function(value) {
+  return jspb.Message.setProto3StringField(this, 4, value);
+};
+
+
+/**
+ * optional gincoinc.global.v1.TransferType transfer_type = 5;
+ * @return {!proto.gincoinc.global.v1.TransferType}
+ */
+proto.adamant.global.v1.UncheckedTransfer.prototype.getTransferType = function() {
+  return /** @type {!proto.gincoinc.global.v1.TransferType} */ (jspb.Message.getFieldWithDefault(this, 5, 0));
+};
+
+
+/**
+ * @param {!proto.gincoinc.global.v1.TransferType} value
+ * @return {!proto.adamant.global.v1.UncheckedTransfer} returns this
+ */
+proto.adamant.global.v1.UncheckedTransfer.prototype.setTransferType = function(value) {
+  return jspb.Message.setProto3EnumField(this, 5, value);
+};
+
+
+/**
+ * optional gincoinc.global.v1.TransactionState state = 6;
+ * @return {!proto.gincoinc.global.v1.TransactionState}
+ */
+proto.adamant.global.v1.UncheckedTransfer.prototype.getState = function() {
+  return /** @type {!proto.gincoinc.global.v1.TransactionState} */ (jspb.Message.getFieldWithDefault(this, 6, 0));
+};
+
+
+/**
+ * @param {!proto.gincoinc.global.v1.TransactionState} value
+ * @return {!proto.adamant.global.v1.UncheckedTransfer} returns this
+ */
+proto.adamant.global.v1.UncheckedTransfer.prototype.setState = function(value) {
+  return jspb.Message.setProto3EnumField(this, 6, value);
+};
+
+
+/**
+ * optional gincoinc.global.v1.TransactionResult result = 7;
+ * @return {!proto.gincoinc.global.v1.TransactionResult}
+ */
+proto.adamant.global.v1.UncheckedTransfer.prototype.getResult = function() {
+  return /** @type {!proto.gincoinc.global.v1.TransactionResult} */ (jspb.Message.getFieldWithDefault(this, 7, 0));
+};
+
+
+/**
+ * @param {!proto.gincoinc.global.v1.TransactionResult} value
+ * @return {!proto.adamant.global.v1.UncheckedTransfer} returns this
+ */
+proto.adamant.global.v1.UncheckedTransfer.prototype.setResult = function(value) {
+  return jspb.Message.setProto3EnumField(this, 7, value);
+};
+
+
+/**
+ * optional double value = 8;
+ * @return {number}
+ */
+proto.adamant.global.v1.UncheckedTransfer.prototype.getValue = function() {
+  return /** @type {number} */ (jspb.Message.getFloatingPointFieldWithDefault(this, 8, 0.0));
+};
+
+
+/**
+ * @param {number} value
+ * @return {!proto.adamant.global.v1.UncheckedTransfer} returns this
+ */
+proto.adamant.global.v1.UncheckedTransfer.prototype.setValue = function(value) {
+  return jspb.Message.setProto3FloatField(this, 8, value);
+};
+
+
+/**
+ * optional string string_value = 9;
+ * @return {string}
+ */
+proto.adamant.global.v1.UncheckedTransfer.prototype.getStringValue = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 9, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.adamant.global.v1.UncheckedTransfer} returns this
+ */
+proto.adamant.global.v1.UncheckedTransfer.prototype.setStringValue = function(value) {
+  return jspb.Message.setProto3StringField(this, 9, value);
+};
+
+
+/**
+ * optional double jpy_rate = 10;
+ * @return {number}
+ */
+proto.adamant.global.v1.UncheckedTransfer.prototype.getJpyRate = function() {
+  return /** @type {number} */ (jspb.Message.getFloatingPointFieldWithDefault(this, 10, 0.0));
+};
+
+
+/**
+ * @param {number} value
+ * @return {!proto.adamant.global.v1.UncheckedTransfer} returns this
+ */
+proto.adamant.global.v1.UncheckedTransfer.prototype.setJpyRate = function(value) {
+  return jspb.Message.setProto3FloatField(this, 10, value);
+};
+
+
+/**
+ * optional string partner_wallet_id = 11;
+ * @return {string}
+ */
+proto.adamant.global.v1.UncheckedTransfer.prototype.getPartnerWalletId = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 11, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.adamant.global.v1.UncheckedTransfer} returns this
+ */
+proto.adamant.global.v1.UncheckedTransfer.prototype.setPartnerWalletId = function(value) {
+  return jspb.Message.setProto3StringField(this, 11, value);
+};
+
+
+/**
+ * optional string partner_address = 12;
+ * @return {string}
+ */
+proto.adamant.global.v1.UncheckedTransfer.prototype.getPartnerAddress = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 12, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.adamant.global.v1.UncheckedTransfer} returns this
+ */
+proto.adamant.global.v1.UncheckedTransfer.prototype.setPartnerAddress = function(value) {
+  return jspb.Message.setProto3StringField(this, 12, value);
+};
+
+
+/**
+ * optional uint32 destination_tag = 13;
+ * @return {number}
+ */
+proto.adamant.global.v1.UncheckedTransfer.prototype.getDestinationTag = function() {
+  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 13, 0));
+};
+
+
+/**
+ * @param {number} value
+ * @return {!proto.adamant.global.v1.UncheckedTransfer} returns this
+ */
+proto.adamant.global.v1.UncheckedTransfer.prototype.setDestinationTag = function(value) {
+  return jspb.Message.setProto3IntField(this, 13, value);
+};
+
+
+/**
+ * optional uint64 memo_id = 14;
+ * @return {string}
+ */
+proto.adamant.global.v1.UncheckedTransfer.prototype.getMemoId = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 14, "0"));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.adamant.global.v1.UncheckedTransfer} returns this
+ */
+proto.adamant.global.v1.UncheckedTransfer.prototype.setMemoId = function(value) {
+  return jspb.Message.setProto3StringIntField(this, 14, value);
+};
+
+
+/**
+ * optional bool has_checked = 15;
+ * @return {boolean}
+ */
+proto.adamant.global.v1.UncheckedTransfer.prototype.getHasChecked = function() {
+  return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 15, false));
+};
+
+
+/**
+ * @param {boolean} value
+ * @return {!proto.adamant.global.v1.UncheckedTransfer} returns this
+ */
+proto.adamant.global.v1.UncheckedTransfer.prototype.setHasChecked = function(value) {
+  return jspb.Message.setProto3BooleanField(this, 15, value);
+};
+
+
+/**
+ * optional google.protobuf.Timestamp create_time = 16;
+ * @return {?proto.google.protobuf.Timestamp}
+ */
+proto.adamant.global.v1.UncheckedTransfer.prototype.getCreateTime = function() {
+  return /** @type{?proto.google.protobuf.Timestamp} */ (
+    jspb.Message.getWrapperField(this, google_protobuf_timestamp_pb.Timestamp, 16));
+};
+
+
+/**
+ * @param {?proto.google.protobuf.Timestamp|undefined} value
+ * @return {!proto.adamant.global.v1.UncheckedTransfer} returns this
+*/
+proto.adamant.global.v1.UncheckedTransfer.prototype.setCreateTime = function(value) {
+  return jspb.Message.setWrapperField(this, 16, value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
+ * @return {!proto.adamant.global.v1.UncheckedTransfer} returns this
+ */
+proto.adamant.global.v1.UncheckedTransfer.prototype.clearCreateTime = function() {
+  return this.setCreateTime(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.adamant.global.v1.UncheckedTransfer.prototype.hasCreateTime = function() {
+  return jspb.Message.getField(this, 16) != null;
+};
+
+
+/**
+ * optional google.protobuf.Timestamp update_time = 17;
+ * @return {?proto.google.protobuf.Timestamp}
+ */
+proto.adamant.global.v1.UncheckedTransfer.prototype.getUpdateTime = function() {
+  return /** @type{?proto.google.protobuf.Timestamp} */ (
+    jspb.Message.getWrapperField(this, google_protobuf_timestamp_pb.Timestamp, 17));
+};
+
+
+/**
+ * @param {?proto.google.protobuf.Timestamp|undefined} value
+ * @return {!proto.adamant.global.v1.UncheckedTransfer} returns this
+*/
+proto.adamant.global.v1.UncheckedTransfer.prototype.setUpdateTime = function(value) {
+  return jspb.Message.setWrapperField(this, 17, value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
+ * @return {!proto.adamant.global.v1.UncheckedTransfer} returns this
+ */
+proto.adamant.global.v1.UncheckedTransfer.prototype.clearUpdateTime = function() {
+  return this.setUpdateTime(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.adamant.global.v1.UncheckedTransfer.prototype.hasUpdateTime = function() {
+  return jspb.Message.getField(this, 17) != null;
+};
+
+
+
+
+
+if (jspb.Message.GENERATE_TO_OBJECT) {
+/**
+ * Creates an object representation of this proto.
+ * Field names that are reserved in JavaScript and will be renamed to pb_name.
+ * Optional fields that are not set will be set to undefined.
+ * To access a reserved field use, foo.pb_<name>, eg, foo.pb_default.
+ * For the list of reserved names please see:
+ *     net/proto2/compiler/js/internal/generator.cc#kKeyword.
+ * @param {boolean=} opt_includeInstance Deprecated. whether to include the
+ *     JSPB instance for transitional soy proto support:
+ *     http://goto/soy-param-migration
+ * @return {!Object}
+ */
+proto.adamant.global.v1.EventTriggeredMessage.prototype.toObject = function(opt_includeInstance) {
+  return proto.adamant.global.v1.EventTriggeredMessage.toObject(opt_includeInstance, this);
+};
+
+
+/**
+ * Static version of the {@see toObject} method.
+ * @param {boolean|undefined} includeInstance Deprecated. Whether to include
+ *     the JSPB instance for transitional soy proto support:
+ *     http://goto/soy-param-migration
+ * @param {!proto.adamant.global.v1.EventTriggeredMessage} msg The msg instance to transform.
+ * @return {!Object}
+ * @suppress {unusedLocalVariables} f is only used for nested messages
+ */
+proto.adamant.global.v1.EventTriggeredMessage.toObject = function(includeInstance, msg) {
+  var f, obj = {
+    eventTriggeredMessageId: jspb.Message.getFieldWithDefault(msg, 1, ""),
+    eventTriggeredMessageType: jspb.Message.getFieldWithDefault(msg, 2, 0),
+    ownerId: jspb.Message.getFieldWithDefault(msg, 3, ""),
+    destination: jspb.Message.getFieldWithDefault(msg, 4, ""),
+    createTime: (f = msg.getCreateTime()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f),
+    updateTime: (f = msg.getUpdateTime()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f)
+  };
+
+  if (includeInstance) {
+    obj.$jspbMessageInstance = msg;
+  }
+  return obj;
+};
+}
+
+
+/**
+ * Deserializes binary data (in protobuf wire format).
+ * @param {jspb.ByteSource} bytes The bytes to deserialize.
+ * @return {!proto.adamant.global.v1.EventTriggeredMessage}
+ */
+proto.adamant.global.v1.EventTriggeredMessage.deserializeBinary = function(bytes) {
+  var reader = new jspb.BinaryReader(bytes);
+  var msg = new proto.adamant.global.v1.EventTriggeredMessage;
+  return proto.adamant.global.v1.EventTriggeredMessage.deserializeBinaryFromReader(msg, reader);
+};
+
+
+/**
+ * Deserializes binary data (in protobuf wire format) from the
+ * given reader into the given message object.
+ * @param {!proto.adamant.global.v1.EventTriggeredMessage} msg The message object to deserialize into.
+ * @param {!jspb.BinaryReader} reader The BinaryReader to use.
+ * @return {!proto.adamant.global.v1.EventTriggeredMessage}
+ */
+proto.adamant.global.v1.EventTriggeredMessage.deserializeBinaryFromReader = function(msg, reader) {
+  while (reader.nextField()) {
+    if (reader.isEndGroup()) {
+      break;
+    }
+    var field = reader.getFieldNumber();
+    switch (field) {
+    case 1:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setEventTriggeredMessageId(value);
+      break;
+    case 2:
+      var value = /** @type {!proto.adamant.global.v1.EventTriggeredMessageType} */ (reader.readEnum());
+      msg.setEventTriggeredMessageType(value);
+      break;
+    case 3:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setOwnerId(value);
+      break;
+    case 4:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setDestination(value);
+      break;
+    case 5:
+      var value = new google_protobuf_timestamp_pb.Timestamp;
+      reader.readMessage(value,google_protobuf_timestamp_pb.Timestamp.deserializeBinaryFromReader);
+      msg.setCreateTime(value);
+      break;
+    case 6:
+      var value = new google_protobuf_timestamp_pb.Timestamp;
+      reader.readMessage(value,google_protobuf_timestamp_pb.Timestamp.deserializeBinaryFromReader);
+      msg.setUpdateTime(value);
+      break;
+    default:
+      reader.skipField();
+      break;
+    }
+  }
+  return msg;
+};
+
+
+/**
+ * Serializes the message to binary data (in protobuf wire format).
+ * @return {!Uint8Array}
+ */
+proto.adamant.global.v1.EventTriggeredMessage.prototype.serializeBinary = function() {
+  var writer = new jspb.BinaryWriter();
+  proto.adamant.global.v1.EventTriggeredMessage.serializeBinaryToWriter(this, writer);
+  return writer.getResultBuffer();
+};
+
+
+/**
+ * Serializes the given message to binary data (in protobuf wire
+ * format), writing to the given BinaryWriter.
+ * @param {!proto.adamant.global.v1.EventTriggeredMessage} message
+ * @param {!jspb.BinaryWriter} writer
+ * @suppress {unusedLocalVariables} f is only used for nested messages
+ */
+proto.adamant.global.v1.EventTriggeredMessage.serializeBinaryToWriter = function(message, writer) {
+  var f = undefined;
+  f = message.getEventTriggeredMessageId();
+  if (f.length > 0) {
+    writer.writeString(
+      1,
+      f
+    );
+  }
+  f = message.getEventTriggeredMessageType();
+  if (f !== 0.0) {
+    writer.writeEnum(
+      2,
+      f
+    );
+  }
+  f = message.getOwnerId();
+  if (f.length > 0) {
+    writer.writeString(
+      3,
+      f
+    );
+  }
+  f = message.getDestination();
+  if (f.length > 0) {
+    writer.writeString(
+      4,
+      f
+    );
+  }
+  f = message.getCreateTime();
+  if (f != null) {
+    writer.writeMessage(
+      5,
+      f,
+      google_protobuf_timestamp_pb.Timestamp.serializeBinaryToWriter
+    );
+  }
+  f = message.getUpdateTime();
+  if (f != null) {
+    writer.writeMessage(
+      6,
+      f,
+      google_protobuf_timestamp_pb.Timestamp.serializeBinaryToWriter
+    );
+  }
+};
+
+
+/**
+ * optional string event_triggered_message_id = 1;
+ * @return {string}
+ */
+proto.adamant.global.v1.EventTriggeredMessage.prototype.getEventTriggeredMessageId = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 1, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.adamant.global.v1.EventTriggeredMessage} returns this
+ */
+proto.adamant.global.v1.EventTriggeredMessage.prototype.setEventTriggeredMessageId = function(value) {
+  return jspb.Message.setProto3StringField(this, 1, value);
+};
+
+
+/**
+ * optional EventTriggeredMessageType event_triggered_message_type = 2;
+ * @return {!proto.adamant.global.v1.EventTriggeredMessageType}
+ */
+proto.adamant.global.v1.EventTriggeredMessage.prototype.getEventTriggeredMessageType = function() {
+  return /** @type {!proto.adamant.global.v1.EventTriggeredMessageType} */ (jspb.Message.getFieldWithDefault(this, 2, 0));
+};
+
+
+/**
+ * @param {!proto.adamant.global.v1.EventTriggeredMessageType} value
+ * @return {!proto.adamant.global.v1.EventTriggeredMessage} returns this
+ */
+proto.adamant.global.v1.EventTriggeredMessage.prototype.setEventTriggeredMessageType = function(value) {
+  return jspb.Message.setProto3EnumField(this, 2, value);
+};
+
+
+/**
+ * optional string owner_id = 3;
+ * @return {string}
+ */
+proto.adamant.global.v1.EventTriggeredMessage.prototype.getOwnerId = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 3, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.adamant.global.v1.EventTriggeredMessage} returns this
+ */
+proto.adamant.global.v1.EventTriggeredMessage.prototype.setOwnerId = function(value) {
+  return jspb.Message.setProto3StringField(this, 3, value);
+};
+
+
+/**
+ * optional string destination = 4;
+ * @return {string}
+ */
+proto.adamant.global.v1.EventTriggeredMessage.prototype.getDestination = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 4, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.adamant.global.v1.EventTriggeredMessage} returns this
+ */
+proto.adamant.global.v1.EventTriggeredMessage.prototype.setDestination = function(value) {
+  return jspb.Message.setProto3StringField(this, 4, value);
+};
+
+
+/**
+ * optional google.protobuf.Timestamp create_time = 5;
+ * @return {?proto.google.protobuf.Timestamp}
+ */
+proto.adamant.global.v1.EventTriggeredMessage.prototype.getCreateTime = function() {
+  return /** @type{?proto.google.protobuf.Timestamp} */ (
+    jspb.Message.getWrapperField(this, google_protobuf_timestamp_pb.Timestamp, 5));
+};
+
+
+/**
+ * @param {?proto.google.protobuf.Timestamp|undefined} value
+ * @return {!proto.adamant.global.v1.EventTriggeredMessage} returns this
+*/
+proto.adamant.global.v1.EventTriggeredMessage.prototype.setCreateTime = function(value) {
+  return jspb.Message.setWrapperField(this, 5, value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
+ * @return {!proto.adamant.global.v1.EventTriggeredMessage} returns this
+ */
+proto.adamant.global.v1.EventTriggeredMessage.prototype.clearCreateTime = function() {
+  return this.setCreateTime(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.adamant.global.v1.EventTriggeredMessage.prototype.hasCreateTime = function() {
+  return jspb.Message.getField(this, 5) != null;
+};
+
+
+/**
+ * optional google.protobuf.Timestamp update_time = 6;
+ * @return {?proto.google.protobuf.Timestamp}
+ */
+proto.adamant.global.v1.EventTriggeredMessage.prototype.getUpdateTime = function() {
+  return /** @type{?proto.google.protobuf.Timestamp} */ (
+    jspb.Message.getWrapperField(this, google_protobuf_timestamp_pb.Timestamp, 6));
+};
+
+
+/**
+ * @param {?proto.google.protobuf.Timestamp|undefined} value
+ * @return {!proto.adamant.global.v1.EventTriggeredMessage} returns this
+*/
+proto.adamant.global.v1.EventTriggeredMessage.prototype.setUpdateTime = function(value) {
+  return jspb.Message.setWrapperField(this, 6, value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
+ * @return {!proto.adamant.global.v1.EventTriggeredMessage} returns this
+ */
+proto.adamant.global.v1.EventTriggeredMessage.prototype.clearUpdateTime = function() {
+  return this.setUpdateTime(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.adamant.global.v1.EventTriggeredMessage.prototype.hasUpdateTime = function() {
+  return jspb.Message.getField(this, 6) != null;
 };
 
 
@@ -9690,9 +13696,12 @@ proto.adamant.global.v1.Rate.prototype.getCoin = function() {
 };
 
 
-/** @param {!proto.gincoinc.global.v1.Coin} value */
+/**
+ * @param {!proto.gincoinc.global.v1.Coin} value
+ * @return {!proto.adamant.global.v1.Rate} returns this
+ */
 proto.adamant.global.v1.Rate.prototype.setCoin = function(value) {
-  jspb.Message.setProto3EnumField(this, 1, value);
+  return jspb.Message.setProto3EnumField(this, 1, value);
 };
 
 
@@ -9705,9 +13714,12 @@ proto.adamant.global.v1.Rate.prototype.getJpy = function() {
 };
 
 
-/** @param {number} value */
+/**
+ * @param {number} value
+ * @return {!proto.adamant.global.v1.Rate} returns this
+ */
 proto.adamant.global.v1.Rate.prototype.setJpy = function(value) {
-  jspb.Message.setProto3FloatField(this, 2, value);
+  return jspb.Message.setProto3FloatField(this, 2, value);
 };
 
 
@@ -9788,7 +13800,7 @@ proto.adamant.global.v1.RateSnapshot.deserializeBinaryFromReader = function(msg,
     case 2:
       var value = msg.getRatesMap();
       reader.readMessage(value, function(message, reader) {
-        jspb.Map.deserializeBinary(message, reader, jspb.BinaryReader.prototype.readUint32, jspb.BinaryReader.prototype.readMessage, proto.adamant.global.v1.Rate.deserializeBinaryFromReader, 0);
+        jspb.Map.deserializeBinary(message, reader, jspb.BinaryReader.prototype.readUint32, jspb.BinaryReader.prototype.readMessage, proto.adamant.global.v1.Rate.deserializeBinaryFromReader, 0, new proto.adamant.global.v1.Rate());
          });
       break;
     default:
@@ -9843,9 +13855,12 @@ proto.adamant.global.v1.RateSnapshot.prototype.getRateSnapshotId = function() {
 };
 
 
-/** @param {string} value */
+/**
+ * @param {string} value
+ * @return {!proto.adamant.global.v1.RateSnapshot} returns this
+ */
 proto.adamant.global.v1.RateSnapshot.prototype.setRateSnapshotId = function(value) {
-  jspb.Message.setProto3StringField(this, 1, value);
+  return jspb.Message.setProto3StringField(this, 1, value);
 };
 
 
@@ -9864,10 +13879,11 @@ proto.adamant.global.v1.RateSnapshot.prototype.getRatesMap = function(opt_noLazy
 
 /**
  * Clears values from the map. The map will be non-null.
+ * @return {!proto.adamant.global.v1.RateSnapshot} returns this
  */
 proto.adamant.global.v1.RateSnapshot.prototype.clearRatesMap = function() {
   this.getRatesMap().clear();
-};
+  return this;};
 
 
 
@@ -10003,9 +14019,12 @@ proto.adamant.global.v1.Deactivatability.prototype.getAccountId = function() {
 };
 
 
-/** @param {string} value */
+/**
+ * @param {string} value
+ * @return {!proto.adamant.global.v1.Deactivatability} returns this
+ */
 proto.adamant.global.v1.Deactivatability.prototype.setAccountId = function(value) {
-  jspb.Message.setProto3StringField(this, 1, value);
+  return jspb.Message.setProto3StringField(this, 1, value);
 };
 
 
@@ -10018,9 +14037,12 @@ proto.adamant.global.v1.Deactivatability.prototype.getDeactivatable = function()
 };
 
 
-/** @param {boolean} value */
+/**
+ * @param {boolean} value
+ * @return {!proto.adamant.global.v1.Deactivatability} returns this
+ */
 proto.adamant.global.v1.Deactivatability.prototype.setDeactivatable = function(value) {
-  jspb.Message.setProto3BooleanField(this, 2, value);
+  return jspb.Message.setProto3BooleanField(this, 2, value);
 };
 
 
@@ -10223,9 +14245,12 @@ proto.adamant.global.v1.LabeledAddress.prototype.getLabeledAddressId = function(
 };
 
 
-/** @param {string} value */
+/**
+ * @param {string} value
+ * @return {!proto.adamant.global.v1.LabeledAddress} returns this
+ */
 proto.adamant.global.v1.LabeledAddress.prototype.setLabeledAddressId = function(value) {
-  jspb.Message.setProto3StringField(this, 1, value);
+  return jspb.Message.setProto3StringField(this, 1, value);
 };
 
 
@@ -10238,9 +14263,12 @@ proto.adamant.global.v1.LabeledAddress.prototype.getName = function() {
 };
 
 
-/** @param {string} value */
+/**
+ * @param {string} value
+ * @return {!proto.adamant.global.v1.LabeledAddress} returns this
+ */
 proto.adamant.global.v1.LabeledAddress.prototype.setName = function(value) {
-  jspb.Message.setProto3StringField(this, 2, value);
+  return jspb.Message.setProto3StringField(this, 2, value);
 };
 
 
@@ -10253,9 +14281,12 @@ proto.adamant.global.v1.LabeledAddress.prototype.getCoin = function() {
 };
 
 
-/** @param {!proto.gincoinc.global.v1.Coin} value */
+/**
+ * @param {!proto.gincoinc.global.v1.Coin} value
+ * @return {!proto.adamant.global.v1.LabeledAddress} returns this
+ */
 proto.adamant.global.v1.LabeledAddress.prototype.setCoin = function(value) {
-  jspb.Message.setProto3EnumField(this, 3, value);
+  return jspb.Message.setProto3EnumField(this, 3, value);
 };
 
 
@@ -10268,9 +14299,12 @@ proto.adamant.global.v1.LabeledAddress.prototype.getAddress = function() {
 };
 
 
-/** @param {string} value */
+/**
+ * @param {string} value
+ * @return {!proto.adamant.global.v1.LabeledAddress} returns this
+ */
 proto.adamant.global.v1.LabeledAddress.prototype.setAddress = function(value) {
-  jspb.Message.setProto3StringField(this, 4, value);
+  return jspb.Message.setProto3StringField(this, 4, value);
 };
 
 
@@ -10284,17 +14318,21 @@ proto.adamant.global.v1.LabeledAddress.prototype.getProposal = function() {
 };
 
 
-/** @param {?proto.adamant.global.v1.LabeledAddressProposal|undefined} value */
+/**
+ * @param {?proto.adamant.global.v1.LabeledAddressProposal|undefined} value
+ * @return {!proto.adamant.global.v1.LabeledAddress} returns this
+*/
 proto.adamant.global.v1.LabeledAddress.prototype.setProposal = function(value) {
-  jspb.Message.setWrapperField(this, 5, value);
+  return jspb.Message.setWrapperField(this, 5, value);
 };
 
 
 /**
  * Clears the message field making it undefined.
+ * @return {!proto.adamant.global.v1.LabeledAddress} returns this
  */
 proto.adamant.global.v1.LabeledAddress.prototype.clearProposal = function() {
-  this.setProposal(undefined);
+  return this.setProposal(undefined);
 };
 
 
@@ -10317,17 +14355,21 @@ proto.adamant.global.v1.LabeledAddress.prototype.getCreateTime = function() {
 };
 
 
-/** @param {?proto.google.protobuf.Timestamp|undefined} value */
+/**
+ * @param {?proto.google.protobuf.Timestamp|undefined} value
+ * @return {!proto.adamant.global.v1.LabeledAddress} returns this
+*/
 proto.adamant.global.v1.LabeledAddress.prototype.setCreateTime = function(value) {
-  jspb.Message.setWrapperField(this, 7, value);
+  return jspb.Message.setWrapperField(this, 7, value);
 };
 
 
 /**
  * Clears the message field making it undefined.
+ * @return {!proto.adamant.global.v1.LabeledAddress} returns this
  */
 proto.adamant.global.v1.LabeledAddress.prototype.clearCreateTime = function() {
-  this.setCreateTime(undefined);
+  return this.setCreateTime(undefined);
 };
 
 
@@ -10350,17 +14392,21 @@ proto.adamant.global.v1.LabeledAddress.prototype.getUpdateTime = function() {
 };
 
 
-/** @param {?proto.google.protobuf.Timestamp|undefined} value */
+/**
+ * @param {?proto.google.protobuf.Timestamp|undefined} value
+ * @return {!proto.adamant.global.v1.LabeledAddress} returns this
+*/
 proto.adamant.global.v1.LabeledAddress.prototype.setUpdateTime = function(value) {
-  jspb.Message.setWrapperField(this, 8, value);
+  return jspb.Message.setWrapperField(this, 8, value);
 };
 
 
 /**
  * Clears the message field making it undefined.
+ * @return {!proto.adamant.global.v1.LabeledAddress} returns this
  */
 proto.adamant.global.v1.LabeledAddress.prototype.clearUpdateTime = function() {
-  this.setUpdateTime(undefined);
+  return this.setUpdateTime(undefined);
 };
 
 
@@ -10554,9 +14600,12 @@ proto.adamant.global.v1.LabeledAddressProposal.prototype.getRequesterAccountId =
 };
 
 
-/** @param {string} value */
+/**
+ * @param {string} value
+ * @return {!proto.adamant.global.v1.LabeledAddressProposal} returns this
+ */
 proto.adamant.global.v1.LabeledAddressProposal.prototype.setRequesterAccountId = function(value) {
-  jspb.Message.setProto3StringField(this, 1, value);
+  return jspb.Message.setProto3StringField(this, 1, value);
 };
 
 
@@ -10569,9 +14618,12 @@ proto.adamant.global.v1.LabeledAddressProposal.prototype.getRequesterName = func
 };
 
 
-/** @param {string} value */
+/**
+ * @param {string} value
+ * @return {!proto.adamant.global.v1.LabeledAddressProposal} returns this
+ */
 proto.adamant.global.v1.LabeledAddressProposal.prototype.setRequesterName = function(value) {
-  jspb.Message.setProto3StringField(this, 2, value);
+  return jspb.Message.setProto3StringField(this, 2, value);
 };
 
 
@@ -10584,9 +14636,12 @@ proto.adamant.global.v1.LabeledAddressProposal.prototype.getApproverAccountId = 
 };
 
 
-/** @param {string} value */
+/**
+ * @param {string} value
+ * @return {!proto.adamant.global.v1.LabeledAddressProposal} returns this
+ */
 proto.adamant.global.v1.LabeledAddressProposal.prototype.setApproverAccountId = function(value) {
-  jspb.Message.setProto3StringField(this, 3, value);
+  return jspb.Message.setProto3StringField(this, 3, value);
 };
 
 
@@ -10599,9 +14654,12 @@ proto.adamant.global.v1.LabeledAddressProposal.prototype.getApproverName = funct
 };
 
 
-/** @param {string} value */
+/**
+ * @param {string} value
+ * @return {!proto.adamant.global.v1.LabeledAddressProposal} returns this
+ */
 proto.adamant.global.v1.LabeledAddressProposal.prototype.setApproverName = function(value) {
-  jspb.Message.setProto3StringField(this, 4, value);
+  return jspb.Message.setProto3StringField(this, 4, value);
 };
 
 
@@ -10614,9 +14672,12 @@ proto.adamant.global.v1.LabeledAddressProposal.prototype.getProposedAddress = fu
 };
 
 
-/** @param {string} value */
+/**
+ * @param {string} value
+ * @return {!proto.adamant.global.v1.LabeledAddressProposal} returns this
+ */
 proto.adamant.global.v1.LabeledAddressProposal.prototype.setProposedAddress = function(value) {
-  jspb.Message.setProto3StringField(this, 5, value);
+  return jspb.Message.setProto3StringField(this, 5, value);
 };
 
 
@@ -10629,9 +14690,12 @@ proto.adamant.global.v1.LabeledAddressProposal.prototype.getAddressIsReviewed = 
 };
 
 
-/** @param {boolean} value */
+/**
+ * @param {boolean} value
+ * @return {!proto.adamant.global.v1.LabeledAddressProposal} returns this
+ */
 proto.adamant.global.v1.LabeledAddressProposal.prototype.setAddressIsReviewed = function(value) {
-  jspb.Message.setProto3BooleanField(this, 6, value);
+  return jspb.Message.setProto3BooleanField(this, 6, value);
 };
 
 
@@ -10830,9 +14894,12 @@ proto.adamant.global.v1.Whitelist.prototype.getWhitelistId = function() {
 };
 
 
-/** @param {string} value */
+/**
+ * @param {string} value
+ * @return {!proto.adamant.global.v1.Whitelist} returns this
+ */
 proto.adamant.global.v1.Whitelist.prototype.setWhitelistId = function(value) {
-  jspb.Message.setProto3StringField(this, 1, value);
+  return jspb.Message.setProto3StringField(this, 1, value);
 };
 
 
@@ -10845,9 +14912,12 @@ proto.adamant.global.v1.Whitelist.prototype.getName = function() {
 };
 
 
-/** @param {string} value */
+/**
+ * @param {string} value
+ * @return {!proto.adamant.global.v1.Whitelist} returns this
+ */
 proto.adamant.global.v1.Whitelist.prototype.setName = function(value) {
-  jspb.Message.setProto3StringField(this, 2, value);
+  return jspb.Message.setProto3StringField(this, 2, value);
 };
 
 
@@ -10860,9 +14930,12 @@ proto.adamant.global.v1.Whitelist.prototype.getCoin = function() {
 };
 
 
-/** @param {!proto.gincoinc.global.v1.Coin} value */
+/**
+ * @param {!proto.gincoinc.global.v1.Coin} value
+ * @return {!proto.adamant.global.v1.Whitelist} returns this
+ */
 proto.adamant.global.v1.Whitelist.prototype.setCoin = function(value) {
-  jspb.Message.setProto3EnumField(this, 3, value);
+  return jspb.Message.setProto3EnumField(this, 3, value);
 };
 
 
@@ -10876,9 +14949,12 @@ proto.adamant.global.v1.Whitelist.prototype.getAddressesList = function() {
 };
 
 
-/** @param {!Array<!proto.adamant.global.v1.LabeledAddress>} value */
+/**
+ * @param {!Array<!proto.adamant.global.v1.LabeledAddress>} value
+ * @return {!proto.adamant.global.v1.Whitelist} returns this
+*/
 proto.adamant.global.v1.Whitelist.prototype.setAddressesList = function(value) {
-  jspb.Message.setRepeatedWrapperField(this, 4, value);
+  return jspb.Message.setRepeatedWrapperField(this, 4, value);
 };
 
 
@@ -10894,9 +14970,10 @@ proto.adamant.global.v1.Whitelist.prototype.addAddresses = function(opt_value, o
 
 /**
  * Clears the list making it empty but non-null.
+ * @return {!proto.adamant.global.v1.Whitelist} returns this
  */
 proto.adamant.global.v1.Whitelist.prototype.clearAddressesList = function() {
-  this.setAddressesList([]);
+  return this.setAddressesList([]);
 };
 
 
@@ -10910,17 +14987,21 @@ proto.adamant.global.v1.Whitelist.prototype.getCreateTime = function() {
 };
 
 
-/** @param {?proto.google.protobuf.Timestamp|undefined} value */
+/**
+ * @param {?proto.google.protobuf.Timestamp|undefined} value
+ * @return {!proto.adamant.global.v1.Whitelist} returns this
+*/
 proto.adamant.global.v1.Whitelist.prototype.setCreateTime = function(value) {
-  jspb.Message.setWrapperField(this, 6, value);
+  return jspb.Message.setWrapperField(this, 6, value);
 };
 
 
 /**
  * Clears the message field making it undefined.
+ * @return {!proto.adamant.global.v1.Whitelist} returns this
  */
 proto.adamant.global.v1.Whitelist.prototype.clearCreateTime = function() {
-  this.setCreateTime(undefined);
+  return this.setCreateTime(undefined);
 };
 
 
@@ -10943,17 +15024,21 @@ proto.adamant.global.v1.Whitelist.prototype.getUpdateTime = function() {
 };
 
 
-/** @param {?proto.google.protobuf.Timestamp|undefined} value */
+/**
+ * @param {?proto.google.protobuf.Timestamp|undefined} value
+ * @return {!proto.adamant.global.v1.Whitelist} returns this
+*/
 proto.adamant.global.v1.Whitelist.prototype.setUpdateTime = function(value) {
-  jspb.Message.setWrapperField(this, 7, value);
+  return jspb.Message.setWrapperField(this, 7, value);
 };
 
 
 /**
  * Clears the message field making it undefined.
+ * @return {!proto.adamant.global.v1.Whitelist} returns this
  */
 proto.adamant.global.v1.Whitelist.prototype.clearUpdateTime = function() {
-  this.setUpdateTime(undefined);
+  return this.setUpdateTime(undefined);
 };
 
 
@@ -11201,9 +15286,12 @@ proto.adamant.global.v1.TransferLimit.prototype.getTransferLimitId = function() 
 };
 
 
-/** @param {string} value */
+/**
+ * @param {string} value
+ * @return {!proto.adamant.global.v1.TransferLimit} returns this
+ */
 proto.adamant.global.v1.TransferLimit.prototype.setTransferLimitId = function(value) {
-  jspb.Message.setProto3StringField(this, 1, value);
+  return jspb.Message.setProto3StringField(this, 1, value);
 };
 
 
@@ -11216,9 +15304,12 @@ proto.adamant.global.v1.TransferLimit.prototype.getName = function() {
 };
 
 
-/** @param {string} value */
+/**
+ * @param {string} value
+ * @return {!proto.adamant.global.v1.TransferLimit} returns this
+ */
 proto.adamant.global.v1.TransferLimit.prototype.setName = function(value) {
-  jspb.Message.setProto3StringField(this, 2, value);
+  return jspb.Message.setProto3StringField(this, 2, value);
 };
 
 
@@ -11231,9 +15322,12 @@ proto.adamant.global.v1.TransferLimit.prototype.getCoin = function() {
 };
 
 
-/** @param {!proto.gincoinc.global.v1.Coin} value */
+/**
+ * @param {!proto.gincoinc.global.v1.Coin} value
+ * @return {!proto.adamant.global.v1.TransferLimit} returns this
+ */
 proto.adamant.global.v1.TransferLimit.prototype.setCoin = function(value) {
-  jspb.Message.setProto3EnumField(this, 3, value);
+  return jspb.Message.setProto3EnumField(this, 3, value);
 };
 
 
@@ -11246,9 +15340,12 @@ proto.adamant.global.v1.TransferLimit.prototype.getHourlyLimit = function() {
 };
 
 
-/** @param {number} value */
+/**
+ * @param {number} value
+ * @return {!proto.adamant.global.v1.TransferLimit} returns this
+ */
 proto.adamant.global.v1.TransferLimit.prototype.setHourlyLimit = function(value) {
-  jspb.Message.setProto3IntField(this, 4, value);
+  return jspb.Message.setProto3IntField(this, 4, value);
 };
 
 
@@ -11261,9 +15358,12 @@ proto.adamant.global.v1.TransferLimit.prototype.getDailyLimit = function() {
 };
 
 
-/** @param {number} value */
+/**
+ * @param {number} value
+ * @return {!proto.adamant.global.v1.TransferLimit} returns this
+ */
 proto.adamant.global.v1.TransferLimit.prototype.setDailyLimit = function(value) {
-  jspb.Message.setProto3IntField(this, 5, value);
+  return jspb.Message.setProto3IntField(this, 5, value);
 };
 
 
@@ -11276,9 +15376,12 @@ proto.adamant.global.v1.TransferLimit.prototype.getOneTimeLimit = function() {
 };
 
 
-/** @param {number} value */
+/**
+ * @param {number} value
+ * @return {!proto.adamant.global.v1.TransferLimit} returns this
+ */
 proto.adamant.global.v1.TransferLimit.prototype.setOneTimeLimit = function(value) {
-  jspb.Message.setProto3IntField(this, 6, value);
+  return jspb.Message.setProto3IntField(this, 6, value);
 };
 
 
@@ -11292,17 +15395,21 @@ proto.adamant.global.v1.TransferLimit.prototype.getProposal = function() {
 };
 
 
-/** @param {?proto.adamant.global.v1.TransferLimitProposal|undefined} value */
+/**
+ * @param {?proto.adamant.global.v1.TransferLimitProposal|undefined} value
+ * @return {!proto.adamant.global.v1.TransferLimit} returns this
+*/
 proto.adamant.global.v1.TransferLimit.prototype.setProposal = function(value) {
-  jspb.Message.setWrapperField(this, 7, value);
+  return jspb.Message.setWrapperField(this, 7, value);
 };
 
 
 /**
  * Clears the message field making it undefined.
+ * @return {!proto.adamant.global.v1.TransferLimit} returns this
  */
 proto.adamant.global.v1.TransferLimit.prototype.clearProposal = function() {
-  this.setProposal(undefined);
+  return this.setProposal(undefined);
 };
 
 
@@ -11324,9 +15431,12 @@ proto.adamant.global.v1.TransferLimit.prototype.getIsReviewed = function() {
 };
 
 
-/** @param {boolean} value */
+/**
+ * @param {boolean} value
+ * @return {!proto.adamant.global.v1.TransferLimit} returns this
+ */
 proto.adamant.global.v1.TransferLimit.prototype.setIsReviewed = function(value) {
-  jspb.Message.setProto3BooleanField(this, 8, value);
+  return jspb.Message.setProto3BooleanField(this, 8, value);
 };
 
 
@@ -11340,17 +15450,21 @@ proto.adamant.global.v1.TransferLimit.prototype.getCreateTime = function() {
 };
 
 
-/** @param {?proto.google.protobuf.Timestamp|undefined} value */
+/**
+ * @param {?proto.google.protobuf.Timestamp|undefined} value
+ * @return {!proto.adamant.global.v1.TransferLimit} returns this
+*/
 proto.adamant.global.v1.TransferLimit.prototype.setCreateTime = function(value) {
-  jspb.Message.setWrapperField(this, 10, value);
+  return jspb.Message.setWrapperField(this, 10, value);
 };
 
 
 /**
  * Clears the message field making it undefined.
+ * @return {!proto.adamant.global.v1.TransferLimit} returns this
  */
 proto.adamant.global.v1.TransferLimit.prototype.clearCreateTime = function() {
-  this.setCreateTime(undefined);
+  return this.setCreateTime(undefined);
 };
 
 
@@ -11373,17 +15487,21 @@ proto.adamant.global.v1.TransferLimit.prototype.getUpdateTime = function() {
 };
 
 
-/** @param {?proto.google.protobuf.Timestamp|undefined} value */
+/**
+ * @param {?proto.google.protobuf.Timestamp|undefined} value
+ * @return {!proto.adamant.global.v1.TransferLimit} returns this
+*/
 proto.adamant.global.v1.TransferLimit.prototype.setUpdateTime = function(value) {
-  jspb.Message.setWrapperField(this, 11, value);
+  return jspb.Message.setWrapperField(this, 11, value);
 };
 
 
 /**
  * Clears the message field making it undefined.
+ * @return {!proto.adamant.global.v1.TransferLimit} returns this
  */
 proto.adamant.global.v1.TransferLimit.prototype.clearUpdateTime = function() {
-  this.setUpdateTime(undefined);
+  return this.setUpdateTime(undefined);
 };
 
 
@@ -11601,9 +15719,12 @@ proto.adamant.global.v1.TransferLimitProposal.prototype.getRequesterAccountId = 
 };
 
 
-/** @param {string} value */
+/**
+ * @param {string} value
+ * @return {!proto.adamant.global.v1.TransferLimitProposal} returns this
+ */
 proto.adamant.global.v1.TransferLimitProposal.prototype.setRequesterAccountId = function(value) {
-  jspb.Message.setProto3StringField(this, 1, value);
+  return jspb.Message.setProto3StringField(this, 1, value);
 };
 
 
@@ -11616,9 +15737,12 @@ proto.adamant.global.v1.TransferLimitProposal.prototype.getRequesterName = funct
 };
 
 
-/** @param {string} value */
+/**
+ * @param {string} value
+ * @return {!proto.adamant.global.v1.TransferLimitProposal} returns this
+ */
 proto.adamant.global.v1.TransferLimitProposal.prototype.setRequesterName = function(value) {
-  jspb.Message.setProto3StringField(this, 2, value);
+  return jspb.Message.setProto3StringField(this, 2, value);
 };
 
 
@@ -11631,9 +15755,12 @@ proto.adamant.global.v1.TransferLimitProposal.prototype.getApproverAccountId = f
 };
 
 
-/** @param {string} value */
+/**
+ * @param {string} value
+ * @return {!proto.adamant.global.v1.TransferLimitProposal} returns this
+ */
 proto.adamant.global.v1.TransferLimitProposal.prototype.setApproverAccountId = function(value) {
-  jspb.Message.setProto3StringField(this, 3, value);
+  return jspb.Message.setProto3StringField(this, 3, value);
 };
 
 
@@ -11646,9 +15773,12 @@ proto.adamant.global.v1.TransferLimitProposal.prototype.getApproverName = functi
 };
 
 
-/** @param {string} value */
+/**
+ * @param {string} value
+ * @return {!proto.adamant.global.v1.TransferLimitProposal} returns this
+ */
 proto.adamant.global.v1.TransferLimitProposal.prototype.setApproverName = function(value) {
-  jspb.Message.setProto3StringField(this, 4, value);
+  return jspb.Message.setProto3StringField(this, 4, value);
 };
 
 
@@ -11661,9 +15791,12 @@ proto.adamant.global.v1.TransferLimitProposal.prototype.getProposedHourlyLimit =
 };
 
 
-/** @param {number} value */
+/**
+ * @param {number} value
+ * @return {!proto.adamant.global.v1.TransferLimitProposal} returns this
+ */
 proto.adamant.global.v1.TransferLimitProposal.prototype.setProposedHourlyLimit = function(value) {
-  jspb.Message.setProto3IntField(this, 5, value);
+  return jspb.Message.setProto3IntField(this, 5, value);
 };
 
 
@@ -11676,9 +15809,12 @@ proto.adamant.global.v1.TransferLimitProposal.prototype.getProposedDailyLimit = 
 };
 
 
-/** @param {number} value */
+/**
+ * @param {number} value
+ * @return {!proto.adamant.global.v1.TransferLimitProposal} returns this
+ */
 proto.adamant.global.v1.TransferLimitProposal.prototype.setProposedDailyLimit = function(value) {
-  jspb.Message.setProto3IntField(this, 6, value);
+  return jspb.Message.setProto3IntField(this, 6, value);
 };
 
 
@@ -11691,9 +15827,12 @@ proto.adamant.global.v1.TransferLimitProposal.prototype.getProposedOneTimeLimit 
 };
 
 
-/** @param {number} value */
+/**
+ * @param {number} value
+ * @return {!proto.adamant.global.v1.TransferLimitProposal} returns this
+ */
 proto.adamant.global.v1.TransferLimitProposal.prototype.setProposedOneTimeLimit = function(value) {
-  jspb.Message.setProto3IntField(this, 7, value);
+  return jspb.Message.setProto3IntField(this, 7, value);
 };
 
 
@@ -11706,9 +15845,12 @@ proto.adamant.global.v1.TransferLimitProposal.prototype.getIsReviewed = function
 };
 
 
-/** @param {boolean} value */
+/**
+ * @param {boolean} value
+ * @return {!proto.adamant.global.v1.TransferLimitProposal} returns this
+ */
 proto.adamant.global.v1.TransferLimitProposal.prototype.setIsReviewed = function(value) {
-  jspb.Message.setProto3BooleanField(this, 8, value);
+  return jspb.Message.setProto3BooleanField(this, 8, value);
 };
 
 
@@ -11951,9 +16093,12 @@ proto.adamant.global.v1.Policy.prototype.getPolicyId = function() {
 };
 
 
-/** @param {string} value */
+/**
+ * @param {string} value
+ * @return {!proto.adamant.global.v1.Policy} returns this
+ */
 proto.adamant.global.v1.Policy.prototype.setPolicyId = function(value) {
-  jspb.Message.setProto3StringField(this, 1, value);
+  return jspb.Message.setProto3StringField(this, 1, value);
 };
 
 
@@ -11966,9 +16111,12 @@ proto.adamant.global.v1.Policy.prototype.getPolicyType = function() {
 };
 
 
-/** @param {!proto.adamant.global.v1.PolicyType} value */
+/**
+ * @param {!proto.adamant.global.v1.PolicyType} value
+ * @return {!proto.adamant.global.v1.Policy} returns this
+ */
 proto.adamant.global.v1.Policy.prototype.setPolicyType = function(value) {
-  jspb.Message.setProto3EnumField(this, 2, value);
+  return jspb.Message.setProto3EnumField(this, 2, value);
 };
 
 
@@ -11981,9 +16129,12 @@ proto.adamant.global.v1.Policy.prototype.getName = function() {
 };
 
 
-/** @param {string} value */
+/**
+ * @param {string} value
+ * @return {!proto.adamant.global.v1.Policy} returns this
+ */
 proto.adamant.global.v1.Policy.prototype.setName = function(value) {
-  jspb.Message.setProto3StringField(this, 3, value);
+  return jspb.Message.setProto3StringField(this, 3, value);
 };
 
 
@@ -11996,9 +16147,12 @@ proto.adamant.global.v1.Policy.prototype.getIsBasePolicy = function() {
 };
 
 
-/** @param {boolean} value */
+/**
+ * @param {boolean} value
+ * @return {!proto.adamant.global.v1.Policy} returns this
+ */
 proto.adamant.global.v1.Policy.prototype.setIsBasePolicy = function(value) {
-  jspb.Message.setProto3BooleanField(this, 4, value);
+  return jspb.Message.setProto3BooleanField(this, 4, value);
 };
 
 
@@ -12011,9 +16165,12 @@ proto.adamant.global.v1.Policy.prototype.getCoin = function() {
 };
 
 
-/** @param {!proto.gincoinc.global.v1.Coin} value */
+/**
+ * @param {!proto.gincoinc.global.v1.Coin} value
+ * @return {!proto.adamant.global.v1.Policy} returns this
+ */
 proto.adamant.global.v1.Policy.prototype.setCoin = function(value) {
-  jspb.Message.setProto3EnumField(this, 5, value);
+  return jspb.Message.setProto3EnumField(this, 5, value);
 };
 
 
@@ -12027,17 +16184,21 @@ proto.adamant.global.v1.Policy.prototype.getWhitelist = function() {
 };
 
 
-/** @param {?proto.adamant.global.v1.Whitelist|undefined} value */
+/**
+ * @param {?proto.adamant.global.v1.Whitelist|undefined} value
+ * @return {!proto.adamant.global.v1.Policy} returns this
+*/
 proto.adamant.global.v1.Policy.prototype.setWhitelist = function(value) {
-  jspb.Message.setWrapperField(this, 6, value);
+  return jspb.Message.setWrapperField(this, 6, value);
 };
 
 
 /**
  * Clears the message field making it undefined.
+ * @return {!proto.adamant.global.v1.Policy} returns this
  */
 proto.adamant.global.v1.Policy.prototype.clearWhitelist = function() {
-  this.setWhitelist(undefined);
+  return this.setWhitelist(undefined);
 };
 
 
@@ -12060,17 +16221,21 @@ proto.adamant.global.v1.Policy.prototype.getTransferLimit = function() {
 };
 
 
-/** @param {?proto.adamant.global.v1.TransferLimit|undefined} value */
+/**
+ * @param {?proto.adamant.global.v1.TransferLimit|undefined} value
+ * @return {!proto.adamant.global.v1.Policy} returns this
+*/
 proto.adamant.global.v1.Policy.prototype.setTransferLimit = function(value) {
-  jspb.Message.setWrapperField(this, 7, value);
+  return jspb.Message.setWrapperField(this, 7, value);
 };
 
 
 /**
  * Clears the message field making it undefined.
+ * @return {!proto.adamant.global.v1.Policy} returns this
  */
 proto.adamant.global.v1.Policy.prototype.clearTransferLimit = function() {
-  this.setTransferLimit(undefined);
+  return this.setTransferLimit(undefined);
 };
 
 
@@ -12093,17 +16258,21 @@ proto.adamant.global.v1.Policy.prototype.getProposal = function() {
 };
 
 
-/** @param {?proto.adamant.global.v1.PolicyProposal|undefined} value */
+/**
+ * @param {?proto.adamant.global.v1.PolicyProposal|undefined} value
+ * @return {!proto.adamant.global.v1.Policy} returns this
+*/
 proto.adamant.global.v1.Policy.prototype.setProposal = function(value) {
-  jspb.Message.setWrapperField(this, 11, value);
+  return jspb.Message.setWrapperField(this, 11, value);
 };
 
 
 /**
  * Clears the message field making it undefined.
+ * @return {!proto.adamant.global.v1.Policy} returns this
  */
 proto.adamant.global.v1.Policy.prototype.clearProposal = function() {
-  this.setProposal(undefined);
+  return this.setProposal(undefined);
 };
 
 
@@ -12126,17 +16295,21 @@ proto.adamant.global.v1.Policy.prototype.getCreateTime = function() {
 };
 
 
-/** @param {?proto.google.protobuf.Timestamp|undefined} value */
+/**
+ * @param {?proto.google.protobuf.Timestamp|undefined} value
+ * @return {!proto.adamant.global.v1.Policy} returns this
+*/
 proto.adamant.global.v1.Policy.prototype.setCreateTime = function(value) {
-  jspb.Message.setWrapperField(this, 9, value);
+  return jspb.Message.setWrapperField(this, 9, value);
 };
 
 
 /**
  * Clears the message field making it undefined.
+ * @return {!proto.adamant.global.v1.Policy} returns this
  */
 proto.adamant.global.v1.Policy.prototype.clearCreateTime = function() {
-  this.setCreateTime(undefined);
+  return this.setCreateTime(undefined);
 };
 
 
@@ -12159,17 +16332,21 @@ proto.adamant.global.v1.Policy.prototype.getUpdateTime = function() {
 };
 
 
-/** @param {?proto.google.protobuf.Timestamp|undefined} value */
+/**
+ * @param {?proto.google.protobuf.Timestamp|undefined} value
+ * @return {!proto.adamant.global.v1.Policy} returns this
+*/
 proto.adamant.global.v1.Policy.prototype.setUpdateTime = function(value) {
-  jspb.Message.setWrapperField(this, 10, value);
+  return jspb.Message.setWrapperField(this, 10, value);
 };
 
 
 /**
  * Clears the message field making it undefined.
+ * @return {!proto.adamant.global.v1.Policy} returns this
  */
 proto.adamant.global.v1.Policy.prototype.clearUpdateTime = function() {
-  this.setUpdateTime(undefined);
+  return this.setUpdateTime(undefined);
 };
 
 
@@ -12365,9 +16542,12 @@ proto.adamant.global.v1.PolicyProposal.prototype.getRequesterAccountId = functio
 };
 
 
-/** @param {string} value */
+/**
+ * @param {string} value
+ * @return {!proto.adamant.global.v1.PolicyProposal} returns this
+ */
 proto.adamant.global.v1.PolicyProposal.prototype.setRequesterAccountId = function(value) {
-  jspb.Message.setProto3StringField(this, 1, value);
+  return jspb.Message.setProto3StringField(this, 1, value);
 };
 
 
@@ -12380,9 +16560,12 @@ proto.adamant.global.v1.PolicyProposal.prototype.getRequesterName = function() {
 };
 
 
-/** @param {string} value */
+/**
+ * @param {string} value
+ * @return {!proto.adamant.global.v1.PolicyProposal} returns this
+ */
 proto.adamant.global.v1.PolicyProposal.prototype.setRequesterName = function(value) {
-  jspb.Message.setProto3StringField(this, 2, value);
+  return jspb.Message.setProto3StringField(this, 2, value);
 };
 
 
@@ -12395,9 +16578,12 @@ proto.adamant.global.v1.PolicyProposal.prototype.getApproverAccountId = function
 };
 
 
-/** @param {string} value */
+/**
+ * @param {string} value
+ * @return {!proto.adamant.global.v1.PolicyProposal} returns this
+ */
 proto.adamant.global.v1.PolicyProposal.prototype.setApproverAccountId = function(value) {
-  jspb.Message.setProto3StringField(this, 3, value);
+  return jspb.Message.setProto3StringField(this, 3, value);
 };
 
 
@@ -12410,9 +16596,12 @@ proto.adamant.global.v1.PolicyProposal.prototype.getApproverName = function() {
 };
 
 
-/** @param {string} value */
+/**
+ * @param {string} value
+ * @return {!proto.adamant.global.v1.PolicyProposal} returns this
+ */
 proto.adamant.global.v1.PolicyProposal.prototype.setApproverName = function(value) {
-  jspb.Message.setProto3StringField(this, 4, value);
+  return jspb.Message.setProto3StringField(this, 4, value);
 };
 
 
@@ -12426,17 +16615,21 @@ proto.adamant.global.v1.PolicyProposal.prototype.getProposedWhitelist = function
 };
 
 
-/** @param {?proto.adamant.global.v1.Whitelist|undefined} value */
+/**
+ * @param {?proto.adamant.global.v1.Whitelist|undefined} value
+ * @return {!proto.adamant.global.v1.PolicyProposal} returns this
+*/
 proto.adamant.global.v1.PolicyProposal.prototype.setProposedWhitelist = function(value) {
-  jspb.Message.setWrapperField(this, 5, value);
+  return jspb.Message.setWrapperField(this, 5, value);
 };
 
 
 /**
  * Clears the message field making it undefined.
+ * @return {!proto.adamant.global.v1.PolicyProposal} returns this
  */
 proto.adamant.global.v1.PolicyProposal.prototype.clearProposedWhitelist = function() {
-  this.setProposedWhitelist(undefined);
+  return this.setProposedWhitelist(undefined);
 };
 
 
@@ -12458,9 +16651,12 @@ proto.adamant.global.v1.PolicyProposal.prototype.getIsReviewed = function() {
 };
 
 
-/** @param {boolean} value */
+/**
+ * @param {boolean} value
+ * @return {!proto.adamant.global.v1.PolicyProposal} returns this
+ */
 proto.adamant.global.v1.PolicyProposal.prototype.setIsReviewed = function(value) {
-  jspb.Message.setProto3BooleanField(this, 6, value);
+  return jspb.Message.setProto3BooleanField(this, 6, value);
 };
 
 
@@ -12609,9 +16805,12 @@ proto.adamant.global.v1.TotalBalanceByCoin.prototype.getCoin = function() {
 };
 
 
-/** @param {!proto.gincoinc.global.v1.Coin} value */
+/**
+ * @param {!proto.gincoinc.global.v1.Coin} value
+ * @return {!proto.adamant.global.v1.TotalBalanceByCoin} returns this
+ */
 proto.adamant.global.v1.TotalBalanceByCoin.prototype.setCoin = function(value) {
-  jspb.Message.setProto3EnumField(this, 1, value);
+  return jspb.Message.setProto3EnumField(this, 1, value);
 };
 
 
@@ -12624,9 +16823,12 @@ proto.adamant.global.v1.TotalBalanceByCoin.prototype.getColdStringBalance = func
 };
 
 
-/** @param {string} value */
+/**
+ * @param {string} value
+ * @return {!proto.adamant.global.v1.TotalBalanceByCoin} returns this
+ */
 proto.adamant.global.v1.TotalBalanceByCoin.prototype.setColdStringBalance = function(value) {
-  jspb.Message.setProto3StringField(this, 2, value);
+  return jspb.Message.setProto3StringField(this, 2, value);
 };
 
 
@@ -12639,9 +16841,12 @@ proto.adamant.global.v1.TotalBalanceByCoin.prototype.getHotStringBalance = funct
 };
 
 
-/** @param {string} value */
+/**
+ * @param {string} value
+ * @return {!proto.adamant.global.v1.TotalBalanceByCoin} returns this
+ */
 proto.adamant.global.v1.TotalBalanceByCoin.prototype.setHotStringBalance = function(value) {
-  jspb.Message.setProto3StringField(this, 3, value);
+  return jspb.Message.setProto3StringField(this, 3, value);
 };
 
 
@@ -12717,7 +16922,7 @@ proto.adamant.global.v1.TotalBalance.deserializeBinaryFromReader = function(msg,
     case 1:
       var value = msg.getTotalBalancesMap();
       reader.readMessage(value, function(message, reader) {
-        jspb.Map.deserializeBinary(message, reader, jspb.BinaryReader.prototype.readUint32, jspb.BinaryReader.prototype.readMessage, proto.adamant.global.v1.TotalBalanceByCoin.deserializeBinaryFromReader, 0);
+        jspb.Map.deserializeBinary(message, reader, jspb.BinaryReader.prototype.readUint32, jspb.BinaryReader.prototype.readMessage, proto.adamant.global.v1.TotalBalanceByCoin.deserializeBinaryFromReader, 0, new proto.adamant.global.v1.TotalBalanceByCoin());
          });
       break;
     default:
@@ -12771,10 +16976,11 @@ proto.adamant.global.v1.TotalBalance.prototype.getTotalBalancesMap = function(op
 
 /**
  * Clears values from the map. The map will be non-null.
+ * @return {!proto.adamant.global.v1.TotalBalance} returns this
  */
 proto.adamant.global.v1.TotalBalance.prototype.clearTotalBalancesMap = function() {
   this.getTotalBalancesMap().clear();
-};
+  return this;};
 
 
 
@@ -12856,13 +17062,13 @@ proto.adamant.global.v1.BalanceSnapshot.deserializeBinaryFromReader = function(m
     case 2:
       var value = msg.getTotalBalancesMap();
       reader.readMessage(value, function(message, reader) {
-        jspb.Map.deserializeBinary(message, reader, jspb.BinaryReader.prototype.readUint32, jspb.BinaryReader.prototype.readMessage, proto.adamant.global.v1.TotalBalanceByCoin.deserializeBinaryFromReader, 0);
+        jspb.Map.deserializeBinary(message, reader, jspb.BinaryReader.prototype.readUint32, jspb.BinaryReader.prototype.readMessage, proto.adamant.global.v1.TotalBalanceByCoin.deserializeBinaryFromReader, 0, new proto.adamant.global.v1.TotalBalanceByCoin());
          });
       break;
     case 3:
       var value = msg.getRatesMap();
       reader.readMessage(value, function(message, reader) {
-        jspb.Map.deserializeBinary(message, reader, jspb.BinaryReader.prototype.readUint32, jspb.BinaryReader.prototype.readMessage, proto.adamant.global.v1.Rate.deserializeBinaryFromReader, 0);
+        jspb.Map.deserializeBinary(message, reader, jspb.BinaryReader.prototype.readUint32, jspb.BinaryReader.prototype.readMessage, proto.adamant.global.v1.Rate.deserializeBinaryFromReader, 0, new proto.adamant.global.v1.Rate());
          });
       break;
     default:
@@ -12923,17 +17129,21 @@ proto.adamant.global.v1.BalanceSnapshot.prototype.getCreateTime = function() {
 };
 
 
-/** @param {?proto.google.protobuf.Timestamp|undefined} value */
+/**
+ * @param {?proto.google.protobuf.Timestamp|undefined} value
+ * @return {!proto.adamant.global.v1.BalanceSnapshot} returns this
+*/
 proto.adamant.global.v1.BalanceSnapshot.prototype.setCreateTime = function(value) {
-  jspb.Message.setWrapperField(this, 1, value);
+  return jspb.Message.setWrapperField(this, 1, value);
 };
 
 
 /**
  * Clears the message field making it undefined.
+ * @return {!proto.adamant.global.v1.BalanceSnapshot} returns this
  */
 proto.adamant.global.v1.BalanceSnapshot.prototype.clearCreateTime = function() {
-  this.setCreateTime(undefined);
+  return this.setCreateTime(undefined);
 };
 
 
@@ -12961,10 +17171,11 @@ proto.adamant.global.v1.BalanceSnapshot.prototype.getTotalBalancesMap = function
 
 /**
  * Clears values from the map. The map will be non-null.
+ * @return {!proto.adamant.global.v1.BalanceSnapshot} returns this
  */
 proto.adamant.global.v1.BalanceSnapshot.prototype.clearTotalBalancesMap = function() {
   this.getTotalBalancesMap().clear();
-};
+  return this;};
 
 
 /**
@@ -12982,10 +17193,11 @@ proto.adamant.global.v1.BalanceSnapshot.prototype.getRatesMap = function(opt_noL
 
 /**
  * Clears values from the map. The map will be non-null.
+ * @return {!proto.adamant.global.v1.BalanceSnapshot} returns this
  */
 proto.adamant.global.v1.BalanceSnapshot.prototype.clearRatesMap = function() {
   this.getRatesMap().clear();
-};
+  return this;};
 
 
 
@@ -13060,7 +17272,7 @@ proto.adamant.global.v1.WalletBalanceSnapshotMap.deserializeBinaryFromReader = f
     case 1:
       var value = msg.getWalletBalanceSnapshotMapMap();
       reader.readMessage(value, function(message, reader) {
-        jspb.Map.deserializeBinary(message, reader, jspb.BinaryReader.prototype.readString, jspb.BinaryReader.prototype.readMessage, proto.adamant.global.v1.ListWalletBalanceSnapshots.deserializeBinaryFromReader, "");
+        jspb.Map.deserializeBinary(message, reader, jspb.BinaryReader.prototype.readString, jspb.BinaryReader.prototype.readMessage, proto.adamant.global.v1.ListWalletBalanceSnapshots.deserializeBinaryFromReader, "", new proto.adamant.global.v1.ListWalletBalanceSnapshots());
          });
       break;
     default:
@@ -13114,10 +17326,11 @@ proto.adamant.global.v1.WalletBalanceSnapshotMap.prototype.getWalletBalanceSnaps
 
 /**
  * Clears values from the map. The map will be non-null.
+ * @return {!proto.adamant.global.v1.WalletBalanceSnapshotMap} returns this
  */
 proto.adamant.global.v1.WalletBalanceSnapshotMap.prototype.clearWalletBalanceSnapshotMapMap = function() {
   this.getWalletBalanceSnapshotMapMap().clear();
-};
+  return this;};
 
 
 
@@ -13252,9 +17465,12 @@ proto.adamant.global.v1.ListWalletBalanceSnapshots.prototype.getWalletBalanceSna
 };
 
 
-/** @param {!Array<!proto.adamant.global.v1.WalletBalanceSnapshot>} value */
+/**
+ * @param {!Array<!proto.adamant.global.v1.WalletBalanceSnapshot>} value
+ * @return {!proto.adamant.global.v1.ListWalletBalanceSnapshots} returns this
+*/
 proto.adamant.global.v1.ListWalletBalanceSnapshots.prototype.setWalletBalanceSnapshotsList = function(value) {
-  jspb.Message.setRepeatedWrapperField(this, 1, value);
+  return jspb.Message.setRepeatedWrapperField(this, 1, value);
 };
 
 
@@ -13270,9 +17486,10 @@ proto.adamant.global.v1.ListWalletBalanceSnapshots.prototype.addWalletBalanceSna
 
 /**
  * Clears the list making it empty but non-null.
+ * @return {!proto.adamant.global.v1.ListWalletBalanceSnapshots} returns this
  */
 proto.adamant.global.v1.ListWalletBalanceSnapshots.prototype.clearWalletBalanceSnapshotsList = function() {
-  this.setWalletBalanceSnapshotsList([]);
+  return this.setWalletBalanceSnapshotsList([]);
 };
 
 
@@ -13424,17 +17641,21 @@ proto.adamant.global.v1.WalletBalanceSnapshot.prototype.getCreateTime = function
 };
 
 
-/** @param {?proto.google.protobuf.Timestamp|undefined} value */
+/**
+ * @param {?proto.google.protobuf.Timestamp|undefined} value
+ * @return {!proto.adamant.global.v1.WalletBalanceSnapshot} returns this
+*/
 proto.adamant.global.v1.WalletBalanceSnapshot.prototype.setCreateTime = function(value) {
-  jspb.Message.setWrapperField(this, 1, value);
+  return jspb.Message.setWrapperField(this, 1, value);
 };
 
 
 /**
  * Clears the message field making it undefined.
+ * @return {!proto.adamant.global.v1.WalletBalanceSnapshot} returns this
  */
 proto.adamant.global.v1.WalletBalanceSnapshot.prototype.clearCreateTime = function() {
-  this.setCreateTime(undefined);
+  return this.setCreateTime(undefined);
 };
 
 
@@ -13456,9 +17677,12 @@ proto.adamant.global.v1.WalletBalanceSnapshot.prototype.getStringBalance = funct
 };
 
 
-/** @param {string} value */
+/**
+ * @param {string} value
+ * @return {!proto.adamant.global.v1.WalletBalanceSnapshot} returns this
+ */
 proto.adamant.global.v1.WalletBalanceSnapshot.prototype.setStringBalance = function(value) {
-  jspb.Message.setProto3StringField(this, 2, value);
+  return jspb.Message.setProto3StringField(this, 2, value);
 };
 
 
@@ -13471,9 +17695,12 @@ proto.adamant.global.v1.WalletBalanceSnapshot.prototype.getJpy = function() {
 };
 
 
-/** @param {number} value */
+/**
+ * @param {number} value
+ * @return {!proto.adamant.global.v1.WalletBalanceSnapshot} returns this
+ */
 proto.adamant.global.v1.WalletBalanceSnapshot.prototype.setJpy = function(value) {
-  jspb.Message.setProto3FloatField(this, 3, value);
+  return jspb.Message.setProto3FloatField(this, 3, value);
 };
 
 
@@ -13549,7 +17776,7 @@ proto.adamant.global.v1.TransferVolumeSnapshots.deserializeBinaryFromReader = fu
     case 1:
       var value = msg.getTransferVolumeSnapshotByTransferTypeMap();
       reader.readMessage(value, function(message, reader) {
-        jspb.Map.deserializeBinary(message, reader, jspb.BinaryReader.prototype.readInt32, jspb.BinaryReader.prototype.readMessage, proto.adamant.global.v1.ListTransferVolumeSnapshots.deserializeBinaryFromReader, 0);
+        jspb.Map.deserializeBinary(message, reader, jspb.BinaryReader.prototype.readInt32, jspb.BinaryReader.prototype.readMessage, proto.adamant.global.v1.ListTransferVolumeSnapshots.deserializeBinaryFromReader, 0, new proto.adamant.global.v1.ListTransferVolumeSnapshots());
          });
       break;
     default:
@@ -13603,10 +17830,11 @@ proto.adamant.global.v1.TransferVolumeSnapshots.prototype.getTransferVolumeSnaps
 
 /**
  * Clears values from the map. The map will be non-null.
+ * @return {!proto.adamant.global.v1.TransferVolumeSnapshots} returns this
  */
 proto.adamant.global.v1.TransferVolumeSnapshots.prototype.clearTransferVolumeSnapshotByTransferTypeMap = function() {
   this.getTransferVolumeSnapshotByTransferTypeMap().clear();
-};
+  return this;};
 
 
 
@@ -13741,9 +17969,12 @@ proto.adamant.global.v1.ListTransferVolumeSnapshots.prototype.getTransferVolumeS
 };
 
 
-/** @param {!Array<!proto.adamant.global.v1.TransferVolumeSnapshot>} value */
+/**
+ * @param {!Array<!proto.adamant.global.v1.TransferVolumeSnapshot>} value
+ * @return {!proto.adamant.global.v1.ListTransferVolumeSnapshots} returns this
+*/
 proto.adamant.global.v1.ListTransferVolumeSnapshots.prototype.setTransferVolumeSnapshotsList = function(value) {
-  jspb.Message.setRepeatedWrapperField(this, 1, value);
+  return jspb.Message.setRepeatedWrapperField(this, 1, value);
 };
 
 
@@ -13759,9 +17990,10 @@ proto.adamant.global.v1.ListTransferVolumeSnapshots.prototype.addTransferVolumeS
 
 /**
  * Clears the list making it empty but non-null.
+ * @return {!proto.adamant.global.v1.ListTransferVolumeSnapshots} returns this
  */
 proto.adamant.global.v1.ListTransferVolumeSnapshots.prototype.clearTransferVolumeSnapshotsList = function() {
-  this.setTransferVolumeSnapshotsList([]);
+  return this.setTransferVolumeSnapshotsList([]);
 };
 
 
@@ -13843,7 +18075,7 @@ proto.adamant.global.v1.TransferVolumeSnapshot.deserializeBinaryFromReader = fun
     case 2:
       var value = msg.getTransferVolumeByCoinMap();
       reader.readMessage(value, function(message, reader) {
-        jspb.Map.deserializeBinary(message, reader, jspb.BinaryReader.prototype.readInt32, jspb.BinaryReader.prototype.readMessage, proto.adamant.global.v1.TransferVolume.deserializeBinaryFromReader, 0);
+        jspb.Map.deserializeBinary(message, reader, jspb.BinaryReader.prototype.readInt32, jspb.BinaryReader.prototype.readMessage, proto.adamant.global.v1.TransferVolume.deserializeBinaryFromReader, 0, new proto.adamant.global.v1.TransferVolume());
          });
       break;
     default:
@@ -13900,17 +18132,21 @@ proto.adamant.global.v1.TransferVolumeSnapshot.prototype.getTargetTime = functio
 };
 
 
-/** @param {?proto.google.protobuf.Timestamp|undefined} value */
+/**
+ * @param {?proto.google.protobuf.Timestamp|undefined} value
+ * @return {!proto.adamant.global.v1.TransferVolumeSnapshot} returns this
+*/
 proto.adamant.global.v1.TransferVolumeSnapshot.prototype.setTargetTime = function(value) {
-  jspb.Message.setWrapperField(this, 1, value);
+  return jspb.Message.setWrapperField(this, 1, value);
 };
 
 
 /**
  * Clears the message field making it undefined.
+ * @return {!proto.adamant.global.v1.TransferVolumeSnapshot} returns this
  */
 proto.adamant.global.v1.TransferVolumeSnapshot.prototype.clearTargetTime = function() {
-  this.setTargetTime(undefined);
+  return this.setTargetTime(undefined);
 };
 
 
@@ -13938,10 +18174,11 @@ proto.adamant.global.v1.TransferVolumeSnapshot.prototype.getTransferVolumeByCoin
 
 /**
  * Clears values from the map. The map will be non-null.
+ * @return {!proto.adamant.global.v1.TransferVolumeSnapshot} returns this
  */
 proto.adamant.global.v1.TransferVolumeSnapshot.prototype.clearTransferVolumeByCoinMap = function() {
   this.getTransferVolumeByCoinMap().clear();
-};
+  return this;};
 
 
 
@@ -14149,9 +18386,12 @@ proto.adamant.global.v1.TransferVolume.prototype.getCoin = function() {
 };
 
 
-/** @param {!proto.gincoinc.global.v1.Coin} value */
+/**
+ * @param {!proto.gincoinc.global.v1.Coin} value
+ * @return {!proto.adamant.global.v1.TransferVolume} returns this
+ */
 proto.adamant.global.v1.TransferVolume.prototype.setCoin = function(value) {
-  jspb.Message.setProto3EnumField(this, 1, value);
+  return jspb.Message.setProto3EnumField(this, 1, value);
 };
 
 
@@ -14164,9 +18404,12 @@ proto.adamant.global.v1.TransferVolume.prototype.getHotStringVolume = function()
 };
 
 
-/** @param {string} value */
+/**
+ * @param {string} value
+ * @return {!proto.adamant.global.v1.TransferVolume} returns this
+ */
 proto.adamant.global.v1.TransferVolume.prototype.setHotStringVolume = function(value) {
-  jspb.Message.setProto3StringField(this, 2, value);
+  return jspb.Message.setProto3StringField(this, 2, value);
 };
 
 
@@ -14179,9 +18422,12 @@ proto.adamant.global.v1.TransferVolume.prototype.getColdStringVolume = function(
 };
 
 
-/** @param {string} value */
+/**
+ * @param {string} value
+ * @return {!proto.adamant.global.v1.TransferVolume} returns this
+ */
 proto.adamant.global.v1.TransferVolume.prototype.setColdStringVolume = function(value) {
-  jspb.Message.setProto3StringField(this, 3, value);
+  return jspb.Message.setProto3StringField(this, 3, value);
 };
 
 
@@ -14194,9 +18440,12 @@ proto.adamant.global.v1.TransferVolume.prototype.getHotStringJpyVolume = functio
 };
 
 
-/** @param {string} value */
+/**
+ * @param {string} value
+ * @return {!proto.adamant.global.v1.TransferVolume} returns this
+ */
 proto.adamant.global.v1.TransferVolume.prototype.setHotStringJpyVolume = function(value) {
-  jspb.Message.setProto3StringField(this, 4, value);
+  return jspb.Message.setProto3StringField(this, 4, value);
 };
 
 
@@ -14209,9 +18458,12 @@ proto.adamant.global.v1.TransferVolume.prototype.getColdStringJpyVolume = functi
 };
 
 
-/** @param {string} value */
+/**
+ * @param {string} value
+ * @return {!proto.adamant.global.v1.TransferVolume} returns this
+ */
 proto.adamant.global.v1.TransferVolume.prototype.setColdStringJpyVolume = function(value) {
-  jspb.Message.setProto3StringField(this, 5, value);
+  return jspb.Message.setProto3StringField(this, 5, value);
 };
 
 
@@ -14224,9 +18476,12 @@ proto.adamant.global.v1.TransferVolume.prototype.getHotNumber = function() {
 };
 
 
-/** @param {number} value */
+/**
+ * @param {number} value
+ * @return {!proto.adamant.global.v1.TransferVolume} returns this
+ */
 proto.adamant.global.v1.TransferVolume.prototype.setHotNumber = function(value) {
-  jspb.Message.setProto3IntField(this, 6, value);
+  return jspb.Message.setProto3IntField(this, 6, value);
 };
 
 
@@ -14239,9 +18494,12 @@ proto.adamant.global.v1.TransferVolume.prototype.getColdNumber = function() {
 };
 
 
-/** @param {number} value */
+/**
+ * @param {number} value
+ * @return {!proto.adamant.global.v1.TransferVolume} returns this
+ */
 proto.adamant.global.v1.TransferVolume.prototype.setColdNumber = function(value) {
-  jspb.Message.setProto3IntField(this, 7, value);
+  return jspb.Message.setProto3IntField(this, 7, value);
 };
 
 
@@ -14254,9 +18512,12 @@ proto.adamant.global.v1.TransferVolume.prototype.getTransferType = function() {
 };
 
 
-/** @param {!proto.gincoinc.global.v1.TransferType} value */
+/**
+ * @param {!proto.gincoinc.global.v1.TransferType} value
+ * @return {!proto.adamant.global.v1.TransferVolume} returns this
+ */
 proto.adamant.global.v1.TransferVolume.prototype.setTransferType = function(value) {
-  jspb.Message.setProto3EnumField(this, 8, value);
+  return jspb.Message.setProto3EnumField(this, 8, value);
 };
 
 
@@ -14332,7 +18593,7 @@ proto.adamant.global.v1.WalletTransferVolumeSnapshots.deserializeBinaryFromReade
     case 1:
       var value = msg.getWalletTransferVolumeSnapshotByWalletIdMap();
       reader.readMessage(value, function(message, reader) {
-        jspb.Map.deserializeBinary(message, reader, jspb.BinaryReader.prototype.readString, jspb.BinaryReader.prototype.readMessage, proto.adamant.global.v1.ListWalletTransferVolumeSnapshots.deserializeBinaryFromReader, "");
+        jspb.Map.deserializeBinary(message, reader, jspb.BinaryReader.prototype.readString, jspb.BinaryReader.prototype.readMessage, proto.adamant.global.v1.ListWalletTransferVolumeSnapshots.deserializeBinaryFromReader, "", new proto.adamant.global.v1.ListWalletTransferVolumeSnapshots());
          });
       break;
     default:
@@ -14386,10 +18647,11 @@ proto.adamant.global.v1.WalletTransferVolumeSnapshots.prototype.getWalletTransfe
 
 /**
  * Clears values from the map. The map will be non-null.
+ * @return {!proto.adamant.global.v1.WalletTransferVolumeSnapshots} returns this
  */
 proto.adamant.global.v1.WalletTransferVolumeSnapshots.prototype.clearWalletTransferVolumeSnapshotByWalletIdMap = function() {
   this.getWalletTransferVolumeSnapshotByWalletIdMap().clear();
-};
+  return this;};
 
 
 
@@ -14524,9 +18786,12 @@ proto.adamant.global.v1.ListWalletTransferVolumeSnapshots.prototype.getWalletTra
 };
 
 
-/** @param {!Array<!proto.adamant.global.v1.WalletTransferVolumeSnapshot>} value */
+/**
+ * @param {!Array<!proto.adamant.global.v1.WalletTransferVolumeSnapshot>} value
+ * @return {!proto.adamant.global.v1.ListWalletTransferVolumeSnapshots} returns this
+*/
 proto.adamant.global.v1.ListWalletTransferVolumeSnapshots.prototype.setWalletTransferVolumeSnapshotsList = function(value) {
-  jspb.Message.setRepeatedWrapperField(this, 1, value);
+  return jspb.Message.setRepeatedWrapperField(this, 1, value);
 };
 
 
@@ -14542,9 +18807,10 @@ proto.adamant.global.v1.ListWalletTransferVolumeSnapshots.prototype.addWalletTra
 
 /**
  * Clears the list making it empty but non-null.
+ * @return {!proto.adamant.global.v1.ListWalletTransferVolumeSnapshots} returns this
  */
 proto.adamant.global.v1.ListWalletTransferVolumeSnapshots.prototype.clearWalletTransferVolumeSnapshotsList = function() {
-  this.setWalletTransferVolumeSnapshotsList([]);
+  return this.setWalletTransferVolumeSnapshotsList([]);
 };
 
 
@@ -14626,7 +18892,7 @@ proto.adamant.global.v1.WalletTransferVolumeSnapshot.deserializeBinaryFromReader
     case 2:
       var value = msg.getWalletTransferVolumeByTransferTypeMap();
       reader.readMessage(value, function(message, reader) {
-        jspb.Map.deserializeBinary(message, reader, jspb.BinaryReader.prototype.readInt32, jspb.BinaryReader.prototype.readMessage, proto.adamant.global.v1.WalletTransferVolume.deserializeBinaryFromReader, 0);
+        jspb.Map.deserializeBinary(message, reader, jspb.BinaryReader.prototype.readInt32, jspb.BinaryReader.prototype.readMessage, proto.adamant.global.v1.WalletTransferVolume.deserializeBinaryFromReader, 0, new proto.adamant.global.v1.WalletTransferVolume());
          });
       break;
     default:
@@ -14683,17 +18949,21 @@ proto.adamant.global.v1.WalletTransferVolumeSnapshot.prototype.getTargetTime = f
 };
 
 
-/** @param {?proto.google.protobuf.Timestamp|undefined} value */
+/**
+ * @param {?proto.google.protobuf.Timestamp|undefined} value
+ * @return {!proto.adamant.global.v1.WalletTransferVolumeSnapshot} returns this
+*/
 proto.adamant.global.v1.WalletTransferVolumeSnapshot.prototype.setTargetTime = function(value) {
-  jspb.Message.setWrapperField(this, 1, value);
+  return jspb.Message.setWrapperField(this, 1, value);
 };
 
 
 /**
  * Clears the message field making it undefined.
+ * @return {!proto.adamant.global.v1.WalletTransferVolumeSnapshot} returns this
  */
 proto.adamant.global.v1.WalletTransferVolumeSnapshot.prototype.clearTargetTime = function() {
-  this.setTargetTime(undefined);
+  return this.setTargetTime(undefined);
 };
 
 
@@ -14721,10 +18991,11 @@ proto.adamant.global.v1.WalletTransferVolumeSnapshot.prototype.getWalletTransfer
 
 /**
  * Clears values from the map. The map will be non-null.
+ * @return {!proto.adamant.global.v1.WalletTransferVolumeSnapshot} returns this
  */
 proto.adamant.global.v1.WalletTransferVolumeSnapshot.prototype.clearWalletTransferVolumeByTransferTypeMap = function() {
   this.getWalletTransferVolumeByTransferTypeMap().clear();
-};
+  return this;};
 
 
 
@@ -14884,9 +19155,12 @@ proto.adamant.global.v1.WalletTransferVolume.prototype.getStringVolume = functio
 };
 
 
-/** @param {string} value */
+/**
+ * @param {string} value
+ * @return {!proto.adamant.global.v1.WalletTransferVolume} returns this
+ */
 proto.adamant.global.v1.WalletTransferVolume.prototype.setStringVolume = function(value) {
-  jspb.Message.setProto3StringField(this, 1, value);
+  return jspb.Message.setProto3StringField(this, 1, value);
 };
 
 
@@ -14899,9 +19173,12 @@ proto.adamant.global.v1.WalletTransferVolume.prototype.getStringJpyVolume = func
 };
 
 
-/** @param {string} value */
+/**
+ * @param {string} value
+ * @return {!proto.adamant.global.v1.WalletTransferVolume} returns this
+ */
 proto.adamant.global.v1.WalletTransferVolume.prototype.setStringJpyVolume = function(value) {
-  jspb.Message.setProto3StringField(this, 2, value);
+  return jspb.Message.setProto3StringField(this, 2, value);
 };
 
 
@@ -14914,9 +19191,12 @@ proto.adamant.global.v1.WalletTransferVolume.prototype.getNumber = function() {
 };
 
 
-/** @param {number} value */
+/**
+ * @param {number} value
+ * @return {!proto.adamant.global.v1.WalletTransferVolume} returns this
+ */
 proto.adamant.global.v1.WalletTransferVolume.prototype.setNumber = function(value) {
-  jspb.Message.setProto3IntField(this, 3, value);
+  return jspb.Message.setProto3IntField(this, 3, value);
 };
 
 
@@ -14929,9 +19209,12 @@ proto.adamant.global.v1.WalletTransferVolume.prototype.getTransferType = functio
 };
 
 
-/** @param {!proto.gincoinc.global.v1.TransferType} value */
+/**
+ * @param {!proto.gincoinc.global.v1.TransferType} value
+ * @return {!proto.adamant.global.v1.WalletTransferVolume} returns this
+ */
 proto.adamant.global.v1.WalletTransferVolume.prototype.setTransferType = function(value) {
-  jspb.Message.setProto3EnumField(this, 4, value);
+  return jspb.Message.setProto3EnumField(this, 4, value);
 };
 
 
@@ -15068,9 +19351,12 @@ proto.adamant.global.v1.Confirmation.prototype.getCoin = function() {
 };
 
 
-/** @param {!proto.gincoinc.global.v1.Coin} value */
+/**
+ * @param {!proto.gincoinc.global.v1.Coin} value
+ * @return {!proto.adamant.global.v1.Confirmation} returns this
+ */
 proto.adamant.global.v1.Confirmation.prototype.setCoin = function(value) {
-  jspb.Message.setProto3EnumField(this, 1, value);
+  return jspb.Message.setProto3EnumField(this, 1, value);
 };
 
 
@@ -15083,9 +19369,12 @@ proto.adamant.global.v1.Confirmation.prototype.getConfirmation = function() {
 };
 
 
-/** @param {number} value */
+/**
+ * @param {number} value
+ * @return {!proto.adamant.global.v1.Confirmation} returns this
+ */
 proto.adamant.global.v1.Confirmation.prototype.setConfirmation = function(value) {
-  jspb.Message.setProto3IntField(this, 2, value);
+  return jspb.Message.setProto3IntField(this, 2, value);
 };
 
 
@@ -15262,9 +19551,12 @@ proto.adamant.global.v1.WalletFlushSetting.prototype.getOwnerId = function() {
 };
 
 
-/** @param {string} value */
+/**
+ * @param {string} value
+ * @return {!proto.adamant.global.v1.WalletFlushSetting} returns this
+ */
 proto.adamant.global.v1.WalletFlushSetting.prototype.setOwnerId = function(value) {
-  jspb.Message.setProto3StringField(this, 1, value);
+  return jspb.Message.setProto3StringField(this, 1, value);
 };
 
 
@@ -15277,9 +19569,12 @@ proto.adamant.global.v1.WalletFlushSetting.prototype.getCoin = function() {
 };
 
 
-/** @param {!proto.gincoinc.global.v1.Coin} value */
+/**
+ * @param {!proto.gincoinc.global.v1.Coin} value
+ * @return {!proto.adamant.global.v1.WalletFlushSetting} returns this
+ */
 proto.adamant.global.v1.WalletFlushSetting.prototype.setCoin = function(value) {
-  jspb.Message.setProto3EnumField(this, 2, value);
+  return jspb.Message.setProto3EnumField(this, 2, value);
 };
 
 
@@ -15292,9 +19587,12 @@ proto.adamant.global.v1.WalletFlushSetting.prototype.getDestinationWalletId = fu
 };
 
 
-/** @param {string} value */
+/**
+ * @param {string} value
+ * @return {!proto.adamant.global.v1.WalletFlushSetting} returns this
+ */
 proto.adamant.global.v1.WalletFlushSetting.prototype.setDestinationWalletId = function(value) {
-  jspb.Message.setProto3StringField(this, 3, value);
+  return jspb.Message.setProto3StringField(this, 3, value);
 };
 
 
@@ -15308,17 +19606,21 @@ proto.adamant.global.v1.WalletFlushSetting.prototype.getCreateTime = function() 
 };
 
 
-/** @param {?proto.google.protobuf.Timestamp|undefined} value */
+/**
+ * @param {?proto.google.protobuf.Timestamp|undefined} value
+ * @return {!proto.adamant.global.v1.WalletFlushSetting} returns this
+*/
 proto.adamant.global.v1.WalletFlushSetting.prototype.setCreateTime = function(value) {
-  jspb.Message.setWrapperField(this, 4, value);
+  return jspb.Message.setWrapperField(this, 4, value);
 };
 
 
 /**
  * Clears the message field making it undefined.
+ * @return {!proto.adamant.global.v1.WalletFlushSetting} returns this
  */
 proto.adamant.global.v1.WalletFlushSetting.prototype.clearCreateTime = function() {
-  this.setCreateTime(undefined);
+  return this.setCreateTime(undefined);
 };
 
 
@@ -15341,17 +19643,21 @@ proto.adamant.global.v1.WalletFlushSetting.prototype.getUpdateTime = function() 
 };
 
 
-/** @param {?proto.google.protobuf.Timestamp|undefined} value */
+/**
+ * @param {?proto.google.protobuf.Timestamp|undefined} value
+ * @return {!proto.adamant.global.v1.WalletFlushSetting} returns this
+*/
 proto.adamant.global.v1.WalletFlushSetting.prototype.setUpdateTime = function(value) {
-  jspb.Message.setWrapperField(this, 5, value);
+  return jspb.Message.setWrapperField(this, 5, value);
 };
 
 
 /**
  * Clears the message field making it undefined.
+ * @return {!proto.adamant.global.v1.WalletFlushSetting} returns this
  */
 proto.adamant.global.v1.WalletFlushSetting.prototype.clearUpdateTime = function() {
-  this.setUpdateTime(undefined);
+  return this.setUpdateTime(undefined);
 };
 
 
@@ -15511,9 +19817,12 @@ proto.adamant.global.v1.CompensationFee.prototype.getStringValue = function() {
 };
 
 
-/** @param {string} value */
+/**
+ * @param {string} value
+ * @return {!proto.adamant.global.v1.CompensationFee} returns this
+ */
 proto.adamant.global.v1.CompensationFee.prototype.setStringValue = function(value) {
-  jspb.Message.setProto3StringField(this, 1, value);
+  return jspb.Message.setProto3StringField(this, 1, value);
 };
 
 
@@ -15526,9 +19835,12 @@ proto.adamant.global.v1.CompensationFee.prototype.getIsSpent = function() {
 };
 
 
-/** @param {boolean} value */
+/**
+ * @param {boolean} value
+ * @return {!proto.adamant.global.v1.CompensationFee} returns this
+ */
 proto.adamant.global.v1.CompensationFee.prototype.setIsSpent = function(value) {
-  jspb.Message.setProto3BooleanField(this, 2, value);
+  return jspb.Message.setProto3BooleanField(this, 2, value);
 };
 
 
@@ -15542,17 +19854,21 @@ proto.adamant.global.v1.CompensationFee.prototype.getCreateTime = function() {
 };
 
 
-/** @param {?proto.google.protobuf.Timestamp|undefined} value */
+/**
+ * @param {?proto.google.protobuf.Timestamp|undefined} value
+ * @return {!proto.adamant.global.v1.CompensationFee} returns this
+*/
 proto.adamant.global.v1.CompensationFee.prototype.setCreateTime = function(value) {
-  jspb.Message.setWrapperField(this, 3, value);
+  return jspb.Message.setWrapperField(this, 3, value);
 };
 
 
 /**
  * Clears the message field making it undefined.
+ * @return {!proto.adamant.global.v1.CompensationFee} returns this
  */
 proto.adamant.global.v1.CompensationFee.prototype.clearCreateTime = function() {
-  this.setCreateTime(undefined);
+  return this.setCreateTime(undefined);
 };
 
 
@@ -15562,6 +19878,388 @@ proto.adamant.global.v1.CompensationFee.prototype.clearCreateTime = function() {
  */
 proto.adamant.global.v1.CompensationFee.prototype.hasCreateTime = function() {
   return jspb.Message.getField(this, 3) != null;
+};
+
+
+
+/**
+ * List of repeated fields within this message type.
+ * @private {!Array<number>}
+ * @const
+ */
+proto.adamant.global.v1.WalletGroup.repeatedFields_ = [4];
+
+
+
+if (jspb.Message.GENERATE_TO_OBJECT) {
+/**
+ * Creates an object representation of this proto.
+ * Field names that are reserved in JavaScript and will be renamed to pb_name.
+ * Optional fields that are not set will be set to undefined.
+ * To access a reserved field use, foo.pb_<name>, eg, foo.pb_default.
+ * For the list of reserved names please see:
+ *     net/proto2/compiler/js/internal/generator.cc#kKeyword.
+ * @param {boolean=} opt_includeInstance Deprecated. whether to include the
+ *     JSPB instance for transitional soy proto support:
+ *     http://goto/soy-param-migration
+ * @return {!Object}
+ */
+proto.adamant.global.v1.WalletGroup.prototype.toObject = function(opt_includeInstance) {
+  return proto.adamant.global.v1.WalletGroup.toObject(opt_includeInstance, this);
+};
+
+
+/**
+ * Static version of the {@see toObject} method.
+ * @param {boolean|undefined} includeInstance Deprecated. Whether to include
+ *     the JSPB instance for transitional soy proto support:
+ *     http://goto/soy-param-migration
+ * @param {!proto.adamant.global.v1.WalletGroup} msg The msg instance to transform.
+ * @return {!Object}
+ * @suppress {unusedLocalVariables} f is only used for nested messages
+ */
+proto.adamant.global.v1.WalletGroup.toObject = function(includeInstance, msg) {
+  var f, obj = {
+    walletGroupId: jspb.Message.getFieldWithDefault(msg, 1, ""),
+    name: jspb.Message.getFieldWithDefault(msg, 2, ""),
+    coin: jspb.Message.getFieldWithDefault(msg, 3, 0),
+    walletsList: jspb.Message.toObjectList(msg.getWalletsList(),
+    proto.adamant.global.v1.Wallet.toObject, includeInstance),
+    watchOnly: jspb.Message.getBooleanFieldWithDefault(msg, 7, false),
+    createTime: (f = msg.getCreateTime()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f),
+    updateTime: (f = msg.getUpdateTime()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f)
+  };
+
+  if (includeInstance) {
+    obj.$jspbMessageInstance = msg;
+  }
+  return obj;
+};
+}
+
+
+/**
+ * Deserializes binary data (in protobuf wire format).
+ * @param {jspb.ByteSource} bytes The bytes to deserialize.
+ * @return {!proto.adamant.global.v1.WalletGroup}
+ */
+proto.adamant.global.v1.WalletGroup.deserializeBinary = function(bytes) {
+  var reader = new jspb.BinaryReader(bytes);
+  var msg = new proto.adamant.global.v1.WalletGroup;
+  return proto.adamant.global.v1.WalletGroup.deserializeBinaryFromReader(msg, reader);
+};
+
+
+/**
+ * Deserializes binary data (in protobuf wire format) from the
+ * given reader into the given message object.
+ * @param {!proto.adamant.global.v1.WalletGroup} msg The message object to deserialize into.
+ * @param {!jspb.BinaryReader} reader The BinaryReader to use.
+ * @return {!proto.adamant.global.v1.WalletGroup}
+ */
+proto.adamant.global.v1.WalletGroup.deserializeBinaryFromReader = function(msg, reader) {
+  while (reader.nextField()) {
+    if (reader.isEndGroup()) {
+      break;
+    }
+    var field = reader.getFieldNumber();
+    switch (field) {
+    case 1:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setWalletGroupId(value);
+      break;
+    case 2:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setName(value);
+      break;
+    case 3:
+      var value = /** @type {!proto.gincoinc.global.v1.Coin} */ (reader.readEnum());
+      msg.setCoin(value);
+      break;
+    case 4:
+      var value = new proto.adamant.global.v1.Wallet;
+      reader.readMessage(value,proto.adamant.global.v1.Wallet.deserializeBinaryFromReader);
+      msg.addWallets(value);
+      break;
+    case 7:
+      var value = /** @type {boolean} */ (reader.readBool());
+      msg.setWatchOnly(value);
+      break;
+    case 5:
+      var value = new google_protobuf_timestamp_pb.Timestamp;
+      reader.readMessage(value,google_protobuf_timestamp_pb.Timestamp.deserializeBinaryFromReader);
+      msg.setCreateTime(value);
+      break;
+    case 6:
+      var value = new google_protobuf_timestamp_pb.Timestamp;
+      reader.readMessage(value,google_protobuf_timestamp_pb.Timestamp.deserializeBinaryFromReader);
+      msg.setUpdateTime(value);
+      break;
+    default:
+      reader.skipField();
+      break;
+    }
+  }
+  return msg;
+};
+
+
+/**
+ * Serializes the message to binary data (in protobuf wire format).
+ * @return {!Uint8Array}
+ */
+proto.adamant.global.v1.WalletGroup.prototype.serializeBinary = function() {
+  var writer = new jspb.BinaryWriter();
+  proto.adamant.global.v1.WalletGroup.serializeBinaryToWriter(this, writer);
+  return writer.getResultBuffer();
+};
+
+
+/**
+ * Serializes the given message to binary data (in protobuf wire
+ * format), writing to the given BinaryWriter.
+ * @param {!proto.adamant.global.v1.WalletGroup} message
+ * @param {!jspb.BinaryWriter} writer
+ * @suppress {unusedLocalVariables} f is only used for nested messages
+ */
+proto.adamant.global.v1.WalletGroup.serializeBinaryToWriter = function(message, writer) {
+  var f = undefined;
+  f = message.getWalletGroupId();
+  if (f.length > 0) {
+    writer.writeString(
+      1,
+      f
+    );
+  }
+  f = message.getName();
+  if (f.length > 0) {
+    writer.writeString(
+      2,
+      f
+    );
+  }
+  f = message.getCoin();
+  if (f !== 0.0) {
+    writer.writeEnum(
+      3,
+      f
+    );
+  }
+  f = message.getWalletsList();
+  if (f.length > 0) {
+    writer.writeRepeatedMessage(
+      4,
+      f,
+      proto.adamant.global.v1.Wallet.serializeBinaryToWriter
+    );
+  }
+  f = message.getWatchOnly();
+  if (f) {
+    writer.writeBool(
+      7,
+      f
+    );
+  }
+  f = message.getCreateTime();
+  if (f != null) {
+    writer.writeMessage(
+      5,
+      f,
+      google_protobuf_timestamp_pb.Timestamp.serializeBinaryToWriter
+    );
+  }
+  f = message.getUpdateTime();
+  if (f != null) {
+    writer.writeMessage(
+      6,
+      f,
+      google_protobuf_timestamp_pb.Timestamp.serializeBinaryToWriter
+    );
+  }
+};
+
+
+/**
+ * optional string wallet_group_id = 1;
+ * @return {string}
+ */
+proto.adamant.global.v1.WalletGroup.prototype.getWalletGroupId = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 1, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.adamant.global.v1.WalletGroup} returns this
+ */
+proto.adamant.global.v1.WalletGroup.prototype.setWalletGroupId = function(value) {
+  return jspb.Message.setProto3StringField(this, 1, value);
+};
+
+
+/**
+ * optional string name = 2;
+ * @return {string}
+ */
+proto.adamant.global.v1.WalletGroup.prototype.getName = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 2, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.adamant.global.v1.WalletGroup} returns this
+ */
+proto.adamant.global.v1.WalletGroup.prototype.setName = function(value) {
+  return jspb.Message.setProto3StringField(this, 2, value);
+};
+
+
+/**
+ * optional gincoinc.global.v1.Coin coin = 3;
+ * @return {!proto.gincoinc.global.v1.Coin}
+ */
+proto.adamant.global.v1.WalletGroup.prototype.getCoin = function() {
+  return /** @type {!proto.gincoinc.global.v1.Coin} */ (jspb.Message.getFieldWithDefault(this, 3, 0));
+};
+
+
+/**
+ * @param {!proto.gincoinc.global.v1.Coin} value
+ * @return {!proto.adamant.global.v1.WalletGroup} returns this
+ */
+proto.adamant.global.v1.WalletGroup.prototype.setCoin = function(value) {
+  return jspb.Message.setProto3EnumField(this, 3, value);
+};
+
+
+/**
+ * repeated Wallet wallets = 4;
+ * @return {!Array<!proto.adamant.global.v1.Wallet>}
+ */
+proto.adamant.global.v1.WalletGroup.prototype.getWalletsList = function() {
+  return /** @type{!Array<!proto.adamant.global.v1.Wallet>} */ (
+    jspb.Message.getRepeatedWrapperField(this, proto.adamant.global.v1.Wallet, 4));
+};
+
+
+/**
+ * @param {!Array<!proto.adamant.global.v1.Wallet>} value
+ * @return {!proto.adamant.global.v1.WalletGroup} returns this
+*/
+proto.adamant.global.v1.WalletGroup.prototype.setWalletsList = function(value) {
+  return jspb.Message.setRepeatedWrapperField(this, 4, value);
+};
+
+
+/**
+ * @param {!proto.adamant.global.v1.Wallet=} opt_value
+ * @param {number=} opt_index
+ * @return {!proto.adamant.global.v1.Wallet}
+ */
+proto.adamant.global.v1.WalletGroup.prototype.addWallets = function(opt_value, opt_index) {
+  return jspb.Message.addToRepeatedWrapperField(this, 4, opt_value, proto.adamant.global.v1.Wallet, opt_index);
+};
+
+
+/**
+ * Clears the list making it empty but non-null.
+ * @return {!proto.adamant.global.v1.WalletGroup} returns this
+ */
+proto.adamant.global.v1.WalletGroup.prototype.clearWalletsList = function() {
+  return this.setWalletsList([]);
+};
+
+
+/**
+ * optional bool watch_only = 7;
+ * @return {boolean}
+ */
+proto.adamant.global.v1.WalletGroup.prototype.getWatchOnly = function() {
+  return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 7, false));
+};
+
+
+/**
+ * @param {boolean} value
+ * @return {!proto.adamant.global.v1.WalletGroup} returns this
+ */
+proto.adamant.global.v1.WalletGroup.prototype.setWatchOnly = function(value) {
+  return jspb.Message.setProto3BooleanField(this, 7, value);
+};
+
+
+/**
+ * optional google.protobuf.Timestamp create_time = 5;
+ * @return {?proto.google.protobuf.Timestamp}
+ */
+proto.adamant.global.v1.WalletGroup.prototype.getCreateTime = function() {
+  return /** @type{?proto.google.protobuf.Timestamp} */ (
+    jspb.Message.getWrapperField(this, google_protobuf_timestamp_pb.Timestamp, 5));
+};
+
+
+/**
+ * @param {?proto.google.protobuf.Timestamp|undefined} value
+ * @return {!proto.adamant.global.v1.WalletGroup} returns this
+*/
+proto.adamant.global.v1.WalletGroup.prototype.setCreateTime = function(value) {
+  return jspb.Message.setWrapperField(this, 5, value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
+ * @return {!proto.adamant.global.v1.WalletGroup} returns this
+ */
+proto.adamant.global.v1.WalletGroup.prototype.clearCreateTime = function() {
+  return this.setCreateTime(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.adamant.global.v1.WalletGroup.prototype.hasCreateTime = function() {
+  return jspb.Message.getField(this, 5) != null;
+};
+
+
+/**
+ * optional google.protobuf.Timestamp update_time = 6;
+ * @return {?proto.google.protobuf.Timestamp}
+ */
+proto.adamant.global.v1.WalletGroup.prototype.getUpdateTime = function() {
+  return /** @type{?proto.google.protobuf.Timestamp} */ (
+    jspb.Message.getWrapperField(this, google_protobuf_timestamp_pb.Timestamp, 6));
+};
+
+
+/**
+ * @param {?proto.google.protobuf.Timestamp|undefined} value
+ * @return {!proto.adamant.global.v1.WalletGroup} returns this
+*/
+proto.adamant.global.v1.WalletGroup.prototype.setUpdateTime = function(value) {
+  return jspb.Message.setWrapperField(this, 6, value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
+ * @return {!proto.adamant.global.v1.WalletGroup} returns this
+ */
+proto.adamant.global.v1.WalletGroup.prototype.clearUpdateTime = function() {
+  return this.setUpdateTime(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.adamant.global.v1.WalletGroup.prototype.hasUpdateTime = function() {
+  return jspb.Message.getField(this, 6) != null;
 };
 
 
@@ -15698,9 +20396,12 @@ proto.adamant.global.v1.RequestTxOutput.prototype.getAddress = function() {
 };
 
 
-/** @param {string} value */
+/**
+ * @param {string} value
+ * @return {!proto.adamant.global.v1.RequestTxOutput} returns this
+ */
 proto.adamant.global.v1.RequestTxOutput.prototype.setAddress = function(value) {
-  jspb.Message.setProto3StringField(this, 1, value);
+  return jspb.Message.setProto3StringField(this, 1, value);
 };
 
 
@@ -15713,9 +20414,12 @@ proto.adamant.global.v1.RequestTxOutput.prototype.getStringValue = function() {
 };
 
 
-/** @param {string} value */
+/**
+ * @param {string} value
+ * @return {!proto.adamant.global.v1.RequestTxOutput} returns this
+ */
 proto.adamant.global.v1.RequestTxOutput.prototype.setStringValue = function(value) {
-  jspb.Message.setProto3StringField(this, 2, value);
+  return jspb.Message.setProto3StringField(this, 2, value);
 };
 
 
@@ -15851,9 +20555,12 @@ proto.adamant.global.v1.RequestSignedInfo.prototype.getSignaturesList = function
 };
 
 
-/** @param {!Array<!proto.adamant.global.v1.RequestSignature>} value */
+/**
+ * @param {!Array<!proto.adamant.global.v1.RequestSignature>} value
+ * @return {!proto.adamant.global.v1.RequestSignedInfo} returns this
+*/
 proto.adamant.global.v1.RequestSignedInfo.prototype.setSignaturesList = function(value) {
-  jspb.Message.setRepeatedWrapperField(this, 1, value);
+  return jspb.Message.setRepeatedWrapperField(this, 1, value);
 };
 
 
@@ -15869,9 +20576,10 @@ proto.adamant.global.v1.RequestSignedInfo.prototype.addSignatures = function(opt
 
 /**
  * Clears the list making it empty but non-null.
+ * @return {!proto.adamant.global.v1.RequestSignedInfo} returns this
  */
 proto.adamant.global.v1.RequestSignedInfo.prototype.clearSignaturesList = function() {
-  this.setSignaturesList([]);
+  return this.setSignaturesList([]);
 };
 
 
@@ -16008,9 +20716,12 @@ proto.adamant.global.v1.RequestSignature.prototype.getSignIndex = function() {
 };
 
 
-/** @param {number} value */
+/**
+ * @param {number} value
+ * @return {!proto.adamant.global.v1.RequestSignature} returns this
+ */
 proto.adamant.global.v1.RequestSignature.prototype.setSignIndex = function(value) {
-  jspb.Message.setProto3IntField(this, 1, value);
+  return jspb.Message.setProto3IntField(this, 1, value);
 };
 
 
@@ -16023,9 +20734,12 @@ proto.adamant.global.v1.RequestSignature.prototype.getSignature = function() {
 };
 
 
-/** @param {string} value */
+/**
+ * @param {string} value
+ * @return {!proto.adamant.global.v1.RequestSignature} returns this
+ */
 proto.adamant.global.v1.RequestSignature.prototype.setSignature = function(value) {
-  jspb.Message.setProto3StringField(this, 2, value);
+  return jspb.Message.setProto3StringField(this, 2, value);
 };
 
 
@@ -16162,9 +20876,12 @@ proto.adamant.global.v1.RequestTransferLimitEntry.prototype.getTransferLimitType
 };
 
 
-/** @param {!proto.adamant.global.v1.TransferLimitType} value */
+/**
+ * @param {!proto.adamant.global.v1.TransferLimitType} value
+ * @return {!proto.adamant.global.v1.RequestTransferLimitEntry} returns this
+ */
 proto.adamant.global.v1.RequestTransferLimitEntry.prototype.setTransferLimitType = function(value) {
-  jspb.Message.setProto3EnumField(this, 1, value);
+  return jspb.Message.setProto3EnumField(this, 1, value);
 };
 
 
@@ -16177,9 +20894,12 @@ proto.adamant.global.v1.RequestTransferLimitEntry.prototype.getTransferLimitValu
 };
 
 
-/** @param {number} value */
+/**
+ * @param {number} value
+ * @return {!proto.adamant.global.v1.RequestTransferLimitEntry} returns this
+ */
 proto.adamant.global.v1.RequestTransferLimitEntry.prototype.setTransferLimitValue = function(value) {
-  jspb.Message.setProto3IntField(this, 2, value);
+  return jspb.Message.setProto3IntField(this, 2, value);
 };
 
 
@@ -16316,9 +21036,12 @@ proto.adamant.global.v1.RequestRate.prototype.getCoin = function() {
 };
 
 
-/** @param {!proto.gincoinc.global.v1.Coin} value */
+/**
+ * @param {!proto.gincoinc.global.v1.Coin} value
+ * @return {!proto.adamant.global.v1.RequestRate} returns this
+ */
 proto.adamant.global.v1.RequestRate.prototype.setCoin = function(value) {
-  jspb.Message.setProto3EnumField(this, 1, value);
+  return jspb.Message.setProto3EnumField(this, 1, value);
 };
 
 
@@ -16331,9 +21054,262 @@ proto.adamant.global.v1.RequestRate.prototype.getJpy = function() {
 };
 
 
-/** @param {number} value */
+/**
+ * @param {number} value
+ * @return {!proto.adamant.global.v1.RequestRate} returns this
+ */
 proto.adamant.global.v1.RequestRate.prototype.setJpy = function(value) {
-  jspb.Message.setProto3FloatField(this, 2, value);
+  return jspb.Message.setProto3FloatField(this, 2, value);
+};
+
+
+
+
+
+if (jspb.Message.GENERATE_TO_OBJECT) {
+/**
+ * Creates an object representation of this proto.
+ * Field names that are reserved in JavaScript and will be renamed to pb_name.
+ * Optional fields that are not set will be set to undefined.
+ * To access a reserved field use, foo.pb_<name>, eg, foo.pb_default.
+ * For the list of reserved names please see:
+ *     net/proto2/compiler/js/internal/generator.cc#kKeyword.
+ * @param {boolean=} opt_includeInstance Deprecated. whether to include the
+ *     JSPB instance for transitional soy proto support:
+ *     http://goto/soy-param-migration
+ * @return {!Object}
+ */
+proto.adamant.global.v1.SubstrateChildAddress.prototype.toObject = function(opt_includeInstance) {
+  return proto.adamant.global.v1.SubstrateChildAddress.toObject(opt_includeInstance, this);
+};
+
+
+/**
+ * Static version of the {@see toObject} method.
+ * @param {boolean|undefined} includeInstance Deprecated. Whether to include
+ *     the JSPB instance for transitional soy proto support:
+ *     http://goto/soy-param-migration
+ * @param {!proto.adamant.global.v1.SubstrateChildAddress} msg The msg instance to transform.
+ * @return {!Object}
+ * @suppress {unusedLocalVariables} f is only used for nested messages
+ */
+proto.adamant.global.v1.SubstrateChildAddress.toObject = function(includeInstance, msg) {
+  var f, obj = {
+    walletId: jspb.Message.getFieldWithDefault(msg, 1, ""),
+    accountId: jspb.Message.getFieldWithDefault(msg, 2, ""),
+    address: jspb.Message.getFieldWithDefault(msg, 3, ""),
+    balance: jspb.Message.getFloatingPointFieldWithDefault(msg, 4, 0.0),
+    stringBalance: jspb.Message.getFieldWithDefault(msg, 5, "")
+  };
+
+  if (includeInstance) {
+    obj.$jspbMessageInstance = msg;
+  }
+  return obj;
+};
+}
+
+
+/**
+ * Deserializes binary data (in protobuf wire format).
+ * @param {jspb.ByteSource} bytes The bytes to deserialize.
+ * @return {!proto.adamant.global.v1.SubstrateChildAddress}
+ */
+proto.adamant.global.v1.SubstrateChildAddress.deserializeBinary = function(bytes) {
+  var reader = new jspb.BinaryReader(bytes);
+  var msg = new proto.adamant.global.v1.SubstrateChildAddress;
+  return proto.adamant.global.v1.SubstrateChildAddress.deserializeBinaryFromReader(msg, reader);
+};
+
+
+/**
+ * Deserializes binary data (in protobuf wire format) from the
+ * given reader into the given message object.
+ * @param {!proto.adamant.global.v1.SubstrateChildAddress} msg The message object to deserialize into.
+ * @param {!jspb.BinaryReader} reader The BinaryReader to use.
+ * @return {!proto.adamant.global.v1.SubstrateChildAddress}
+ */
+proto.adamant.global.v1.SubstrateChildAddress.deserializeBinaryFromReader = function(msg, reader) {
+  while (reader.nextField()) {
+    if (reader.isEndGroup()) {
+      break;
+    }
+    var field = reader.getFieldNumber();
+    switch (field) {
+    case 1:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setWalletId(value);
+      break;
+    case 2:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setAccountId(value);
+      break;
+    case 3:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setAddress(value);
+      break;
+    case 4:
+      var value = /** @type {number} */ (reader.readDouble());
+      msg.setBalance(value);
+      break;
+    case 5:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setStringBalance(value);
+      break;
+    default:
+      reader.skipField();
+      break;
+    }
+  }
+  return msg;
+};
+
+
+/**
+ * Serializes the message to binary data (in protobuf wire format).
+ * @return {!Uint8Array}
+ */
+proto.adamant.global.v1.SubstrateChildAddress.prototype.serializeBinary = function() {
+  var writer = new jspb.BinaryWriter();
+  proto.adamant.global.v1.SubstrateChildAddress.serializeBinaryToWriter(this, writer);
+  return writer.getResultBuffer();
+};
+
+
+/**
+ * Serializes the given message to binary data (in protobuf wire
+ * format), writing to the given BinaryWriter.
+ * @param {!proto.adamant.global.v1.SubstrateChildAddress} message
+ * @param {!jspb.BinaryWriter} writer
+ * @suppress {unusedLocalVariables} f is only used for nested messages
+ */
+proto.adamant.global.v1.SubstrateChildAddress.serializeBinaryToWriter = function(message, writer) {
+  var f = undefined;
+  f = message.getWalletId();
+  if (f.length > 0) {
+    writer.writeString(
+      1,
+      f
+    );
+  }
+  f = message.getAccountId();
+  if (f.length > 0) {
+    writer.writeString(
+      2,
+      f
+    );
+  }
+  f = message.getAddress();
+  if (f.length > 0) {
+    writer.writeString(
+      3,
+      f
+    );
+  }
+  f = message.getBalance();
+  if (f !== 0.0) {
+    writer.writeDouble(
+      4,
+      f
+    );
+  }
+  f = message.getStringBalance();
+  if (f.length > 0) {
+    writer.writeString(
+      5,
+      f
+    );
+  }
+};
+
+
+/**
+ * optional string wallet_id = 1;
+ * @return {string}
+ */
+proto.adamant.global.v1.SubstrateChildAddress.prototype.getWalletId = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 1, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.adamant.global.v1.SubstrateChildAddress} returns this
+ */
+proto.adamant.global.v1.SubstrateChildAddress.prototype.setWalletId = function(value) {
+  return jspb.Message.setProto3StringField(this, 1, value);
+};
+
+
+/**
+ * optional string account_id = 2;
+ * @return {string}
+ */
+proto.adamant.global.v1.SubstrateChildAddress.prototype.getAccountId = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 2, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.adamant.global.v1.SubstrateChildAddress} returns this
+ */
+proto.adamant.global.v1.SubstrateChildAddress.prototype.setAccountId = function(value) {
+  return jspb.Message.setProto3StringField(this, 2, value);
+};
+
+
+/**
+ * optional string address = 3;
+ * @return {string}
+ */
+proto.adamant.global.v1.SubstrateChildAddress.prototype.getAddress = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 3, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.adamant.global.v1.SubstrateChildAddress} returns this
+ */
+proto.adamant.global.v1.SubstrateChildAddress.prototype.setAddress = function(value) {
+  return jspb.Message.setProto3StringField(this, 3, value);
+};
+
+
+/**
+ * optional double balance = 4;
+ * @return {number}
+ */
+proto.adamant.global.v1.SubstrateChildAddress.prototype.getBalance = function() {
+  return /** @type {number} */ (jspb.Message.getFloatingPointFieldWithDefault(this, 4, 0.0));
+};
+
+
+/**
+ * @param {number} value
+ * @return {!proto.adamant.global.v1.SubstrateChildAddress} returns this
+ */
+proto.adamant.global.v1.SubstrateChildAddress.prototype.setBalance = function(value) {
+  return jspb.Message.setProto3FloatField(this, 4, value);
+};
+
+
+/**
+ * optional string string_balance = 5;
+ * @return {string}
+ */
+proto.adamant.global.v1.SubstrateChildAddress.prototype.getStringBalance = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 5, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.adamant.global.v1.SubstrateChildAddress} returns this
+ */
+proto.adamant.global.v1.SubstrateChildAddress.prototype.setStringBalance = function(value) {
+  return jspb.Message.setProto3StringField(this, 5, value);
 };
 
 

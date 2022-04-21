@@ -5,12 +5,12 @@
 /* eslint-disable */
 
 import * as jspb from "google-protobuf";
-import * as google_protobuf_empty_pb from "google-protobuf/google/protobuf/empty_pb";
-import * as validate_validate_pb from "../../../../../validate/validate_pb";
-import * as gincoinc_global_v1_gincoincglobalv1_enum_pb from "../../../../../gincoinc/global/v1/gincoincglobalv1/enum_pb";
 import * as gincoinc_adamant_global_v1_adamantglobalv1_enum_pb from "../../../../../gincoinc/adamant/global/v1/adamantglobalv1/enum_pb";
 import * as gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb from "../../../../../gincoinc/adamant/global/v1/adamantglobalv1/global_api_pb";
 import * as gincoinc_adamant_global_v1_adamantglobalv1_model_pb from "../../../../../gincoinc/adamant/global/v1/adamantglobalv1/model_pb";
+import * as gincoinc_global_v1_gincoincglobalv1_enum_pb from "../../../../../gincoinc/global/v1/gincoincglobalv1/enum_pb";
+import * as google_protobuf_empty_pb from "google-protobuf/google/protobuf/empty_pb";
+import * as validate_validate_pb from "../../../../../validate/validate_pb";
 
 export class CreateWalletRequest extends jspb.Message { 
     getWalletName(): string;
@@ -62,6 +62,26 @@ export class InitializeXRPWalletRequest extends jspb.Message {
 }
 
 export namespace InitializeXRPWalletRequest {
+    export type AsObject = {
+        walletId: string,
+    }
+}
+
+export class InitializeWalletRequest extends jspb.Message { 
+    getWalletId(): string;
+    setWalletId(value: string): InitializeWalletRequest;
+
+    serializeBinary(): Uint8Array;
+    toObject(includeInstance?: boolean): InitializeWalletRequest.AsObject;
+    static toObject(includeInstance: boolean, msg: InitializeWalletRequest): InitializeWalletRequest.AsObject;
+    static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+    static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+    static serializeBinaryToWriter(message: InitializeWalletRequest, writer: jspb.BinaryWriter): void;
+    static deserializeBinary(bytes: Uint8Array): InitializeWalletRequest;
+    static deserializeBinaryFromReader(message: InitializeWalletRequest, reader: jspb.BinaryReader): InitializeWalletRequest;
+}
+
+export namespace InitializeWalletRequest {
     export type AsObject = {
         walletId: string,
     }

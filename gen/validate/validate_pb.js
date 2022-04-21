@@ -1,15 +1,25 @@
+// source: validate/validate.proto
 /**
  * @fileoverview
  * @enhanceable
+ * @suppress {missingRequire} reports error on implicit type usages.
  * @suppress {messageConventions} JS Compiler reports an error if a variable or
  *     field starts with 'MSG_' and isn't a translatable message.
  * @public
  */
 // GENERATED CODE -- DO NOT EDIT!
+/* eslint-disable */
+// @ts-nocheck
 
 var jspb = require('google-protobuf');
 var goog = jspb;
-var global = Function('return this')();
+var global = (function() {
+  if (this) { return this; }
+  if (typeof window !== 'undefined') { return window; }
+  if (typeof global !== 'undefined') { return global; }
+  if (typeof self !== 'undefined') { return self; }
+  return Function('return this')();
+}.call(null));
 
 var google_protobuf_descriptor_pb = require('google-protobuf/google/protobuf/descriptor_pb.js');
 goog.object.extend(proto, google_protobuf_descriptor_pb);
@@ -20,15 +30,18 @@ goog.object.extend(proto, google_protobuf_timestamp_pb);
 goog.exportSymbol('proto.validate.AnyRules', null, global);
 goog.exportSymbol('proto.validate.BoolRules', null, global);
 goog.exportSymbol('proto.validate.BytesRules', null, global);
+goog.exportSymbol('proto.validate.BytesRules.WellKnownCase', null, global);
 goog.exportSymbol('proto.validate.DoubleRules', null, global);
 goog.exportSymbol('proto.validate.DurationRules', null, global);
 goog.exportSymbol('proto.validate.EnumRules', null, global);
 goog.exportSymbol('proto.validate.FieldRules', null, global);
+goog.exportSymbol('proto.validate.FieldRules.TypeCase', null, global);
 goog.exportSymbol('proto.validate.Fixed32Rules', null, global);
 goog.exportSymbol('proto.validate.Fixed64Rules', null, global);
 goog.exportSymbol('proto.validate.FloatRules', null, global);
 goog.exportSymbol('proto.validate.Int32Rules', null, global);
 goog.exportSymbol('proto.validate.Int64Rules', null, global);
+goog.exportSymbol('proto.validate.KnownRegex', null, global);
 goog.exportSymbol('proto.validate.MapRules', null, global);
 goog.exportSymbol('proto.validate.MessageRules', null, global);
 goog.exportSymbol('proto.validate.RepeatedRules', null, global);
@@ -37,10 +50,12 @@ goog.exportSymbol('proto.validate.SFixed64Rules', null, global);
 goog.exportSymbol('proto.validate.SInt32Rules', null, global);
 goog.exportSymbol('proto.validate.SInt64Rules', null, global);
 goog.exportSymbol('proto.validate.StringRules', null, global);
+goog.exportSymbol('proto.validate.StringRules.WellKnownCase', null, global);
 goog.exportSymbol('proto.validate.TimestampRules', null, global);
 goog.exportSymbol('proto.validate.UInt32Rules', null, global);
 goog.exportSymbol('proto.validate.UInt64Rules', null, global);
 goog.exportSymbol('proto.validate.disabled', null, global);
+goog.exportSymbol('proto.validate.ignored', null, global);
 goog.exportSymbol('proto.validate.required', null, global);
 goog.exportSymbol('proto.validate.rules', null, global);
 /**
@@ -989,17 +1004,21 @@ proto.validate.FieldRules.prototype.getMessage = function() {
 };
 
 
-/** @param {?proto.validate.MessageRules|undefined} value */
+/**
+ * @param {?proto.validate.MessageRules|undefined} value
+ * @return {!proto.validate.FieldRules} returns this
+*/
 proto.validate.FieldRules.prototype.setMessage = function(value) {
-  jspb.Message.setWrapperField(this, 17, value);
+  return jspb.Message.setWrapperField(this, 17, value);
 };
 
 
 /**
  * Clears the message field making it undefined.
+ * @return {!proto.validate.FieldRules} returns this
  */
 proto.validate.FieldRules.prototype.clearMessage = function() {
-  this.setMessage(undefined);
+  return this.setMessage(undefined);
 };
 
 
@@ -1022,17 +1041,21 @@ proto.validate.FieldRules.prototype.getFloat = function() {
 };
 
 
-/** @param {?proto.validate.FloatRules|undefined} value */
+/**
+ * @param {?proto.validate.FloatRules|undefined} value
+ * @return {!proto.validate.FieldRules} returns this
+*/
 proto.validate.FieldRules.prototype.setFloat = function(value) {
-  jspb.Message.setOneofWrapperField(this, 1, proto.validate.FieldRules.oneofGroups_[0], value);
+  return jspb.Message.setOneofWrapperField(this, 1, proto.validate.FieldRules.oneofGroups_[0], value);
 };
 
 
 /**
  * Clears the message field making it undefined.
+ * @return {!proto.validate.FieldRules} returns this
  */
 proto.validate.FieldRules.prototype.clearFloat = function() {
-  this.setFloat(undefined);
+  return this.setFloat(undefined);
 };
 
 
@@ -1055,17 +1078,21 @@ proto.validate.FieldRules.prototype.getDouble = function() {
 };
 
 
-/** @param {?proto.validate.DoubleRules|undefined} value */
+/**
+ * @param {?proto.validate.DoubleRules|undefined} value
+ * @return {!proto.validate.FieldRules} returns this
+*/
 proto.validate.FieldRules.prototype.setDouble = function(value) {
-  jspb.Message.setOneofWrapperField(this, 2, proto.validate.FieldRules.oneofGroups_[0], value);
+  return jspb.Message.setOneofWrapperField(this, 2, proto.validate.FieldRules.oneofGroups_[0], value);
 };
 
 
 /**
  * Clears the message field making it undefined.
+ * @return {!proto.validate.FieldRules} returns this
  */
 proto.validate.FieldRules.prototype.clearDouble = function() {
-  this.setDouble(undefined);
+  return this.setDouble(undefined);
 };
 
 
@@ -1088,17 +1115,21 @@ proto.validate.FieldRules.prototype.getInt32 = function() {
 };
 
 
-/** @param {?proto.validate.Int32Rules|undefined} value */
+/**
+ * @param {?proto.validate.Int32Rules|undefined} value
+ * @return {!proto.validate.FieldRules} returns this
+*/
 proto.validate.FieldRules.prototype.setInt32 = function(value) {
-  jspb.Message.setOneofWrapperField(this, 3, proto.validate.FieldRules.oneofGroups_[0], value);
+  return jspb.Message.setOneofWrapperField(this, 3, proto.validate.FieldRules.oneofGroups_[0], value);
 };
 
 
 /**
  * Clears the message field making it undefined.
+ * @return {!proto.validate.FieldRules} returns this
  */
 proto.validate.FieldRules.prototype.clearInt32 = function() {
-  this.setInt32(undefined);
+  return this.setInt32(undefined);
 };
 
 
@@ -1121,17 +1152,21 @@ proto.validate.FieldRules.prototype.getInt64 = function() {
 };
 
 
-/** @param {?proto.validate.Int64Rules|undefined} value */
+/**
+ * @param {?proto.validate.Int64Rules|undefined} value
+ * @return {!proto.validate.FieldRules} returns this
+*/
 proto.validate.FieldRules.prototype.setInt64 = function(value) {
-  jspb.Message.setOneofWrapperField(this, 4, proto.validate.FieldRules.oneofGroups_[0], value);
+  return jspb.Message.setOneofWrapperField(this, 4, proto.validate.FieldRules.oneofGroups_[0], value);
 };
 
 
 /**
  * Clears the message field making it undefined.
+ * @return {!proto.validate.FieldRules} returns this
  */
 proto.validate.FieldRules.prototype.clearInt64 = function() {
-  this.setInt64(undefined);
+  return this.setInt64(undefined);
 };
 
 
@@ -1154,17 +1189,21 @@ proto.validate.FieldRules.prototype.getUint32 = function() {
 };
 
 
-/** @param {?proto.validate.UInt32Rules|undefined} value */
+/**
+ * @param {?proto.validate.UInt32Rules|undefined} value
+ * @return {!proto.validate.FieldRules} returns this
+*/
 proto.validate.FieldRules.prototype.setUint32 = function(value) {
-  jspb.Message.setOneofWrapperField(this, 5, proto.validate.FieldRules.oneofGroups_[0], value);
+  return jspb.Message.setOneofWrapperField(this, 5, proto.validate.FieldRules.oneofGroups_[0], value);
 };
 
 
 /**
  * Clears the message field making it undefined.
+ * @return {!proto.validate.FieldRules} returns this
  */
 proto.validate.FieldRules.prototype.clearUint32 = function() {
-  this.setUint32(undefined);
+  return this.setUint32(undefined);
 };
 
 
@@ -1187,17 +1226,21 @@ proto.validate.FieldRules.prototype.getUint64 = function() {
 };
 
 
-/** @param {?proto.validate.UInt64Rules|undefined} value */
+/**
+ * @param {?proto.validate.UInt64Rules|undefined} value
+ * @return {!proto.validate.FieldRules} returns this
+*/
 proto.validate.FieldRules.prototype.setUint64 = function(value) {
-  jspb.Message.setOneofWrapperField(this, 6, proto.validate.FieldRules.oneofGroups_[0], value);
+  return jspb.Message.setOneofWrapperField(this, 6, proto.validate.FieldRules.oneofGroups_[0], value);
 };
 
 
 /**
  * Clears the message field making it undefined.
+ * @return {!proto.validate.FieldRules} returns this
  */
 proto.validate.FieldRules.prototype.clearUint64 = function() {
-  this.setUint64(undefined);
+  return this.setUint64(undefined);
 };
 
 
@@ -1220,17 +1263,21 @@ proto.validate.FieldRules.prototype.getSint32 = function() {
 };
 
 
-/** @param {?proto.validate.SInt32Rules|undefined} value */
+/**
+ * @param {?proto.validate.SInt32Rules|undefined} value
+ * @return {!proto.validate.FieldRules} returns this
+*/
 proto.validate.FieldRules.prototype.setSint32 = function(value) {
-  jspb.Message.setOneofWrapperField(this, 7, proto.validate.FieldRules.oneofGroups_[0], value);
+  return jspb.Message.setOneofWrapperField(this, 7, proto.validate.FieldRules.oneofGroups_[0], value);
 };
 
 
 /**
  * Clears the message field making it undefined.
+ * @return {!proto.validate.FieldRules} returns this
  */
 proto.validate.FieldRules.prototype.clearSint32 = function() {
-  this.setSint32(undefined);
+  return this.setSint32(undefined);
 };
 
 
@@ -1253,17 +1300,21 @@ proto.validate.FieldRules.prototype.getSint64 = function() {
 };
 
 
-/** @param {?proto.validate.SInt64Rules|undefined} value */
+/**
+ * @param {?proto.validate.SInt64Rules|undefined} value
+ * @return {!proto.validate.FieldRules} returns this
+*/
 proto.validate.FieldRules.prototype.setSint64 = function(value) {
-  jspb.Message.setOneofWrapperField(this, 8, proto.validate.FieldRules.oneofGroups_[0], value);
+  return jspb.Message.setOneofWrapperField(this, 8, proto.validate.FieldRules.oneofGroups_[0], value);
 };
 
 
 /**
  * Clears the message field making it undefined.
+ * @return {!proto.validate.FieldRules} returns this
  */
 proto.validate.FieldRules.prototype.clearSint64 = function() {
-  this.setSint64(undefined);
+  return this.setSint64(undefined);
 };
 
 
@@ -1286,17 +1337,21 @@ proto.validate.FieldRules.prototype.getFixed32 = function() {
 };
 
 
-/** @param {?proto.validate.Fixed32Rules|undefined} value */
+/**
+ * @param {?proto.validate.Fixed32Rules|undefined} value
+ * @return {!proto.validate.FieldRules} returns this
+*/
 proto.validate.FieldRules.prototype.setFixed32 = function(value) {
-  jspb.Message.setOneofWrapperField(this, 9, proto.validate.FieldRules.oneofGroups_[0], value);
+  return jspb.Message.setOneofWrapperField(this, 9, proto.validate.FieldRules.oneofGroups_[0], value);
 };
 
 
 /**
  * Clears the message field making it undefined.
+ * @return {!proto.validate.FieldRules} returns this
  */
 proto.validate.FieldRules.prototype.clearFixed32 = function() {
-  this.setFixed32(undefined);
+  return this.setFixed32(undefined);
 };
 
 
@@ -1319,17 +1374,21 @@ proto.validate.FieldRules.prototype.getFixed64 = function() {
 };
 
 
-/** @param {?proto.validate.Fixed64Rules|undefined} value */
+/**
+ * @param {?proto.validate.Fixed64Rules|undefined} value
+ * @return {!proto.validate.FieldRules} returns this
+*/
 proto.validate.FieldRules.prototype.setFixed64 = function(value) {
-  jspb.Message.setOneofWrapperField(this, 10, proto.validate.FieldRules.oneofGroups_[0], value);
+  return jspb.Message.setOneofWrapperField(this, 10, proto.validate.FieldRules.oneofGroups_[0], value);
 };
 
 
 /**
  * Clears the message field making it undefined.
+ * @return {!proto.validate.FieldRules} returns this
  */
 proto.validate.FieldRules.prototype.clearFixed64 = function() {
-  this.setFixed64(undefined);
+  return this.setFixed64(undefined);
 };
 
 
@@ -1352,17 +1411,21 @@ proto.validate.FieldRules.prototype.getSfixed32 = function() {
 };
 
 
-/** @param {?proto.validate.SFixed32Rules|undefined} value */
+/**
+ * @param {?proto.validate.SFixed32Rules|undefined} value
+ * @return {!proto.validate.FieldRules} returns this
+*/
 proto.validate.FieldRules.prototype.setSfixed32 = function(value) {
-  jspb.Message.setOneofWrapperField(this, 11, proto.validate.FieldRules.oneofGroups_[0], value);
+  return jspb.Message.setOneofWrapperField(this, 11, proto.validate.FieldRules.oneofGroups_[0], value);
 };
 
 
 /**
  * Clears the message field making it undefined.
+ * @return {!proto.validate.FieldRules} returns this
  */
 proto.validate.FieldRules.prototype.clearSfixed32 = function() {
-  this.setSfixed32(undefined);
+  return this.setSfixed32(undefined);
 };
 
 
@@ -1385,17 +1448,21 @@ proto.validate.FieldRules.prototype.getSfixed64 = function() {
 };
 
 
-/** @param {?proto.validate.SFixed64Rules|undefined} value */
+/**
+ * @param {?proto.validate.SFixed64Rules|undefined} value
+ * @return {!proto.validate.FieldRules} returns this
+*/
 proto.validate.FieldRules.prototype.setSfixed64 = function(value) {
-  jspb.Message.setOneofWrapperField(this, 12, proto.validate.FieldRules.oneofGroups_[0], value);
+  return jspb.Message.setOneofWrapperField(this, 12, proto.validate.FieldRules.oneofGroups_[0], value);
 };
 
 
 /**
  * Clears the message field making it undefined.
+ * @return {!proto.validate.FieldRules} returns this
  */
 proto.validate.FieldRules.prototype.clearSfixed64 = function() {
-  this.setSfixed64(undefined);
+  return this.setSfixed64(undefined);
 };
 
 
@@ -1418,17 +1485,21 @@ proto.validate.FieldRules.prototype.getBool = function() {
 };
 
 
-/** @param {?proto.validate.BoolRules|undefined} value */
+/**
+ * @param {?proto.validate.BoolRules|undefined} value
+ * @return {!proto.validate.FieldRules} returns this
+*/
 proto.validate.FieldRules.prototype.setBool = function(value) {
-  jspb.Message.setOneofWrapperField(this, 13, proto.validate.FieldRules.oneofGroups_[0], value);
+  return jspb.Message.setOneofWrapperField(this, 13, proto.validate.FieldRules.oneofGroups_[0], value);
 };
 
 
 /**
  * Clears the message field making it undefined.
+ * @return {!proto.validate.FieldRules} returns this
  */
 proto.validate.FieldRules.prototype.clearBool = function() {
-  this.setBool(undefined);
+  return this.setBool(undefined);
 };
 
 
@@ -1451,17 +1522,21 @@ proto.validate.FieldRules.prototype.getString = function() {
 };
 
 
-/** @param {?proto.validate.StringRules|undefined} value */
+/**
+ * @param {?proto.validate.StringRules|undefined} value
+ * @return {!proto.validate.FieldRules} returns this
+*/
 proto.validate.FieldRules.prototype.setString = function(value) {
-  jspb.Message.setOneofWrapperField(this, 14, proto.validate.FieldRules.oneofGroups_[0], value);
+  return jspb.Message.setOneofWrapperField(this, 14, proto.validate.FieldRules.oneofGroups_[0], value);
 };
 
 
 /**
  * Clears the message field making it undefined.
+ * @return {!proto.validate.FieldRules} returns this
  */
 proto.validate.FieldRules.prototype.clearString = function() {
-  this.setString(undefined);
+  return this.setString(undefined);
 };
 
 
@@ -1484,17 +1559,21 @@ proto.validate.FieldRules.prototype.getBytes = function() {
 };
 
 
-/** @param {?proto.validate.BytesRules|undefined} value */
+/**
+ * @param {?proto.validate.BytesRules|undefined} value
+ * @return {!proto.validate.FieldRules} returns this
+*/
 proto.validate.FieldRules.prototype.setBytes = function(value) {
-  jspb.Message.setOneofWrapperField(this, 15, proto.validate.FieldRules.oneofGroups_[0], value);
+  return jspb.Message.setOneofWrapperField(this, 15, proto.validate.FieldRules.oneofGroups_[0], value);
 };
 
 
 /**
  * Clears the message field making it undefined.
+ * @return {!proto.validate.FieldRules} returns this
  */
 proto.validate.FieldRules.prototype.clearBytes = function() {
-  this.setBytes(undefined);
+  return this.setBytes(undefined);
 };
 
 
@@ -1517,17 +1596,21 @@ proto.validate.FieldRules.prototype.getEnum = function() {
 };
 
 
-/** @param {?proto.validate.EnumRules|undefined} value */
+/**
+ * @param {?proto.validate.EnumRules|undefined} value
+ * @return {!proto.validate.FieldRules} returns this
+*/
 proto.validate.FieldRules.prototype.setEnum = function(value) {
-  jspb.Message.setOneofWrapperField(this, 16, proto.validate.FieldRules.oneofGroups_[0], value);
+  return jspb.Message.setOneofWrapperField(this, 16, proto.validate.FieldRules.oneofGroups_[0], value);
 };
 
 
 /**
  * Clears the message field making it undefined.
+ * @return {!proto.validate.FieldRules} returns this
  */
 proto.validate.FieldRules.prototype.clearEnum = function() {
-  this.setEnum(undefined);
+  return this.setEnum(undefined);
 };
 
 
@@ -1550,17 +1633,21 @@ proto.validate.FieldRules.prototype.getRepeated = function() {
 };
 
 
-/** @param {?proto.validate.RepeatedRules|undefined} value */
+/**
+ * @param {?proto.validate.RepeatedRules|undefined} value
+ * @return {!proto.validate.FieldRules} returns this
+*/
 proto.validate.FieldRules.prototype.setRepeated = function(value) {
-  jspb.Message.setOneofWrapperField(this, 18, proto.validate.FieldRules.oneofGroups_[0], value);
+  return jspb.Message.setOneofWrapperField(this, 18, proto.validate.FieldRules.oneofGroups_[0], value);
 };
 
 
 /**
  * Clears the message field making it undefined.
+ * @return {!proto.validate.FieldRules} returns this
  */
 proto.validate.FieldRules.prototype.clearRepeated = function() {
-  this.setRepeated(undefined);
+  return this.setRepeated(undefined);
 };
 
 
@@ -1583,17 +1670,21 @@ proto.validate.FieldRules.prototype.getMap = function() {
 };
 
 
-/** @param {?proto.validate.MapRules|undefined} value */
+/**
+ * @param {?proto.validate.MapRules|undefined} value
+ * @return {!proto.validate.FieldRules} returns this
+*/
 proto.validate.FieldRules.prototype.setMap = function(value) {
-  jspb.Message.setOneofWrapperField(this, 19, proto.validate.FieldRules.oneofGroups_[0], value);
+  return jspb.Message.setOneofWrapperField(this, 19, proto.validate.FieldRules.oneofGroups_[0], value);
 };
 
 
 /**
  * Clears the message field making it undefined.
+ * @return {!proto.validate.FieldRules} returns this
  */
 proto.validate.FieldRules.prototype.clearMap = function() {
-  this.setMap(undefined);
+  return this.setMap(undefined);
 };
 
 
@@ -1616,17 +1707,21 @@ proto.validate.FieldRules.prototype.getAny = function() {
 };
 
 
-/** @param {?proto.validate.AnyRules|undefined} value */
+/**
+ * @param {?proto.validate.AnyRules|undefined} value
+ * @return {!proto.validate.FieldRules} returns this
+*/
 proto.validate.FieldRules.prototype.setAny = function(value) {
-  jspb.Message.setOneofWrapperField(this, 20, proto.validate.FieldRules.oneofGroups_[0], value);
+  return jspb.Message.setOneofWrapperField(this, 20, proto.validate.FieldRules.oneofGroups_[0], value);
 };
 
 
 /**
  * Clears the message field making it undefined.
+ * @return {!proto.validate.FieldRules} returns this
  */
 proto.validate.FieldRules.prototype.clearAny = function() {
-  this.setAny(undefined);
+  return this.setAny(undefined);
 };
 
 
@@ -1649,17 +1744,21 @@ proto.validate.FieldRules.prototype.getDuration = function() {
 };
 
 
-/** @param {?proto.validate.DurationRules|undefined} value */
+/**
+ * @param {?proto.validate.DurationRules|undefined} value
+ * @return {!proto.validate.FieldRules} returns this
+*/
 proto.validate.FieldRules.prototype.setDuration = function(value) {
-  jspb.Message.setOneofWrapperField(this, 21, proto.validate.FieldRules.oneofGroups_[0], value);
+  return jspb.Message.setOneofWrapperField(this, 21, proto.validate.FieldRules.oneofGroups_[0], value);
 };
 
 
 /**
  * Clears the message field making it undefined.
+ * @return {!proto.validate.FieldRules} returns this
  */
 proto.validate.FieldRules.prototype.clearDuration = function() {
-  this.setDuration(undefined);
+  return this.setDuration(undefined);
 };
 
 
@@ -1682,17 +1781,21 @@ proto.validate.FieldRules.prototype.getTimestamp = function() {
 };
 
 
-/** @param {?proto.validate.TimestampRules|undefined} value */
+/**
+ * @param {?proto.validate.TimestampRules|undefined} value
+ * @return {!proto.validate.FieldRules} returns this
+*/
 proto.validate.FieldRules.prototype.setTimestamp = function(value) {
-  jspb.Message.setOneofWrapperField(this, 22, proto.validate.FieldRules.oneofGroups_[0], value);
+  return jspb.Message.setOneofWrapperField(this, 22, proto.validate.FieldRules.oneofGroups_[0], value);
 };
 
 
 /**
  * Clears the message field making it undefined.
+ * @return {!proto.validate.FieldRules} returns this
  */
 proto.validate.FieldRules.prototype.clearTimestamp = function() {
-  this.setTimestamp(undefined);
+  return this.setTimestamp(undefined);
 };
 
 
@@ -1750,7 +1853,8 @@ proto.validate.FloatRules.toObject = function(includeInstance, msg) {
     gt: (f = jspb.Message.getOptionalFloatingPointField(msg, 4)) == null ? undefined : f,
     gte: (f = jspb.Message.getOptionalFloatingPointField(msg, 5)) == null ? undefined : f,
     inList: (f = jspb.Message.getRepeatedFloatingPointField(msg, 6)) == null ? undefined : f,
-    notInList: (f = jspb.Message.getRepeatedFloatingPointField(msg, 7)) == null ? undefined : f
+    notInList: (f = jspb.Message.getRepeatedFloatingPointField(msg, 7)) == null ? undefined : f,
+    ignoreEmpty: (f = jspb.Message.getBooleanField(msg, 8)) == null ? undefined : f
   };
 
   if (includeInstance) {
@@ -1808,12 +1912,20 @@ proto.validate.FloatRules.deserializeBinaryFromReader = function(msg, reader) {
       msg.setGte(value);
       break;
     case 6:
-      var value = /** @type {number} */ (reader.readFloat());
-      msg.addIn(value);
+      var values = /** @type {!Array<number>} */ (reader.isDelimited() ? reader.readPackedFloat() : [reader.readFloat()]);
+      for (var i = 0; i < values.length; i++) {
+        msg.addIn(values[i]);
+      }
       break;
     case 7:
-      var value = /** @type {number} */ (reader.readFloat());
-      msg.addNotIn(value);
+      var values = /** @type {!Array<number>} */ (reader.isDelimited() ? reader.readPackedFloat() : [reader.readFloat()]);
+      for (var i = 0; i < values.length; i++) {
+        msg.addNotIn(values[i]);
+      }
+      break;
+    case 8:
+      var value = /** @type {boolean} */ (reader.readBool());
+      msg.setIgnoreEmpty(value);
       break;
     default:
       reader.skipField();
@@ -1893,6 +2005,13 @@ proto.validate.FloatRules.serializeBinaryToWriter = function(message, writer) {
       f
     );
   }
+  f = /** @type {boolean} */ (jspb.Message.getField(message, 8));
+  if (f != null) {
+    writer.writeBool(
+      8,
+      f
+    );
+  }
 };
 
 
@@ -1905,17 +2024,21 @@ proto.validate.FloatRules.prototype.getConst = function() {
 };
 
 
-/** @param {number} value */
+/**
+ * @param {number} value
+ * @return {!proto.validate.FloatRules} returns this
+ */
 proto.validate.FloatRules.prototype.setConst = function(value) {
-  jspb.Message.setField(this, 1, value);
+  return jspb.Message.setField(this, 1, value);
 };
 
 
 /**
  * Clears the field making it undefined.
+ * @return {!proto.validate.FloatRules} returns this
  */
 proto.validate.FloatRules.prototype.clearConst = function() {
-  jspb.Message.setField(this, 1, undefined);
+  return jspb.Message.setField(this, 1, undefined);
 };
 
 
@@ -1937,17 +2060,21 @@ proto.validate.FloatRules.prototype.getLt = function() {
 };
 
 
-/** @param {number} value */
+/**
+ * @param {number} value
+ * @return {!proto.validate.FloatRules} returns this
+ */
 proto.validate.FloatRules.prototype.setLt = function(value) {
-  jspb.Message.setField(this, 2, value);
+  return jspb.Message.setField(this, 2, value);
 };
 
 
 /**
  * Clears the field making it undefined.
+ * @return {!proto.validate.FloatRules} returns this
  */
 proto.validate.FloatRules.prototype.clearLt = function() {
-  jspb.Message.setField(this, 2, undefined);
+  return jspb.Message.setField(this, 2, undefined);
 };
 
 
@@ -1969,17 +2096,21 @@ proto.validate.FloatRules.prototype.getLte = function() {
 };
 
 
-/** @param {number} value */
+/**
+ * @param {number} value
+ * @return {!proto.validate.FloatRules} returns this
+ */
 proto.validate.FloatRules.prototype.setLte = function(value) {
-  jspb.Message.setField(this, 3, value);
+  return jspb.Message.setField(this, 3, value);
 };
 
 
 /**
  * Clears the field making it undefined.
+ * @return {!proto.validate.FloatRules} returns this
  */
 proto.validate.FloatRules.prototype.clearLte = function() {
-  jspb.Message.setField(this, 3, undefined);
+  return jspb.Message.setField(this, 3, undefined);
 };
 
 
@@ -2001,17 +2132,21 @@ proto.validate.FloatRules.prototype.getGt = function() {
 };
 
 
-/** @param {number} value */
+/**
+ * @param {number} value
+ * @return {!proto.validate.FloatRules} returns this
+ */
 proto.validate.FloatRules.prototype.setGt = function(value) {
-  jspb.Message.setField(this, 4, value);
+  return jspb.Message.setField(this, 4, value);
 };
 
 
 /**
  * Clears the field making it undefined.
+ * @return {!proto.validate.FloatRules} returns this
  */
 proto.validate.FloatRules.prototype.clearGt = function() {
-  jspb.Message.setField(this, 4, undefined);
+  return jspb.Message.setField(this, 4, undefined);
 };
 
 
@@ -2033,17 +2168,21 @@ proto.validate.FloatRules.prototype.getGte = function() {
 };
 
 
-/** @param {number} value */
+/**
+ * @param {number} value
+ * @return {!proto.validate.FloatRules} returns this
+ */
 proto.validate.FloatRules.prototype.setGte = function(value) {
-  jspb.Message.setField(this, 5, value);
+  return jspb.Message.setField(this, 5, value);
 };
 
 
 /**
  * Clears the field making it undefined.
+ * @return {!proto.validate.FloatRules} returns this
  */
 proto.validate.FloatRules.prototype.clearGte = function() {
-  jspb.Message.setField(this, 5, undefined);
+  return jspb.Message.setField(this, 5, undefined);
 };
 
 
@@ -2065,26 +2204,31 @@ proto.validate.FloatRules.prototype.getInList = function() {
 };
 
 
-/** @param {!Array<number>} value */
+/**
+ * @param {!Array<number>} value
+ * @return {!proto.validate.FloatRules} returns this
+ */
 proto.validate.FloatRules.prototype.setInList = function(value) {
-  jspb.Message.setField(this, 6, value || []);
+  return jspb.Message.setField(this, 6, value || []);
 };
 
 
 /**
  * @param {number} value
  * @param {number=} opt_index
+ * @return {!proto.validate.FloatRules} returns this
  */
 proto.validate.FloatRules.prototype.addIn = function(value, opt_index) {
-  jspb.Message.addToRepeatedField(this, 6, value, opt_index);
+  return jspb.Message.addToRepeatedField(this, 6, value, opt_index);
 };
 
 
 /**
  * Clears the list making it empty but non-null.
+ * @return {!proto.validate.FloatRules} returns this
  */
 proto.validate.FloatRules.prototype.clearInList = function() {
-  this.setInList([]);
+  return this.setInList([]);
 };
 
 
@@ -2097,26 +2241,67 @@ proto.validate.FloatRules.prototype.getNotInList = function() {
 };
 
 
-/** @param {!Array<number>} value */
+/**
+ * @param {!Array<number>} value
+ * @return {!proto.validate.FloatRules} returns this
+ */
 proto.validate.FloatRules.prototype.setNotInList = function(value) {
-  jspb.Message.setField(this, 7, value || []);
+  return jspb.Message.setField(this, 7, value || []);
 };
 
 
 /**
  * @param {number} value
  * @param {number=} opt_index
+ * @return {!proto.validate.FloatRules} returns this
  */
 proto.validate.FloatRules.prototype.addNotIn = function(value, opt_index) {
-  jspb.Message.addToRepeatedField(this, 7, value, opt_index);
+  return jspb.Message.addToRepeatedField(this, 7, value, opt_index);
 };
 
 
 /**
  * Clears the list making it empty but non-null.
+ * @return {!proto.validate.FloatRules} returns this
  */
 proto.validate.FloatRules.prototype.clearNotInList = function() {
-  this.setNotInList([]);
+  return this.setNotInList([]);
+};
+
+
+/**
+ * optional bool ignore_empty = 8;
+ * @return {boolean}
+ */
+proto.validate.FloatRules.prototype.getIgnoreEmpty = function() {
+  return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 8, false));
+};
+
+
+/**
+ * @param {boolean} value
+ * @return {!proto.validate.FloatRules} returns this
+ */
+proto.validate.FloatRules.prototype.setIgnoreEmpty = function(value) {
+  return jspb.Message.setField(this, 8, value);
+};
+
+
+/**
+ * Clears the field making it undefined.
+ * @return {!proto.validate.FloatRules} returns this
+ */
+proto.validate.FloatRules.prototype.clearIgnoreEmpty = function() {
+  return jspb.Message.setField(this, 8, undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.validate.FloatRules.prototype.hasIgnoreEmpty = function() {
+  return jspb.Message.getField(this, 8) != null;
 };
 
 
@@ -2165,7 +2350,8 @@ proto.validate.DoubleRules.toObject = function(includeInstance, msg) {
     gt: (f = jspb.Message.getOptionalFloatingPointField(msg, 4)) == null ? undefined : f,
     gte: (f = jspb.Message.getOptionalFloatingPointField(msg, 5)) == null ? undefined : f,
     inList: (f = jspb.Message.getRepeatedFloatingPointField(msg, 6)) == null ? undefined : f,
-    notInList: (f = jspb.Message.getRepeatedFloatingPointField(msg, 7)) == null ? undefined : f
+    notInList: (f = jspb.Message.getRepeatedFloatingPointField(msg, 7)) == null ? undefined : f,
+    ignoreEmpty: (f = jspb.Message.getBooleanField(msg, 8)) == null ? undefined : f
   };
 
   if (includeInstance) {
@@ -2223,12 +2409,20 @@ proto.validate.DoubleRules.deserializeBinaryFromReader = function(msg, reader) {
       msg.setGte(value);
       break;
     case 6:
-      var value = /** @type {number} */ (reader.readDouble());
-      msg.addIn(value);
+      var values = /** @type {!Array<number>} */ (reader.isDelimited() ? reader.readPackedDouble() : [reader.readDouble()]);
+      for (var i = 0; i < values.length; i++) {
+        msg.addIn(values[i]);
+      }
       break;
     case 7:
-      var value = /** @type {number} */ (reader.readDouble());
-      msg.addNotIn(value);
+      var values = /** @type {!Array<number>} */ (reader.isDelimited() ? reader.readPackedDouble() : [reader.readDouble()]);
+      for (var i = 0; i < values.length; i++) {
+        msg.addNotIn(values[i]);
+      }
+      break;
+    case 8:
+      var value = /** @type {boolean} */ (reader.readBool());
+      msg.setIgnoreEmpty(value);
       break;
     default:
       reader.skipField();
@@ -2308,6 +2502,13 @@ proto.validate.DoubleRules.serializeBinaryToWriter = function(message, writer) {
       f
     );
   }
+  f = /** @type {boolean} */ (jspb.Message.getField(message, 8));
+  if (f != null) {
+    writer.writeBool(
+      8,
+      f
+    );
+  }
 };
 
 
@@ -2320,17 +2521,21 @@ proto.validate.DoubleRules.prototype.getConst = function() {
 };
 
 
-/** @param {number} value */
+/**
+ * @param {number} value
+ * @return {!proto.validate.DoubleRules} returns this
+ */
 proto.validate.DoubleRules.prototype.setConst = function(value) {
-  jspb.Message.setField(this, 1, value);
+  return jspb.Message.setField(this, 1, value);
 };
 
 
 /**
  * Clears the field making it undefined.
+ * @return {!proto.validate.DoubleRules} returns this
  */
 proto.validate.DoubleRules.prototype.clearConst = function() {
-  jspb.Message.setField(this, 1, undefined);
+  return jspb.Message.setField(this, 1, undefined);
 };
 
 
@@ -2352,17 +2557,21 @@ proto.validate.DoubleRules.prototype.getLt = function() {
 };
 
 
-/** @param {number} value */
+/**
+ * @param {number} value
+ * @return {!proto.validate.DoubleRules} returns this
+ */
 proto.validate.DoubleRules.prototype.setLt = function(value) {
-  jspb.Message.setField(this, 2, value);
+  return jspb.Message.setField(this, 2, value);
 };
 
 
 /**
  * Clears the field making it undefined.
+ * @return {!proto.validate.DoubleRules} returns this
  */
 proto.validate.DoubleRules.prototype.clearLt = function() {
-  jspb.Message.setField(this, 2, undefined);
+  return jspb.Message.setField(this, 2, undefined);
 };
 
 
@@ -2384,17 +2593,21 @@ proto.validate.DoubleRules.prototype.getLte = function() {
 };
 
 
-/** @param {number} value */
+/**
+ * @param {number} value
+ * @return {!proto.validate.DoubleRules} returns this
+ */
 proto.validate.DoubleRules.prototype.setLte = function(value) {
-  jspb.Message.setField(this, 3, value);
+  return jspb.Message.setField(this, 3, value);
 };
 
 
 /**
  * Clears the field making it undefined.
+ * @return {!proto.validate.DoubleRules} returns this
  */
 proto.validate.DoubleRules.prototype.clearLte = function() {
-  jspb.Message.setField(this, 3, undefined);
+  return jspb.Message.setField(this, 3, undefined);
 };
 
 
@@ -2416,17 +2629,21 @@ proto.validate.DoubleRules.prototype.getGt = function() {
 };
 
 
-/** @param {number} value */
+/**
+ * @param {number} value
+ * @return {!proto.validate.DoubleRules} returns this
+ */
 proto.validate.DoubleRules.prototype.setGt = function(value) {
-  jspb.Message.setField(this, 4, value);
+  return jspb.Message.setField(this, 4, value);
 };
 
 
 /**
  * Clears the field making it undefined.
+ * @return {!proto.validate.DoubleRules} returns this
  */
 proto.validate.DoubleRules.prototype.clearGt = function() {
-  jspb.Message.setField(this, 4, undefined);
+  return jspb.Message.setField(this, 4, undefined);
 };
 
 
@@ -2448,17 +2665,21 @@ proto.validate.DoubleRules.prototype.getGte = function() {
 };
 
 
-/** @param {number} value */
+/**
+ * @param {number} value
+ * @return {!proto.validate.DoubleRules} returns this
+ */
 proto.validate.DoubleRules.prototype.setGte = function(value) {
-  jspb.Message.setField(this, 5, value);
+  return jspb.Message.setField(this, 5, value);
 };
 
 
 /**
  * Clears the field making it undefined.
+ * @return {!proto.validate.DoubleRules} returns this
  */
 proto.validate.DoubleRules.prototype.clearGte = function() {
-  jspb.Message.setField(this, 5, undefined);
+  return jspb.Message.setField(this, 5, undefined);
 };
 
 
@@ -2480,26 +2701,31 @@ proto.validate.DoubleRules.prototype.getInList = function() {
 };
 
 
-/** @param {!Array<number>} value */
+/**
+ * @param {!Array<number>} value
+ * @return {!proto.validate.DoubleRules} returns this
+ */
 proto.validate.DoubleRules.prototype.setInList = function(value) {
-  jspb.Message.setField(this, 6, value || []);
+  return jspb.Message.setField(this, 6, value || []);
 };
 
 
 /**
  * @param {number} value
  * @param {number=} opt_index
+ * @return {!proto.validate.DoubleRules} returns this
  */
 proto.validate.DoubleRules.prototype.addIn = function(value, opt_index) {
-  jspb.Message.addToRepeatedField(this, 6, value, opt_index);
+  return jspb.Message.addToRepeatedField(this, 6, value, opt_index);
 };
 
 
 /**
  * Clears the list making it empty but non-null.
+ * @return {!proto.validate.DoubleRules} returns this
  */
 proto.validate.DoubleRules.prototype.clearInList = function() {
-  this.setInList([]);
+  return this.setInList([]);
 };
 
 
@@ -2512,26 +2738,67 @@ proto.validate.DoubleRules.prototype.getNotInList = function() {
 };
 
 
-/** @param {!Array<number>} value */
+/**
+ * @param {!Array<number>} value
+ * @return {!proto.validate.DoubleRules} returns this
+ */
 proto.validate.DoubleRules.prototype.setNotInList = function(value) {
-  jspb.Message.setField(this, 7, value || []);
+  return jspb.Message.setField(this, 7, value || []);
 };
 
 
 /**
  * @param {number} value
  * @param {number=} opt_index
+ * @return {!proto.validate.DoubleRules} returns this
  */
 proto.validate.DoubleRules.prototype.addNotIn = function(value, opt_index) {
-  jspb.Message.addToRepeatedField(this, 7, value, opt_index);
+  return jspb.Message.addToRepeatedField(this, 7, value, opt_index);
 };
 
 
 /**
  * Clears the list making it empty but non-null.
+ * @return {!proto.validate.DoubleRules} returns this
  */
 proto.validate.DoubleRules.prototype.clearNotInList = function() {
-  this.setNotInList([]);
+  return this.setNotInList([]);
+};
+
+
+/**
+ * optional bool ignore_empty = 8;
+ * @return {boolean}
+ */
+proto.validate.DoubleRules.prototype.getIgnoreEmpty = function() {
+  return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 8, false));
+};
+
+
+/**
+ * @param {boolean} value
+ * @return {!proto.validate.DoubleRules} returns this
+ */
+proto.validate.DoubleRules.prototype.setIgnoreEmpty = function(value) {
+  return jspb.Message.setField(this, 8, value);
+};
+
+
+/**
+ * Clears the field making it undefined.
+ * @return {!proto.validate.DoubleRules} returns this
+ */
+proto.validate.DoubleRules.prototype.clearIgnoreEmpty = function() {
+  return jspb.Message.setField(this, 8, undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.validate.DoubleRules.prototype.hasIgnoreEmpty = function() {
+  return jspb.Message.getField(this, 8) != null;
 };
 
 
@@ -2580,7 +2847,8 @@ proto.validate.Int32Rules.toObject = function(includeInstance, msg) {
     gt: (f = jspb.Message.getField(msg, 4)) == null ? undefined : f,
     gte: (f = jspb.Message.getField(msg, 5)) == null ? undefined : f,
     inList: (f = jspb.Message.getRepeatedField(msg, 6)) == null ? undefined : f,
-    notInList: (f = jspb.Message.getRepeatedField(msg, 7)) == null ? undefined : f
+    notInList: (f = jspb.Message.getRepeatedField(msg, 7)) == null ? undefined : f,
+    ignoreEmpty: (f = jspb.Message.getBooleanField(msg, 8)) == null ? undefined : f
   };
 
   if (includeInstance) {
@@ -2638,12 +2906,20 @@ proto.validate.Int32Rules.deserializeBinaryFromReader = function(msg, reader) {
       msg.setGte(value);
       break;
     case 6:
-      var value = /** @type {number} */ (reader.readInt32());
-      msg.addIn(value);
+      var values = /** @type {!Array<number>} */ (reader.isDelimited() ? reader.readPackedInt32() : [reader.readInt32()]);
+      for (var i = 0; i < values.length; i++) {
+        msg.addIn(values[i]);
+      }
       break;
     case 7:
-      var value = /** @type {number} */ (reader.readInt32());
-      msg.addNotIn(value);
+      var values = /** @type {!Array<number>} */ (reader.isDelimited() ? reader.readPackedInt32() : [reader.readInt32()]);
+      for (var i = 0; i < values.length; i++) {
+        msg.addNotIn(values[i]);
+      }
+      break;
+    case 8:
+      var value = /** @type {boolean} */ (reader.readBool());
+      msg.setIgnoreEmpty(value);
       break;
     default:
       reader.skipField();
@@ -2723,6 +2999,13 @@ proto.validate.Int32Rules.serializeBinaryToWriter = function(message, writer) {
       f
     );
   }
+  f = /** @type {boolean} */ (jspb.Message.getField(message, 8));
+  if (f != null) {
+    writer.writeBool(
+      8,
+      f
+    );
+  }
 };
 
 
@@ -2735,17 +3018,21 @@ proto.validate.Int32Rules.prototype.getConst = function() {
 };
 
 
-/** @param {number} value */
+/**
+ * @param {number} value
+ * @return {!proto.validate.Int32Rules} returns this
+ */
 proto.validate.Int32Rules.prototype.setConst = function(value) {
-  jspb.Message.setField(this, 1, value);
+  return jspb.Message.setField(this, 1, value);
 };
 
 
 /**
  * Clears the field making it undefined.
+ * @return {!proto.validate.Int32Rules} returns this
  */
 proto.validate.Int32Rules.prototype.clearConst = function() {
-  jspb.Message.setField(this, 1, undefined);
+  return jspb.Message.setField(this, 1, undefined);
 };
 
 
@@ -2767,17 +3054,21 @@ proto.validate.Int32Rules.prototype.getLt = function() {
 };
 
 
-/** @param {number} value */
+/**
+ * @param {number} value
+ * @return {!proto.validate.Int32Rules} returns this
+ */
 proto.validate.Int32Rules.prototype.setLt = function(value) {
-  jspb.Message.setField(this, 2, value);
+  return jspb.Message.setField(this, 2, value);
 };
 
 
 /**
  * Clears the field making it undefined.
+ * @return {!proto.validate.Int32Rules} returns this
  */
 proto.validate.Int32Rules.prototype.clearLt = function() {
-  jspb.Message.setField(this, 2, undefined);
+  return jspb.Message.setField(this, 2, undefined);
 };
 
 
@@ -2799,17 +3090,21 @@ proto.validate.Int32Rules.prototype.getLte = function() {
 };
 
 
-/** @param {number} value */
+/**
+ * @param {number} value
+ * @return {!proto.validate.Int32Rules} returns this
+ */
 proto.validate.Int32Rules.prototype.setLte = function(value) {
-  jspb.Message.setField(this, 3, value);
+  return jspb.Message.setField(this, 3, value);
 };
 
 
 /**
  * Clears the field making it undefined.
+ * @return {!proto.validate.Int32Rules} returns this
  */
 proto.validate.Int32Rules.prototype.clearLte = function() {
-  jspb.Message.setField(this, 3, undefined);
+  return jspb.Message.setField(this, 3, undefined);
 };
 
 
@@ -2831,17 +3126,21 @@ proto.validate.Int32Rules.prototype.getGt = function() {
 };
 
 
-/** @param {number} value */
+/**
+ * @param {number} value
+ * @return {!proto.validate.Int32Rules} returns this
+ */
 proto.validate.Int32Rules.prototype.setGt = function(value) {
-  jspb.Message.setField(this, 4, value);
+  return jspb.Message.setField(this, 4, value);
 };
 
 
 /**
  * Clears the field making it undefined.
+ * @return {!proto.validate.Int32Rules} returns this
  */
 proto.validate.Int32Rules.prototype.clearGt = function() {
-  jspb.Message.setField(this, 4, undefined);
+  return jspb.Message.setField(this, 4, undefined);
 };
 
 
@@ -2863,17 +3162,21 @@ proto.validate.Int32Rules.prototype.getGte = function() {
 };
 
 
-/** @param {number} value */
+/**
+ * @param {number} value
+ * @return {!proto.validate.Int32Rules} returns this
+ */
 proto.validate.Int32Rules.prototype.setGte = function(value) {
-  jspb.Message.setField(this, 5, value);
+  return jspb.Message.setField(this, 5, value);
 };
 
 
 /**
  * Clears the field making it undefined.
+ * @return {!proto.validate.Int32Rules} returns this
  */
 proto.validate.Int32Rules.prototype.clearGte = function() {
-  jspb.Message.setField(this, 5, undefined);
+  return jspb.Message.setField(this, 5, undefined);
 };
 
 
@@ -2895,26 +3198,31 @@ proto.validate.Int32Rules.prototype.getInList = function() {
 };
 
 
-/** @param {!Array<number>} value */
+/**
+ * @param {!Array<number>} value
+ * @return {!proto.validate.Int32Rules} returns this
+ */
 proto.validate.Int32Rules.prototype.setInList = function(value) {
-  jspb.Message.setField(this, 6, value || []);
+  return jspb.Message.setField(this, 6, value || []);
 };
 
 
 /**
  * @param {number} value
  * @param {number=} opt_index
+ * @return {!proto.validate.Int32Rules} returns this
  */
 proto.validate.Int32Rules.prototype.addIn = function(value, opt_index) {
-  jspb.Message.addToRepeatedField(this, 6, value, opt_index);
+  return jspb.Message.addToRepeatedField(this, 6, value, opt_index);
 };
 
 
 /**
  * Clears the list making it empty but non-null.
+ * @return {!proto.validate.Int32Rules} returns this
  */
 proto.validate.Int32Rules.prototype.clearInList = function() {
-  this.setInList([]);
+  return this.setInList([]);
 };
 
 
@@ -2927,26 +3235,67 @@ proto.validate.Int32Rules.prototype.getNotInList = function() {
 };
 
 
-/** @param {!Array<number>} value */
+/**
+ * @param {!Array<number>} value
+ * @return {!proto.validate.Int32Rules} returns this
+ */
 proto.validate.Int32Rules.prototype.setNotInList = function(value) {
-  jspb.Message.setField(this, 7, value || []);
+  return jspb.Message.setField(this, 7, value || []);
 };
 
 
 /**
  * @param {number} value
  * @param {number=} opt_index
+ * @return {!proto.validate.Int32Rules} returns this
  */
 proto.validate.Int32Rules.prototype.addNotIn = function(value, opt_index) {
-  jspb.Message.addToRepeatedField(this, 7, value, opt_index);
+  return jspb.Message.addToRepeatedField(this, 7, value, opt_index);
 };
 
 
 /**
  * Clears the list making it empty but non-null.
+ * @return {!proto.validate.Int32Rules} returns this
  */
 proto.validate.Int32Rules.prototype.clearNotInList = function() {
-  this.setNotInList([]);
+  return this.setNotInList([]);
+};
+
+
+/**
+ * optional bool ignore_empty = 8;
+ * @return {boolean}
+ */
+proto.validate.Int32Rules.prototype.getIgnoreEmpty = function() {
+  return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 8, false));
+};
+
+
+/**
+ * @param {boolean} value
+ * @return {!proto.validate.Int32Rules} returns this
+ */
+proto.validate.Int32Rules.prototype.setIgnoreEmpty = function(value) {
+  return jspb.Message.setField(this, 8, value);
+};
+
+
+/**
+ * Clears the field making it undefined.
+ * @return {!proto.validate.Int32Rules} returns this
+ */
+proto.validate.Int32Rules.prototype.clearIgnoreEmpty = function() {
+  return jspb.Message.setField(this, 8, undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.validate.Int32Rules.prototype.hasIgnoreEmpty = function() {
+  return jspb.Message.getField(this, 8) != null;
 };
 
 
@@ -2995,7 +3344,8 @@ proto.validate.Int64Rules.toObject = function(includeInstance, msg) {
     gt: (f = jspb.Message.getField(msg, 4)) == null ? undefined : f,
     gte: (f = jspb.Message.getField(msg, 5)) == null ? undefined : f,
     inList: (f = jspb.Message.getRepeatedField(msg, 6)) == null ? undefined : f,
-    notInList: (f = jspb.Message.getRepeatedField(msg, 7)) == null ? undefined : f
+    notInList: (f = jspb.Message.getRepeatedField(msg, 7)) == null ? undefined : f,
+    ignoreEmpty: (f = jspb.Message.getBooleanField(msg, 8)) == null ? undefined : f
   };
 
   if (includeInstance) {
@@ -3053,12 +3403,20 @@ proto.validate.Int64Rules.deserializeBinaryFromReader = function(msg, reader) {
       msg.setGte(value);
       break;
     case 6:
-      var value = /** @type {number} */ (reader.readInt64());
-      msg.addIn(value);
+      var values = /** @type {!Array<number>} */ (reader.isDelimited() ? reader.readPackedInt64() : [reader.readInt64()]);
+      for (var i = 0; i < values.length; i++) {
+        msg.addIn(values[i]);
+      }
       break;
     case 7:
-      var value = /** @type {number} */ (reader.readInt64());
-      msg.addNotIn(value);
+      var values = /** @type {!Array<number>} */ (reader.isDelimited() ? reader.readPackedInt64() : [reader.readInt64()]);
+      for (var i = 0; i < values.length; i++) {
+        msg.addNotIn(values[i]);
+      }
+      break;
+    case 8:
+      var value = /** @type {boolean} */ (reader.readBool());
+      msg.setIgnoreEmpty(value);
       break;
     default:
       reader.skipField();
@@ -3138,6 +3496,13 @@ proto.validate.Int64Rules.serializeBinaryToWriter = function(message, writer) {
       f
     );
   }
+  f = /** @type {boolean} */ (jspb.Message.getField(message, 8));
+  if (f != null) {
+    writer.writeBool(
+      8,
+      f
+    );
+  }
 };
 
 
@@ -3150,17 +3515,21 @@ proto.validate.Int64Rules.prototype.getConst = function() {
 };
 
 
-/** @param {number} value */
+/**
+ * @param {number} value
+ * @return {!proto.validate.Int64Rules} returns this
+ */
 proto.validate.Int64Rules.prototype.setConst = function(value) {
-  jspb.Message.setField(this, 1, value);
+  return jspb.Message.setField(this, 1, value);
 };
 
 
 /**
  * Clears the field making it undefined.
+ * @return {!proto.validate.Int64Rules} returns this
  */
 proto.validate.Int64Rules.prototype.clearConst = function() {
-  jspb.Message.setField(this, 1, undefined);
+  return jspb.Message.setField(this, 1, undefined);
 };
 
 
@@ -3182,17 +3551,21 @@ proto.validate.Int64Rules.prototype.getLt = function() {
 };
 
 
-/** @param {number} value */
+/**
+ * @param {number} value
+ * @return {!proto.validate.Int64Rules} returns this
+ */
 proto.validate.Int64Rules.prototype.setLt = function(value) {
-  jspb.Message.setField(this, 2, value);
+  return jspb.Message.setField(this, 2, value);
 };
 
 
 /**
  * Clears the field making it undefined.
+ * @return {!proto.validate.Int64Rules} returns this
  */
 proto.validate.Int64Rules.prototype.clearLt = function() {
-  jspb.Message.setField(this, 2, undefined);
+  return jspb.Message.setField(this, 2, undefined);
 };
 
 
@@ -3214,17 +3587,21 @@ proto.validate.Int64Rules.prototype.getLte = function() {
 };
 
 
-/** @param {number} value */
+/**
+ * @param {number} value
+ * @return {!proto.validate.Int64Rules} returns this
+ */
 proto.validate.Int64Rules.prototype.setLte = function(value) {
-  jspb.Message.setField(this, 3, value);
+  return jspb.Message.setField(this, 3, value);
 };
 
 
 /**
  * Clears the field making it undefined.
+ * @return {!proto.validate.Int64Rules} returns this
  */
 proto.validate.Int64Rules.prototype.clearLte = function() {
-  jspb.Message.setField(this, 3, undefined);
+  return jspb.Message.setField(this, 3, undefined);
 };
 
 
@@ -3246,17 +3623,21 @@ proto.validate.Int64Rules.prototype.getGt = function() {
 };
 
 
-/** @param {number} value */
+/**
+ * @param {number} value
+ * @return {!proto.validate.Int64Rules} returns this
+ */
 proto.validate.Int64Rules.prototype.setGt = function(value) {
-  jspb.Message.setField(this, 4, value);
+  return jspb.Message.setField(this, 4, value);
 };
 
 
 /**
  * Clears the field making it undefined.
+ * @return {!proto.validate.Int64Rules} returns this
  */
 proto.validate.Int64Rules.prototype.clearGt = function() {
-  jspb.Message.setField(this, 4, undefined);
+  return jspb.Message.setField(this, 4, undefined);
 };
 
 
@@ -3278,17 +3659,21 @@ proto.validate.Int64Rules.prototype.getGte = function() {
 };
 
 
-/** @param {number} value */
+/**
+ * @param {number} value
+ * @return {!proto.validate.Int64Rules} returns this
+ */
 proto.validate.Int64Rules.prototype.setGte = function(value) {
-  jspb.Message.setField(this, 5, value);
+  return jspb.Message.setField(this, 5, value);
 };
 
 
 /**
  * Clears the field making it undefined.
+ * @return {!proto.validate.Int64Rules} returns this
  */
 proto.validate.Int64Rules.prototype.clearGte = function() {
-  jspb.Message.setField(this, 5, undefined);
+  return jspb.Message.setField(this, 5, undefined);
 };
 
 
@@ -3310,26 +3695,31 @@ proto.validate.Int64Rules.prototype.getInList = function() {
 };
 
 
-/** @param {!Array<number>} value */
+/**
+ * @param {!Array<number>} value
+ * @return {!proto.validate.Int64Rules} returns this
+ */
 proto.validate.Int64Rules.prototype.setInList = function(value) {
-  jspb.Message.setField(this, 6, value || []);
+  return jspb.Message.setField(this, 6, value || []);
 };
 
 
 /**
  * @param {number} value
  * @param {number=} opt_index
+ * @return {!proto.validate.Int64Rules} returns this
  */
 proto.validate.Int64Rules.prototype.addIn = function(value, opt_index) {
-  jspb.Message.addToRepeatedField(this, 6, value, opt_index);
+  return jspb.Message.addToRepeatedField(this, 6, value, opt_index);
 };
 
 
 /**
  * Clears the list making it empty but non-null.
+ * @return {!proto.validate.Int64Rules} returns this
  */
 proto.validate.Int64Rules.prototype.clearInList = function() {
-  this.setInList([]);
+  return this.setInList([]);
 };
 
 
@@ -3342,26 +3732,67 @@ proto.validate.Int64Rules.prototype.getNotInList = function() {
 };
 
 
-/** @param {!Array<number>} value */
+/**
+ * @param {!Array<number>} value
+ * @return {!proto.validate.Int64Rules} returns this
+ */
 proto.validate.Int64Rules.prototype.setNotInList = function(value) {
-  jspb.Message.setField(this, 7, value || []);
+  return jspb.Message.setField(this, 7, value || []);
 };
 
 
 /**
  * @param {number} value
  * @param {number=} opt_index
+ * @return {!proto.validate.Int64Rules} returns this
  */
 proto.validate.Int64Rules.prototype.addNotIn = function(value, opt_index) {
-  jspb.Message.addToRepeatedField(this, 7, value, opt_index);
+  return jspb.Message.addToRepeatedField(this, 7, value, opt_index);
 };
 
 
 /**
  * Clears the list making it empty but non-null.
+ * @return {!proto.validate.Int64Rules} returns this
  */
 proto.validate.Int64Rules.prototype.clearNotInList = function() {
-  this.setNotInList([]);
+  return this.setNotInList([]);
+};
+
+
+/**
+ * optional bool ignore_empty = 8;
+ * @return {boolean}
+ */
+proto.validate.Int64Rules.prototype.getIgnoreEmpty = function() {
+  return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 8, false));
+};
+
+
+/**
+ * @param {boolean} value
+ * @return {!proto.validate.Int64Rules} returns this
+ */
+proto.validate.Int64Rules.prototype.setIgnoreEmpty = function(value) {
+  return jspb.Message.setField(this, 8, value);
+};
+
+
+/**
+ * Clears the field making it undefined.
+ * @return {!proto.validate.Int64Rules} returns this
+ */
+proto.validate.Int64Rules.prototype.clearIgnoreEmpty = function() {
+  return jspb.Message.setField(this, 8, undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.validate.Int64Rules.prototype.hasIgnoreEmpty = function() {
+  return jspb.Message.getField(this, 8) != null;
 };
 
 
@@ -3410,7 +3841,8 @@ proto.validate.UInt32Rules.toObject = function(includeInstance, msg) {
     gt: (f = jspb.Message.getField(msg, 4)) == null ? undefined : f,
     gte: (f = jspb.Message.getField(msg, 5)) == null ? undefined : f,
     inList: (f = jspb.Message.getRepeatedField(msg, 6)) == null ? undefined : f,
-    notInList: (f = jspb.Message.getRepeatedField(msg, 7)) == null ? undefined : f
+    notInList: (f = jspb.Message.getRepeatedField(msg, 7)) == null ? undefined : f,
+    ignoreEmpty: (f = jspb.Message.getBooleanField(msg, 8)) == null ? undefined : f
   };
 
   if (includeInstance) {
@@ -3468,12 +3900,20 @@ proto.validate.UInt32Rules.deserializeBinaryFromReader = function(msg, reader) {
       msg.setGte(value);
       break;
     case 6:
-      var value = /** @type {number} */ (reader.readUint32());
-      msg.addIn(value);
+      var values = /** @type {!Array<number>} */ (reader.isDelimited() ? reader.readPackedUint32() : [reader.readUint32()]);
+      for (var i = 0; i < values.length; i++) {
+        msg.addIn(values[i]);
+      }
       break;
     case 7:
-      var value = /** @type {number} */ (reader.readUint32());
-      msg.addNotIn(value);
+      var values = /** @type {!Array<number>} */ (reader.isDelimited() ? reader.readPackedUint32() : [reader.readUint32()]);
+      for (var i = 0; i < values.length; i++) {
+        msg.addNotIn(values[i]);
+      }
+      break;
+    case 8:
+      var value = /** @type {boolean} */ (reader.readBool());
+      msg.setIgnoreEmpty(value);
       break;
     default:
       reader.skipField();
@@ -3553,6 +3993,13 @@ proto.validate.UInt32Rules.serializeBinaryToWriter = function(message, writer) {
       f
     );
   }
+  f = /** @type {boolean} */ (jspb.Message.getField(message, 8));
+  if (f != null) {
+    writer.writeBool(
+      8,
+      f
+    );
+  }
 };
 
 
@@ -3565,17 +4012,21 @@ proto.validate.UInt32Rules.prototype.getConst = function() {
 };
 
 
-/** @param {number} value */
+/**
+ * @param {number} value
+ * @return {!proto.validate.UInt32Rules} returns this
+ */
 proto.validate.UInt32Rules.prototype.setConst = function(value) {
-  jspb.Message.setField(this, 1, value);
+  return jspb.Message.setField(this, 1, value);
 };
 
 
 /**
  * Clears the field making it undefined.
+ * @return {!proto.validate.UInt32Rules} returns this
  */
 proto.validate.UInt32Rules.prototype.clearConst = function() {
-  jspb.Message.setField(this, 1, undefined);
+  return jspb.Message.setField(this, 1, undefined);
 };
 
 
@@ -3597,17 +4048,21 @@ proto.validate.UInt32Rules.prototype.getLt = function() {
 };
 
 
-/** @param {number} value */
+/**
+ * @param {number} value
+ * @return {!proto.validate.UInt32Rules} returns this
+ */
 proto.validate.UInt32Rules.prototype.setLt = function(value) {
-  jspb.Message.setField(this, 2, value);
+  return jspb.Message.setField(this, 2, value);
 };
 
 
 /**
  * Clears the field making it undefined.
+ * @return {!proto.validate.UInt32Rules} returns this
  */
 proto.validate.UInt32Rules.prototype.clearLt = function() {
-  jspb.Message.setField(this, 2, undefined);
+  return jspb.Message.setField(this, 2, undefined);
 };
 
 
@@ -3629,17 +4084,21 @@ proto.validate.UInt32Rules.prototype.getLte = function() {
 };
 
 
-/** @param {number} value */
+/**
+ * @param {number} value
+ * @return {!proto.validate.UInt32Rules} returns this
+ */
 proto.validate.UInt32Rules.prototype.setLte = function(value) {
-  jspb.Message.setField(this, 3, value);
+  return jspb.Message.setField(this, 3, value);
 };
 
 
 /**
  * Clears the field making it undefined.
+ * @return {!proto.validate.UInt32Rules} returns this
  */
 proto.validate.UInt32Rules.prototype.clearLte = function() {
-  jspb.Message.setField(this, 3, undefined);
+  return jspb.Message.setField(this, 3, undefined);
 };
 
 
@@ -3661,17 +4120,21 @@ proto.validate.UInt32Rules.prototype.getGt = function() {
 };
 
 
-/** @param {number} value */
+/**
+ * @param {number} value
+ * @return {!proto.validate.UInt32Rules} returns this
+ */
 proto.validate.UInt32Rules.prototype.setGt = function(value) {
-  jspb.Message.setField(this, 4, value);
+  return jspb.Message.setField(this, 4, value);
 };
 
 
 /**
  * Clears the field making it undefined.
+ * @return {!proto.validate.UInt32Rules} returns this
  */
 proto.validate.UInt32Rules.prototype.clearGt = function() {
-  jspb.Message.setField(this, 4, undefined);
+  return jspb.Message.setField(this, 4, undefined);
 };
 
 
@@ -3693,17 +4156,21 @@ proto.validate.UInt32Rules.prototype.getGte = function() {
 };
 
 
-/** @param {number} value */
+/**
+ * @param {number} value
+ * @return {!proto.validate.UInt32Rules} returns this
+ */
 proto.validate.UInt32Rules.prototype.setGte = function(value) {
-  jspb.Message.setField(this, 5, value);
+  return jspb.Message.setField(this, 5, value);
 };
 
 
 /**
  * Clears the field making it undefined.
+ * @return {!proto.validate.UInt32Rules} returns this
  */
 proto.validate.UInt32Rules.prototype.clearGte = function() {
-  jspb.Message.setField(this, 5, undefined);
+  return jspb.Message.setField(this, 5, undefined);
 };
 
 
@@ -3725,26 +4192,31 @@ proto.validate.UInt32Rules.prototype.getInList = function() {
 };
 
 
-/** @param {!Array<number>} value */
+/**
+ * @param {!Array<number>} value
+ * @return {!proto.validate.UInt32Rules} returns this
+ */
 proto.validate.UInt32Rules.prototype.setInList = function(value) {
-  jspb.Message.setField(this, 6, value || []);
+  return jspb.Message.setField(this, 6, value || []);
 };
 
 
 /**
  * @param {number} value
  * @param {number=} opt_index
+ * @return {!proto.validate.UInt32Rules} returns this
  */
 proto.validate.UInt32Rules.prototype.addIn = function(value, opt_index) {
-  jspb.Message.addToRepeatedField(this, 6, value, opt_index);
+  return jspb.Message.addToRepeatedField(this, 6, value, opt_index);
 };
 
 
 /**
  * Clears the list making it empty but non-null.
+ * @return {!proto.validate.UInt32Rules} returns this
  */
 proto.validate.UInt32Rules.prototype.clearInList = function() {
-  this.setInList([]);
+  return this.setInList([]);
 };
 
 
@@ -3757,26 +4229,67 @@ proto.validate.UInt32Rules.prototype.getNotInList = function() {
 };
 
 
-/** @param {!Array<number>} value */
+/**
+ * @param {!Array<number>} value
+ * @return {!proto.validate.UInt32Rules} returns this
+ */
 proto.validate.UInt32Rules.prototype.setNotInList = function(value) {
-  jspb.Message.setField(this, 7, value || []);
+  return jspb.Message.setField(this, 7, value || []);
 };
 
 
 /**
  * @param {number} value
  * @param {number=} opt_index
+ * @return {!proto.validate.UInt32Rules} returns this
  */
 proto.validate.UInt32Rules.prototype.addNotIn = function(value, opt_index) {
-  jspb.Message.addToRepeatedField(this, 7, value, opt_index);
+  return jspb.Message.addToRepeatedField(this, 7, value, opt_index);
 };
 
 
 /**
  * Clears the list making it empty but non-null.
+ * @return {!proto.validate.UInt32Rules} returns this
  */
 proto.validate.UInt32Rules.prototype.clearNotInList = function() {
-  this.setNotInList([]);
+  return this.setNotInList([]);
+};
+
+
+/**
+ * optional bool ignore_empty = 8;
+ * @return {boolean}
+ */
+proto.validate.UInt32Rules.prototype.getIgnoreEmpty = function() {
+  return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 8, false));
+};
+
+
+/**
+ * @param {boolean} value
+ * @return {!proto.validate.UInt32Rules} returns this
+ */
+proto.validate.UInt32Rules.prototype.setIgnoreEmpty = function(value) {
+  return jspb.Message.setField(this, 8, value);
+};
+
+
+/**
+ * Clears the field making it undefined.
+ * @return {!proto.validate.UInt32Rules} returns this
+ */
+proto.validate.UInt32Rules.prototype.clearIgnoreEmpty = function() {
+  return jspb.Message.setField(this, 8, undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.validate.UInt32Rules.prototype.hasIgnoreEmpty = function() {
+  return jspb.Message.getField(this, 8) != null;
 };
 
 
@@ -3825,7 +4338,8 @@ proto.validate.UInt64Rules.toObject = function(includeInstance, msg) {
     gt: (f = jspb.Message.getField(msg, 4)) == null ? undefined : f,
     gte: (f = jspb.Message.getField(msg, 5)) == null ? undefined : f,
     inList: (f = jspb.Message.getRepeatedField(msg, 6)) == null ? undefined : f,
-    notInList: (f = jspb.Message.getRepeatedField(msg, 7)) == null ? undefined : f
+    notInList: (f = jspb.Message.getRepeatedField(msg, 7)) == null ? undefined : f,
+    ignoreEmpty: (f = jspb.Message.getBooleanField(msg, 8)) == null ? undefined : f
   };
 
   if (includeInstance) {
@@ -3883,12 +4397,20 @@ proto.validate.UInt64Rules.deserializeBinaryFromReader = function(msg, reader) {
       msg.setGte(value);
       break;
     case 6:
-      var value = /** @type {number} */ (reader.readUint64());
-      msg.addIn(value);
+      var values = /** @type {!Array<number>} */ (reader.isDelimited() ? reader.readPackedUint64() : [reader.readUint64()]);
+      for (var i = 0; i < values.length; i++) {
+        msg.addIn(values[i]);
+      }
       break;
     case 7:
-      var value = /** @type {number} */ (reader.readUint64());
-      msg.addNotIn(value);
+      var values = /** @type {!Array<number>} */ (reader.isDelimited() ? reader.readPackedUint64() : [reader.readUint64()]);
+      for (var i = 0; i < values.length; i++) {
+        msg.addNotIn(values[i]);
+      }
+      break;
+    case 8:
+      var value = /** @type {boolean} */ (reader.readBool());
+      msg.setIgnoreEmpty(value);
       break;
     default:
       reader.skipField();
@@ -3968,6 +4490,13 @@ proto.validate.UInt64Rules.serializeBinaryToWriter = function(message, writer) {
       f
     );
   }
+  f = /** @type {boolean} */ (jspb.Message.getField(message, 8));
+  if (f != null) {
+    writer.writeBool(
+      8,
+      f
+    );
+  }
 };
 
 
@@ -3980,17 +4509,21 @@ proto.validate.UInt64Rules.prototype.getConst = function() {
 };
 
 
-/** @param {number} value */
+/**
+ * @param {number} value
+ * @return {!proto.validate.UInt64Rules} returns this
+ */
 proto.validate.UInt64Rules.prototype.setConst = function(value) {
-  jspb.Message.setField(this, 1, value);
+  return jspb.Message.setField(this, 1, value);
 };
 
 
 /**
  * Clears the field making it undefined.
+ * @return {!proto.validate.UInt64Rules} returns this
  */
 proto.validate.UInt64Rules.prototype.clearConst = function() {
-  jspb.Message.setField(this, 1, undefined);
+  return jspb.Message.setField(this, 1, undefined);
 };
 
 
@@ -4012,17 +4545,21 @@ proto.validate.UInt64Rules.prototype.getLt = function() {
 };
 
 
-/** @param {number} value */
+/**
+ * @param {number} value
+ * @return {!proto.validate.UInt64Rules} returns this
+ */
 proto.validate.UInt64Rules.prototype.setLt = function(value) {
-  jspb.Message.setField(this, 2, value);
+  return jspb.Message.setField(this, 2, value);
 };
 
 
 /**
  * Clears the field making it undefined.
+ * @return {!proto.validate.UInt64Rules} returns this
  */
 proto.validate.UInt64Rules.prototype.clearLt = function() {
-  jspb.Message.setField(this, 2, undefined);
+  return jspb.Message.setField(this, 2, undefined);
 };
 
 
@@ -4044,17 +4581,21 @@ proto.validate.UInt64Rules.prototype.getLte = function() {
 };
 
 
-/** @param {number} value */
+/**
+ * @param {number} value
+ * @return {!proto.validate.UInt64Rules} returns this
+ */
 proto.validate.UInt64Rules.prototype.setLte = function(value) {
-  jspb.Message.setField(this, 3, value);
+  return jspb.Message.setField(this, 3, value);
 };
 
 
 /**
  * Clears the field making it undefined.
+ * @return {!proto.validate.UInt64Rules} returns this
  */
 proto.validate.UInt64Rules.prototype.clearLte = function() {
-  jspb.Message.setField(this, 3, undefined);
+  return jspb.Message.setField(this, 3, undefined);
 };
 
 
@@ -4076,17 +4617,21 @@ proto.validate.UInt64Rules.prototype.getGt = function() {
 };
 
 
-/** @param {number} value */
+/**
+ * @param {number} value
+ * @return {!proto.validate.UInt64Rules} returns this
+ */
 proto.validate.UInt64Rules.prototype.setGt = function(value) {
-  jspb.Message.setField(this, 4, value);
+  return jspb.Message.setField(this, 4, value);
 };
 
 
 /**
  * Clears the field making it undefined.
+ * @return {!proto.validate.UInt64Rules} returns this
  */
 proto.validate.UInt64Rules.prototype.clearGt = function() {
-  jspb.Message.setField(this, 4, undefined);
+  return jspb.Message.setField(this, 4, undefined);
 };
 
 
@@ -4108,17 +4653,21 @@ proto.validate.UInt64Rules.prototype.getGte = function() {
 };
 
 
-/** @param {number} value */
+/**
+ * @param {number} value
+ * @return {!proto.validate.UInt64Rules} returns this
+ */
 proto.validate.UInt64Rules.prototype.setGte = function(value) {
-  jspb.Message.setField(this, 5, value);
+  return jspb.Message.setField(this, 5, value);
 };
 
 
 /**
  * Clears the field making it undefined.
+ * @return {!proto.validate.UInt64Rules} returns this
  */
 proto.validate.UInt64Rules.prototype.clearGte = function() {
-  jspb.Message.setField(this, 5, undefined);
+  return jspb.Message.setField(this, 5, undefined);
 };
 
 
@@ -4140,26 +4689,31 @@ proto.validate.UInt64Rules.prototype.getInList = function() {
 };
 
 
-/** @param {!Array<number>} value */
+/**
+ * @param {!Array<number>} value
+ * @return {!proto.validate.UInt64Rules} returns this
+ */
 proto.validate.UInt64Rules.prototype.setInList = function(value) {
-  jspb.Message.setField(this, 6, value || []);
+  return jspb.Message.setField(this, 6, value || []);
 };
 
 
 /**
  * @param {number} value
  * @param {number=} opt_index
+ * @return {!proto.validate.UInt64Rules} returns this
  */
 proto.validate.UInt64Rules.prototype.addIn = function(value, opt_index) {
-  jspb.Message.addToRepeatedField(this, 6, value, opt_index);
+  return jspb.Message.addToRepeatedField(this, 6, value, opt_index);
 };
 
 
 /**
  * Clears the list making it empty but non-null.
+ * @return {!proto.validate.UInt64Rules} returns this
  */
 proto.validate.UInt64Rules.prototype.clearInList = function() {
-  this.setInList([]);
+  return this.setInList([]);
 };
 
 
@@ -4172,26 +4726,67 @@ proto.validate.UInt64Rules.prototype.getNotInList = function() {
 };
 
 
-/** @param {!Array<number>} value */
+/**
+ * @param {!Array<number>} value
+ * @return {!proto.validate.UInt64Rules} returns this
+ */
 proto.validate.UInt64Rules.prototype.setNotInList = function(value) {
-  jspb.Message.setField(this, 7, value || []);
+  return jspb.Message.setField(this, 7, value || []);
 };
 
 
 /**
  * @param {number} value
  * @param {number=} opt_index
+ * @return {!proto.validate.UInt64Rules} returns this
  */
 proto.validate.UInt64Rules.prototype.addNotIn = function(value, opt_index) {
-  jspb.Message.addToRepeatedField(this, 7, value, opt_index);
+  return jspb.Message.addToRepeatedField(this, 7, value, opt_index);
 };
 
 
 /**
  * Clears the list making it empty but non-null.
+ * @return {!proto.validate.UInt64Rules} returns this
  */
 proto.validate.UInt64Rules.prototype.clearNotInList = function() {
-  this.setNotInList([]);
+  return this.setNotInList([]);
+};
+
+
+/**
+ * optional bool ignore_empty = 8;
+ * @return {boolean}
+ */
+proto.validate.UInt64Rules.prototype.getIgnoreEmpty = function() {
+  return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 8, false));
+};
+
+
+/**
+ * @param {boolean} value
+ * @return {!proto.validate.UInt64Rules} returns this
+ */
+proto.validate.UInt64Rules.prototype.setIgnoreEmpty = function(value) {
+  return jspb.Message.setField(this, 8, value);
+};
+
+
+/**
+ * Clears the field making it undefined.
+ * @return {!proto.validate.UInt64Rules} returns this
+ */
+proto.validate.UInt64Rules.prototype.clearIgnoreEmpty = function() {
+  return jspb.Message.setField(this, 8, undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.validate.UInt64Rules.prototype.hasIgnoreEmpty = function() {
+  return jspb.Message.getField(this, 8) != null;
 };
 
 
@@ -4240,7 +4835,8 @@ proto.validate.SInt32Rules.toObject = function(includeInstance, msg) {
     gt: (f = jspb.Message.getField(msg, 4)) == null ? undefined : f,
     gte: (f = jspb.Message.getField(msg, 5)) == null ? undefined : f,
     inList: (f = jspb.Message.getRepeatedField(msg, 6)) == null ? undefined : f,
-    notInList: (f = jspb.Message.getRepeatedField(msg, 7)) == null ? undefined : f
+    notInList: (f = jspb.Message.getRepeatedField(msg, 7)) == null ? undefined : f,
+    ignoreEmpty: (f = jspb.Message.getBooleanField(msg, 8)) == null ? undefined : f
   };
 
   if (includeInstance) {
@@ -4298,12 +4894,20 @@ proto.validate.SInt32Rules.deserializeBinaryFromReader = function(msg, reader) {
       msg.setGte(value);
       break;
     case 6:
-      var value = /** @type {number} */ (reader.readSint32());
-      msg.addIn(value);
+      var values = /** @type {!Array<number>} */ (reader.isDelimited() ? reader.readPackedSint32() : [reader.readSint32()]);
+      for (var i = 0; i < values.length; i++) {
+        msg.addIn(values[i]);
+      }
       break;
     case 7:
-      var value = /** @type {number} */ (reader.readSint32());
-      msg.addNotIn(value);
+      var values = /** @type {!Array<number>} */ (reader.isDelimited() ? reader.readPackedSint32() : [reader.readSint32()]);
+      for (var i = 0; i < values.length; i++) {
+        msg.addNotIn(values[i]);
+      }
+      break;
+    case 8:
+      var value = /** @type {boolean} */ (reader.readBool());
+      msg.setIgnoreEmpty(value);
       break;
     default:
       reader.skipField();
@@ -4383,6 +4987,13 @@ proto.validate.SInt32Rules.serializeBinaryToWriter = function(message, writer) {
       f
     );
   }
+  f = /** @type {boolean} */ (jspb.Message.getField(message, 8));
+  if (f != null) {
+    writer.writeBool(
+      8,
+      f
+    );
+  }
 };
 
 
@@ -4395,17 +5006,21 @@ proto.validate.SInt32Rules.prototype.getConst = function() {
 };
 
 
-/** @param {number} value */
+/**
+ * @param {number} value
+ * @return {!proto.validate.SInt32Rules} returns this
+ */
 proto.validate.SInt32Rules.prototype.setConst = function(value) {
-  jspb.Message.setField(this, 1, value);
+  return jspb.Message.setField(this, 1, value);
 };
 
 
 /**
  * Clears the field making it undefined.
+ * @return {!proto.validate.SInt32Rules} returns this
  */
 proto.validate.SInt32Rules.prototype.clearConst = function() {
-  jspb.Message.setField(this, 1, undefined);
+  return jspb.Message.setField(this, 1, undefined);
 };
 
 
@@ -4427,17 +5042,21 @@ proto.validate.SInt32Rules.prototype.getLt = function() {
 };
 
 
-/** @param {number} value */
+/**
+ * @param {number} value
+ * @return {!proto.validate.SInt32Rules} returns this
+ */
 proto.validate.SInt32Rules.prototype.setLt = function(value) {
-  jspb.Message.setField(this, 2, value);
+  return jspb.Message.setField(this, 2, value);
 };
 
 
 /**
  * Clears the field making it undefined.
+ * @return {!proto.validate.SInt32Rules} returns this
  */
 proto.validate.SInt32Rules.prototype.clearLt = function() {
-  jspb.Message.setField(this, 2, undefined);
+  return jspb.Message.setField(this, 2, undefined);
 };
 
 
@@ -4459,17 +5078,21 @@ proto.validate.SInt32Rules.prototype.getLte = function() {
 };
 
 
-/** @param {number} value */
+/**
+ * @param {number} value
+ * @return {!proto.validate.SInt32Rules} returns this
+ */
 proto.validate.SInt32Rules.prototype.setLte = function(value) {
-  jspb.Message.setField(this, 3, value);
+  return jspb.Message.setField(this, 3, value);
 };
 
 
 /**
  * Clears the field making it undefined.
+ * @return {!proto.validate.SInt32Rules} returns this
  */
 proto.validate.SInt32Rules.prototype.clearLte = function() {
-  jspb.Message.setField(this, 3, undefined);
+  return jspb.Message.setField(this, 3, undefined);
 };
 
 
@@ -4491,17 +5114,21 @@ proto.validate.SInt32Rules.prototype.getGt = function() {
 };
 
 
-/** @param {number} value */
+/**
+ * @param {number} value
+ * @return {!proto.validate.SInt32Rules} returns this
+ */
 proto.validate.SInt32Rules.prototype.setGt = function(value) {
-  jspb.Message.setField(this, 4, value);
+  return jspb.Message.setField(this, 4, value);
 };
 
 
 /**
  * Clears the field making it undefined.
+ * @return {!proto.validate.SInt32Rules} returns this
  */
 proto.validate.SInt32Rules.prototype.clearGt = function() {
-  jspb.Message.setField(this, 4, undefined);
+  return jspb.Message.setField(this, 4, undefined);
 };
 
 
@@ -4523,17 +5150,21 @@ proto.validate.SInt32Rules.prototype.getGte = function() {
 };
 
 
-/** @param {number} value */
+/**
+ * @param {number} value
+ * @return {!proto.validate.SInt32Rules} returns this
+ */
 proto.validate.SInt32Rules.prototype.setGte = function(value) {
-  jspb.Message.setField(this, 5, value);
+  return jspb.Message.setField(this, 5, value);
 };
 
 
 /**
  * Clears the field making it undefined.
+ * @return {!proto.validate.SInt32Rules} returns this
  */
 proto.validate.SInt32Rules.prototype.clearGte = function() {
-  jspb.Message.setField(this, 5, undefined);
+  return jspb.Message.setField(this, 5, undefined);
 };
 
 
@@ -4555,26 +5186,31 @@ proto.validate.SInt32Rules.prototype.getInList = function() {
 };
 
 
-/** @param {!Array<number>} value */
+/**
+ * @param {!Array<number>} value
+ * @return {!proto.validate.SInt32Rules} returns this
+ */
 proto.validate.SInt32Rules.prototype.setInList = function(value) {
-  jspb.Message.setField(this, 6, value || []);
+  return jspb.Message.setField(this, 6, value || []);
 };
 
 
 /**
  * @param {number} value
  * @param {number=} opt_index
+ * @return {!proto.validate.SInt32Rules} returns this
  */
 proto.validate.SInt32Rules.prototype.addIn = function(value, opt_index) {
-  jspb.Message.addToRepeatedField(this, 6, value, opt_index);
+  return jspb.Message.addToRepeatedField(this, 6, value, opt_index);
 };
 
 
 /**
  * Clears the list making it empty but non-null.
+ * @return {!proto.validate.SInt32Rules} returns this
  */
 proto.validate.SInt32Rules.prototype.clearInList = function() {
-  this.setInList([]);
+  return this.setInList([]);
 };
 
 
@@ -4587,26 +5223,67 @@ proto.validate.SInt32Rules.prototype.getNotInList = function() {
 };
 
 
-/** @param {!Array<number>} value */
+/**
+ * @param {!Array<number>} value
+ * @return {!proto.validate.SInt32Rules} returns this
+ */
 proto.validate.SInt32Rules.prototype.setNotInList = function(value) {
-  jspb.Message.setField(this, 7, value || []);
+  return jspb.Message.setField(this, 7, value || []);
 };
 
 
 /**
  * @param {number} value
  * @param {number=} opt_index
+ * @return {!proto.validate.SInt32Rules} returns this
  */
 proto.validate.SInt32Rules.prototype.addNotIn = function(value, opt_index) {
-  jspb.Message.addToRepeatedField(this, 7, value, opt_index);
+  return jspb.Message.addToRepeatedField(this, 7, value, opt_index);
 };
 
 
 /**
  * Clears the list making it empty but non-null.
+ * @return {!proto.validate.SInt32Rules} returns this
  */
 proto.validate.SInt32Rules.prototype.clearNotInList = function() {
-  this.setNotInList([]);
+  return this.setNotInList([]);
+};
+
+
+/**
+ * optional bool ignore_empty = 8;
+ * @return {boolean}
+ */
+proto.validate.SInt32Rules.prototype.getIgnoreEmpty = function() {
+  return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 8, false));
+};
+
+
+/**
+ * @param {boolean} value
+ * @return {!proto.validate.SInt32Rules} returns this
+ */
+proto.validate.SInt32Rules.prototype.setIgnoreEmpty = function(value) {
+  return jspb.Message.setField(this, 8, value);
+};
+
+
+/**
+ * Clears the field making it undefined.
+ * @return {!proto.validate.SInt32Rules} returns this
+ */
+proto.validate.SInt32Rules.prototype.clearIgnoreEmpty = function() {
+  return jspb.Message.setField(this, 8, undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.validate.SInt32Rules.prototype.hasIgnoreEmpty = function() {
+  return jspb.Message.getField(this, 8) != null;
 };
 
 
@@ -4655,7 +5332,8 @@ proto.validate.SInt64Rules.toObject = function(includeInstance, msg) {
     gt: (f = jspb.Message.getField(msg, 4)) == null ? undefined : f,
     gte: (f = jspb.Message.getField(msg, 5)) == null ? undefined : f,
     inList: (f = jspb.Message.getRepeatedField(msg, 6)) == null ? undefined : f,
-    notInList: (f = jspb.Message.getRepeatedField(msg, 7)) == null ? undefined : f
+    notInList: (f = jspb.Message.getRepeatedField(msg, 7)) == null ? undefined : f,
+    ignoreEmpty: (f = jspb.Message.getBooleanField(msg, 8)) == null ? undefined : f
   };
 
   if (includeInstance) {
@@ -4713,12 +5391,20 @@ proto.validate.SInt64Rules.deserializeBinaryFromReader = function(msg, reader) {
       msg.setGte(value);
       break;
     case 6:
-      var value = /** @type {number} */ (reader.readSint64());
-      msg.addIn(value);
+      var values = /** @type {!Array<number>} */ (reader.isDelimited() ? reader.readPackedSint64() : [reader.readSint64()]);
+      for (var i = 0; i < values.length; i++) {
+        msg.addIn(values[i]);
+      }
       break;
     case 7:
-      var value = /** @type {number} */ (reader.readSint64());
-      msg.addNotIn(value);
+      var values = /** @type {!Array<number>} */ (reader.isDelimited() ? reader.readPackedSint64() : [reader.readSint64()]);
+      for (var i = 0; i < values.length; i++) {
+        msg.addNotIn(values[i]);
+      }
+      break;
+    case 8:
+      var value = /** @type {boolean} */ (reader.readBool());
+      msg.setIgnoreEmpty(value);
       break;
     default:
       reader.skipField();
@@ -4798,6 +5484,13 @@ proto.validate.SInt64Rules.serializeBinaryToWriter = function(message, writer) {
       f
     );
   }
+  f = /** @type {boolean} */ (jspb.Message.getField(message, 8));
+  if (f != null) {
+    writer.writeBool(
+      8,
+      f
+    );
+  }
 };
 
 
@@ -4810,17 +5503,21 @@ proto.validate.SInt64Rules.prototype.getConst = function() {
 };
 
 
-/** @param {number} value */
+/**
+ * @param {number} value
+ * @return {!proto.validate.SInt64Rules} returns this
+ */
 proto.validate.SInt64Rules.prototype.setConst = function(value) {
-  jspb.Message.setField(this, 1, value);
+  return jspb.Message.setField(this, 1, value);
 };
 
 
 /**
  * Clears the field making it undefined.
+ * @return {!proto.validate.SInt64Rules} returns this
  */
 proto.validate.SInt64Rules.prototype.clearConst = function() {
-  jspb.Message.setField(this, 1, undefined);
+  return jspb.Message.setField(this, 1, undefined);
 };
 
 
@@ -4842,17 +5539,21 @@ proto.validate.SInt64Rules.prototype.getLt = function() {
 };
 
 
-/** @param {number} value */
+/**
+ * @param {number} value
+ * @return {!proto.validate.SInt64Rules} returns this
+ */
 proto.validate.SInt64Rules.prototype.setLt = function(value) {
-  jspb.Message.setField(this, 2, value);
+  return jspb.Message.setField(this, 2, value);
 };
 
 
 /**
  * Clears the field making it undefined.
+ * @return {!proto.validate.SInt64Rules} returns this
  */
 proto.validate.SInt64Rules.prototype.clearLt = function() {
-  jspb.Message.setField(this, 2, undefined);
+  return jspb.Message.setField(this, 2, undefined);
 };
 
 
@@ -4874,17 +5575,21 @@ proto.validate.SInt64Rules.prototype.getLte = function() {
 };
 
 
-/** @param {number} value */
+/**
+ * @param {number} value
+ * @return {!proto.validate.SInt64Rules} returns this
+ */
 proto.validate.SInt64Rules.prototype.setLte = function(value) {
-  jspb.Message.setField(this, 3, value);
+  return jspb.Message.setField(this, 3, value);
 };
 
 
 /**
  * Clears the field making it undefined.
+ * @return {!proto.validate.SInt64Rules} returns this
  */
 proto.validate.SInt64Rules.prototype.clearLte = function() {
-  jspb.Message.setField(this, 3, undefined);
+  return jspb.Message.setField(this, 3, undefined);
 };
 
 
@@ -4906,17 +5611,21 @@ proto.validate.SInt64Rules.prototype.getGt = function() {
 };
 
 
-/** @param {number} value */
+/**
+ * @param {number} value
+ * @return {!proto.validate.SInt64Rules} returns this
+ */
 proto.validate.SInt64Rules.prototype.setGt = function(value) {
-  jspb.Message.setField(this, 4, value);
+  return jspb.Message.setField(this, 4, value);
 };
 
 
 /**
  * Clears the field making it undefined.
+ * @return {!proto.validate.SInt64Rules} returns this
  */
 proto.validate.SInt64Rules.prototype.clearGt = function() {
-  jspb.Message.setField(this, 4, undefined);
+  return jspb.Message.setField(this, 4, undefined);
 };
 
 
@@ -4938,17 +5647,21 @@ proto.validate.SInt64Rules.prototype.getGte = function() {
 };
 
 
-/** @param {number} value */
+/**
+ * @param {number} value
+ * @return {!proto.validate.SInt64Rules} returns this
+ */
 proto.validate.SInt64Rules.prototype.setGte = function(value) {
-  jspb.Message.setField(this, 5, value);
+  return jspb.Message.setField(this, 5, value);
 };
 
 
 /**
  * Clears the field making it undefined.
+ * @return {!proto.validate.SInt64Rules} returns this
  */
 proto.validate.SInt64Rules.prototype.clearGte = function() {
-  jspb.Message.setField(this, 5, undefined);
+  return jspb.Message.setField(this, 5, undefined);
 };
 
 
@@ -4970,26 +5683,31 @@ proto.validate.SInt64Rules.prototype.getInList = function() {
 };
 
 
-/** @param {!Array<number>} value */
+/**
+ * @param {!Array<number>} value
+ * @return {!proto.validate.SInt64Rules} returns this
+ */
 proto.validate.SInt64Rules.prototype.setInList = function(value) {
-  jspb.Message.setField(this, 6, value || []);
+  return jspb.Message.setField(this, 6, value || []);
 };
 
 
 /**
  * @param {number} value
  * @param {number=} opt_index
+ * @return {!proto.validate.SInt64Rules} returns this
  */
 proto.validate.SInt64Rules.prototype.addIn = function(value, opt_index) {
-  jspb.Message.addToRepeatedField(this, 6, value, opt_index);
+  return jspb.Message.addToRepeatedField(this, 6, value, opt_index);
 };
 
 
 /**
  * Clears the list making it empty but non-null.
+ * @return {!proto.validate.SInt64Rules} returns this
  */
 proto.validate.SInt64Rules.prototype.clearInList = function() {
-  this.setInList([]);
+  return this.setInList([]);
 };
 
 
@@ -5002,26 +5720,67 @@ proto.validate.SInt64Rules.prototype.getNotInList = function() {
 };
 
 
-/** @param {!Array<number>} value */
+/**
+ * @param {!Array<number>} value
+ * @return {!proto.validate.SInt64Rules} returns this
+ */
 proto.validate.SInt64Rules.prototype.setNotInList = function(value) {
-  jspb.Message.setField(this, 7, value || []);
+  return jspb.Message.setField(this, 7, value || []);
 };
 
 
 /**
  * @param {number} value
  * @param {number=} opt_index
+ * @return {!proto.validate.SInt64Rules} returns this
  */
 proto.validate.SInt64Rules.prototype.addNotIn = function(value, opt_index) {
-  jspb.Message.addToRepeatedField(this, 7, value, opt_index);
+  return jspb.Message.addToRepeatedField(this, 7, value, opt_index);
 };
 
 
 /**
  * Clears the list making it empty but non-null.
+ * @return {!proto.validate.SInt64Rules} returns this
  */
 proto.validate.SInt64Rules.prototype.clearNotInList = function() {
-  this.setNotInList([]);
+  return this.setNotInList([]);
+};
+
+
+/**
+ * optional bool ignore_empty = 8;
+ * @return {boolean}
+ */
+proto.validate.SInt64Rules.prototype.getIgnoreEmpty = function() {
+  return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 8, false));
+};
+
+
+/**
+ * @param {boolean} value
+ * @return {!proto.validate.SInt64Rules} returns this
+ */
+proto.validate.SInt64Rules.prototype.setIgnoreEmpty = function(value) {
+  return jspb.Message.setField(this, 8, value);
+};
+
+
+/**
+ * Clears the field making it undefined.
+ * @return {!proto.validate.SInt64Rules} returns this
+ */
+proto.validate.SInt64Rules.prototype.clearIgnoreEmpty = function() {
+  return jspb.Message.setField(this, 8, undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.validate.SInt64Rules.prototype.hasIgnoreEmpty = function() {
+  return jspb.Message.getField(this, 8) != null;
 };
 
 
@@ -5070,7 +5829,8 @@ proto.validate.Fixed32Rules.toObject = function(includeInstance, msg) {
     gt: (f = jspb.Message.getField(msg, 4)) == null ? undefined : f,
     gte: (f = jspb.Message.getField(msg, 5)) == null ? undefined : f,
     inList: (f = jspb.Message.getRepeatedField(msg, 6)) == null ? undefined : f,
-    notInList: (f = jspb.Message.getRepeatedField(msg, 7)) == null ? undefined : f
+    notInList: (f = jspb.Message.getRepeatedField(msg, 7)) == null ? undefined : f,
+    ignoreEmpty: (f = jspb.Message.getBooleanField(msg, 8)) == null ? undefined : f
   };
 
   if (includeInstance) {
@@ -5128,12 +5888,20 @@ proto.validate.Fixed32Rules.deserializeBinaryFromReader = function(msg, reader) 
       msg.setGte(value);
       break;
     case 6:
-      var value = /** @type {number} */ (reader.readFixed32());
-      msg.addIn(value);
+      var values = /** @type {!Array<number>} */ (reader.isDelimited() ? reader.readPackedFixed32() : [reader.readFixed32()]);
+      for (var i = 0; i < values.length; i++) {
+        msg.addIn(values[i]);
+      }
       break;
     case 7:
-      var value = /** @type {number} */ (reader.readFixed32());
-      msg.addNotIn(value);
+      var values = /** @type {!Array<number>} */ (reader.isDelimited() ? reader.readPackedFixed32() : [reader.readFixed32()]);
+      for (var i = 0; i < values.length; i++) {
+        msg.addNotIn(values[i]);
+      }
+      break;
+    case 8:
+      var value = /** @type {boolean} */ (reader.readBool());
+      msg.setIgnoreEmpty(value);
       break;
     default:
       reader.skipField();
@@ -5213,6 +5981,13 @@ proto.validate.Fixed32Rules.serializeBinaryToWriter = function(message, writer) 
       f
     );
   }
+  f = /** @type {boolean} */ (jspb.Message.getField(message, 8));
+  if (f != null) {
+    writer.writeBool(
+      8,
+      f
+    );
+  }
 };
 
 
@@ -5225,17 +6000,21 @@ proto.validate.Fixed32Rules.prototype.getConst = function() {
 };
 
 
-/** @param {number} value */
+/**
+ * @param {number} value
+ * @return {!proto.validate.Fixed32Rules} returns this
+ */
 proto.validate.Fixed32Rules.prototype.setConst = function(value) {
-  jspb.Message.setField(this, 1, value);
+  return jspb.Message.setField(this, 1, value);
 };
 
 
 /**
  * Clears the field making it undefined.
+ * @return {!proto.validate.Fixed32Rules} returns this
  */
 proto.validate.Fixed32Rules.prototype.clearConst = function() {
-  jspb.Message.setField(this, 1, undefined);
+  return jspb.Message.setField(this, 1, undefined);
 };
 
 
@@ -5257,17 +6036,21 @@ proto.validate.Fixed32Rules.prototype.getLt = function() {
 };
 
 
-/** @param {number} value */
+/**
+ * @param {number} value
+ * @return {!proto.validate.Fixed32Rules} returns this
+ */
 proto.validate.Fixed32Rules.prototype.setLt = function(value) {
-  jspb.Message.setField(this, 2, value);
+  return jspb.Message.setField(this, 2, value);
 };
 
 
 /**
  * Clears the field making it undefined.
+ * @return {!proto.validate.Fixed32Rules} returns this
  */
 proto.validate.Fixed32Rules.prototype.clearLt = function() {
-  jspb.Message.setField(this, 2, undefined);
+  return jspb.Message.setField(this, 2, undefined);
 };
 
 
@@ -5289,17 +6072,21 @@ proto.validate.Fixed32Rules.prototype.getLte = function() {
 };
 
 
-/** @param {number} value */
+/**
+ * @param {number} value
+ * @return {!proto.validate.Fixed32Rules} returns this
+ */
 proto.validate.Fixed32Rules.prototype.setLte = function(value) {
-  jspb.Message.setField(this, 3, value);
+  return jspb.Message.setField(this, 3, value);
 };
 
 
 /**
  * Clears the field making it undefined.
+ * @return {!proto.validate.Fixed32Rules} returns this
  */
 proto.validate.Fixed32Rules.prototype.clearLte = function() {
-  jspb.Message.setField(this, 3, undefined);
+  return jspb.Message.setField(this, 3, undefined);
 };
 
 
@@ -5321,17 +6108,21 @@ proto.validate.Fixed32Rules.prototype.getGt = function() {
 };
 
 
-/** @param {number} value */
+/**
+ * @param {number} value
+ * @return {!proto.validate.Fixed32Rules} returns this
+ */
 proto.validate.Fixed32Rules.prototype.setGt = function(value) {
-  jspb.Message.setField(this, 4, value);
+  return jspb.Message.setField(this, 4, value);
 };
 
 
 /**
  * Clears the field making it undefined.
+ * @return {!proto.validate.Fixed32Rules} returns this
  */
 proto.validate.Fixed32Rules.prototype.clearGt = function() {
-  jspb.Message.setField(this, 4, undefined);
+  return jspb.Message.setField(this, 4, undefined);
 };
 
 
@@ -5353,17 +6144,21 @@ proto.validate.Fixed32Rules.prototype.getGte = function() {
 };
 
 
-/** @param {number} value */
+/**
+ * @param {number} value
+ * @return {!proto.validate.Fixed32Rules} returns this
+ */
 proto.validate.Fixed32Rules.prototype.setGte = function(value) {
-  jspb.Message.setField(this, 5, value);
+  return jspb.Message.setField(this, 5, value);
 };
 
 
 /**
  * Clears the field making it undefined.
+ * @return {!proto.validate.Fixed32Rules} returns this
  */
 proto.validate.Fixed32Rules.prototype.clearGte = function() {
-  jspb.Message.setField(this, 5, undefined);
+  return jspb.Message.setField(this, 5, undefined);
 };
 
 
@@ -5385,26 +6180,31 @@ proto.validate.Fixed32Rules.prototype.getInList = function() {
 };
 
 
-/** @param {!Array<number>} value */
+/**
+ * @param {!Array<number>} value
+ * @return {!proto.validate.Fixed32Rules} returns this
+ */
 proto.validate.Fixed32Rules.prototype.setInList = function(value) {
-  jspb.Message.setField(this, 6, value || []);
+  return jspb.Message.setField(this, 6, value || []);
 };
 
 
 /**
  * @param {number} value
  * @param {number=} opt_index
+ * @return {!proto.validate.Fixed32Rules} returns this
  */
 proto.validate.Fixed32Rules.prototype.addIn = function(value, opt_index) {
-  jspb.Message.addToRepeatedField(this, 6, value, opt_index);
+  return jspb.Message.addToRepeatedField(this, 6, value, opt_index);
 };
 
 
 /**
  * Clears the list making it empty but non-null.
+ * @return {!proto.validate.Fixed32Rules} returns this
  */
 proto.validate.Fixed32Rules.prototype.clearInList = function() {
-  this.setInList([]);
+  return this.setInList([]);
 };
 
 
@@ -5417,26 +6217,67 @@ proto.validate.Fixed32Rules.prototype.getNotInList = function() {
 };
 
 
-/** @param {!Array<number>} value */
+/**
+ * @param {!Array<number>} value
+ * @return {!proto.validate.Fixed32Rules} returns this
+ */
 proto.validate.Fixed32Rules.prototype.setNotInList = function(value) {
-  jspb.Message.setField(this, 7, value || []);
+  return jspb.Message.setField(this, 7, value || []);
 };
 
 
 /**
  * @param {number} value
  * @param {number=} opt_index
+ * @return {!proto.validate.Fixed32Rules} returns this
  */
 proto.validate.Fixed32Rules.prototype.addNotIn = function(value, opt_index) {
-  jspb.Message.addToRepeatedField(this, 7, value, opt_index);
+  return jspb.Message.addToRepeatedField(this, 7, value, opt_index);
 };
 
 
 /**
  * Clears the list making it empty but non-null.
+ * @return {!proto.validate.Fixed32Rules} returns this
  */
 proto.validate.Fixed32Rules.prototype.clearNotInList = function() {
-  this.setNotInList([]);
+  return this.setNotInList([]);
+};
+
+
+/**
+ * optional bool ignore_empty = 8;
+ * @return {boolean}
+ */
+proto.validate.Fixed32Rules.prototype.getIgnoreEmpty = function() {
+  return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 8, false));
+};
+
+
+/**
+ * @param {boolean} value
+ * @return {!proto.validate.Fixed32Rules} returns this
+ */
+proto.validate.Fixed32Rules.prototype.setIgnoreEmpty = function(value) {
+  return jspb.Message.setField(this, 8, value);
+};
+
+
+/**
+ * Clears the field making it undefined.
+ * @return {!proto.validate.Fixed32Rules} returns this
+ */
+proto.validate.Fixed32Rules.prototype.clearIgnoreEmpty = function() {
+  return jspb.Message.setField(this, 8, undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.validate.Fixed32Rules.prototype.hasIgnoreEmpty = function() {
+  return jspb.Message.getField(this, 8) != null;
 };
 
 
@@ -5485,7 +6326,8 @@ proto.validate.Fixed64Rules.toObject = function(includeInstance, msg) {
     gt: (f = jspb.Message.getField(msg, 4)) == null ? undefined : f,
     gte: (f = jspb.Message.getField(msg, 5)) == null ? undefined : f,
     inList: (f = jspb.Message.getRepeatedField(msg, 6)) == null ? undefined : f,
-    notInList: (f = jspb.Message.getRepeatedField(msg, 7)) == null ? undefined : f
+    notInList: (f = jspb.Message.getRepeatedField(msg, 7)) == null ? undefined : f,
+    ignoreEmpty: (f = jspb.Message.getBooleanField(msg, 8)) == null ? undefined : f
   };
 
   if (includeInstance) {
@@ -5543,12 +6385,20 @@ proto.validate.Fixed64Rules.deserializeBinaryFromReader = function(msg, reader) 
       msg.setGte(value);
       break;
     case 6:
-      var value = /** @type {number} */ (reader.readFixed64());
-      msg.addIn(value);
+      var values = /** @type {!Array<number>} */ (reader.isDelimited() ? reader.readPackedFixed64() : [reader.readFixed64()]);
+      for (var i = 0; i < values.length; i++) {
+        msg.addIn(values[i]);
+      }
       break;
     case 7:
-      var value = /** @type {number} */ (reader.readFixed64());
-      msg.addNotIn(value);
+      var values = /** @type {!Array<number>} */ (reader.isDelimited() ? reader.readPackedFixed64() : [reader.readFixed64()]);
+      for (var i = 0; i < values.length; i++) {
+        msg.addNotIn(values[i]);
+      }
+      break;
+    case 8:
+      var value = /** @type {boolean} */ (reader.readBool());
+      msg.setIgnoreEmpty(value);
       break;
     default:
       reader.skipField();
@@ -5628,6 +6478,13 @@ proto.validate.Fixed64Rules.serializeBinaryToWriter = function(message, writer) 
       f
     );
   }
+  f = /** @type {boolean} */ (jspb.Message.getField(message, 8));
+  if (f != null) {
+    writer.writeBool(
+      8,
+      f
+    );
+  }
 };
 
 
@@ -5640,17 +6497,21 @@ proto.validate.Fixed64Rules.prototype.getConst = function() {
 };
 
 
-/** @param {number} value */
+/**
+ * @param {number} value
+ * @return {!proto.validate.Fixed64Rules} returns this
+ */
 proto.validate.Fixed64Rules.prototype.setConst = function(value) {
-  jspb.Message.setField(this, 1, value);
+  return jspb.Message.setField(this, 1, value);
 };
 
 
 /**
  * Clears the field making it undefined.
+ * @return {!proto.validate.Fixed64Rules} returns this
  */
 proto.validate.Fixed64Rules.prototype.clearConst = function() {
-  jspb.Message.setField(this, 1, undefined);
+  return jspb.Message.setField(this, 1, undefined);
 };
 
 
@@ -5672,17 +6533,21 @@ proto.validate.Fixed64Rules.prototype.getLt = function() {
 };
 
 
-/** @param {number} value */
+/**
+ * @param {number} value
+ * @return {!proto.validate.Fixed64Rules} returns this
+ */
 proto.validate.Fixed64Rules.prototype.setLt = function(value) {
-  jspb.Message.setField(this, 2, value);
+  return jspb.Message.setField(this, 2, value);
 };
 
 
 /**
  * Clears the field making it undefined.
+ * @return {!proto.validate.Fixed64Rules} returns this
  */
 proto.validate.Fixed64Rules.prototype.clearLt = function() {
-  jspb.Message.setField(this, 2, undefined);
+  return jspb.Message.setField(this, 2, undefined);
 };
 
 
@@ -5704,17 +6569,21 @@ proto.validate.Fixed64Rules.prototype.getLte = function() {
 };
 
 
-/** @param {number} value */
+/**
+ * @param {number} value
+ * @return {!proto.validate.Fixed64Rules} returns this
+ */
 proto.validate.Fixed64Rules.prototype.setLte = function(value) {
-  jspb.Message.setField(this, 3, value);
+  return jspb.Message.setField(this, 3, value);
 };
 
 
 /**
  * Clears the field making it undefined.
+ * @return {!proto.validate.Fixed64Rules} returns this
  */
 proto.validate.Fixed64Rules.prototype.clearLte = function() {
-  jspb.Message.setField(this, 3, undefined);
+  return jspb.Message.setField(this, 3, undefined);
 };
 
 
@@ -5736,17 +6605,21 @@ proto.validate.Fixed64Rules.prototype.getGt = function() {
 };
 
 
-/** @param {number} value */
+/**
+ * @param {number} value
+ * @return {!proto.validate.Fixed64Rules} returns this
+ */
 proto.validate.Fixed64Rules.prototype.setGt = function(value) {
-  jspb.Message.setField(this, 4, value);
+  return jspb.Message.setField(this, 4, value);
 };
 
 
 /**
  * Clears the field making it undefined.
+ * @return {!proto.validate.Fixed64Rules} returns this
  */
 proto.validate.Fixed64Rules.prototype.clearGt = function() {
-  jspb.Message.setField(this, 4, undefined);
+  return jspb.Message.setField(this, 4, undefined);
 };
 
 
@@ -5768,17 +6641,21 @@ proto.validate.Fixed64Rules.prototype.getGte = function() {
 };
 
 
-/** @param {number} value */
+/**
+ * @param {number} value
+ * @return {!proto.validate.Fixed64Rules} returns this
+ */
 proto.validate.Fixed64Rules.prototype.setGte = function(value) {
-  jspb.Message.setField(this, 5, value);
+  return jspb.Message.setField(this, 5, value);
 };
 
 
 /**
  * Clears the field making it undefined.
+ * @return {!proto.validate.Fixed64Rules} returns this
  */
 proto.validate.Fixed64Rules.prototype.clearGte = function() {
-  jspb.Message.setField(this, 5, undefined);
+  return jspb.Message.setField(this, 5, undefined);
 };
 
 
@@ -5800,26 +6677,31 @@ proto.validate.Fixed64Rules.prototype.getInList = function() {
 };
 
 
-/** @param {!Array<number>} value */
+/**
+ * @param {!Array<number>} value
+ * @return {!proto.validate.Fixed64Rules} returns this
+ */
 proto.validate.Fixed64Rules.prototype.setInList = function(value) {
-  jspb.Message.setField(this, 6, value || []);
+  return jspb.Message.setField(this, 6, value || []);
 };
 
 
 /**
  * @param {number} value
  * @param {number=} opt_index
+ * @return {!proto.validate.Fixed64Rules} returns this
  */
 proto.validate.Fixed64Rules.prototype.addIn = function(value, opt_index) {
-  jspb.Message.addToRepeatedField(this, 6, value, opt_index);
+  return jspb.Message.addToRepeatedField(this, 6, value, opt_index);
 };
 
 
 /**
  * Clears the list making it empty but non-null.
+ * @return {!proto.validate.Fixed64Rules} returns this
  */
 proto.validate.Fixed64Rules.prototype.clearInList = function() {
-  this.setInList([]);
+  return this.setInList([]);
 };
 
 
@@ -5832,26 +6714,67 @@ proto.validate.Fixed64Rules.prototype.getNotInList = function() {
 };
 
 
-/** @param {!Array<number>} value */
+/**
+ * @param {!Array<number>} value
+ * @return {!proto.validate.Fixed64Rules} returns this
+ */
 proto.validate.Fixed64Rules.prototype.setNotInList = function(value) {
-  jspb.Message.setField(this, 7, value || []);
+  return jspb.Message.setField(this, 7, value || []);
 };
 
 
 /**
  * @param {number} value
  * @param {number=} opt_index
+ * @return {!proto.validate.Fixed64Rules} returns this
  */
 proto.validate.Fixed64Rules.prototype.addNotIn = function(value, opt_index) {
-  jspb.Message.addToRepeatedField(this, 7, value, opt_index);
+  return jspb.Message.addToRepeatedField(this, 7, value, opt_index);
 };
 
 
 /**
  * Clears the list making it empty but non-null.
+ * @return {!proto.validate.Fixed64Rules} returns this
  */
 proto.validate.Fixed64Rules.prototype.clearNotInList = function() {
-  this.setNotInList([]);
+  return this.setNotInList([]);
+};
+
+
+/**
+ * optional bool ignore_empty = 8;
+ * @return {boolean}
+ */
+proto.validate.Fixed64Rules.prototype.getIgnoreEmpty = function() {
+  return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 8, false));
+};
+
+
+/**
+ * @param {boolean} value
+ * @return {!proto.validate.Fixed64Rules} returns this
+ */
+proto.validate.Fixed64Rules.prototype.setIgnoreEmpty = function(value) {
+  return jspb.Message.setField(this, 8, value);
+};
+
+
+/**
+ * Clears the field making it undefined.
+ * @return {!proto.validate.Fixed64Rules} returns this
+ */
+proto.validate.Fixed64Rules.prototype.clearIgnoreEmpty = function() {
+  return jspb.Message.setField(this, 8, undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.validate.Fixed64Rules.prototype.hasIgnoreEmpty = function() {
+  return jspb.Message.getField(this, 8) != null;
 };
 
 
@@ -5900,7 +6823,8 @@ proto.validate.SFixed32Rules.toObject = function(includeInstance, msg) {
     gt: (f = jspb.Message.getField(msg, 4)) == null ? undefined : f,
     gte: (f = jspb.Message.getField(msg, 5)) == null ? undefined : f,
     inList: (f = jspb.Message.getRepeatedField(msg, 6)) == null ? undefined : f,
-    notInList: (f = jspb.Message.getRepeatedField(msg, 7)) == null ? undefined : f
+    notInList: (f = jspb.Message.getRepeatedField(msg, 7)) == null ? undefined : f,
+    ignoreEmpty: (f = jspb.Message.getBooleanField(msg, 8)) == null ? undefined : f
   };
 
   if (includeInstance) {
@@ -5958,12 +6882,20 @@ proto.validate.SFixed32Rules.deserializeBinaryFromReader = function(msg, reader)
       msg.setGte(value);
       break;
     case 6:
-      var value = /** @type {number} */ (reader.readSfixed32());
-      msg.addIn(value);
+      var values = /** @type {!Array<number>} */ (reader.isDelimited() ? reader.readPackedSfixed32() : [reader.readSfixed32()]);
+      for (var i = 0; i < values.length; i++) {
+        msg.addIn(values[i]);
+      }
       break;
     case 7:
-      var value = /** @type {number} */ (reader.readSfixed32());
-      msg.addNotIn(value);
+      var values = /** @type {!Array<number>} */ (reader.isDelimited() ? reader.readPackedSfixed32() : [reader.readSfixed32()]);
+      for (var i = 0; i < values.length; i++) {
+        msg.addNotIn(values[i]);
+      }
+      break;
+    case 8:
+      var value = /** @type {boolean} */ (reader.readBool());
+      msg.setIgnoreEmpty(value);
       break;
     default:
       reader.skipField();
@@ -6043,6 +6975,13 @@ proto.validate.SFixed32Rules.serializeBinaryToWriter = function(message, writer)
       f
     );
   }
+  f = /** @type {boolean} */ (jspb.Message.getField(message, 8));
+  if (f != null) {
+    writer.writeBool(
+      8,
+      f
+    );
+  }
 };
 
 
@@ -6055,17 +6994,21 @@ proto.validate.SFixed32Rules.prototype.getConst = function() {
 };
 
 
-/** @param {number} value */
+/**
+ * @param {number} value
+ * @return {!proto.validate.SFixed32Rules} returns this
+ */
 proto.validate.SFixed32Rules.prototype.setConst = function(value) {
-  jspb.Message.setField(this, 1, value);
+  return jspb.Message.setField(this, 1, value);
 };
 
 
 /**
  * Clears the field making it undefined.
+ * @return {!proto.validate.SFixed32Rules} returns this
  */
 proto.validate.SFixed32Rules.prototype.clearConst = function() {
-  jspb.Message.setField(this, 1, undefined);
+  return jspb.Message.setField(this, 1, undefined);
 };
 
 
@@ -6087,17 +7030,21 @@ proto.validate.SFixed32Rules.prototype.getLt = function() {
 };
 
 
-/** @param {number} value */
+/**
+ * @param {number} value
+ * @return {!proto.validate.SFixed32Rules} returns this
+ */
 proto.validate.SFixed32Rules.prototype.setLt = function(value) {
-  jspb.Message.setField(this, 2, value);
+  return jspb.Message.setField(this, 2, value);
 };
 
 
 /**
  * Clears the field making it undefined.
+ * @return {!proto.validate.SFixed32Rules} returns this
  */
 proto.validate.SFixed32Rules.prototype.clearLt = function() {
-  jspb.Message.setField(this, 2, undefined);
+  return jspb.Message.setField(this, 2, undefined);
 };
 
 
@@ -6119,17 +7066,21 @@ proto.validate.SFixed32Rules.prototype.getLte = function() {
 };
 
 
-/** @param {number} value */
+/**
+ * @param {number} value
+ * @return {!proto.validate.SFixed32Rules} returns this
+ */
 proto.validate.SFixed32Rules.prototype.setLte = function(value) {
-  jspb.Message.setField(this, 3, value);
+  return jspb.Message.setField(this, 3, value);
 };
 
 
 /**
  * Clears the field making it undefined.
+ * @return {!proto.validate.SFixed32Rules} returns this
  */
 proto.validate.SFixed32Rules.prototype.clearLte = function() {
-  jspb.Message.setField(this, 3, undefined);
+  return jspb.Message.setField(this, 3, undefined);
 };
 
 
@@ -6151,17 +7102,21 @@ proto.validate.SFixed32Rules.prototype.getGt = function() {
 };
 
 
-/** @param {number} value */
+/**
+ * @param {number} value
+ * @return {!proto.validate.SFixed32Rules} returns this
+ */
 proto.validate.SFixed32Rules.prototype.setGt = function(value) {
-  jspb.Message.setField(this, 4, value);
+  return jspb.Message.setField(this, 4, value);
 };
 
 
 /**
  * Clears the field making it undefined.
+ * @return {!proto.validate.SFixed32Rules} returns this
  */
 proto.validate.SFixed32Rules.prototype.clearGt = function() {
-  jspb.Message.setField(this, 4, undefined);
+  return jspb.Message.setField(this, 4, undefined);
 };
 
 
@@ -6183,17 +7138,21 @@ proto.validate.SFixed32Rules.prototype.getGte = function() {
 };
 
 
-/** @param {number} value */
+/**
+ * @param {number} value
+ * @return {!proto.validate.SFixed32Rules} returns this
+ */
 proto.validate.SFixed32Rules.prototype.setGte = function(value) {
-  jspb.Message.setField(this, 5, value);
+  return jspb.Message.setField(this, 5, value);
 };
 
 
 /**
  * Clears the field making it undefined.
+ * @return {!proto.validate.SFixed32Rules} returns this
  */
 proto.validate.SFixed32Rules.prototype.clearGte = function() {
-  jspb.Message.setField(this, 5, undefined);
+  return jspb.Message.setField(this, 5, undefined);
 };
 
 
@@ -6215,26 +7174,31 @@ proto.validate.SFixed32Rules.prototype.getInList = function() {
 };
 
 
-/** @param {!Array<number>} value */
+/**
+ * @param {!Array<number>} value
+ * @return {!proto.validate.SFixed32Rules} returns this
+ */
 proto.validate.SFixed32Rules.prototype.setInList = function(value) {
-  jspb.Message.setField(this, 6, value || []);
+  return jspb.Message.setField(this, 6, value || []);
 };
 
 
 /**
  * @param {number} value
  * @param {number=} opt_index
+ * @return {!proto.validate.SFixed32Rules} returns this
  */
 proto.validate.SFixed32Rules.prototype.addIn = function(value, opt_index) {
-  jspb.Message.addToRepeatedField(this, 6, value, opt_index);
+  return jspb.Message.addToRepeatedField(this, 6, value, opt_index);
 };
 
 
 /**
  * Clears the list making it empty but non-null.
+ * @return {!proto.validate.SFixed32Rules} returns this
  */
 proto.validate.SFixed32Rules.prototype.clearInList = function() {
-  this.setInList([]);
+  return this.setInList([]);
 };
 
 
@@ -6247,26 +7211,67 @@ proto.validate.SFixed32Rules.prototype.getNotInList = function() {
 };
 
 
-/** @param {!Array<number>} value */
+/**
+ * @param {!Array<number>} value
+ * @return {!proto.validate.SFixed32Rules} returns this
+ */
 proto.validate.SFixed32Rules.prototype.setNotInList = function(value) {
-  jspb.Message.setField(this, 7, value || []);
+  return jspb.Message.setField(this, 7, value || []);
 };
 
 
 /**
  * @param {number} value
  * @param {number=} opt_index
+ * @return {!proto.validate.SFixed32Rules} returns this
  */
 proto.validate.SFixed32Rules.prototype.addNotIn = function(value, opt_index) {
-  jspb.Message.addToRepeatedField(this, 7, value, opt_index);
+  return jspb.Message.addToRepeatedField(this, 7, value, opt_index);
 };
 
 
 /**
  * Clears the list making it empty but non-null.
+ * @return {!proto.validate.SFixed32Rules} returns this
  */
 proto.validate.SFixed32Rules.prototype.clearNotInList = function() {
-  this.setNotInList([]);
+  return this.setNotInList([]);
+};
+
+
+/**
+ * optional bool ignore_empty = 8;
+ * @return {boolean}
+ */
+proto.validate.SFixed32Rules.prototype.getIgnoreEmpty = function() {
+  return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 8, false));
+};
+
+
+/**
+ * @param {boolean} value
+ * @return {!proto.validate.SFixed32Rules} returns this
+ */
+proto.validate.SFixed32Rules.prototype.setIgnoreEmpty = function(value) {
+  return jspb.Message.setField(this, 8, value);
+};
+
+
+/**
+ * Clears the field making it undefined.
+ * @return {!proto.validate.SFixed32Rules} returns this
+ */
+proto.validate.SFixed32Rules.prototype.clearIgnoreEmpty = function() {
+  return jspb.Message.setField(this, 8, undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.validate.SFixed32Rules.prototype.hasIgnoreEmpty = function() {
+  return jspb.Message.getField(this, 8) != null;
 };
 
 
@@ -6315,7 +7320,8 @@ proto.validate.SFixed64Rules.toObject = function(includeInstance, msg) {
     gt: (f = jspb.Message.getField(msg, 4)) == null ? undefined : f,
     gte: (f = jspb.Message.getField(msg, 5)) == null ? undefined : f,
     inList: (f = jspb.Message.getRepeatedField(msg, 6)) == null ? undefined : f,
-    notInList: (f = jspb.Message.getRepeatedField(msg, 7)) == null ? undefined : f
+    notInList: (f = jspb.Message.getRepeatedField(msg, 7)) == null ? undefined : f,
+    ignoreEmpty: (f = jspb.Message.getBooleanField(msg, 8)) == null ? undefined : f
   };
 
   if (includeInstance) {
@@ -6373,12 +7379,20 @@ proto.validate.SFixed64Rules.deserializeBinaryFromReader = function(msg, reader)
       msg.setGte(value);
       break;
     case 6:
-      var value = /** @type {number} */ (reader.readSfixed64());
-      msg.addIn(value);
+      var values = /** @type {!Array<number>} */ (reader.isDelimited() ? reader.readPackedSfixed64() : [reader.readSfixed64()]);
+      for (var i = 0; i < values.length; i++) {
+        msg.addIn(values[i]);
+      }
       break;
     case 7:
-      var value = /** @type {number} */ (reader.readSfixed64());
-      msg.addNotIn(value);
+      var values = /** @type {!Array<number>} */ (reader.isDelimited() ? reader.readPackedSfixed64() : [reader.readSfixed64()]);
+      for (var i = 0; i < values.length; i++) {
+        msg.addNotIn(values[i]);
+      }
+      break;
+    case 8:
+      var value = /** @type {boolean} */ (reader.readBool());
+      msg.setIgnoreEmpty(value);
       break;
     default:
       reader.skipField();
@@ -6458,6 +7472,13 @@ proto.validate.SFixed64Rules.serializeBinaryToWriter = function(message, writer)
       f
     );
   }
+  f = /** @type {boolean} */ (jspb.Message.getField(message, 8));
+  if (f != null) {
+    writer.writeBool(
+      8,
+      f
+    );
+  }
 };
 
 
@@ -6470,17 +7491,21 @@ proto.validate.SFixed64Rules.prototype.getConst = function() {
 };
 
 
-/** @param {number} value */
+/**
+ * @param {number} value
+ * @return {!proto.validate.SFixed64Rules} returns this
+ */
 proto.validate.SFixed64Rules.prototype.setConst = function(value) {
-  jspb.Message.setField(this, 1, value);
+  return jspb.Message.setField(this, 1, value);
 };
 
 
 /**
  * Clears the field making it undefined.
+ * @return {!proto.validate.SFixed64Rules} returns this
  */
 proto.validate.SFixed64Rules.prototype.clearConst = function() {
-  jspb.Message.setField(this, 1, undefined);
+  return jspb.Message.setField(this, 1, undefined);
 };
 
 
@@ -6502,17 +7527,21 @@ proto.validate.SFixed64Rules.prototype.getLt = function() {
 };
 
 
-/** @param {number} value */
+/**
+ * @param {number} value
+ * @return {!proto.validate.SFixed64Rules} returns this
+ */
 proto.validate.SFixed64Rules.prototype.setLt = function(value) {
-  jspb.Message.setField(this, 2, value);
+  return jspb.Message.setField(this, 2, value);
 };
 
 
 /**
  * Clears the field making it undefined.
+ * @return {!proto.validate.SFixed64Rules} returns this
  */
 proto.validate.SFixed64Rules.prototype.clearLt = function() {
-  jspb.Message.setField(this, 2, undefined);
+  return jspb.Message.setField(this, 2, undefined);
 };
 
 
@@ -6534,17 +7563,21 @@ proto.validate.SFixed64Rules.prototype.getLte = function() {
 };
 
 
-/** @param {number} value */
+/**
+ * @param {number} value
+ * @return {!proto.validate.SFixed64Rules} returns this
+ */
 proto.validate.SFixed64Rules.prototype.setLte = function(value) {
-  jspb.Message.setField(this, 3, value);
+  return jspb.Message.setField(this, 3, value);
 };
 
 
 /**
  * Clears the field making it undefined.
+ * @return {!proto.validate.SFixed64Rules} returns this
  */
 proto.validate.SFixed64Rules.prototype.clearLte = function() {
-  jspb.Message.setField(this, 3, undefined);
+  return jspb.Message.setField(this, 3, undefined);
 };
 
 
@@ -6566,17 +7599,21 @@ proto.validate.SFixed64Rules.prototype.getGt = function() {
 };
 
 
-/** @param {number} value */
+/**
+ * @param {number} value
+ * @return {!proto.validate.SFixed64Rules} returns this
+ */
 proto.validate.SFixed64Rules.prototype.setGt = function(value) {
-  jspb.Message.setField(this, 4, value);
+  return jspb.Message.setField(this, 4, value);
 };
 
 
 /**
  * Clears the field making it undefined.
+ * @return {!proto.validate.SFixed64Rules} returns this
  */
 proto.validate.SFixed64Rules.prototype.clearGt = function() {
-  jspb.Message.setField(this, 4, undefined);
+  return jspb.Message.setField(this, 4, undefined);
 };
 
 
@@ -6598,17 +7635,21 @@ proto.validate.SFixed64Rules.prototype.getGte = function() {
 };
 
 
-/** @param {number} value */
+/**
+ * @param {number} value
+ * @return {!proto.validate.SFixed64Rules} returns this
+ */
 proto.validate.SFixed64Rules.prototype.setGte = function(value) {
-  jspb.Message.setField(this, 5, value);
+  return jspb.Message.setField(this, 5, value);
 };
 
 
 /**
  * Clears the field making it undefined.
+ * @return {!proto.validate.SFixed64Rules} returns this
  */
 proto.validate.SFixed64Rules.prototype.clearGte = function() {
-  jspb.Message.setField(this, 5, undefined);
+  return jspb.Message.setField(this, 5, undefined);
 };
 
 
@@ -6630,26 +7671,31 @@ proto.validate.SFixed64Rules.prototype.getInList = function() {
 };
 
 
-/** @param {!Array<number>} value */
+/**
+ * @param {!Array<number>} value
+ * @return {!proto.validate.SFixed64Rules} returns this
+ */
 proto.validate.SFixed64Rules.prototype.setInList = function(value) {
-  jspb.Message.setField(this, 6, value || []);
+  return jspb.Message.setField(this, 6, value || []);
 };
 
 
 /**
  * @param {number} value
  * @param {number=} opt_index
+ * @return {!proto.validate.SFixed64Rules} returns this
  */
 proto.validate.SFixed64Rules.prototype.addIn = function(value, opt_index) {
-  jspb.Message.addToRepeatedField(this, 6, value, opt_index);
+  return jspb.Message.addToRepeatedField(this, 6, value, opt_index);
 };
 
 
 /**
  * Clears the list making it empty but non-null.
+ * @return {!proto.validate.SFixed64Rules} returns this
  */
 proto.validate.SFixed64Rules.prototype.clearInList = function() {
-  this.setInList([]);
+  return this.setInList([]);
 };
 
 
@@ -6662,26 +7708,67 @@ proto.validate.SFixed64Rules.prototype.getNotInList = function() {
 };
 
 
-/** @param {!Array<number>} value */
+/**
+ * @param {!Array<number>} value
+ * @return {!proto.validate.SFixed64Rules} returns this
+ */
 proto.validate.SFixed64Rules.prototype.setNotInList = function(value) {
-  jspb.Message.setField(this, 7, value || []);
+  return jspb.Message.setField(this, 7, value || []);
 };
 
 
 /**
  * @param {number} value
  * @param {number=} opt_index
+ * @return {!proto.validate.SFixed64Rules} returns this
  */
 proto.validate.SFixed64Rules.prototype.addNotIn = function(value, opt_index) {
-  jspb.Message.addToRepeatedField(this, 7, value, opt_index);
+  return jspb.Message.addToRepeatedField(this, 7, value, opt_index);
 };
 
 
 /**
  * Clears the list making it empty but non-null.
+ * @return {!proto.validate.SFixed64Rules} returns this
  */
 proto.validate.SFixed64Rules.prototype.clearNotInList = function() {
-  this.setNotInList([]);
+  return this.setNotInList([]);
+};
+
+
+/**
+ * optional bool ignore_empty = 8;
+ * @return {boolean}
+ */
+proto.validate.SFixed64Rules.prototype.getIgnoreEmpty = function() {
+  return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 8, false));
+};
+
+
+/**
+ * @param {boolean} value
+ * @return {!proto.validate.SFixed64Rules} returns this
+ */
+proto.validate.SFixed64Rules.prototype.setIgnoreEmpty = function(value) {
+  return jspb.Message.setField(this, 8, value);
+};
+
+
+/**
+ * Clears the field making it undefined.
+ * @return {!proto.validate.SFixed64Rules} returns this
+ */
+proto.validate.SFixed64Rules.prototype.clearIgnoreEmpty = function() {
+  return jspb.Message.setField(this, 8, undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.validate.SFixed64Rules.prototype.hasIgnoreEmpty = function() {
+  return jspb.Message.getField(this, 8) != null;
 };
 
 
@@ -6806,17 +7893,21 @@ proto.validate.BoolRules.prototype.getConst = function() {
 };
 
 
-/** @param {boolean} value */
+/**
+ * @param {boolean} value
+ * @return {!proto.validate.BoolRules} returns this
+ */
 proto.validate.BoolRules.prototype.setConst = function(value) {
-  jspb.Message.setField(this, 1, value);
+  return jspb.Message.setField(this, 1, value);
 };
 
 
 /**
  * Clears the field making it undefined.
+ * @return {!proto.validate.BoolRules} returns this
  */
 proto.validate.BoolRules.prototype.clearConst = function() {
-  jspb.Message.setField(this, 1, undefined);
+  return jspb.Message.setField(this, 1, undefined);
 };
 
 
@@ -6845,7 +7936,7 @@ proto.validate.StringRules.repeatedFields_ = [10,11];
  * @private {!Array<!Array<number>>}
  * @const
  */
-proto.validate.StringRules.oneofGroups_ = [[12,13,14,15,16,17,18,21,22]];
+proto.validate.StringRules.oneofGroups_ = [[12,13,14,15,16,17,18,21,22,24]];
 
 /**
  * @enum {number}
@@ -6860,7 +7951,8 @@ proto.validate.StringRules.WellKnownCase = {
   URI: 17,
   URI_REF: 18,
   ADDRESS: 21,
-  UUID: 22
+  UUID: 22,
+  WELL_KNOWN_REGEX: 24
 };
 
 /**
@@ -6912,6 +8004,7 @@ proto.validate.StringRules.toObject = function(includeInstance, msg) {
     prefix: (f = jspb.Message.getField(msg, 7)) == null ? undefined : f,
     suffix: (f = jspb.Message.getField(msg, 8)) == null ? undefined : f,
     contains: (f = jspb.Message.getField(msg, 9)) == null ? undefined : f,
+    notContains: (f = jspb.Message.getField(msg, 23)) == null ? undefined : f,
     inList: (f = jspb.Message.getRepeatedField(msg, 10)) == null ? undefined : f,
     notInList: (f = jspb.Message.getRepeatedField(msg, 11)) == null ? undefined : f,
     email: (f = jspb.Message.getBooleanField(msg, 12)) == null ? undefined : f,
@@ -6922,7 +8015,10 @@ proto.validate.StringRules.toObject = function(includeInstance, msg) {
     uri: (f = jspb.Message.getBooleanField(msg, 17)) == null ? undefined : f,
     uriRef: (f = jspb.Message.getBooleanField(msg, 18)) == null ? undefined : f,
     address: (f = jspb.Message.getBooleanField(msg, 21)) == null ? undefined : f,
-    uuid: (f = jspb.Message.getBooleanField(msg, 22)) == null ? undefined : f
+    uuid: (f = jspb.Message.getBooleanField(msg, 22)) == null ? undefined : f,
+    wellKnownRegex: (f = jspb.Message.getField(msg, 24)) == null ? undefined : f,
+    strict: jspb.Message.getBooleanFieldWithDefault(msg, 25, true),
+    ignoreEmpty: (f = jspb.Message.getBooleanField(msg, 26)) == null ? undefined : f
   };
 
   if (includeInstance) {
@@ -7003,6 +8099,10 @@ proto.validate.StringRules.deserializeBinaryFromReader = function(msg, reader) {
       var value = /** @type {string} */ (reader.readString());
       msg.setContains(value);
       break;
+    case 23:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setNotContains(value);
+      break;
     case 10:
       var value = /** @type {string} */ (reader.readString());
       msg.addIn(value);
@@ -7046,6 +8146,18 @@ proto.validate.StringRules.deserializeBinaryFromReader = function(msg, reader) {
     case 22:
       var value = /** @type {boolean} */ (reader.readBool());
       msg.setUuid(value);
+      break;
+    case 24:
+      var value = /** @type {!proto.validate.KnownRegex} */ (reader.readEnum());
+      msg.setWellKnownRegex(value);
+      break;
+    case 25:
+      var value = /** @type {boolean} */ (reader.readBool());
+      msg.setStrict(value);
+      break;
+    case 26:
+      var value = /** @type {boolean} */ (reader.readBool());
+      msg.setIgnoreEmpty(value);
       break;
     default:
       reader.skipField();
@@ -7153,6 +8265,13 @@ proto.validate.StringRules.serializeBinaryToWriter = function(message, writer) {
       f
     );
   }
+  f = /** @type {string} */ (jspb.Message.getField(message, 23));
+  if (f != null) {
+    writer.writeString(
+      23,
+      f
+    );
+  }
   f = message.getInList();
   if (f.length > 0) {
     writer.writeRepeatedString(
@@ -7230,6 +8349,27 @@ proto.validate.StringRules.serializeBinaryToWriter = function(message, writer) {
       f
     );
   }
+  f = /** @type {!proto.validate.KnownRegex} */ (jspb.Message.getField(message, 24));
+  if (f != null) {
+    writer.writeEnum(
+      24,
+      f
+    );
+  }
+  f = /** @type {boolean} */ (jspb.Message.getField(message, 25));
+  if (f != null) {
+    writer.writeBool(
+      25,
+      f
+    );
+  }
+  f = /** @type {boolean} */ (jspb.Message.getField(message, 26));
+  if (f != null) {
+    writer.writeBool(
+      26,
+      f
+    );
+  }
 };
 
 
@@ -7242,17 +8382,21 @@ proto.validate.StringRules.prototype.getConst = function() {
 };
 
 
-/** @param {string} value */
+/**
+ * @param {string} value
+ * @return {!proto.validate.StringRules} returns this
+ */
 proto.validate.StringRules.prototype.setConst = function(value) {
-  jspb.Message.setField(this, 1, value);
+  return jspb.Message.setField(this, 1, value);
 };
 
 
 /**
  * Clears the field making it undefined.
+ * @return {!proto.validate.StringRules} returns this
  */
 proto.validate.StringRules.prototype.clearConst = function() {
-  jspb.Message.setField(this, 1, undefined);
+  return jspb.Message.setField(this, 1, undefined);
 };
 
 
@@ -7274,17 +8418,21 @@ proto.validate.StringRules.prototype.getLen = function() {
 };
 
 
-/** @param {number} value */
+/**
+ * @param {number} value
+ * @return {!proto.validate.StringRules} returns this
+ */
 proto.validate.StringRules.prototype.setLen = function(value) {
-  jspb.Message.setField(this, 19, value);
+  return jspb.Message.setField(this, 19, value);
 };
 
 
 /**
  * Clears the field making it undefined.
+ * @return {!proto.validate.StringRules} returns this
  */
 proto.validate.StringRules.prototype.clearLen = function() {
-  jspb.Message.setField(this, 19, undefined);
+  return jspb.Message.setField(this, 19, undefined);
 };
 
 
@@ -7306,17 +8454,21 @@ proto.validate.StringRules.prototype.getMinLen = function() {
 };
 
 
-/** @param {number} value */
+/**
+ * @param {number} value
+ * @return {!proto.validate.StringRules} returns this
+ */
 proto.validate.StringRules.prototype.setMinLen = function(value) {
-  jspb.Message.setField(this, 2, value);
+  return jspb.Message.setField(this, 2, value);
 };
 
 
 /**
  * Clears the field making it undefined.
+ * @return {!proto.validate.StringRules} returns this
  */
 proto.validate.StringRules.prototype.clearMinLen = function() {
-  jspb.Message.setField(this, 2, undefined);
+  return jspb.Message.setField(this, 2, undefined);
 };
 
 
@@ -7338,17 +8490,21 @@ proto.validate.StringRules.prototype.getMaxLen = function() {
 };
 
 
-/** @param {number} value */
+/**
+ * @param {number} value
+ * @return {!proto.validate.StringRules} returns this
+ */
 proto.validate.StringRules.prototype.setMaxLen = function(value) {
-  jspb.Message.setField(this, 3, value);
+  return jspb.Message.setField(this, 3, value);
 };
 
 
 /**
  * Clears the field making it undefined.
+ * @return {!proto.validate.StringRules} returns this
  */
 proto.validate.StringRules.prototype.clearMaxLen = function() {
-  jspb.Message.setField(this, 3, undefined);
+  return jspb.Message.setField(this, 3, undefined);
 };
 
 
@@ -7370,17 +8526,21 @@ proto.validate.StringRules.prototype.getLenBytes = function() {
 };
 
 
-/** @param {number} value */
+/**
+ * @param {number} value
+ * @return {!proto.validate.StringRules} returns this
+ */
 proto.validate.StringRules.prototype.setLenBytes = function(value) {
-  jspb.Message.setField(this, 20, value);
+  return jspb.Message.setField(this, 20, value);
 };
 
 
 /**
  * Clears the field making it undefined.
+ * @return {!proto.validate.StringRules} returns this
  */
 proto.validate.StringRules.prototype.clearLenBytes = function() {
-  jspb.Message.setField(this, 20, undefined);
+  return jspb.Message.setField(this, 20, undefined);
 };
 
 
@@ -7402,17 +8562,21 @@ proto.validate.StringRules.prototype.getMinBytes = function() {
 };
 
 
-/** @param {number} value */
+/**
+ * @param {number} value
+ * @return {!proto.validate.StringRules} returns this
+ */
 proto.validate.StringRules.prototype.setMinBytes = function(value) {
-  jspb.Message.setField(this, 4, value);
+  return jspb.Message.setField(this, 4, value);
 };
 
 
 /**
  * Clears the field making it undefined.
+ * @return {!proto.validate.StringRules} returns this
  */
 proto.validate.StringRules.prototype.clearMinBytes = function() {
-  jspb.Message.setField(this, 4, undefined);
+  return jspb.Message.setField(this, 4, undefined);
 };
 
 
@@ -7434,17 +8598,21 @@ proto.validate.StringRules.prototype.getMaxBytes = function() {
 };
 
 
-/** @param {number} value */
+/**
+ * @param {number} value
+ * @return {!proto.validate.StringRules} returns this
+ */
 proto.validate.StringRules.prototype.setMaxBytes = function(value) {
-  jspb.Message.setField(this, 5, value);
+  return jspb.Message.setField(this, 5, value);
 };
 
 
 /**
  * Clears the field making it undefined.
+ * @return {!proto.validate.StringRules} returns this
  */
 proto.validate.StringRules.prototype.clearMaxBytes = function() {
-  jspb.Message.setField(this, 5, undefined);
+  return jspb.Message.setField(this, 5, undefined);
 };
 
 
@@ -7466,17 +8634,21 @@ proto.validate.StringRules.prototype.getPattern = function() {
 };
 
 
-/** @param {string} value */
+/**
+ * @param {string} value
+ * @return {!proto.validate.StringRules} returns this
+ */
 proto.validate.StringRules.prototype.setPattern = function(value) {
-  jspb.Message.setField(this, 6, value);
+  return jspb.Message.setField(this, 6, value);
 };
 
 
 /**
  * Clears the field making it undefined.
+ * @return {!proto.validate.StringRules} returns this
  */
 proto.validate.StringRules.prototype.clearPattern = function() {
-  jspb.Message.setField(this, 6, undefined);
+  return jspb.Message.setField(this, 6, undefined);
 };
 
 
@@ -7498,17 +8670,21 @@ proto.validate.StringRules.prototype.getPrefix = function() {
 };
 
 
-/** @param {string} value */
+/**
+ * @param {string} value
+ * @return {!proto.validate.StringRules} returns this
+ */
 proto.validate.StringRules.prototype.setPrefix = function(value) {
-  jspb.Message.setField(this, 7, value);
+  return jspb.Message.setField(this, 7, value);
 };
 
 
 /**
  * Clears the field making it undefined.
+ * @return {!proto.validate.StringRules} returns this
  */
 proto.validate.StringRules.prototype.clearPrefix = function() {
-  jspb.Message.setField(this, 7, undefined);
+  return jspb.Message.setField(this, 7, undefined);
 };
 
 
@@ -7530,17 +8706,21 @@ proto.validate.StringRules.prototype.getSuffix = function() {
 };
 
 
-/** @param {string} value */
+/**
+ * @param {string} value
+ * @return {!proto.validate.StringRules} returns this
+ */
 proto.validate.StringRules.prototype.setSuffix = function(value) {
-  jspb.Message.setField(this, 8, value);
+  return jspb.Message.setField(this, 8, value);
 };
 
 
 /**
  * Clears the field making it undefined.
+ * @return {!proto.validate.StringRules} returns this
  */
 proto.validate.StringRules.prototype.clearSuffix = function() {
-  jspb.Message.setField(this, 8, undefined);
+  return jspb.Message.setField(this, 8, undefined);
 };
 
 
@@ -7562,17 +8742,21 @@ proto.validate.StringRules.prototype.getContains = function() {
 };
 
 
-/** @param {string} value */
+/**
+ * @param {string} value
+ * @return {!proto.validate.StringRules} returns this
+ */
 proto.validate.StringRules.prototype.setContains = function(value) {
-  jspb.Message.setField(this, 9, value);
+  return jspb.Message.setField(this, 9, value);
 };
 
 
 /**
  * Clears the field making it undefined.
+ * @return {!proto.validate.StringRules} returns this
  */
 proto.validate.StringRules.prototype.clearContains = function() {
-  jspb.Message.setField(this, 9, undefined);
+  return jspb.Message.setField(this, 9, undefined);
 };
 
 
@@ -7586,6 +8770,42 @@ proto.validate.StringRules.prototype.hasContains = function() {
 
 
 /**
+ * optional string not_contains = 23;
+ * @return {string}
+ */
+proto.validate.StringRules.prototype.getNotContains = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 23, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.validate.StringRules} returns this
+ */
+proto.validate.StringRules.prototype.setNotContains = function(value) {
+  return jspb.Message.setField(this, 23, value);
+};
+
+
+/**
+ * Clears the field making it undefined.
+ * @return {!proto.validate.StringRules} returns this
+ */
+proto.validate.StringRules.prototype.clearNotContains = function() {
+  return jspb.Message.setField(this, 23, undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.validate.StringRules.prototype.hasNotContains = function() {
+  return jspb.Message.getField(this, 23) != null;
+};
+
+
+/**
  * repeated string in = 10;
  * @return {!Array<string>}
  */
@@ -7594,26 +8814,31 @@ proto.validate.StringRules.prototype.getInList = function() {
 };
 
 
-/** @param {!Array<string>} value */
+/**
+ * @param {!Array<string>} value
+ * @return {!proto.validate.StringRules} returns this
+ */
 proto.validate.StringRules.prototype.setInList = function(value) {
-  jspb.Message.setField(this, 10, value || []);
+  return jspb.Message.setField(this, 10, value || []);
 };
 
 
 /**
  * @param {string} value
  * @param {number=} opt_index
+ * @return {!proto.validate.StringRules} returns this
  */
 proto.validate.StringRules.prototype.addIn = function(value, opt_index) {
-  jspb.Message.addToRepeatedField(this, 10, value, opt_index);
+  return jspb.Message.addToRepeatedField(this, 10, value, opt_index);
 };
 
 
 /**
  * Clears the list making it empty but non-null.
+ * @return {!proto.validate.StringRules} returns this
  */
 proto.validate.StringRules.prototype.clearInList = function() {
-  this.setInList([]);
+  return this.setInList([]);
 };
 
 
@@ -7626,26 +8851,31 @@ proto.validate.StringRules.prototype.getNotInList = function() {
 };
 
 
-/** @param {!Array<string>} value */
+/**
+ * @param {!Array<string>} value
+ * @return {!proto.validate.StringRules} returns this
+ */
 proto.validate.StringRules.prototype.setNotInList = function(value) {
-  jspb.Message.setField(this, 11, value || []);
+  return jspb.Message.setField(this, 11, value || []);
 };
 
 
 /**
  * @param {string} value
  * @param {number=} opt_index
+ * @return {!proto.validate.StringRules} returns this
  */
 proto.validate.StringRules.prototype.addNotIn = function(value, opt_index) {
-  jspb.Message.addToRepeatedField(this, 11, value, opt_index);
+  return jspb.Message.addToRepeatedField(this, 11, value, opt_index);
 };
 
 
 /**
  * Clears the list making it empty but non-null.
+ * @return {!proto.validate.StringRules} returns this
  */
 proto.validate.StringRules.prototype.clearNotInList = function() {
-  this.setNotInList([]);
+  return this.setNotInList([]);
 };
 
 
@@ -7658,17 +8888,21 @@ proto.validate.StringRules.prototype.getEmail = function() {
 };
 
 
-/** @param {boolean} value */
+/**
+ * @param {boolean} value
+ * @return {!proto.validate.StringRules} returns this
+ */
 proto.validate.StringRules.prototype.setEmail = function(value) {
-  jspb.Message.setOneofField(this, 12, proto.validate.StringRules.oneofGroups_[0], value);
+  return jspb.Message.setOneofField(this, 12, proto.validate.StringRules.oneofGroups_[0], value);
 };
 
 
 /**
  * Clears the field making it undefined.
+ * @return {!proto.validate.StringRules} returns this
  */
 proto.validate.StringRules.prototype.clearEmail = function() {
-  jspb.Message.setOneofField(this, 12, proto.validate.StringRules.oneofGroups_[0], undefined);
+  return jspb.Message.setOneofField(this, 12, proto.validate.StringRules.oneofGroups_[0], undefined);
 };
 
 
@@ -7690,17 +8924,21 @@ proto.validate.StringRules.prototype.getHostname = function() {
 };
 
 
-/** @param {boolean} value */
+/**
+ * @param {boolean} value
+ * @return {!proto.validate.StringRules} returns this
+ */
 proto.validate.StringRules.prototype.setHostname = function(value) {
-  jspb.Message.setOneofField(this, 13, proto.validate.StringRules.oneofGroups_[0], value);
+  return jspb.Message.setOneofField(this, 13, proto.validate.StringRules.oneofGroups_[0], value);
 };
 
 
 /**
  * Clears the field making it undefined.
+ * @return {!proto.validate.StringRules} returns this
  */
 proto.validate.StringRules.prototype.clearHostname = function() {
-  jspb.Message.setOneofField(this, 13, proto.validate.StringRules.oneofGroups_[0], undefined);
+  return jspb.Message.setOneofField(this, 13, proto.validate.StringRules.oneofGroups_[0], undefined);
 };
 
 
@@ -7722,17 +8960,21 @@ proto.validate.StringRules.prototype.getIp = function() {
 };
 
 
-/** @param {boolean} value */
+/**
+ * @param {boolean} value
+ * @return {!proto.validate.StringRules} returns this
+ */
 proto.validate.StringRules.prototype.setIp = function(value) {
-  jspb.Message.setOneofField(this, 14, proto.validate.StringRules.oneofGroups_[0], value);
+  return jspb.Message.setOneofField(this, 14, proto.validate.StringRules.oneofGroups_[0], value);
 };
 
 
 /**
  * Clears the field making it undefined.
+ * @return {!proto.validate.StringRules} returns this
  */
 proto.validate.StringRules.prototype.clearIp = function() {
-  jspb.Message.setOneofField(this, 14, proto.validate.StringRules.oneofGroups_[0], undefined);
+  return jspb.Message.setOneofField(this, 14, proto.validate.StringRules.oneofGroups_[0], undefined);
 };
 
 
@@ -7754,17 +8996,21 @@ proto.validate.StringRules.prototype.getIpv4 = function() {
 };
 
 
-/** @param {boolean} value */
+/**
+ * @param {boolean} value
+ * @return {!proto.validate.StringRules} returns this
+ */
 proto.validate.StringRules.prototype.setIpv4 = function(value) {
-  jspb.Message.setOneofField(this, 15, proto.validate.StringRules.oneofGroups_[0], value);
+  return jspb.Message.setOneofField(this, 15, proto.validate.StringRules.oneofGroups_[0], value);
 };
 
 
 /**
  * Clears the field making it undefined.
+ * @return {!proto.validate.StringRules} returns this
  */
 proto.validate.StringRules.prototype.clearIpv4 = function() {
-  jspb.Message.setOneofField(this, 15, proto.validate.StringRules.oneofGroups_[0], undefined);
+  return jspb.Message.setOneofField(this, 15, proto.validate.StringRules.oneofGroups_[0], undefined);
 };
 
 
@@ -7786,17 +9032,21 @@ proto.validate.StringRules.prototype.getIpv6 = function() {
 };
 
 
-/** @param {boolean} value */
+/**
+ * @param {boolean} value
+ * @return {!proto.validate.StringRules} returns this
+ */
 proto.validate.StringRules.prototype.setIpv6 = function(value) {
-  jspb.Message.setOneofField(this, 16, proto.validate.StringRules.oneofGroups_[0], value);
+  return jspb.Message.setOneofField(this, 16, proto.validate.StringRules.oneofGroups_[0], value);
 };
 
 
 /**
  * Clears the field making it undefined.
+ * @return {!proto.validate.StringRules} returns this
  */
 proto.validate.StringRules.prototype.clearIpv6 = function() {
-  jspb.Message.setOneofField(this, 16, proto.validate.StringRules.oneofGroups_[0], undefined);
+  return jspb.Message.setOneofField(this, 16, proto.validate.StringRules.oneofGroups_[0], undefined);
 };
 
 
@@ -7818,17 +9068,21 @@ proto.validate.StringRules.prototype.getUri = function() {
 };
 
 
-/** @param {boolean} value */
+/**
+ * @param {boolean} value
+ * @return {!proto.validate.StringRules} returns this
+ */
 proto.validate.StringRules.prototype.setUri = function(value) {
-  jspb.Message.setOneofField(this, 17, proto.validate.StringRules.oneofGroups_[0], value);
+  return jspb.Message.setOneofField(this, 17, proto.validate.StringRules.oneofGroups_[0], value);
 };
 
 
 /**
  * Clears the field making it undefined.
+ * @return {!proto.validate.StringRules} returns this
  */
 proto.validate.StringRules.prototype.clearUri = function() {
-  jspb.Message.setOneofField(this, 17, proto.validate.StringRules.oneofGroups_[0], undefined);
+  return jspb.Message.setOneofField(this, 17, proto.validate.StringRules.oneofGroups_[0], undefined);
 };
 
 
@@ -7850,17 +9104,21 @@ proto.validate.StringRules.prototype.getUriRef = function() {
 };
 
 
-/** @param {boolean} value */
+/**
+ * @param {boolean} value
+ * @return {!proto.validate.StringRules} returns this
+ */
 proto.validate.StringRules.prototype.setUriRef = function(value) {
-  jspb.Message.setOneofField(this, 18, proto.validate.StringRules.oneofGroups_[0], value);
+  return jspb.Message.setOneofField(this, 18, proto.validate.StringRules.oneofGroups_[0], value);
 };
 
 
 /**
  * Clears the field making it undefined.
+ * @return {!proto.validate.StringRules} returns this
  */
 proto.validate.StringRules.prototype.clearUriRef = function() {
-  jspb.Message.setOneofField(this, 18, proto.validate.StringRules.oneofGroups_[0], undefined);
+  return jspb.Message.setOneofField(this, 18, proto.validate.StringRules.oneofGroups_[0], undefined);
 };
 
 
@@ -7882,17 +9140,21 @@ proto.validate.StringRules.prototype.getAddress = function() {
 };
 
 
-/** @param {boolean} value */
+/**
+ * @param {boolean} value
+ * @return {!proto.validate.StringRules} returns this
+ */
 proto.validate.StringRules.prototype.setAddress = function(value) {
-  jspb.Message.setOneofField(this, 21, proto.validate.StringRules.oneofGroups_[0], value);
+  return jspb.Message.setOneofField(this, 21, proto.validate.StringRules.oneofGroups_[0], value);
 };
 
 
 /**
  * Clears the field making it undefined.
+ * @return {!proto.validate.StringRules} returns this
  */
 proto.validate.StringRules.prototype.clearAddress = function() {
-  jspb.Message.setOneofField(this, 21, proto.validate.StringRules.oneofGroups_[0], undefined);
+  return jspb.Message.setOneofField(this, 21, proto.validate.StringRules.oneofGroups_[0], undefined);
 };
 
 
@@ -7914,17 +9176,21 @@ proto.validate.StringRules.prototype.getUuid = function() {
 };
 
 
-/** @param {boolean} value */
+/**
+ * @param {boolean} value
+ * @return {!proto.validate.StringRules} returns this
+ */
 proto.validate.StringRules.prototype.setUuid = function(value) {
-  jspb.Message.setOneofField(this, 22, proto.validate.StringRules.oneofGroups_[0], value);
+  return jspb.Message.setOneofField(this, 22, proto.validate.StringRules.oneofGroups_[0], value);
 };
 
 
 /**
  * Clears the field making it undefined.
+ * @return {!proto.validate.StringRules} returns this
  */
 proto.validate.StringRules.prototype.clearUuid = function() {
-  jspb.Message.setOneofField(this, 22, proto.validate.StringRules.oneofGroups_[0], undefined);
+  return jspb.Message.setOneofField(this, 22, proto.validate.StringRules.oneofGroups_[0], undefined);
 };
 
 
@@ -7934,6 +9200,114 @@ proto.validate.StringRules.prototype.clearUuid = function() {
  */
 proto.validate.StringRules.prototype.hasUuid = function() {
   return jspb.Message.getField(this, 22) != null;
+};
+
+
+/**
+ * optional KnownRegex well_known_regex = 24;
+ * @return {!proto.validate.KnownRegex}
+ */
+proto.validate.StringRules.prototype.getWellKnownRegex = function() {
+  return /** @type {!proto.validate.KnownRegex} */ (jspb.Message.getFieldWithDefault(this, 24, 0));
+};
+
+
+/**
+ * @param {!proto.validate.KnownRegex} value
+ * @return {!proto.validate.StringRules} returns this
+ */
+proto.validate.StringRules.prototype.setWellKnownRegex = function(value) {
+  return jspb.Message.setOneofField(this, 24, proto.validate.StringRules.oneofGroups_[0], value);
+};
+
+
+/**
+ * Clears the field making it undefined.
+ * @return {!proto.validate.StringRules} returns this
+ */
+proto.validate.StringRules.prototype.clearWellKnownRegex = function() {
+  return jspb.Message.setOneofField(this, 24, proto.validate.StringRules.oneofGroups_[0], undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.validate.StringRules.prototype.hasWellKnownRegex = function() {
+  return jspb.Message.getField(this, 24) != null;
+};
+
+
+/**
+ * optional bool strict = 25;
+ * @return {boolean}
+ */
+proto.validate.StringRules.prototype.getStrict = function() {
+  return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 25, true));
+};
+
+
+/**
+ * @param {boolean} value
+ * @return {!proto.validate.StringRules} returns this
+ */
+proto.validate.StringRules.prototype.setStrict = function(value) {
+  return jspb.Message.setField(this, 25, value);
+};
+
+
+/**
+ * Clears the field making it undefined.
+ * @return {!proto.validate.StringRules} returns this
+ */
+proto.validate.StringRules.prototype.clearStrict = function() {
+  return jspb.Message.setField(this, 25, undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.validate.StringRules.prototype.hasStrict = function() {
+  return jspb.Message.getField(this, 25) != null;
+};
+
+
+/**
+ * optional bool ignore_empty = 26;
+ * @return {boolean}
+ */
+proto.validate.StringRules.prototype.getIgnoreEmpty = function() {
+  return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 26, false));
+};
+
+
+/**
+ * @param {boolean} value
+ * @return {!proto.validate.StringRules} returns this
+ */
+proto.validate.StringRules.prototype.setIgnoreEmpty = function(value) {
+  return jspb.Message.setField(this, 26, value);
+};
+
+
+/**
+ * Clears the field making it undefined.
+ * @return {!proto.validate.StringRules} returns this
+ */
+proto.validate.StringRules.prototype.clearIgnoreEmpty = function() {
+  return jspb.Message.setField(this, 26, undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.validate.StringRules.prototype.hasIgnoreEmpty = function() {
+  return jspb.Message.getField(this, 26) != null;
 };
 
 
@@ -8015,7 +9389,8 @@ proto.validate.BytesRules.toObject = function(includeInstance, msg) {
     notInList: msg.getNotInList_asB64(),
     ip: (f = jspb.Message.getBooleanField(msg, 10)) == null ? undefined : f,
     ipv4: (f = jspb.Message.getBooleanField(msg, 11)) == null ? undefined : f,
-    ipv6: (f = jspb.Message.getBooleanField(msg, 12)) == null ? undefined : f
+    ipv6: (f = jspb.Message.getBooleanField(msg, 12)) == null ? undefined : f,
+    ignoreEmpty: (f = jspb.Message.getBooleanField(msg, 14)) == null ? undefined : f
   };
 
   if (includeInstance) {
@@ -8103,6 +9478,10 @@ proto.validate.BytesRules.deserializeBinaryFromReader = function(msg, reader) {
     case 12:
       var value = /** @type {boolean} */ (reader.readBool());
       msg.setIpv6(value);
+      break;
+    case 14:
+      var value = /** @type {boolean} */ (reader.readBool());
+      msg.setIgnoreEmpty(value);
       break;
     default:
       reader.skipField();
@@ -8224,6 +9603,13 @@ proto.validate.BytesRules.serializeBinaryToWriter = function(message, writer) {
       f
     );
   }
+  f = /** @type {boolean} */ (jspb.Message.getField(message, 14));
+  if (f != null) {
+    writer.writeBool(
+      14,
+      f
+    );
+  }
 };
 
 
@@ -8260,17 +9646,21 @@ proto.validate.BytesRules.prototype.getConst_asU8 = function() {
 };
 
 
-/** @param {!(string|Uint8Array)} value */
+/**
+ * @param {!(string|Uint8Array)} value
+ * @return {!proto.validate.BytesRules} returns this
+ */
 proto.validate.BytesRules.prototype.setConst = function(value) {
-  jspb.Message.setField(this, 1, value);
+  return jspb.Message.setField(this, 1, value);
 };
 
 
 /**
  * Clears the field making it undefined.
+ * @return {!proto.validate.BytesRules} returns this
  */
 proto.validate.BytesRules.prototype.clearConst = function() {
-  jspb.Message.setField(this, 1, undefined);
+  return jspb.Message.setField(this, 1, undefined);
 };
 
 
@@ -8292,17 +9682,21 @@ proto.validate.BytesRules.prototype.getLen = function() {
 };
 
 
-/** @param {number} value */
+/**
+ * @param {number} value
+ * @return {!proto.validate.BytesRules} returns this
+ */
 proto.validate.BytesRules.prototype.setLen = function(value) {
-  jspb.Message.setField(this, 13, value);
+  return jspb.Message.setField(this, 13, value);
 };
 
 
 /**
  * Clears the field making it undefined.
+ * @return {!proto.validate.BytesRules} returns this
  */
 proto.validate.BytesRules.prototype.clearLen = function() {
-  jspb.Message.setField(this, 13, undefined);
+  return jspb.Message.setField(this, 13, undefined);
 };
 
 
@@ -8324,17 +9718,21 @@ proto.validate.BytesRules.prototype.getMinLen = function() {
 };
 
 
-/** @param {number} value */
+/**
+ * @param {number} value
+ * @return {!proto.validate.BytesRules} returns this
+ */
 proto.validate.BytesRules.prototype.setMinLen = function(value) {
-  jspb.Message.setField(this, 2, value);
+  return jspb.Message.setField(this, 2, value);
 };
 
 
 /**
  * Clears the field making it undefined.
+ * @return {!proto.validate.BytesRules} returns this
  */
 proto.validate.BytesRules.prototype.clearMinLen = function() {
-  jspb.Message.setField(this, 2, undefined);
+  return jspb.Message.setField(this, 2, undefined);
 };
 
 
@@ -8356,17 +9754,21 @@ proto.validate.BytesRules.prototype.getMaxLen = function() {
 };
 
 
-/** @param {number} value */
+/**
+ * @param {number} value
+ * @return {!proto.validate.BytesRules} returns this
+ */
 proto.validate.BytesRules.prototype.setMaxLen = function(value) {
-  jspb.Message.setField(this, 3, value);
+  return jspb.Message.setField(this, 3, value);
 };
 
 
 /**
  * Clears the field making it undefined.
+ * @return {!proto.validate.BytesRules} returns this
  */
 proto.validate.BytesRules.prototype.clearMaxLen = function() {
-  jspb.Message.setField(this, 3, undefined);
+  return jspb.Message.setField(this, 3, undefined);
 };
 
 
@@ -8388,17 +9790,21 @@ proto.validate.BytesRules.prototype.getPattern = function() {
 };
 
 
-/** @param {string} value */
+/**
+ * @param {string} value
+ * @return {!proto.validate.BytesRules} returns this
+ */
 proto.validate.BytesRules.prototype.setPattern = function(value) {
-  jspb.Message.setField(this, 4, value);
+  return jspb.Message.setField(this, 4, value);
 };
 
 
 /**
  * Clears the field making it undefined.
+ * @return {!proto.validate.BytesRules} returns this
  */
 proto.validate.BytesRules.prototype.clearPattern = function() {
-  jspb.Message.setField(this, 4, undefined);
+  return jspb.Message.setField(this, 4, undefined);
 };
 
 
@@ -8444,17 +9850,21 @@ proto.validate.BytesRules.prototype.getPrefix_asU8 = function() {
 };
 
 
-/** @param {!(string|Uint8Array)} value */
+/**
+ * @param {!(string|Uint8Array)} value
+ * @return {!proto.validate.BytesRules} returns this
+ */
 proto.validate.BytesRules.prototype.setPrefix = function(value) {
-  jspb.Message.setField(this, 5, value);
+  return jspb.Message.setField(this, 5, value);
 };
 
 
 /**
  * Clears the field making it undefined.
+ * @return {!proto.validate.BytesRules} returns this
  */
 proto.validate.BytesRules.prototype.clearPrefix = function() {
-  jspb.Message.setField(this, 5, undefined);
+  return jspb.Message.setField(this, 5, undefined);
 };
 
 
@@ -8500,17 +9910,21 @@ proto.validate.BytesRules.prototype.getSuffix_asU8 = function() {
 };
 
 
-/** @param {!(string|Uint8Array)} value */
+/**
+ * @param {!(string|Uint8Array)} value
+ * @return {!proto.validate.BytesRules} returns this
+ */
 proto.validate.BytesRules.prototype.setSuffix = function(value) {
-  jspb.Message.setField(this, 6, value);
+  return jspb.Message.setField(this, 6, value);
 };
 
 
 /**
  * Clears the field making it undefined.
+ * @return {!proto.validate.BytesRules} returns this
  */
 proto.validate.BytesRules.prototype.clearSuffix = function() {
-  jspb.Message.setField(this, 6, undefined);
+  return jspb.Message.setField(this, 6, undefined);
 };
 
 
@@ -8556,17 +9970,21 @@ proto.validate.BytesRules.prototype.getContains_asU8 = function() {
 };
 
 
-/** @param {!(string|Uint8Array)} value */
+/**
+ * @param {!(string|Uint8Array)} value
+ * @return {!proto.validate.BytesRules} returns this
+ */
 proto.validate.BytesRules.prototype.setContains = function(value) {
-  jspb.Message.setField(this, 7, value);
+  return jspb.Message.setField(this, 7, value);
 };
 
 
 /**
  * Clears the field making it undefined.
+ * @return {!proto.validate.BytesRules} returns this
  */
 proto.validate.BytesRules.prototype.clearContains = function() {
-  jspb.Message.setField(this, 7, undefined);
+  return jspb.Message.setField(this, 7, undefined);
 };
 
 
@@ -8612,26 +10030,31 @@ proto.validate.BytesRules.prototype.getInList_asU8 = function() {
 };
 
 
-/** @param {!(Array<!Uint8Array>|Array<string>)} value */
+/**
+ * @param {!(Array<!Uint8Array>|Array<string>)} value
+ * @return {!proto.validate.BytesRules} returns this
+ */
 proto.validate.BytesRules.prototype.setInList = function(value) {
-  jspb.Message.setField(this, 8, value || []);
+  return jspb.Message.setField(this, 8, value || []);
 };
 
 
 /**
  * @param {!(string|Uint8Array)} value
  * @param {number=} opt_index
+ * @return {!proto.validate.BytesRules} returns this
  */
 proto.validate.BytesRules.prototype.addIn = function(value, opt_index) {
-  jspb.Message.addToRepeatedField(this, 8, value, opt_index);
+  return jspb.Message.addToRepeatedField(this, 8, value, opt_index);
 };
 
 
 /**
  * Clears the list making it empty but non-null.
+ * @return {!proto.validate.BytesRules} returns this
  */
 proto.validate.BytesRules.prototype.clearInList = function() {
-  this.setInList([]);
+  return this.setInList([]);
 };
 
 
@@ -8668,26 +10091,31 @@ proto.validate.BytesRules.prototype.getNotInList_asU8 = function() {
 };
 
 
-/** @param {!(Array<!Uint8Array>|Array<string>)} value */
+/**
+ * @param {!(Array<!Uint8Array>|Array<string>)} value
+ * @return {!proto.validate.BytesRules} returns this
+ */
 proto.validate.BytesRules.prototype.setNotInList = function(value) {
-  jspb.Message.setField(this, 9, value || []);
+  return jspb.Message.setField(this, 9, value || []);
 };
 
 
 /**
  * @param {!(string|Uint8Array)} value
  * @param {number=} opt_index
+ * @return {!proto.validate.BytesRules} returns this
  */
 proto.validate.BytesRules.prototype.addNotIn = function(value, opt_index) {
-  jspb.Message.addToRepeatedField(this, 9, value, opt_index);
+  return jspb.Message.addToRepeatedField(this, 9, value, opt_index);
 };
 
 
 /**
  * Clears the list making it empty but non-null.
+ * @return {!proto.validate.BytesRules} returns this
  */
 proto.validate.BytesRules.prototype.clearNotInList = function() {
-  this.setNotInList([]);
+  return this.setNotInList([]);
 };
 
 
@@ -8700,17 +10128,21 @@ proto.validate.BytesRules.prototype.getIp = function() {
 };
 
 
-/** @param {boolean} value */
+/**
+ * @param {boolean} value
+ * @return {!proto.validate.BytesRules} returns this
+ */
 proto.validate.BytesRules.prototype.setIp = function(value) {
-  jspb.Message.setOneofField(this, 10, proto.validate.BytesRules.oneofGroups_[0], value);
+  return jspb.Message.setOneofField(this, 10, proto.validate.BytesRules.oneofGroups_[0], value);
 };
 
 
 /**
  * Clears the field making it undefined.
+ * @return {!proto.validate.BytesRules} returns this
  */
 proto.validate.BytesRules.prototype.clearIp = function() {
-  jspb.Message.setOneofField(this, 10, proto.validate.BytesRules.oneofGroups_[0], undefined);
+  return jspb.Message.setOneofField(this, 10, proto.validate.BytesRules.oneofGroups_[0], undefined);
 };
 
 
@@ -8732,17 +10164,21 @@ proto.validate.BytesRules.prototype.getIpv4 = function() {
 };
 
 
-/** @param {boolean} value */
+/**
+ * @param {boolean} value
+ * @return {!proto.validate.BytesRules} returns this
+ */
 proto.validate.BytesRules.prototype.setIpv4 = function(value) {
-  jspb.Message.setOneofField(this, 11, proto.validate.BytesRules.oneofGroups_[0], value);
+  return jspb.Message.setOneofField(this, 11, proto.validate.BytesRules.oneofGroups_[0], value);
 };
 
 
 /**
  * Clears the field making it undefined.
+ * @return {!proto.validate.BytesRules} returns this
  */
 proto.validate.BytesRules.prototype.clearIpv4 = function() {
-  jspb.Message.setOneofField(this, 11, proto.validate.BytesRules.oneofGroups_[0], undefined);
+  return jspb.Message.setOneofField(this, 11, proto.validate.BytesRules.oneofGroups_[0], undefined);
 };
 
 
@@ -8764,17 +10200,21 @@ proto.validate.BytesRules.prototype.getIpv6 = function() {
 };
 
 
-/** @param {boolean} value */
+/**
+ * @param {boolean} value
+ * @return {!proto.validate.BytesRules} returns this
+ */
 proto.validate.BytesRules.prototype.setIpv6 = function(value) {
-  jspb.Message.setOneofField(this, 12, proto.validate.BytesRules.oneofGroups_[0], value);
+  return jspb.Message.setOneofField(this, 12, proto.validate.BytesRules.oneofGroups_[0], value);
 };
 
 
 /**
  * Clears the field making it undefined.
+ * @return {!proto.validate.BytesRules} returns this
  */
 proto.validate.BytesRules.prototype.clearIpv6 = function() {
-  jspb.Message.setOneofField(this, 12, proto.validate.BytesRules.oneofGroups_[0], undefined);
+  return jspb.Message.setOneofField(this, 12, proto.validate.BytesRules.oneofGroups_[0], undefined);
 };
 
 
@@ -8784,6 +10224,42 @@ proto.validate.BytesRules.prototype.clearIpv6 = function() {
  */
 proto.validate.BytesRules.prototype.hasIpv6 = function() {
   return jspb.Message.getField(this, 12) != null;
+};
+
+
+/**
+ * optional bool ignore_empty = 14;
+ * @return {boolean}
+ */
+proto.validate.BytesRules.prototype.getIgnoreEmpty = function() {
+  return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 14, false));
+};
+
+
+/**
+ * @param {boolean} value
+ * @return {!proto.validate.BytesRules} returns this
+ */
+proto.validate.BytesRules.prototype.setIgnoreEmpty = function(value) {
+  return jspb.Message.setField(this, 14, value);
+};
+
+
+/**
+ * Clears the field making it undefined.
+ * @return {!proto.validate.BytesRules} returns this
+ */
+proto.validate.BytesRules.prototype.clearIgnoreEmpty = function() {
+  return jspb.Message.setField(this, 14, undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.validate.BytesRules.prototype.hasIgnoreEmpty = function() {
+  return jspb.Message.getField(this, 14) != null;
 };
 
 
@@ -8875,12 +10351,16 @@ proto.validate.EnumRules.deserializeBinaryFromReader = function(msg, reader) {
       msg.setDefinedOnly(value);
       break;
     case 3:
-      var value = /** @type {number} */ (reader.readInt32());
-      msg.addIn(value);
+      var values = /** @type {!Array<number>} */ (reader.isDelimited() ? reader.readPackedInt32() : [reader.readInt32()]);
+      for (var i = 0; i < values.length; i++) {
+        msg.addIn(values[i]);
+      }
       break;
     case 4:
-      var value = /** @type {number} */ (reader.readInt32());
-      msg.addNotIn(value);
+      var values = /** @type {!Array<number>} */ (reader.isDelimited() ? reader.readPackedInt32() : [reader.readInt32()]);
+      for (var i = 0; i < values.length; i++) {
+        msg.addNotIn(values[i]);
+      }
       break;
     default:
       reader.skipField();
@@ -8951,17 +10431,21 @@ proto.validate.EnumRules.prototype.getConst = function() {
 };
 
 
-/** @param {number} value */
+/**
+ * @param {number} value
+ * @return {!proto.validate.EnumRules} returns this
+ */
 proto.validate.EnumRules.prototype.setConst = function(value) {
-  jspb.Message.setField(this, 1, value);
+  return jspb.Message.setField(this, 1, value);
 };
 
 
 /**
  * Clears the field making it undefined.
+ * @return {!proto.validate.EnumRules} returns this
  */
 proto.validate.EnumRules.prototype.clearConst = function() {
-  jspb.Message.setField(this, 1, undefined);
+  return jspb.Message.setField(this, 1, undefined);
 };
 
 
@@ -8983,17 +10467,21 @@ proto.validate.EnumRules.prototype.getDefinedOnly = function() {
 };
 
 
-/** @param {boolean} value */
+/**
+ * @param {boolean} value
+ * @return {!proto.validate.EnumRules} returns this
+ */
 proto.validate.EnumRules.prototype.setDefinedOnly = function(value) {
-  jspb.Message.setField(this, 2, value);
+  return jspb.Message.setField(this, 2, value);
 };
 
 
 /**
  * Clears the field making it undefined.
+ * @return {!proto.validate.EnumRules} returns this
  */
 proto.validate.EnumRules.prototype.clearDefinedOnly = function() {
-  jspb.Message.setField(this, 2, undefined);
+  return jspb.Message.setField(this, 2, undefined);
 };
 
 
@@ -9015,26 +10503,31 @@ proto.validate.EnumRules.prototype.getInList = function() {
 };
 
 
-/** @param {!Array<number>} value */
+/**
+ * @param {!Array<number>} value
+ * @return {!proto.validate.EnumRules} returns this
+ */
 proto.validate.EnumRules.prototype.setInList = function(value) {
-  jspb.Message.setField(this, 3, value || []);
+  return jspb.Message.setField(this, 3, value || []);
 };
 
 
 /**
  * @param {number} value
  * @param {number=} opt_index
+ * @return {!proto.validate.EnumRules} returns this
  */
 proto.validate.EnumRules.prototype.addIn = function(value, opt_index) {
-  jspb.Message.addToRepeatedField(this, 3, value, opt_index);
+  return jspb.Message.addToRepeatedField(this, 3, value, opt_index);
 };
 
 
 /**
  * Clears the list making it empty but non-null.
+ * @return {!proto.validate.EnumRules} returns this
  */
 proto.validate.EnumRules.prototype.clearInList = function() {
-  this.setInList([]);
+  return this.setInList([]);
 };
 
 
@@ -9047,26 +10540,31 @@ proto.validate.EnumRules.prototype.getNotInList = function() {
 };
 
 
-/** @param {!Array<number>} value */
+/**
+ * @param {!Array<number>} value
+ * @return {!proto.validate.EnumRules} returns this
+ */
 proto.validate.EnumRules.prototype.setNotInList = function(value) {
-  jspb.Message.setField(this, 4, value || []);
+  return jspb.Message.setField(this, 4, value || []);
 };
 
 
 /**
  * @param {number} value
  * @param {number=} opt_index
+ * @return {!proto.validate.EnumRules} returns this
  */
 proto.validate.EnumRules.prototype.addNotIn = function(value, opt_index) {
-  jspb.Message.addToRepeatedField(this, 4, value, opt_index);
+  return jspb.Message.addToRepeatedField(this, 4, value, opt_index);
 };
 
 
 /**
  * Clears the list making it empty but non-null.
+ * @return {!proto.validate.EnumRules} returns this
  */
 proto.validate.EnumRules.prototype.clearNotInList = function() {
-  this.setNotInList([]);
+  return this.setNotInList([]);
 };
 
 
@@ -9203,17 +10701,21 @@ proto.validate.MessageRules.prototype.getSkip = function() {
 };
 
 
-/** @param {boolean} value */
+/**
+ * @param {boolean} value
+ * @return {!proto.validate.MessageRules} returns this
+ */
 proto.validate.MessageRules.prototype.setSkip = function(value) {
-  jspb.Message.setField(this, 1, value);
+  return jspb.Message.setField(this, 1, value);
 };
 
 
 /**
  * Clears the field making it undefined.
+ * @return {!proto.validate.MessageRules} returns this
  */
 proto.validate.MessageRules.prototype.clearSkip = function() {
-  jspb.Message.setField(this, 1, undefined);
+  return jspb.Message.setField(this, 1, undefined);
 };
 
 
@@ -9235,17 +10737,21 @@ proto.validate.MessageRules.prototype.getRequired = function() {
 };
 
 
-/** @param {boolean} value */
+/**
+ * @param {boolean} value
+ * @return {!proto.validate.MessageRules} returns this
+ */
 proto.validate.MessageRules.prototype.setRequired = function(value) {
-  jspb.Message.setField(this, 2, value);
+  return jspb.Message.setField(this, 2, value);
 };
 
 
 /**
  * Clears the field making it undefined.
+ * @return {!proto.validate.MessageRules} returns this
  */
 proto.validate.MessageRules.prototype.clearRequired = function() {
-  jspb.Message.setField(this, 2, undefined);
+  return jspb.Message.setField(this, 2, undefined);
 };
 
 
@@ -9293,7 +10799,8 @@ proto.validate.RepeatedRules.toObject = function(includeInstance, msg) {
     minItems: (f = jspb.Message.getField(msg, 1)) == null ? undefined : f,
     maxItems: (f = jspb.Message.getField(msg, 2)) == null ? undefined : f,
     unique: (f = jspb.Message.getBooleanField(msg, 3)) == null ? undefined : f,
-    items: (f = msg.getItems()) && proto.validate.FieldRules.toObject(includeInstance, f)
+    items: (f = msg.getItems()) && proto.validate.FieldRules.toObject(includeInstance, f),
+    ignoreEmpty: (f = jspb.Message.getBooleanField(msg, 5)) == null ? undefined : f
   };
 
   if (includeInstance) {
@@ -9346,6 +10853,10 @@ proto.validate.RepeatedRules.deserializeBinaryFromReader = function(msg, reader)
       var value = new proto.validate.FieldRules;
       reader.readMessage(value,proto.validate.FieldRules.deserializeBinaryFromReader);
       msg.setItems(value);
+      break;
+    case 5:
+      var value = /** @type {boolean} */ (reader.readBool());
+      msg.setIgnoreEmpty(value);
       break;
     default:
       reader.skipField();
@@ -9405,6 +10916,13 @@ proto.validate.RepeatedRules.serializeBinaryToWriter = function(message, writer)
       proto.validate.FieldRules.serializeBinaryToWriter
     );
   }
+  f = /** @type {boolean} */ (jspb.Message.getField(message, 5));
+  if (f != null) {
+    writer.writeBool(
+      5,
+      f
+    );
+  }
 };
 
 
@@ -9417,17 +10935,21 @@ proto.validate.RepeatedRules.prototype.getMinItems = function() {
 };
 
 
-/** @param {number} value */
+/**
+ * @param {number} value
+ * @return {!proto.validate.RepeatedRules} returns this
+ */
 proto.validate.RepeatedRules.prototype.setMinItems = function(value) {
-  jspb.Message.setField(this, 1, value);
+  return jspb.Message.setField(this, 1, value);
 };
 
 
 /**
  * Clears the field making it undefined.
+ * @return {!proto.validate.RepeatedRules} returns this
  */
 proto.validate.RepeatedRules.prototype.clearMinItems = function() {
-  jspb.Message.setField(this, 1, undefined);
+  return jspb.Message.setField(this, 1, undefined);
 };
 
 
@@ -9449,17 +10971,21 @@ proto.validate.RepeatedRules.prototype.getMaxItems = function() {
 };
 
 
-/** @param {number} value */
+/**
+ * @param {number} value
+ * @return {!proto.validate.RepeatedRules} returns this
+ */
 proto.validate.RepeatedRules.prototype.setMaxItems = function(value) {
-  jspb.Message.setField(this, 2, value);
+  return jspb.Message.setField(this, 2, value);
 };
 
 
 /**
  * Clears the field making it undefined.
+ * @return {!proto.validate.RepeatedRules} returns this
  */
 proto.validate.RepeatedRules.prototype.clearMaxItems = function() {
-  jspb.Message.setField(this, 2, undefined);
+  return jspb.Message.setField(this, 2, undefined);
 };
 
 
@@ -9481,17 +11007,21 @@ proto.validate.RepeatedRules.prototype.getUnique = function() {
 };
 
 
-/** @param {boolean} value */
+/**
+ * @param {boolean} value
+ * @return {!proto.validate.RepeatedRules} returns this
+ */
 proto.validate.RepeatedRules.prototype.setUnique = function(value) {
-  jspb.Message.setField(this, 3, value);
+  return jspb.Message.setField(this, 3, value);
 };
 
 
 /**
  * Clears the field making it undefined.
+ * @return {!proto.validate.RepeatedRules} returns this
  */
 proto.validate.RepeatedRules.prototype.clearUnique = function() {
-  jspb.Message.setField(this, 3, undefined);
+  return jspb.Message.setField(this, 3, undefined);
 };
 
 
@@ -9514,17 +11044,21 @@ proto.validate.RepeatedRules.prototype.getItems = function() {
 };
 
 
-/** @param {?proto.validate.FieldRules|undefined} value */
+/**
+ * @param {?proto.validate.FieldRules|undefined} value
+ * @return {!proto.validate.RepeatedRules} returns this
+*/
 proto.validate.RepeatedRules.prototype.setItems = function(value) {
-  jspb.Message.setWrapperField(this, 4, value);
+  return jspb.Message.setWrapperField(this, 4, value);
 };
 
 
 /**
  * Clears the message field making it undefined.
+ * @return {!proto.validate.RepeatedRules} returns this
  */
 proto.validate.RepeatedRules.prototype.clearItems = function() {
-  this.setItems(undefined);
+  return this.setItems(undefined);
 };
 
 
@@ -9534,6 +11068,42 @@ proto.validate.RepeatedRules.prototype.clearItems = function() {
  */
 proto.validate.RepeatedRules.prototype.hasItems = function() {
   return jspb.Message.getField(this, 4) != null;
+};
+
+
+/**
+ * optional bool ignore_empty = 5;
+ * @return {boolean}
+ */
+proto.validate.RepeatedRules.prototype.getIgnoreEmpty = function() {
+  return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 5, false));
+};
+
+
+/**
+ * @param {boolean} value
+ * @return {!proto.validate.RepeatedRules} returns this
+ */
+proto.validate.RepeatedRules.prototype.setIgnoreEmpty = function(value) {
+  return jspb.Message.setField(this, 5, value);
+};
+
+
+/**
+ * Clears the field making it undefined.
+ * @return {!proto.validate.RepeatedRules} returns this
+ */
+proto.validate.RepeatedRules.prototype.clearIgnoreEmpty = function() {
+  return jspb.Message.setField(this, 5, undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.validate.RepeatedRules.prototype.hasIgnoreEmpty = function() {
+  return jspb.Message.getField(this, 5) != null;
 };
 
 
@@ -9573,7 +11143,8 @@ proto.validate.MapRules.toObject = function(includeInstance, msg) {
     maxPairs: (f = jspb.Message.getField(msg, 2)) == null ? undefined : f,
     noSparse: (f = jspb.Message.getBooleanField(msg, 3)) == null ? undefined : f,
     keys: (f = msg.getKeys()) && proto.validate.FieldRules.toObject(includeInstance, f),
-    values: (f = msg.getValues()) && proto.validate.FieldRules.toObject(includeInstance, f)
+    values: (f = msg.getValues()) && proto.validate.FieldRules.toObject(includeInstance, f),
+    ignoreEmpty: (f = jspb.Message.getBooleanField(msg, 6)) == null ? undefined : f
   };
 
   if (includeInstance) {
@@ -9631,6 +11202,10 @@ proto.validate.MapRules.deserializeBinaryFromReader = function(msg, reader) {
       var value = new proto.validate.FieldRules;
       reader.readMessage(value,proto.validate.FieldRules.deserializeBinaryFromReader);
       msg.setValues(value);
+      break;
+    case 6:
+      var value = /** @type {boolean} */ (reader.readBool());
+      msg.setIgnoreEmpty(value);
       break;
     default:
       reader.skipField();
@@ -9698,6 +11273,13 @@ proto.validate.MapRules.serializeBinaryToWriter = function(message, writer) {
       proto.validate.FieldRules.serializeBinaryToWriter
     );
   }
+  f = /** @type {boolean} */ (jspb.Message.getField(message, 6));
+  if (f != null) {
+    writer.writeBool(
+      6,
+      f
+    );
+  }
 };
 
 
@@ -9710,17 +11292,21 @@ proto.validate.MapRules.prototype.getMinPairs = function() {
 };
 
 
-/** @param {number} value */
+/**
+ * @param {number} value
+ * @return {!proto.validate.MapRules} returns this
+ */
 proto.validate.MapRules.prototype.setMinPairs = function(value) {
-  jspb.Message.setField(this, 1, value);
+  return jspb.Message.setField(this, 1, value);
 };
 
 
 /**
  * Clears the field making it undefined.
+ * @return {!proto.validate.MapRules} returns this
  */
 proto.validate.MapRules.prototype.clearMinPairs = function() {
-  jspb.Message.setField(this, 1, undefined);
+  return jspb.Message.setField(this, 1, undefined);
 };
 
 
@@ -9742,17 +11328,21 @@ proto.validate.MapRules.prototype.getMaxPairs = function() {
 };
 
 
-/** @param {number} value */
+/**
+ * @param {number} value
+ * @return {!proto.validate.MapRules} returns this
+ */
 proto.validate.MapRules.prototype.setMaxPairs = function(value) {
-  jspb.Message.setField(this, 2, value);
+  return jspb.Message.setField(this, 2, value);
 };
 
 
 /**
  * Clears the field making it undefined.
+ * @return {!proto.validate.MapRules} returns this
  */
 proto.validate.MapRules.prototype.clearMaxPairs = function() {
-  jspb.Message.setField(this, 2, undefined);
+  return jspb.Message.setField(this, 2, undefined);
 };
 
 
@@ -9774,17 +11364,21 @@ proto.validate.MapRules.prototype.getNoSparse = function() {
 };
 
 
-/** @param {boolean} value */
+/**
+ * @param {boolean} value
+ * @return {!proto.validate.MapRules} returns this
+ */
 proto.validate.MapRules.prototype.setNoSparse = function(value) {
-  jspb.Message.setField(this, 3, value);
+  return jspb.Message.setField(this, 3, value);
 };
 
 
 /**
  * Clears the field making it undefined.
+ * @return {!proto.validate.MapRules} returns this
  */
 proto.validate.MapRules.prototype.clearNoSparse = function() {
-  jspb.Message.setField(this, 3, undefined);
+  return jspb.Message.setField(this, 3, undefined);
 };
 
 
@@ -9807,17 +11401,21 @@ proto.validate.MapRules.prototype.getKeys = function() {
 };
 
 
-/** @param {?proto.validate.FieldRules|undefined} value */
+/**
+ * @param {?proto.validate.FieldRules|undefined} value
+ * @return {!proto.validate.MapRules} returns this
+*/
 proto.validate.MapRules.prototype.setKeys = function(value) {
-  jspb.Message.setWrapperField(this, 4, value);
+  return jspb.Message.setWrapperField(this, 4, value);
 };
 
 
 /**
  * Clears the message field making it undefined.
+ * @return {!proto.validate.MapRules} returns this
  */
 proto.validate.MapRules.prototype.clearKeys = function() {
-  this.setKeys(undefined);
+  return this.setKeys(undefined);
 };
 
 
@@ -9840,17 +11438,21 @@ proto.validate.MapRules.prototype.getValues = function() {
 };
 
 
-/** @param {?proto.validate.FieldRules|undefined} value */
+/**
+ * @param {?proto.validate.FieldRules|undefined} value
+ * @return {!proto.validate.MapRules} returns this
+*/
 proto.validate.MapRules.prototype.setValues = function(value) {
-  jspb.Message.setWrapperField(this, 5, value);
+  return jspb.Message.setWrapperField(this, 5, value);
 };
 
 
 /**
  * Clears the message field making it undefined.
+ * @return {!proto.validate.MapRules} returns this
  */
 proto.validate.MapRules.prototype.clearValues = function() {
-  this.setValues(undefined);
+  return this.setValues(undefined);
 };
 
 
@@ -9860,6 +11462,42 @@ proto.validate.MapRules.prototype.clearValues = function() {
  */
 proto.validate.MapRules.prototype.hasValues = function() {
   return jspb.Message.getField(this, 5) != null;
+};
+
+
+/**
+ * optional bool ignore_empty = 6;
+ * @return {boolean}
+ */
+proto.validate.MapRules.prototype.getIgnoreEmpty = function() {
+  return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 6, false));
+};
+
+
+/**
+ * @param {boolean} value
+ * @return {!proto.validate.MapRules} returns this
+ */
+proto.validate.MapRules.prototype.setIgnoreEmpty = function(value) {
+  return jspb.Message.setField(this, 6, value);
+};
+
+
+/**
+ * Clears the field making it undefined.
+ * @return {!proto.validate.MapRules} returns this
+ */
+proto.validate.MapRules.prototype.clearIgnoreEmpty = function() {
+  return jspb.Message.setField(this, 6, undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.validate.MapRules.prototype.hasIgnoreEmpty = function() {
+  return jspb.Message.getField(this, 6) != null;
 };
 
 
@@ -10015,17 +11653,21 @@ proto.validate.AnyRules.prototype.getRequired = function() {
 };
 
 
-/** @param {boolean} value */
+/**
+ * @param {boolean} value
+ * @return {!proto.validate.AnyRules} returns this
+ */
 proto.validate.AnyRules.prototype.setRequired = function(value) {
-  jspb.Message.setField(this, 1, value);
+  return jspb.Message.setField(this, 1, value);
 };
 
 
 /**
  * Clears the field making it undefined.
+ * @return {!proto.validate.AnyRules} returns this
  */
 proto.validate.AnyRules.prototype.clearRequired = function() {
-  jspb.Message.setField(this, 1, undefined);
+  return jspb.Message.setField(this, 1, undefined);
 };
 
 
@@ -10047,26 +11689,31 @@ proto.validate.AnyRules.prototype.getInList = function() {
 };
 
 
-/** @param {!Array<string>} value */
+/**
+ * @param {!Array<string>} value
+ * @return {!proto.validate.AnyRules} returns this
+ */
 proto.validate.AnyRules.prototype.setInList = function(value) {
-  jspb.Message.setField(this, 2, value || []);
+  return jspb.Message.setField(this, 2, value || []);
 };
 
 
 /**
  * @param {string} value
  * @param {number=} opt_index
+ * @return {!proto.validate.AnyRules} returns this
  */
 proto.validate.AnyRules.prototype.addIn = function(value, opt_index) {
-  jspb.Message.addToRepeatedField(this, 2, value, opt_index);
+  return jspb.Message.addToRepeatedField(this, 2, value, opt_index);
 };
 
 
 /**
  * Clears the list making it empty but non-null.
+ * @return {!proto.validate.AnyRules} returns this
  */
 proto.validate.AnyRules.prototype.clearInList = function() {
-  this.setInList([]);
+  return this.setInList([]);
 };
 
 
@@ -10079,26 +11726,31 @@ proto.validate.AnyRules.prototype.getNotInList = function() {
 };
 
 
-/** @param {!Array<string>} value */
+/**
+ * @param {!Array<string>} value
+ * @return {!proto.validate.AnyRules} returns this
+ */
 proto.validate.AnyRules.prototype.setNotInList = function(value) {
-  jspb.Message.setField(this, 3, value || []);
+  return jspb.Message.setField(this, 3, value || []);
 };
 
 
 /**
  * @param {string} value
  * @param {number=} opt_index
+ * @return {!proto.validate.AnyRules} returns this
  */
 proto.validate.AnyRules.prototype.addNotIn = function(value, opt_index) {
-  jspb.Message.addToRepeatedField(this, 3, value, opt_index);
+  return jspb.Message.addToRepeatedField(this, 3, value, opt_index);
 };
 
 
 /**
  * Clears the list making it empty but non-null.
+ * @return {!proto.validate.AnyRules} returns this
  */
 proto.validate.AnyRules.prototype.clearNotInList = function() {
-  this.setNotInList([]);
+  return this.setNotInList([]);
 };
 
 
@@ -10330,17 +11982,21 @@ proto.validate.DurationRules.prototype.getRequired = function() {
 };
 
 
-/** @param {boolean} value */
+/**
+ * @param {boolean} value
+ * @return {!proto.validate.DurationRules} returns this
+ */
 proto.validate.DurationRules.prototype.setRequired = function(value) {
-  jspb.Message.setField(this, 1, value);
+  return jspb.Message.setField(this, 1, value);
 };
 
 
 /**
  * Clears the field making it undefined.
+ * @return {!proto.validate.DurationRules} returns this
  */
 proto.validate.DurationRules.prototype.clearRequired = function() {
-  jspb.Message.setField(this, 1, undefined);
+  return jspb.Message.setField(this, 1, undefined);
 };
 
 
@@ -10363,17 +12019,21 @@ proto.validate.DurationRules.prototype.getConst = function() {
 };
 
 
-/** @param {?proto.google.protobuf.Duration|undefined} value */
+/**
+ * @param {?proto.google.protobuf.Duration|undefined} value
+ * @return {!proto.validate.DurationRules} returns this
+*/
 proto.validate.DurationRules.prototype.setConst = function(value) {
-  jspb.Message.setWrapperField(this, 2, value);
+  return jspb.Message.setWrapperField(this, 2, value);
 };
 
 
 /**
  * Clears the message field making it undefined.
+ * @return {!proto.validate.DurationRules} returns this
  */
 proto.validate.DurationRules.prototype.clearConst = function() {
-  this.setConst(undefined);
+  return this.setConst(undefined);
 };
 
 
@@ -10396,17 +12056,21 @@ proto.validate.DurationRules.prototype.getLt = function() {
 };
 
 
-/** @param {?proto.google.protobuf.Duration|undefined} value */
+/**
+ * @param {?proto.google.protobuf.Duration|undefined} value
+ * @return {!proto.validate.DurationRules} returns this
+*/
 proto.validate.DurationRules.prototype.setLt = function(value) {
-  jspb.Message.setWrapperField(this, 3, value);
+  return jspb.Message.setWrapperField(this, 3, value);
 };
 
 
 /**
  * Clears the message field making it undefined.
+ * @return {!proto.validate.DurationRules} returns this
  */
 proto.validate.DurationRules.prototype.clearLt = function() {
-  this.setLt(undefined);
+  return this.setLt(undefined);
 };
 
 
@@ -10429,17 +12093,21 @@ proto.validate.DurationRules.prototype.getLte = function() {
 };
 
 
-/** @param {?proto.google.protobuf.Duration|undefined} value */
+/**
+ * @param {?proto.google.protobuf.Duration|undefined} value
+ * @return {!proto.validate.DurationRules} returns this
+*/
 proto.validate.DurationRules.prototype.setLte = function(value) {
-  jspb.Message.setWrapperField(this, 4, value);
+  return jspb.Message.setWrapperField(this, 4, value);
 };
 
 
 /**
  * Clears the message field making it undefined.
+ * @return {!proto.validate.DurationRules} returns this
  */
 proto.validate.DurationRules.prototype.clearLte = function() {
-  this.setLte(undefined);
+  return this.setLte(undefined);
 };
 
 
@@ -10462,17 +12130,21 @@ proto.validate.DurationRules.prototype.getGt = function() {
 };
 
 
-/** @param {?proto.google.protobuf.Duration|undefined} value */
+/**
+ * @param {?proto.google.protobuf.Duration|undefined} value
+ * @return {!proto.validate.DurationRules} returns this
+*/
 proto.validate.DurationRules.prototype.setGt = function(value) {
-  jspb.Message.setWrapperField(this, 5, value);
+  return jspb.Message.setWrapperField(this, 5, value);
 };
 
 
 /**
  * Clears the message field making it undefined.
+ * @return {!proto.validate.DurationRules} returns this
  */
 proto.validate.DurationRules.prototype.clearGt = function() {
-  this.setGt(undefined);
+  return this.setGt(undefined);
 };
 
 
@@ -10495,17 +12167,21 @@ proto.validate.DurationRules.prototype.getGte = function() {
 };
 
 
-/** @param {?proto.google.protobuf.Duration|undefined} value */
+/**
+ * @param {?proto.google.protobuf.Duration|undefined} value
+ * @return {!proto.validate.DurationRules} returns this
+*/
 proto.validate.DurationRules.prototype.setGte = function(value) {
-  jspb.Message.setWrapperField(this, 6, value);
+  return jspb.Message.setWrapperField(this, 6, value);
 };
 
 
 /**
  * Clears the message field making it undefined.
+ * @return {!proto.validate.DurationRules} returns this
  */
 proto.validate.DurationRules.prototype.clearGte = function() {
-  this.setGte(undefined);
+  return this.setGte(undefined);
 };
 
 
@@ -10528,9 +12204,12 @@ proto.validate.DurationRules.prototype.getInList = function() {
 };
 
 
-/** @param {!Array<!proto.google.protobuf.Duration>} value */
+/**
+ * @param {!Array<!proto.google.protobuf.Duration>} value
+ * @return {!proto.validate.DurationRules} returns this
+*/
 proto.validate.DurationRules.prototype.setInList = function(value) {
-  jspb.Message.setRepeatedWrapperField(this, 7, value);
+  return jspb.Message.setRepeatedWrapperField(this, 7, value);
 };
 
 
@@ -10546,9 +12225,10 @@ proto.validate.DurationRules.prototype.addIn = function(opt_value, opt_index) {
 
 /**
  * Clears the list making it empty but non-null.
+ * @return {!proto.validate.DurationRules} returns this
  */
 proto.validate.DurationRules.prototype.clearInList = function() {
-  this.setInList([]);
+  return this.setInList([]);
 };
 
 
@@ -10562,9 +12242,12 @@ proto.validate.DurationRules.prototype.getNotInList = function() {
 };
 
 
-/** @param {!Array<!proto.google.protobuf.Duration>} value */
+/**
+ * @param {!Array<!proto.google.protobuf.Duration>} value
+ * @return {!proto.validate.DurationRules} returns this
+*/
 proto.validate.DurationRules.prototype.setNotInList = function(value) {
-  jspb.Message.setRepeatedWrapperField(this, 8, value);
+  return jspb.Message.setRepeatedWrapperField(this, 8, value);
 };
 
 
@@ -10580,9 +12263,10 @@ proto.validate.DurationRules.prototype.addNotIn = function(opt_value, opt_index)
 
 /**
  * Clears the list making it empty but non-null.
+ * @return {!proto.validate.DurationRules} returns this
  */
 proto.validate.DurationRules.prototype.clearNotInList = function() {
-  this.setNotInList([]);
+  return this.setNotInList([]);
 };
 
 
@@ -10815,17 +12499,21 @@ proto.validate.TimestampRules.prototype.getRequired = function() {
 };
 
 
-/** @param {boolean} value */
+/**
+ * @param {boolean} value
+ * @return {!proto.validate.TimestampRules} returns this
+ */
 proto.validate.TimestampRules.prototype.setRequired = function(value) {
-  jspb.Message.setField(this, 1, value);
+  return jspb.Message.setField(this, 1, value);
 };
 
 
 /**
  * Clears the field making it undefined.
+ * @return {!proto.validate.TimestampRules} returns this
  */
 proto.validate.TimestampRules.prototype.clearRequired = function() {
-  jspb.Message.setField(this, 1, undefined);
+  return jspb.Message.setField(this, 1, undefined);
 };
 
 
@@ -10848,17 +12536,21 @@ proto.validate.TimestampRules.prototype.getConst = function() {
 };
 
 
-/** @param {?proto.google.protobuf.Timestamp|undefined} value */
+/**
+ * @param {?proto.google.protobuf.Timestamp|undefined} value
+ * @return {!proto.validate.TimestampRules} returns this
+*/
 proto.validate.TimestampRules.prototype.setConst = function(value) {
-  jspb.Message.setWrapperField(this, 2, value);
+  return jspb.Message.setWrapperField(this, 2, value);
 };
 
 
 /**
  * Clears the message field making it undefined.
+ * @return {!proto.validate.TimestampRules} returns this
  */
 proto.validate.TimestampRules.prototype.clearConst = function() {
-  this.setConst(undefined);
+  return this.setConst(undefined);
 };
 
 
@@ -10881,17 +12573,21 @@ proto.validate.TimestampRules.prototype.getLt = function() {
 };
 
 
-/** @param {?proto.google.protobuf.Timestamp|undefined} value */
+/**
+ * @param {?proto.google.protobuf.Timestamp|undefined} value
+ * @return {!proto.validate.TimestampRules} returns this
+*/
 proto.validate.TimestampRules.prototype.setLt = function(value) {
-  jspb.Message.setWrapperField(this, 3, value);
+  return jspb.Message.setWrapperField(this, 3, value);
 };
 
 
 /**
  * Clears the message field making it undefined.
+ * @return {!proto.validate.TimestampRules} returns this
  */
 proto.validate.TimestampRules.prototype.clearLt = function() {
-  this.setLt(undefined);
+  return this.setLt(undefined);
 };
 
 
@@ -10914,17 +12610,21 @@ proto.validate.TimestampRules.prototype.getLte = function() {
 };
 
 
-/** @param {?proto.google.protobuf.Timestamp|undefined} value */
+/**
+ * @param {?proto.google.protobuf.Timestamp|undefined} value
+ * @return {!proto.validate.TimestampRules} returns this
+*/
 proto.validate.TimestampRules.prototype.setLte = function(value) {
-  jspb.Message.setWrapperField(this, 4, value);
+  return jspb.Message.setWrapperField(this, 4, value);
 };
 
 
 /**
  * Clears the message field making it undefined.
+ * @return {!proto.validate.TimestampRules} returns this
  */
 proto.validate.TimestampRules.prototype.clearLte = function() {
-  this.setLte(undefined);
+  return this.setLte(undefined);
 };
 
 
@@ -10947,17 +12647,21 @@ proto.validate.TimestampRules.prototype.getGt = function() {
 };
 
 
-/** @param {?proto.google.protobuf.Timestamp|undefined} value */
+/**
+ * @param {?proto.google.protobuf.Timestamp|undefined} value
+ * @return {!proto.validate.TimestampRules} returns this
+*/
 proto.validate.TimestampRules.prototype.setGt = function(value) {
-  jspb.Message.setWrapperField(this, 5, value);
+  return jspb.Message.setWrapperField(this, 5, value);
 };
 
 
 /**
  * Clears the message field making it undefined.
+ * @return {!proto.validate.TimestampRules} returns this
  */
 proto.validate.TimestampRules.prototype.clearGt = function() {
-  this.setGt(undefined);
+  return this.setGt(undefined);
 };
 
 
@@ -10980,17 +12684,21 @@ proto.validate.TimestampRules.prototype.getGte = function() {
 };
 
 
-/** @param {?proto.google.protobuf.Timestamp|undefined} value */
+/**
+ * @param {?proto.google.protobuf.Timestamp|undefined} value
+ * @return {!proto.validate.TimestampRules} returns this
+*/
 proto.validate.TimestampRules.prototype.setGte = function(value) {
-  jspb.Message.setWrapperField(this, 6, value);
+  return jspb.Message.setWrapperField(this, 6, value);
 };
 
 
 /**
  * Clears the message field making it undefined.
+ * @return {!proto.validate.TimestampRules} returns this
  */
 proto.validate.TimestampRules.prototype.clearGte = function() {
-  this.setGte(undefined);
+  return this.setGte(undefined);
 };
 
 
@@ -11012,17 +12720,21 @@ proto.validate.TimestampRules.prototype.getLtNow = function() {
 };
 
 
-/** @param {boolean} value */
+/**
+ * @param {boolean} value
+ * @return {!proto.validate.TimestampRules} returns this
+ */
 proto.validate.TimestampRules.prototype.setLtNow = function(value) {
-  jspb.Message.setField(this, 7, value);
+  return jspb.Message.setField(this, 7, value);
 };
 
 
 /**
  * Clears the field making it undefined.
+ * @return {!proto.validate.TimestampRules} returns this
  */
 proto.validate.TimestampRules.prototype.clearLtNow = function() {
-  jspb.Message.setField(this, 7, undefined);
+  return jspb.Message.setField(this, 7, undefined);
 };
 
 
@@ -11044,17 +12756,21 @@ proto.validate.TimestampRules.prototype.getGtNow = function() {
 };
 
 
-/** @param {boolean} value */
+/**
+ * @param {boolean} value
+ * @return {!proto.validate.TimestampRules} returns this
+ */
 proto.validate.TimestampRules.prototype.setGtNow = function(value) {
-  jspb.Message.setField(this, 8, value);
+  return jspb.Message.setField(this, 8, value);
 };
 
 
 /**
  * Clears the field making it undefined.
+ * @return {!proto.validate.TimestampRules} returns this
  */
 proto.validate.TimestampRules.prototype.clearGtNow = function() {
-  jspb.Message.setField(this, 8, undefined);
+  return jspb.Message.setField(this, 8, undefined);
 };
 
 
@@ -11077,17 +12793,21 @@ proto.validate.TimestampRules.prototype.getWithin = function() {
 };
 
 
-/** @param {?proto.google.protobuf.Duration|undefined} value */
+/**
+ * @param {?proto.google.protobuf.Duration|undefined} value
+ * @return {!proto.validate.TimestampRules} returns this
+*/
 proto.validate.TimestampRules.prototype.setWithin = function(value) {
-  jspb.Message.setWrapperField(this, 9, value);
+  return jspb.Message.setWrapperField(this, 9, value);
 };
 
 
 /**
  * Clears the message field making it undefined.
+ * @return {!proto.validate.TimestampRules} returns this
  */
 proto.validate.TimestampRules.prototype.clearWithin = function() {
-  this.setWithin(undefined);
+  return this.setWithin(undefined);
 };
 
 
@@ -11099,6 +12819,15 @@ proto.validate.TimestampRules.prototype.hasWithin = function() {
   return jspb.Message.getField(this, 9) != null;
 };
 
+
+/**
+ * @enum {number}
+ */
+proto.validate.KnownRegex = {
+  UNKNOWN: 0,
+  HTTP_HEADER_NAME: 1,
+  HTTP_HEADER_VALUE: 2
+};
 
 
 /**
@@ -11124,6 +12853,31 @@ google_protobuf_descriptor_pb.MessageOptions.extensionsBinary[1071] = new jspb.E
 // This registers the extension field with the extended class, so that
 // toObject() will function correctly.
 google_protobuf_descriptor_pb.MessageOptions.extensions[1071] = proto.validate.disabled;
+
+
+/**
+ * A tuple of {field number, class constructor} for the extension
+ * field named `ignored`.
+ * @type {!jspb.ExtensionFieldInfo<boolean>}
+ */
+proto.validate.ignored = new jspb.ExtensionFieldInfo(
+    1072,
+    {ignored: 0},
+    null,
+     /** @type {?function((boolean|undefined),!jspb.Message=): !Object} */ (
+         null),
+    0);
+
+google_protobuf_descriptor_pb.MessageOptions.extensionsBinary[1072] = new jspb.ExtensionFieldBinaryInfo(
+    proto.validate.ignored,
+    jspb.BinaryReader.prototype.readBool,
+    jspb.BinaryWriter.prototype.writeBool,
+    undefined,
+    undefined,
+    false);
+// This registers the extension field with the extended class, so that
+// toObject() will function correctly.
+google_protobuf_descriptor_pb.MessageOptions.extensions[1072] = proto.validate.ignored;
 
 
 /**

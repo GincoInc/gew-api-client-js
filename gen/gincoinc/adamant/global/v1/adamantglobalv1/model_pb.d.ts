@@ -5,10 +5,10 @@
 /* eslint-disable */
 
 import * as jspb from "google-protobuf";
+import * as gincoinc_adamant_global_v1_adamantglobalv1_enum_pb from "../../../../../gincoinc/adamant/global/v1/adamantglobalv1/enum_pb";
+import * as gincoinc_global_v1_gincoincglobalv1_enum_pb from "../../../../../gincoinc/global/v1/gincoincglobalv1/enum_pb";
 import * as google_protobuf_timestamp_pb from "google-protobuf/google/protobuf/timestamp_pb";
 import * as validate_validate_pb from "../../../../../validate/validate_pb";
-import * as gincoinc_global_v1_gincoincglobalv1_enum_pb from "../../../../../gincoinc/global/v1/gincoincglobalv1/enum_pb";
-import * as gincoinc_adamant_global_v1_adamantglobalv1_enum_pb from "../../../../../gincoinc/adamant/global/v1/adamantglobalv1/enum_pb";
 
 export class Wallet extends jspb.Message { 
     getOwnerId(): string;
@@ -60,6 +60,10 @@ export class Wallet extends jspb.Message {
     setWatchOnly(value: boolean): Wallet;
     getAddressNumber(): number;
     setAddressNumber(value: number): Wallet;
+    getShouldCheckRemittance(): boolean;
+    setShouldCheckRemittance(value: boolean): Wallet;
+    getInheritWalletId(): string;
+    setInheritWalletId(value: string): Wallet;
 
     hasCreateTime(): boolean;
     clearCreateTime(): void;
@@ -104,6 +108,8 @@ export namespace Wallet {
         destinationWalletId: string,
         watchOnly: boolean,
         addressNumber: number,
+        shouldCheckRemittance: boolean,
+        inheritWalletId: string,
         createTime?: google_protobuf_timestamp_pb.Timestamp.AsObject,
         updateTime?: google_protobuf_timestamp_pb.Timestamp.AsObject,
     }
@@ -153,6 +159,10 @@ export class WalletWithoutBalance extends jspb.Message {
     setDestinationWalletId(value: string): WalletWithoutBalance;
     getWatchOnly(): boolean;
     setWatchOnly(value: boolean): WalletWithoutBalance;
+    getShouldCheckRemittance(): boolean;
+    setShouldCheckRemittance(value: boolean): WalletWithoutBalance;
+    getInheritWalletId(): string;
+    setInheritWalletId(value: string): WalletWithoutBalance;
 
     hasCreateTime(): boolean;
     clearCreateTime(): void;
@@ -194,6 +204,8 @@ export namespace WalletWithoutBalance {
         proposal?: WalletProposal.AsObject,
         destinationWalletId: string,
         watchOnly: boolean,
+        shouldCheckRemittance: boolean,
+        inheritWalletId: string,
         createTime?: google_protobuf_timestamp_pb.Timestamp.AsObject,
         updateTime?: google_protobuf_timestamp_pb.Timestamp.AsObject,
     }
@@ -601,6 +613,21 @@ export class Transaction extends jspb.Message {
     getC0banSpecific(): C0banSpecific | undefined;
     setC0banSpecific(value?: C0banSpecific): Transaction;
 
+    hasStellarSpecific(): boolean;
+    clearStellarSpecific(): void;
+    getStellarSpecific(): StellarSpecific | undefined;
+    setStellarSpecific(value?: StellarSpecific): Transaction;
+
+    hasCardanoSpecific(): boolean;
+    clearCardanoSpecific(): void;
+    getCardanoSpecific(): CardanoSpecific | undefined;
+    setCardanoSpecific(value?: CardanoSpecific): Transaction;
+
+    hasSubstrateSpecific(): boolean;
+    clearSubstrateSpecific(): void;
+    getSubstrateSpecific(): SubstrateSpecific | undefined;
+    setSubstrateSpecific(value?: SubstrateSpecific): Transaction;
+
     hasCreateTime(): boolean;
     clearCreateTime(): void;
     getCreateTime(): google_protobuf_timestamp_pb.Timestamp | undefined;
@@ -644,6 +671,9 @@ export namespace Transaction {
         xrpSpecific?: XrpSpecific.AsObject,
         tronSpecific?: TronSpecific.AsObject,
         c0banSpecific?: C0banSpecific.AsObject,
+        stellarSpecific?: StellarSpecific.AsObject,
+        cardanoSpecific?: CardanoSpecific.AsObject,
+        substrateSpecific?: SubstrateSpecific.AsObject,
         createTime?: google_protobuf_timestamp_pb.Timestamp.AsObject,
         updateTime?: google_protobuf_timestamp_pb.Timestamp.AsObject,
     }
@@ -745,6 +775,41 @@ export namespace TxOutput {
     }
 }
 
+export class UTXO extends jspb.Message { 
+    getTxId(): string;
+    setTxId(value: string): UTXO;
+    getVout(): number;
+    setVout(value: number): UTXO;
+    getValue(): number;
+    setValue(value: number): UTXO;
+    getStringValue(): string;
+    setStringValue(value: string): UTXO;
+    getAddress(): string;
+    setAddress(value: string): UTXO;
+    getTransactionId(): string;
+    setTransactionId(value: string): UTXO;
+
+    serializeBinary(): Uint8Array;
+    toObject(includeInstance?: boolean): UTXO.AsObject;
+    static toObject(includeInstance: boolean, msg: UTXO): UTXO.AsObject;
+    static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+    static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+    static serializeBinaryToWriter(message: UTXO, writer: jspb.BinaryWriter): void;
+    static deserializeBinary(bytes: Uint8Array): UTXO;
+    static deserializeBinaryFromReader(message: UTXO, reader: jspb.BinaryReader): UTXO;
+}
+
+export namespace UTXO {
+    export type AsObject = {
+        txId: string,
+        vout: number,
+        value: number,
+        stringValue: string,
+        address: string,
+        transactionId: string,
+    }
+}
+
 export class BitcoinSpecific extends jspb.Message { 
     clearTxInputsList(): void;
     getTxInputsList(): Array<TxInput>;
@@ -833,6 +898,10 @@ export class EthereumSpecific extends jspb.Message {
     setNonce(value: number): EthereumSpecific;
     getIsNextNonce(): boolean;
     setIsNextNonce(value: boolean): EthereumSpecific;
+    getMethodIdType(): gincoinc_adamant_global_v1_adamantglobalv1_enum_pb.EthereumContractMethodIDType;
+    setMethodIdType(value: gincoinc_adamant_global_v1_adamantglobalv1_enum_pb.EthereumContractMethodIDType): EthereumSpecific;
+    getExpiration(): number;
+    setExpiration(value: number): EthereumSpecific;
 
     serializeBinary(): Uint8Array;
     toObject(includeInstance?: boolean): EthereumSpecific.AsObject;
@@ -849,6 +918,8 @@ export namespace EthereumSpecific {
         gasLimit: number,
         nonce: number,
         isNextNonce: boolean,
+        methodIdType: gincoinc_adamant_global_v1_adamantglobalv1_enum_pb.EthereumContractMethodIDType,
+        expiration: number,
     }
 }
 
@@ -925,6 +996,201 @@ export namespace C0banSpecific {
     export type AsObject = {
         txInputsList: Array<TxInput.AsObject>,
         txOutputsList: Array<TxOutput.AsObject>,
+    }
+}
+
+export class StellarSpecific extends jspb.Message { 
+    getSequenceNumber(): number;
+    setSequenceNumber(value: number): StellarSpecific;
+    getMemoId(): string;
+    setMemoId(value: string): StellarSpecific;
+    getIsNextSequenceNumber(): boolean;
+    setIsNextSequenceNumber(value: boolean): StellarSpecific;
+
+    serializeBinary(): Uint8Array;
+    toObject(includeInstance?: boolean): StellarSpecific.AsObject;
+    static toObject(includeInstance: boolean, msg: StellarSpecific): StellarSpecific.AsObject;
+    static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+    static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+    static serializeBinaryToWriter(message: StellarSpecific, writer: jspb.BinaryWriter): void;
+    static deserializeBinary(bytes: Uint8Array): StellarSpecific;
+    static deserializeBinaryFromReader(message: StellarSpecific, reader: jspb.BinaryReader): StellarSpecific;
+}
+
+export namespace StellarSpecific {
+    export type AsObject = {
+        sequenceNumber: number,
+        memoId: string,
+        isNextSequenceNumber: boolean,
+    }
+}
+
+export class CardanoSpecific extends jspb.Message { 
+    clearTxInputsList(): void;
+    getTxInputsList(): Array<TxInput>;
+    setTxInputsList(value: Array<TxInput>): CardanoSpecific;
+    addTxInputs(value?: TxInput, index?: number): TxInput;
+    clearTxOutputsList(): void;
+    getTxOutputsList(): Array<TxOutput>;
+    setTxOutputsList(value: Array<TxOutput>): CardanoSpecific;
+    addTxOutputs(value?: TxOutput, index?: number): TxOutput;
+
+    serializeBinary(): Uint8Array;
+    toObject(includeInstance?: boolean): CardanoSpecific.AsObject;
+    static toObject(includeInstance: boolean, msg: CardanoSpecific): CardanoSpecific.AsObject;
+    static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+    static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+    static serializeBinaryToWriter(message: CardanoSpecific, writer: jspb.BinaryWriter): void;
+    static deserializeBinary(bytes: Uint8Array): CardanoSpecific;
+    static deserializeBinaryFromReader(message: CardanoSpecific, reader: jspb.BinaryReader): CardanoSpecific;
+}
+
+export namespace CardanoSpecific {
+    export type AsObject = {
+        txInputsList: Array<TxInput.AsObject>,
+        txOutputsList: Array<TxOutput.AsObject>,
+    }
+}
+
+export class SubstrateSpecific extends jspb.Message { 
+    getNonce(): number;
+    setNonce(value: number): SubstrateSpecific;
+    getIsNextNonce(): boolean;
+    setIsNextNonce(value: boolean): SubstrateSpecific;
+    clearSubstrateMultisigTransactionsList(): void;
+    getSubstrateMultisigTransactionsList(): Array<SubstrateMultisigTransaction>;
+    setSubstrateMultisigTransactionsList(value: Array<SubstrateMultisigTransaction>): SubstrateSpecific;
+    addSubstrateMultisigTransactions(value?: SubstrateMultisigTransaction, index?: number): SubstrateMultisigTransaction;
+
+    serializeBinary(): Uint8Array;
+    toObject(includeInstance?: boolean): SubstrateSpecific.AsObject;
+    static toObject(includeInstance: boolean, msg: SubstrateSpecific): SubstrateSpecific.AsObject;
+    static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+    static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+    static serializeBinaryToWriter(message: SubstrateSpecific, writer: jspb.BinaryWriter): void;
+    static deserializeBinary(bytes: Uint8Array): SubstrateSpecific;
+    static deserializeBinaryFromReader(message: SubstrateSpecific, reader: jspb.BinaryReader): SubstrateSpecific;
+}
+
+export namespace SubstrateSpecific {
+    export type AsObject = {
+        nonce: number,
+        isNextNonce: boolean,
+        substrateMultisigTransactionsList: Array<SubstrateMultisigTransaction.AsObject>,
+    }
+}
+
+export class CreateTransactionSubstrateSpecific extends jspb.Message { 
+    getTransactionId(): string;
+    setTransactionId(value: string): CreateTransactionSubstrateSpecific;
+    getCallType(): gincoinc_adamant_global_v1_adamantglobalv1_enum_pb.SubstrateCallType;
+    setCallType(value: gincoinc_adamant_global_v1_adamantglobalv1_enum_pb.SubstrateCallType): CreateTransactionSubstrateSpecific;
+    getMultisigCallType(): gincoinc_adamant_global_v1_adamantglobalv1_enum_pb.SubstrateCallType;
+    setMultisigCallType(value: gincoinc_adamant_global_v1_adamantglobalv1_enum_pb.SubstrateCallType): CreateTransactionSubstrateSpecific;
+
+    serializeBinary(): Uint8Array;
+    toObject(includeInstance?: boolean): CreateTransactionSubstrateSpecific.AsObject;
+    static toObject(includeInstance: boolean, msg: CreateTransactionSubstrateSpecific): CreateTransactionSubstrateSpecific.AsObject;
+    static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+    static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+    static serializeBinaryToWriter(message: CreateTransactionSubstrateSpecific, writer: jspb.BinaryWriter): void;
+    static deserializeBinary(bytes: Uint8Array): CreateTransactionSubstrateSpecific;
+    static deserializeBinaryFromReader(message: CreateTransactionSubstrateSpecific, reader: jspb.BinaryReader): CreateTransactionSubstrateSpecific;
+}
+
+export namespace CreateTransactionSubstrateSpecific {
+    export type AsObject = {
+        transactionId: string,
+        callType: gincoinc_adamant_global_v1_adamantglobalv1_enum_pb.SubstrateCallType,
+        multisigCallType: gincoinc_adamant_global_v1_adamantglobalv1_enum_pb.SubstrateCallType,
+    }
+}
+
+export class CreateTransactionWalletConnectSpecific extends jspb.Message { 
+    getCallRequestType(): gincoinc_adamant_global_v1_adamantglobalv1_enum_pb.WalletConnectCallRequestType;
+    setCallRequestType(value: gincoinc_adamant_global_v1_adamantglobalv1_enum_pb.WalletConnectCallRequestType): CreateTransactionWalletConnectSpecific;
+    getCallRequestParams(): string;
+    setCallRequestParams(value: string): CreateTransactionWalletConnectSpecific;
+
+    serializeBinary(): Uint8Array;
+    toObject(includeInstance?: boolean): CreateTransactionWalletConnectSpecific.AsObject;
+    static toObject(includeInstance: boolean, msg: CreateTransactionWalletConnectSpecific): CreateTransactionWalletConnectSpecific.AsObject;
+    static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+    static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+    static serializeBinaryToWriter(message: CreateTransactionWalletConnectSpecific, writer: jspb.BinaryWriter): void;
+    static deserializeBinary(bytes: Uint8Array): CreateTransactionWalletConnectSpecific;
+    static deserializeBinaryFromReader(message: CreateTransactionWalletConnectSpecific, reader: jspb.BinaryReader): CreateTransactionWalletConnectSpecific;
+}
+
+export namespace CreateTransactionWalletConnectSpecific {
+    export type AsObject = {
+        callRequestType: gincoinc_adamant_global_v1_adamantglobalv1_enum_pb.WalletConnectCallRequestType,
+        callRequestParams: string,
+    }
+}
+
+export class SubstrateMultisigTransaction extends jspb.Message { 
+    getWalletId(): string;
+    setWalletId(value: string): SubstrateMultisigTransaction;
+    getTransactionId(): string;
+    setTransactionId(value: string): SubstrateMultisigTransaction;
+    getSubstrateMultisigTransactionId(): string;
+    setSubstrateMultisigTransactionId(value: string): SubstrateMultisigTransaction;
+    getAccountId(): string;
+    setAccountId(value: string): SubstrateMultisigTransaction;
+    getTxId(): string;
+    setTxId(value: string): SubstrateMultisigTransaction;
+    getExtrinsicId(): string;
+    setExtrinsicId(value: string): SubstrateMultisigTransaction;
+    getJpyRate(): number;
+    setJpyRate(value: number): SubstrateMultisigTransaction;
+    getFee(): number;
+    setFee(value: number): SubstrateMultisigTransaction;
+    getStringFee(): string;
+    setStringFee(value: string): SubstrateMultisigTransaction;
+    getNonce(): number;
+    setNonce(value: number): SubstrateMultisigTransaction;
+    getMultisigCallType(): gincoinc_adamant_global_v1_adamantglobalv1_enum_pb.SubstrateCallType;
+    setMultisigCallType(value: gincoinc_adamant_global_v1_adamantglobalv1_enum_pb.SubstrateCallType): SubstrateMultisigTransaction;
+    getState(): gincoinc_adamant_global_v1_adamantglobalv1_enum_pb.TransactionState;
+    setState(value: gincoinc_adamant_global_v1_adamantglobalv1_enum_pb.TransactionState): SubstrateMultisigTransaction;
+
+    hasCreateTime(): boolean;
+    clearCreateTime(): void;
+    getCreateTime(): google_protobuf_timestamp_pb.Timestamp | undefined;
+    setCreateTime(value?: google_protobuf_timestamp_pb.Timestamp): SubstrateMultisigTransaction;
+
+    hasUpdateTime(): boolean;
+    clearUpdateTime(): void;
+    getUpdateTime(): google_protobuf_timestamp_pb.Timestamp | undefined;
+    setUpdateTime(value?: google_protobuf_timestamp_pb.Timestamp): SubstrateMultisigTransaction;
+
+    serializeBinary(): Uint8Array;
+    toObject(includeInstance?: boolean): SubstrateMultisigTransaction.AsObject;
+    static toObject(includeInstance: boolean, msg: SubstrateMultisigTransaction): SubstrateMultisigTransaction.AsObject;
+    static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+    static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+    static serializeBinaryToWriter(message: SubstrateMultisigTransaction, writer: jspb.BinaryWriter): void;
+    static deserializeBinary(bytes: Uint8Array): SubstrateMultisigTransaction;
+    static deserializeBinaryFromReader(message: SubstrateMultisigTransaction, reader: jspb.BinaryReader): SubstrateMultisigTransaction;
+}
+
+export namespace SubstrateMultisigTransaction {
+    export type AsObject = {
+        walletId: string,
+        transactionId: string,
+        substrateMultisigTransactionId: string,
+        accountId: string,
+        txId: string,
+        extrinsicId: string,
+        jpyRate: number,
+        fee: number,
+        stringFee: string,
+        nonce: number,
+        multisigCallType: gincoinc_adamant_global_v1_adamantglobalv1_enum_pb.SubstrateCallType,
+        state: gincoinc_adamant_global_v1_adamantglobalv1_enum_pb.TransactionState,
+        createTime?: google_protobuf_timestamp_pb.Timestamp.AsObject,
+        updateTime?: google_protobuf_timestamp_pb.Timestamp.AsObject,
     }
 }
 
@@ -1032,6 +1298,8 @@ export class Transfer extends jspb.Message {
     setPartnerAddress(value: string): Transfer;
     getDestinationTag(): number;
     setDestinationTag(value: number): Transfer;
+    getMemoId(): string;
+    setMemoId(value: string): Transfer;
     getState(): gincoinc_global_v1_gincoincglobalv1_enum_pb.TransactionState;
     setState(value: gincoinc_global_v1_gincoincglobalv1_enum_pb.TransactionState): Transfer;
     getResult(): gincoinc_global_v1_gincoincglobalv1_enum_pb.TransactionResult;
@@ -1070,8 +1338,124 @@ export namespace Transfer {
         partnerWalletId: string,
         partnerAddress: string,
         destinationTag: number,
+        memoId: string,
         state: gincoinc_global_v1_gincoincglobalv1_enum_pb.TransactionState,
         result: gincoinc_global_v1_gincoincglobalv1_enum_pb.TransactionResult,
+        createTime?: google_protobuf_timestamp_pb.Timestamp.AsObject,
+        updateTime?: google_protobuf_timestamp_pb.Timestamp.AsObject,
+    }
+}
+
+export class UncheckedTransfer extends jspb.Message { 
+    getWalletId(): string;
+    setWalletId(value: string): UncheckedTransfer;
+    getTransferId(): string;
+    setTransferId(value: string): UncheckedTransfer;
+    getCoin(): gincoinc_global_v1_gincoincglobalv1_enum_pb.Coin;
+    setCoin(value: gincoinc_global_v1_gincoincglobalv1_enum_pb.Coin): UncheckedTransfer;
+    getTxId(): string;
+    setTxId(value: string): UncheckedTransfer;
+    getTransferType(): gincoinc_global_v1_gincoincglobalv1_enum_pb.TransferType;
+    setTransferType(value: gincoinc_global_v1_gincoincglobalv1_enum_pb.TransferType): UncheckedTransfer;
+    getState(): gincoinc_global_v1_gincoincglobalv1_enum_pb.TransactionState;
+    setState(value: gincoinc_global_v1_gincoincglobalv1_enum_pb.TransactionState): UncheckedTransfer;
+    getResult(): gincoinc_global_v1_gincoincglobalv1_enum_pb.TransactionResult;
+    setResult(value: gincoinc_global_v1_gincoincglobalv1_enum_pb.TransactionResult): UncheckedTransfer;
+    getValue(): number;
+    setValue(value: number): UncheckedTransfer;
+    getStringValue(): string;
+    setStringValue(value: string): UncheckedTransfer;
+    getJpyRate(): number;
+    setJpyRate(value: number): UncheckedTransfer;
+    getPartnerWalletId(): string;
+    setPartnerWalletId(value: string): UncheckedTransfer;
+    getPartnerAddress(): string;
+    setPartnerAddress(value: string): UncheckedTransfer;
+    getDestinationTag(): number;
+    setDestinationTag(value: number): UncheckedTransfer;
+    getMemoId(): string;
+    setMemoId(value: string): UncheckedTransfer;
+    getHasChecked(): boolean;
+    setHasChecked(value: boolean): UncheckedTransfer;
+
+    hasCreateTime(): boolean;
+    clearCreateTime(): void;
+    getCreateTime(): google_protobuf_timestamp_pb.Timestamp | undefined;
+    setCreateTime(value?: google_protobuf_timestamp_pb.Timestamp): UncheckedTransfer;
+
+    hasUpdateTime(): boolean;
+    clearUpdateTime(): void;
+    getUpdateTime(): google_protobuf_timestamp_pb.Timestamp | undefined;
+    setUpdateTime(value?: google_protobuf_timestamp_pb.Timestamp): UncheckedTransfer;
+
+    serializeBinary(): Uint8Array;
+    toObject(includeInstance?: boolean): UncheckedTransfer.AsObject;
+    static toObject(includeInstance: boolean, msg: UncheckedTransfer): UncheckedTransfer.AsObject;
+    static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+    static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+    static serializeBinaryToWriter(message: UncheckedTransfer, writer: jspb.BinaryWriter): void;
+    static deserializeBinary(bytes: Uint8Array): UncheckedTransfer;
+    static deserializeBinaryFromReader(message: UncheckedTransfer, reader: jspb.BinaryReader): UncheckedTransfer;
+}
+
+export namespace UncheckedTransfer {
+    export type AsObject = {
+        walletId: string,
+        transferId: string,
+        coin: gincoinc_global_v1_gincoincglobalv1_enum_pb.Coin,
+        txId: string,
+        transferType: gincoinc_global_v1_gincoincglobalv1_enum_pb.TransferType,
+        state: gincoinc_global_v1_gincoincglobalv1_enum_pb.TransactionState,
+        result: gincoinc_global_v1_gincoincglobalv1_enum_pb.TransactionResult,
+        value: number,
+        stringValue: string,
+        jpyRate: number,
+        partnerWalletId: string,
+        partnerAddress: string,
+        destinationTag: number,
+        memoId: string,
+        hasChecked: boolean,
+        createTime?: google_protobuf_timestamp_pb.Timestamp.AsObject,
+        updateTime?: google_protobuf_timestamp_pb.Timestamp.AsObject,
+    }
+}
+
+export class EventTriggeredMessage extends jspb.Message { 
+    getEventTriggeredMessageId(): string;
+    setEventTriggeredMessageId(value: string): EventTriggeredMessage;
+    getEventTriggeredMessageType(): gincoinc_adamant_global_v1_adamantglobalv1_enum_pb.EventTriggeredMessageType;
+    setEventTriggeredMessageType(value: gincoinc_adamant_global_v1_adamantglobalv1_enum_pb.EventTriggeredMessageType): EventTriggeredMessage;
+    getOwnerId(): string;
+    setOwnerId(value: string): EventTriggeredMessage;
+    getDestination(): string;
+    setDestination(value: string): EventTriggeredMessage;
+
+    hasCreateTime(): boolean;
+    clearCreateTime(): void;
+    getCreateTime(): google_protobuf_timestamp_pb.Timestamp | undefined;
+    setCreateTime(value?: google_protobuf_timestamp_pb.Timestamp): EventTriggeredMessage;
+
+    hasUpdateTime(): boolean;
+    clearUpdateTime(): void;
+    getUpdateTime(): google_protobuf_timestamp_pb.Timestamp | undefined;
+    setUpdateTime(value?: google_protobuf_timestamp_pb.Timestamp): EventTriggeredMessage;
+
+    serializeBinary(): Uint8Array;
+    toObject(includeInstance?: boolean): EventTriggeredMessage.AsObject;
+    static toObject(includeInstance: boolean, msg: EventTriggeredMessage): EventTriggeredMessage.AsObject;
+    static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+    static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+    static serializeBinaryToWriter(message: EventTriggeredMessage, writer: jspb.BinaryWriter): void;
+    static deserializeBinary(bytes: Uint8Array): EventTriggeredMessage;
+    static deserializeBinaryFromReader(message: EventTriggeredMessage, reader: jspb.BinaryReader): EventTriggeredMessage;
+}
+
+export namespace EventTriggeredMessage {
+    export type AsObject = {
+        eventTriggeredMessageId: string,
+        eventTriggeredMessageType: gincoinc_adamant_global_v1_adamantglobalv1_enum_pb.EventTriggeredMessageType,
+        ownerId: string,
+        destination: string,
         createTime?: google_protobuf_timestamp_pb.Timestamp.AsObject,
         updateTime?: google_protobuf_timestamp_pb.Timestamp.AsObject,
     }
@@ -1928,6 +2312,52 @@ export namespace CompensationFee {
     }
 }
 
+export class WalletGroup extends jspb.Message { 
+    getWalletGroupId(): string;
+    setWalletGroupId(value: string): WalletGroup;
+    getName(): string;
+    setName(value: string): WalletGroup;
+    getCoin(): gincoinc_global_v1_gincoincglobalv1_enum_pb.Coin;
+    setCoin(value: gincoinc_global_v1_gincoincglobalv1_enum_pb.Coin): WalletGroup;
+    clearWalletsList(): void;
+    getWalletsList(): Array<Wallet>;
+    setWalletsList(value: Array<Wallet>): WalletGroup;
+    addWallets(value?: Wallet, index?: number): Wallet;
+    getWatchOnly(): boolean;
+    setWatchOnly(value: boolean): WalletGroup;
+
+    hasCreateTime(): boolean;
+    clearCreateTime(): void;
+    getCreateTime(): google_protobuf_timestamp_pb.Timestamp | undefined;
+    setCreateTime(value?: google_protobuf_timestamp_pb.Timestamp): WalletGroup;
+
+    hasUpdateTime(): boolean;
+    clearUpdateTime(): void;
+    getUpdateTime(): google_protobuf_timestamp_pb.Timestamp | undefined;
+    setUpdateTime(value?: google_protobuf_timestamp_pb.Timestamp): WalletGroup;
+
+    serializeBinary(): Uint8Array;
+    toObject(includeInstance?: boolean): WalletGroup.AsObject;
+    static toObject(includeInstance: boolean, msg: WalletGroup): WalletGroup.AsObject;
+    static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+    static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+    static serializeBinaryToWriter(message: WalletGroup, writer: jspb.BinaryWriter): void;
+    static deserializeBinary(bytes: Uint8Array): WalletGroup;
+    static deserializeBinaryFromReader(message: WalletGroup, reader: jspb.BinaryReader): WalletGroup;
+}
+
+export namespace WalletGroup {
+    export type AsObject = {
+        walletGroupId: string,
+        name: string,
+        coin: gincoinc_global_v1_gincoincglobalv1_enum_pb.Coin,
+        walletsList: Array<Wallet.AsObject>,
+        watchOnly: boolean,
+        createTime?: google_protobuf_timestamp_pb.Timestamp.AsObject,
+        updateTime?: google_protobuf_timestamp_pb.Timestamp.AsObject,
+    }
+}
+
 export class RequestTxOutput extends jspb.Message { 
     getAddress(): string;
     setAddress(value: string): RequestTxOutput;
@@ -2039,5 +2469,37 @@ export namespace RequestRate {
     export type AsObject = {
         coin: gincoinc_global_v1_gincoincglobalv1_enum_pb.Coin,
         jpy: number,
+    }
+}
+
+export class SubstrateChildAddress extends jspb.Message { 
+    getWalletId(): string;
+    setWalletId(value: string): SubstrateChildAddress;
+    getAccountId(): string;
+    setAccountId(value: string): SubstrateChildAddress;
+    getAddress(): string;
+    setAddress(value: string): SubstrateChildAddress;
+    getBalance(): number;
+    setBalance(value: number): SubstrateChildAddress;
+    getStringBalance(): string;
+    setStringBalance(value: string): SubstrateChildAddress;
+
+    serializeBinary(): Uint8Array;
+    toObject(includeInstance?: boolean): SubstrateChildAddress.AsObject;
+    static toObject(includeInstance: boolean, msg: SubstrateChildAddress): SubstrateChildAddress.AsObject;
+    static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+    static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+    static serializeBinaryToWriter(message: SubstrateChildAddress, writer: jspb.BinaryWriter): void;
+    static deserializeBinary(bytes: Uint8Array): SubstrateChildAddress;
+    static deserializeBinaryFromReader(message: SubstrateChildAddress, reader: jspb.BinaryReader): SubstrateChildAddress;
+}
+
+export namespace SubstrateChildAddress {
+    export type AsObject = {
+        walletId: string,
+        accountId: string,
+        address: string,
+        balance: number,
+        stringBalance: string,
     }
 }
