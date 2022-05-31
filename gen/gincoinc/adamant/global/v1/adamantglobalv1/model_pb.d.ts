@@ -628,6 +628,16 @@ export class Transaction extends jspb.Message {
     getSubstrateSpecific(): SubstrateSpecific | undefined;
     setSubstrateSpecific(value?: SubstrateSpecific): Transaction;
 
+    hasMonacoinSpecific(): boolean;
+    clearMonacoinSpecific(): void;
+    getMonacoinSpecific(): MonacoinSpecific | undefined;
+    setMonacoinSpecific(value?: MonacoinSpecific): Transaction;
+
+    hasNemSpecific(): boolean;
+    clearNemSpecific(): void;
+    getNemSpecific(): NemSpecific | undefined;
+    setNemSpecific(value?: NemSpecific): Transaction;
+
     hasCreateTime(): boolean;
     clearCreateTime(): void;
     getCreateTime(): google_protobuf_timestamp_pb.Timestamp | undefined;
@@ -674,6 +684,8 @@ export namespace Transaction {
         stellarSpecific?: StellarSpecific.AsObject,
         cardanoSpecific?: CardanoSpecific.AsObject,
         substrateSpecific?: SubstrateSpecific.AsObject,
+        monacoinSpecific?: MonacoinSpecific.AsObject,
+        nemSpecific?: NemSpecific.AsObject,
         createTime?: google_protobuf_timestamp_pb.Timestamp.AsObject,
         updateTime?: google_protobuf_timestamp_pb.Timestamp.AsObject,
     }
@@ -1080,6 +1092,61 @@ export namespace SubstrateSpecific {
     }
 }
 
+export class MonacoinSpecific extends jspb.Message { 
+    clearTxInputsList(): void;
+    getTxInputsList(): Array<TxInput>;
+    setTxInputsList(value: Array<TxInput>): MonacoinSpecific;
+    addTxInputs(value?: TxInput, index?: number): TxInput;
+    clearTxOutputsList(): void;
+    getTxOutputsList(): Array<TxOutput>;
+    setTxOutputsList(value: Array<TxOutput>): MonacoinSpecific;
+    addTxOutputs(value?: TxOutput, index?: number): TxOutput;
+
+    serializeBinary(): Uint8Array;
+    toObject(includeInstance?: boolean): MonacoinSpecific.AsObject;
+    static toObject(includeInstance: boolean, msg: MonacoinSpecific): MonacoinSpecific.AsObject;
+    static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+    static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+    static serializeBinaryToWriter(message: MonacoinSpecific, writer: jspb.BinaryWriter): void;
+    static deserializeBinary(bytes: Uint8Array): MonacoinSpecific;
+    static deserializeBinaryFromReader(message: MonacoinSpecific, reader: jspb.BinaryReader): MonacoinSpecific;
+}
+
+export namespace MonacoinSpecific {
+    export type AsObject = {
+        txInputsList: Array<TxInput.AsObject>,
+        txOutputsList: Array<TxOutput.AsObject>,
+    }
+}
+
+export class NemSpecific extends jspb.Message { 
+    getMessage(): string;
+    setMessage(value: string): NemSpecific;
+    getTxType(): gincoinc_global_v1_gincoincglobalv1_enum_pb.NemTransactionType;
+    setTxType(value: gincoinc_global_v1_gincoincglobalv1_enum_pb.NemTransactionType): NemSpecific;
+    clearNemMultisigTransactionsList(): void;
+    getNemMultisigTransactionsList(): Array<NemMultisigTransaction>;
+    setNemMultisigTransactionsList(value: Array<NemMultisigTransaction>): NemSpecific;
+    addNemMultisigTransactions(value?: NemMultisigTransaction, index?: number): NemMultisigTransaction;
+
+    serializeBinary(): Uint8Array;
+    toObject(includeInstance?: boolean): NemSpecific.AsObject;
+    static toObject(includeInstance: boolean, msg: NemSpecific): NemSpecific.AsObject;
+    static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+    static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+    static serializeBinaryToWriter(message: NemSpecific, writer: jspb.BinaryWriter): void;
+    static deserializeBinary(bytes: Uint8Array): NemSpecific;
+    static deserializeBinaryFromReader(message: NemSpecific, reader: jspb.BinaryReader): NemSpecific;
+}
+
+export namespace NemSpecific {
+    export type AsObject = {
+        message: string,
+        txType: gincoinc_global_v1_gincoincglobalv1_enum_pb.NemTransactionType,
+        nemMultisigTransactionsList: Array<NemMultisigTransaction.AsObject>,
+    }
+}
+
 export class CreateTransactionSubstrateSpecific extends jspb.Message { 
     getTransactionId(): string;
     setTransactionId(value: string): CreateTransactionSubstrateSpecific;
@@ -1126,6 +1193,32 @@ export namespace CreateTransactionWalletConnectSpecific {
     export type AsObject = {
         callRequestType: gincoinc_adamant_global_v1_adamantglobalv1_enum_pb.WalletConnectCallRequestType,
         callRequestParams: string,
+    }
+}
+
+export class CreateTransactionNemSpecific extends jspb.Message { 
+    getTransactionId(): string;
+    setTransactionId(value: string): CreateTransactionNemSpecific;
+    getTxType(): gincoinc_global_v1_gincoincglobalv1_enum_pb.NemTransactionType;
+    setTxType(value: gincoinc_global_v1_gincoincglobalv1_enum_pb.NemTransactionType): CreateTransactionNemSpecific;
+    getMessage(): string;
+    setMessage(value: string): CreateTransactionNemSpecific;
+
+    serializeBinary(): Uint8Array;
+    toObject(includeInstance?: boolean): CreateTransactionNemSpecific.AsObject;
+    static toObject(includeInstance: boolean, msg: CreateTransactionNemSpecific): CreateTransactionNemSpecific.AsObject;
+    static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+    static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+    static serializeBinaryToWriter(message: CreateTransactionNemSpecific, writer: jspb.BinaryWriter): void;
+    static deserializeBinary(bytes: Uint8Array): CreateTransactionNemSpecific;
+    static deserializeBinaryFromReader(message: CreateTransactionNemSpecific, reader: jspb.BinaryReader): CreateTransactionNemSpecific;
+}
+
+export namespace CreateTransactionNemSpecific {
+    export type AsObject = {
+        transactionId: string,
+        txType: gincoinc_global_v1_gincoincglobalv1_enum_pb.NemTransactionType,
+        message: string,
     }
 }
 
@@ -1188,6 +1281,59 @@ export namespace SubstrateMultisigTransaction {
         stringFee: string,
         nonce: number,
         multisigCallType: gincoinc_adamant_global_v1_adamantglobalv1_enum_pb.SubstrateCallType,
+        state: gincoinc_adamant_global_v1_adamantglobalv1_enum_pb.TransactionState,
+        createTime?: google_protobuf_timestamp_pb.Timestamp.AsObject,
+        updateTime?: google_protobuf_timestamp_pb.Timestamp.AsObject,
+    }
+}
+
+export class NemMultisigTransaction extends jspb.Message { 
+    getWalletId(): string;
+    setWalletId(value: string): NemMultisigTransaction;
+    getTransactionId(): string;
+    setTransactionId(value: string): NemMultisigTransaction;
+    getNemMultisigTransactionId(): string;
+    setNemMultisigTransactionId(value: string): NemMultisigTransaction;
+    getAccountKeyId(): string;
+    setAccountKeyId(value: string): NemMultisigTransaction;
+    getTxType(): gincoinc_global_v1_gincoincglobalv1_enum_pb.NemTransactionType;
+    setTxType(value: gincoinc_global_v1_gincoincglobalv1_enum_pb.NemTransactionType): NemMultisigTransaction;
+    getData(): string;
+    setData(value: string): NemMultisigTransaction;
+    getSignature(): string;
+    setSignature(value: string): NemMultisigTransaction;
+    getState(): gincoinc_adamant_global_v1_adamantglobalv1_enum_pb.TransactionState;
+    setState(value: gincoinc_adamant_global_v1_adamantglobalv1_enum_pb.TransactionState): NemMultisigTransaction;
+
+    hasCreateTime(): boolean;
+    clearCreateTime(): void;
+    getCreateTime(): google_protobuf_timestamp_pb.Timestamp | undefined;
+    setCreateTime(value?: google_protobuf_timestamp_pb.Timestamp): NemMultisigTransaction;
+
+    hasUpdateTime(): boolean;
+    clearUpdateTime(): void;
+    getUpdateTime(): google_protobuf_timestamp_pb.Timestamp | undefined;
+    setUpdateTime(value?: google_protobuf_timestamp_pb.Timestamp): NemMultisigTransaction;
+
+    serializeBinary(): Uint8Array;
+    toObject(includeInstance?: boolean): NemMultisigTransaction.AsObject;
+    static toObject(includeInstance: boolean, msg: NemMultisigTransaction): NemMultisigTransaction.AsObject;
+    static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+    static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+    static serializeBinaryToWriter(message: NemMultisigTransaction, writer: jspb.BinaryWriter): void;
+    static deserializeBinary(bytes: Uint8Array): NemMultisigTransaction;
+    static deserializeBinaryFromReader(message: NemMultisigTransaction, reader: jspb.BinaryReader): NemMultisigTransaction;
+}
+
+export namespace NemMultisigTransaction {
+    export type AsObject = {
+        walletId: string,
+        transactionId: string,
+        nemMultisigTransactionId: string,
+        accountKeyId: string,
+        txType: gincoinc_global_v1_gincoincglobalv1_enum_pb.NemTransactionType,
+        data: string,
+        signature: string,
         state: gincoinc_adamant_global_v1_adamantglobalv1_enum_pb.TransactionState,
         createTime?: google_protobuf_timestamp_pb.Timestamp.AsObject,
         updateTime?: google_protobuf_timestamp_pb.Timestamp.AsObject,
@@ -1300,6 +1446,8 @@ export class Transfer extends jspb.Message {
     setDestinationTag(value: number): Transfer;
     getMemoId(): string;
     setMemoId(value: string): Transfer;
+    getMessage(): string;
+    setMessage(value: string): Transfer;
     getState(): gincoinc_global_v1_gincoincglobalv1_enum_pb.TransactionState;
     setState(value: gincoinc_global_v1_gincoincglobalv1_enum_pb.TransactionState): Transfer;
     getResult(): gincoinc_global_v1_gincoincglobalv1_enum_pb.TransactionResult;
@@ -1339,6 +1487,7 @@ export namespace Transfer {
         partnerAddress: string,
         destinationTag: number,
         memoId: string,
+        message: string,
         state: gincoinc_global_v1_gincoincglobalv1_enum_pb.TransactionState,
         result: gincoinc_global_v1_gincoincglobalv1_enum_pb.TransactionResult,
         createTime?: google_protobuf_timestamp_pb.Timestamp.AsObject,
@@ -1375,6 +1524,8 @@ export class UncheckedTransfer extends jspb.Message {
     setDestinationTag(value: number): UncheckedTransfer;
     getMemoId(): string;
     setMemoId(value: string): UncheckedTransfer;
+    getMessage(): string;
+    setMessage(value: string): UncheckedTransfer;
     getHasChecked(): boolean;
     setHasChecked(value: boolean): UncheckedTransfer;
 
@@ -1414,6 +1565,7 @@ export namespace UncheckedTransfer {
         partnerAddress: string,
         destinationTag: number,
         memoId: string,
+        message: string,
         hasChecked: boolean,
         createTime?: google_protobuf_timestamp_pb.Timestamp.AsObject,
         updateTime?: google_protobuf_timestamp_pb.Timestamp.AsObject,

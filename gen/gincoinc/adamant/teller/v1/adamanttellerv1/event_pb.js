@@ -118,7 +118,9 @@ proto.adamant.teller.v1.TransferUpdated.toObject = function(includeInstance, msg
     from: jspb.Message.getFieldWithDefault(msg, 15, ""),
     to: jspb.Message.getFieldWithDefault(msg, 16, ""),
     time: (f = msg.getTime()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f),
-    eventId: jspb.Message.getFieldWithDefault(msg, 18, "")
+    eventId: jspb.Message.getFieldWithDefault(msg, 18, ""),
+    fee: jspb.Message.getFloatingPointFieldWithDefault(msg, 19, 0.0),
+    stringFee: jspb.Message.getFieldWithDefault(msg, 20, "")
   };
 
   if (includeInstance) {
@@ -227,6 +229,14 @@ proto.adamant.teller.v1.TransferUpdated.deserializeBinaryFromReader = function(m
     case 18:
       var value = /** @type {string} */ (reader.readString());
       msg.setEventId(value);
+      break;
+    case 19:
+      var value = /** @type {number} */ (reader.readDouble());
+      msg.setFee(value);
+      break;
+    case 20:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setStringFee(value);
       break;
     default:
       reader.skipField();
@@ -381,6 +391,20 @@ proto.adamant.teller.v1.TransferUpdated.serializeBinaryToWriter = function(messa
   if (f.length > 0) {
     writer.writeString(
       18,
+      f
+    );
+  }
+  f = message.getFee();
+  if (f !== 0.0) {
+    writer.writeDouble(
+      19,
+      f
+    );
+  }
+  f = message.getStringFee();
+  if (f.length > 0) {
+    writer.writeString(
+      20,
       f
     );
   }
@@ -727,6 +751,42 @@ proto.adamant.teller.v1.TransferUpdated.prototype.getEventId = function() {
  */
 proto.adamant.teller.v1.TransferUpdated.prototype.setEventId = function(value) {
   return jspb.Message.setProto3StringField(this, 18, value);
+};
+
+
+/**
+ * optional double fee = 19;
+ * @return {number}
+ */
+proto.adamant.teller.v1.TransferUpdated.prototype.getFee = function() {
+  return /** @type {number} */ (jspb.Message.getFloatingPointFieldWithDefault(this, 19, 0.0));
+};
+
+
+/**
+ * @param {number} value
+ * @return {!proto.adamant.teller.v1.TransferUpdated} returns this
+ */
+proto.adamant.teller.v1.TransferUpdated.prototype.setFee = function(value) {
+  return jspb.Message.setProto3FloatField(this, 19, value);
+};
+
+
+/**
+ * optional string string_fee = 20;
+ * @return {string}
+ */
+proto.adamant.teller.v1.TransferUpdated.prototype.getStringFee = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 20, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.adamant.teller.v1.TransferUpdated} returns this
+ */
+proto.adamant.teller.v1.TransferUpdated.prototype.setStringFee = function(value) {
+  return jspb.Message.setProto3StringField(this, 20, value);
 };
 
 

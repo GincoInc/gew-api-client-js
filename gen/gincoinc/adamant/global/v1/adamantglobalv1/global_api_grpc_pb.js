@@ -3,6 +3,7 @@
 'use strict';
 var grpc = require('grpc');
 var gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb = require('../../../../../gincoinc/adamant/global/v1/adamantglobalv1/global_api_pb.js');
+var gincoinc_adamant_global_v1_adamantglobalv1_audit_logger_pb = require('../../../../../gincoinc/adamant/global/v1/adamantglobalv1/audit_logger_pb.js');
 var gincoinc_adamant_global_v1_adamantglobalv1_enum_pb = require('../../../../../gincoinc/adamant/global/v1/adamantglobalv1/enum_pb.js');
 var gincoinc_adamant_global_v1_adamantglobalv1_model_pb = require('../../../../../gincoinc/adamant/global/v1/adamantglobalv1/model_pb.js');
 var gincoinc_global_v1_gincoincglobalv1_enum_pb = require('../../../../../gincoinc/global/v1/gincoincglobalv1/enum_pb.js');
@@ -767,6 +768,28 @@ function serialize_adamant_global_v1_ListAddressesWithBalanceResponse(arg) {
 
 function deserialize_adamant_global_v1_ListAddressesWithBalanceResponse(buffer_arg) {
   return gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.ListAddressesWithBalanceResponse.deserializeBinary(new Uint8Array(buffer_arg));
+}
+
+function serialize_adamant_global_v1_ListAuditLogsRequest(arg) {
+  if (!(arg instanceof gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.ListAuditLogsRequest)) {
+    throw new Error('Expected argument of type adamant.global.v1.ListAuditLogsRequest');
+  }
+  return Buffer.from(arg.serializeBinary());
+}
+
+function deserialize_adamant_global_v1_ListAuditLogsRequest(buffer_arg) {
+  return gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.ListAuditLogsRequest.deserializeBinary(new Uint8Array(buffer_arg));
+}
+
+function serialize_adamant_global_v1_ListAuditLogsResponse(arg) {
+  if (!(arg instanceof gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.ListAuditLogsResponse)) {
+    throw new Error('Expected argument of type adamant.global.v1.ListAuditLogsResponse');
+  }
+  return Buffer.from(arg.serializeBinary());
+}
+
+function deserialize_adamant_global_v1_ListAuditLogsResponse(buffer_arg) {
+  return gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.ListAuditLogsResponse.deserializeBinary(new Uint8Array(buffer_arg));
 }
 
 function serialize_adamant_global_v1_ListBalanceSnapshotsRequest(arg) {
@@ -2521,6 +2544,17 @@ validateAddress: {
     requestDeserialize: deserialize_adamant_global_v1_ValidateAddressRequest,
     responseSerialize: serialize_adamant_global_v1_ValidateAddressResponse,
     responseDeserialize: deserialize_adamant_global_v1_ValidateAddressResponse,
+  },
+  listAuditLogs: {
+    path: '/adamant.global.v1.GlobalAPI/ListAuditLogs',
+    requestStream: false,
+    responseStream: false,
+    requestType: gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.ListAuditLogsRequest,
+    responseType: gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.ListAuditLogsResponse,
+    requestSerialize: serialize_adamant_global_v1_ListAuditLogsRequest,
+    requestDeserialize: deserialize_adamant_global_v1_ListAuditLogsRequest,
+    responseSerialize: serialize_adamant_global_v1_ListAuditLogsResponse,
+    responseDeserialize: deserialize_adamant_global_v1_ListAuditLogsResponse,
   },
 };
 

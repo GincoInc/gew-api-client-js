@@ -26,6 +26,8 @@ message TransferUpdated {
   string to = 16;
   google.protobuf.Timestamp time = 17;
   string event_id = 18;
+  double fee = 19;
+  string string_fee = 20;
 }
 
 // TODO deprecate
