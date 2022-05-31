@@ -329,6 +329,28 @@ function deserialize_adamant_global_v1_ListAddressesResponse(buffer_arg) {
   return gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.ListAddressesResponse.deserializeBinary(new Uint8Array(buffer_arg));
 }
 
+function serialize_adamant_global_v1_ListAuditLogsRequest(arg) {
+  if (!(arg instanceof gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.ListAuditLogsRequest)) {
+    throw new Error('Expected argument of type adamant.global.v1.ListAuditLogsRequest');
+  }
+  return Buffer.from(arg.serializeBinary());
+}
+
+function deserialize_adamant_global_v1_ListAuditLogsRequest(buffer_arg) {
+  return gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.ListAuditLogsRequest.deserializeBinary(new Uint8Array(buffer_arg));
+}
+
+function serialize_adamant_global_v1_ListAuditLogsResponse(arg) {
+  if (!(arg instanceof gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.ListAuditLogsResponse)) {
+    throw new Error('Expected argument of type adamant.global.v1.ListAuditLogsResponse');
+  }
+  return Buffer.from(arg.serializeBinary());
+}
+
+function deserialize_adamant_global_v1_ListAuditLogsResponse(buffer_arg) {
+  return gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.ListAuditLogsResponse.deserializeBinary(new Uint8Array(buffer_arg));
+}
+
 function serialize_adamant_global_v1_ListBaseWalletsRequest(arg) {
   if (!(arg instanceof gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.ListBaseWalletsRequest)) {
     throw new Error('Expected argument of type adamant.global.v1.ListBaseWalletsRequest');
@@ -991,6 +1013,17 @@ validateAddress: {
     requestDeserialize: deserialize_adamant_global_v1_FlushBalanceRequest,
     responseSerialize: serialize_adamant_global_v1_FlushBalanceResponse,
     responseDeserialize: deserialize_adamant_global_v1_FlushBalanceResponse,
+  },
+  listAuditLogs: {
+    path: '/adamant.teller.v1.TellerAPI/ListAuditLogs',
+    requestStream: false,
+    responseStream: false,
+    requestType: gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.ListAuditLogsRequest,
+    responseType: gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.ListAuditLogsResponse,
+    requestSerialize: serialize_adamant_global_v1_ListAuditLogsRequest,
+    requestDeserialize: deserialize_adamant_global_v1_ListAuditLogsRequest,
+    responseSerialize: serialize_adamant_global_v1_ListAuditLogsResponse,
+    responseDeserialize: deserialize_adamant_global_v1_ListAuditLogsResponse,
   },
 };
 

@@ -48,6 +48,10 @@ export class TransferUpdated extends jspb.Message {
     setTime(value?: google_protobuf_timestamp_pb.Timestamp): TransferUpdated;
     getEventId(): string;
     setEventId(value: string): TransferUpdated;
+    getFee(): number;
+    setFee(value: number): TransferUpdated;
+    getStringFee(): string;
+    setStringFee(value: string): TransferUpdated;
 
     serializeBinary(): Uint8Array;
     toObject(includeInstance?: boolean): TransferUpdated.AsObject;
@@ -79,6 +83,8 @@ export namespace TransferUpdated {
         to: string,
         time?: google_protobuf_timestamp_pb.Timestamp.AsObject,
         eventId: string,
+        fee: number,
+        stringFee: string,
     }
 }
 

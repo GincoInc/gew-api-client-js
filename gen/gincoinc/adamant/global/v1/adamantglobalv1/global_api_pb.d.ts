@@ -5,6 +5,7 @@
 /* eslint-disable */
 
 import * as jspb from "google-protobuf";
+import * as gincoinc_adamant_global_v1_adamantglobalv1_audit_logger_pb from "../../../../../gincoinc/adamant/global/v1/adamantglobalv1/audit_logger_pb";
 import * as gincoinc_adamant_global_v1_adamantglobalv1_enum_pb from "../../../../../gincoinc/adamant/global/v1/adamantglobalv1/enum_pb";
 import * as gincoinc_adamant_global_v1_adamantglobalv1_model_pb from "../../../../../gincoinc/adamant/global/v1/adamantglobalv1/model_pb";
 import * as gincoinc_global_v1_gincoincglobalv1_enum_pb from "../../../../../gincoinc/global/v1/gincoincglobalv1/enum_pb";
@@ -1395,6 +1396,11 @@ export class CreateTransactionRequest extends jspb.Message {
     getWalletConnectSpecific(): gincoinc_adamant_global_v1_adamantglobalv1_model_pb.CreateTransactionWalletConnectSpecific | undefined;
     setWalletConnectSpecific(value?: gincoinc_adamant_global_v1_adamantglobalv1_model_pb.CreateTransactionWalletConnectSpecific): CreateTransactionRequest;
 
+    hasNemSpecific(): boolean;
+    clearNemSpecific(): void;
+    getNemSpecific(): gincoinc_adamant_global_v1_adamantglobalv1_model_pb.CreateTransactionNemSpecific | undefined;
+    setNemSpecific(value?: gincoinc_adamant_global_v1_adamantglobalv1_model_pb.CreateTransactionNemSpecific): CreateTransactionRequest;
+
     serializeBinary(): Uint8Array;
     toObject(includeInstance?: boolean): CreateTransactionRequest.AsObject;
     static toObject(includeInstance: boolean, msg: CreateTransactionRequest): CreateTransactionRequest.AsObject;
@@ -1416,6 +1422,7 @@ export namespace CreateTransactionRequest {
         stringValue: string,
         substrateSpecific?: gincoinc_adamant_global_v1_adamantglobalv1_model_pb.CreateTransactionSubstrateSpecific.AsObject,
         walletConnectSpecific?: gincoinc_adamant_global_v1_adamantglobalv1_model_pb.CreateTransactionWalletConnectSpecific.AsObject,
+        nemSpecific?: gincoinc_adamant_global_v1_adamantglobalv1_model_pb.CreateTransactionNemSpecific.AsObject,
     }
 }
 
@@ -2769,6 +2776,11 @@ export class CalculateFeeRequest extends jspb.Message {
     getSubstrateSpecific(): CalculateFeeSubstrateSpecific | undefined;
     setSubstrateSpecific(value?: CalculateFeeSubstrateSpecific): CalculateFeeRequest;
 
+    hasNemSpecific(): boolean;
+    clearNemSpecific(): void;
+    getNemSpecific(): CalculateFeeNemSpecific | undefined;
+    setNemSpecific(value?: CalculateFeeNemSpecific): CalculateFeeRequest;
+
     serializeBinary(): Uint8Array;
     toObject(includeInstance?: boolean): CalculateFeeRequest.AsObject;
     static toObject(includeInstance: boolean, msg: CalculateFeeRequest): CalculateFeeRequest.AsObject;
@@ -2788,6 +2800,7 @@ export namespace CalculateFeeRequest {
         destinationTag: number,
         stringValue: string,
         substrateSpecific?: CalculateFeeSubstrateSpecific.AsObject,
+        nemSpecific?: CalculateFeeNemSpecific.AsObject,
     }
 }
 
@@ -2811,6 +2824,26 @@ export namespace CalculateFeeSubstrateSpecific {
     export type AsObject = {
         callType: gincoinc_adamant_global_v1_adamantglobalv1_enum_pb.SubstrateCallType,
         multisigCallType: gincoinc_adamant_global_v1_adamantglobalv1_enum_pb.SubstrateCallType,
+    }
+}
+
+export class CalculateFeeNemSpecific extends jspb.Message { 
+    getMessage(): string;
+    setMessage(value: string): CalculateFeeNemSpecific;
+
+    serializeBinary(): Uint8Array;
+    toObject(includeInstance?: boolean): CalculateFeeNemSpecific.AsObject;
+    static toObject(includeInstance: boolean, msg: CalculateFeeNemSpecific): CalculateFeeNemSpecific.AsObject;
+    static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+    static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+    static serializeBinaryToWriter(message: CalculateFeeNemSpecific, writer: jspb.BinaryWriter): void;
+    static deserializeBinary(bytes: Uint8Array): CalculateFeeNemSpecific;
+    static deserializeBinaryFromReader(message: CalculateFeeNemSpecific, reader: jspb.BinaryReader): CalculateFeeNemSpecific;
+}
+
+export namespace CalculateFeeNemSpecific {
+    export type AsObject = {
+        message: string,
     }
 }
 
@@ -3004,6 +3037,60 @@ export class ListConfirmationsResponse extends jspb.Message {
 export namespace ListConfirmationsResponse {
     export type AsObject = {
         confirmationsList: Array<gincoinc_adamant_global_v1_adamantglobalv1_model_pb.Confirmation.AsObject>,
+    }
+}
+
+export class ListAuditLogsRequest extends jspb.Message { 
+    getAuditLogGroup(): gincoinc_adamant_global_v1_adamantglobalv1_enum_pb.AuditLogGroup;
+    setAuditLogGroup(value: gincoinc_adamant_global_v1_adamantglobalv1_enum_pb.AuditLogGroup): ListAuditLogsRequest;
+    getAccountId(): string;
+    setAccountId(value: string): ListAuditLogsRequest;
+    getPageSize(): number;
+    setPageSize(value: number): ListAuditLogsRequest;
+    getPageToken(): string;
+    setPageToken(value: string): ListAuditLogsRequest;
+
+    serializeBinary(): Uint8Array;
+    toObject(includeInstance?: boolean): ListAuditLogsRequest.AsObject;
+    static toObject(includeInstance: boolean, msg: ListAuditLogsRequest): ListAuditLogsRequest.AsObject;
+    static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+    static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+    static serializeBinaryToWriter(message: ListAuditLogsRequest, writer: jspb.BinaryWriter): void;
+    static deserializeBinary(bytes: Uint8Array): ListAuditLogsRequest;
+    static deserializeBinaryFromReader(message: ListAuditLogsRequest, reader: jspb.BinaryReader): ListAuditLogsRequest;
+}
+
+export namespace ListAuditLogsRequest {
+    export type AsObject = {
+        auditLogGroup: gincoinc_adamant_global_v1_adamantglobalv1_enum_pb.AuditLogGroup,
+        accountId: string,
+        pageSize: number,
+        pageToken: string,
+    }
+}
+
+export class ListAuditLogsResponse extends jspb.Message { 
+    clearAuditLogsList(): void;
+    getAuditLogsList(): Array<gincoinc_adamant_global_v1_adamantglobalv1_audit_logger_pb.AuditLog>;
+    setAuditLogsList(value: Array<gincoinc_adamant_global_v1_adamantglobalv1_audit_logger_pb.AuditLog>): ListAuditLogsResponse;
+    addAuditLogs(value?: gincoinc_adamant_global_v1_adamantglobalv1_audit_logger_pb.AuditLog, index?: number): gincoinc_adamant_global_v1_adamantglobalv1_audit_logger_pb.AuditLog;
+    getNextPageToken(): string;
+    setNextPageToken(value: string): ListAuditLogsResponse;
+
+    serializeBinary(): Uint8Array;
+    toObject(includeInstance?: boolean): ListAuditLogsResponse.AsObject;
+    static toObject(includeInstance: boolean, msg: ListAuditLogsResponse): ListAuditLogsResponse.AsObject;
+    static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+    static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+    static serializeBinaryToWriter(message: ListAuditLogsResponse, writer: jspb.BinaryWriter): void;
+    static deserializeBinary(bytes: Uint8Array): ListAuditLogsResponse;
+    static deserializeBinaryFromReader(message: ListAuditLogsResponse, reader: jspb.BinaryReader): ListAuditLogsResponse;
+}
+
+export namespace ListAuditLogsResponse {
+    export type AsObject = {
+        auditLogsList: Array<gincoinc_adamant_global_v1_adamantglobalv1_audit_logger_pb.AuditLog.AsObject>,
+        nextPageToken: string,
     }
 }
 
