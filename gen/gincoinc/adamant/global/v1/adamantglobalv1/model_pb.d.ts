@@ -638,6 +638,11 @@ export class Transaction extends jspb.Message {
     getNemSpecific(): NemSpecific | undefined;
     setNemSpecific(value?: NemSpecific): Transaction;
 
+    hasIostSpecific(): boolean;
+    clearIostSpecific(): void;
+    getIostSpecific(): IOSTSpecific | undefined;
+    setIostSpecific(value?: IOSTSpecific): Transaction;
+
     hasCreateTime(): boolean;
     clearCreateTime(): void;
     getCreateTime(): google_protobuf_timestamp_pb.Timestamp | undefined;
@@ -686,6 +691,7 @@ export namespace Transaction {
         substrateSpecific?: SubstrateSpecific.AsObject,
         monacoinSpecific?: MonacoinSpecific.AsObject,
         nemSpecific?: NemSpecific.AsObject,
+        iostSpecific?: IOSTSpecific.AsObject,
         createTime?: google_protobuf_timestamp_pb.Timestamp.AsObject,
         updateTime?: google_protobuf_timestamp_pb.Timestamp.AsObject,
     }
@@ -1128,6 +1134,8 @@ export class NemSpecific extends jspb.Message {
     getNemMultisigTransactionsList(): Array<NemMultisigTransaction>;
     setNemMultisigTransactionsList(value: Array<NemMultisigTransaction>): NemSpecific;
     addNemMultisigTransactions(value?: NemMultisigTransaction, index?: number): NemMultisigTransaction;
+    getExpiration(): number;
+    setExpiration(value: number): NemSpecific;
 
     serializeBinary(): Uint8Array;
     toObject(includeInstance?: boolean): NemSpecific.AsObject;
@@ -1144,6 +1152,33 @@ export namespace NemSpecific {
         message: string,
         txType: gincoinc_global_v1_gincoincglobalv1_enum_pb.NemTransactionType,
         nemMultisigTransactionsList: Array<NemMultisigTransaction.AsObject>,
+        expiration: number,
+    }
+}
+
+export class IOSTSpecific extends jspb.Message { 
+    getMemo(): string;
+    setMemo(value: string): IOSTSpecific;
+    getTimestamp(): number;
+    setTimestamp(value: number): IOSTSpecific;
+    getExpiration(): number;
+    setExpiration(value: number): IOSTSpecific;
+
+    serializeBinary(): Uint8Array;
+    toObject(includeInstance?: boolean): IOSTSpecific.AsObject;
+    static toObject(includeInstance: boolean, msg: IOSTSpecific): IOSTSpecific.AsObject;
+    static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+    static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+    static serializeBinaryToWriter(message: IOSTSpecific, writer: jspb.BinaryWriter): void;
+    static deserializeBinary(bytes: Uint8Array): IOSTSpecific;
+    static deserializeBinaryFromReader(message: IOSTSpecific, reader: jspb.BinaryReader): IOSTSpecific;
+}
+
+export namespace IOSTSpecific {
+    export type AsObject = {
+        memo: string,
+        timestamp: number,
+        expiration: number,
     }
 }
 
@@ -1222,6 +1257,29 @@ export namespace CreateTransactionNemSpecific {
     }
 }
 
+export class CreateTransactionIOSTSpecific extends jspb.Message { 
+    getMemo(): string;
+    setMemo(value: string): CreateTransactionIOSTSpecific;
+    getTimestamp(): number;
+    setTimestamp(value: number): CreateTransactionIOSTSpecific;
+
+    serializeBinary(): Uint8Array;
+    toObject(includeInstance?: boolean): CreateTransactionIOSTSpecific.AsObject;
+    static toObject(includeInstance: boolean, msg: CreateTransactionIOSTSpecific): CreateTransactionIOSTSpecific.AsObject;
+    static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+    static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+    static serializeBinaryToWriter(message: CreateTransactionIOSTSpecific, writer: jspb.BinaryWriter): void;
+    static deserializeBinary(bytes: Uint8Array): CreateTransactionIOSTSpecific;
+    static deserializeBinaryFromReader(message: CreateTransactionIOSTSpecific, reader: jspb.BinaryReader): CreateTransactionIOSTSpecific;
+}
+
+export namespace CreateTransactionIOSTSpecific {
+    export type AsObject = {
+        memo: string,
+        timestamp: number,
+    }
+}
+
 export class SubstrateMultisigTransaction extends jspb.Message { 
     getWalletId(): string;
     setWalletId(value: string): SubstrateMultisigTransaction;
@@ -1294,8 +1352,8 @@ export class NemMultisigTransaction extends jspb.Message {
     setTransactionId(value: string): NemMultisigTransaction;
     getNemMultisigTransactionId(): string;
     setNemMultisigTransactionId(value: string): NemMultisigTransaction;
-    getAccountKeyId(): string;
-    setAccountKeyId(value: string): NemMultisigTransaction;
+    getAccountId(): string;
+    setAccountId(value: string): NemMultisigTransaction;
     getTxType(): gincoinc_global_v1_gincoincglobalv1_enum_pb.NemTransactionType;
     setTxType(value: gincoinc_global_v1_gincoincglobalv1_enum_pb.NemTransactionType): NemMultisigTransaction;
     getData(): string;
@@ -1330,7 +1388,7 @@ export namespace NemMultisigTransaction {
         walletId: string,
         transactionId: string,
         nemMultisigTransactionId: string,
-        accountKeyId: string,
+        accountId: string,
         txType: gincoinc_global_v1_gincoincglobalv1_enum_pb.NemTransactionType,
         data: string,
         signature: string,
@@ -1448,6 +1506,10 @@ export class Transfer extends jspb.Message {
     setMemoId(value: string): Transfer;
     getMessage(): string;
     setMessage(value: string): Transfer;
+    getFee(): number;
+    setFee(value: number): Transfer;
+    getStringFee(): string;
+    setStringFee(value: string): Transfer;
     getState(): gincoinc_global_v1_gincoincglobalv1_enum_pb.TransactionState;
     setState(value: gincoinc_global_v1_gincoincglobalv1_enum_pb.TransactionState): Transfer;
     getResult(): gincoinc_global_v1_gincoincglobalv1_enum_pb.TransactionResult;
@@ -1488,6 +1550,8 @@ export namespace Transfer {
         destinationTag: number,
         memoId: string,
         message: string,
+        fee: number,
+        stringFee: string,
         state: gincoinc_global_v1_gincoincglobalv1_enum_pb.TransactionState,
         result: gincoinc_global_v1_gincoincglobalv1_enum_pb.TransactionResult,
         createTime?: google_protobuf_timestamp_pb.Timestamp.AsObject,
@@ -1526,6 +1590,10 @@ export class UncheckedTransfer extends jspb.Message {
     setMemoId(value: string): UncheckedTransfer;
     getMessage(): string;
     setMessage(value: string): UncheckedTransfer;
+    getFee(): number;
+    setFee(value: number): UncheckedTransfer;
+    getStringFee(): string;
+    setStringFee(value: string): UncheckedTransfer;
     getHasChecked(): boolean;
     setHasChecked(value: boolean): UncheckedTransfer;
 
@@ -1566,6 +1634,8 @@ export namespace UncheckedTransfer {
         destinationTag: number,
         memoId: string,
         message: string,
+        fee: number,
+        stringFee: string,
         hasChecked: boolean,
         createTime?: google_protobuf_timestamp_pb.Timestamp.AsObject,
         updateTime?: google_protobuf_timestamp_pb.Timestamp.AsObject,
@@ -2651,6 +2721,58 @@ export namespace SubstrateChildAddress {
         walletId: string,
         accountId: string,
         address: string,
+        balance: number,
+        stringBalance: string,
+    }
+}
+
+export class IOSTChildAccount extends jspb.Message { 
+    getWalletId(): string;
+    setWalletId(value: string): IOSTChildAccount;
+    getAccountId(): string;
+    setAccountId(value: string): IOSTChildAccount;
+    getAccountName(): string;
+    setAccountName(value: string): IOSTChildAccount;
+
+    serializeBinary(): Uint8Array;
+    toObject(includeInstance?: boolean): IOSTChildAccount.AsObject;
+    static toObject(includeInstance: boolean, msg: IOSTChildAccount): IOSTChildAccount.AsObject;
+    static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+    static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+    static serializeBinaryToWriter(message: IOSTChildAccount, writer: jspb.BinaryWriter): void;
+    static deserializeBinary(bytes: Uint8Array): IOSTChildAccount;
+    static deserializeBinaryFromReader(message: IOSTChildAccount, reader: jspb.BinaryReader): IOSTChildAccount;
+}
+
+export namespace IOSTChildAccount {
+    export type AsObject = {
+        walletId: string,
+        accountId: string,
+        accountName: string,
+    }
+}
+
+export class IOSTCallerAccount extends jspb.Message { 
+    getAccountName(): string;
+    setAccountName(value: string): IOSTCallerAccount;
+    getBalance(): number;
+    setBalance(value: number): IOSTCallerAccount;
+    getStringBalance(): string;
+    setStringBalance(value: string): IOSTCallerAccount;
+
+    serializeBinary(): Uint8Array;
+    toObject(includeInstance?: boolean): IOSTCallerAccount.AsObject;
+    static toObject(includeInstance: boolean, msg: IOSTCallerAccount): IOSTCallerAccount.AsObject;
+    static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+    static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+    static serializeBinaryToWriter(message: IOSTCallerAccount, writer: jspb.BinaryWriter): void;
+    static deserializeBinary(bytes: Uint8Array): IOSTCallerAccount;
+    static deserializeBinaryFromReader(message: IOSTCallerAccount, reader: jspb.BinaryReader): IOSTCallerAccount;
+}
+
+export namespace IOSTCallerAccount {
+    export type AsObject = {
+        accountName: string,
         balance: number,
         stringBalance: string,
     }

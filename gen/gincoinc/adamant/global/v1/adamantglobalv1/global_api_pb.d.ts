@@ -1330,6 +1330,8 @@ export class ImportAddressRequest extends jspb.Message {
     setWalletId(value: string): ImportAddressRequest;
     getAddress(): string;
     setAddress(value: string): ImportAddressRequest;
+    getIsChangeAddress(): boolean;
+    setIsChangeAddress(value: boolean): ImportAddressRequest;
 
     serializeBinary(): Uint8Array;
     toObject(includeInstance?: boolean): ImportAddressRequest.AsObject;
@@ -1345,26 +1347,7 @@ export namespace ImportAddressRequest {
     export type AsObject = {
         walletId: string,
         address: string,
-    }
-}
-
-export class ImportAddressResponse extends jspb.Message { 
-    getAddressId(): string;
-    setAddressId(value: string): ImportAddressResponse;
-
-    serializeBinary(): Uint8Array;
-    toObject(includeInstance?: boolean): ImportAddressResponse.AsObject;
-    static toObject(includeInstance: boolean, msg: ImportAddressResponse): ImportAddressResponse.AsObject;
-    static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
-    static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
-    static serializeBinaryToWriter(message: ImportAddressResponse, writer: jspb.BinaryWriter): void;
-    static deserializeBinary(bytes: Uint8Array): ImportAddressResponse;
-    static deserializeBinaryFromReader(message: ImportAddressResponse, reader: jspb.BinaryReader): ImportAddressResponse;
-}
-
-export namespace ImportAddressResponse {
-    export type AsObject = {
-        addressId: string,
+        isChangeAddress: boolean,
     }
 }
 
@@ -1401,6 +1384,11 @@ export class CreateTransactionRequest extends jspb.Message {
     getNemSpecific(): gincoinc_adamant_global_v1_adamantglobalv1_model_pb.CreateTransactionNemSpecific | undefined;
     setNemSpecific(value?: gincoinc_adamant_global_v1_adamantglobalv1_model_pb.CreateTransactionNemSpecific): CreateTransactionRequest;
 
+    hasIostSpecific(): boolean;
+    clearIostSpecific(): void;
+    getIostSpecific(): gincoinc_adamant_global_v1_adamantglobalv1_model_pb.CreateTransactionIOSTSpecific | undefined;
+    setIostSpecific(value?: gincoinc_adamant_global_v1_adamantglobalv1_model_pb.CreateTransactionIOSTSpecific): CreateTransactionRequest;
+
     serializeBinary(): Uint8Array;
     toObject(includeInstance?: boolean): CreateTransactionRequest.AsObject;
     static toObject(includeInstance: boolean, msg: CreateTransactionRequest): CreateTransactionRequest.AsObject;
@@ -1423,6 +1411,7 @@ export namespace CreateTransactionRequest {
         substrateSpecific?: gincoinc_adamant_global_v1_adamantglobalv1_model_pb.CreateTransactionSubstrateSpecific.AsObject,
         walletConnectSpecific?: gincoinc_adamant_global_v1_adamantglobalv1_model_pb.CreateTransactionWalletConnectSpecific.AsObject,
         nemSpecific?: gincoinc_adamant_global_v1_adamantglobalv1_model_pb.CreateTransactionNemSpecific.AsObject,
+        iostSpecific?: gincoinc_adamant_global_v1_adamantglobalv1_model_pb.CreateTransactionIOSTSpecific.AsObject,
     }
 }
 
@@ -1470,6 +1459,11 @@ export class CreateInitTransactionRequest extends jspb.Message {
     getWalletId(): string;
     setWalletId(value: string): CreateInitTransactionRequest;
 
+    hasIostSpecific(): boolean;
+    clearIostSpecific(): void;
+    getIostSpecific(): gincoinc_adamant_global_v1_adamantglobalv1_model_pb.CreateTransactionIOSTSpecific | undefined;
+    setIostSpecific(value?: gincoinc_adamant_global_v1_adamantglobalv1_model_pb.CreateTransactionIOSTSpecific): CreateInitTransactionRequest;
+
     serializeBinary(): Uint8Array;
     toObject(includeInstance?: boolean): CreateInitTransactionRequest.AsObject;
     static toObject(includeInstance: boolean, msg: CreateInitTransactionRequest): CreateInitTransactionRequest.AsObject;
@@ -1483,6 +1477,7 @@ export class CreateInitTransactionRequest extends jspb.Message {
 export namespace CreateInitTransactionRequest {
     export type AsObject = {
         walletId: string,
+        iostSpecific?: gincoinc_adamant_global_v1_adamantglobalv1_model_pb.CreateTransactionIOSTSpecific.AsObject,
     }
 }
 
@@ -1579,6 +1574,8 @@ export class SendTransactionRequest extends jspb.Message {
     setWalletId(value: string): SendTransactionRequest;
     getTransactionId(): string;
     setTransactionId(value: string): SendTransactionRequest;
+    getExecutorType(): gincoinc_adamant_global_v1_adamantglobalv1_enum_pb.ExecutorType;
+    setExecutorType(value: gincoinc_adamant_global_v1_adamantglobalv1_enum_pb.ExecutorType): SendTransactionRequest;
 
     serializeBinary(): Uint8Array;
     toObject(includeInstance?: boolean): SendTransactionRequest.AsObject;
@@ -1594,6 +1591,7 @@ export namespace SendTransactionRequest {
     export type AsObject = {
         walletId: string,
         transactionId: string,
+        executorType: gincoinc_adamant_global_v1_adamantglobalv1_enum_pb.ExecutorType,
     }
 }
 
@@ -1662,6 +1660,8 @@ export namespace SendXRPInitTransactionsResponse {
 export class SendInitTransactionRequest extends jspb.Message { 
     getWalletId(): string;
     setWalletId(value: string): SendInitTransactionRequest;
+    getExecutorType(): gincoinc_adamant_global_v1_adamantglobalv1_enum_pb.ExecutorType;
+    setExecutorType(value: gincoinc_adamant_global_v1_adamantglobalv1_enum_pb.ExecutorType): SendInitTransactionRequest;
 
     serializeBinary(): Uint8Array;
     toObject(includeInstance?: boolean): SendInitTransactionRequest.AsObject;
@@ -1676,6 +1676,7 @@ export class SendInitTransactionRequest extends jspb.Message {
 export namespace SendInitTransactionRequest {
     export type AsObject = {
         walletId: string,
+        executorType: gincoinc_adamant_global_v1_adamantglobalv1_enum_pb.ExecutorType,
     }
 }
 
@@ -2140,6 +2141,32 @@ export class ListUncheckedTransfersByFilterRequest extends jspb.Message {
     setPageSize(value: number): ListUncheckedTransfersByFilterRequest;
     getPageToken(): string;
     setPageToken(value: string): ListUncheckedTransfersByFilterRequest;
+    getFilterType(): gincoinc_adamant_global_v1_adamantglobalv1_enum_pb.ListFilterType;
+    setFilterType(value: gincoinc_adamant_global_v1_adamantglobalv1_enum_pb.ListFilterType): ListUncheckedTransfersByFilterRequest;
+    getTransferId(): string;
+    setTransferId(value: string): ListUncheckedTransfersByFilterRequest;
+    getWalletId(): string;
+    setWalletId(value: string): ListUncheckedTransfersByFilterRequest;
+    getWalletName(): string;
+    setWalletName(value: string): ListUncheckedTransfersByFilterRequest;
+    getAddress(): string;
+    setAddress(value: string): ListUncheckedTransfersByFilterRequest;
+    getTxid(): string;
+    setTxid(value: string): ListUncheckedTransfersByFilterRequest;
+    getCoin(): gincoinc_global_v1_gincoincglobalv1_enum_pb.Coin;
+    setCoin(value: gincoinc_global_v1_gincoincglobalv1_enum_pb.Coin): ListUncheckedTransfersByFilterRequest;
+    getTransferType(): gincoinc_global_v1_gincoincglobalv1_enum_pb.TransferType;
+    setTransferType(value: gincoinc_global_v1_gincoincglobalv1_enum_pb.TransferType): ListUncheckedTransfersByFilterRequest;
+
+    hasStartTime(): boolean;
+    clearStartTime(): void;
+    getStartTime(): google_protobuf_timestamp_pb.Timestamp | undefined;
+    setStartTime(value?: google_protobuf_timestamp_pb.Timestamp): ListUncheckedTransfersByFilterRequest;
+
+    hasEndTime(): boolean;
+    clearEndTime(): void;
+    getEndTime(): google_protobuf_timestamp_pb.Timestamp | undefined;
+    setEndTime(value?: google_protobuf_timestamp_pb.Timestamp): ListUncheckedTransfersByFilterRequest;
 
     serializeBinary(): Uint8Array;
     toObject(includeInstance?: boolean): ListUncheckedTransfersByFilterRequest.AsObject;
@@ -2157,6 +2184,16 @@ export namespace ListUncheckedTransfersByFilterRequest {
         walletTypeList: Array<gincoinc_adamant_global_v1_adamantglobalv1_enum_pb.WalletType>,
         pageSize: number,
         pageToken: string,
+        filterType: gincoinc_adamant_global_v1_adamantglobalv1_enum_pb.ListFilterType,
+        transferId: string,
+        walletId: string,
+        walletName: string,
+        address: string,
+        txid: string,
+        coin: gincoinc_global_v1_gincoincglobalv1_enum_pb.Coin,
+        transferType: gincoinc_global_v1_gincoincglobalv1_enum_pb.TransferType,
+        startTime?: google_protobuf_timestamp_pb.Timestamp.AsObject,
+        endTime?: google_protobuf_timestamp_pb.Timestamp.AsObject,
     }
 }
 
@@ -4037,6 +4074,48 @@ export namespace ListSubstrateChildAddressesResponse {
     }
 }
 
+export class ListIOSTChildAccountsRequest extends jspb.Message { 
+    getWalletId(): string;
+    setWalletId(value: string): ListIOSTChildAccountsRequest;
+
+    serializeBinary(): Uint8Array;
+    toObject(includeInstance?: boolean): ListIOSTChildAccountsRequest.AsObject;
+    static toObject(includeInstance: boolean, msg: ListIOSTChildAccountsRequest): ListIOSTChildAccountsRequest.AsObject;
+    static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+    static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+    static serializeBinaryToWriter(message: ListIOSTChildAccountsRequest, writer: jspb.BinaryWriter): void;
+    static deserializeBinary(bytes: Uint8Array): ListIOSTChildAccountsRequest;
+    static deserializeBinaryFromReader(message: ListIOSTChildAccountsRequest, reader: jspb.BinaryReader): ListIOSTChildAccountsRequest;
+}
+
+export namespace ListIOSTChildAccountsRequest {
+    export type AsObject = {
+        walletId: string,
+    }
+}
+
+export class ListIOSTChildAccountsResponse extends jspb.Message { 
+    clearIostChildAccountsList(): void;
+    getIostChildAccountsList(): Array<gincoinc_adamant_global_v1_adamantglobalv1_model_pb.IOSTChildAccount>;
+    setIostChildAccountsList(value: Array<gincoinc_adamant_global_v1_adamantglobalv1_model_pb.IOSTChildAccount>): ListIOSTChildAccountsResponse;
+    addIostChildAccounts(value?: gincoinc_adamant_global_v1_adamantglobalv1_model_pb.IOSTChildAccount, index?: number): gincoinc_adamant_global_v1_adamantglobalv1_model_pb.IOSTChildAccount;
+
+    serializeBinary(): Uint8Array;
+    toObject(includeInstance?: boolean): ListIOSTChildAccountsResponse.AsObject;
+    static toObject(includeInstance: boolean, msg: ListIOSTChildAccountsResponse): ListIOSTChildAccountsResponse.AsObject;
+    static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+    static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+    static serializeBinaryToWriter(message: ListIOSTChildAccountsResponse, writer: jspb.BinaryWriter): void;
+    static deserializeBinary(bytes: Uint8Array): ListIOSTChildAccountsResponse;
+    static deserializeBinaryFromReader(message: ListIOSTChildAccountsResponse, reader: jspb.BinaryReader): ListIOSTChildAccountsResponse;
+}
+
+export namespace ListIOSTChildAccountsResponse {
+    export type AsObject = {
+        iostChildAccountsList: Array<gincoinc_adamant_global_v1_adamantglobalv1_model_pb.IOSTChildAccount.AsObject>,
+    }
+}
+
 export class DownloadResourceRequest extends jspb.Message { 
     getDownloadResourceType(): gincoinc_adamant_global_v1_adamantglobalv1_enum_pb.DownloadResourceType;
     setDownloadResourceType(value: gincoinc_adamant_global_v1_adamantglobalv1_enum_pb.DownloadResourceType): DownloadResourceRequest;
@@ -4072,5 +4151,108 @@ export namespace DownloadResourceRequest {
         walletId: string,
         startTime?: google_protobuf_timestamp_pb.Timestamp.AsObject,
         endTime?: google_protobuf_timestamp_pb.Timestamp.AsObject,
+    }
+}
+
+export class CreateIOSTAccountRequest extends jspb.Message { 
+    getAccountName(): string;
+    setAccountName(value: string): CreateIOSTAccountRequest;
+    getWalletId(): string;
+    setWalletId(value: string): CreateIOSTAccountRequest;
+    getAccountId(): string;
+    setAccountId(value: string): CreateIOSTAccountRequest;
+
+    serializeBinary(): Uint8Array;
+    toObject(includeInstance?: boolean): CreateIOSTAccountRequest.AsObject;
+    static toObject(includeInstance: boolean, msg: CreateIOSTAccountRequest): CreateIOSTAccountRequest.AsObject;
+    static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+    static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+    static serializeBinaryToWriter(message: CreateIOSTAccountRequest, writer: jspb.BinaryWriter): void;
+    static deserializeBinary(bytes: Uint8Array): CreateIOSTAccountRequest;
+    static deserializeBinaryFromReader(message: CreateIOSTAccountRequest, reader: jspb.BinaryReader): CreateIOSTAccountRequest;
+}
+
+export namespace CreateIOSTAccountRequest {
+    export type AsObject = {
+        accountName: string,
+        walletId: string,
+        accountId: string,
+    }
+}
+
+export class CreateIOSTAccountResponse extends jspb.Message { 
+    getAddressId(): string;
+    setAddressId(value: string): CreateIOSTAccountResponse;
+
+    serializeBinary(): Uint8Array;
+    toObject(includeInstance?: boolean): CreateIOSTAccountResponse.AsObject;
+    static toObject(includeInstance: boolean, msg: CreateIOSTAccountResponse): CreateIOSTAccountResponse.AsObject;
+    static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+    static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+    static serializeBinaryToWriter(message: CreateIOSTAccountResponse, writer: jspb.BinaryWriter): void;
+    static deserializeBinary(bytes: Uint8Array): CreateIOSTAccountResponse;
+    static deserializeBinaryFromReader(message: CreateIOSTAccountResponse, reader: jspb.BinaryReader): CreateIOSTAccountResponse;
+}
+
+export namespace CreateIOSTAccountResponse {
+    export type AsObject = {
+        addressId: string,
+    }
+}
+
+export class ExistsIOSTAccountRequest extends jspb.Message { 
+    getAccountName(): string;
+    setAccountName(value: string): ExistsIOSTAccountRequest;
+
+    serializeBinary(): Uint8Array;
+    toObject(includeInstance?: boolean): ExistsIOSTAccountRequest.AsObject;
+    static toObject(includeInstance: boolean, msg: ExistsIOSTAccountRequest): ExistsIOSTAccountRequest.AsObject;
+    static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+    static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+    static serializeBinaryToWriter(message: ExistsIOSTAccountRequest, writer: jspb.BinaryWriter): void;
+    static deserializeBinary(bytes: Uint8Array): ExistsIOSTAccountRequest;
+    static deserializeBinaryFromReader(message: ExistsIOSTAccountRequest, reader: jspb.BinaryReader): ExistsIOSTAccountRequest;
+}
+
+export namespace ExistsIOSTAccountRequest {
+    export type AsObject = {
+        accountName: string,
+    }
+}
+
+export class ExistsIOSTAccountResponse extends jspb.Message { 
+    getExists(): boolean;
+    setExists(value: boolean): ExistsIOSTAccountResponse;
+
+    serializeBinary(): Uint8Array;
+    toObject(includeInstance?: boolean): ExistsIOSTAccountResponse.AsObject;
+    static toObject(includeInstance: boolean, msg: ExistsIOSTAccountResponse): ExistsIOSTAccountResponse.AsObject;
+    static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+    static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+    static serializeBinaryToWriter(message: ExistsIOSTAccountResponse, writer: jspb.BinaryWriter): void;
+    static deserializeBinary(bytes: Uint8Array): ExistsIOSTAccountResponse;
+    static deserializeBinaryFromReader(message: ExistsIOSTAccountResponse, reader: jspb.BinaryReader): ExistsIOSTAccountResponse;
+}
+
+export namespace ExistsIOSTAccountResponse {
+    export type AsObject = {
+        exists: boolean,
+    }
+}
+
+export class GetIOSTCallerAccountRequest extends jspb.Message { 
+
+    serializeBinary(): Uint8Array;
+    toObject(includeInstance?: boolean): GetIOSTCallerAccountRequest.AsObject;
+    static toObject(includeInstance: boolean, msg: GetIOSTCallerAccountRequest): GetIOSTCallerAccountRequest.AsObject;
+    static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+    static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+    static serializeBinaryToWriter(message: GetIOSTCallerAccountRequest, writer: jspb.BinaryWriter): void;
+    static deserializeBinary(bytes: Uint8Array): GetIOSTCallerAccountRequest;
+    static deserializeBinaryFromReader(message: GetIOSTCallerAccountRequest, reader: jspb.BinaryReader): GetIOSTCallerAccountRequest;
+}
+
+export namespace GetIOSTCallerAccountRequest {
+    export type AsObject = {
     }
 }

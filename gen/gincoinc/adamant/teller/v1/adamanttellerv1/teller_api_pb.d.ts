@@ -109,3 +109,26 @@ export namespace SignTransactionRequest {
         transactionId: string,
     }
 }
+
+export class SendTransactionRequest extends jspb.Message { 
+    getWalletId(): string;
+    setWalletId(value: string): SendTransactionRequest;
+    getTransactionId(): string;
+    setTransactionId(value: string): SendTransactionRequest;
+
+    serializeBinary(): Uint8Array;
+    toObject(includeInstance?: boolean): SendTransactionRequest.AsObject;
+    static toObject(includeInstance: boolean, msg: SendTransactionRequest): SendTransactionRequest.AsObject;
+    static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+    static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+    static serializeBinaryToWriter(message: SendTransactionRequest, writer: jspb.BinaryWriter): void;
+    static deserializeBinary(bytes: Uint8Array): SendTransactionRequest;
+    static deserializeBinaryFromReader(message: SendTransactionRequest, reader: jspb.BinaryReader): SendTransactionRequest;
+}
+
+export namespace SendTransactionRequest {
+    export type AsObject = {
+        walletId: string,
+        transactionId: string,
+    }
+}

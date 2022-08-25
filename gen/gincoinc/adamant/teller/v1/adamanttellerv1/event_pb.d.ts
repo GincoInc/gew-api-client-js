@@ -31,6 +31,8 @@ export class TransferUpdated extends jspb.Message {
     setDestinationTag(value: number): TransferUpdated;
     getMemoId(): number;
     setMemoId(value: number): TransferUpdated;
+    getMessage(): string;
+    setMessage(value: string): TransferUpdated;
     getState(): gincoinc_global_v1_gincoincglobalv1_enum_pb.TransactionState;
     setState(value: gincoinc_global_v1_gincoincglobalv1_enum_pb.TransactionState): TransferUpdated;
     getResult(): gincoinc_global_v1_gincoincglobalv1_enum_pb.TransactionResult;
@@ -76,6 +78,7 @@ export namespace TransferUpdated {
         address: string,
         destinationTag: number,
         memoId: number,
+        message: string,
         state: gincoinc_global_v1_gincoincglobalv1_enum_pb.TransactionState,
         result: gincoinc_global_v1_gincoincglobalv1_enum_pb.TransactionResult,
         transferType: gincoinc_global_v1_gincoincglobalv1_enum_pb.TransferType,
