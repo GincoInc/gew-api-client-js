@@ -112,6 +112,7 @@ proto.adamant.teller.v1.TransferUpdated.toObject = function(includeInstance, msg
     address: jspb.Message.getFieldWithDefault(msg, 9, ""),
     destinationTag: jspb.Message.getFieldWithDefault(msg, 10, 0),
     memoId: jspb.Message.getFieldWithDefault(msg, 14, 0),
+    message: jspb.Message.getFieldWithDefault(msg, 21, ""),
     state: jspb.Message.getFieldWithDefault(msg, 11, 0),
     result: jspb.Message.getFieldWithDefault(msg, 12, 0),
     transferType: jspb.Message.getFieldWithDefault(msg, 13, 0),
@@ -200,6 +201,10 @@ proto.adamant.teller.v1.TransferUpdated.deserializeBinaryFromReader = function(m
     case 14:
       var value = /** @type {number} */ (reader.readUint64());
       msg.setMemoId(value);
+      break;
+    case 21:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setMessage(value);
       break;
     case 11:
       var value = /** @type {!proto.gincoinc.global.v1.TransactionState} */ (reader.readEnum());
@@ -341,6 +346,13 @@ proto.adamant.teller.v1.TransferUpdated.serializeBinaryToWriter = function(messa
   if (f !== 0) {
     writer.writeUint64(
       14,
+      f
+    );
+  }
+  f = message.getMessage();
+  if (f.length > 0) {
+    writer.writeString(
+      21,
       f
     );
   }
@@ -606,6 +618,24 @@ proto.adamant.teller.v1.TransferUpdated.prototype.getMemoId = function() {
  */
 proto.adamant.teller.v1.TransferUpdated.prototype.setMemoId = function(value) {
   return jspb.Message.setProto3IntField(this, 14, value);
+};
+
+
+/**
+ * optional string message = 21;
+ * @return {string}
+ */
+proto.adamant.teller.v1.TransferUpdated.prototype.getMessage = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 21, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.adamant.teller.v1.TransferUpdated} returns this
+ */
+proto.adamant.teller.v1.TransferUpdated.prototype.setMessage = function(value) {
+  return jspb.Message.setProto3StringField(this, 21, value);
 };
 
 

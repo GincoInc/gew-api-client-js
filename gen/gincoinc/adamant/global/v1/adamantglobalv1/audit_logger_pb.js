@@ -55,7 +55,7 @@ if (goog.DEBUG && !COMPILED) {
  * @private {!Array<number>}
  * @const
  */
-proto.adamant.global.v1.AuditLog.repeatedFields_ = [36,31];
+proto.adamant.global.v1.AuditLog.repeatedFields_ = [36,37,38,31];
 
 
 
@@ -121,6 +121,8 @@ proto.adamant.global.v1.AuditLog.toObject = function(includeInstance, msg) {
     transferDailyLimit: jspb.Message.getFieldWithDefault(msg, 28, 0),
     whitelistId: jspb.Message.getFieldWithDefault(msg, 29, ""),
     whitelistName: jspb.Message.getFieldWithDefault(msg, 30, ""),
+    oldValidatorsList: (f = jspb.Message.getRepeatedField(msg, 37)) == null ? undefined : f,
+    newValidatorsList: (f = jspb.Message.getRepeatedField(msg, 38)) == null ? undefined : f,
     whitelistAddressesList: (f = jspb.Message.getRepeatedField(msg, 31)) == null ? undefined : f,
     eventTime: (f = msg.getEventTime()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f),
     createTime: (f = msg.getCreateTime()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f)
@@ -291,6 +293,14 @@ proto.adamant.global.v1.AuditLog.deserializeBinaryFromReader = function(msg, rea
     case 30:
       var value = /** @type {string} */ (reader.readString());
       msg.setWhitelistName(value);
+      break;
+    case 37:
+      var value = /** @type {string} */ (reader.readString());
+      msg.addOldValidators(value);
+      break;
+    case 38:
+      var value = /** @type {string} */ (reader.readString());
+      msg.addNewValidators(value);
       break;
     case 31:
       var value = /** @type {string} */ (reader.readString());
@@ -563,6 +573,20 @@ proto.adamant.global.v1.AuditLog.serializeBinaryToWriter = function(message, wri
   if (f.length > 0) {
     writer.writeString(
       30,
+      f
+    );
+  }
+  f = message.getOldValidatorsList();
+  if (f.length > 0) {
+    writer.writeRepeatedString(
+      37,
+      f
+    );
+  }
+  f = message.getNewValidatorsList();
+  if (f.length > 0) {
+    writer.writeRepeatedString(
+      38,
       f
     );
   }
@@ -1202,6 +1226,80 @@ proto.adamant.global.v1.AuditLog.prototype.getWhitelistName = function() {
  */
 proto.adamant.global.v1.AuditLog.prototype.setWhitelistName = function(value) {
   return jspb.Message.setProto3StringField(this, 30, value);
+};
+
+
+/**
+ * repeated string old_validators = 37;
+ * @return {!Array<string>}
+ */
+proto.adamant.global.v1.AuditLog.prototype.getOldValidatorsList = function() {
+  return /** @type {!Array<string>} */ (jspb.Message.getRepeatedField(this, 37));
+};
+
+
+/**
+ * @param {!Array<string>} value
+ * @return {!proto.adamant.global.v1.AuditLog} returns this
+ */
+proto.adamant.global.v1.AuditLog.prototype.setOldValidatorsList = function(value) {
+  return jspb.Message.setField(this, 37, value || []);
+};
+
+
+/**
+ * @param {string} value
+ * @param {number=} opt_index
+ * @return {!proto.adamant.global.v1.AuditLog} returns this
+ */
+proto.adamant.global.v1.AuditLog.prototype.addOldValidators = function(value, opt_index) {
+  return jspb.Message.addToRepeatedField(this, 37, value, opt_index);
+};
+
+
+/**
+ * Clears the list making it empty but non-null.
+ * @return {!proto.adamant.global.v1.AuditLog} returns this
+ */
+proto.adamant.global.v1.AuditLog.prototype.clearOldValidatorsList = function() {
+  return this.setOldValidatorsList([]);
+};
+
+
+/**
+ * repeated string new_validators = 38;
+ * @return {!Array<string>}
+ */
+proto.adamant.global.v1.AuditLog.prototype.getNewValidatorsList = function() {
+  return /** @type {!Array<string>} */ (jspb.Message.getRepeatedField(this, 38));
+};
+
+
+/**
+ * @param {!Array<string>} value
+ * @return {!proto.adamant.global.v1.AuditLog} returns this
+ */
+proto.adamant.global.v1.AuditLog.prototype.setNewValidatorsList = function(value) {
+  return jspb.Message.setField(this, 38, value || []);
+};
+
+
+/**
+ * @param {string} value
+ * @param {number=} opt_index
+ * @return {!proto.adamant.global.v1.AuditLog} returns this
+ */
+proto.adamant.global.v1.AuditLog.prototype.addNewValidators = function(value, opt_index) {
+  return jspb.Message.addToRepeatedField(this, 38, value, opt_index);
+};
+
+
+/**
+ * Clears the list making it empty but non-null.
+ * @return {!proto.adamant.global.v1.AuditLog} returns this
+ */
+proto.adamant.global.v1.AuditLog.prototype.clearNewValidatorsList = function() {
+  return this.setNewValidatorsList([]);
 };
 
 

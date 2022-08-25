@@ -28,6 +28,8 @@ goog.exportSymbol('proto.adamant.global.v1.AuditLogType', null, global);
 goog.exportSymbol('proto.adamant.global.v1.DownloadResourceType', null, global);
 goog.exportSymbol('proto.adamant.global.v1.EthereumContractMethodIDType', null, global);
 goog.exportSymbol('proto.adamant.global.v1.EventTriggeredMessageType', null, global);
+goog.exportSymbol('proto.adamant.global.v1.ExecutorType', null, global);
+goog.exportSymbol('proto.adamant.global.v1.IOSTActionType', null, global);
 goog.exportSymbol('proto.adamant.global.v1.ListFilterType', null, global);
 goog.exportSymbol('proto.adamant.global.v1.MailType', null, global);
 goog.exportSymbol('proto.adamant.global.v1.NotificationType', null, global);
@@ -82,7 +84,9 @@ proto.adamant.global.v1.WalletState = {
   WALLET_STATE_ADDRESS_DELETING: 18,
   WALLET_STATE_ADDRESS_DELETE_FAILED: 19,
   WALLET_STATE_FLUSHING: 20,
-  WALLET_STATE_ACCOUNT_CREATING: 21
+  WALLET_STATE_ACCOUNT_CREATING: 21,
+  WALLET_STATE_ACCOUNT_CREATED: 22,
+  WALLET_STATE_MANAGER_APPROVED_SENDING_TRANSACTION: 23
 };
 
 /**
@@ -116,7 +120,9 @@ proto.adamant.global.v1.TransactionState = {
   TRANSACTION_STATE_SUBMITTING: 5,
   TRANSACTION_STATE_SUBMITTED: 6,
   TRANSACTION_STATE_CANCELLING: 8,
-  TRANSACTION_STATE_CANCELLED: 7
+  TRANSACTION_STATE_CANCELLED: 7,
+  TRANSACTION_STATE_APPROVING: 9,
+  TRANSACTION_STATE_APPROVED: 10
 };
 
 /**
@@ -126,6 +132,15 @@ proto.adamant.global.v1.AccountType = {
   ACCOUNT_TYPE_INVALID: 0,
   ACCOUNT_TYPE_USER: 1,
   ACCOUNT_TYPE_SERVICE_ACCOUNT: 2
+};
+
+/**
+ * @enum {number}
+ */
+proto.adamant.global.v1.ExecutorType = {
+  EXECUTOR_TYPE_INVALID: 0,
+  EXECUTOR_TYPE_USER: 1,
+  EXECUTOR_TYPE_SYSTEM: 2
 };
 
 /**
@@ -264,6 +279,9 @@ proto.adamant.global.v1.AuditLogType = {
   AUDIT_LOG_TYPE_WALLET_ADDRESS_UPLOAD: 51,
   AUDIT_LOG_TYPE_WALLET_ADDRESS_DOWNLOAD: 52,
   AUDIT_LOG_TYPE_WALLET_ADDRESS_DELETE: 53,
+  AUDIT_LOG_TYPE_WALLET_VALIDATOR_CHANGE: 60,
+  AUDIT_LOG_TYPE_WALLET_VALIDATOR_APPROVE: 61,
+  AUDIT_LOG_TYPE_WALLET_VALIDATOR_CANCEL: 62,
   AUDIT_LOG_TYPE_WALLET_GROUP_CREATE: 54,
   AUDIT_LOG_TYPE_WALLET_GROUP_NAME_CHANGE: 55,
   AUDIT_LOG_TYPE_WALLET_GROUP_CHANGE: 56,
@@ -411,7 +429,8 @@ proto.adamant.global.v1.DownloadResourceType = {
   DOWNLOAD_RESOURCE_TYPE_ALL_WALLET_GROUP_BALANCE_SNAPSHOT_EOD: 2,
   DOWNLOAD_RESOURCE_TYPE_ALL_WALLET_BALANCE_SNAPSHOT_ON_DEMAND: 3,
   DOWNLOAD_RESOURCE_TYPE_ALL_WALLET_GROUP_BALANCE_SNAPSHOT_ON_DEMAND: 4,
-  DOWNLOAD_RESOURCE_TYPE_WALLET_TRANSFER: 5
+  DOWNLOAD_RESOURCE_TYPE_WALLET_TRANSFER: 5,
+  DOWNLOAD_RESOURCE_TYPE_WALLET_ADDRESS: 6
 };
 
 /**
@@ -439,6 +458,16 @@ proto.adamant.global.v1.EthereumContractMethodIDType = {
   ETHEREUM_CONTRACT_METHOD_ID_TYPE_INVALID: 0,
   ETHEREUM_CONTRACT_METHOD_ID_TYPE_ERC20_APPROVE: 1,
   ETHEREUM_CONTRACT_METHOD_ID_TYPE_UNISWAP_MULTICALL: 2
+};
+
+/**
+ * @enum {number}
+ */
+proto.adamant.global.v1.IOSTActionType = {
+  IOST_ACTION_TYPE_INVALID: 0,
+  IOST_ACTION_TYPE_SIGN_UP: 1,
+  IOST_ACTION_TYPE_ASSIGN_PERMISSION: 2,
+  IOST_ACTION_TYPE_TRANSFER: 3
 };
 
 goog.object.extend(exports, proto.adamant.global.v1);

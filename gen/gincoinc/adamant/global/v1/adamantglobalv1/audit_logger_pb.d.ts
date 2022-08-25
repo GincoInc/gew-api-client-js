@@ -78,6 +78,14 @@ export class AuditLog extends jspb.Message {
     setWhitelistId(value: string): AuditLog;
     getWhitelistName(): string;
     setWhitelistName(value: string): AuditLog;
+    clearOldValidatorsList(): void;
+    getOldValidatorsList(): Array<string>;
+    setOldValidatorsList(value: Array<string>): AuditLog;
+    addOldValidators(value: string, index?: number): string;
+    clearNewValidatorsList(): void;
+    getNewValidatorsList(): Array<string>;
+    setNewValidatorsList(value: Array<string>): AuditLog;
+    addNewValidators(value: string, index?: number): string;
     clearWhitelistAddressesList(): void;
     getWhitelistAddressesList(): Array<string>;
     setWhitelistAddressesList(value: Array<string>): AuditLog;
@@ -138,6 +146,8 @@ export namespace AuditLog {
         transferDailyLimit: number,
         whitelistId: string,
         whitelistName: string,
+        oldValidatorsList: Array<string>,
+        newValidatorsList: Array<string>,
         whitelistAddressesList: Array<string>,
         eventTime?: google_protobuf_timestamp_pb.Timestamp.AsObject,
         createTime?: google_protobuf_timestamp_pb.Timestamp.AsObject,

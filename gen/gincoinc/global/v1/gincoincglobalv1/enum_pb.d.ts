@@ -36,6 +36,9 @@ export enum Coin {
     COIN_XEM = 26,
     COIN_MONA = 27,
     COIN_IOST = 28,
+    COIN_SKEB = 29,
+    COIN_KLAY = 30,
+    COIN_MATIC = 31,
 }
 
 export enum Network {
@@ -66,6 +69,10 @@ export enum Network {
     NETWORK_MONACOIN_TESTNET = 24,
     NETWORK_IOST_MAINNET = 25,
     NETWORK_IOST_TESTNET = 26,
+    NETWORK_KLAY_MAINNET = 27,
+    NETWORK_KLAY_TESTNET = 28,
+    NETWORK_POLYGON_MAINNET = 29,
+    NETWORK_POLYGON_TESTNET = 30,
 }
 
 export enum AddressType {

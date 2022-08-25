@@ -616,17 +616,6 @@ function deserialize_adamant_global_v1_ImportAddressRequest(buffer_arg) {
   return gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.ImportAddressRequest.deserializeBinary(new Uint8Array(buffer_arg));
 }
 
-function serialize_adamant_global_v1_ImportAddressResponse(arg) {
-  if (!(arg instanceof gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.ImportAddressResponse)) {
-    throw new Error('Expected argument of type adamant.global.v1.ImportAddressResponse');
-  }
-  return Buffer.from(arg.serializeBinary());
-}
-
-function deserialize_adamant_global_v1_ImportAddressResponse(buffer_arg) {
-  return gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.ImportAddressResponse.deserializeBinary(new Uint8Array(buffer_arg));
-}
-
 function serialize_adamant_global_v1_IsDeletableLabeledAddressRequest(arg) {
   if (!(arg instanceof gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.IsDeletableLabeledAddressRequest)) {
     throw new Error('Expected argument of type adamant.global.v1.IsDeletableLabeledAddressRequest');
@@ -834,6 +823,28 @@ function serialize_adamant_global_v1_ListBaseWalletsResponse(arg) {
 
 function deserialize_adamant_global_v1_ListBaseWalletsResponse(buffer_arg) {
   return gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.ListBaseWalletsResponse.deserializeBinary(new Uint8Array(buffer_arg));
+}
+
+function serialize_adamant_global_v1_ListIOSTChildAccountsRequest(arg) {
+  if (!(arg instanceof gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.ListIOSTChildAccountsRequest)) {
+    throw new Error('Expected argument of type adamant.global.v1.ListIOSTChildAccountsRequest');
+  }
+  return Buffer.from(arg.serializeBinary());
+}
+
+function deserialize_adamant_global_v1_ListIOSTChildAccountsRequest(buffer_arg) {
+  return gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.ListIOSTChildAccountsRequest.deserializeBinary(new Uint8Array(buffer_arg));
+}
+
+function serialize_adamant_global_v1_ListIOSTChildAccountsResponse(arg) {
+  if (!(arg instanceof gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.ListIOSTChildAccountsResponse)) {
+    throw new Error('Expected argument of type adamant.global.v1.ListIOSTChildAccountsResponse');
+  }
+  return Buffer.from(arg.serializeBinary());
+}
+
+function deserialize_adamant_global_v1_ListIOSTChildAccountsResponse(buffer_arg) {
+  return gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.ListIOSTChildAccountsResponse.deserializeBinary(new Uint8Array(buffer_arg));
 }
 
 function serialize_adamant_global_v1_ListLabeledAddressesRequest(arg) {
@@ -1894,16 +1905,27 @@ listSubstrateChildAddresses: {
     responseSerialize: serialize_adamant_global_v1_ListSubstrateChildAddressesResponse,
     responseDeserialize: deserialize_adamant_global_v1_ListSubstrateChildAddressesResponse,
   },
+  listIOSTChildAccounts: {
+    path: '/adamant.global.v1.GlobalAPI/ListIOSTChildAccounts',
+    requestStream: false,
+    responseStream: false,
+    requestType: gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.ListIOSTChildAccountsRequest,
+    responseType: gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.ListIOSTChildAccountsResponse,
+    requestSerialize: serialize_adamant_global_v1_ListIOSTChildAccountsRequest,
+    requestDeserialize: deserialize_adamant_global_v1_ListIOSTChildAccountsRequest,
+    responseSerialize: serialize_adamant_global_v1_ListIOSTChildAccountsResponse,
+    responseDeserialize: deserialize_adamant_global_v1_ListIOSTChildAccountsResponse,
+  },
   importAddress: {
     path: '/adamant.global.v1.GlobalAPI/ImportAddress',
     requestStream: false,
     responseStream: false,
     requestType: gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.ImportAddressRequest,
-    responseType: gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.ImportAddressResponse,
+    responseType: google_protobuf_empty_pb.Empty,
     requestSerialize: serialize_adamant_global_v1_ImportAddressRequest,
     requestDeserialize: deserialize_adamant_global_v1_ImportAddressRequest,
-    responseSerialize: serialize_adamant_global_v1_ImportAddressResponse,
-    responseDeserialize: deserialize_adamant_global_v1_ImportAddressResponse,
+    responseSerialize: serialize_google_protobuf_Empty,
+    responseDeserialize: deserialize_google_protobuf_Empty,
   },
   // RegisterKey
 registerKey: {
