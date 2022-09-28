@@ -1069,6 +1069,29 @@ export namespace GetAddressByAddressRequest {
     }
 }
 
+export class GetAddressByAddressCoinRequest extends jspb.Message { 
+    getAddress(): string;
+    setAddress(value: string): GetAddressByAddressCoinRequest;
+    getCoin(): gincoinc_global_v1_gincoincglobalv1_enum_pb.Coin;
+    setCoin(value: gincoinc_global_v1_gincoincglobalv1_enum_pb.Coin): GetAddressByAddressCoinRequest;
+
+    serializeBinary(): Uint8Array;
+    toObject(includeInstance?: boolean): GetAddressByAddressCoinRequest.AsObject;
+    static toObject(includeInstance: boolean, msg: GetAddressByAddressCoinRequest): GetAddressByAddressCoinRequest.AsObject;
+    static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+    static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+    static serializeBinaryToWriter(message: GetAddressByAddressCoinRequest, writer: jspb.BinaryWriter): void;
+    static deserializeBinary(bytes: Uint8Array): GetAddressByAddressCoinRequest;
+    static deserializeBinaryFromReader(message: GetAddressByAddressCoinRequest, reader: jspb.BinaryReader): GetAddressByAddressCoinRequest;
+}
+
+export namespace GetAddressByAddressCoinRequest {
+    export type AsObject = {
+        address: string,
+        coin: gincoinc_global_v1_gincoincglobalv1_enum_pb.Coin,
+    }
+}
+
 export class GetAddressByIndexRequest extends jspb.Message { 
     getWalletId(): string;
     setWalletId(value: string): GetAddressByIndexRequest;
@@ -4254,5 +4277,44 @@ export class GetIOSTCallerAccountRequest extends jspb.Message {
 
 export namespace GetIOSTCallerAccountRequest {
     export type AsObject = {
+    }
+}
+
+export class ListCallersRequest extends jspb.Message { 
+
+    serializeBinary(): Uint8Array;
+    toObject(includeInstance?: boolean): ListCallersRequest.AsObject;
+    static toObject(includeInstance: boolean, msg: ListCallersRequest): ListCallersRequest.AsObject;
+    static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+    static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+    static serializeBinaryToWriter(message: ListCallersRequest, writer: jspb.BinaryWriter): void;
+    static deserializeBinary(bytes: Uint8Array): ListCallersRequest;
+    static deserializeBinaryFromReader(message: ListCallersRequest, reader: jspb.BinaryReader): ListCallersRequest;
+}
+
+export namespace ListCallersRequest {
+    export type AsObject = {
+    }
+}
+
+export class ListCallersResponse extends jspb.Message { 
+    clearCallerAddressesList(): void;
+    getCallerAddressesList(): Array<gincoinc_adamant_global_v1_adamantglobalv1_model_pb.CallerAddress>;
+    setCallerAddressesList(value: Array<gincoinc_adamant_global_v1_adamantglobalv1_model_pb.CallerAddress>): ListCallersResponse;
+    addCallerAddresses(value?: gincoinc_adamant_global_v1_adamantglobalv1_model_pb.CallerAddress, index?: number): gincoinc_adamant_global_v1_adamantglobalv1_model_pb.CallerAddress;
+
+    serializeBinary(): Uint8Array;
+    toObject(includeInstance?: boolean): ListCallersResponse.AsObject;
+    static toObject(includeInstance: boolean, msg: ListCallersResponse): ListCallersResponse.AsObject;
+    static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+    static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+    static serializeBinaryToWriter(message: ListCallersResponse, writer: jspb.BinaryWriter): void;
+    static deserializeBinary(bytes: Uint8Array): ListCallersResponse;
+    static deserializeBinaryFromReader(message: ListCallersResponse, reader: jspb.BinaryReader): ListCallersResponse;
+}
+
+export namespace ListCallersResponse {
+    export type AsObject = {
+        callerAddressesList: Array<gincoinc_adamant_global_v1_adamantglobalv1_model_pb.CallerAddress.AsObject>,
     }
 }

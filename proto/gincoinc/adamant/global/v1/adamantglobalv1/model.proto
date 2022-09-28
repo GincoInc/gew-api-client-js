@@ -192,6 +192,7 @@ message Transaction {
   MonacoinSpecific monacoin_specific = 30; // The Monacoin specific fields
   NemSpecific nem_specific = 31; // The Nem specific fields
   IOSTSpecific iost_specific = 32; // The Nem specific fields
+  PolygonSpecific polygon_specific = 33; // The Polygon specific fields
   google.protobuf.Timestamp create_time = 18; // the time at which the transaction was created
   google.protobuf.Timestamp update_time = 19; // the time at which the transaction was updated
 }
@@ -322,6 +323,13 @@ message IOSTSpecific {
   uint64 expiration = 3;
 }
 
+// The model of Polygon specific fields of transaction
+message PolygonSpecific {
+  uint64 gas_limit = 1;
+  uint64 nonce = 2;
+  bool is_next_nonce = 3;
+}
+
 // The model of Substrate specific fields of CreateTransaction
 message CreateTransactionSubstrateSpecific {
   string transaction_id = 1;
@@ -420,6 +428,8 @@ message Transfer {
   string message = 18; // message (only NEM)
   double fee = 19; // The number-typed amount of transfer fee
   string string_fee = 20; // The string-typed amount of transfer fee
+  string from = 21; // from address
+  string to = 22; // to address
   gincoinc.global.v1.TransactionState state = 12; // state
   gincoinc.global.v1.TransactionResult result = 16; // result
   google.protobuf.Timestamp create_time = 13; // the time at which the transfer was created
@@ -445,6 +455,8 @@ message UncheckedTransfer {
   string message = 18; // message (only NEM)
   double fee = 19; // The number-typed amount of transfer fee
   string string_fee = 20; // The string-typed amount of transfer fee
+  string from = 21; // from address
+  string to = 22; // to address
   bool has_checked = 15; // Whether the transfer has been checked or not
   google.protobuf.Timestamp create_time = 16; // the time at which the transfer was created
   google.protobuf.Timestamp update_time = 17; // the time at which the transfer was updated
@@ -724,9 +736,17 @@ message IOSTChildAccount {
   string account_name = 3;
 }
 
-// The model of caller account
+// The model of IOST caller account
 message IOSTCallerAccount {
   string account_name = 1; // iost account name
   double balance = 2; // The number-typed balance corresponding to the account
   string string_balance = 3; // The string-typed balance corresponding to the account
+}
+
+// The model of caller account
+message CallerAddress {
+  string address = 1; // Klaytn address
+  double balance = 2; // The number-typed balance corresponding to the address
+  string string_balance = 3; // The string-typed balance corresponding to the address
+  gincoinc.global.v1.Coin coin = 4; // The type of asset
 }
