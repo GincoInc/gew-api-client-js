@@ -164,6 +164,17 @@ function deserialize_adamant_global_v1_FlushBalanceResponse(buffer_arg) {
   return gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.FlushBalanceResponse.deserializeBinary(new Uint8Array(buffer_arg));
 }
 
+function serialize_adamant_global_v1_GetAddressByAddressCoinRequest(arg) {
+  if (!(arg instanceof gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.GetAddressByAddressCoinRequest)) {
+    throw new Error('Expected argument of type adamant.global.v1.GetAddressByAddressCoinRequest');
+  }
+  return Buffer.from(arg.serializeBinary());
+}
+
+function deserialize_adamant_global_v1_GetAddressByAddressCoinRequest(buffer_arg) {
+  return gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.GetAddressByAddressCoinRequest.deserializeBinary(new Uint8Array(buffer_arg));
+}
+
 function serialize_adamant_global_v1_GetAddressByAddressRequest(arg) {
   if (!(arg instanceof gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.GetAddressByAddressRequest)) {
     throw new Error('Expected argument of type adamant.global.v1.GetAddressByAddressRequest');
@@ -785,6 +796,17 @@ createAddress: {
     responseType: gincoinc_adamant_global_v1_adamantglobalv1_model_pb.Address,
     requestSerialize: serialize_adamant_global_v1_GetAddressByAddressRequest,
     requestDeserialize: deserialize_adamant_global_v1_GetAddressByAddressRequest,
+    responseSerialize: serialize_adamant_global_v1_Address,
+    responseDeserialize: deserialize_adamant_global_v1_Address,
+  },
+  getAddressByAddressCoin: {
+    path: '/adamant.teller.v1.TellerAPI/GetAddressByAddressCoin',
+    requestStream: false,
+    responseStream: false,
+    requestType: gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.GetAddressByAddressCoinRequest,
+    responseType: gincoinc_adamant_global_v1_adamantglobalv1_model_pb.Address,
+    requestSerialize: serialize_adamant_global_v1_GetAddressByAddressCoinRequest,
+    requestDeserialize: deserialize_adamant_global_v1_GetAddressByAddressCoinRequest,
     responseSerialize: serialize_adamant_global_v1_Address,
     responseDeserialize: deserialize_adamant_global_v1_Address,
   },

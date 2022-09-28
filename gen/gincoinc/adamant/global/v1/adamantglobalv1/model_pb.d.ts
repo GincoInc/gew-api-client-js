@@ -643,6 +643,11 @@ export class Transaction extends jspb.Message {
     getIostSpecific(): IOSTSpecific | undefined;
     setIostSpecific(value?: IOSTSpecific): Transaction;
 
+    hasPolygonSpecific(): boolean;
+    clearPolygonSpecific(): void;
+    getPolygonSpecific(): PolygonSpecific | undefined;
+    setPolygonSpecific(value?: PolygonSpecific): Transaction;
+
     hasCreateTime(): boolean;
     clearCreateTime(): void;
     getCreateTime(): google_protobuf_timestamp_pb.Timestamp | undefined;
@@ -692,6 +697,7 @@ export namespace Transaction {
         monacoinSpecific?: MonacoinSpecific.AsObject,
         nemSpecific?: NemSpecific.AsObject,
         iostSpecific?: IOSTSpecific.AsObject,
+        polygonSpecific?: PolygonSpecific.AsObject,
         createTime?: google_protobuf_timestamp_pb.Timestamp.AsObject,
         updateTime?: google_protobuf_timestamp_pb.Timestamp.AsObject,
     }
@@ -1182,6 +1188,32 @@ export namespace IOSTSpecific {
     }
 }
 
+export class PolygonSpecific extends jspb.Message { 
+    getGasLimit(): number;
+    setGasLimit(value: number): PolygonSpecific;
+    getNonce(): number;
+    setNonce(value: number): PolygonSpecific;
+    getIsNextNonce(): boolean;
+    setIsNextNonce(value: boolean): PolygonSpecific;
+
+    serializeBinary(): Uint8Array;
+    toObject(includeInstance?: boolean): PolygonSpecific.AsObject;
+    static toObject(includeInstance: boolean, msg: PolygonSpecific): PolygonSpecific.AsObject;
+    static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+    static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+    static serializeBinaryToWriter(message: PolygonSpecific, writer: jspb.BinaryWriter): void;
+    static deserializeBinary(bytes: Uint8Array): PolygonSpecific;
+    static deserializeBinaryFromReader(message: PolygonSpecific, reader: jspb.BinaryReader): PolygonSpecific;
+}
+
+export namespace PolygonSpecific {
+    export type AsObject = {
+        gasLimit: number,
+        nonce: number,
+        isNextNonce: boolean,
+    }
+}
+
 export class CreateTransactionSubstrateSpecific extends jspb.Message { 
     getTransactionId(): string;
     setTransactionId(value: string): CreateTransactionSubstrateSpecific;
@@ -1510,6 +1542,10 @@ export class Transfer extends jspb.Message {
     setFee(value: number): Transfer;
     getStringFee(): string;
     setStringFee(value: string): Transfer;
+    getFrom(): string;
+    setFrom(value: string): Transfer;
+    getTo(): string;
+    setTo(value: string): Transfer;
     getState(): gincoinc_global_v1_gincoincglobalv1_enum_pb.TransactionState;
     setState(value: gincoinc_global_v1_gincoincglobalv1_enum_pb.TransactionState): Transfer;
     getResult(): gincoinc_global_v1_gincoincglobalv1_enum_pb.TransactionResult;
@@ -1552,6 +1588,8 @@ export namespace Transfer {
         message: string,
         fee: number,
         stringFee: string,
+        from: string,
+        to: string,
         state: gincoinc_global_v1_gincoincglobalv1_enum_pb.TransactionState,
         result: gincoinc_global_v1_gincoincglobalv1_enum_pb.TransactionResult,
         createTime?: google_protobuf_timestamp_pb.Timestamp.AsObject,
@@ -1594,6 +1632,10 @@ export class UncheckedTransfer extends jspb.Message {
     setFee(value: number): UncheckedTransfer;
     getStringFee(): string;
     setStringFee(value: string): UncheckedTransfer;
+    getFrom(): string;
+    setFrom(value: string): UncheckedTransfer;
+    getTo(): string;
+    setTo(value: string): UncheckedTransfer;
     getHasChecked(): boolean;
     setHasChecked(value: boolean): UncheckedTransfer;
 
@@ -1636,6 +1678,8 @@ export namespace UncheckedTransfer {
         message: string,
         fee: number,
         stringFee: string,
+        from: string,
+        to: string,
         hasChecked: boolean,
         createTime?: google_protobuf_timestamp_pb.Timestamp.AsObject,
         updateTime?: google_protobuf_timestamp_pb.Timestamp.AsObject,
@@ -2775,5 +2819,34 @@ export namespace IOSTCallerAccount {
         accountName: string,
         balance: number,
         stringBalance: string,
+    }
+}
+
+export class CallerAddress extends jspb.Message { 
+    getAddress(): string;
+    setAddress(value: string): CallerAddress;
+    getBalance(): number;
+    setBalance(value: number): CallerAddress;
+    getStringBalance(): string;
+    setStringBalance(value: string): CallerAddress;
+    getCoin(): gincoinc_global_v1_gincoincglobalv1_enum_pb.Coin;
+    setCoin(value: gincoinc_global_v1_gincoincglobalv1_enum_pb.Coin): CallerAddress;
+
+    serializeBinary(): Uint8Array;
+    toObject(includeInstance?: boolean): CallerAddress.AsObject;
+    static toObject(includeInstance: boolean, msg: CallerAddress): CallerAddress.AsObject;
+    static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+    static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+    static serializeBinaryToWriter(message: CallerAddress, writer: jspb.BinaryWriter): void;
+    static deserializeBinary(bytes: Uint8Array): CallerAddress;
+    static deserializeBinaryFromReader(message: CallerAddress, reader: jspb.BinaryReader): CallerAddress;
+}
+
+export namespace CallerAddress {
+    export type AsObject = {
+        address: string,
+        balance: number,
+        stringBalance: string,
+        coin: gincoinc_global_v1_gincoincglobalv1_enum_pb.Coin,
     }
 }
