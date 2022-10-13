@@ -648,6 +648,11 @@ export class Transaction extends jspb.Message {
     getPolygonSpecific(): PolygonSpecific | undefined;
     setPolygonSpecific(value?: PolygonSpecific): Transaction;
 
+    hasKlaytnSpecific(): boolean;
+    clearKlaytnSpecific(): void;
+    getKlaytnSpecific(): KlaytnSpecific | undefined;
+    setKlaytnSpecific(value?: KlaytnSpecific): Transaction;
+
     hasCreateTime(): boolean;
     clearCreateTime(): void;
     getCreateTime(): google_protobuf_timestamp_pb.Timestamp | undefined;
@@ -698,6 +703,7 @@ export namespace Transaction {
         nemSpecific?: NemSpecific.AsObject,
         iostSpecific?: IOSTSpecific.AsObject,
         polygonSpecific?: PolygonSpecific.AsObject,
+        klaytnSpecific?: KlaytnSpecific.AsObject,
         createTime?: google_protobuf_timestamp_pb.Timestamp.AsObject,
         updateTime?: google_protobuf_timestamp_pb.Timestamp.AsObject,
     }
@@ -1207,6 +1213,32 @@ export class PolygonSpecific extends jspb.Message {
 }
 
 export namespace PolygonSpecific {
+    export type AsObject = {
+        gasLimit: number,
+        nonce: number,
+        isNextNonce: boolean,
+    }
+}
+
+export class KlaytnSpecific extends jspb.Message { 
+    getGasLimit(): number;
+    setGasLimit(value: number): KlaytnSpecific;
+    getNonce(): number;
+    setNonce(value: number): KlaytnSpecific;
+    getIsNextNonce(): boolean;
+    setIsNextNonce(value: boolean): KlaytnSpecific;
+
+    serializeBinary(): Uint8Array;
+    toObject(includeInstance?: boolean): KlaytnSpecific.AsObject;
+    static toObject(includeInstance: boolean, msg: KlaytnSpecific): KlaytnSpecific.AsObject;
+    static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+    static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+    static serializeBinaryToWriter(message: KlaytnSpecific, writer: jspb.BinaryWriter): void;
+    static deserializeBinary(bytes: Uint8Array): KlaytnSpecific;
+    static deserializeBinaryFromReader(message: KlaytnSpecific, reader: jspb.BinaryReader): KlaytnSpecific;
+}
+
+export namespace KlaytnSpecific {
     export type AsObject = {
         gasLimit: number,
         nonce: number,
