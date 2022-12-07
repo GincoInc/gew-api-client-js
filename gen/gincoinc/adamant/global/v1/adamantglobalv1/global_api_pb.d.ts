@@ -1412,6 +1412,11 @@ export class CreateTransactionRequest extends jspb.Message {
     getIostSpecific(): gincoinc_adamant_global_v1_adamantglobalv1_model_pb.CreateTransactionIOSTSpecific | undefined;
     setIostSpecific(value?: gincoinc_adamant_global_v1_adamantglobalv1_model_pb.CreateTransactionIOSTSpecific): CreateTransactionRequest;
 
+    hasXymSpecific(): boolean;
+    clearXymSpecific(): void;
+    getXymSpecific(): gincoinc_adamant_global_v1_adamantglobalv1_model_pb.CreateTransactionSymbolSpecific | undefined;
+    setXymSpecific(value?: gincoinc_adamant_global_v1_adamantglobalv1_model_pb.CreateTransactionSymbolSpecific): CreateTransactionRequest;
+
     serializeBinary(): Uint8Array;
     toObject(includeInstance?: boolean): CreateTransactionRequest.AsObject;
     static toObject(includeInstance: boolean, msg: CreateTransactionRequest): CreateTransactionRequest.AsObject;
@@ -1435,6 +1440,7 @@ export namespace CreateTransactionRequest {
         walletConnectSpecific?: gincoinc_adamant_global_v1_adamantglobalv1_model_pb.CreateTransactionWalletConnectSpecific.AsObject,
         nemSpecific?: gincoinc_adamant_global_v1_adamantglobalv1_model_pb.CreateTransactionNemSpecific.AsObject,
         iostSpecific?: gincoinc_adamant_global_v1_adamantglobalv1_model_pb.CreateTransactionIOSTSpecific.AsObject,
+        xymSpecific?: gincoinc_adamant_global_v1_adamantglobalv1_model_pb.CreateTransactionSymbolSpecific.AsObject,
     }
 }
 
@@ -1487,6 +1493,11 @@ export class CreateInitTransactionRequest extends jspb.Message {
     getIostSpecific(): gincoinc_adamant_global_v1_adamantglobalv1_model_pb.CreateTransactionIOSTSpecific | undefined;
     setIostSpecific(value?: gincoinc_adamant_global_v1_adamantglobalv1_model_pb.CreateTransactionIOSTSpecific): CreateInitTransactionRequest;
 
+    hasSymbolSpecific(): boolean;
+    clearSymbolSpecific(): void;
+    getSymbolSpecific(): gincoinc_adamant_global_v1_adamantglobalv1_model_pb.CreateTransactionSymbolSpecific | undefined;
+    setSymbolSpecific(value?: gincoinc_adamant_global_v1_adamantglobalv1_model_pb.CreateTransactionSymbolSpecific): CreateInitTransactionRequest;
+
     serializeBinary(): Uint8Array;
     toObject(includeInstance?: boolean): CreateInitTransactionRequest.AsObject;
     static toObject(includeInstance: boolean, msg: CreateInitTransactionRequest): CreateInitTransactionRequest.AsObject;
@@ -1501,6 +1512,7 @@ export namespace CreateInitTransactionRequest {
     export type AsObject = {
         walletId: string,
         iostSpecific?: gincoinc_adamant_global_v1_adamantglobalv1_model_pb.CreateTransactionIOSTSpecific.AsObject,
+        symbolSpecific?: gincoinc_adamant_global_v1_adamantglobalv1_model_pb.CreateTransactionSymbolSpecific.AsObject,
     }
 }
 
@@ -2841,6 +2853,11 @@ export class CalculateFeeRequest extends jspb.Message {
     getNemSpecific(): CalculateFeeNemSpecific | undefined;
     setNemSpecific(value?: CalculateFeeNemSpecific): CalculateFeeRequest;
 
+    hasSymbolSpecific(): boolean;
+    clearSymbolSpecific(): void;
+    getSymbolSpecific(): CalculateFeeSymbolSpecific | undefined;
+    setSymbolSpecific(value?: CalculateFeeSymbolSpecific): CalculateFeeRequest;
+
     serializeBinary(): Uint8Array;
     toObject(includeInstance?: boolean): CalculateFeeRequest.AsObject;
     static toObject(includeInstance: boolean, msg: CalculateFeeRequest): CalculateFeeRequest.AsObject;
@@ -2861,6 +2878,7 @@ export namespace CalculateFeeRequest {
         stringValue: string,
         substrateSpecific?: CalculateFeeSubstrateSpecific.AsObject,
         nemSpecific?: CalculateFeeNemSpecific.AsObject,
+        symbolSpecific?: CalculateFeeSymbolSpecific.AsObject,
     }
 }
 
@@ -2902,6 +2920,26 @@ export class CalculateFeeNemSpecific extends jspb.Message {
 }
 
 export namespace CalculateFeeNemSpecific {
+    export type AsObject = {
+        message: string,
+    }
+}
+
+export class CalculateFeeSymbolSpecific extends jspb.Message { 
+    getMessage(): string;
+    setMessage(value: string): CalculateFeeSymbolSpecific;
+
+    serializeBinary(): Uint8Array;
+    toObject(includeInstance?: boolean): CalculateFeeSymbolSpecific.AsObject;
+    static toObject(includeInstance: boolean, msg: CalculateFeeSymbolSpecific): CalculateFeeSymbolSpecific.AsObject;
+    static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+    static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+    static serializeBinaryToWriter(message: CalculateFeeSymbolSpecific, writer: jspb.BinaryWriter): void;
+    static deserializeBinary(bytes: Uint8Array): CalculateFeeSymbolSpecific;
+    static deserializeBinaryFromReader(message: CalculateFeeSymbolSpecific, reader: jspb.BinaryReader): CalculateFeeSymbolSpecific;
+}
+
+export namespace CalculateFeeSymbolSpecific {
     export type AsObject = {
         message: string,
     }
@@ -4094,6 +4132,48 @@ export class ListSubstrateChildAddressesResponse extends jspb.Message {
 export namespace ListSubstrateChildAddressesResponse {
     export type AsObject = {
         substrateChildAddressesList: Array<gincoinc_adamant_global_v1_adamantglobalv1_model_pb.SubstrateChildAddress.AsObject>,
+    }
+}
+
+export class ListSymbolChildAddressesRequest extends jspb.Message { 
+    getWalletId(): string;
+    setWalletId(value: string): ListSymbolChildAddressesRequest;
+
+    serializeBinary(): Uint8Array;
+    toObject(includeInstance?: boolean): ListSymbolChildAddressesRequest.AsObject;
+    static toObject(includeInstance: boolean, msg: ListSymbolChildAddressesRequest): ListSymbolChildAddressesRequest.AsObject;
+    static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+    static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+    static serializeBinaryToWriter(message: ListSymbolChildAddressesRequest, writer: jspb.BinaryWriter): void;
+    static deserializeBinary(bytes: Uint8Array): ListSymbolChildAddressesRequest;
+    static deserializeBinaryFromReader(message: ListSymbolChildAddressesRequest, reader: jspb.BinaryReader): ListSymbolChildAddressesRequest;
+}
+
+export namespace ListSymbolChildAddressesRequest {
+    export type AsObject = {
+        walletId: string,
+    }
+}
+
+export class ListSymbolChildAddressesResponse extends jspb.Message { 
+    clearSymbolChildAddressesList(): void;
+    getSymbolChildAddressesList(): Array<gincoinc_adamant_global_v1_adamantglobalv1_model_pb.SymbolChildAddress>;
+    setSymbolChildAddressesList(value: Array<gincoinc_adamant_global_v1_adamantglobalv1_model_pb.SymbolChildAddress>): ListSymbolChildAddressesResponse;
+    addSymbolChildAddresses(value?: gincoinc_adamant_global_v1_adamantglobalv1_model_pb.SymbolChildAddress, index?: number): gincoinc_adamant_global_v1_adamantglobalv1_model_pb.SymbolChildAddress;
+
+    serializeBinary(): Uint8Array;
+    toObject(includeInstance?: boolean): ListSymbolChildAddressesResponse.AsObject;
+    static toObject(includeInstance: boolean, msg: ListSymbolChildAddressesResponse): ListSymbolChildAddressesResponse.AsObject;
+    static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+    static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+    static serializeBinaryToWriter(message: ListSymbolChildAddressesResponse, writer: jspb.BinaryWriter): void;
+    static deserializeBinary(bytes: Uint8Array): ListSymbolChildAddressesResponse;
+    static deserializeBinaryFromReader(message: ListSymbolChildAddressesResponse, reader: jspb.BinaryReader): ListSymbolChildAddressesResponse;
+}
+
+export namespace ListSymbolChildAddressesResponse {
+    export type AsObject = {
+        symbolChildAddressesList: Array<gincoinc_adamant_global_v1_adamantglobalv1_model_pb.SymbolChildAddress.AsObject>,
     }
 }
 
