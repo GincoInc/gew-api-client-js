@@ -653,6 +653,11 @@ export class Transaction extends jspb.Message {
     getKlaytnSpecific(): KlaytnSpecific | undefined;
     setKlaytnSpecific(value?: KlaytnSpecific): Transaction;
 
+    hasSymbolSpecific(): boolean;
+    clearSymbolSpecific(): void;
+    getSymbolSpecific(): SymbolSpecific | undefined;
+    setSymbolSpecific(value?: SymbolSpecific): Transaction;
+
     hasCreateTime(): boolean;
     clearCreateTime(): void;
     getCreateTime(): google_protobuf_timestamp_pb.Timestamp | undefined;
@@ -704,6 +709,7 @@ export namespace Transaction {
         iostSpecific?: IOSTSpecific.AsObject,
         polygonSpecific?: PolygonSpecific.AsObject,
         klaytnSpecific?: KlaytnSpecific.AsObject,
+        symbolSpecific?: SymbolSpecific.AsObject,
         createTime?: google_protobuf_timestamp_pb.Timestamp.AsObject,
         updateTime?: google_protobuf_timestamp_pb.Timestamp.AsObject,
     }
@@ -1148,6 +1154,8 @@ export class NemSpecific extends jspb.Message {
     addNemMultisigTransactions(value?: NemMultisigTransaction, index?: number): NemMultisigTransaction;
     getExpiration(): number;
     setExpiration(value: number): NemSpecific;
+    getTimestamp(): number;
+    setTimestamp(value: number): NemSpecific;
 
     serializeBinary(): Uint8Array;
     toObject(includeInstance?: boolean): NemSpecific.AsObject;
@@ -1165,6 +1173,7 @@ export namespace NemSpecific {
         txType: gincoinc_global_v1_gincoincglobalv1_enum_pb.NemTransactionType,
         nemMultisigTransactionsList: Array<NemMultisigTransaction.AsObject>,
         expiration: number,
+        timestamp: number,
     }
 }
 
@@ -1246,6 +1255,40 @@ export namespace KlaytnSpecific {
     }
 }
 
+export class SymbolSpecific extends jspb.Message { 
+    getMessage(): string;
+    setMessage(value: string): SymbolSpecific;
+    getTxType(): gincoinc_global_v1_gincoincglobalv1_enum_pb.SymbolTransactionType;
+    setTxType(value: gincoinc_global_v1_gincoincglobalv1_enum_pb.SymbolTransactionType): SymbolSpecific;
+    clearSymbolMultisigTransactionsList(): void;
+    getSymbolMultisigTransactionsList(): Array<SymbolMultisigTransaction>;
+    setSymbolMultisigTransactionsList(value: Array<SymbolMultisigTransaction>): SymbolSpecific;
+    addSymbolMultisigTransactions(value?: SymbolMultisigTransaction, index?: number): SymbolMultisigTransaction;
+    getExpiration(): number;
+    setExpiration(value: number): SymbolSpecific;
+    getTimestamp(): number;
+    setTimestamp(value: number): SymbolSpecific;
+
+    serializeBinary(): Uint8Array;
+    toObject(includeInstance?: boolean): SymbolSpecific.AsObject;
+    static toObject(includeInstance: boolean, msg: SymbolSpecific): SymbolSpecific.AsObject;
+    static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+    static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+    static serializeBinaryToWriter(message: SymbolSpecific, writer: jspb.BinaryWriter): void;
+    static deserializeBinary(bytes: Uint8Array): SymbolSpecific;
+    static deserializeBinaryFromReader(message: SymbolSpecific, reader: jspb.BinaryReader): SymbolSpecific;
+}
+
+export namespace SymbolSpecific {
+    export type AsObject = {
+        message: string,
+        txType: gincoinc_global_v1_gincoincglobalv1_enum_pb.SymbolTransactionType,
+        symbolMultisigTransactionsList: Array<SymbolMultisigTransaction.AsObject>,
+        expiration: number,
+        timestamp: number,
+    }
+}
+
 export class CreateTransactionSubstrateSpecific extends jspb.Message { 
     getTransactionId(): string;
     setTransactionId(value: string): CreateTransactionSubstrateSpecific;
@@ -1302,6 +1345,8 @@ export class CreateTransactionNemSpecific extends jspb.Message {
     setTxType(value: gincoinc_global_v1_gincoincglobalv1_enum_pb.NemTransactionType): CreateTransactionNemSpecific;
     getMessage(): string;
     setMessage(value: string): CreateTransactionNemSpecific;
+    getTimestamp(): number;
+    setTimestamp(value: number): CreateTransactionNemSpecific;
 
     serializeBinary(): Uint8Array;
     toObject(includeInstance?: boolean): CreateTransactionNemSpecific.AsObject;
@@ -1318,6 +1363,7 @@ export namespace CreateTransactionNemSpecific {
         transactionId: string,
         txType: gincoinc_global_v1_gincoincglobalv1_enum_pb.NemTransactionType,
         message: string,
+        timestamp: number,
     }
 }
 
@@ -1340,6 +1386,35 @@ export class CreateTransactionIOSTSpecific extends jspb.Message {
 export namespace CreateTransactionIOSTSpecific {
     export type AsObject = {
         memo: string,
+        timestamp: number,
+    }
+}
+
+export class CreateTransactionSymbolSpecific extends jspb.Message { 
+    getTransactionId(): string;
+    setTransactionId(value: string): CreateTransactionSymbolSpecific;
+    getTxType(): gincoinc_global_v1_gincoincglobalv1_enum_pb.SymbolTransactionType;
+    setTxType(value: gincoinc_global_v1_gincoincglobalv1_enum_pb.SymbolTransactionType): CreateTransactionSymbolSpecific;
+    getMessage(): string;
+    setMessage(value: string): CreateTransactionSymbolSpecific;
+    getTimestamp(): number;
+    setTimestamp(value: number): CreateTransactionSymbolSpecific;
+
+    serializeBinary(): Uint8Array;
+    toObject(includeInstance?: boolean): CreateTransactionSymbolSpecific.AsObject;
+    static toObject(includeInstance: boolean, msg: CreateTransactionSymbolSpecific): CreateTransactionSymbolSpecific.AsObject;
+    static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+    static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+    static serializeBinaryToWriter(message: CreateTransactionSymbolSpecific, writer: jspb.BinaryWriter): void;
+    static deserializeBinary(bytes: Uint8Array): CreateTransactionSymbolSpecific;
+    static deserializeBinaryFromReader(message: CreateTransactionSymbolSpecific, reader: jspb.BinaryReader): CreateTransactionSymbolSpecific;
+}
+
+export namespace CreateTransactionSymbolSpecific {
+    export type AsObject = {
+        transactionId: string,
+        txType: gincoinc_global_v1_gincoincglobalv1_enum_pb.SymbolTransactionType,
+        message: string,
         timestamp: number,
     }
 }
@@ -1454,6 +1529,59 @@ export namespace NemMultisigTransaction {
         nemMultisigTransactionId: string,
         accountId: string,
         txType: gincoinc_global_v1_gincoincglobalv1_enum_pb.NemTransactionType,
+        data: string,
+        signature: string,
+        state: gincoinc_adamant_global_v1_adamantglobalv1_enum_pb.TransactionState,
+        createTime?: google_protobuf_timestamp_pb.Timestamp.AsObject,
+        updateTime?: google_protobuf_timestamp_pb.Timestamp.AsObject,
+    }
+}
+
+export class SymbolMultisigTransaction extends jspb.Message { 
+    getWalletId(): string;
+    setWalletId(value: string): SymbolMultisigTransaction;
+    getTransactionId(): string;
+    setTransactionId(value: string): SymbolMultisigTransaction;
+    getSymbolMultisigTransactionId(): string;
+    setSymbolMultisigTransactionId(value: string): SymbolMultisigTransaction;
+    getAccountId(): string;
+    setAccountId(value: string): SymbolMultisigTransaction;
+    getTxType(): gincoinc_global_v1_gincoincglobalv1_enum_pb.SymbolTransactionType;
+    setTxType(value: gincoinc_global_v1_gincoincglobalv1_enum_pb.SymbolTransactionType): SymbolMultisigTransaction;
+    getData(): string;
+    setData(value: string): SymbolMultisigTransaction;
+    getSignature(): string;
+    setSignature(value: string): SymbolMultisigTransaction;
+    getState(): gincoinc_adamant_global_v1_adamantglobalv1_enum_pb.TransactionState;
+    setState(value: gincoinc_adamant_global_v1_adamantglobalv1_enum_pb.TransactionState): SymbolMultisigTransaction;
+
+    hasCreateTime(): boolean;
+    clearCreateTime(): void;
+    getCreateTime(): google_protobuf_timestamp_pb.Timestamp | undefined;
+    setCreateTime(value?: google_protobuf_timestamp_pb.Timestamp): SymbolMultisigTransaction;
+
+    hasUpdateTime(): boolean;
+    clearUpdateTime(): void;
+    getUpdateTime(): google_protobuf_timestamp_pb.Timestamp | undefined;
+    setUpdateTime(value?: google_protobuf_timestamp_pb.Timestamp): SymbolMultisigTransaction;
+
+    serializeBinary(): Uint8Array;
+    toObject(includeInstance?: boolean): SymbolMultisigTransaction.AsObject;
+    static toObject(includeInstance: boolean, msg: SymbolMultisigTransaction): SymbolMultisigTransaction.AsObject;
+    static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+    static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+    static serializeBinaryToWriter(message: SymbolMultisigTransaction, writer: jspb.BinaryWriter): void;
+    static deserializeBinary(bytes: Uint8Array): SymbolMultisigTransaction;
+    static deserializeBinaryFromReader(message: SymbolMultisigTransaction, reader: jspb.BinaryReader): SymbolMultisigTransaction;
+}
+
+export namespace SymbolMultisigTransaction {
+    export type AsObject = {
+        walletId: string,
+        transactionId: string,
+        symbolMultisigTransactionId: string,
+        accountId: string,
+        txType: gincoinc_global_v1_gincoincglobalv1_enum_pb.SymbolTransactionType,
         data: string,
         signature: string,
         state: gincoinc_adamant_global_v1_adamantglobalv1_enum_pb.TransactionState,
@@ -2706,6 +2834,8 @@ export class RequestSignature extends jspb.Message {
     setSignIndex(value: number): RequestSignature;
     getSignature(): string;
     setSignature(value: string): RequestSignature;
+    getHdIndex(): number;
+    setHdIndex(value: number): RequestSignature;
 
     serializeBinary(): Uint8Array;
     toObject(includeInstance?: boolean): RequestSignature.AsObject;
@@ -2721,6 +2851,7 @@ export namespace RequestSignature {
     export type AsObject = {
         signIndex: number,
         signature: string,
+        hdIndex: number,
     }
 }
 
@@ -2793,6 +2924,38 @@ export class SubstrateChildAddress extends jspb.Message {
 }
 
 export namespace SubstrateChildAddress {
+    export type AsObject = {
+        walletId: string,
+        accountId: string,
+        address: string,
+        balance: number,
+        stringBalance: string,
+    }
+}
+
+export class SymbolChildAddress extends jspb.Message { 
+    getWalletId(): string;
+    setWalletId(value: string): SymbolChildAddress;
+    getAccountId(): string;
+    setAccountId(value: string): SymbolChildAddress;
+    getAddress(): string;
+    setAddress(value: string): SymbolChildAddress;
+    getBalance(): number;
+    setBalance(value: number): SymbolChildAddress;
+    getStringBalance(): string;
+    setStringBalance(value: string): SymbolChildAddress;
+
+    serializeBinary(): Uint8Array;
+    toObject(includeInstance?: boolean): SymbolChildAddress.AsObject;
+    static toObject(includeInstance: boolean, msg: SymbolChildAddress): SymbolChildAddress.AsObject;
+    static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+    static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+    static serializeBinaryToWriter(message: SymbolChildAddress, writer: jspb.BinaryWriter): void;
+    static deserializeBinary(bytes: Uint8Array): SymbolChildAddress;
+    static deserializeBinaryFromReader(message: SymbolChildAddress, reader: jspb.BinaryReader): SymbolChildAddress;
+}
+
+export namespace SymbolChildAddress {
     export type AsObject = {
         walletId: string,
         accountId: string,

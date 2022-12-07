@@ -45,6 +45,7 @@ interface IGlobalAPIService extends grpc.ServiceDefinition<grpc.UntypedServiceIm
     updateAddressBalance: IGlobalAPIService_IUpdateAddressBalance;
     getEthereumFeeAddress: IGlobalAPIService_IGetEthereumFeeAddress;
     listSubstrateChildAddresses: IGlobalAPIService_IListSubstrateChildAddresses;
+    listSymbolChildAddresses: IGlobalAPIService_IListSymbolChildAddresses;
     listIOSTChildAccounts: IGlobalAPIService_IListIOSTChildAccounts;
     importAddress: IGlobalAPIService_IImportAddress;
     listCallers: IGlobalAPIService_IListCallers;
@@ -377,6 +378,15 @@ interface IGlobalAPIService_IListSubstrateChildAddresses extends grpc.MethodDefi
     requestDeserialize: grpc.deserialize<gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.ListSubstrateChildAddressesRequest>;
     responseSerialize: grpc.serialize<gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.ListSubstrateChildAddressesResponse>;
     responseDeserialize: grpc.deserialize<gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.ListSubstrateChildAddressesResponse>;
+}
+interface IGlobalAPIService_IListSymbolChildAddresses extends grpc.MethodDefinition<gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.ListSymbolChildAddressesRequest, gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.ListSymbolChildAddressesResponse> {
+    path: "/adamant.global.v1.GlobalAPI/ListSymbolChildAddresses";
+    requestStream: false;
+    responseStream: false;
+    requestSerialize: grpc.serialize<gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.ListSymbolChildAddressesRequest>;
+    requestDeserialize: grpc.deserialize<gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.ListSymbolChildAddressesRequest>;
+    responseSerialize: grpc.serialize<gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.ListSymbolChildAddressesResponse>;
+    responseDeserialize: grpc.deserialize<gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.ListSymbolChildAddressesResponse>;
 }
 interface IGlobalAPIService_IListIOSTChildAccounts extends grpc.MethodDefinition<gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.ListIOSTChildAccountsRequest, gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.ListIOSTChildAccountsResponse> {
     path: "/adamant.global.v1.GlobalAPI/ListIOSTChildAccounts";
@@ -961,6 +971,7 @@ export interface IGlobalAPIServer {
     updateAddressBalance: grpc.handleUnaryCall<gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.UpdateAddressBalanceRequest, google_protobuf_empty_pb.Empty>;
     getEthereumFeeAddress: grpc.handleUnaryCall<gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.GetEthereumFeeAddressRequest, gincoinc_adamant_global_v1_adamantglobalv1_model_pb.EthereumFeeAddress>;
     listSubstrateChildAddresses: grpc.handleUnaryCall<gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.ListSubstrateChildAddressesRequest, gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.ListSubstrateChildAddressesResponse>;
+    listSymbolChildAddresses: grpc.handleUnaryCall<gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.ListSymbolChildAddressesRequest, gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.ListSymbolChildAddressesResponse>;
     listIOSTChildAccounts: grpc.handleUnaryCall<gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.ListIOSTChildAccountsRequest, gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.ListIOSTChildAccountsResponse>;
     importAddress: grpc.handleUnaryCall<gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.ImportAddressRequest, google_protobuf_empty_pb.Empty>;
     listCallers: grpc.handleUnaryCall<gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.ListCallersRequest, gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.ListCallersResponse>;
@@ -1115,6 +1126,9 @@ export interface IGlobalAPIClient {
     listSubstrateChildAddresses(request: gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.ListSubstrateChildAddressesRequest, callback: (error: grpc.ServiceError | null, response: gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.ListSubstrateChildAddressesResponse) => void): grpc.ClientUnaryCall;
     listSubstrateChildAddresses(request: gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.ListSubstrateChildAddressesRequest, metadata: grpc.Metadata, callback: (error: grpc.ServiceError | null, response: gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.ListSubstrateChildAddressesResponse) => void): grpc.ClientUnaryCall;
     listSubstrateChildAddresses(request: gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.ListSubstrateChildAddressesRequest, metadata: grpc.Metadata, options: Partial<grpc.CallOptions>, callback: (error: grpc.ServiceError | null, response: gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.ListSubstrateChildAddressesResponse) => void): grpc.ClientUnaryCall;
+    listSymbolChildAddresses(request: gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.ListSymbolChildAddressesRequest, callback: (error: grpc.ServiceError | null, response: gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.ListSymbolChildAddressesResponse) => void): grpc.ClientUnaryCall;
+    listSymbolChildAddresses(request: gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.ListSymbolChildAddressesRequest, metadata: grpc.Metadata, callback: (error: grpc.ServiceError | null, response: gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.ListSymbolChildAddressesResponse) => void): grpc.ClientUnaryCall;
+    listSymbolChildAddresses(request: gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.ListSymbolChildAddressesRequest, metadata: grpc.Metadata, options: Partial<grpc.CallOptions>, callback: (error: grpc.ServiceError | null, response: gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.ListSymbolChildAddressesResponse) => void): grpc.ClientUnaryCall;
     listIOSTChildAccounts(request: gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.ListIOSTChildAccountsRequest, callback: (error: grpc.ServiceError | null, response: gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.ListIOSTChildAccountsResponse) => void): grpc.ClientUnaryCall;
     listIOSTChildAccounts(request: gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.ListIOSTChildAccountsRequest, metadata: grpc.Metadata, callback: (error: grpc.ServiceError | null, response: gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.ListIOSTChildAccountsResponse) => void): grpc.ClientUnaryCall;
     listIOSTChildAccounts(request: gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.ListIOSTChildAccountsRequest, metadata: grpc.Metadata, options: Partial<grpc.CallOptions>, callback: (error: grpc.ServiceError | null, response: gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.ListIOSTChildAccountsResponse) => void): grpc.ClientUnaryCall;
@@ -1392,6 +1406,9 @@ export class GlobalAPIClient extends grpc.Client implements IGlobalAPIClient {
     public listSubstrateChildAddresses(request: gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.ListSubstrateChildAddressesRequest, callback: (error: grpc.ServiceError | null, response: gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.ListSubstrateChildAddressesResponse) => void): grpc.ClientUnaryCall;
     public listSubstrateChildAddresses(request: gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.ListSubstrateChildAddressesRequest, metadata: grpc.Metadata, callback: (error: grpc.ServiceError | null, response: gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.ListSubstrateChildAddressesResponse) => void): grpc.ClientUnaryCall;
     public listSubstrateChildAddresses(request: gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.ListSubstrateChildAddressesRequest, metadata: grpc.Metadata, options: Partial<grpc.CallOptions>, callback: (error: grpc.ServiceError | null, response: gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.ListSubstrateChildAddressesResponse) => void): grpc.ClientUnaryCall;
+    public listSymbolChildAddresses(request: gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.ListSymbolChildAddressesRequest, callback: (error: grpc.ServiceError | null, response: gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.ListSymbolChildAddressesResponse) => void): grpc.ClientUnaryCall;
+    public listSymbolChildAddresses(request: gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.ListSymbolChildAddressesRequest, metadata: grpc.Metadata, callback: (error: grpc.ServiceError | null, response: gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.ListSymbolChildAddressesResponse) => void): grpc.ClientUnaryCall;
+    public listSymbolChildAddresses(request: gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.ListSymbolChildAddressesRequest, metadata: grpc.Metadata, options: Partial<grpc.CallOptions>, callback: (error: grpc.ServiceError | null, response: gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.ListSymbolChildAddressesResponse) => void): grpc.ClientUnaryCall;
     public listIOSTChildAccounts(request: gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.ListIOSTChildAccountsRequest, callback: (error: grpc.ServiceError | null, response: gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.ListIOSTChildAccountsResponse) => void): grpc.ClientUnaryCall;
     public listIOSTChildAccounts(request: gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.ListIOSTChildAccountsRequest, metadata: grpc.Metadata, callback: (error: grpc.ServiceError | null, response: gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.ListIOSTChildAccountsResponse) => void): grpc.ClientUnaryCall;
     public listIOSTChildAccounts(request: gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.ListIOSTChildAccountsRequest, metadata: grpc.Metadata, options: Partial<grpc.CallOptions>, callback: (error: grpc.ServiceError | null, response: gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.ListIOSTChildAccountsResponse) => void): grpc.ClientUnaryCall;
