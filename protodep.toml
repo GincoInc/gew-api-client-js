@@ -1,21 +1,25 @@
 proto_outdir = "./proto"
 
 [[dependencies]]
-    target = "github.com/envoyproxy/protoc-gen-validate"
-    tag = "v0.2.0-java"
-    ignores = ["gogoproto", "java", "tests", "vendor", "example-workspace"]
+  target = "github.com/envoyproxy/protoc-gen-validate"
+  tag = "v0.2.0-java"
+  ignores = ["gogoproto", "java", "tests", "vendor"]
+  protocol = "https"
 
 [[dependencies]]
-    target = "github.com/GincoInc/protobuf/proto/gincoinc/global"
-    tag = "v1.84.2"
-    path = "gincoinc/global"
+  target = "github.com/GincoInc/protobuf/proto/gincoinc/global"
+  tag = "v1.86.1"
+  path = "gincoinc/global"
+  protocol = "ssh"
 
 [[dependencies]]
-    target = "github.com/GincoInc/protobuf/proto/gincoinc/adamant/global"
-    tag = "v1.84.2"
-    path = "gincoinc/adamant/global"
+  target = "github.com/GincoInc/protobuf/proto/gincoinc/adamant/global"
+  tag = "v1.86.1"
+  path = "gincoinc/adamant/global"
+  protocol = "ssh"
 
 [[dependencies]]
-    target = "github.com/GincoInc/protobuf/proto/gincoinc/adamant/teller"
-    tag = "v1.84.2"
-    path = "gincoinc/adamant/teller"
+  target = "github.com/GincoInc/protobuf/proto/gincoinc/adamant/teller"
+  tag = "v1.86.1"
+  path = "gincoinc/adamant/teller"
+  protocol = "ssh"
