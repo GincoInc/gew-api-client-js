@@ -3,7 +3,7 @@ proto_outdir = "./proto"
 [[dependencies]]
   target = "github.com/envoyproxy/protoc-gen-validate"
   subgroup = ""
-  revision = "38260ee45796b420276ac925d826ecec8fc3e9a8"
+  revision = "2540a2dbb00ae2aeb55d4d81be7f7542910570f9"
   branch = ""
   path = ""
   ignores = ["gogoproto", "java", "tests", "vendor"]
