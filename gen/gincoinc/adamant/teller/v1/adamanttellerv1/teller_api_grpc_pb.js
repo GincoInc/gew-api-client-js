@@ -395,6 +395,28 @@ function deserialize_adamant_global_v1_ListBaseWalletsResponse(buffer_arg) {
   return gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.ListBaseWalletsResponse.deserializeBinary(new Uint8Array(buffer_arg));
 }
 
+function serialize_adamant_global_v1_ListSymbolChildAddressesRequest(arg) {
+  if (!(arg instanceof gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.ListSymbolChildAddressesRequest)) {
+    throw new Error('Expected argument of type adamant.global.v1.ListSymbolChildAddressesRequest');
+  }
+  return Buffer.from(arg.serializeBinary());
+}
+
+function deserialize_adamant_global_v1_ListSymbolChildAddressesRequest(buffer_arg) {
+  return gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.ListSymbolChildAddressesRequest.deserializeBinary(new Uint8Array(buffer_arg));
+}
+
+function serialize_adamant_global_v1_ListSymbolChildAddressesResponse(arg) {
+  if (!(arg instanceof gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.ListSymbolChildAddressesResponse)) {
+    throw new Error('Expected argument of type adamant.global.v1.ListSymbolChildAddressesResponse');
+  }
+  return Buffer.from(arg.serializeBinary());
+}
+
+function deserialize_adamant_global_v1_ListSymbolChildAddressesResponse(buffer_arg) {
+  return gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.ListSymbolChildAddressesResponse.deserializeBinary(new Uint8Array(buffer_arg));
+}
+
 function serialize_adamant_global_v1_ListTransactionsByFilterRequest(arg) {
   if (!(arg instanceof gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.ListTransactionsByFilterRequest)) {
     throw new Error('Expected argument of type adamant.global.v1.ListTransactionsByFilterRequest');
@@ -776,6 +798,17 @@ createAddress: {
     requestDeserialize: deserialize_adamant_global_v1_CreateIOSTAccountRequest,
     responseSerialize: serialize_adamant_global_v1_CreateIOSTAccountResponse,
     responseDeserialize: deserialize_adamant_global_v1_CreateIOSTAccountResponse,
+  },
+  listSymbolChildAddresses: {
+    path: '/adamant.teller.v1.TellerAPI/ListSymbolChildAddresses',
+    requestStream: false,
+    responseStream: false,
+    requestType: gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.ListSymbolChildAddressesRequest,
+    responseType: gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.ListSymbolChildAddressesResponse,
+    requestSerialize: serialize_adamant_global_v1_ListSymbolChildAddressesRequest,
+    requestDeserialize: deserialize_adamant_global_v1_ListSymbolChildAddressesRequest,
+    responseSerialize: serialize_adamant_global_v1_ListSymbolChildAddressesResponse,
+    responseDeserialize: deserialize_adamant_global_v1_ListSymbolChildAddressesResponse,
   },
   getAddress: {
     path: '/adamant.teller.v1.TellerAPI/GetAddress',
