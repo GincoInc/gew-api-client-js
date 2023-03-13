@@ -637,6 +637,7 @@ message CreateTransactionRequest {
   adamant.global.v1.CreateTransactionNemSpecific nem_specific = 10;
   adamant.global.v1.CreateTransactionIOSTSpecific iost_specific = 11;
   adamant.global.v1.CreateTransactionSymbolSpecific xym_specific = 12;
+  adamant.global.v1.CreateTransactionEthereumSpecific ethereum_specific = 13;
 }
 
 message CreateTransactionResponse {
@@ -655,7 +656,6 @@ message CreateInitTransactionRequest {
     pattern: "^[0-9a-f]{8}-[0-9a-f]{4}-4[0-9a-f]{3}-[89ab][0-9a-f]{3}-[0-9a-f]{12}$"
   }];
   adamant.global.v1.CreateTransactionIOSTSpecific iost_specific = 2;
-  adamant.global.v1.CreateTransactionSymbolSpecific symbol_specific = 3;
 }
 
 message SignTransactionRequest {
@@ -1134,6 +1134,7 @@ message CalculateFeeRequest {
   CalculateFeeSubstrateSpecific substrate_specific = 7;
   CalculateFeeNemSpecific nem_specific = 8;
   CalculateFeeSymbolSpecific symbol_specific = 9;
+  CalculateFeeEthereumSpecific ethereum_specific = 10;
 }
 
 // The model of Substrate specific fields of CreateTransaction
@@ -1150,6 +1151,13 @@ message CalculateFeeNemSpecific {
 // The model of Symbol specific fields of CalculateFee
 message CalculateFeeSymbolSpecific {
   string message = 1;
+}
+
+// The model of Ethereum specific fields of CalculateFee
+message CalculateFeeEthereumSpecific {
+  string data = 1 [(validate.rules).string = {
+    pattern: "^0x[0-9a-fA-F]*$"
+  }];
 }
 
 message CalculateFeeResponse {

@@ -14,7 +14,7 @@ generate: check-protoc $(BIN)/buf $(BIN)/protodep $(BIN)/protoc-gen-validate cle
 
 .PHONY: protodep-up
 protodep-up: $(BIN)/protodep
-	$(BIN)/protodep up -f -c
+	$(BIN)/protodep up -c
 
 .PHONY: clean
 clean:
