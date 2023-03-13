@@ -1417,6 +1417,11 @@ export class CreateTransactionRequest extends jspb.Message {
     getXymSpecific(): gincoinc_adamant_global_v1_adamantglobalv1_model_pb.CreateTransactionSymbolSpecific | undefined;
     setXymSpecific(value?: gincoinc_adamant_global_v1_adamantglobalv1_model_pb.CreateTransactionSymbolSpecific): CreateTransactionRequest;
 
+    hasEthereumSpecific(): boolean;
+    clearEthereumSpecific(): void;
+    getEthereumSpecific(): gincoinc_adamant_global_v1_adamantglobalv1_model_pb.CreateTransactionEthereumSpecific | undefined;
+    setEthereumSpecific(value?: gincoinc_adamant_global_v1_adamantglobalv1_model_pb.CreateTransactionEthereumSpecific): CreateTransactionRequest;
+
     serializeBinary(): Uint8Array;
     toObject(includeInstance?: boolean): CreateTransactionRequest.AsObject;
     static toObject(includeInstance: boolean, msg: CreateTransactionRequest): CreateTransactionRequest.AsObject;
@@ -1441,6 +1446,7 @@ export namespace CreateTransactionRequest {
         nemSpecific?: gincoinc_adamant_global_v1_adamantglobalv1_model_pb.CreateTransactionNemSpecific.AsObject,
         iostSpecific?: gincoinc_adamant_global_v1_adamantglobalv1_model_pb.CreateTransactionIOSTSpecific.AsObject,
         xymSpecific?: gincoinc_adamant_global_v1_adamantglobalv1_model_pb.CreateTransactionSymbolSpecific.AsObject,
+        ethereumSpecific?: gincoinc_adamant_global_v1_adamantglobalv1_model_pb.CreateTransactionEthereumSpecific.AsObject,
     }
 }
 
@@ -1493,11 +1499,6 @@ export class CreateInitTransactionRequest extends jspb.Message {
     getIostSpecific(): gincoinc_adamant_global_v1_adamantglobalv1_model_pb.CreateTransactionIOSTSpecific | undefined;
     setIostSpecific(value?: gincoinc_adamant_global_v1_adamantglobalv1_model_pb.CreateTransactionIOSTSpecific): CreateInitTransactionRequest;
 
-    hasSymbolSpecific(): boolean;
-    clearSymbolSpecific(): void;
-    getSymbolSpecific(): gincoinc_adamant_global_v1_adamantglobalv1_model_pb.CreateTransactionSymbolSpecific | undefined;
-    setSymbolSpecific(value?: gincoinc_adamant_global_v1_adamantglobalv1_model_pb.CreateTransactionSymbolSpecific): CreateInitTransactionRequest;
-
     serializeBinary(): Uint8Array;
     toObject(includeInstance?: boolean): CreateInitTransactionRequest.AsObject;
     static toObject(includeInstance: boolean, msg: CreateInitTransactionRequest): CreateInitTransactionRequest.AsObject;
@@ -1512,7 +1513,6 @@ export namespace CreateInitTransactionRequest {
     export type AsObject = {
         walletId: string,
         iostSpecific?: gincoinc_adamant_global_v1_adamantglobalv1_model_pb.CreateTransactionIOSTSpecific.AsObject,
-        symbolSpecific?: gincoinc_adamant_global_v1_adamantglobalv1_model_pb.CreateTransactionSymbolSpecific.AsObject,
     }
 }
 
@@ -2858,6 +2858,11 @@ export class CalculateFeeRequest extends jspb.Message {
     getSymbolSpecific(): CalculateFeeSymbolSpecific | undefined;
     setSymbolSpecific(value?: CalculateFeeSymbolSpecific): CalculateFeeRequest;
 
+    hasEthereumSpecific(): boolean;
+    clearEthereumSpecific(): void;
+    getEthereumSpecific(): CalculateFeeEthereumSpecific | undefined;
+    setEthereumSpecific(value?: CalculateFeeEthereumSpecific): CalculateFeeRequest;
+
     serializeBinary(): Uint8Array;
     toObject(includeInstance?: boolean): CalculateFeeRequest.AsObject;
     static toObject(includeInstance: boolean, msg: CalculateFeeRequest): CalculateFeeRequest.AsObject;
@@ -2879,6 +2884,7 @@ export namespace CalculateFeeRequest {
         substrateSpecific?: CalculateFeeSubstrateSpecific.AsObject,
         nemSpecific?: CalculateFeeNemSpecific.AsObject,
         symbolSpecific?: CalculateFeeSymbolSpecific.AsObject,
+        ethereumSpecific?: CalculateFeeEthereumSpecific.AsObject,
     }
 }
 
@@ -2942,6 +2948,26 @@ export class CalculateFeeSymbolSpecific extends jspb.Message {
 export namespace CalculateFeeSymbolSpecific {
     export type AsObject = {
         message: string,
+    }
+}
+
+export class CalculateFeeEthereumSpecific extends jspb.Message { 
+    getData(): string;
+    setData(value: string): CalculateFeeEthereumSpecific;
+
+    serializeBinary(): Uint8Array;
+    toObject(includeInstance?: boolean): CalculateFeeEthereumSpecific.AsObject;
+    static toObject(includeInstance: boolean, msg: CalculateFeeEthereumSpecific): CalculateFeeEthereumSpecific.AsObject;
+    static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+    static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+    static serializeBinaryToWriter(message: CalculateFeeEthereumSpecific, writer: jspb.BinaryWriter): void;
+    static deserializeBinary(bytes: Uint8Array): CalculateFeeEthereumSpecific;
+    static deserializeBinaryFromReader(message: CalculateFeeEthereumSpecific, reader: jspb.BinaryReader): CalculateFeeEthereumSpecific;
+}
+
+export namespace CalculateFeeEthereumSpecific {
+    export type AsObject = {
+        data: string,
     }
 }
 

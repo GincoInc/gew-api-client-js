@@ -309,6 +309,8 @@ export class Key extends jspb.Message {
     setKeyId(value: string): Key;
     getKeyIndex(): number;
     setKeyIndex(value: number): Key;
+    getHdIndex(): number;
+    setHdIndex(value: number): Key;
 
     serializeBinary(): Uint8Array;
     toObject(includeInstance?: boolean): Key.AsObject;
@@ -327,6 +329,7 @@ export namespace Key {
         accountType: gincoinc_adamant_global_v1_adamantglobalv1_enum_pb.AccountType,
         keyId: string,
         keyIndex: number,
+        hdIndex: number,
     }
 }
 
@@ -658,6 +661,11 @@ export class Transaction extends jspb.Message {
     getSymbolSpecific(): SymbolSpecific | undefined;
     setSymbolSpecific(value?: SymbolSpecific): Transaction;
 
+    hasAvalancheSpecific(): boolean;
+    clearAvalancheSpecific(): void;
+    getAvalancheSpecific(): AvalancheSpecific | undefined;
+    setAvalancheSpecific(value?: AvalancheSpecific): Transaction;
+
     hasCreateTime(): boolean;
     clearCreateTime(): void;
     getCreateTime(): google_protobuf_timestamp_pb.Timestamp | undefined;
@@ -710,6 +718,7 @@ export namespace Transaction {
         polygonSpecific?: PolygonSpecific.AsObject,
         klaytnSpecific?: KlaytnSpecific.AsObject,
         symbolSpecific?: SymbolSpecific.AsObject,
+        avalancheSpecific?: AvalancheSpecific.AsObject,
         createTime?: google_protobuf_timestamp_pb.Timestamp.AsObject,
         updateTime?: google_protobuf_timestamp_pb.Timestamp.AsObject,
     }
@@ -825,6 +834,11 @@ export class UTXO extends jspb.Message {
     getTransactionId(): string;
     setTransactionId(value: string): UTXO;
 
+    hasCardanoSpecific(): boolean;
+    clearCardanoSpecific(): void;
+    getCardanoSpecific(): CardanoUTXOSpecific | undefined;
+    setCardanoSpecific(value?: CardanoUTXOSpecific): UTXO;
+
     serializeBinary(): Uint8Array;
     toObject(includeInstance?: boolean): UTXO.AsObject;
     static toObject(includeInstance: boolean, msg: UTXO): UTXO.AsObject;
@@ -843,6 +857,55 @@ export namespace UTXO {
         stringValue: string,
         address: string,
         transactionId: string,
+        cardanoSpecific?: CardanoUTXOSpecific.AsObject,
+    }
+}
+
+export class CardanoUTXOSpecific extends jspb.Message { 
+    clearTokensList(): void;
+    getTokensList(): Array<CardanoCustomToken>;
+    setTokensList(value: Array<CardanoCustomToken>): CardanoUTXOSpecific;
+    addTokens(value?: CardanoCustomToken, index?: number): CardanoCustomToken;
+
+    serializeBinary(): Uint8Array;
+    toObject(includeInstance?: boolean): CardanoUTXOSpecific.AsObject;
+    static toObject(includeInstance: boolean, msg: CardanoUTXOSpecific): CardanoUTXOSpecific.AsObject;
+    static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+    static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+    static serializeBinaryToWriter(message: CardanoUTXOSpecific, writer: jspb.BinaryWriter): void;
+    static deserializeBinary(bytes: Uint8Array): CardanoUTXOSpecific;
+    static deserializeBinaryFromReader(message: CardanoUTXOSpecific, reader: jspb.BinaryReader): CardanoUTXOSpecific;
+}
+
+export namespace CardanoUTXOSpecific {
+    export type AsObject = {
+        tokensList: Array<CardanoCustomToken.AsObject>,
+    }
+}
+
+export class CardanoCustomToken extends jspb.Message { 
+    getPolicyId(): string;
+    setPolicyId(value: string): CardanoCustomToken;
+    getAssetName(): string;
+    setAssetName(value: string): CardanoCustomToken;
+    getValue(): number;
+    setValue(value: number): CardanoCustomToken;
+
+    serializeBinary(): Uint8Array;
+    toObject(includeInstance?: boolean): CardanoCustomToken.AsObject;
+    static toObject(includeInstance: boolean, msg: CardanoCustomToken): CardanoCustomToken.AsObject;
+    static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+    static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+    static serializeBinaryToWriter(message: CardanoCustomToken, writer: jspb.BinaryWriter): void;
+    static deserializeBinary(bytes: Uint8Array): CardanoCustomToken;
+    static deserializeBinaryFromReader(message: CardanoCustomToken, reader: jspb.BinaryReader): CardanoCustomToken;
+}
+
+export namespace CardanoCustomToken {
+    export type AsObject = {
+        policyId: string,
+        assetName: string,
+        value: number,
     }
 }
 
@@ -938,6 +1001,8 @@ export class EthereumSpecific extends jspb.Message {
     setMethodIdType(value: gincoinc_adamant_global_v1_adamantglobalv1_enum_pb.EthereumContractMethodIDType): EthereumSpecific;
     getExpiration(): number;
     setExpiration(value: number): EthereumSpecific;
+    getData(): string;
+    setData(value: string): EthereumSpecific;
 
     serializeBinary(): Uint8Array;
     toObject(includeInstance?: boolean): EthereumSpecific.AsObject;
@@ -956,6 +1021,7 @@ export namespace EthereumSpecific {
         isNextNonce: boolean,
         methodIdType: gincoinc_adamant_global_v1_adamantglobalv1_enum_pb.EthereumContractMethodIDType,
         expiration: number,
+        data: string,
     }
 }
 
@@ -1289,6 +1355,32 @@ export namespace SymbolSpecific {
     }
 }
 
+export class AvalancheSpecific extends jspb.Message { 
+    getGasLimit(): number;
+    setGasLimit(value: number): AvalancheSpecific;
+    getNonce(): number;
+    setNonce(value: number): AvalancheSpecific;
+    getIsNextNonce(): boolean;
+    setIsNextNonce(value: boolean): AvalancheSpecific;
+
+    serializeBinary(): Uint8Array;
+    toObject(includeInstance?: boolean): AvalancheSpecific.AsObject;
+    static toObject(includeInstance: boolean, msg: AvalancheSpecific): AvalancheSpecific.AsObject;
+    static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+    static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+    static serializeBinaryToWriter(message: AvalancheSpecific, writer: jspb.BinaryWriter): void;
+    static deserializeBinary(bytes: Uint8Array): AvalancheSpecific;
+    static deserializeBinaryFromReader(message: AvalancheSpecific, reader: jspb.BinaryReader): AvalancheSpecific;
+}
+
+export namespace AvalancheSpecific {
+    export type AsObject = {
+        gasLimit: number,
+        nonce: number,
+        isNextNonce: boolean,
+    }
+}
+
 export class CreateTransactionSubstrateSpecific extends jspb.Message { 
     getTransactionId(): string;
     setTransactionId(value: string): CreateTransactionSubstrateSpecific;
@@ -1416,6 +1508,26 @@ export namespace CreateTransactionSymbolSpecific {
         txType: gincoinc_global_v1_gincoincglobalv1_enum_pb.SymbolTransactionType,
         message: string,
         timestamp: number,
+    }
+}
+
+export class CreateTransactionEthereumSpecific extends jspb.Message { 
+    getData(): string;
+    setData(value: string): CreateTransactionEthereumSpecific;
+
+    serializeBinary(): Uint8Array;
+    toObject(includeInstance?: boolean): CreateTransactionEthereumSpecific.AsObject;
+    static toObject(includeInstance: boolean, msg: CreateTransactionEthereumSpecific): CreateTransactionEthereumSpecific.AsObject;
+    static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+    static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+    static serializeBinaryToWriter(message: CreateTransactionEthereumSpecific, writer: jspb.BinaryWriter): void;
+    static deserializeBinary(bytes: Uint8Array): CreateTransactionEthereumSpecific;
+    static deserializeBinaryFromReader(message: CreateTransactionEthereumSpecific, reader: jspb.BinaryReader): CreateTransactionEthereumSpecific;
+}
+
+export namespace CreateTransactionEthereumSpecific {
+    export type AsObject = {
+        data: string,
     }
 }
 
