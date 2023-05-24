@@ -7,6 +7,7 @@
 import * as jspb from "google-protobuf";
 import * as gincoinc_global_v1_gincoincglobalv1_enum_pb from "../../../../../gincoinc/global/v1/gincoincglobalv1/enum_pb";
 import * as google_protobuf_timestamp_pb from "google-protobuf/google/protobuf/timestamp_pb";
+import * as validate_validate_pb from "../../../../../validate/validate_pb";
 
 export class TransferUpdated extends jspb.Message { 
     getWalletId(): string;
@@ -153,5 +154,55 @@ export namespace TransferUpdateEvent {
         result: gincoinc_global_v1_gincoincglobalv1_enum_pb.TransactionResult,
         transferType: gincoinc_global_v1_gincoincglobalv1_enum_pb.TransferType,
         time?: google_protobuf_timestamp_pb.Timestamp.AsObject,
+    }
+}
+
+export class EthereumStakingReward extends jspb.Message { 
+    getEventId(): string;
+    setEventId(value: string): EthereumStakingReward;
+    getWithdrawalIndex(): number;
+    setWithdrawalIndex(value: number): EthereumStakingReward;
+    getBlockNumber(): number;
+    setBlockNumber(value: number): EthereumStakingReward;
+
+    hasBlockTime(): boolean;
+    clearBlockTime(): void;
+    getBlockTime(): google_protobuf_timestamp_pb.Timestamp | undefined;
+    setBlockTime(value?: google_protobuf_timestamp_pb.Timestamp): EthereumStakingReward;
+    getValidatorIndex(): number;
+    setValidatorIndex(value: number): EthereumStakingReward;
+    getAddress(): string;
+    setAddress(value: string): EthereumStakingReward;
+    getValue(): number;
+    setValue(value: number): EthereumStakingReward;
+    getWalletId(): string;
+    setWalletId(value: string): EthereumStakingReward;
+    getEthereumStakingRewardLayerType(): gincoinc_global_v1_gincoincglobalv1_enum_pb.EthereumStakingRewardLayerType;
+    setEthereumStakingRewardLayerType(value: gincoinc_global_v1_gincoincglobalv1_enum_pb.EthereumStakingRewardLayerType): EthereumStakingReward;
+    getStringValue(): string;
+    setStringValue(value: string): EthereumStakingReward;
+
+    serializeBinary(): Uint8Array;
+    toObject(includeInstance?: boolean): EthereumStakingReward.AsObject;
+    static toObject(includeInstance: boolean, msg: EthereumStakingReward): EthereumStakingReward.AsObject;
+    static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+    static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+    static serializeBinaryToWriter(message: EthereumStakingReward, writer: jspb.BinaryWriter): void;
+    static deserializeBinary(bytes: Uint8Array): EthereumStakingReward;
+    static deserializeBinaryFromReader(message: EthereumStakingReward, reader: jspb.BinaryReader): EthereumStakingReward;
+}
+
+export namespace EthereumStakingReward {
+    export type AsObject = {
+        eventId: string,
+        withdrawalIndex: number,
+        blockNumber: number,
+        blockTime?: google_protobuf_timestamp_pb.Timestamp.AsObject,
+        validatorIndex: number,
+        address: string,
+        value: number,
+        walletId: string,
+        ethereumStakingRewardLayerType: gincoinc_global_v1_gincoincglobalv1_enum_pb.EthereumStakingRewardLayerType,
+        stringValue: string,
     }
 }

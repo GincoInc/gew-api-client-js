@@ -666,6 +666,16 @@ export class Transaction extends jspb.Message {
     getAvalancheSpecific(): AvalancheSpecific | undefined;
     setAvalancheSpecific(value?: AvalancheSpecific): Transaction;
 
+    hasOasysSpecific(): boolean;
+    clearOasysSpecific(): void;
+    getOasysSpecific(): OasysSpecific | undefined;
+    setOasysSpecific(value?: OasysSpecific): Transaction;
+
+    hasXdcSpecific(): boolean;
+    clearXdcSpecific(): void;
+    getXdcSpecific(): XdcSpecific | undefined;
+    setXdcSpecific(value?: XdcSpecific): Transaction;
+
     hasCreateTime(): boolean;
     clearCreateTime(): void;
     getCreateTime(): google_protobuf_timestamp_pb.Timestamp | undefined;
@@ -719,6 +729,8 @@ export namespace Transaction {
         klaytnSpecific?: KlaytnSpecific.AsObject,
         symbolSpecific?: SymbolSpecific.AsObject,
         avalancheSpecific?: AvalancheSpecific.AsObject,
+        oasysSpecific?: OasysSpecific.AsObject,
+        xdcSpecific?: XdcSpecific.AsObject,
         createTime?: google_protobuf_timestamp_pb.Timestamp.AsObject,
         updateTime?: google_protobuf_timestamp_pb.Timestamp.AsObject,
     }
@@ -1374,6 +1386,58 @@ export class AvalancheSpecific extends jspb.Message {
 }
 
 export namespace AvalancheSpecific {
+    export type AsObject = {
+        gasLimit: number,
+        nonce: number,
+        isNextNonce: boolean,
+    }
+}
+
+export class OasysSpecific extends jspb.Message { 
+    getGasLimit(): number;
+    setGasLimit(value: number): OasysSpecific;
+    getNonce(): number;
+    setNonce(value: number): OasysSpecific;
+    getIsNextNonce(): boolean;
+    setIsNextNonce(value: boolean): OasysSpecific;
+
+    serializeBinary(): Uint8Array;
+    toObject(includeInstance?: boolean): OasysSpecific.AsObject;
+    static toObject(includeInstance: boolean, msg: OasysSpecific): OasysSpecific.AsObject;
+    static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+    static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+    static serializeBinaryToWriter(message: OasysSpecific, writer: jspb.BinaryWriter): void;
+    static deserializeBinary(bytes: Uint8Array): OasysSpecific;
+    static deserializeBinaryFromReader(message: OasysSpecific, reader: jspb.BinaryReader): OasysSpecific;
+}
+
+export namespace OasysSpecific {
+    export type AsObject = {
+        gasLimit: number,
+        nonce: number,
+        isNextNonce: boolean,
+    }
+}
+
+export class XdcSpecific extends jspb.Message { 
+    getGasLimit(): number;
+    setGasLimit(value: number): XdcSpecific;
+    getNonce(): number;
+    setNonce(value: number): XdcSpecific;
+    getIsNextNonce(): boolean;
+    setIsNextNonce(value: boolean): XdcSpecific;
+
+    serializeBinary(): Uint8Array;
+    toObject(includeInstance?: boolean): XdcSpecific.AsObject;
+    static toObject(includeInstance: boolean, msg: XdcSpecific): XdcSpecific.AsObject;
+    static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+    static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+    static serializeBinaryToWriter(message: XdcSpecific, writer: jspb.BinaryWriter): void;
+    static deserializeBinary(bytes: Uint8Array): XdcSpecific;
+    static deserializeBinaryFromReader(message: XdcSpecific, reader: jspb.BinaryReader): XdcSpecific;
+}
+
+export namespace XdcSpecific {
     export type AsObject = {
         gasLimit: number,
         nonce: number,
