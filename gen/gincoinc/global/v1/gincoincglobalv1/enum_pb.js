@@ -13,16 +13,11 @@
 
 var jspb = require('google-protobuf');
 var goog = jspb;
-var global = (function() {
-  if (this) { return this; }
-  if (typeof window !== 'undefined') { return window; }
-  if (typeof global !== 'undefined') { return global; }
-  if (typeof self !== 'undefined') { return self; }
-  return Function('return this')();
-}.call(null));
+var global = (function() { return this || window || global || self || Function('return this')(); }).call(null);
 
 goog.exportSymbol('proto.gincoinc.global.v1.AddressType', null, global);
 goog.exportSymbol('proto.gincoinc.global.v1.Coin', null, global);
+goog.exportSymbol('proto.gincoinc.global.v1.EthereumStakingRewardLayerType', null, global);
 goog.exportSymbol('proto.gincoinc.global.v1.NemTransactionType', null, global);
 goog.exportSymbol('proto.gincoinc.global.v1.Network', null, global);
 goog.exportSymbol('proto.gincoinc.global.v1.SymbolTransactionType', null, global);
@@ -75,7 +70,10 @@ proto.gincoinc.global.v1.Coin = {
   COIN_POLYGON_ERC20_ROND: 37,
   COIN_POLYGON_ERC20_MV: 38,
   COIN_POLYGON_ERC20_TSUGT: 39,
-  COIN_ASTR: 10001,
+  COIN_ERC20_GXE: 40,
+  COIN_OAS: 41,
+  COIN_ASTR: 42,
+  COIN_XDC: 43,
   COIN_SDN: 10002
 };
 
@@ -118,7 +116,12 @@ proto.gincoinc.global.v1.Network = {
   NETWORK_SYMBOL_TESTNET: 32,
   NETWORK_AVALANCHE_MAINNET: 33,
   NETWORK_AVALANCHE_TESTNET: 34,
-  NETWORK_ASTAR_MAINNET: 10001,
+  NETWORK_OASYS_MAINNET: 35,
+  NETWORK_OASYS_TESTNET: 36,
+  NETWORK_ASTAR_MAINNET: 37,
+  NETWORK_SHIBUYA_TESTNET: 38,
+  NETWORK_XDC_MAINNET: 39,
+  NETWORK_XDC_TESTNET: 40,
   NETWORK_SHIDEN_MAINNET: 10002
 };
 
@@ -233,6 +236,15 @@ proto.gincoinc.global.v1.SymbolTransactionType = {
   SYMBOL_TRANSACTION_TYPE_MOSAIC_ADDRESS_RESTRICTION: 23,
   SYMBOL_TRANSACTION_TYPE_MOSAIC_GLOBAL_RESTRICTION: 24,
   SYMBOL_TRANSACTION_TYPE_TRANSFER: 25
+};
+
+/**
+ * @enum {number}
+ */
+proto.gincoinc.global.v1.EthereumStakingRewardLayerType = {
+  ETHEREUM_STAKING_REWARD_LAYER_TYPE_INVALID: 0,
+  ETHEREUM_STAKING_REWARD_LAYER_TYPE_CONSENSUS: 1,
+  ETHEREUM_STAKING_REWARD_LAYER_TYPE_EXECUTION: 2
 };
 
 goog.object.extend(exports, proto.gincoinc.global.v1);

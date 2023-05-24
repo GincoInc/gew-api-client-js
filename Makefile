@@ -21,7 +21,7 @@ clean:
 	rm -rf ./gen
 
 .PHONY: check-protoc
-REQUIRED := libprotoc 3.19.4
+REQUIRED := libprotoc 3.20.3
 CURRENT := $(shell protoc --version)
 check-protoc:
 ifeq ($(CURRENT), $(REQUIRED))
