@@ -96,6 +96,8 @@ proto.adamant.global.v1.AuditLog.toObject = function(includeInstance, msg) {
     serviceAccountKeyId: jspb.Message.getFieldWithDefault(msg, 12, ""),
     walletId: jspb.Message.getFieldWithDefault(msg, 13, ""),
     walletName: jspb.Message.getFieldWithDefault(msg, 14, ""),
+    destinationWalletId: jspb.Message.getFieldWithDefault(msg, 39, ""),
+    destinationWalletName: jspb.Message.getFieldWithDefault(msg, 40, ""),
     walletGroupId: jspb.Message.getFieldWithDefault(msg, 34, ""),
     walletGroupName: jspb.Message.getFieldWithDefault(msg, 35, ""),
     walletNamesList: (f = jspb.Message.getRepeatedField(msg, 36)) == null ? undefined : f,
@@ -211,6 +213,14 @@ proto.adamant.global.v1.AuditLog.deserializeBinaryFromReader = function(msg, rea
     case 14:
       var value = /** @type {string} */ (reader.readString());
       msg.setWalletName(value);
+      break;
+    case 39:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setDestinationWalletId(value);
+      break;
+    case 40:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setDestinationWalletName(value);
       break;
     case 34:
       var value = /** @type {string} */ (reader.readString());
@@ -434,6 +444,20 @@ proto.adamant.global.v1.AuditLog.serializeBinaryToWriter = function(message, wri
   if (f.length > 0) {
     writer.writeString(
       14,
+      f
+    );
+  }
+  f = message.getDestinationWalletId();
+  if (f.length > 0) {
+    writer.writeString(
+      39,
+      f
+    );
+  }
+  f = message.getDestinationWalletName();
+  if (f.length > 0) {
+    writer.writeString(
+      40,
       f
     );
   }
@@ -859,6 +883,42 @@ proto.adamant.global.v1.AuditLog.prototype.getWalletName = function() {
  */
 proto.adamant.global.v1.AuditLog.prototype.setWalletName = function(value) {
   return jspb.Message.setProto3StringField(this, 14, value);
+};
+
+
+/**
+ * optional string destination_wallet_id = 39;
+ * @return {string}
+ */
+proto.adamant.global.v1.AuditLog.prototype.getDestinationWalletId = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 39, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.adamant.global.v1.AuditLog} returns this
+ */
+proto.adamant.global.v1.AuditLog.prototype.setDestinationWalletId = function(value) {
+  return jspb.Message.setProto3StringField(this, 39, value);
+};
+
+
+/**
+ * optional string destination_wallet_name = 40;
+ * @return {string}
+ */
+proto.adamant.global.v1.AuditLog.prototype.getDestinationWalletName = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 40, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.adamant.global.v1.AuditLog} returns this
+ */
+proto.adamant.global.v1.AuditLog.prototype.setDestinationWalletName = function(value) {
+  return jspb.Message.setProto3StringField(this, 40, value);
 };
 
 

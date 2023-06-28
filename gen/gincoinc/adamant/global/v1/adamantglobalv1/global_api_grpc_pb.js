@@ -1441,6 +1441,17 @@ function deserialize_adamant_global_v1_UpdateAddressBalanceRequest(buffer_arg) {
   return gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.UpdateAddressBalanceRequest.deserializeBinary(new Uint8Array(buffer_arg));
 }
 
+function serialize_adamant_global_v1_UpdateDestinationWalletIDRequest(arg) {
+  if (!(arg instanceof gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.UpdateDestinationWalletIDRequest)) {
+    throw new Error('Expected argument of type adamant.global.v1.UpdateDestinationWalletIDRequest');
+  }
+  return Buffer.from(arg.serializeBinary());
+}
+
+function deserialize_adamant_global_v1_UpdateDestinationWalletIDRequest(buffer_arg) {
+  return gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.UpdateDestinationWalletIDRequest.deserializeBinary(new Uint8Array(buffer_arg));
+}
+
 function serialize_adamant_global_v1_UpdateLabeledAddressRequest(arg) {
   if (!(arg instanceof gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.UpdateLabeledAddressRequest)) {
     throw new Error('Expected argument of type adamant.global.v1.UpdateLabeledAddressRequest');
@@ -1833,6 +1844,17 @@ getWallet: {
     requestDeserialize: deserialize_adamant_global_v1_ListWalletGroupsRequest,
     responseSerialize: serialize_adamant_global_v1_ListWalletGroupsResponse,
     responseDeserialize: deserialize_adamant_global_v1_ListWalletGroupsResponse,
+  },
+  updateDestinationWalletID: {
+    path: '/adamant.global.v1.GlobalAPI/UpdateDestinationWalletID',
+    requestStream: false,
+    responseStream: false,
+    requestType: gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.UpdateDestinationWalletIDRequest,
+    responseType: google_protobuf_empty_pb.Empty,
+    requestSerialize: serialize_adamant_global_v1_UpdateDestinationWalletIDRequest,
+    requestDeserialize: deserialize_adamant_global_v1_UpdateDestinationWalletIDRequest,
+    responseSerialize: serialize_google_protobuf_Empty,
+    responseDeserialize: deserialize_google_protobuf_Empty,
   },
   // Review
 approveWallet: {

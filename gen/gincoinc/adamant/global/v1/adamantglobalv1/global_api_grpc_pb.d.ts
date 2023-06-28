@@ -33,6 +33,7 @@ interface IGlobalAPIService extends grpc.ServiceDefinition<grpc.UntypedServiceIm
     updateWalletGroup: IGlobalAPIService_IUpdateWalletGroup;
     getWalletGroup: IGlobalAPIService_IGetWalletGroup;
     listWalletGroups: IGlobalAPIService_IListWalletGroups;
+    updateDestinationWalletID: IGlobalAPIService_IUpdateDestinationWalletID;
     approveWallet: IGlobalAPIService_IApproveWallet;
     approveTransaction: IGlobalAPIService_IApproveTransaction;
     createAddress: IGlobalAPIService_ICreateAddress;
@@ -270,6 +271,15 @@ interface IGlobalAPIService_IListWalletGroups extends grpc.MethodDefinition<ginc
     requestDeserialize: grpc.deserialize<gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.ListWalletGroupsRequest>;
     responseSerialize: grpc.serialize<gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.ListWalletGroupsResponse>;
     responseDeserialize: grpc.deserialize<gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.ListWalletGroupsResponse>;
+}
+interface IGlobalAPIService_IUpdateDestinationWalletID extends grpc.MethodDefinition<gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.UpdateDestinationWalletIDRequest, google_protobuf_empty_pb.Empty> {
+    path: "/adamant.global.v1.GlobalAPI/UpdateDestinationWalletID";
+    requestStream: false;
+    responseStream: false;
+    requestSerialize: grpc.serialize<gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.UpdateDestinationWalletIDRequest>;
+    requestDeserialize: grpc.deserialize<gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.UpdateDestinationWalletIDRequest>;
+    responseSerialize: grpc.serialize<google_protobuf_empty_pb.Empty>;
+    responseDeserialize: grpc.deserialize<google_protobuf_empty_pb.Empty>;
 }
 interface IGlobalAPIService_IApproveWallet extends grpc.MethodDefinition<gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.ApproveWalletRequest, google_protobuf_empty_pb.Empty> {
     path: "/adamant.global.v1.GlobalAPI/ApproveWallet";
@@ -959,6 +969,7 @@ export interface IGlobalAPIServer {
     updateWalletGroup: grpc.handleUnaryCall<gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.UpdateWalletGroupRequest, google_protobuf_empty_pb.Empty>;
     getWalletGroup: grpc.handleUnaryCall<gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.GetWalletGroupRequest, gincoinc_adamant_global_v1_adamantglobalv1_model_pb.WalletGroup>;
     listWalletGroups: grpc.handleUnaryCall<gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.ListWalletGroupsRequest, gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.ListWalletGroupsResponse>;
+    updateDestinationWalletID: grpc.handleUnaryCall<gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.UpdateDestinationWalletIDRequest, google_protobuf_empty_pb.Empty>;
     approveWallet: grpc.handleUnaryCall<gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.ApproveWalletRequest, google_protobuf_empty_pb.Empty>;
     approveTransaction: grpc.handleUnaryCall<gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.ApproveTransactionRequest, google_protobuf_empty_pb.Empty>;
     createAddress: grpc.handleUnaryCall<gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.CreateAddressRequest, gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.CreateAddressResponse>;
@@ -1090,6 +1101,9 @@ export interface IGlobalAPIClient {
     listWalletGroups(request: gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.ListWalletGroupsRequest, callback: (error: grpc.ServiceError | null, response: gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.ListWalletGroupsResponse) => void): grpc.ClientUnaryCall;
     listWalletGroups(request: gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.ListWalletGroupsRequest, metadata: grpc.Metadata, callback: (error: grpc.ServiceError | null, response: gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.ListWalletGroupsResponse) => void): grpc.ClientUnaryCall;
     listWalletGroups(request: gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.ListWalletGroupsRequest, metadata: grpc.Metadata, options: Partial<grpc.CallOptions>, callback: (error: grpc.ServiceError | null, response: gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.ListWalletGroupsResponse) => void): grpc.ClientUnaryCall;
+    updateDestinationWalletID(request: gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.UpdateDestinationWalletIDRequest, callback: (error: grpc.ServiceError | null, response: google_protobuf_empty_pb.Empty) => void): grpc.ClientUnaryCall;
+    updateDestinationWalletID(request: gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.UpdateDestinationWalletIDRequest, metadata: grpc.Metadata, callback: (error: grpc.ServiceError | null, response: google_protobuf_empty_pb.Empty) => void): grpc.ClientUnaryCall;
+    updateDestinationWalletID(request: gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.UpdateDestinationWalletIDRequest, metadata: grpc.Metadata, options: Partial<grpc.CallOptions>, callback: (error: grpc.ServiceError | null, response: google_protobuf_empty_pb.Empty) => void): grpc.ClientUnaryCall;
     approveWallet(request: gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.ApproveWalletRequest, callback: (error: grpc.ServiceError | null, response: google_protobuf_empty_pb.Empty) => void): grpc.ClientUnaryCall;
     approveWallet(request: gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.ApproveWalletRequest, metadata: grpc.Metadata, callback: (error: grpc.ServiceError | null, response: google_protobuf_empty_pb.Empty) => void): grpc.ClientUnaryCall;
     approveWallet(request: gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.ApproveWalletRequest, metadata: grpc.Metadata, options: Partial<grpc.CallOptions>, callback: (error: grpc.ServiceError | null, response: google_protobuf_empty_pb.Empty) => void): grpc.ClientUnaryCall;
@@ -1370,6 +1384,9 @@ export class GlobalAPIClient extends grpc.Client implements IGlobalAPIClient {
     public listWalletGroups(request: gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.ListWalletGroupsRequest, callback: (error: grpc.ServiceError | null, response: gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.ListWalletGroupsResponse) => void): grpc.ClientUnaryCall;
     public listWalletGroups(request: gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.ListWalletGroupsRequest, metadata: grpc.Metadata, callback: (error: grpc.ServiceError | null, response: gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.ListWalletGroupsResponse) => void): grpc.ClientUnaryCall;
     public listWalletGroups(request: gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.ListWalletGroupsRequest, metadata: grpc.Metadata, options: Partial<grpc.CallOptions>, callback: (error: grpc.ServiceError | null, response: gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.ListWalletGroupsResponse) => void): grpc.ClientUnaryCall;
+    public updateDestinationWalletID(request: gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.UpdateDestinationWalletIDRequest, callback: (error: grpc.ServiceError | null, response: google_protobuf_empty_pb.Empty) => void): grpc.ClientUnaryCall;
+    public updateDestinationWalletID(request: gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.UpdateDestinationWalletIDRequest, metadata: grpc.Metadata, callback: (error: grpc.ServiceError | null, response: google_protobuf_empty_pb.Empty) => void): grpc.ClientUnaryCall;
+    public updateDestinationWalletID(request: gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.UpdateDestinationWalletIDRequest, metadata: grpc.Metadata, options: Partial<grpc.CallOptions>, callback: (error: grpc.ServiceError | null, response: google_protobuf_empty_pb.Empty) => void): grpc.ClientUnaryCall;
     public approveWallet(request: gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.ApproveWalletRequest, callback: (error: grpc.ServiceError | null, response: google_protobuf_empty_pb.Empty) => void): grpc.ClientUnaryCall;
     public approveWallet(request: gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.ApproveWalletRequest, metadata: grpc.Metadata, callback: (error: grpc.ServiceError | null, response: google_protobuf_empty_pb.Empty) => void): grpc.ClientUnaryCall;
     public approveWallet(request: gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.ApproveWalletRequest, metadata: grpc.Metadata, options: Partial<grpc.CallOptions>, callback: (error: grpc.ServiceError | null, response: google_protobuf_empty_pb.Empty) => void): grpc.ClientUnaryCall;

@@ -38,6 +38,10 @@ export class AuditLog extends jspb.Message {
     setWalletId(value: string): AuditLog;
     getWalletName(): string;
     setWalletName(value: string): AuditLog;
+    getDestinationWalletId(): string;
+    setDestinationWalletId(value: string): AuditLog;
+    getDestinationWalletName(): string;
+    setDestinationWalletName(value: string): AuditLog;
     getWalletGroupId(): string;
     setWalletGroupId(value: string): AuditLog;
     getWalletGroupName(): string;
@@ -127,6 +131,8 @@ export namespace AuditLog {
         serviceAccountKeyId: string,
         walletId: string,
         walletName: string,
+        destinationWalletId: string,
+        destinationWalletName: string,
         walletGroupId: string,
         walletGroupName: string,
         walletNamesList: Array<string>,
