@@ -937,6 +937,29 @@ export namespace ListWalletGroupsResponse {
     }
 }
 
+export class UpdateDestinationWalletIDRequest extends jspb.Message { 
+    getWalletId(): string;
+    setWalletId(value: string): UpdateDestinationWalletIDRequest;
+    getDestinationWalletId(): string;
+    setDestinationWalletId(value: string): UpdateDestinationWalletIDRequest;
+
+    serializeBinary(): Uint8Array;
+    toObject(includeInstance?: boolean): UpdateDestinationWalletIDRequest.AsObject;
+    static toObject(includeInstance: boolean, msg: UpdateDestinationWalletIDRequest): UpdateDestinationWalletIDRequest.AsObject;
+    static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+    static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+    static serializeBinaryToWriter(message: UpdateDestinationWalletIDRequest, writer: jspb.BinaryWriter): void;
+    static deserializeBinary(bytes: Uint8Array): UpdateDestinationWalletIDRequest;
+    static deserializeBinaryFromReader(message: UpdateDestinationWalletIDRequest, reader: jspb.BinaryReader): UpdateDestinationWalletIDRequest;
+}
+
+export namespace UpdateDestinationWalletIDRequest {
+    export type AsObject = {
+        walletId: string,
+        destinationWalletId: string,
+    }
+}
+
 export class RegisterKeyRequest extends jspb.Message { 
     getWalletId(): string;
     setWalletId(value: string): RegisterKeyRequest;
