@@ -56,6 +56,11 @@ export class TransferUpdated extends jspb.Message {
     getStringFee(): string;
     setStringFee(value: string): TransferUpdated;
 
+    hasCosmosSpecific(): boolean;
+    clearCosmosSpecific(): void;
+    getCosmosSpecific(): TransferUpdateCosmosSpecific | undefined;
+    setCosmosSpecific(value?: TransferUpdateCosmosSpecific): TransferUpdated;
+
     serializeBinary(): Uint8Array;
     toObject(includeInstance?: boolean): TransferUpdated.AsObject;
     static toObject(includeInstance: boolean, msg: TransferUpdated): TransferUpdated.AsObject;
@@ -89,6 +94,33 @@ export namespace TransferUpdated {
         eventId: string,
         fee: number,
         stringFee: string,
+        cosmosSpecific?: TransferUpdateCosmosSpecific.AsObject,
+    }
+}
+
+export class TransferUpdateCosmosSpecific extends jspb.Message { 
+    getType(): gincoinc_global_v1_gincoincglobalv1_enum_pb.CosmosMsgType;
+    setType(value: gincoinc_global_v1_gincoincglobalv1_enum_pb.CosmosMsgType): TransferUpdateCosmosSpecific;
+    getDelegateAmount(): number;
+    setDelegateAmount(value: number): TransferUpdateCosmosSpecific;
+    getRewardAmount(): number;
+    setRewardAmount(value: number): TransferUpdateCosmosSpecific;
+
+    serializeBinary(): Uint8Array;
+    toObject(includeInstance?: boolean): TransferUpdateCosmosSpecific.AsObject;
+    static toObject(includeInstance: boolean, msg: TransferUpdateCosmosSpecific): TransferUpdateCosmosSpecific.AsObject;
+    static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+    static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+    static serializeBinaryToWriter(message: TransferUpdateCosmosSpecific, writer: jspb.BinaryWriter): void;
+    static deserializeBinary(bytes: Uint8Array): TransferUpdateCosmosSpecific;
+    static deserializeBinaryFromReader(message: TransferUpdateCosmosSpecific, reader: jspb.BinaryReader): TransferUpdateCosmosSpecific;
+}
+
+export namespace TransferUpdateCosmosSpecific {
+    export type AsObject = {
+        type: gincoinc_global_v1_gincoincglobalv1_enum_pb.CosmosMsgType,
+        delegateAmount: number,
+        rewardAmount: number,
     }
 }
 

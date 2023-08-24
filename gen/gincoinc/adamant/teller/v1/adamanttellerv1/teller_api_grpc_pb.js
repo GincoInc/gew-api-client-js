@@ -208,6 +208,28 @@ function deserialize_adamant_global_v1_GetAddressRequest(buffer_arg) {
   return gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.GetAddressRequest.deserializeBinary(new Uint8Array(buffer_arg));
 }
 
+function serialize_adamant_global_v1_GetCosmosBalanceRequest(arg) {
+  if (!(arg instanceof gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.GetCosmosBalanceRequest)) {
+    throw new Error('Expected argument of type adamant.global.v1.GetCosmosBalanceRequest');
+  }
+  return Buffer.from(arg.serializeBinary());
+}
+
+function deserialize_adamant_global_v1_GetCosmosBalanceRequest(buffer_arg) {
+  return gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.GetCosmosBalanceRequest.deserializeBinary(new Uint8Array(buffer_arg));
+}
+
+function serialize_adamant_global_v1_GetCosmosBalanceResponse(arg) {
+  if (!(arg instanceof gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.GetCosmosBalanceResponse)) {
+    throw new Error('Expected argument of type adamant.global.v1.GetCosmosBalanceResponse');
+  }
+  return Buffer.from(arg.serializeBinary());
+}
+
+function deserialize_adamant_global_v1_GetCosmosBalanceResponse(buffer_arg) {
+  return gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.GetCosmosBalanceResponse.deserializeBinary(new Uint8Array(buffer_arg));
+}
+
 function serialize_adamant_global_v1_GetEthereumFeeAddressRequest(arg) {
   if (!(arg instanceof gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.GetEthereumFeeAddressRequest)) {
     throw new Error('Expected argument of type adamant.global.v1.GetEthereumFeeAddressRequest');
@@ -395,6 +417,28 @@ function deserialize_adamant_global_v1_ListBaseWalletsResponse(buffer_arg) {
   return gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.ListBaseWalletsResponse.deserializeBinary(new Uint8Array(buffer_arg));
 }
 
+function serialize_adamant_global_v1_ListCosmosDelegateHistoriesRequest(arg) {
+  if (!(arg instanceof gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.ListCosmosDelegateHistoriesRequest)) {
+    throw new Error('Expected argument of type adamant.global.v1.ListCosmosDelegateHistoriesRequest');
+  }
+  return Buffer.from(arg.serializeBinary());
+}
+
+function deserialize_adamant_global_v1_ListCosmosDelegateHistoriesRequest(buffer_arg) {
+  return gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.ListCosmosDelegateHistoriesRequest.deserializeBinary(new Uint8Array(buffer_arg));
+}
+
+function serialize_adamant_global_v1_ListCosmosDelegateHistoriesResponse(arg) {
+  if (!(arg instanceof gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.ListCosmosDelegateHistoriesResponse)) {
+    throw new Error('Expected argument of type adamant.global.v1.ListCosmosDelegateHistoriesResponse');
+  }
+  return Buffer.from(arg.serializeBinary());
+}
+
+function deserialize_adamant_global_v1_ListCosmosDelegateHistoriesResponse(buffer_arg) {
+  return gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.ListCosmosDelegateHistoriesResponse.deserializeBinary(new Uint8Array(buffer_arg));
+}
+
 function serialize_adamant_global_v1_ListSymbolChildAddressesRequest(arg) {
   if (!(arg instanceof gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.ListSymbolChildAddressesRequest)) {
     throw new Error('Expected argument of type adamant.global.v1.ListSymbolChildAddressesRequest');
@@ -525,6 +569,17 @@ function serialize_adamant_global_v1_RateSnapshot(arg) {
 
 function deserialize_adamant_global_v1_RateSnapshot(buffer_arg) {
   return gincoinc_adamant_global_v1_adamantglobalv1_model_pb.RateSnapshot.deserializeBinary(new Uint8Array(buffer_arg));
+}
+
+function serialize_adamant_global_v1_ReplaceTransactionRequest(arg) {
+  if (!(arg instanceof gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.ReplaceTransactionRequest)) {
+    throw new Error('Expected argument of type adamant.global.v1.ReplaceTransactionRequest');
+  }
+  return Buffer.from(arg.serializeBinary());
+}
+
+function deserialize_adamant_global_v1_ReplaceTransactionRequest(buffer_arg) {
+  return gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.ReplaceTransactionRequest.deserializeBinary(new Uint8Array(buffer_arg));
 }
 
 function serialize_adamant_global_v1_SendTransactionResponse(arg) {
@@ -798,6 +853,28 @@ getWallet: {
     responseSerialize: serialize_google_protobuf_Empty,
     responseDeserialize: deserialize_google_protobuf_Empty,
   },
+  getCosmosBalance: {
+    path: '/adamant.teller.v1.TellerAPI/GetCosmosBalance',
+    requestStream: false,
+    responseStream: false,
+    requestType: gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.GetCosmosBalanceRequest,
+    responseType: gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.GetCosmosBalanceResponse,
+    requestSerialize: serialize_adamant_global_v1_GetCosmosBalanceRequest,
+    requestDeserialize: deserialize_adamant_global_v1_GetCosmosBalanceRequest,
+    responseSerialize: serialize_adamant_global_v1_GetCosmosBalanceResponse,
+    responseDeserialize: deserialize_adamant_global_v1_GetCosmosBalanceResponse,
+  },
+  listCosmosDelegateHistories: {
+    path: '/adamant.teller.v1.TellerAPI/ListCosmosDelegateHistories',
+    requestStream: false,
+    responseStream: false,
+    requestType: gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.ListCosmosDelegateHistoriesRequest,
+    responseType: gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.ListCosmosDelegateHistoriesResponse,
+    requestSerialize: serialize_adamant_global_v1_ListCosmosDelegateHistoriesRequest,
+    requestDeserialize: deserialize_adamant_global_v1_ListCosmosDelegateHistoriesRequest,
+    responseSerialize: serialize_adamant_global_v1_ListCosmosDelegateHistoriesResponse,
+    responseDeserialize: deserialize_adamant_global_v1_ListCosmosDelegateHistoriesResponse,
+  },
   // Create a new address for an existing wallet
 createAddress: {
     path: '/adamant.teller.v1.TellerAPI/CreateAddress',
@@ -962,6 +1039,17 @@ getEthereumFeeAddress: {
     responseType: google_protobuf_empty_pb.Empty,
     requestSerialize: serialize_adamant_global_v1_CancelTransactionRequest,
     requestDeserialize: deserialize_adamant_global_v1_CancelTransactionRequest,
+    responseSerialize: serialize_google_protobuf_Empty,
+    responseDeserialize: deserialize_google_protobuf_Empty,
+  },
+  replaceTransaction: {
+    path: '/adamant.teller.v1.TellerAPI/ReplaceTransaction',
+    requestStream: false,
+    responseStream: false,
+    requestType: gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.ReplaceTransactionRequest,
+    responseType: google_protobuf_empty_pb.Empty,
+    requestSerialize: serialize_adamant_global_v1_ReplaceTransactionRequest,
+    requestDeserialize: deserialize_adamant_global_v1_ReplaceTransactionRequest,
     responseSerialize: serialize_google_protobuf_Empty,
     responseDeserialize: deserialize_google_protobuf_Empty,
   },

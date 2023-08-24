@@ -676,6 +676,11 @@ export class Transaction extends jspb.Message {
     getXdcSpecific(): XdcSpecific | undefined;
     setXdcSpecific(value?: XdcSpecific): Transaction;
 
+    hasCosmosSpecific(): boolean;
+    clearCosmosSpecific(): void;
+    getCosmosSpecific(): CosmosSpecific | undefined;
+    setCosmosSpecific(value?: CosmosSpecific): Transaction;
+
     hasCreateTime(): boolean;
     clearCreateTime(): void;
     getCreateTime(): google_protobuf_timestamp_pb.Timestamp | undefined;
@@ -731,6 +736,7 @@ export namespace Transaction {
         avalancheSpecific?: AvalancheSpecific.AsObject,
         oasysSpecific?: OasysSpecific.AsObject,
         xdcSpecific?: XdcSpecific.AsObject,
+        cosmosSpecific?: CosmosSpecific.AsObject,
         createTime?: google_protobuf_timestamp_pb.Timestamp.AsObject,
         updateTime?: google_protobuf_timestamp_pb.Timestamp.AsObject,
     }
@@ -1445,6 +1451,41 @@ export namespace XdcSpecific {
     }
 }
 
+export class CosmosSpecific extends jspb.Message { 
+    getGasLimit(): number;
+    setGasLimit(value: number): CosmosSpecific;
+    getNonce(): number;
+    setNonce(value: number): CosmosSpecific;
+    getIsNextNonce(): boolean;
+    setIsNextNonce(value: boolean): CosmosSpecific;
+    getType(): gincoinc_global_v1_gincoincglobalv1_enum_pb.CosmosMsgType;
+    setType(value: gincoinc_global_v1_gincoincglobalv1_enum_pb.CosmosMsgType): CosmosSpecific;
+    getMemo(): string;
+    setMemo(value: string): CosmosSpecific;
+    getGasAdjustment(): number;
+    setGasAdjustment(value: number): CosmosSpecific;
+
+    serializeBinary(): Uint8Array;
+    toObject(includeInstance?: boolean): CosmosSpecific.AsObject;
+    static toObject(includeInstance: boolean, msg: CosmosSpecific): CosmosSpecific.AsObject;
+    static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+    static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+    static serializeBinaryToWriter(message: CosmosSpecific, writer: jspb.BinaryWriter): void;
+    static deserializeBinary(bytes: Uint8Array): CosmosSpecific;
+    static deserializeBinaryFromReader(message: CosmosSpecific, reader: jspb.BinaryReader): CosmosSpecific;
+}
+
+export namespace CosmosSpecific {
+    export type AsObject = {
+        gasLimit: number,
+        nonce: number,
+        isNextNonce: boolean,
+        type: gincoinc_global_v1_gincoincglobalv1_enum_pb.CosmosMsgType,
+        memo: string,
+        gasAdjustment: number,
+    }
+}
+
 export class CreateTransactionSubstrateSpecific extends jspb.Message { 
     getTransactionId(): string;
     setTransactionId(value: string): CreateTransactionSubstrateSpecific;
@@ -1592,6 +1633,29 @@ export class CreateTransactionEthereumSpecific extends jspb.Message {
 export namespace CreateTransactionEthereumSpecific {
     export type AsObject = {
         data: string,
+    }
+}
+
+export class CreateTransactionCosmosSpecific extends jspb.Message { 
+    getType(): gincoinc_global_v1_gincoincglobalv1_enum_pb.CosmosMsgType;
+    setType(value: gincoinc_global_v1_gincoincglobalv1_enum_pb.CosmosMsgType): CreateTransactionCosmosSpecific;
+    getMemo(): string;
+    setMemo(value: string): CreateTransactionCosmosSpecific;
+
+    serializeBinary(): Uint8Array;
+    toObject(includeInstance?: boolean): CreateTransactionCosmosSpecific.AsObject;
+    static toObject(includeInstance: boolean, msg: CreateTransactionCosmosSpecific): CreateTransactionCosmosSpecific.AsObject;
+    static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+    static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+    static serializeBinaryToWriter(message: CreateTransactionCosmosSpecific, writer: jspb.BinaryWriter): void;
+    static deserializeBinary(bytes: Uint8Array): CreateTransactionCosmosSpecific;
+    static deserializeBinaryFromReader(message: CreateTransactionCosmosSpecific, reader: jspb.BinaryReader): CreateTransactionCosmosSpecific;
+}
+
+export namespace CreateTransactionCosmosSpecific {
+    export type AsObject = {
+        type: gincoinc_global_v1_gincoincglobalv1_enum_pb.CosmosMsgType,
+        memo: string,
     }
 }
 
@@ -1897,6 +1961,11 @@ export class Transfer extends jspb.Message {
     getUpdateTime(): google_protobuf_timestamp_pb.Timestamp | undefined;
     setUpdateTime(value?: google_protobuf_timestamp_pb.Timestamp): Transfer;
 
+    hasCosmosSpecific(): boolean;
+    clearCosmosSpecific(): void;
+    getCosmosSpecific(): TransferCosmosSpecific | undefined;
+    setCosmosSpecific(value?: TransferCosmosSpecific): Transfer;
+
     serializeBinary(): Uint8Array;
     toObject(includeInstance?: boolean): Transfer.AsObject;
     static toObject(includeInstance: boolean, msg: Transfer): Transfer.AsObject;
@@ -1930,6 +1999,33 @@ export namespace Transfer {
         result: gincoinc_global_v1_gincoincglobalv1_enum_pb.TransactionResult,
         createTime?: google_protobuf_timestamp_pb.Timestamp.AsObject,
         updateTime?: google_protobuf_timestamp_pb.Timestamp.AsObject,
+        cosmosSpecific?: TransferCosmosSpecific.AsObject,
+    }
+}
+
+export class TransferCosmosSpecific extends jspb.Message { 
+    getType(): gincoinc_global_v1_gincoincglobalv1_enum_pb.CosmosMsgType;
+    setType(value: gincoinc_global_v1_gincoincglobalv1_enum_pb.CosmosMsgType): TransferCosmosSpecific;
+    getDelegateAmount(): number;
+    setDelegateAmount(value: number): TransferCosmosSpecific;
+    getRewardAmount(): number;
+    setRewardAmount(value: number): TransferCosmosSpecific;
+
+    serializeBinary(): Uint8Array;
+    toObject(includeInstance?: boolean): TransferCosmosSpecific.AsObject;
+    static toObject(includeInstance: boolean, msg: TransferCosmosSpecific): TransferCosmosSpecific.AsObject;
+    static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+    static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+    static serializeBinaryToWriter(message: TransferCosmosSpecific, writer: jspb.BinaryWriter): void;
+    static deserializeBinary(bytes: Uint8Array): TransferCosmosSpecific;
+    static deserializeBinaryFromReader(message: TransferCosmosSpecific, reader: jspb.BinaryReader): TransferCosmosSpecific;
+}
+
+export namespace TransferCosmosSpecific {
+    export type AsObject = {
+        type: gincoinc_global_v1_gincoincglobalv1_enum_pb.CosmosMsgType,
+        delegateAmount: number,
+        rewardAmount: number,
     }
 }
 
@@ -3219,5 +3315,31 @@ export namespace CallerAddress {
         balance: number,
         stringBalance: string,
         coin: gincoinc_global_v1_gincoincglobalv1_enum_pb.Coin,
+    }
+}
+
+export class CosmosDelegation extends jspb.Message { 
+    getValidatorAddress(): string;
+    setValidatorAddress(value: string): CosmosDelegation;
+    getDelegateAmount(): number;
+    setDelegateAmount(value: number): CosmosDelegation;
+    getRewardAmount(): number;
+    setRewardAmount(value: number): CosmosDelegation;
+
+    serializeBinary(): Uint8Array;
+    toObject(includeInstance?: boolean): CosmosDelegation.AsObject;
+    static toObject(includeInstance: boolean, msg: CosmosDelegation): CosmosDelegation.AsObject;
+    static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+    static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+    static serializeBinaryToWriter(message: CosmosDelegation, writer: jspb.BinaryWriter): void;
+    static deserializeBinary(bytes: Uint8Array): CosmosDelegation;
+    static deserializeBinaryFromReader(message: CosmosDelegation, reader: jspb.BinaryReader): CosmosDelegation;
+}
+
+export namespace CosmosDelegation {
+    export type AsObject = {
+        validatorAddress: string,
+        delegateAmount: number,
+        rewardAmount: number,
     }
 }
