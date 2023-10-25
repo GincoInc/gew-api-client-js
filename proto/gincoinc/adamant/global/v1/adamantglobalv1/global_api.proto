@@ -42,6 +42,8 @@ service GlobalAPI {
   rpc UpdateDestinationWalletID(UpdateDestinationWalletIDRequest) returns (google.protobuf.Empty) {}
   rpc GetCosmosBalance(GetCosmosBalanceRequest) returns (GetCosmosBalanceResponse) {}
   rpc ListCosmosDelegateHistories(ListCosmosDelegateHistoriesRequest) returns (ListCosmosDelegateHistoriesResponse) {}
+  rpc EnableUTXO(EnableUTXORequest) returns (google.protobuf.Empty) {}
+  rpc DisableUTXO(DisableUTXORequest) returns (google.protobuf.Empty) {}
 
   // Review
   rpc ApproveWallet(ApproveWalletRequest) returns (google.protobuf.Empty) {}
@@ -65,6 +67,7 @@ service GlobalAPI {
   rpc ListIOSTChildAccounts(ListIOSTChildAccountsRequest) returns (ListIOSTChildAccountsResponse) {}
   rpc ImportAddress(ImportAddressRequest) returns (google.protobuf.Empty) {}
   rpc ListCallers(ListCallersRequest) returns (ListCallersResponse) {}
+  rpc ListFeeDeposits(ListFeeDepositsRequest) returns (ListFeeDepositsResponse) {}
 
   // RegisterKey
   rpc RegisterKey(RegisterKeyRequest) returns (RegisterKeyResponse) {}
@@ -77,7 +80,7 @@ service GlobalAPI {
   rpc SendTransaction(SendTransactionRequest) returns (SendTransactionResponse) {}
   rpc SendXRPInitTransactions(SendXRPInitTransactionsRequest) returns (SendXRPInitTransactionsResponse) {}
   rpc CancelTransaction(CancelTransactionRequest) returns (google.protobuf.Empty) {}
-  rpc ReplaceTransaction(ReplaceTransactionRequest) returns (google.protobuf.Empty) {}
+  rpc ReplaceTransaction(ReplaceTransactionRequest) returns (ReplaceTransactionResponse) {}
   rpc GetTransaction(GetTransactionRequest) returns (Transaction) {}
   rpc GetTransactionByTxID(GetTransactionByTxIDRequest) returns (Transaction) {}
   rpc ListTransactions(ListTransactionsRequest) returns (ListTransactionsResponse) {}
@@ -106,6 +109,7 @@ service GlobalAPI {
   rpc CreateLabeledAddress(CreateLabeledAddressRequest) returns (CreateLabeledAddressResponse) {}
   rpc GetLabeledAddress(GetLabeledAddressRequest) returns (LabeledAddress) {}
   rpc ListLabeledAddresses(ListLabeledAddressesRequest) returns (ListLabeledAddressesResponse) {}
+  rpc ListLabeledAddressesByFilter(ListLabeledAddressesByFilterRequest) returns (ListLabeledAddressesByFilterResponse) {}
   rpc IsDeletableLabeledAddress(IsDeletableLabeledAddressRequest) returns (IsDeletableLabeledAddressResponse) {}
   rpc UpdateLabeledAddress(UpdateLabeledAddressRequest) returns (LabeledAddress) {}
   // buf:lint:ignore RPC_REQUEST_STANDARD_NAME
@@ -115,6 +119,7 @@ service GlobalAPI {
   rpc CreateWhitelist(CreateWhitelistRequest) returns (CreateWhitelistResponse) {}
   rpc GetWhitelist(GetWhitelistRequest) returns (Whitelist) {}
   rpc ListWhitelists(ListWhitelistsRequest) returns (ListWhitelistsResponse) {}
+  rpc ListWhitelistsByFilter(ListWhitelistsByFilterRequest) returns (ListWhitelistsByFilterResponse) {}
   rpc IsDeletableWhitelist(IsDeletableWhitelistRequest) returns (IsDeletableWhitelistResponse) {}
   rpc UpdateWhitelist(UpdateWhitelistRequest) returns (Whitelist) {}
   rpc UpdateWhitelistAddresses(UpdateWhitelistAddressesRequest) returns (Whitelist) {}
@@ -132,6 +137,7 @@ service GlobalAPI {
   rpc CreatePolicy(CreatePolicyRequest) returns (CreatePolicyResponse) {}
   rpc GetPolicy(GetPolicyRequest) returns (Policy) {}
   rpc ListPolicies(ListPoliciesRequest) returns (ListPoliciesResponse) {}
+  rpc ListPoliciesByFilter(ListPoliciesByFilterRequest) returns (ListPoliciesByFilterResponse) {}
   rpc IsDeletablePolicy(IsDeletablePolicyRequest) returns (IsDeletablePolicyResponse) {}
   rpc UpdatePolicy(UpdatePolicyRequest) returns (Policy) {}
   rpc DeletePolicy(DeletePolicyRequest) returns (google.protobuf.Empty) {}
@@ -373,6 +379,14 @@ message ExistsWalletGroupByNameResponse {
   bool exists = 1;
 }
 
+message ExistsEnableWalletByNameRequest {
+  string name = 1;
+}
+
+message ExistsEnableWalletByNameResponse {
+  bool exists = 1;
+}
+
 message FlushBalanceRequest {
   string wallet_id = 1 [(validate.rules).string = {
     pattern: "^[0-9a-f]{8}-[0-9a-f]{4}-4[0-9a-f]{3}-[89ab][0-9a-f]{3}-[0-9a-f]{12}$"
@@ -493,6 +507,22 @@ message UpdateDestinationWalletIDRequest {
   }];
 }
 
+message EnableUTXORequest {
+  string wallet_id = 1 [(validate.rules).string = {
+    pattern: "^[0-9a-f]{8}-[0-9a-f]{4}-4[0-9a-f]{3}-[89ab][0-9a-f]{3}-[0-9a-f]{12}$"
+  }];
+  string tx_id = 2;
+  uint32 vout = 3;
+}
+
+message DisableUTXORequest {
+  string wallet_id = 1 [(validate.rules).string = {
+    pattern: "^[0-9a-f]{8}-[0-9a-f]{4}-4[0-9a-f]{3}-[89ab][0-9a-f]{3}-[0-9a-f]{12}$"
+  }];
+  string tx_id = 2;
+  uint32 vout = 3;
+}
+
 // -----------------------------------------------------------------------------
 // Key
 // -----------------------------------------------------------------------------
@@ -536,15 +566,11 @@ message GetAddressByAddressRequest {
   string wallet_id = 1 [(validate.rules).string = {
     pattern: "^[0-9a-f]{8}-[0-9a-f]{4}-4[0-9a-f]{3}-[89ab][0-9a-f]{3}-[0-9a-f]{12}$"
   }];
-  string address = 2 [(validate.rules).string = {
-    min_len: 25
-  }];
+  string address = 2;
 }
 
 message GetAddressByAddressCoinRequest {
-  string address = 1 [(validate.rules).string = {
-    min_len: 25
-  }];
+  string address = 1;
   gincoinc.global.v1.Coin coin = 2 [(validate.rules).enum = {
     defined_only: true,
     not_in: [
@@ -652,6 +678,7 @@ message CreateTransactionRequest {
   adamant.global.v1.CreateTransactionSymbolSpecific xym_specific = 12;
   adamant.global.v1.CreateTransactionEthereumSpecific ethereum_specific = 13;
   adamant.global.v1.CreateTransactionCosmosSpecific cosmos_specific = 14;
+  adamant.global.v1.CreateTransactionAlgorandSpecific algorand_specific = 15;
 }
 
 message CreateTransactionResponse {
@@ -758,6 +785,10 @@ message ReplaceTransactionRequest {
   uint64 fee_rate = 3;
 }
 
+message ReplaceTransactionResponse {
+  string transaction_id = 1;
+}
+
 message GetTransactionRequest {
   string wallet_id = 1 [(validate.rules).string = {
     pattern: "^[0-9a-f]{8}-[0-9a-f]{4}-4[0-9a-f]{3}-[89ab][0-9a-f]{3}-[0-9a-f]{12}$"
@@ -771,9 +802,7 @@ message GetTransactionByTxIDRequest {
   string wallet_id = 1 [(validate.rules).string = {
     pattern: "^[0-9a-f]{8}-[0-9a-f]{4}-4[0-9a-f]{3}-[89ab][0-9a-f]{3}-[0-9a-f]{12}$"
   }];
-  string tx_id = 2 [(validate.rules).string = {
-    pattern: "^(0x)?[0-9a-fA-F]{64}$"
-  }];
+  string tx_id = 2;
 }
 
 message ListTransactionsRequest {
@@ -937,7 +966,7 @@ message ListTransfersByFilterRequest {
   }];
 
   // optional
-  uint32 page_size = 10 [(validate.rules).uint32.lte = 100];
+  uint32 page_size = 10 [(validate.rules).uint32.lte = 1000];
 
   // optional
   string page_token = 11 [(validate.rules).string = {
@@ -1223,9 +1252,7 @@ message ValidateAddressRequest {
       0
     ]
   }]; // The type of coin
-  string address = 2 [(validate.rules).string = {
-    min_len: 25
-  }]; // The address string to be validated
+  string address = 2;
 }
 
 message ValidateAddressResponse {
@@ -1269,9 +1296,7 @@ message CreateLabeledAddressRequest {
       0
     ]
   }];
-  string address = 3 [(validate.rules).string = {
-    min_len: 25
-  }];
+  string address = 3;
 }
 
 message CreateLabeledAddressResponse {
@@ -1292,9 +1317,7 @@ message UpdateLabeledAddressRequest {
       0
     ]
   }];
-  string address = 4 [(validate.rules).string = {
-    min_len: 25
-  }];
+  string address = 4;
 }
 
 message GetLabeledAddressRequest {
@@ -1306,6 +1329,44 @@ message GetLabeledAddressRequest {
 message ListLabeledAddressesRequest {}
 message ListLabeledAddressesResponse {
   repeated LabeledAddress addresses = 1;
+}
+
+message ListLabeledAddressesByFilterRequest {
+  // optional
+  ListFilterType filter_type = 1 [(validate.rules).enum = {
+    defined_only: true
+  }];
+
+  // optional
+  string address_id = 2 [(validate.rules).string = {
+    pattern: "^$|^[0-9a-f]{8}-[0-9a-f]{4}-4[0-9a-f]{3}-[89ab][0-9a-f]{3}-[0-9a-f]{12}$"
+  }];
+
+  // optional
+  string address = 3;
+
+  // optional
+  string address_name = 4 [(validate.rules).string = {
+    max_len: 40
+  }];
+
+  // optional
+  gincoinc.global.v1.Coin coin = 5 [(validate.rules).enum = {
+    defined_only: true
+  }];
+
+  // optional
+  uint32 page_size = 6 [(validate.rules).uint32.lte = 100];
+
+  // optional
+  string page_token = 7 [(validate.rules).string = {
+    pattern: "^$|^[ABCDEFGHIJKLMNOPQRSTUVWXYZ234567]{16}$"
+  }];
+}
+
+message ListLabeledAddressesByFilterResponse {
+  repeated LabeledAddress addresses = 1;
+  string next_page_token = 2;
 }
 
 message DeleteLabeledAddressRequest {
@@ -1353,6 +1414,41 @@ message ListWhitelistsRequest {}
 
 message ListWhitelistsResponse {
   repeated Whitelist whitelists = 1;
+}
+
+message ListWhitelistsByFilterRequest {
+  // optional
+  ListFilterType filter_type = 1 [(validate.rules).enum = {
+    defined_only: true
+  }];
+
+  // optional
+  string whitelist_id = 2 [(validate.rules).string = {
+    pattern: "^$|^[0-9a-f]{8}-[0-9a-f]{4}-4[0-9a-f]{3}-[89ab][0-9a-f]{3}-[0-9a-f]{12}$"
+  }];
+
+  // optional
+  string whitelist_name = 3 [(validate.rules).string = {
+    max_len: 40
+  }];
+
+  // optional
+  gincoinc.global.v1.Coin coin = 4 [(validate.rules).enum = {
+    defined_only: true,
+  }];
+
+  // optional
+  uint32 page_size = 5 [(validate.rules).uint32.lte = 100];
+
+  // optional
+  string page_token = 6 [(validate.rules).string = {
+    pattern: "^$|^[ABCDEFGHIJKLMNOPQRSTUVWXYZ234567]{16}$"
+  }];
+}
+
+message ListWhitelistsByFilterResponse {
+  repeated Whitelist whitelists = 1;
+  string next_page_token = 2;
 }
 
 message UpdateWhitelistRequest {
@@ -1417,6 +1513,41 @@ message ListTransferLimitsRequest {}
 
 message ListTransferLimitsResponse {
   repeated TransferLimit transfer_limits = 1;
+}
+
+message ListTransferLimitsByFilterRequest {
+  // optional
+  ListFilterType filter_type = 1 [(validate.rules).enum = {
+    defined_only: true
+  }];
+
+  // optional
+  string transfer_limit_id = 2 [(validate.rules).string = {
+    pattern: "^$|^[0-9a-f]{8}-[0-9a-f]{4}-4[0-9a-f]{3}-[89ab][0-9a-f]{3}-[0-9a-f]{12}$"
+  }];
+
+  // optional
+  string transfer_limit_name = 3 [(validate.rules).string = {
+    max_len: 40
+  }];
+
+  // optional
+  gincoinc.global.v1.Coin coin = 4 [(validate.rules).enum = {
+    defined_only: true
+  }];
+
+  // optional
+  uint32 page_size = 5 [(validate.rules).uint32.lte = 100];
+
+  // optional
+  string page_token = 6 [(validate.rules).string = {
+    pattern: "^$|^[ABCDEFGHIJKLMNOPQRSTUVWXYZ234567]{16}$"
+  }];
+}
+
+message ListTransferLimitsByFilterResponse {
+  repeated TransferLimit transfer_limits = 1;
+  string next_page_token = 2;
 }
 
 message UpdateTransferLimitRequest {
@@ -1488,6 +1619,41 @@ message GetPolicyRequest {
   }];
 }
 
+message ListPoliciesByFilterRequest {
+  // optional
+  ListFilterType filter_type = 1 [(validate.rules).enum = {
+    defined_only: true
+  }];
+
+  // optional
+  string policy_id = 2 [(validate.rules).string = {
+    pattern: "^$|^[0-9a-f]{8}-[0-9a-f]{4}-4[0-9a-f]{3}-[89ab][0-9a-f]{3}-[0-9a-f]{12}$"
+  }];
+
+  // optional
+  string policy_name = 3 [(validate.rules).string = {
+    max_len: 40
+  }];
+
+  // optional
+  gincoinc.global.v1.Coin coin = 4 [(validate.rules).enum = {
+    defined_only: true
+  }];
+
+  // optional
+  PolicyType policy_type = 5 [(validate.rules).enum = {
+    defined_only: true
+  }];
+
+  // optional
+  uint32 page_size = 6 [(validate.rules).uint32.lte = 100];
+
+  // optional
+  string page_token = 7 [(validate.rules).string = {
+    pattern: "^$|^[ABCDEFGHIJKLMNOPQRSTUVWXYZ234567]{16}$"
+  }];
+}
+
 message ListPoliciesRequest {}
 
 message IsDeletablePolicyRequest {
@@ -1532,6 +1698,11 @@ message IsDeletableTransferLimitResponse {
 
 message ListPoliciesResponse {
   repeated Policy policies = 1;
+}
+
+message ListPoliciesByFilterResponse {
+  repeated Policy policies = 1;
+  string next_page_token = 2;
 }
 
 message UpdatePolicyRequest {
@@ -1649,6 +1820,13 @@ message ListCallersRequest {}
 // The model of callers
 message ListCallersResponse {
   repeated CallerAddress caller_addresses = 1;
+}
+
+message ListFeeDepositsRequest {}
+
+// The model of callers
+message ListFeeDepositsResponse {
+  repeated FeeDepositAddress fee_deposit_addresses = 1;
 }
 
 // -----------------------------------------------------------------------------
