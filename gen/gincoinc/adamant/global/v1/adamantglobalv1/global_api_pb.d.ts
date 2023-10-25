@@ -1445,6 +1445,11 @@ export class CreateTransactionRequest extends jspb.Message {
     getEthereumSpecific(): gincoinc_adamant_global_v1_adamantglobalv1_model_pb.CreateTransactionEthereumSpecific | undefined;
     setEthereumSpecific(value?: gincoinc_adamant_global_v1_adamantglobalv1_model_pb.CreateTransactionEthereumSpecific): CreateTransactionRequest;
 
+    hasCosmosSpecific(): boolean;
+    clearCosmosSpecific(): void;
+    getCosmosSpecific(): gincoinc_adamant_global_v1_adamantglobalv1_model_pb.CreateTransactionCosmosSpecific | undefined;
+    setCosmosSpecific(value?: gincoinc_adamant_global_v1_adamantglobalv1_model_pb.CreateTransactionCosmosSpecific): CreateTransactionRequest;
+
     serializeBinary(): Uint8Array;
     toObject(includeInstance?: boolean): CreateTransactionRequest.AsObject;
     static toObject(includeInstance: boolean, msg: CreateTransactionRequest): CreateTransactionRequest.AsObject;
@@ -1470,6 +1475,7 @@ export namespace CreateTransactionRequest {
         iostSpecific?: gincoinc_adamant_global_v1_adamantglobalv1_model_pb.CreateTransactionIOSTSpecific.AsObject,
         xymSpecific?: gincoinc_adamant_global_v1_adamantglobalv1_model_pb.CreateTransactionSymbolSpecific.AsObject,
         ethereumSpecific?: gincoinc_adamant_global_v1_adamantglobalv1_model_pb.CreateTransactionEthereumSpecific.AsObject,
+        cosmosSpecific?: gincoinc_adamant_global_v1_adamantglobalv1_model_pb.CreateTransactionCosmosSpecific.AsObject,
     }
 }
 
@@ -1780,6 +1786,32 @@ export namespace CancelTransactionRequest {
     export type AsObject = {
         walletId: string,
         transactionId: string,
+    }
+}
+
+export class ReplaceTransactionRequest extends jspb.Message { 
+    getWalletId(): string;
+    setWalletId(value: string): ReplaceTransactionRequest;
+    getTransactionId(): string;
+    setTransactionId(value: string): ReplaceTransactionRequest;
+    getFeeRate(): number;
+    setFeeRate(value: number): ReplaceTransactionRequest;
+
+    serializeBinary(): Uint8Array;
+    toObject(includeInstance?: boolean): ReplaceTransactionRequest.AsObject;
+    static toObject(includeInstance: boolean, msg: ReplaceTransactionRequest): ReplaceTransactionRequest.AsObject;
+    static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+    static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+    static serializeBinaryToWriter(message: ReplaceTransactionRequest, writer: jspb.BinaryWriter): void;
+    static deserializeBinary(bytes: Uint8Array): ReplaceTransactionRequest;
+    static deserializeBinaryFromReader(message: ReplaceTransactionRequest, reader: jspb.BinaryReader): ReplaceTransactionRequest;
+}
+
+export namespace ReplaceTransactionRequest {
+    export type AsObject = {
+        walletId: string,
+        transactionId: string,
+        feeRate: number,
     }
 }
 
@@ -2886,6 +2918,11 @@ export class CalculateFeeRequest extends jspb.Message {
     getEthereumSpecific(): CalculateFeeEthereumSpecific | undefined;
     setEthereumSpecific(value?: CalculateFeeEthereumSpecific): CalculateFeeRequest;
 
+    hasCosmosSpecific(): boolean;
+    clearCosmosSpecific(): void;
+    getCosmosSpecific(): CalculateFeeCosmosSpecific | undefined;
+    setCosmosSpecific(value?: CalculateFeeCosmosSpecific): CalculateFeeRequest;
+
     serializeBinary(): Uint8Array;
     toObject(includeInstance?: boolean): CalculateFeeRequest.AsObject;
     static toObject(includeInstance: boolean, msg: CalculateFeeRequest): CalculateFeeRequest.AsObject;
@@ -2908,6 +2945,7 @@ export namespace CalculateFeeRequest {
         nemSpecific?: CalculateFeeNemSpecific.AsObject,
         symbolSpecific?: CalculateFeeSymbolSpecific.AsObject,
         ethereumSpecific?: CalculateFeeEthereumSpecific.AsObject,
+        cosmosSpecific?: CalculateFeeCosmosSpecific.AsObject,
     }
 }
 
@@ -2991,6 +3029,29 @@ export class CalculateFeeEthereumSpecific extends jspb.Message {
 export namespace CalculateFeeEthereumSpecific {
     export type AsObject = {
         data: string,
+    }
+}
+
+export class CalculateFeeCosmosSpecific extends jspb.Message { 
+    getType(): gincoinc_global_v1_gincoincglobalv1_enum_pb.CosmosMsgType;
+    setType(value: gincoinc_global_v1_gincoincglobalv1_enum_pb.CosmosMsgType): CalculateFeeCosmosSpecific;
+    getMemo(): string;
+    setMemo(value: string): CalculateFeeCosmosSpecific;
+
+    serializeBinary(): Uint8Array;
+    toObject(includeInstance?: boolean): CalculateFeeCosmosSpecific.AsObject;
+    static toObject(includeInstance: boolean, msg: CalculateFeeCosmosSpecific): CalculateFeeCosmosSpecific.AsObject;
+    static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+    static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+    static serializeBinaryToWriter(message: CalculateFeeCosmosSpecific, writer: jspb.BinaryWriter): void;
+    static deserializeBinary(bytes: Uint8Array): CalculateFeeCosmosSpecific;
+    static deserializeBinaryFromReader(message: CalculateFeeCosmosSpecific, reader: jspb.BinaryReader): CalculateFeeCosmosSpecific;
+}
+
+export namespace CalculateFeeCosmosSpecific {
+    export type AsObject = {
+        type: gincoinc_global_v1_gincoincglobalv1_enum_pb.CosmosMsgType,
+        memo: string,
     }
 }
 
@@ -4445,5 +4506,136 @@ export class ListCallersResponse extends jspb.Message {
 export namespace ListCallersResponse {
     export type AsObject = {
         callerAddressesList: Array<gincoinc_adamant_global_v1_adamantglobalv1_model_pb.CallerAddress.AsObject>,
+    }
+}
+
+export class GetCosmosBalanceRequest extends jspb.Message { 
+    getWalletId(): string;
+    setWalletId(value: string): GetCosmosBalanceRequest;
+
+    serializeBinary(): Uint8Array;
+    toObject(includeInstance?: boolean): GetCosmosBalanceRequest.AsObject;
+    static toObject(includeInstance: boolean, msg: GetCosmosBalanceRequest): GetCosmosBalanceRequest.AsObject;
+    static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+    static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+    static serializeBinaryToWriter(message: GetCosmosBalanceRequest, writer: jspb.BinaryWriter): void;
+    static deserializeBinary(bytes: Uint8Array): GetCosmosBalanceRequest;
+    static deserializeBinaryFromReader(message: GetCosmosBalanceRequest, reader: jspb.BinaryReader): GetCosmosBalanceRequest;
+}
+
+export namespace GetCosmosBalanceRequest {
+    export type AsObject = {
+        walletId: string,
+    }
+}
+
+export class GetCosmosBalanceResponse extends jspb.Message { 
+    clearDelegationsList(): void;
+    getDelegationsList(): Array<gincoinc_adamant_global_v1_adamantglobalv1_model_pb.CosmosDelegation>;
+    setDelegationsList(value: Array<gincoinc_adamant_global_v1_adamantglobalv1_model_pb.CosmosDelegation>): GetCosmosBalanceResponse;
+    addDelegations(value?: gincoinc_adamant_global_v1_adamantglobalv1_model_pb.CosmosDelegation, index?: number): gincoinc_adamant_global_v1_adamantglobalv1_model_pb.CosmosDelegation;
+    getAvailable(): number;
+    setAvailable(value: number): GetCosmosBalanceResponse;
+    getReward(): number;
+    setReward(value: number): GetCosmosBalanceResponse;
+    getUnbonding(): number;
+    setUnbonding(value: number): GetCosmosBalanceResponse;
+
+    serializeBinary(): Uint8Array;
+    toObject(includeInstance?: boolean): GetCosmosBalanceResponse.AsObject;
+    static toObject(includeInstance: boolean, msg: GetCosmosBalanceResponse): GetCosmosBalanceResponse.AsObject;
+    static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+    static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+    static serializeBinaryToWriter(message: GetCosmosBalanceResponse, writer: jspb.BinaryWriter): void;
+    static deserializeBinary(bytes: Uint8Array): GetCosmosBalanceResponse;
+    static deserializeBinaryFromReader(message: GetCosmosBalanceResponse, reader: jspb.BinaryReader): GetCosmosBalanceResponse;
+}
+
+export namespace GetCosmosBalanceResponse {
+    export type AsObject = {
+        delegationsList: Array<gincoinc_adamant_global_v1_adamantglobalv1_model_pb.CosmosDelegation.AsObject>,
+        available: number,
+        reward: number,
+        unbonding: number,
+    }
+}
+
+export class ListCosmosDelegateHistoriesRequest extends jspb.Message { 
+    getWalletId(): string;
+    setWalletId(value: string): ListCosmosDelegateHistoriesRequest;
+
+    serializeBinary(): Uint8Array;
+    toObject(includeInstance?: boolean): ListCosmosDelegateHistoriesRequest.AsObject;
+    static toObject(includeInstance: boolean, msg: ListCosmosDelegateHistoriesRequest): ListCosmosDelegateHistoriesRequest.AsObject;
+    static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+    static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+    static serializeBinaryToWriter(message: ListCosmosDelegateHistoriesRequest, writer: jspb.BinaryWriter): void;
+    static deserializeBinary(bytes: Uint8Array): ListCosmosDelegateHistoriesRequest;
+    static deserializeBinaryFromReader(message: ListCosmosDelegateHistoriesRequest, reader: jspb.BinaryReader): ListCosmosDelegateHistoriesRequest;
+}
+
+export namespace ListCosmosDelegateHistoriesRequest {
+    export type AsObject = {
+        walletId: string,
+    }
+}
+
+export class ListCosmosDelegateHistoriesResponse extends jspb.Message { 
+    clearDelegateHistoriesList(): void;
+    getDelegateHistoriesList(): Array<CosmosDelegateHistory>;
+    setDelegateHistoriesList(value: Array<CosmosDelegateHistory>): ListCosmosDelegateHistoriesResponse;
+    addDelegateHistories(value?: CosmosDelegateHistory, index?: number): CosmosDelegateHistory;
+
+    serializeBinary(): Uint8Array;
+    toObject(includeInstance?: boolean): ListCosmosDelegateHistoriesResponse.AsObject;
+    static toObject(includeInstance: boolean, msg: ListCosmosDelegateHistoriesResponse): ListCosmosDelegateHistoriesResponse.AsObject;
+    static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+    static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+    static serializeBinaryToWriter(message: ListCosmosDelegateHistoriesResponse, writer: jspb.BinaryWriter): void;
+    static deserializeBinary(bytes: Uint8Array): ListCosmosDelegateHistoriesResponse;
+    static deserializeBinaryFromReader(message: ListCosmosDelegateHistoriesResponse, reader: jspb.BinaryReader): ListCosmosDelegateHistoriesResponse;
+}
+
+export namespace ListCosmosDelegateHistoriesResponse {
+    export type AsObject = {
+        delegateHistoriesList: Array<CosmosDelegateHistory.AsObject>,
+    }
+}
+
+export class CosmosDelegateHistory extends jspb.Message { 
+    getTxId(): string;
+    setTxId(value: string): CosmosDelegateHistory;
+    getWalletId(): string;
+    setWalletId(value: string): CosmosDelegateHistory;
+    getType(): gincoinc_global_v1_gincoincglobalv1_enum_pb.CosmosMsgType;
+    setType(value: gincoinc_global_v1_gincoincglobalv1_enum_pb.CosmosMsgType): CosmosDelegateHistory;
+    getDelegateAmount(): number;
+    setDelegateAmount(value: number): CosmosDelegateHistory;
+    getRewardAmount(): number;
+    setRewardAmount(value: number): CosmosDelegateHistory;
+
+    hasTime(): boolean;
+    clearTime(): void;
+    getTime(): google_protobuf_timestamp_pb.Timestamp | undefined;
+    setTime(value?: google_protobuf_timestamp_pb.Timestamp): CosmosDelegateHistory;
+
+    serializeBinary(): Uint8Array;
+    toObject(includeInstance?: boolean): CosmosDelegateHistory.AsObject;
+    static toObject(includeInstance: boolean, msg: CosmosDelegateHistory): CosmosDelegateHistory.AsObject;
+    static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+    static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+    static serializeBinaryToWriter(message: CosmosDelegateHistory, writer: jspb.BinaryWriter): void;
+    static deserializeBinary(bytes: Uint8Array): CosmosDelegateHistory;
+    static deserializeBinaryFromReader(message: CosmosDelegateHistory, reader: jspb.BinaryReader): CosmosDelegateHistory;
+}
+
+export namespace CosmosDelegateHistory {
+    export type AsObject = {
+        txId: string,
+        walletId: string,
+        type: gincoinc_global_v1_gincoincglobalv1_enum_pb.CosmosMsgType,
+        delegateAmount: number,
+        rewardAmount: number,
+        time?: google_protobuf_timestamp_pb.Timestamp.AsObject,
     }
 }

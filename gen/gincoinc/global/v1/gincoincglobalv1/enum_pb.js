@@ -17,6 +17,7 @@ var global = (function() { return this || window || global || self || Function('
 
 goog.exportSymbol('proto.gincoinc.global.v1.AddressType', null, global);
 goog.exportSymbol('proto.gincoinc.global.v1.Coin', null, global);
+goog.exportSymbol('proto.gincoinc.global.v1.CosmosMsgType', null, global);
 goog.exportSymbol('proto.gincoinc.global.v1.EthereumStakingRewardLayerType', null, global);
 goog.exportSymbol('proto.gincoinc.global.v1.NemTransactionType', null, global);
 goog.exportSymbol('proto.gincoinc.global.v1.Network', null, global);
@@ -74,6 +75,8 @@ proto.gincoinc.global.v1.Coin = {
   COIN_OAS: 41,
   COIN_ASTR: 42,
   COIN_XDC: 43,
+  COIN_ATOM: 44,
+  COIN_KLAYTN_KIP7_MBX: 45,
   COIN_SDN: 10002
 };
 
@@ -122,6 +125,8 @@ proto.gincoinc.global.v1.Network = {
   NETWORK_SHIBUYA_TESTNET: 38,
   NETWORK_XDC_MAINNET: 39,
   NETWORK_XDC_TESTNET: 40,
+  NETWORK_COSMOS_MAINNET: 41,
+  NETWORK_COSMOS_TESTNET: 42,
   NETWORK_SHIDEN_MAINNET: 10002
 };
 
@@ -245,6 +250,18 @@ proto.gincoinc.global.v1.EthereumStakingRewardLayerType = {
   ETHEREUM_STAKING_REWARD_LAYER_TYPE_INVALID: 0,
   ETHEREUM_STAKING_REWARD_LAYER_TYPE_CONSENSUS: 1,
   ETHEREUM_STAKING_REWARD_LAYER_TYPE_EXECUTION: 2
+};
+
+/**
+ * @enum {number}
+ */
+proto.gincoinc.global.v1.CosmosMsgType = {
+  COSMOS_MSG_TYPE_INVALID: 0,
+  COSMOS_MSG_TYPE_SEND: 1,
+  COSMOS_MSG_TYPE_DELEGATE: 2,
+  COSMOS_MSG_TYPE_UNDELEGATE: 3,
+  COSMOS_MSG_TYPE_UNBONDED: 4,
+  COSMOS_MSG_TYPE_WITHDRAW_DELEGATOR_REWARD: 5
 };
 
 goog.object.extend(exports, proto.gincoinc.global.v1);
