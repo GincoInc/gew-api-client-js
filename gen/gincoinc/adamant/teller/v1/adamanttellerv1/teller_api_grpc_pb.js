@@ -582,6 +582,17 @@ function deserialize_adamant_global_v1_ReplaceTransactionRequest(buffer_arg) {
   return gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.ReplaceTransactionRequest.deserializeBinary(new Uint8Array(buffer_arg));
 }
 
+function serialize_adamant_global_v1_ReplaceTransactionResponse(arg) {
+  if (!(arg instanceof gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.ReplaceTransactionResponse)) {
+    throw new Error('Expected argument of type adamant.global.v1.ReplaceTransactionResponse');
+  }
+  return Buffer.from(arg.serializeBinary());
+}
+
+function deserialize_adamant_global_v1_ReplaceTransactionResponse(buffer_arg) {
+  return gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.ReplaceTransactionResponse.deserializeBinary(new Uint8Array(buffer_arg));
+}
+
 function serialize_adamant_global_v1_SendTransactionResponse(arg) {
   if (!(arg instanceof gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.SendTransactionResponse)) {
     throw new Error('Expected argument of type adamant.global.v1.SendTransactionResponse');
@@ -1047,11 +1058,11 @@ getEthereumFeeAddress: {
     requestStream: false,
     responseStream: false,
     requestType: gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.ReplaceTransactionRequest,
-    responseType: google_protobuf_empty_pb.Empty,
+    responseType: gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.ReplaceTransactionResponse,
     requestSerialize: serialize_adamant_global_v1_ReplaceTransactionRequest,
     requestDeserialize: deserialize_adamant_global_v1_ReplaceTransactionRequest,
-    responseSerialize: serialize_google_protobuf_Empty,
-    responseDeserialize: deserialize_google_protobuf_Empty,
+    responseSerialize: serialize_adamant_global_v1_ReplaceTransactionResponse,
+    responseDeserialize: deserialize_adamant_global_v1_ReplaceTransactionResponse,
   },
   getTransaction: {
     path: '/adamant.teller.v1.TellerAPI/GetTransaction',

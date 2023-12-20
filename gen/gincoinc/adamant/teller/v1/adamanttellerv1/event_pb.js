@@ -1713,7 +1713,8 @@ proto.adamant.teller.v1.EthereumStakingReward.toObject = function(includeInstanc
     value: jspb.Message.getFloatingPointFieldWithDefault(msg, 7, 0.0),
     walletId: jspb.Message.getFieldWithDefault(msg, 8, ""),
     ethereumStakingRewardLayerType: jspb.Message.getFieldWithDefault(msg, 9, 0),
-    stringValue: jspb.Message.getFieldWithDefault(msg, 10, "")
+    stringValue: jspb.Message.getFieldWithDefault(msg, 10, ""),
+    blockHash: jspb.Message.getFieldWithDefault(msg, 11, "")
   };
 
   if (includeInstance) {
@@ -1790,6 +1791,10 @@ proto.adamant.teller.v1.EthereumStakingReward.deserializeBinaryFromReader = func
     case 10:
       var value = /** @type {string} */ (reader.readString());
       msg.setStringValue(value);
+      break;
+    case 11:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setBlockHash(value);
       break;
     default:
       reader.skipField();
@@ -1888,6 +1893,13 @@ proto.adamant.teller.v1.EthereumStakingReward.serializeBinaryToWriter = function
   if (f.length > 0) {
     writer.writeString(
       10,
+      f
+    );
+  }
+  f = message.getBlockHash();
+  if (f.length > 0) {
+    writer.writeString(
+      11,
       f
     );
   }
@@ -2090,6 +2102,24 @@ proto.adamant.teller.v1.EthereumStakingReward.prototype.getStringValue = functio
  */
 proto.adamant.teller.v1.EthereumStakingReward.prototype.setStringValue = function(value) {
   return jspb.Message.setProto3StringField(this, 10, value);
+};
+
+
+/**
+ * optional string block_hash = 11;
+ * @return {string}
+ */
+proto.adamant.teller.v1.EthereumStakingReward.prototype.getBlockHash = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 11, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.adamant.teller.v1.EthereumStakingReward} returns this
+ */
+proto.adamant.teller.v1.EthereumStakingReward.prototype.setBlockHash = function(value) {
+  return jspb.Message.setProto3StringField(this, 11, value);
 };
 
 
