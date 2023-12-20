@@ -213,6 +213,8 @@ export class EthereumStakingReward extends jspb.Message {
     setEthereumStakingRewardLayerType(value: gincoinc_global_v1_gincoincglobalv1_enum_pb.EthereumStakingRewardLayerType): EthereumStakingReward;
     getStringValue(): string;
     setStringValue(value: string): EthereumStakingReward;
+    getBlockHash(): string;
+    setBlockHash(value: string): EthereumStakingReward;
 
     serializeBinary(): Uint8Array;
     toObject(includeInstance?: boolean): EthereumStakingReward.AsObject;
@@ -236,5 +238,6 @@ export namespace EthereumStakingReward {
         walletId: string,
         ethereumStakingRewardLayerType: gincoinc_global_v1_gincoincglobalv1_enum_pb.EthereumStakingRewardLayerType,
         stringValue: string,
+        blockHash: string,
     }
 }

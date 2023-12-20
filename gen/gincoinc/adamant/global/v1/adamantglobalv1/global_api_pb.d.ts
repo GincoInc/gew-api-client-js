@@ -570,6 +570,46 @@ export namespace ExistsWalletGroupByNameResponse {
     }
 }
 
+export class ExistsEnableWalletByNameRequest extends jspb.Message { 
+    getName(): string;
+    setName(value: string): ExistsEnableWalletByNameRequest;
+
+    serializeBinary(): Uint8Array;
+    toObject(includeInstance?: boolean): ExistsEnableWalletByNameRequest.AsObject;
+    static toObject(includeInstance: boolean, msg: ExistsEnableWalletByNameRequest): ExistsEnableWalletByNameRequest.AsObject;
+    static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+    static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+    static serializeBinaryToWriter(message: ExistsEnableWalletByNameRequest, writer: jspb.BinaryWriter): void;
+    static deserializeBinary(bytes: Uint8Array): ExistsEnableWalletByNameRequest;
+    static deserializeBinaryFromReader(message: ExistsEnableWalletByNameRequest, reader: jspb.BinaryReader): ExistsEnableWalletByNameRequest;
+}
+
+export namespace ExistsEnableWalletByNameRequest {
+    export type AsObject = {
+        name: string,
+    }
+}
+
+export class ExistsEnableWalletByNameResponse extends jspb.Message { 
+    getExists(): boolean;
+    setExists(value: boolean): ExistsEnableWalletByNameResponse;
+
+    serializeBinary(): Uint8Array;
+    toObject(includeInstance?: boolean): ExistsEnableWalletByNameResponse.AsObject;
+    static toObject(includeInstance: boolean, msg: ExistsEnableWalletByNameResponse): ExistsEnableWalletByNameResponse.AsObject;
+    static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+    static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+    static serializeBinaryToWriter(message: ExistsEnableWalletByNameResponse, writer: jspb.BinaryWriter): void;
+    static deserializeBinary(bytes: Uint8Array): ExistsEnableWalletByNameResponse;
+    static deserializeBinaryFromReader(message: ExistsEnableWalletByNameResponse, reader: jspb.BinaryReader): ExistsEnableWalletByNameResponse;
+}
+
+export namespace ExistsEnableWalletByNameResponse {
+    export type AsObject = {
+        exists: boolean,
+    }
+}
+
 export class FlushBalanceRequest extends jspb.Message { 
     getWalletId(): string;
     setWalletId(value: string): FlushBalanceRequest;
@@ -957,6 +997,58 @@ export namespace UpdateDestinationWalletIDRequest {
     export type AsObject = {
         walletId: string,
         destinationWalletId: string,
+    }
+}
+
+export class EnableUTXORequest extends jspb.Message { 
+    getWalletId(): string;
+    setWalletId(value: string): EnableUTXORequest;
+    getTxId(): string;
+    setTxId(value: string): EnableUTXORequest;
+    getVout(): number;
+    setVout(value: number): EnableUTXORequest;
+
+    serializeBinary(): Uint8Array;
+    toObject(includeInstance?: boolean): EnableUTXORequest.AsObject;
+    static toObject(includeInstance: boolean, msg: EnableUTXORequest): EnableUTXORequest.AsObject;
+    static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+    static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+    static serializeBinaryToWriter(message: EnableUTXORequest, writer: jspb.BinaryWriter): void;
+    static deserializeBinary(bytes: Uint8Array): EnableUTXORequest;
+    static deserializeBinaryFromReader(message: EnableUTXORequest, reader: jspb.BinaryReader): EnableUTXORequest;
+}
+
+export namespace EnableUTXORequest {
+    export type AsObject = {
+        walletId: string,
+        txId: string,
+        vout: number,
+    }
+}
+
+export class DisableUTXORequest extends jspb.Message { 
+    getWalletId(): string;
+    setWalletId(value: string): DisableUTXORequest;
+    getTxId(): string;
+    setTxId(value: string): DisableUTXORequest;
+    getVout(): number;
+    setVout(value: number): DisableUTXORequest;
+
+    serializeBinary(): Uint8Array;
+    toObject(includeInstance?: boolean): DisableUTXORequest.AsObject;
+    static toObject(includeInstance: boolean, msg: DisableUTXORequest): DisableUTXORequest.AsObject;
+    static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+    static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+    static serializeBinaryToWriter(message: DisableUTXORequest, writer: jspb.BinaryWriter): void;
+    static deserializeBinary(bytes: Uint8Array): DisableUTXORequest;
+    static deserializeBinaryFromReader(message: DisableUTXORequest, reader: jspb.BinaryReader): DisableUTXORequest;
+}
+
+export namespace DisableUTXORequest {
+    export type AsObject = {
+        walletId: string,
+        txId: string,
+        vout: number,
     }
 }
 
@@ -1450,6 +1542,16 @@ export class CreateTransactionRequest extends jspb.Message {
     getCosmosSpecific(): gincoinc_adamant_global_v1_adamantglobalv1_model_pb.CreateTransactionCosmosSpecific | undefined;
     setCosmosSpecific(value?: gincoinc_adamant_global_v1_adamantglobalv1_model_pb.CreateTransactionCosmosSpecific): CreateTransactionRequest;
 
+    hasAlgorandSpecific(): boolean;
+    clearAlgorandSpecific(): void;
+    getAlgorandSpecific(): gincoinc_adamant_global_v1_adamantglobalv1_model_pb.CreateTransactionAlgorandSpecific | undefined;
+    setAlgorandSpecific(value?: gincoinc_adamant_global_v1_adamantglobalv1_model_pb.CreateTransactionAlgorandSpecific): CreateTransactionRequest;
+
+    hasHederaSpecific(): boolean;
+    clearHederaSpecific(): void;
+    getHederaSpecific(): gincoinc_adamant_global_v1_adamantglobalv1_model_pb.CreateTransactionHederaSpecific | undefined;
+    setHederaSpecific(value?: gincoinc_adamant_global_v1_adamantglobalv1_model_pb.CreateTransactionHederaSpecific): CreateTransactionRequest;
+
     serializeBinary(): Uint8Array;
     toObject(includeInstance?: boolean): CreateTransactionRequest.AsObject;
     static toObject(includeInstance: boolean, msg: CreateTransactionRequest): CreateTransactionRequest.AsObject;
@@ -1476,6 +1578,8 @@ export namespace CreateTransactionRequest {
         xymSpecific?: gincoinc_adamant_global_v1_adamantglobalv1_model_pb.CreateTransactionSymbolSpecific.AsObject,
         ethereumSpecific?: gincoinc_adamant_global_v1_adamantglobalv1_model_pb.CreateTransactionEthereumSpecific.AsObject,
         cosmosSpecific?: gincoinc_adamant_global_v1_adamantglobalv1_model_pb.CreateTransactionCosmosSpecific.AsObject,
+        algorandSpecific?: gincoinc_adamant_global_v1_adamantglobalv1_model_pb.CreateTransactionAlgorandSpecific.AsObject,
+        hederaSpecific?: gincoinc_adamant_global_v1_adamantglobalv1_model_pb.CreateTransactionHederaSpecific.AsObject,
     }
 }
 
@@ -1812,6 +1916,26 @@ export namespace ReplaceTransactionRequest {
         walletId: string,
         transactionId: string,
         feeRate: number,
+    }
+}
+
+export class ReplaceTransactionResponse extends jspb.Message { 
+    getTransactionId(): string;
+    setTransactionId(value: string): ReplaceTransactionResponse;
+
+    serializeBinary(): Uint8Array;
+    toObject(includeInstance?: boolean): ReplaceTransactionResponse.AsObject;
+    static toObject(includeInstance: boolean, msg: ReplaceTransactionResponse): ReplaceTransactionResponse.AsObject;
+    static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+    static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+    static serializeBinaryToWriter(message: ReplaceTransactionResponse, writer: jspb.BinaryWriter): void;
+    static deserializeBinary(bytes: Uint8Array): ReplaceTransactionResponse;
+    static deserializeBinaryFromReader(message: ReplaceTransactionResponse, reader: jspb.BinaryReader): ReplaceTransactionResponse;
+}
+
+export namespace ReplaceTransactionResponse {
+    export type AsObject = {
+        transactionId: string,
     }
 }
 
@@ -2923,6 +3047,11 @@ export class CalculateFeeRequest extends jspb.Message {
     getCosmosSpecific(): CalculateFeeCosmosSpecific | undefined;
     setCosmosSpecific(value?: CalculateFeeCosmosSpecific): CalculateFeeRequest;
 
+    hasHederaSpecific(): boolean;
+    clearHederaSpecific(): void;
+    getHederaSpecific(): CalculateFeeHederaSpecific | undefined;
+    setHederaSpecific(value?: CalculateFeeHederaSpecific): CalculateFeeRequest;
+
     serializeBinary(): Uint8Array;
     toObject(includeInstance?: boolean): CalculateFeeRequest.AsObject;
     static toObject(includeInstance: boolean, msg: CalculateFeeRequest): CalculateFeeRequest.AsObject;
@@ -2946,6 +3075,7 @@ export namespace CalculateFeeRequest {
         symbolSpecific?: CalculateFeeSymbolSpecific.AsObject,
         ethereumSpecific?: CalculateFeeEthereumSpecific.AsObject,
         cosmosSpecific?: CalculateFeeCosmosSpecific.AsObject,
+        hederaSpecific?: CalculateFeeHederaSpecific.AsObject,
     }
 }
 
@@ -3051,6 +3181,26 @@ export class CalculateFeeCosmosSpecific extends jspb.Message {
 export namespace CalculateFeeCosmosSpecific {
     export type AsObject = {
         type: gincoinc_global_v1_gincoincglobalv1_enum_pb.CosmosMsgType,
+        memo: string,
+    }
+}
+
+export class CalculateFeeHederaSpecific extends jspb.Message { 
+    getMemo(): string;
+    setMemo(value: string): CalculateFeeHederaSpecific;
+
+    serializeBinary(): Uint8Array;
+    toObject(includeInstance?: boolean): CalculateFeeHederaSpecific.AsObject;
+    static toObject(includeInstance: boolean, msg: CalculateFeeHederaSpecific): CalculateFeeHederaSpecific.AsObject;
+    static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+    static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+    static serializeBinaryToWriter(message: CalculateFeeHederaSpecific, writer: jspb.BinaryWriter): void;
+    static deserializeBinary(bytes: Uint8Array): CalculateFeeHederaSpecific;
+    static deserializeBinaryFromReader(message: CalculateFeeHederaSpecific, reader: jspb.BinaryReader): CalculateFeeHederaSpecific;
+}
+
+export namespace CalculateFeeHederaSpecific {
+    export type AsObject = {
         memo: string,
     }
 }
@@ -3436,6 +3586,69 @@ export namespace ListLabeledAddressesResponse {
     }
 }
 
+export class ListLabeledAddressesByFilterRequest extends jspb.Message { 
+    getFilterType(): gincoinc_adamant_global_v1_adamantglobalv1_enum_pb.ListFilterType;
+    setFilterType(value: gincoinc_adamant_global_v1_adamantglobalv1_enum_pb.ListFilterType): ListLabeledAddressesByFilterRequest;
+    getAddressId(): string;
+    setAddressId(value: string): ListLabeledAddressesByFilterRequest;
+    getAddress(): string;
+    setAddress(value: string): ListLabeledAddressesByFilterRequest;
+    getAddressName(): string;
+    setAddressName(value: string): ListLabeledAddressesByFilterRequest;
+    getCoin(): gincoinc_global_v1_gincoincglobalv1_enum_pb.Coin;
+    setCoin(value: gincoinc_global_v1_gincoincglobalv1_enum_pb.Coin): ListLabeledAddressesByFilterRequest;
+    getPageSize(): number;
+    setPageSize(value: number): ListLabeledAddressesByFilterRequest;
+    getPageToken(): string;
+    setPageToken(value: string): ListLabeledAddressesByFilterRequest;
+
+    serializeBinary(): Uint8Array;
+    toObject(includeInstance?: boolean): ListLabeledAddressesByFilterRequest.AsObject;
+    static toObject(includeInstance: boolean, msg: ListLabeledAddressesByFilterRequest): ListLabeledAddressesByFilterRequest.AsObject;
+    static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+    static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+    static serializeBinaryToWriter(message: ListLabeledAddressesByFilterRequest, writer: jspb.BinaryWriter): void;
+    static deserializeBinary(bytes: Uint8Array): ListLabeledAddressesByFilterRequest;
+    static deserializeBinaryFromReader(message: ListLabeledAddressesByFilterRequest, reader: jspb.BinaryReader): ListLabeledAddressesByFilterRequest;
+}
+
+export namespace ListLabeledAddressesByFilterRequest {
+    export type AsObject = {
+        filterType: gincoinc_adamant_global_v1_adamantglobalv1_enum_pb.ListFilterType,
+        addressId: string,
+        address: string,
+        addressName: string,
+        coin: gincoinc_global_v1_gincoincglobalv1_enum_pb.Coin,
+        pageSize: number,
+        pageToken: string,
+    }
+}
+
+export class ListLabeledAddressesByFilterResponse extends jspb.Message { 
+    clearAddressesList(): void;
+    getAddressesList(): Array<gincoinc_adamant_global_v1_adamantglobalv1_model_pb.LabeledAddress>;
+    setAddressesList(value: Array<gincoinc_adamant_global_v1_adamantglobalv1_model_pb.LabeledAddress>): ListLabeledAddressesByFilterResponse;
+    addAddresses(value?: gincoinc_adamant_global_v1_adamantglobalv1_model_pb.LabeledAddress, index?: number): gincoinc_adamant_global_v1_adamantglobalv1_model_pb.LabeledAddress;
+    getNextPageToken(): string;
+    setNextPageToken(value: string): ListLabeledAddressesByFilterResponse;
+
+    serializeBinary(): Uint8Array;
+    toObject(includeInstance?: boolean): ListLabeledAddressesByFilterResponse.AsObject;
+    static toObject(includeInstance: boolean, msg: ListLabeledAddressesByFilterResponse): ListLabeledAddressesByFilterResponse.AsObject;
+    static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+    static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+    static serializeBinaryToWriter(message: ListLabeledAddressesByFilterResponse, writer: jspb.BinaryWriter): void;
+    static deserializeBinary(bytes: Uint8Array): ListLabeledAddressesByFilterResponse;
+    static deserializeBinaryFromReader(message: ListLabeledAddressesByFilterResponse, reader: jspb.BinaryReader): ListLabeledAddressesByFilterResponse;
+}
+
+export namespace ListLabeledAddressesByFilterResponse {
+    export type AsObject = {
+        addressesList: Array<gincoinc_adamant_global_v1_adamantglobalv1_model_pb.LabeledAddress.AsObject>,
+        nextPageToken: string,
+    }
+}
+
 export class DeleteLabeledAddressRequest extends jspb.Message { 
     getLabeledAddressId(): string;
     setLabeledAddressId(value: string): DeleteLabeledAddressRequest;
@@ -3583,6 +3796,66 @@ export class ListWhitelistsResponse extends jspb.Message {
 export namespace ListWhitelistsResponse {
     export type AsObject = {
         whitelistsList: Array<gincoinc_adamant_global_v1_adamantglobalv1_model_pb.Whitelist.AsObject>,
+    }
+}
+
+export class ListWhitelistsByFilterRequest extends jspb.Message { 
+    getFilterType(): gincoinc_adamant_global_v1_adamantglobalv1_enum_pb.ListFilterType;
+    setFilterType(value: gincoinc_adamant_global_v1_adamantglobalv1_enum_pb.ListFilterType): ListWhitelistsByFilterRequest;
+    getWhitelistId(): string;
+    setWhitelistId(value: string): ListWhitelistsByFilterRequest;
+    getWhitelistName(): string;
+    setWhitelistName(value: string): ListWhitelistsByFilterRequest;
+    getCoin(): gincoinc_global_v1_gincoincglobalv1_enum_pb.Coin;
+    setCoin(value: gincoinc_global_v1_gincoincglobalv1_enum_pb.Coin): ListWhitelistsByFilterRequest;
+    getPageSize(): number;
+    setPageSize(value: number): ListWhitelistsByFilterRequest;
+    getPageToken(): string;
+    setPageToken(value: string): ListWhitelistsByFilterRequest;
+
+    serializeBinary(): Uint8Array;
+    toObject(includeInstance?: boolean): ListWhitelistsByFilterRequest.AsObject;
+    static toObject(includeInstance: boolean, msg: ListWhitelistsByFilterRequest): ListWhitelistsByFilterRequest.AsObject;
+    static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+    static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+    static serializeBinaryToWriter(message: ListWhitelistsByFilterRequest, writer: jspb.BinaryWriter): void;
+    static deserializeBinary(bytes: Uint8Array): ListWhitelistsByFilterRequest;
+    static deserializeBinaryFromReader(message: ListWhitelistsByFilterRequest, reader: jspb.BinaryReader): ListWhitelistsByFilterRequest;
+}
+
+export namespace ListWhitelistsByFilterRequest {
+    export type AsObject = {
+        filterType: gincoinc_adamant_global_v1_adamantglobalv1_enum_pb.ListFilterType,
+        whitelistId: string,
+        whitelistName: string,
+        coin: gincoinc_global_v1_gincoincglobalv1_enum_pb.Coin,
+        pageSize: number,
+        pageToken: string,
+    }
+}
+
+export class ListWhitelistsByFilterResponse extends jspb.Message { 
+    clearWhitelistsList(): void;
+    getWhitelistsList(): Array<gincoinc_adamant_global_v1_adamantglobalv1_model_pb.Whitelist>;
+    setWhitelistsList(value: Array<gincoinc_adamant_global_v1_adamantglobalv1_model_pb.Whitelist>): ListWhitelistsByFilterResponse;
+    addWhitelists(value?: gincoinc_adamant_global_v1_adamantglobalv1_model_pb.Whitelist, index?: number): gincoinc_adamant_global_v1_adamantglobalv1_model_pb.Whitelist;
+    getNextPageToken(): string;
+    setNextPageToken(value: string): ListWhitelistsByFilterResponse;
+
+    serializeBinary(): Uint8Array;
+    toObject(includeInstance?: boolean): ListWhitelistsByFilterResponse.AsObject;
+    static toObject(includeInstance: boolean, msg: ListWhitelistsByFilterResponse): ListWhitelistsByFilterResponse.AsObject;
+    static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+    static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+    static serializeBinaryToWriter(message: ListWhitelistsByFilterResponse, writer: jspb.BinaryWriter): void;
+    static deserializeBinary(bytes: Uint8Array): ListWhitelistsByFilterResponse;
+    static deserializeBinaryFromReader(message: ListWhitelistsByFilterResponse, reader: jspb.BinaryReader): ListWhitelistsByFilterResponse;
+}
+
+export namespace ListWhitelistsByFilterResponse {
+    export type AsObject = {
+        whitelistsList: Array<gincoinc_adamant_global_v1_adamantglobalv1_model_pb.Whitelist.AsObject>,
+        nextPageToken: string,
     }
 }
 
@@ -3769,6 +4042,66 @@ export namespace ListTransferLimitsResponse {
     }
 }
 
+export class ListTransferLimitsByFilterRequest extends jspb.Message { 
+    getFilterType(): gincoinc_adamant_global_v1_adamantglobalv1_enum_pb.ListFilterType;
+    setFilterType(value: gincoinc_adamant_global_v1_adamantglobalv1_enum_pb.ListFilterType): ListTransferLimitsByFilterRequest;
+    getTransferLimitId(): string;
+    setTransferLimitId(value: string): ListTransferLimitsByFilterRequest;
+    getTransferLimitName(): string;
+    setTransferLimitName(value: string): ListTransferLimitsByFilterRequest;
+    getCoin(): gincoinc_global_v1_gincoincglobalv1_enum_pb.Coin;
+    setCoin(value: gincoinc_global_v1_gincoincglobalv1_enum_pb.Coin): ListTransferLimitsByFilterRequest;
+    getPageSize(): number;
+    setPageSize(value: number): ListTransferLimitsByFilterRequest;
+    getPageToken(): string;
+    setPageToken(value: string): ListTransferLimitsByFilterRequest;
+
+    serializeBinary(): Uint8Array;
+    toObject(includeInstance?: boolean): ListTransferLimitsByFilterRequest.AsObject;
+    static toObject(includeInstance: boolean, msg: ListTransferLimitsByFilterRequest): ListTransferLimitsByFilterRequest.AsObject;
+    static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+    static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+    static serializeBinaryToWriter(message: ListTransferLimitsByFilterRequest, writer: jspb.BinaryWriter): void;
+    static deserializeBinary(bytes: Uint8Array): ListTransferLimitsByFilterRequest;
+    static deserializeBinaryFromReader(message: ListTransferLimitsByFilterRequest, reader: jspb.BinaryReader): ListTransferLimitsByFilterRequest;
+}
+
+export namespace ListTransferLimitsByFilterRequest {
+    export type AsObject = {
+        filterType: gincoinc_adamant_global_v1_adamantglobalv1_enum_pb.ListFilterType,
+        transferLimitId: string,
+        transferLimitName: string,
+        coin: gincoinc_global_v1_gincoincglobalv1_enum_pb.Coin,
+        pageSize: number,
+        pageToken: string,
+    }
+}
+
+export class ListTransferLimitsByFilterResponse extends jspb.Message { 
+    clearTransferLimitsList(): void;
+    getTransferLimitsList(): Array<gincoinc_adamant_global_v1_adamantglobalv1_model_pb.TransferLimit>;
+    setTransferLimitsList(value: Array<gincoinc_adamant_global_v1_adamantglobalv1_model_pb.TransferLimit>): ListTransferLimitsByFilterResponse;
+    addTransferLimits(value?: gincoinc_adamant_global_v1_adamantglobalv1_model_pb.TransferLimit, index?: number): gincoinc_adamant_global_v1_adamantglobalv1_model_pb.TransferLimit;
+    getNextPageToken(): string;
+    setNextPageToken(value: string): ListTransferLimitsByFilterResponse;
+
+    serializeBinary(): Uint8Array;
+    toObject(includeInstance?: boolean): ListTransferLimitsByFilterResponse.AsObject;
+    static toObject(includeInstance: boolean, msg: ListTransferLimitsByFilterResponse): ListTransferLimitsByFilterResponse.AsObject;
+    static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+    static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+    static serializeBinaryToWriter(message: ListTransferLimitsByFilterResponse, writer: jspb.BinaryWriter): void;
+    static deserializeBinary(bytes: Uint8Array): ListTransferLimitsByFilterResponse;
+    static deserializeBinaryFromReader(message: ListTransferLimitsByFilterResponse, reader: jspb.BinaryReader): ListTransferLimitsByFilterResponse;
+}
+
+export namespace ListTransferLimitsByFilterResponse {
+    export type AsObject = {
+        transferLimitsList: Array<gincoinc_adamant_global_v1_adamantglobalv1_model_pb.TransferLimit.AsObject>,
+        nextPageToken: string,
+    }
+}
+
 export class UpdateTransferLimitRequest extends jspb.Message { 
     getTransferLimitId(): string;
     setTransferLimitId(value: string): UpdateTransferLimitRequest;
@@ -3929,6 +4262,44 @@ export class GetPolicyRequest extends jspb.Message {
 export namespace GetPolicyRequest {
     export type AsObject = {
         policyId: string,
+    }
+}
+
+export class ListPoliciesByFilterRequest extends jspb.Message { 
+    getFilterType(): gincoinc_adamant_global_v1_adamantglobalv1_enum_pb.ListFilterType;
+    setFilterType(value: gincoinc_adamant_global_v1_adamantglobalv1_enum_pb.ListFilterType): ListPoliciesByFilterRequest;
+    getPolicyId(): string;
+    setPolicyId(value: string): ListPoliciesByFilterRequest;
+    getPolicyName(): string;
+    setPolicyName(value: string): ListPoliciesByFilterRequest;
+    getCoin(): gincoinc_global_v1_gincoincglobalv1_enum_pb.Coin;
+    setCoin(value: gincoinc_global_v1_gincoincglobalv1_enum_pb.Coin): ListPoliciesByFilterRequest;
+    getPolicyType(): gincoinc_adamant_global_v1_adamantglobalv1_enum_pb.PolicyType;
+    setPolicyType(value: gincoinc_adamant_global_v1_adamantglobalv1_enum_pb.PolicyType): ListPoliciesByFilterRequest;
+    getPageSize(): number;
+    setPageSize(value: number): ListPoliciesByFilterRequest;
+    getPageToken(): string;
+    setPageToken(value: string): ListPoliciesByFilterRequest;
+
+    serializeBinary(): Uint8Array;
+    toObject(includeInstance?: boolean): ListPoliciesByFilterRequest.AsObject;
+    static toObject(includeInstance: boolean, msg: ListPoliciesByFilterRequest): ListPoliciesByFilterRequest.AsObject;
+    static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+    static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+    static serializeBinaryToWriter(message: ListPoliciesByFilterRequest, writer: jspb.BinaryWriter): void;
+    static deserializeBinary(bytes: Uint8Array): ListPoliciesByFilterRequest;
+    static deserializeBinaryFromReader(message: ListPoliciesByFilterRequest, reader: jspb.BinaryReader): ListPoliciesByFilterRequest;
+}
+
+export namespace ListPoliciesByFilterRequest {
+    export type AsObject = {
+        filterType: gincoinc_adamant_global_v1_adamantglobalv1_enum_pb.ListFilterType,
+        policyId: string,
+        policyName: string,
+        coin: gincoinc_global_v1_gincoincglobalv1_enum_pb.Coin,
+        policyType: gincoinc_adamant_global_v1_adamantglobalv1_enum_pb.PolicyType,
+        pageSize: number,
+        pageToken: string,
     }
 }
 
@@ -4128,6 +4499,31 @@ export class ListPoliciesResponse extends jspb.Message {
 export namespace ListPoliciesResponse {
     export type AsObject = {
         policiesList: Array<gincoinc_adamant_global_v1_adamantglobalv1_model_pb.Policy.AsObject>,
+    }
+}
+
+export class ListPoliciesByFilterResponse extends jspb.Message { 
+    clearPoliciesList(): void;
+    getPoliciesList(): Array<gincoinc_adamant_global_v1_adamantglobalv1_model_pb.Policy>;
+    setPoliciesList(value: Array<gincoinc_adamant_global_v1_adamantglobalv1_model_pb.Policy>): ListPoliciesByFilterResponse;
+    addPolicies(value?: gincoinc_adamant_global_v1_adamantglobalv1_model_pb.Policy, index?: number): gincoinc_adamant_global_v1_adamantglobalv1_model_pb.Policy;
+    getNextPageToken(): string;
+    setNextPageToken(value: string): ListPoliciesByFilterResponse;
+
+    serializeBinary(): Uint8Array;
+    toObject(includeInstance?: boolean): ListPoliciesByFilterResponse.AsObject;
+    static toObject(includeInstance: boolean, msg: ListPoliciesByFilterResponse): ListPoliciesByFilterResponse.AsObject;
+    static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+    static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+    static serializeBinaryToWriter(message: ListPoliciesByFilterResponse, writer: jspb.BinaryWriter): void;
+    static deserializeBinary(bytes: Uint8Array): ListPoliciesByFilterResponse;
+    static deserializeBinaryFromReader(message: ListPoliciesByFilterResponse, reader: jspb.BinaryReader): ListPoliciesByFilterResponse;
+}
+
+export namespace ListPoliciesByFilterResponse {
+    export type AsObject = {
+        policiesList: Array<gincoinc_adamant_global_v1_adamantglobalv1_model_pb.Policy.AsObject>,
+        nextPageToken: string,
     }
 }
 
@@ -4509,6 +4905,45 @@ export namespace ListCallersResponse {
     }
 }
 
+export class ListFeeDepositsRequest extends jspb.Message { 
+
+    serializeBinary(): Uint8Array;
+    toObject(includeInstance?: boolean): ListFeeDepositsRequest.AsObject;
+    static toObject(includeInstance: boolean, msg: ListFeeDepositsRequest): ListFeeDepositsRequest.AsObject;
+    static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+    static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+    static serializeBinaryToWriter(message: ListFeeDepositsRequest, writer: jspb.BinaryWriter): void;
+    static deserializeBinary(bytes: Uint8Array): ListFeeDepositsRequest;
+    static deserializeBinaryFromReader(message: ListFeeDepositsRequest, reader: jspb.BinaryReader): ListFeeDepositsRequest;
+}
+
+export namespace ListFeeDepositsRequest {
+    export type AsObject = {
+    }
+}
+
+export class ListFeeDepositsResponse extends jspb.Message { 
+    clearFeeDepositAddressesList(): void;
+    getFeeDepositAddressesList(): Array<gincoinc_adamant_global_v1_adamantglobalv1_model_pb.FeeDepositAddress>;
+    setFeeDepositAddressesList(value: Array<gincoinc_adamant_global_v1_adamantglobalv1_model_pb.FeeDepositAddress>): ListFeeDepositsResponse;
+    addFeeDepositAddresses(value?: gincoinc_adamant_global_v1_adamantglobalv1_model_pb.FeeDepositAddress, index?: number): gincoinc_adamant_global_v1_adamantglobalv1_model_pb.FeeDepositAddress;
+
+    serializeBinary(): Uint8Array;
+    toObject(includeInstance?: boolean): ListFeeDepositsResponse.AsObject;
+    static toObject(includeInstance: boolean, msg: ListFeeDepositsResponse): ListFeeDepositsResponse.AsObject;
+    static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+    static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+    static serializeBinaryToWriter(message: ListFeeDepositsResponse, writer: jspb.BinaryWriter): void;
+    static deserializeBinary(bytes: Uint8Array): ListFeeDepositsResponse;
+    static deserializeBinaryFromReader(message: ListFeeDepositsResponse, reader: jspb.BinaryReader): ListFeeDepositsResponse;
+}
+
+export namespace ListFeeDepositsResponse {
+    export type AsObject = {
+        feeDepositAddressesList: Array<gincoinc_adamant_global_v1_adamantglobalv1_model_pb.FeeDepositAddress.AsObject>,
+    }
+}
+
 export class GetCosmosBalanceRequest extends jspb.Message { 
     getWalletId(): string;
     setWalletId(value: string): GetCosmosBalanceRequest;
@@ -4637,5 +5072,116 @@ export namespace CosmosDelegateHistory {
         delegateAmount: number,
         rewardAmount: number,
         time?: google_protobuf_timestamp_pb.Timestamp.AsObject,
+    }
+}
+
+export class ForwardingThreshold extends jspb.Message { 
+    getCoin(): gincoinc_global_v1_gincoincglobalv1_enum_pb.Coin;
+    setCoin(value: gincoinc_global_v1_gincoincglobalv1_enum_pb.Coin): ForwardingThreshold;
+    getFeeRate(): number;
+    setFeeRate(value: number): ForwardingThreshold;
+    getValue(): number;
+    setValue(value: number): ForwardingThreshold;
+
+    serializeBinary(): Uint8Array;
+    toObject(includeInstance?: boolean): ForwardingThreshold.AsObject;
+    static toObject(includeInstance: boolean, msg: ForwardingThreshold): ForwardingThreshold.AsObject;
+    static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+    static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+    static serializeBinaryToWriter(message: ForwardingThreshold, writer: jspb.BinaryWriter): void;
+    static deserializeBinary(bytes: Uint8Array): ForwardingThreshold;
+    static deserializeBinaryFromReader(message: ForwardingThreshold, reader: jspb.BinaryReader): ForwardingThreshold;
+}
+
+export namespace ForwardingThreshold {
+    export type AsObject = {
+        coin: gincoinc_global_v1_gincoincglobalv1_enum_pb.Coin,
+        feeRate: number,
+        value: number,
+    }
+}
+
+export class ListForwardingThresholdsRequest extends jspb.Message { 
+
+    serializeBinary(): Uint8Array;
+    toObject(includeInstance?: boolean): ListForwardingThresholdsRequest.AsObject;
+    static toObject(includeInstance: boolean, msg: ListForwardingThresholdsRequest): ListForwardingThresholdsRequest.AsObject;
+    static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+    static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+    static serializeBinaryToWriter(message: ListForwardingThresholdsRequest, writer: jspb.BinaryWriter): void;
+    static deserializeBinary(bytes: Uint8Array): ListForwardingThresholdsRequest;
+    static deserializeBinaryFromReader(message: ListForwardingThresholdsRequest, reader: jspb.BinaryReader): ListForwardingThresholdsRequest;
+}
+
+export namespace ListForwardingThresholdsRequest {
+    export type AsObject = {
+    }
+}
+
+export class ListForwardingThresholdsResponse extends jspb.Message { 
+    clearForwardingThresholdsList(): void;
+    getForwardingThresholdsList(): Array<ForwardingThreshold>;
+    setForwardingThresholdsList(value: Array<ForwardingThreshold>): ListForwardingThresholdsResponse;
+    addForwardingThresholds(value?: ForwardingThreshold, index?: number): ForwardingThreshold;
+
+    serializeBinary(): Uint8Array;
+    toObject(includeInstance?: boolean): ListForwardingThresholdsResponse.AsObject;
+    static toObject(includeInstance: boolean, msg: ListForwardingThresholdsResponse): ListForwardingThresholdsResponse.AsObject;
+    static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+    static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+    static serializeBinaryToWriter(message: ListForwardingThresholdsResponse, writer: jspb.BinaryWriter): void;
+    static deserializeBinary(bytes: Uint8Array): ListForwardingThresholdsResponse;
+    static deserializeBinaryFromReader(message: ListForwardingThresholdsResponse, reader: jspb.BinaryReader): ListForwardingThresholdsResponse;
+}
+
+export namespace ListForwardingThresholdsResponse {
+    export type AsObject = {
+        forwardingThresholdsList: Array<ForwardingThreshold.AsObject>,
+    }
+}
+
+export class UpsertForwardingThresholdRequest extends jspb.Message { 
+
+    hasForwardingThreshold(): boolean;
+    clearForwardingThreshold(): void;
+    getForwardingThreshold(): ForwardingThreshold | undefined;
+    setForwardingThreshold(value?: ForwardingThreshold): UpsertForwardingThresholdRequest;
+
+    serializeBinary(): Uint8Array;
+    toObject(includeInstance?: boolean): UpsertForwardingThresholdRequest.AsObject;
+    static toObject(includeInstance: boolean, msg: UpsertForwardingThresholdRequest): UpsertForwardingThresholdRequest.AsObject;
+    static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+    static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+    static serializeBinaryToWriter(message: UpsertForwardingThresholdRequest, writer: jspb.BinaryWriter): void;
+    static deserializeBinary(bytes: Uint8Array): UpsertForwardingThresholdRequest;
+    static deserializeBinaryFromReader(message: UpsertForwardingThresholdRequest, reader: jspb.BinaryReader): UpsertForwardingThresholdRequest;
+}
+
+export namespace UpsertForwardingThresholdRequest {
+    export type AsObject = {
+        forwardingThreshold?: ForwardingThreshold.AsObject,
+    }
+}
+
+export class UpsertForwardingThresholdResponse extends jspb.Message { 
+
+    hasForwardingThreshold(): boolean;
+    clearForwardingThreshold(): void;
+    getForwardingThreshold(): ForwardingThreshold | undefined;
+    setForwardingThreshold(value?: ForwardingThreshold): UpsertForwardingThresholdResponse;
+
+    serializeBinary(): Uint8Array;
+    toObject(includeInstance?: boolean): UpsertForwardingThresholdResponse.AsObject;
+    static toObject(includeInstance: boolean, msg: UpsertForwardingThresholdResponse): UpsertForwardingThresholdResponse.AsObject;
+    static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+    static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+    static serializeBinaryToWriter(message: UpsertForwardingThresholdResponse, writer: jspb.BinaryWriter): void;
+    static deserializeBinary(bytes: Uint8Array): UpsertForwardingThresholdResponse;
+    static deserializeBinaryFromReader(message: UpsertForwardingThresholdResponse, reader: jspb.BinaryReader): UpsertForwardingThresholdResponse;
+}
+
+export namespace UpsertForwardingThresholdResponse {
+    export type AsObject = {
+        forwardingThreshold?: ForwardingThreshold.AsObject,
     }
 }

@@ -681,6 +681,26 @@ export class Transaction extends jspb.Message {
     getCosmosSpecific(): CosmosSpecific | undefined;
     setCosmosSpecific(value?: CosmosSpecific): Transaction;
 
+    hasEthereumClassicSpecific(): boolean;
+    clearEthereumClassicSpecific(): void;
+    getEthereumClassicSpecific(): EthereumClassicSpecific | undefined;
+    setEthereumClassicSpecific(value?: EthereumClassicSpecific): Transaction;
+
+    hasAlgorandSpecific(): boolean;
+    clearAlgorandSpecific(): void;
+    getAlgorandSpecific(): AlgorandSpecific | undefined;
+    setAlgorandSpecific(value?: AlgorandSpecific): Transaction;
+
+    hasHederaSpecific(): boolean;
+    clearHederaSpecific(): void;
+    getHederaSpecific(): HederaSpecific | undefined;
+    setHederaSpecific(value?: HederaSpecific): Transaction;
+
+    hasJapanOpenChainSpecific(): boolean;
+    clearJapanOpenChainSpecific(): void;
+    getJapanOpenChainSpecific(): JapanOpenChainSpecific | undefined;
+    setJapanOpenChainSpecific(value?: JapanOpenChainSpecific): Transaction;
+
     hasCreateTime(): boolean;
     clearCreateTime(): void;
     getCreateTime(): google_protobuf_timestamp_pb.Timestamp | undefined;
@@ -737,6 +757,10 @@ export namespace Transaction {
         oasysSpecific?: OasysSpecific.AsObject,
         xdcSpecific?: XdcSpecific.AsObject,
         cosmosSpecific?: CosmosSpecific.AsObject,
+        ethereumClassicSpecific?: EthereumClassicSpecific.AsObject,
+        algorandSpecific?: AlgorandSpecific.AsObject,
+        hederaSpecific?: HederaSpecific.AsObject,
+        japanOpenChainSpecific?: JapanOpenChainSpecific.AsObject,
         createTime?: google_protobuf_timestamp_pb.Timestamp.AsObject,
         updateTime?: google_protobuf_timestamp_pb.Timestamp.AsObject,
     }
@@ -1486,6 +1510,125 @@ export namespace CosmosSpecific {
     }
 }
 
+export class EthereumClassicSpecific extends jspb.Message { 
+    getGasLimit(): number;
+    setGasLimit(value: number): EthereumClassicSpecific;
+    getNonce(): number;
+    setNonce(value: number): EthereumClassicSpecific;
+    getIsNextNonce(): boolean;
+    setIsNextNonce(value: boolean): EthereumClassicSpecific;
+
+    serializeBinary(): Uint8Array;
+    toObject(includeInstance?: boolean): EthereumClassicSpecific.AsObject;
+    static toObject(includeInstance: boolean, msg: EthereumClassicSpecific): EthereumClassicSpecific.AsObject;
+    static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+    static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+    static serializeBinaryToWriter(message: EthereumClassicSpecific, writer: jspb.BinaryWriter): void;
+    static deserializeBinary(bytes: Uint8Array): EthereumClassicSpecific;
+    static deserializeBinaryFromReader(message: EthereumClassicSpecific, reader: jspb.BinaryReader): EthereumClassicSpecific;
+}
+
+export namespace EthereumClassicSpecific {
+    export type AsObject = {
+        gasLimit: number,
+        nonce: number,
+        isNextNonce: boolean,
+    }
+}
+
+export class AlgorandSpecific extends jspb.Message { 
+    getGasLimit(): number;
+    setGasLimit(value: number): AlgorandSpecific;
+    getNonce(): number;
+    setNonce(value: number): AlgorandSpecific;
+    getIsNextNonce(): boolean;
+    setIsNextNonce(value: boolean): AlgorandSpecific;
+    getMemo(): string;
+    setMemo(value: string): AlgorandSpecific;
+    getFirstRound(): number;
+    setFirstRound(value: number): AlgorandSpecific;
+    getLastRound(): number;
+    setLastRound(value: number): AlgorandSpecific;
+    getExpiration(): number;
+    setExpiration(value: number): AlgorandSpecific;
+    getTimestamp(): number;
+    setTimestamp(value: number): AlgorandSpecific;
+
+    serializeBinary(): Uint8Array;
+    toObject(includeInstance?: boolean): AlgorandSpecific.AsObject;
+    static toObject(includeInstance: boolean, msg: AlgorandSpecific): AlgorandSpecific.AsObject;
+    static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+    static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+    static serializeBinaryToWriter(message: AlgorandSpecific, writer: jspb.BinaryWriter): void;
+    static deserializeBinary(bytes: Uint8Array): AlgorandSpecific;
+    static deserializeBinaryFromReader(message: AlgorandSpecific, reader: jspb.BinaryReader): AlgorandSpecific;
+}
+
+export namespace AlgorandSpecific {
+    export type AsObject = {
+        gasLimit: number,
+        nonce: number,
+        isNextNonce: boolean,
+        memo: string,
+        firstRound: number,
+        lastRound: number,
+        expiration: number,
+        timestamp: number,
+    }
+}
+
+export class HederaSpecific extends jspb.Message { 
+    getMemo(): string;
+    setMemo(value: string): HederaSpecific;
+    getTimestamp(): number;
+    setTimestamp(value: number): HederaSpecific;
+    getExpiration(): number;
+    setExpiration(value: number): HederaSpecific;
+
+    serializeBinary(): Uint8Array;
+    toObject(includeInstance?: boolean): HederaSpecific.AsObject;
+    static toObject(includeInstance: boolean, msg: HederaSpecific): HederaSpecific.AsObject;
+    static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+    static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+    static serializeBinaryToWriter(message: HederaSpecific, writer: jspb.BinaryWriter): void;
+    static deserializeBinary(bytes: Uint8Array): HederaSpecific;
+    static deserializeBinaryFromReader(message: HederaSpecific, reader: jspb.BinaryReader): HederaSpecific;
+}
+
+export namespace HederaSpecific {
+    export type AsObject = {
+        memo: string,
+        timestamp: number,
+        expiration: number,
+    }
+}
+
+export class JapanOpenChainSpecific extends jspb.Message { 
+    getGasLimit(): number;
+    setGasLimit(value: number): JapanOpenChainSpecific;
+    getNonce(): number;
+    setNonce(value: number): JapanOpenChainSpecific;
+    getIsNextNonce(): boolean;
+    setIsNextNonce(value: boolean): JapanOpenChainSpecific;
+
+    serializeBinary(): Uint8Array;
+    toObject(includeInstance?: boolean): JapanOpenChainSpecific.AsObject;
+    static toObject(includeInstance: boolean, msg: JapanOpenChainSpecific): JapanOpenChainSpecific.AsObject;
+    static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+    static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+    static serializeBinaryToWriter(message: JapanOpenChainSpecific, writer: jspb.BinaryWriter): void;
+    static deserializeBinary(bytes: Uint8Array): JapanOpenChainSpecific;
+    static deserializeBinaryFromReader(message: JapanOpenChainSpecific, reader: jspb.BinaryReader): JapanOpenChainSpecific;
+}
+
+export namespace JapanOpenChainSpecific {
+    export type AsObject = {
+        gasLimit: number,
+        nonce: number,
+        isNextNonce: boolean,
+    }
+}
+
 export class CreateTransactionSubstrateSpecific extends jspb.Message { 
     getTransactionId(): string;
     setTransactionId(value: string): CreateTransactionSubstrateSpecific;
@@ -1656,6 +1799,49 @@ export namespace CreateTransactionCosmosSpecific {
     export type AsObject = {
         type: gincoinc_global_v1_gincoincglobalv1_enum_pb.CosmosMsgType,
         memo: string,
+    }
+}
+
+export class CreateTransactionAlgorandSpecific extends jspb.Message { 
+    getTimestamp(): number;
+    setTimestamp(value: number): CreateTransactionAlgorandSpecific;
+
+    serializeBinary(): Uint8Array;
+    toObject(includeInstance?: boolean): CreateTransactionAlgorandSpecific.AsObject;
+    static toObject(includeInstance: boolean, msg: CreateTransactionAlgorandSpecific): CreateTransactionAlgorandSpecific.AsObject;
+    static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+    static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+    static serializeBinaryToWriter(message: CreateTransactionAlgorandSpecific, writer: jspb.BinaryWriter): void;
+    static deserializeBinary(bytes: Uint8Array): CreateTransactionAlgorandSpecific;
+    static deserializeBinaryFromReader(message: CreateTransactionAlgorandSpecific, reader: jspb.BinaryReader): CreateTransactionAlgorandSpecific;
+}
+
+export namespace CreateTransactionAlgorandSpecific {
+    export type AsObject = {
+        timestamp: number,
+    }
+}
+
+export class CreateTransactionHederaSpecific extends jspb.Message { 
+    getMemo(): string;
+    setMemo(value: string): CreateTransactionHederaSpecific;
+    getTimestamp(): number;
+    setTimestamp(value: number): CreateTransactionHederaSpecific;
+
+    serializeBinary(): Uint8Array;
+    toObject(includeInstance?: boolean): CreateTransactionHederaSpecific.AsObject;
+    static toObject(includeInstance: boolean, msg: CreateTransactionHederaSpecific): CreateTransactionHederaSpecific.AsObject;
+    static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+    static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+    static serializeBinaryToWriter(message: CreateTransactionHederaSpecific, writer: jspb.BinaryWriter): void;
+    static deserializeBinary(bytes: Uint8Array): CreateTransactionHederaSpecific;
+    static deserializeBinaryFromReader(message: CreateTransactionHederaSpecific, reader: jspb.BinaryReader): CreateTransactionHederaSpecific;
+}
+
+export namespace CreateTransactionHederaSpecific {
+    export type AsObject = {
+        memo: string,
+        timestamp: number,
     }
 }
 
@@ -3310,6 +3496,35 @@ export class CallerAddress extends jspb.Message {
 }
 
 export namespace CallerAddress {
+    export type AsObject = {
+        address: string,
+        balance: number,
+        stringBalance: string,
+        coin: gincoinc_global_v1_gincoincglobalv1_enum_pb.Coin,
+    }
+}
+
+export class FeeDepositAddress extends jspb.Message { 
+    getAddress(): string;
+    setAddress(value: string): FeeDepositAddress;
+    getBalance(): number;
+    setBalance(value: number): FeeDepositAddress;
+    getStringBalance(): string;
+    setStringBalance(value: string): FeeDepositAddress;
+    getCoin(): gincoinc_global_v1_gincoincglobalv1_enum_pb.Coin;
+    setCoin(value: gincoinc_global_v1_gincoincglobalv1_enum_pb.Coin): FeeDepositAddress;
+
+    serializeBinary(): Uint8Array;
+    toObject(includeInstance?: boolean): FeeDepositAddress.AsObject;
+    static toObject(includeInstance: boolean, msg: FeeDepositAddress): FeeDepositAddress.AsObject;
+    static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+    static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+    static serializeBinaryToWriter(message: FeeDepositAddress, writer: jspb.BinaryWriter): void;
+    static deserializeBinary(bytes: Uint8Array): FeeDepositAddress;
+    static deserializeBinaryFromReader(message: FeeDepositAddress, reader: jspb.BinaryReader): FeeDepositAddress;
+}
+
+export namespace FeeDepositAddress {
     export type AsObject = {
         address: string,
         balance: number,
