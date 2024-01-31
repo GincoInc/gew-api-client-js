@@ -61,6 +61,11 @@ export class TransferUpdated extends jspb.Message {
     getCosmosSpecific(): TransferUpdateCosmosSpecific | undefined;
     setCosmosSpecific(value?: TransferUpdateCosmosSpecific): TransferUpdated;
 
+    hasSubstrateSpecific(): boolean;
+    clearSubstrateSpecific(): void;
+    getSubstrateSpecific(): TransferUpdateSubstrateSpecific | undefined;
+    setSubstrateSpecific(value?: TransferUpdateSubstrateSpecific): TransferUpdated;
+
     serializeBinary(): Uint8Array;
     toObject(includeInstance?: boolean): TransferUpdated.AsObject;
     static toObject(includeInstance: boolean, msg: TransferUpdated): TransferUpdated.AsObject;
@@ -95,6 +100,7 @@ export namespace TransferUpdated {
         fee: number,
         stringFee: string,
         cosmosSpecific?: TransferUpdateCosmosSpecific.AsObject,
+        substrateSpecific?: TransferUpdateSubstrateSpecific.AsObject,
     }
 }
 
@@ -121,6 +127,29 @@ export namespace TransferUpdateCosmosSpecific {
         type: gincoinc_global_v1_gincoincglobalv1_enum_pb.CosmosMsgType,
         delegateAmount: number,
         rewardAmount: number,
+    }
+}
+
+export class TransferUpdateSubstrateSpecific extends jspb.Message { 
+    getExtrinsicId(): string;
+    setExtrinsicId(value: string): TransferUpdateSubstrateSpecific;
+    getExtrinsicHash(): string;
+    setExtrinsicHash(value: string): TransferUpdateSubstrateSpecific;
+
+    serializeBinary(): Uint8Array;
+    toObject(includeInstance?: boolean): TransferUpdateSubstrateSpecific.AsObject;
+    static toObject(includeInstance: boolean, msg: TransferUpdateSubstrateSpecific): TransferUpdateSubstrateSpecific.AsObject;
+    static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+    static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+    static serializeBinaryToWriter(message: TransferUpdateSubstrateSpecific, writer: jspb.BinaryWriter): void;
+    static deserializeBinary(bytes: Uint8Array): TransferUpdateSubstrateSpecific;
+    static deserializeBinaryFromReader(message: TransferUpdateSubstrateSpecific, reader: jspb.BinaryReader): TransferUpdateSubstrateSpecific;
+}
+
+export namespace TransferUpdateSubstrateSpecific {
+    export type AsObject = {
+        extrinsicId: string,
+        extrinsicHash: string,
     }
 }
 
@@ -159,6 +188,11 @@ export class TransferUpdateEvent extends jspb.Message {
     getTime(): google_protobuf_timestamp_pb.Timestamp | undefined;
     setTime(value?: google_protobuf_timestamp_pb.Timestamp): TransferUpdateEvent;
 
+    hasSubstrateSpecific(): boolean;
+    clearSubstrateSpecific(): void;
+    getSubstrateSpecific(): TransferUpdateSubstrateSpecific | undefined;
+    setSubstrateSpecific(value?: TransferUpdateSubstrateSpecific): TransferUpdateEvent;
+
     serializeBinary(): Uint8Array;
     toObject(includeInstance?: boolean): TransferUpdateEvent.AsObject;
     static toObject(includeInstance: boolean, msg: TransferUpdateEvent): TransferUpdateEvent.AsObject;
@@ -186,6 +220,7 @@ export namespace TransferUpdateEvent {
         result: gincoinc_global_v1_gincoincglobalv1_enum_pb.TransactionResult,
         transferType: gincoinc_global_v1_gincoincglobalv1_enum_pb.TransferType,
         time?: google_protobuf_timestamp_pb.Timestamp.AsObject,
+        substrateSpecific?: TransferUpdateSubstrateSpecific.AsObject,
     }
 }
 
@@ -216,6 +251,11 @@ export class EthereumStakingReward extends jspb.Message {
     getBlockHash(): string;
     setBlockHash(value: string): EthereumStakingReward;
 
+    hasTxId(): boolean;
+    clearTxId(): void;
+    getTxId(): string | undefined;
+    setTxId(value: string): EthereumStakingReward;
+
     serializeBinary(): Uint8Array;
     toObject(includeInstance?: boolean): EthereumStakingReward.AsObject;
     static toObject(includeInstance: boolean, msg: EthereumStakingReward): EthereumStakingReward.AsObject;
@@ -239,5 +279,56 @@ export namespace EthereumStakingReward {
         ethereumStakingRewardLayerType: gincoinc_global_v1_gincoincglobalv1_enum_pb.EthereumStakingRewardLayerType,
         stringValue: string,
         blockHash: string,
+        txId?: string,
+    }
+}
+
+export class StakingRewardReceived extends jspb.Message { 
+    getEventId(): string;
+    setEventId(value: string): StakingRewardReceived;
+    getValidatorId(): string;
+    setValidatorId(value: string): StakingRewardReceived;
+    getValue(): number;
+    setValue(value: number): StakingRewardReceived;
+    getStringValue(): string;
+    setStringValue(value: string): StakingRewardReceived;
+    getTxId(): string;
+    setTxId(value: string): StakingRewardReceived;
+    getTxIndex(): number;
+    setTxIndex(value: number): StakingRewardReceived;
+    getWalletId(): string;
+    setWalletId(value: string): StakingRewardReceived;
+    getAddress(): string;
+    setAddress(value: string): StakingRewardReceived;
+    getCoin(): gincoinc_global_v1_gincoincglobalv1_enum_pb.Coin;
+    setCoin(value: gincoinc_global_v1_gincoincglobalv1_enum_pb.Coin): StakingRewardReceived;
+
+    hasTime(): boolean;
+    clearTime(): void;
+    getTime(): google_protobuf_timestamp_pb.Timestamp | undefined;
+    setTime(value?: google_protobuf_timestamp_pb.Timestamp): StakingRewardReceived;
+
+    serializeBinary(): Uint8Array;
+    toObject(includeInstance?: boolean): StakingRewardReceived.AsObject;
+    static toObject(includeInstance: boolean, msg: StakingRewardReceived): StakingRewardReceived.AsObject;
+    static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+    static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+    static serializeBinaryToWriter(message: StakingRewardReceived, writer: jspb.BinaryWriter): void;
+    static deserializeBinary(bytes: Uint8Array): StakingRewardReceived;
+    static deserializeBinaryFromReader(message: StakingRewardReceived, reader: jspb.BinaryReader): StakingRewardReceived;
+}
+
+export namespace StakingRewardReceived {
+    export type AsObject = {
+        eventId: string,
+        validatorId: string,
+        value: number,
+        stringValue: string,
+        txId: string,
+        txIndex: number,
+        walletId: string,
+        address: string,
+        coin: gincoinc_global_v1_gincoincglobalv1_enum_pb.Coin,
+        time?: google_protobuf_timestamp_pb.Timestamp.AsObject,
     }
 }

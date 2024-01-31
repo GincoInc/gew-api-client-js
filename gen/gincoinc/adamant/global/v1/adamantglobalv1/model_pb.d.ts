@@ -64,6 +64,8 @@ export class Wallet extends jspb.Message {
     setShouldCheckRemittance(value: boolean): Wallet;
     getInheritWalletId(): string;
     setInheritWalletId(value: string): Wallet;
+    getIsStakingAvailable(): boolean;
+    setIsStakingAvailable(value: boolean): Wallet;
 
     hasCreateTime(): boolean;
     clearCreateTime(): void;
@@ -110,6 +112,7 @@ export namespace Wallet {
         addressNumber: number,
         shouldCheckRemittance: boolean,
         inheritWalletId: string,
+        isStakingAvailable: boolean,
         createTime?: google_protobuf_timestamp_pb.Timestamp.AsObject,
         updateTime?: google_protobuf_timestamp_pb.Timestamp.AsObject,
     }
@@ -206,6 +209,98 @@ export namespace WalletWithoutBalance {
         watchOnly: boolean,
         shouldCheckRemittance: boolean,
         inheritWalletId: string,
+        createTime?: google_protobuf_timestamp_pb.Timestamp.AsObject,
+        updateTime?: google_protobuf_timestamp_pb.Timestamp.AsObject,
+    }
+}
+
+export class StakingWallet extends jspb.Message { 
+    getOwnerId(): string;
+    setOwnerId(value: string): StakingWallet;
+    getWalletId(): string;
+    setWalletId(value: string): StakingWallet;
+    getName(): string;
+    setName(value: string): StakingWallet;
+    getCoin(): gincoinc_global_v1_gincoincglobalv1_enum_pb.Coin;
+    setCoin(value: gincoinc_global_v1_gincoincglobalv1_enum_pb.Coin): StakingWallet;
+    getWalletType(): gincoinc_adamant_global_v1_adamantglobalv1_enum_pb.WalletType;
+    setWalletType(value: gincoinc_adamant_global_v1_adamantglobalv1_enum_pb.WalletType): StakingWallet;
+    getAddressType(): gincoinc_global_v1_gincoincglobalv1_enum_pb.AddressType;
+    setAddressType(value: gincoinc_global_v1_gincoincglobalv1_enum_pb.AddressType): StakingWallet;
+    getState(): gincoinc_adamant_global_v1_adamantglobalv1_enum_pb.WalletState;
+    setState(value: gincoinc_adamant_global_v1_adamantglobalv1_enum_pb.WalletState): StakingWallet;
+    getBalance(): number;
+    setBalance(value: number): StakingWallet;
+    getStringBalance(): string;
+    setStringBalance(value: string): StakingWallet;
+    getSpendableBalance(): number;
+    setSpendableBalance(value: number): StakingWallet;
+    getStringSpendableBalance(): string;
+    setStringSpendableBalance(value: string): StakingWallet;
+    getStakingBalance(): number;
+    setStakingBalance(value: number): StakingWallet;
+    getStringStakingBalance(): string;
+    setStringStakingBalance(value: string): StakingWallet;
+    getClaimableRewardBalance(): number;
+    setClaimableRewardBalance(value: number): StakingWallet;
+    getStringClaimableRewardBalance(): string;
+    setStringClaimableRewardBalance(value: string): StakingWallet;
+    getWithdrawableUnstakedBalance(): number;
+    setWithdrawableUnstakedBalance(value: number): StakingWallet;
+    getStringWithdrawableUnstakedBalance(): string;
+    setStringWithdrawableUnstakedBalance(value: string): StakingWallet;
+    getFrozenUnstakedBalance(): number;
+    setFrozenUnstakedBalance(value: number): StakingWallet;
+    getStringFrozenUnstakedBalance(): string;
+    setStringFrozenUnstakedBalance(value: string): StakingWallet;
+    getAddress(): string;
+    setAddress(value: string): StakingWallet;
+    getActiveValidatorsCount(): number;
+    setActiveValidatorsCount(value: number): StakingWallet;
+
+    hasCreateTime(): boolean;
+    clearCreateTime(): void;
+    getCreateTime(): google_protobuf_timestamp_pb.Timestamp | undefined;
+    setCreateTime(value?: google_protobuf_timestamp_pb.Timestamp): StakingWallet;
+
+    hasUpdateTime(): boolean;
+    clearUpdateTime(): void;
+    getUpdateTime(): google_protobuf_timestamp_pb.Timestamp | undefined;
+    setUpdateTime(value?: google_protobuf_timestamp_pb.Timestamp): StakingWallet;
+
+    serializeBinary(): Uint8Array;
+    toObject(includeInstance?: boolean): StakingWallet.AsObject;
+    static toObject(includeInstance: boolean, msg: StakingWallet): StakingWallet.AsObject;
+    static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+    static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+    static serializeBinaryToWriter(message: StakingWallet, writer: jspb.BinaryWriter): void;
+    static deserializeBinary(bytes: Uint8Array): StakingWallet;
+    static deserializeBinaryFromReader(message: StakingWallet, reader: jspb.BinaryReader): StakingWallet;
+}
+
+export namespace StakingWallet {
+    export type AsObject = {
+        ownerId: string,
+        walletId: string,
+        name: string,
+        coin: gincoinc_global_v1_gincoincglobalv1_enum_pb.Coin,
+        walletType: gincoinc_adamant_global_v1_adamantglobalv1_enum_pb.WalletType,
+        addressType: gincoinc_global_v1_gincoincglobalv1_enum_pb.AddressType,
+        state: gincoinc_adamant_global_v1_adamantglobalv1_enum_pb.WalletState,
+        balance: number,
+        stringBalance: string,
+        spendableBalance: number,
+        stringSpendableBalance: string,
+        stakingBalance: number,
+        stringStakingBalance: string,
+        claimableRewardBalance: number,
+        stringClaimableRewardBalance: string,
+        withdrawableUnstakedBalance: number,
+        stringWithdrawableUnstakedBalance: string,
+        frozenUnstakedBalance: number,
+        stringFrozenUnstakedBalance: string,
+        address: string,
+        activeValidatorsCount: number,
         createTime?: google_protobuf_timestamp_pb.Timestamp.AsObject,
         updateTime?: google_protobuf_timestamp_pb.Timestamp.AsObject,
     }
@@ -701,6 +796,16 @@ export class Transaction extends jspb.Message {
     getJapanOpenChainSpecific(): JapanOpenChainSpecific | undefined;
     setJapanOpenChainSpecific(value?: JapanOpenChainSpecific): Transaction;
 
+    hasSolanaSpecific(): boolean;
+    clearSolanaSpecific(): void;
+    getSolanaSpecific(): SolanaSpecific | undefined;
+    setSolanaSpecific(value?: SolanaSpecific): Transaction;
+
+    hasBnbSmartChainSpecific(): boolean;
+    clearBnbSmartChainSpecific(): void;
+    getBnbSmartChainSpecific(): BNBSmartChainSpecific | undefined;
+    setBnbSmartChainSpecific(value?: BNBSmartChainSpecific): Transaction;
+
     hasCreateTime(): boolean;
     clearCreateTime(): void;
     getCreateTime(): google_protobuf_timestamp_pb.Timestamp | undefined;
@@ -761,6 +866,8 @@ export namespace Transaction {
         algorandSpecific?: AlgorandSpecific.AsObject,
         hederaSpecific?: HederaSpecific.AsObject,
         japanOpenChainSpecific?: JapanOpenChainSpecific.AsObject,
+        solanaSpecific?: SolanaSpecific.AsObject,
+        bnbSmartChainSpecific?: BNBSmartChainSpecific.AsObject,
         createTime?: google_protobuf_timestamp_pb.Timestamp.AsObject,
         updateTime?: google_protobuf_timestamp_pb.Timestamp.AsObject,
     }
@@ -1045,6 +1152,8 @@ export class EthereumSpecific extends jspb.Message {
     setExpiration(value: number): EthereumSpecific;
     getData(): string;
     setData(value: string): EthereumSpecific;
+    getIsStakingTransaction(): boolean;
+    setIsStakingTransaction(value: boolean): EthereumSpecific;
 
     serializeBinary(): Uint8Array;
     toObject(includeInstance?: boolean): EthereumSpecific.AsObject;
@@ -1064,6 +1173,7 @@ export namespace EthereumSpecific {
         methodIdType: gincoinc_adamant_global_v1_adamantglobalv1_enum_pb.EthereumContractMethodIDType,
         expiration: number,
         data: string,
+        isStakingTransaction: boolean,
     }
 }
 
@@ -1205,6 +1315,8 @@ export class SubstrateSpecific extends jspb.Message {
     getSubstrateMultisigTransactionsList(): Array<SubstrateMultisigTransaction>;
     setSubstrateMultisigTransactionsList(value: Array<SubstrateMultisigTransaction>): SubstrateSpecific;
     addSubstrateMultisigTransactions(value?: SubstrateMultisigTransaction, index?: number): SubstrateMultisigTransaction;
+    getCallType(): gincoinc_adamant_global_v1_adamantglobalv1_enum_pb.SubstrateCallType;
+    setCallType(value: gincoinc_adamant_global_v1_adamantglobalv1_enum_pb.SubstrateCallType): SubstrateSpecific;
 
     serializeBinary(): Uint8Array;
     toObject(includeInstance?: boolean): SubstrateSpecific.AsObject;
@@ -1221,6 +1333,7 @@ export namespace SubstrateSpecific {
         nonce: number,
         isNextNonce: boolean,
         substrateMultisigTransactionsList: Array<SubstrateMultisigTransaction.AsObject>,
+        callType: gincoinc_adamant_global_v1_adamantglobalv1_enum_pb.SubstrateCallType,
     }
 }
 
@@ -1292,6 +1405,8 @@ export class IOSTSpecific extends jspb.Message {
     setTimestamp(value: number): IOSTSpecific;
     getExpiration(): number;
     setExpiration(value: number): IOSTSpecific;
+    getType(): gincoinc_adamant_global_v1_adamantglobalv1_enum_pb.IOSTActionType;
+    setType(value: gincoinc_adamant_global_v1_adamantglobalv1_enum_pb.IOSTActionType): IOSTSpecific;
 
     serializeBinary(): Uint8Array;
     toObject(includeInstance?: boolean): IOSTSpecific.AsObject;
@@ -1308,6 +1423,7 @@ export namespace IOSTSpecific {
         memo: string,
         timestamp: number,
         expiration: number,
+        type: gincoinc_adamant_global_v1_adamantglobalv1_enum_pb.IOSTActionType,
     }
 }
 
@@ -1629,6 +1745,52 @@ export namespace JapanOpenChainSpecific {
     }
 }
 
+export class SolanaSpecific extends jspb.Message { 
+    getExpiration(): number;
+    setExpiration(value: number): SolanaSpecific;
+
+    serializeBinary(): Uint8Array;
+    toObject(includeInstance?: boolean): SolanaSpecific.AsObject;
+    static toObject(includeInstance: boolean, msg: SolanaSpecific): SolanaSpecific.AsObject;
+    static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+    static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+    static serializeBinaryToWriter(message: SolanaSpecific, writer: jspb.BinaryWriter): void;
+    static deserializeBinary(bytes: Uint8Array): SolanaSpecific;
+    static deserializeBinaryFromReader(message: SolanaSpecific, reader: jspb.BinaryReader): SolanaSpecific;
+}
+
+export namespace SolanaSpecific {
+    export type AsObject = {
+        expiration: number,
+    }
+}
+
+export class BNBSmartChainSpecific extends jspb.Message { 
+    getGasLimit(): number;
+    setGasLimit(value: number): BNBSmartChainSpecific;
+    getNonce(): number;
+    setNonce(value: number): BNBSmartChainSpecific;
+    getIsNextNonce(): boolean;
+    setIsNextNonce(value: boolean): BNBSmartChainSpecific;
+
+    serializeBinary(): Uint8Array;
+    toObject(includeInstance?: boolean): BNBSmartChainSpecific.AsObject;
+    static toObject(includeInstance: boolean, msg: BNBSmartChainSpecific): BNBSmartChainSpecific.AsObject;
+    static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+    static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+    static serializeBinaryToWriter(message: BNBSmartChainSpecific, writer: jspb.BinaryWriter): void;
+    static deserializeBinary(bytes: Uint8Array): BNBSmartChainSpecific;
+    static deserializeBinaryFromReader(message: BNBSmartChainSpecific, reader: jspb.BinaryReader): BNBSmartChainSpecific;
+}
+
+export namespace BNBSmartChainSpecific {
+    export type AsObject = {
+        gasLimit: number,
+        nonce: number,
+        isNextNonce: boolean,
+    }
+}
+
 export class CreateTransactionSubstrateSpecific extends jspb.Message { 
     getTransactionId(): string;
     setTransactionId(value: string): CreateTransactionSubstrateSpecific;
@@ -1713,6 +1875,11 @@ export class CreateTransactionIOSTSpecific extends jspb.Message {
     getTimestamp(): number;
     setTimestamp(value: number): CreateTransactionIOSTSpecific;
 
+    hasType(): boolean;
+    clearType(): void;
+    getType(): gincoinc_adamant_global_v1_adamantglobalv1_enum_pb.IOSTActionType | undefined;
+    setType(value: gincoinc_adamant_global_v1_adamantglobalv1_enum_pb.IOSTActionType): CreateTransactionIOSTSpecific;
+
     serializeBinary(): Uint8Array;
     toObject(includeInstance?: boolean): CreateTransactionIOSTSpecific.AsObject;
     static toObject(includeInstance: boolean, msg: CreateTransactionIOSTSpecific): CreateTransactionIOSTSpecific.AsObject;
@@ -1727,6 +1894,7 @@ export namespace CreateTransactionIOSTSpecific {
     export type AsObject = {
         memo: string,
         timestamp: number,
+        type?: gincoinc_adamant_global_v1_adamantglobalv1_enum_pb.IOSTActionType,
     }
 }
 
@@ -1763,6 +1931,11 @@ export class CreateTransactionEthereumSpecific extends jspb.Message {
     getData(): string;
     setData(value: string): CreateTransactionEthereumSpecific;
 
+    hasStakingRecipientWalletId(): boolean;
+    clearStakingRecipientWalletId(): void;
+    getStakingRecipientWalletId(): string | undefined;
+    setStakingRecipientWalletId(value: string): CreateTransactionEthereumSpecific;
+
     serializeBinary(): Uint8Array;
     toObject(includeInstance?: boolean): CreateTransactionEthereumSpecific.AsObject;
     static toObject(includeInstance: boolean, msg: CreateTransactionEthereumSpecific): CreateTransactionEthereumSpecific.AsObject;
@@ -1776,6 +1949,7 @@ export class CreateTransactionEthereumSpecific extends jspb.Message {
 export namespace CreateTransactionEthereumSpecific {
     export type AsObject = {
         data: string,
+        stakingRecipientWalletId?: string,
     }
 }
 
@@ -2151,6 +2325,8 @@ export class Transfer extends jspb.Message {
     clearCosmosSpecific(): void;
     getCosmosSpecific(): TransferCosmosSpecific | undefined;
     setCosmosSpecific(value?: TransferCosmosSpecific): Transfer;
+    getStakingEventType(): gincoinc_global_v1_gincoincglobalv1_enum_pb.StakingEventType;
+    setStakingEventType(value: gincoinc_global_v1_gincoincglobalv1_enum_pb.StakingEventType): Transfer;
 
     serializeBinary(): Uint8Array;
     toObject(includeInstance?: boolean): Transfer.AsObject;
@@ -2186,6 +2362,7 @@ export namespace Transfer {
         createTime?: google_protobuf_timestamp_pb.Timestamp.AsObject,
         updateTime?: google_protobuf_timestamp_pb.Timestamp.AsObject,
         cosmosSpecific?: TransferCosmosSpecific.AsObject,
+        stakingEventType: gincoinc_global_v1_gincoincglobalv1_enum_pb.StakingEventType,
     }
 }
 
@@ -3556,5 +3733,176 @@ export namespace CosmosDelegation {
         validatorAddress: string,
         delegateAmount: number,
         rewardAmount: number,
+    }
+}
+
+export class StakingHistory extends jspb.Message { 
+    getStakingHistoryId(): string;
+    setStakingHistoryId(value: string): StakingHistory;
+    getOwnerId(): string;
+    setOwnerId(value: string): StakingHistory;
+    getWalletId(): string;
+    setWalletId(value: string): StakingHistory;
+    getCoin(): gincoinc_global_v1_gincoincglobalv1_enum_pb.Coin;
+    setCoin(value: gincoinc_global_v1_gincoincglobalv1_enum_pb.Coin): StakingHistory;
+    getValidatorId(): string;
+    setValidatorId(value: string): StakingHistory;
+    getTxId(): string;
+    setTxId(value: string): StakingHistory;
+    getTxIndex(): number;
+    setTxIndex(value: number): StakingHistory;
+    getBlockHash(): string;
+    setBlockHash(value: string): StakingHistory;
+    getValue(): number;
+    setValue(value: number): StakingHistory;
+    getStringValue(): string;
+    setStringValue(value: string): StakingHistory;
+    getEventType(): gincoinc_global_v1_gincoincglobalv1_enum_pb.StakingEventType;
+    setEventType(value: gincoinc_global_v1_gincoincglobalv1_enum_pb.StakingEventType): StakingHistory;
+    getEventId(): string;
+    setEventId(value: string): StakingHistory;
+
+    hasEthereumSpecific(): boolean;
+    clearEthereumSpecific(): void;
+    getEthereumSpecific(): StakingHistoryEthereumSpecific | undefined;
+    setEthereumSpecific(value?: StakingHistoryEthereumSpecific): StakingHistory;
+
+    hasCreateTime(): boolean;
+    clearCreateTime(): void;
+    getCreateTime(): google_protobuf_timestamp_pb.Timestamp | undefined;
+    setCreateTime(value?: google_protobuf_timestamp_pb.Timestamp): StakingHistory;
+
+    hasUpdateTime(): boolean;
+    clearUpdateTime(): void;
+    getUpdateTime(): google_protobuf_timestamp_pb.Timestamp | undefined;
+    setUpdateTime(value?: google_protobuf_timestamp_pb.Timestamp): StakingHistory;
+
+    serializeBinary(): Uint8Array;
+    toObject(includeInstance?: boolean): StakingHistory.AsObject;
+    static toObject(includeInstance: boolean, msg: StakingHistory): StakingHistory.AsObject;
+    static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+    static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+    static serializeBinaryToWriter(message: StakingHistory, writer: jspb.BinaryWriter): void;
+    static deserializeBinary(bytes: Uint8Array): StakingHistory;
+    static deserializeBinaryFromReader(message: StakingHistory, reader: jspb.BinaryReader): StakingHistory;
+}
+
+export namespace StakingHistory {
+    export type AsObject = {
+        stakingHistoryId: string,
+        ownerId: string,
+        walletId: string,
+        coin: gincoinc_global_v1_gincoincglobalv1_enum_pb.Coin,
+        validatorId: string,
+        txId: string,
+        txIndex: number,
+        blockHash: string,
+        value: number,
+        stringValue: string,
+        eventType: gincoinc_global_v1_gincoincglobalv1_enum_pb.StakingEventType,
+        eventId: string,
+        ethereumSpecific?: StakingHistoryEthereumSpecific.AsObject,
+        createTime?: google_protobuf_timestamp_pb.Timestamp.AsObject,
+        updateTime?: google_protobuf_timestamp_pb.Timestamp.AsObject,
+    }
+}
+
+export class StakingHistoryEthereumSpecific extends jspb.Message { 
+    getEventId(): string;
+    setEventId(value: string): StakingHistoryEthereumSpecific;
+    getAddress(): string;
+    setAddress(value: string): StakingHistoryEthereumSpecific;
+    getWithdrawalIndex(): number;
+    setWithdrawalIndex(value: number): StakingHistoryEthereumSpecific;
+    getValidatorIndex(): number;
+    setValidatorIndex(value: number): StakingHistoryEthereumSpecific;
+    getBlockNumber(): number;
+    setBlockNumber(value: number): StakingHistoryEthereumSpecific;
+
+    hasBlockTime(): boolean;
+    clearBlockTime(): void;
+    getBlockTime(): google_protobuf_timestamp_pb.Timestamp | undefined;
+    setBlockTime(value?: google_protobuf_timestamp_pb.Timestamp): StakingHistoryEthereumSpecific;
+    getHistoryType(): gincoinc_global_v1_gincoincglobalv1_enum_pb.EthereumStakingHistoryType;
+    setHistoryType(value: gincoinc_global_v1_gincoincglobalv1_enum_pb.EthereumStakingHistoryType): StakingHistoryEthereumSpecific;
+
+    serializeBinary(): Uint8Array;
+    toObject(includeInstance?: boolean): StakingHistoryEthereumSpecific.AsObject;
+    static toObject(includeInstance: boolean, msg: StakingHistoryEthereumSpecific): StakingHistoryEthereumSpecific.AsObject;
+    static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+    static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+    static serializeBinaryToWriter(message: StakingHistoryEthereumSpecific, writer: jspb.BinaryWriter): void;
+    static deserializeBinary(bytes: Uint8Array): StakingHistoryEthereumSpecific;
+    static deserializeBinaryFromReader(message: StakingHistoryEthereumSpecific, reader: jspb.BinaryReader): StakingHistoryEthereumSpecific;
+}
+
+export namespace StakingHistoryEthereumSpecific {
+    export type AsObject = {
+        eventId: string,
+        address: string,
+        withdrawalIndex: number,
+        validatorIndex: number,
+        blockNumber: number,
+        blockTime?: google_protobuf_timestamp_pb.Timestamp.AsObject,
+        historyType: gincoinc_global_v1_gincoincglobalv1_enum_pb.EthereumStakingHistoryType,
+    }
+}
+
+export class StakingValidator extends jspb.Message { 
+    getStakingValidatorId(): string;
+    setStakingValidatorId(value: string): StakingValidator;
+    getOwnerId(): string;
+    setOwnerId(value: string): StakingValidator;
+    getWalletId(): string;
+    setWalletId(value: string): StakingValidator;
+    getCoin(): gincoinc_global_v1_gincoincglobalv1_enum_pb.Coin;
+    setCoin(value: gincoinc_global_v1_gincoincglobalv1_enum_pb.Coin): StakingValidator;
+    getValidatorId(): string;
+    setValidatorId(value: string): StakingValidator;
+    getRecipientWalletId(): string;
+    setRecipientWalletId(value: string): StakingValidator;
+    getStatus(): gincoinc_global_v1_gincoincglobalv1_enum_pb.StakingValidatorStatus;
+    setStatus(value: gincoinc_global_v1_gincoincglobalv1_enum_pb.StakingValidatorStatus): StakingValidator;
+    getValue(): number;
+    setValue(value: number): StakingValidator;
+    getStringValue(): string;
+    setStringValue(value: string): StakingValidator;
+    getExpirationTime(): number;
+    setExpirationTime(value: number): StakingValidator;
+
+    hasCreateTime(): boolean;
+    clearCreateTime(): void;
+    getCreateTime(): google_protobuf_timestamp_pb.Timestamp | undefined;
+    setCreateTime(value?: google_protobuf_timestamp_pb.Timestamp): StakingValidator;
+
+    hasUpdateTime(): boolean;
+    clearUpdateTime(): void;
+    getUpdateTime(): google_protobuf_timestamp_pb.Timestamp | undefined;
+    setUpdateTime(value?: google_protobuf_timestamp_pb.Timestamp): StakingValidator;
+
+    serializeBinary(): Uint8Array;
+    toObject(includeInstance?: boolean): StakingValidator.AsObject;
+    static toObject(includeInstance: boolean, msg: StakingValidator): StakingValidator.AsObject;
+    static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+    static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+    static serializeBinaryToWriter(message: StakingValidator, writer: jspb.BinaryWriter): void;
+    static deserializeBinary(bytes: Uint8Array): StakingValidator;
+    static deserializeBinaryFromReader(message: StakingValidator, reader: jspb.BinaryReader): StakingValidator;
+}
+
+export namespace StakingValidator {
+    export type AsObject = {
+        stakingValidatorId: string,
+        ownerId: string,
+        walletId: string,
+        coin: gincoinc_global_v1_gincoincglobalv1_enum_pb.Coin,
+        validatorId: string,
+        recipientWalletId: string,
+        status: gincoinc_global_v1_gincoincglobalv1_enum_pb.StakingValidatorStatus,
+        value: number,
+        stringValue: string,
+        expirationTime: number,
+        createTime?: google_protobuf_timestamp_pb.Timestamp.AsObject,
+        updateTime?: google_protobuf_timestamp_pb.Timestamp.AsObject,
     }
 }
