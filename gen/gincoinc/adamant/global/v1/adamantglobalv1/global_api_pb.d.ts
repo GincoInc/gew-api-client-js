@@ -289,6 +289,11 @@ export class ListWalletsByFilterRequest extends jspb.Message {
     setAddress(value: string): ListWalletsByFilterRequest;
     getWatchOnly(): boolean;
     setWatchOnly(value: boolean): ListWalletsByFilterRequest;
+
+    hasOnlyIsStakingAvailable(): boolean;
+    clearOnlyIsStakingAvailable(): void;
+    getOnlyIsStakingAvailable(): boolean | undefined;
+    setOnlyIsStakingAvailable(value: boolean): ListWalletsByFilterRequest;
     getCoin(): gincoinc_global_v1_gincoincglobalv1_enum_pb.Coin;
     setCoin(value: gincoinc_global_v1_gincoincglobalv1_enum_pb.Coin): ListWalletsByFilterRequest;
     clearWalletTypeList(): void;
@@ -321,6 +326,7 @@ export namespace ListWalletsByFilterRequest {
         walletName: string,
         address: string,
         watchOnly: boolean,
+        onlyIsStakingAvailable?: boolean,
         coin: gincoinc_global_v1_gincoincglobalv1_enum_pb.Coin,
         walletTypeList: Array<gincoinc_adamant_global_v1_adamantglobalv1_enum_pb.WalletType>,
         walletStateList: Array<gincoinc_adamant_global_v1_adamantglobalv1_enum_pb.WalletState>,
@@ -390,6 +396,79 @@ export class ListBaseWalletsResponse extends jspb.Message {
 export namespace ListBaseWalletsResponse {
     export type AsObject = {
         walletsList: Array<gincoinc_adamant_global_v1_adamantglobalv1_model_pb.WalletWithoutBalance.AsObject>,
+    }
+}
+
+export class ListStakingWalletsByFilterRequest extends jspb.Message { 
+    getFilterType(): gincoinc_adamant_global_v1_adamantglobalv1_enum_pb.ListFilterType;
+    setFilterType(value: gincoinc_adamant_global_v1_adamantglobalv1_enum_pb.ListFilterType): ListStakingWalletsByFilterRequest;
+    getWalletId(): string;
+    setWalletId(value: string): ListStakingWalletsByFilterRequest;
+    getWalletName(): string;
+    setWalletName(value: string): ListStakingWalletsByFilterRequest;
+    getAddress(): string;
+    setAddress(value: string): ListStakingWalletsByFilterRequest;
+    getCoin(): gincoinc_global_v1_gincoincglobalv1_enum_pb.Coin;
+    setCoin(value: gincoinc_global_v1_gincoincglobalv1_enum_pb.Coin): ListStakingWalletsByFilterRequest;
+    clearWalletTypeList(): void;
+    getWalletTypeList(): Array<gincoinc_adamant_global_v1_adamantglobalv1_enum_pb.WalletType>;
+    setWalletTypeList(value: Array<gincoinc_adamant_global_v1_adamantglobalv1_enum_pb.WalletType>): ListStakingWalletsByFilterRequest;
+    addWalletType(value: gincoinc_adamant_global_v1_adamantglobalv1_enum_pb.WalletType, index?: number): gincoinc_adamant_global_v1_adamantglobalv1_enum_pb.WalletType;
+    clearWalletStateList(): void;
+    getWalletStateList(): Array<gincoinc_adamant_global_v1_adamantglobalv1_enum_pb.WalletState>;
+    setWalletStateList(value: Array<gincoinc_adamant_global_v1_adamantglobalv1_enum_pb.WalletState>): ListStakingWalletsByFilterRequest;
+    addWalletState(value: gincoinc_adamant_global_v1_adamantglobalv1_enum_pb.WalletState, index?: number): gincoinc_adamant_global_v1_adamantglobalv1_enum_pb.WalletState;
+    getPageSize(): number;
+    setPageSize(value: number): ListStakingWalletsByFilterRequest;
+    getPageToken(): string;
+    setPageToken(value: string): ListStakingWalletsByFilterRequest;
+
+    serializeBinary(): Uint8Array;
+    toObject(includeInstance?: boolean): ListStakingWalletsByFilterRequest.AsObject;
+    static toObject(includeInstance: boolean, msg: ListStakingWalletsByFilterRequest): ListStakingWalletsByFilterRequest.AsObject;
+    static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+    static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+    static serializeBinaryToWriter(message: ListStakingWalletsByFilterRequest, writer: jspb.BinaryWriter): void;
+    static deserializeBinary(bytes: Uint8Array): ListStakingWalletsByFilterRequest;
+    static deserializeBinaryFromReader(message: ListStakingWalletsByFilterRequest, reader: jspb.BinaryReader): ListStakingWalletsByFilterRequest;
+}
+
+export namespace ListStakingWalletsByFilterRequest {
+    export type AsObject = {
+        filterType: gincoinc_adamant_global_v1_adamantglobalv1_enum_pb.ListFilterType,
+        walletId: string,
+        walletName: string,
+        address: string,
+        coin: gincoinc_global_v1_gincoincglobalv1_enum_pb.Coin,
+        walletTypeList: Array<gincoinc_adamant_global_v1_adamantglobalv1_enum_pb.WalletType>,
+        walletStateList: Array<gincoinc_adamant_global_v1_adamantglobalv1_enum_pb.WalletState>,
+        pageSize: number,
+        pageToken: string,
+    }
+}
+
+export class ListStakingWalletsResponse extends jspb.Message { 
+    clearStakingWalletsList(): void;
+    getStakingWalletsList(): Array<gincoinc_adamant_global_v1_adamantglobalv1_model_pb.StakingWallet>;
+    setStakingWalletsList(value: Array<gincoinc_adamant_global_v1_adamantglobalv1_model_pb.StakingWallet>): ListStakingWalletsResponse;
+    addStakingWallets(value?: gincoinc_adamant_global_v1_adamantglobalv1_model_pb.StakingWallet, index?: number): gincoinc_adamant_global_v1_adamantglobalv1_model_pb.StakingWallet;
+    getNextPageToken(): string;
+    setNextPageToken(value: string): ListStakingWalletsResponse;
+
+    serializeBinary(): Uint8Array;
+    toObject(includeInstance?: boolean): ListStakingWalletsResponse.AsObject;
+    static toObject(includeInstance: boolean, msg: ListStakingWalletsResponse): ListStakingWalletsResponse.AsObject;
+    static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+    static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+    static serializeBinaryToWriter(message: ListStakingWalletsResponse, writer: jspb.BinaryWriter): void;
+    static deserializeBinary(bytes: Uint8Array): ListStakingWalletsResponse;
+    static deserializeBinaryFromReader(message: ListStakingWalletsResponse, reader: jspb.BinaryReader): ListStakingWalletsResponse;
+}
+
+export namespace ListStakingWalletsResponse {
+    export type AsObject = {
+        stakingWalletsList: Array<gincoinc_adamant_global_v1_adamantglobalv1_model_pb.StakingWallet.AsObject>,
+        nextPageToken: string,
     }
 }
 
@@ -1049,6 +1128,72 @@ export namespace DisableUTXORequest {
         walletId: string,
         txId: string,
         vout: number,
+    }
+}
+
+export class UpdateWalletIsStakingAvailableRequest extends jspb.Message { 
+    getWalletId(): string;
+    setWalletId(value: string): UpdateWalletIsStakingAvailableRequest;
+    getIsStakingAvailable(): boolean;
+    setIsStakingAvailable(value: boolean): UpdateWalletIsStakingAvailableRequest;
+
+    serializeBinary(): Uint8Array;
+    toObject(includeInstance?: boolean): UpdateWalletIsStakingAvailableRequest.AsObject;
+    static toObject(includeInstance: boolean, msg: UpdateWalletIsStakingAvailableRequest): UpdateWalletIsStakingAvailableRequest.AsObject;
+    static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+    static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+    static serializeBinaryToWriter(message: UpdateWalletIsStakingAvailableRequest, writer: jspb.BinaryWriter): void;
+    static deserializeBinary(bytes: Uint8Array): UpdateWalletIsStakingAvailableRequest;
+    static deserializeBinaryFromReader(message: UpdateWalletIsStakingAvailableRequest, reader: jspb.BinaryReader): UpdateWalletIsStakingAvailableRequest;
+}
+
+export namespace UpdateWalletIsStakingAvailableRequest {
+    export type AsObject = {
+        walletId: string,
+        isStakingAvailable: boolean,
+    }
+}
+
+export class RefreshStakingWalletClaimableRewardRequest extends jspb.Message { 
+    getWalletId(): string;
+    setWalletId(value: string): RefreshStakingWalletClaimableRewardRequest;
+
+    serializeBinary(): Uint8Array;
+    toObject(includeInstance?: boolean): RefreshStakingWalletClaimableRewardRequest.AsObject;
+    static toObject(includeInstance: boolean, msg: RefreshStakingWalletClaimableRewardRequest): RefreshStakingWalletClaimableRewardRequest.AsObject;
+    static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+    static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+    static serializeBinaryToWriter(message: RefreshStakingWalletClaimableRewardRequest, writer: jspb.BinaryWriter): void;
+    static deserializeBinary(bytes: Uint8Array): RefreshStakingWalletClaimableRewardRequest;
+    static deserializeBinaryFromReader(message: RefreshStakingWalletClaimableRewardRequest, reader: jspb.BinaryReader): RefreshStakingWalletClaimableRewardRequest;
+}
+
+export namespace RefreshStakingWalletClaimableRewardRequest {
+    export type AsObject = {
+        walletId: string,
+    }
+}
+
+export class RefreshStakingWalletClaimableRewardResponse extends jspb.Message { 
+    getClaimableReward(): number;
+    setClaimableReward(value: number): RefreshStakingWalletClaimableRewardResponse;
+    getStringClaimableReward(): string;
+    setStringClaimableReward(value: string): RefreshStakingWalletClaimableRewardResponse;
+
+    serializeBinary(): Uint8Array;
+    toObject(includeInstance?: boolean): RefreshStakingWalletClaimableRewardResponse.AsObject;
+    static toObject(includeInstance: boolean, msg: RefreshStakingWalletClaimableRewardResponse): RefreshStakingWalletClaimableRewardResponse.AsObject;
+    static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+    static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+    static serializeBinaryToWriter(message: RefreshStakingWalletClaimableRewardResponse, writer: jspb.BinaryWriter): void;
+    static deserializeBinary(bytes: Uint8Array): RefreshStakingWalletClaimableRewardResponse;
+    static deserializeBinaryFromReader(message: RefreshStakingWalletClaimableRewardResponse, reader: jspb.BinaryReader): RefreshStakingWalletClaimableRewardResponse;
+}
+
+export namespace RefreshStakingWalletClaimableRewardResponse {
+    export type AsObject = {
+        claimableReward: number,
+        stringClaimableReward: string,
     }
 }
 
@@ -3146,6 +3291,11 @@ export class CalculateFeeEthereumSpecific extends jspb.Message {
     getData(): string;
     setData(value: string): CalculateFeeEthereumSpecific;
 
+    hasIsStakingTransaction(): boolean;
+    clearIsStakingTransaction(): void;
+    getIsStakingTransaction(): boolean | undefined;
+    setIsStakingTransaction(value: boolean): CalculateFeeEthereumSpecific;
+
     serializeBinary(): Uint8Array;
     toObject(includeInstance?: boolean): CalculateFeeEthereumSpecific.AsObject;
     static toObject(includeInstance: boolean, msg: CalculateFeeEthereumSpecific): CalculateFeeEthereumSpecific.AsObject;
@@ -3159,6 +3309,7 @@ export class CalculateFeeEthereumSpecific extends jspb.Message {
 export namespace CalculateFeeEthereumSpecific {
     export type AsObject = {
         data: string,
+        isStakingTransaction?: boolean,
     }
 }
 
@@ -4763,6 +4914,53 @@ export namespace DownloadResourceRequest {
     }
 }
 
+export class ExitEthereumStakingValidatorsRequest extends jspb.Message { 
+    clearValidatorIdsList(): void;
+    getValidatorIdsList(): Array<string>;
+    setValidatorIdsList(value: Array<string>): ExitEthereumStakingValidatorsRequest;
+    addValidatorIds(value: string, index?: number): string;
+    getWalletId(): string;
+    setWalletId(value: string): ExitEthereumStakingValidatorsRequest;
+
+    serializeBinary(): Uint8Array;
+    toObject(includeInstance?: boolean): ExitEthereumStakingValidatorsRequest.AsObject;
+    static toObject(includeInstance: boolean, msg: ExitEthereumStakingValidatorsRequest): ExitEthereumStakingValidatorsRequest.AsObject;
+    static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+    static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+    static serializeBinaryToWriter(message: ExitEthereumStakingValidatorsRequest, writer: jspb.BinaryWriter): void;
+    static deserializeBinary(bytes: Uint8Array): ExitEthereumStakingValidatorsRequest;
+    static deserializeBinaryFromReader(message: ExitEthereumStakingValidatorsRequest, reader: jspb.BinaryReader): ExitEthereumStakingValidatorsRequest;
+}
+
+export namespace ExitEthereumStakingValidatorsRequest {
+    export type AsObject = {
+        validatorIdsList: Array<string>,
+        walletId: string,
+    }
+}
+
+export class ExitEthereumStakingValidatorsResponse extends jspb.Message { 
+    clearValidatorIdsList(): void;
+    getValidatorIdsList(): Array<string>;
+    setValidatorIdsList(value: Array<string>): ExitEthereumStakingValidatorsResponse;
+    addValidatorIds(value: string, index?: number): string;
+
+    serializeBinary(): Uint8Array;
+    toObject(includeInstance?: boolean): ExitEthereumStakingValidatorsResponse.AsObject;
+    static toObject(includeInstance: boolean, msg: ExitEthereumStakingValidatorsResponse): ExitEthereumStakingValidatorsResponse.AsObject;
+    static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+    static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+    static serializeBinaryToWriter(message: ExitEthereumStakingValidatorsResponse, writer: jspb.BinaryWriter): void;
+    static deserializeBinary(bytes: Uint8Array): ExitEthereumStakingValidatorsResponse;
+    static deserializeBinaryFromReader(message: ExitEthereumStakingValidatorsResponse, reader: jspb.BinaryReader): ExitEthereumStakingValidatorsResponse;
+}
+
+export namespace ExitEthereumStakingValidatorsResponse {
+    export type AsObject = {
+        validatorIdsList: Array<string>,
+    }
+}
+
 export class CreateIOSTAccountRequest extends jspb.Message { 
     getAccountName(): string;
     setAccountName(value: string): CreateIOSTAccountRequest;
@@ -5183,5 +5381,178 @@ export class UpsertForwardingThresholdResponse extends jspb.Message {
 export namespace UpsertForwardingThresholdResponse {
     export type AsObject = {
         forwardingThreshold?: ForwardingThreshold.AsObject,
+    }
+}
+
+export class ListStakingHistoriesByFilterRequest extends jspb.Message { 
+    getFilterType(): gincoinc_adamant_global_v1_adamantglobalv1_enum_pb.ListFilterType;
+    setFilterType(value: gincoinc_adamant_global_v1_adamantglobalv1_enum_pb.ListFilterType): ListStakingHistoriesByFilterRequest;
+    getStakingHistoryId(): string;
+    setStakingHistoryId(value: string): ListStakingHistoriesByFilterRequest;
+    getWalletId(): string;
+    setWalletId(value: string): ListStakingHistoriesByFilterRequest;
+    getWalletName(): string;
+    setWalletName(value: string): ListStakingHistoriesByFilterRequest;
+    getValidatorId(): string;
+    setValidatorId(value: string): ListStakingHistoriesByFilterRequest;
+    getAddress(): string;
+    setAddress(value: string): ListStakingHistoriesByFilterRequest;
+    getTxid(): string;
+    setTxid(value: string): ListStakingHistoriesByFilterRequest;
+    getBlockHash(): string;
+    setBlockHash(value: string): ListStakingHistoriesByFilterRequest;
+    getCoin(): gincoinc_global_v1_gincoincglobalv1_enum_pb.Coin;
+    setCoin(value: gincoinc_global_v1_gincoincglobalv1_enum_pb.Coin): ListStakingHistoriesByFilterRequest;
+    clearWalletTypeList(): void;
+    getWalletTypeList(): Array<gincoinc_adamant_global_v1_adamantglobalv1_enum_pb.WalletType>;
+    setWalletTypeList(value: Array<gincoinc_adamant_global_v1_adamantglobalv1_enum_pb.WalletType>): ListStakingHistoriesByFilterRequest;
+    addWalletType(value: gincoinc_adamant_global_v1_adamantglobalv1_enum_pb.WalletType, index?: number): gincoinc_adamant_global_v1_adamantglobalv1_enum_pb.WalletType;
+    clearEventTypeList(): void;
+    getEventTypeList(): Array<gincoinc_global_v1_gincoincglobalv1_enum_pb.StakingEventType>;
+    setEventTypeList(value: Array<gincoinc_global_v1_gincoincglobalv1_enum_pb.StakingEventType>): ListStakingHistoriesByFilterRequest;
+    addEventType(value: gincoinc_global_v1_gincoincglobalv1_enum_pb.StakingEventType, index?: number): gincoinc_global_v1_gincoincglobalv1_enum_pb.StakingEventType;
+    getPageSize(): number;
+    setPageSize(value: number): ListStakingHistoriesByFilterRequest;
+    getPageToken(): string;
+    setPageToken(value: string): ListStakingHistoriesByFilterRequest;
+
+    hasStartTime(): boolean;
+    clearStartTime(): void;
+    getStartTime(): google_protobuf_timestamp_pb.Timestamp | undefined;
+    setStartTime(value?: google_protobuf_timestamp_pb.Timestamp): ListStakingHistoriesByFilterRequest;
+
+    hasEndTime(): boolean;
+    clearEndTime(): void;
+    getEndTime(): google_protobuf_timestamp_pb.Timestamp | undefined;
+    setEndTime(value?: google_protobuf_timestamp_pb.Timestamp): ListStakingHistoriesByFilterRequest;
+
+    serializeBinary(): Uint8Array;
+    toObject(includeInstance?: boolean): ListStakingHistoriesByFilterRequest.AsObject;
+    static toObject(includeInstance: boolean, msg: ListStakingHistoriesByFilterRequest): ListStakingHistoriesByFilterRequest.AsObject;
+    static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+    static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+    static serializeBinaryToWriter(message: ListStakingHistoriesByFilterRequest, writer: jspb.BinaryWriter): void;
+    static deserializeBinary(bytes: Uint8Array): ListStakingHistoriesByFilterRequest;
+    static deserializeBinaryFromReader(message: ListStakingHistoriesByFilterRequest, reader: jspb.BinaryReader): ListStakingHistoriesByFilterRequest;
+}
+
+export namespace ListStakingHistoriesByFilterRequest {
+    export type AsObject = {
+        filterType: gincoinc_adamant_global_v1_adamantglobalv1_enum_pb.ListFilterType,
+        stakingHistoryId: string,
+        walletId: string,
+        walletName: string,
+        validatorId: string,
+        address: string,
+        txid: string,
+        blockHash: string,
+        coin: gincoinc_global_v1_gincoincglobalv1_enum_pb.Coin,
+        walletTypeList: Array<gincoinc_adamant_global_v1_adamantglobalv1_enum_pb.WalletType>,
+        eventTypeList: Array<gincoinc_global_v1_gincoincglobalv1_enum_pb.StakingEventType>,
+        pageSize: number,
+        pageToken: string,
+        startTime?: google_protobuf_timestamp_pb.Timestamp.AsObject,
+        endTime?: google_protobuf_timestamp_pb.Timestamp.AsObject,
+    }
+}
+
+export class ListStakingHistoriesResponse extends jspb.Message { 
+    clearStakingHistoriesList(): void;
+    getStakingHistoriesList(): Array<gincoinc_adamant_global_v1_adamantglobalv1_model_pb.StakingHistory>;
+    setStakingHistoriesList(value: Array<gincoinc_adamant_global_v1_adamantglobalv1_model_pb.StakingHistory>): ListStakingHistoriesResponse;
+    addStakingHistories(value?: gincoinc_adamant_global_v1_adamantglobalv1_model_pb.StakingHistory, index?: number): gincoinc_adamant_global_v1_adamantglobalv1_model_pb.StakingHistory;
+    getNextPageToken(): string;
+    setNextPageToken(value: string): ListStakingHistoriesResponse;
+
+    serializeBinary(): Uint8Array;
+    toObject(includeInstance?: boolean): ListStakingHistoriesResponse.AsObject;
+    static toObject(includeInstance: boolean, msg: ListStakingHistoriesResponse): ListStakingHistoriesResponse.AsObject;
+    static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+    static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+    static serializeBinaryToWriter(message: ListStakingHistoriesResponse, writer: jspb.BinaryWriter): void;
+    static deserializeBinary(bytes: Uint8Array): ListStakingHistoriesResponse;
+    static deserializeBinaryFromReader(message: ListStakingHistoriesResponse, reader: jspb.BinaryReader): ListStakingHistoriesResponse;
+}
+
+export namespace ListStakingHistoriesResponse {
+    export type AsObject = {
+        stakingHistoriesList: Array<gincoinc_adamant_global_v1_adamantglobalv1_model_pb.StakingHistory.AsObject>,
+        nextPageToken: string,
+    }
+}
+
+export class ListStakingValidatorsByFilterRequest extends jspb.Message { 
+    getFilterType(): gincoinc_adamant_global_v1_adamantglobalv1_enum_pb.ListFilterType;
+    setFilterType(value: gincoinc_adamant_global_v1_adamantglobalv1_enum_pb.ListFilterType): ListStakingValidatorsByFilterRequest;
+    getStakingValidatorId(): string;
+    setStakingValidatorId(value: string): ListStakingValidatorsByFilterRequest;
+    getWalletId(): string;
+    setWalletId(value: string): ListStakingValidatorsByFilterRequest;
+    getWalletName(): string;
+    setWalletName(value: string): ListStakingValidatorsByFilterRequest;
+    getValidatorId(): string;
+    setValidatorId(value: string): ListStakingValidatorsByFilterRequest;
+    getCoin(): gincoinc_global_v1_gincoincglobalv1_enum_pb.Coin;
+    setCoin(value: gincoinc_global_v1_gincoincglobalv1_enum_pb.Coin): ListStakingValidatorsByFilterRequest;
+    clearWalletTypeList(): void;
+    getWalletTypeList(): Array<gincoinc_adamant_global_v1_adamantglobalv1_enum_pb.WalletType>;
+    setWalletTypeList(value: Array<gincoinc_adamant_global_v1_adamantglobalv1_enum_pb.WalletType>): ListStakingValidatorsByFilterRequest;
+    addWalletType(value: gincoinc_adamant_global_v1_adamantglobalv1_enum_pb.WalletType, index?: number): gincoinc_adamant_global_v1_adamantglobalv1_enum_pb.WalletType;
+    clearStatusList(): void;
+    getStatusList(): Array<gincoinc_global_v1_gincoincglobalv1_enum_pb.StakingValidatorStatus>;
+    setStatusList(value: Array<gincoinc_global_v1_gincoincglobalv1_enum_pb.StakingValidatorStatus>): ListStakingValidatorsByFilterRequest;
+    addStatus(value: gincoinc_global_v1_gincoincglobalv1_enum_pb.StakingValidatorStatus, index?: number): gincoinc_global_v1_gincoincglobalv1_enum_pb.StakingValidatorStatus;
+    getPageSize(): number;
+    setPageSize(value: number): ListStakingValidatorsByFilterRequest;
+    getPageToken(): string;
+    setPageToken(value: string): ListStakingValidatorsByFilterRequest;
+
+    serializeBinary(): Uint8Array;
+    toObject(includeInstance?: boolean): ListStakingValidatorsByFilterRequest.AsObject;
+    static toObject(includeInstance: boolean, msg: ListStakingValidatorsByFilterRequest): ListStakingValidatorsByFilterRequest.AsObject;
+    static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+    static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+    static serializeBinaryToWriter(message: ListStakingValidatorsByFilterRequest, writer: jspb.BinaryWriter): void;
+    static deserializeBinary(bytes: Uint8Array): ListStakingValidatorsByFilterRequest;
+    static deserializeBinaryFromReader(message: ListStakingValidatorsByFilterRequest, reader: jspb.BinaryReader): ListStakingValidatorsByFilterRequest;
+}
+
+export namespace ListStakingValidatorsByFilterRequest {
+    export type AsObject = {
+        filterType: gincoinc_adamant_global_v1_adamantglobalv1_enum_pb.ListFilterType,
+        stakingValidatorId: string,
+        walletId: string,
+        walletName: string,
+        validatorId: string,
+        coin: gincoinc_global_v1_gincoincglobalv1_enum_pb.Coin,
+        walletTypeList: Array<gincoinc_adamant_global_v1_adamantglobalv1_enum_pb.WalletType>,
+        statusList: Array<gincoinc_global_v1_gincoincglobalv1_enum_pb.StakingValidatorStatus>,
+        pageSize: number,
+        pageToken: string,
+    }
+}
+
+export class ListStakingValidatorsResponse extends jspb.Message { 
+    clearStakingValidatorsList(): void;
+    getStakingValidatorsList(): Array<gincoinc_adamant_global_v1_adamantglobalv1_model_pb.StakingValidator>;
+    setStakingValidatorsList(value: Array<gincoinc_adamant_global_v1_adamantglobalv1_model_pb.StakingValidator>): ListStakingValidatorsResponse;
+    addStakingValidators(value?: gincoinc_adamant_global_v1_adamantglobalv1_model_pb.StakingValidator, index?: number): gincoinc_adamant_global_v1_adamantglobalv1_model_pb.StakingValidator;
+    getNextPageToken(): string;
+    setNextPageToken(value: string): ListStakingValidatorsResponse;
+
+    serializeBinary(): Uint8Array;
+    toObject(includeInstance?: boolean): ListStakingValidatorsResponse.AsObject;
+    static toObject(includeInstance: boolean, msg: ListStakingValidatorsResponse): ListStakingValidatorsResponse.AsObject;
+    static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+    static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+    static serializeBinaryToWriter(message: ListStakingValidatorsResponse, writer: jspb.BinaryWriter): void;
+    static deserializeBinary(bytes: Uint8Array): ListStakingValidatorsResponse;
+    static deserializeBinaryFromReader(message: ListStakingValidatorsResponse, reader: jspb.BinaryReader): ListStakingValidatorsResponse;
+}
+
+export namespace ListStakingValidatorsResponse {
+    export type AsObject = {
+        stakingValidatorsList: Array<gincoinc_adamant_global_v1_adamantglobalv1_model_pb.StakingValidator.AsObject>,
+        nextPageToken: string,
     }
 }

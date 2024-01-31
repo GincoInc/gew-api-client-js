@@ -18,9 +18,12 @@ var global = (function() { return this || window || global || self || Function('
 goog.exportSymbol('proto.gincoinc.global.v1.AddressType', null, global);
 goog.exportSymbol('proto.gincoinc.global.v1.Coin', null, global);
 goog.exportSymbol('proto.gincoinc.global.v1.CosmosMsgType', null, global);
+goog.exportSymbol('proto.gincoinc.global.v1.EthereumStakingHistoryType', null, global);
 goog.exportSymbol('proto.gincoinc.global.v1.EthereumStakingRewardLayerType', null, global);
 goog.exportSymbol('proto.gincoinc.global.v1.NemTransactionType', null, global);
 goog.exportSymbol('proto.gincoinc.global.v1.Network', null, global);
+goog.exportSymbol('proto.gincoinc.global.v1.StakingEventType', null, global);
+goog.exportSymbol('proto.gincoinc.global.v1.StakingValidatorStatus', null, global);
 goog.exportSymbol('proto.gincoinc.global.v1.SymbolTransactionType', null, global);
 goog.exportSymbol('proto.gincoinc.global.v1.TransactionResult', null, global);
 goog.exportSymbol('proto.gincoinc.global.v1.TransactionState', null, global);
@@ -94,6 +97,7 @@ proto.gincoinc.global.v1.Coin = {
   COIN_HBAR: 60,
   COIN_JOC: 61,
   COIN_SOL: 62,
+  COIN_BSC: 63,
   COIN_SDN: 10002
 };
 
@@ -154,6 +158,8 @@ proto.gincoinc.global.v1.Network = {
   NETWORK_JAPAN_OPEN_CHAIN_TESTNET: 50,
   NETWORK_SOLANA_MAINNET: 51,
   NETWORK_SOLANA_TESTNET: 52,
+  NETWORK_BNB_SMART_CHAIN_MAINNET: 53,
+  NETWORK_BNB_SMART_CHAIN_TESTNET: 54,
   NETWORK_SHIDEN_MAINNET: 10002
 };
 
@@ -276,7 +282,8 @@ proto.gincoinc.global.v1.SymbolTransactionType = {
 proto.gincoinc.global.v1.EthereumStakingRewardLayerType = {
   ETHEREUM_STAKING_REWARD_LAYER_TYPE_INVALID: 0,
   ETHEREUM_STAKING_REWARD_LAYER_TYPE_CONSENSUS: 1,
-  ETHEREUM_STAKING_REWARD_LAYER_TYPE_EXECUTION: 2
+  ETHEREUM_STAKING_REWARD_LAYER_TYPE_EXECUTION: 2,
+  ETHEREUM_STAKING_REWARD_LAYER_TYPE_EXECUTION_MEV: 3
 };
 
 /**
@@ -289,6 +296,38 @@ proto.gincoinc.global.v1.CosmosMsgType = {
   COSMOS_MSG_TYPE_UNDELEGATE: 3,
   COSMOS_MSG_TYPE_UNBONDED: 4,
   COSMOS_MSG_TYPE_WITHDRAW_DELEGATOR_REWARD: 5
+};
+
+/**
+ * @enum {number}
+ */
+proto.gincoinc.global.v1.StakingValidatorStatus = {
+  STAKING_VALIDATOR_STATUS_INVALID: 0,
+  STAKING_VALIDATOR_STATUS_ACTIVE: 1,
+  STAKING_VALIDATOR_STATUS_STOP: 2,
+  STAKING_VALIDATOR_STATUS_PAUSE: 3
+};
+
+/**
+ * @enum {number}
+ */
+proto.gincoinc.global.v1.StakingEventType = {
+  STAKING_EVENT_TYPE_INVALID: 0,
+  STAKING_EVENT_TYPE_STAKE: 1,
+  STAKING_EVENT_TYPE_UNSTAKE: 2,
+  STAKING_EVENT_TYPE_REWARD: 3
+};
+
+/**
+ * @enum {number}
+ */
+proto.gincoinc.global.v1.EthereumStakingHistoryType = {
+  ETHEREUM_STAKING_HISTORY_TYPE_INVALID: 0,
+  ETHEREUM_STAKING_HISTORY_TYPE_REWARD_CONSENSUS: 1,
+  ETHEREUM_STAKING_HISTORY_TYPE_REWARD_EXECUTION: 2,
+  ETHEREUM_STAKING_HISTORY_TYPE_REWARD_MEV: 3,
+  ETHEREUM_STAKING_HISTORY_TYPE_START: 4,
+  ETHEREUM_STAKING_HISTORY_TYPE_EXIT: 5
 };
 
 goog.object.extend(exports, proto.gincoinc.global.v1);
