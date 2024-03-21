@@ -61,6 +61,11 @@ export class CreateWalletRequest extends jspb.Message {
     setWalletName(value: string): CreateWalletRequest;
     getCoin(): gincoinc_global_v1_gincoincglobalv1_enum_pb.Coin;
     setCoin(value: gincoinc_global_v1_gincoincglobalv1_enum_pb.Coin): CreateWalletRequest;
+
+    hasNetwork(): boolean;
+    clearNetwork(): void;
+    getNetwork(): gincoinc_global_v1_gincoincglobalv1_enum_pb.Network | undefined;
+    setNetwork(value: gincoinc_global_v1_gincoincglobalv1_enum_pb.Network): CreateWalletRequest;
     getWalletType(): gincoinc_adamant_global_v1_adamantglobalv1_enum_pb.WalletType;
     setWalletType(value: gincoinc_adamant_global_v1_adamantglobalv1_enum_pb.WalletType): CreateWalletRequest;
     getAddressType(): gincoinc_global_v1_gincoincglobalv1_enum_pb.AddressType;
@@ -98,6 +103,7 @@ export namespace CreateWalletRequest {
     export type AsObject = {
         walletName: string,
         coin: gincoinc_global_v1_gincoincglobalv1_enum_pb.Coin,
+        network?: gincoinc_global_v1_gincoincglobalv1_enum_pb.Network,
         walletType: gincoinc_adamant_global_v1_adamantglobalv1_enum_pb.WalletType,
         addressType: gincoinc_global_v1_gincoincglobalv1_enum_pb.AddressType,
         m: number,
@@ -3197,6 +3203,11 @@ export class CalculateFeeRequest extends jspb.Message {
     getHederaSpecific(): CalculateFeeHederaSpecific | undefined;
     setHederaSpecific(value?: CalculateFeeHederaSpecific): CalculateFeeRequest;
 
+    hasRbfSpecific(): boolean;
+    clearRbfSpecific(): void;
+    getRbfSpecific(): CalculateFeeRbfSpecific | undefined;
+    setRbfSpecific(value?: CalculateFeeRbfSpecific): CalculateFeeRequest;
+
     serializeBinary(): Uint8Array;
     toObject(includeInstance?: boolean): CalculateFeeRequest.AsObject;
     static toObject(includeInstance: boolean, msg: CalculateFeeRequest): CalculateFeeRequest.AsObject;
@@ -3221,6 +3232,7 @@ export namespace CalculateFeeRequest {
         ethereumSpecific?: CalculateFeeEthereumSpecific.AsObject,
         cosmosSpecific?: CalculateFeeCosmosSpecific.AsObject,
         hederaSpecific?: CalculateFeeHederaSpecific.AsObject,
+        rbfSpecific?: CalculateFeeRbfSpecific.AsObject,
     }
 }
 
@@ -3353,6 +3365,26 @@ export class CalculateFeeHederaSpecific extends jspb.Message {
 export namespace CalculateFeeHederaSpecific {
     export type AsObject = {
         memo: string,
+    }
+}
+
+export class CalculateFeeRbfSpecific extends jspb.Message { 
+    getTransactionId(): string;
+    setTransactionId(value: string): CalculateFeeRbfSpecific;
+
+    serializeBinary(): Uint8Array;
+    toObject(includeInstance?: boolean): CalculateFeeRbfSpecific.AsObject;
+    static toObject(includeInstance: boolean, msg: CalculateFeeRbfSpecific): CalculateFeeRbfSpecific.AsObject;
+    static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+    static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+    static serializeBinaryToWriter(message: CalculateFeeRbfSpecific, writer: jspb.BinaryWriter): void;
+    static deserializeBinary(bytes: Uint8Array): CalculateFeeRbfSpecific;
+    static deserializeBinaryFromReader(message: CalculateFeeRbfSpecific, reader: jspb.BinaryReader): CalculateFeeRbfSpecific;
+}
+
+export namespace CalculateFeeRbfSpecific {
+    export type AsObject = {
+        transactionId: string,
     }
 }
 

@@ -65,6 +65,8 @@ export class TransferUpdated extends jspb.Message {
     clearSubstrateSpecific(): void;
     getSubstrateSpecific(): TransferUpdateSubstrateSpecific | undefined;
     setSubstrateSpecific(value?: TransferUpdateSubstrateSpecific): TransferUpdated;
+    getMethod(): string;
+    setMethod(value: string): TransferUpdated;
 
     serializeBinary(): Uint8Array;
     toObject(includeInstance?: boolean): TransferUpdated.AsObject;
@@ -101,6 +103,7 @@ export namespace TransferUpdated {
         stringFee: string,
         cosmosSpecific?: TransferUpdateCosmosSpecific.AsObject,
         substrateSpecific?: TransferUpdateSubstrateSpecific.AsObject,
+        method: string,
     }
 }
 

@@ -207,7 +207,8 @@ proto.adamant.teller.v1.TransferUpdated.toObject = function(includeInstance, msg
     fee: jspb.Message.getFloatingPointFieldWithDefault(msg, 19, 0.0),
     stringFee: jspb.Message.getFieldWithDefault(msg, 20, ""),
     cosmosSpecific: (f = msg.getCosmosSpecific()) && proto.adamant.teller.v1.TransferUpdateCosmosSpecific.toObject(includeInstance, f),
-    substrateSpecific: (f = msg.getSubstrateSpecific()) && proto.adamant.teller.v1.TransferUpdateSubstrateSpecific.toObject(includeInstance, f)
+    substrateSpecific: (f = msg.getSubstrateSpecific()) && proto.adamant.teller.v1.TransferUpdateSubstrateSpecific.toObject(includeInstance, f),
+    method: jspb.Message.getFieldWithDefault(msg, 24, "")
   };
 
   if (includeInstance) {
@@ -338,6 +339,10 @@ proto.adamant.teller.v1.TransferUpdated.deserializeBinaryFromReader = function(m
       var value = new proto.adamant.teller.v1.TransferUpdateSubstrateSpecific;
       reader.readMessage(value,proto.adamant.teller.v1.TransferUpdateSubstrateSpecific.deserializeBinaryFromReader);
       msg.setSubstrateSpecific(value);
+      break;
+    case 24:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setMethod(value);
       break;
     default:
       reader.skipField();
@@ -530,6 +535,13 @@ proto.adamant.teller.v1.TransferUpdated.serializeBinaryToWriter = function(messa
       23,
       f,
       proto.adamant.teller.v1.TransferUpdateSubstrateSpecific.serializeBinaryToWriter
+    );
+  }
+  f = message.getMethod();
+  if (f.length > 0) {
+    writer.writeString(
+      24,
+      f
     );
   }
 };
@@ -1003,6 +1015,24 @@ proto.adamant.teller.v1.TransferUpdated.prototype.clearSubstrateSpecific = funct
  */
 proto.adamant.teller.v1.TransferUpdated.prototype.hasSubstrateSpecific = function() {
   return jspb.Message.getField(this, 23) != null;
+};
+
+
+/**
+ * optional string method = 24;
+ * @return {string}
+ */
+proto.adamant.teller.v1.TransferUpdated.prototype.getMethod = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 24, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.adamant.teller.v1.TransferUpdated} returns this
+ */
+proto.adamant.teller.v1.TransferUpdated.prototype.setMethod = function(value) {
+  return jspb.Message.setProto3StringField(this, 24, value);
 };
 
 
