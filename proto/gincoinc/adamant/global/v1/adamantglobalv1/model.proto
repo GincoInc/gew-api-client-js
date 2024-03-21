@@ -19,6 +19,7 @@ message Wallet {
   string wallet_id = 1; // id
   string name = 2; // name
   gincoinc.global.v1.Coin coin = 3; // The type of asset
+  gincoinc.global.v1.Network network = 27; // The type of network
   uint32 hd_account = 17; // The number indicating what order the wallet is created
   WalletType wallet_type = 4; // type
   gincoinc.global.v1.AddressType address_type = 5; // type of address
@@ -50,6 +51,7 @@ message WalletWithoutBalance {
   string wallet_id = 1;
   string name = 2;
   gincoinc.global.v1.Coin coin = 3;
+  gincoinc.global.v1.Network network = 23;
   uint32 hd_account = 4;
   WalletType wallet_type = 5;
   gincoinc.global.v1.AddressType address_type = 6;
@@ -234,6 +236,7 @@ message Transaction {
   JapanOpenChainSpecific japan_open_chain_specific = 43; // The Japan Open Chain specific fields
   SolanaSpecific solana_specific = 44; // The Solana specific fields
   BNBSmartChainSpecific bnb_smart_chain_specific = 45; // The BNB Smart Chain specific fields
+  FlareSpecific flare_specific = 46; // The Flare specific fields
   google.protobuf.Timestamp create_time = 18; // the time at which the transaction was created
   google.protobuf.Timestamp update_time = 19; // the time at which the transaction was updated
 }
@@ -481,6 +484,13 @@ message BNBSmartChainSpecific {
   bool is_next_nonce = 3;
 }
 
+// The model of Flare specific fields of transaction
+message FlareSpecific {
+  uint64 gas_limit = 1;
+  uint64 nonce = 2;
+  bool is_next_nonce = 3;
+}
+
 // The model of Substrate specific fields of CreateTransaction
 message CreateTransactionSubstrateSpecific {
   string transaction_id = 1;
@@ -522,6 +532,7 @@ message CreateTransactionSymbolSpecific {
 message CreateTransactionEthereumSpecific {
   string data = 1;
   optional string staking_recipient_wallet_id = 2;
+  optional gincoinc.global.v1.EthereumCallMethod call_method = 3;
 }
 
 // The model of Cosmos specific fields of CreateTransaction
@@ -635,6 +646,7 @@ message Transfer {
   google.protobuf.Timestamp update_time = 14; // the time at which the transfer was updated
   TransferCosmosSpecific cosmos_specific = 23; // cosmos_specific
   gincoinc.global.v1.StakingEventType staking_event_type = 24; // staking_event_type
+  string method = 25;
 }
 
 message TransferCosmosSpecific {

@@ -19,6 +19,8 @@ export class Wallet extends jspb.Message {
     setName(value: string): Wallet;
     getCoin(): gincoinc_global_v1_gincoincglobalv1_enum_pb.Coin;
     setCoin(value: gincoinc_global_v1_gincoincglobalv1_enum_pb.Coin): Wallet;
+    getNetwork(): gincoinc_global_v1_gincoincglobalv1_enum_pb.Network;
+    setNetwork(value: gincoinc_global_v1_gincoincglobalv1_enum_pb.Network): Wallet;
     getHdAccount(): number;
     setHdAccount(value: number): Wallet;
     getWalletType(): gincoinc_adamant_global_v1_adamantglobalv1_enum_pb.WalletType;
@@ -93,6 +95,7 @@ export namespace Wallet {
         walletId: string,
         name: string,
         coin: gincoinc_global_v1_gincoincglobalv1_enum_pb.Coin,
+        network: gincoinc_global_v1_gincoincglobalv1_enum_pb.Network,
         hdAccount: number,
         walletType: gincoinc_adamant_global_v1_adamantglobalv1_enum_pb.WalletType,
         addressType: gincoinc_global_v1_gincoincglobalv1_enum_pb.AddressType,
@@ -127,6 +130,8 @@ export class WalletWithoutBalance extends jspb.Message {
     setName(value: string): WalletWithoutBalance;
     getCoin(): gincoinc_global_v1_gincoincglobalv1_enum_pb.Coin;
     setCoin(value: gincoinc_global_v1_gincoincglobalv1_enum_pb.Coin): WalletWithoutBalance;
+    getNetwork(): gincoinc_global_v1_gincoincglobalv1_enum_pb.Network;
+    setNetwork(value: gincoinc_global_v1_gincoincglobalv1_enum_pb.Network): WalletWithoutBalance;
     getHdAccount(): number;
     setHdAccount(value: number): WalletWithoutBalance;
     getWalletType(): gincoinc_adamant_global_v1_adamantglobalv1_enum_pb.WalletType;
@@ -193,6 +198,7 @@ export namespace WalletWithoutBalance {
         walletId: string,
         name: string,
         coin: gincoinc_global_v1_gincoincglobalv1_enum_pb.Coin,
+        network: gincoinc_global_v1_gincoincglobalv1_enum_pb.Network,
         hdAccount: number,
         walletType: gincoinc_adamant_global_v1_adamantglobalv1_enum_pb.WalletType,
         addressType: gincoinc_global_v1_gincoincglobalv1_enum_pb.AddressType,
@@ -806,6 +812,11 @@ export class Transaction extends jspb.Message {
     getBnbSmartChainSpecific(): BNBSmartChainSpecific | undefined;
     setBnbSmartChainSpecific(value?: BNBSmartChainSpecific): Transaction;
 
+    hasFlareSpecific(): boolean;
+    clearFlareSpecific(): void;
+    getFlareSpecific(): FlareSpecific | undefined;
+    setFlareSpecific(value?: FlareSpecific): Transaction;
+
     hasCreateTime(): boolean;
     clearCreateTime(): void;
     getCreateTime(): google_protobuf_timestamp_pb.Timestamp | undefined;
@@ -868,6 +879,7 @@ export namespace Transaction {
         japanOpenChainSpecific?: JapanOpenChainSpecific.AsObject,
         solanaSpecific?: SolanaSpecific.AsObject,
         bnbSmartChainSpecific?: BNBSmartChainSpecific.AsObject,
+        flareSpecific?: FlareSpecific.AsObject,
         createTime?: google_protobuf_timestamp_pb.Timestamp.AsObject,
         updateTime?: google_protobuf_timestamp_pb.Timestamp.AsObject,
     }
@@ -1791,6 +1803,32 @@ export namespace BNBSmartChainSpecific {
     }
 }
 
+export class FlareSpecific extends jspb.Message { 
+    getGasLimit(): number;
+    setGasLimit(value: number): FlareSpecific;
+    getNonce(): number;
+    setNonce(value: number): FlareSpecific;
+    getIsNextNonce(): boolean;
+    setIsNextNonce(value: boolean): FlareSpecific;
+
+    serializeBinary(): Uint8Array;
+    toObject(includeInstance?: boolean): FlareSpecific.AsObject;
+    static toObject(includeInstance: boolean, msg: FlareSpecific): FlareSpecific.AsObject;
+    static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+    static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+    static serializeBinaryToWriter(message: FlareSpecific, writer: jspb.BinaryWriter): void;
+    static deserializeBinary(bytes: Uint8Array): FlareSpecific;
+    static deserializeBinaryFromReader(message: FlareSpecific, reader: jspb.BinaryReader): FlareSpecific;
+}
+
+export namespace FlareSpecific {
+    export type AsObject = {
+        gasLimit: number,
+        nonce: number,
+        isNextNonce: boolean,
+    }
+}
+
 export class CreateTransactionSubstrateSpecific extends jspb.Message { 
     getTransactionId(): string;
     setTransactionId(value: string): CreateTransactionSubstrateSpecific;
@@ -1936,6 +1974,11 @@ export class CreateTransactionEthereumSpecific extends jspb.Message {
     getStakingRecipientWalletId(): string | undefined;
     setStakingRecipientWalletId(value: string): CreateTransactionEthereumSpecific;
 
+    hasCallMethod(): boolean;
+    clearCallMethod(): void;
+    getCallMethod(): gincoinc_global_v1_gincoincglobalv1_enum_pb.EthereumCallMethod | undefined;
+    setCallMethod(value: gincoinc_global_v1_gincoincglobalv1_enum_pb.EthereumCallMethod): CreateTransactionEthereumSpecific;
+
     serializeBinary(): Uint8Array;
     toObject(includeInstance?: boolean): CreateTransactionEthereumSpecific.AsObject;
     static toObject(includeInstance: boolean, msg: CreateTransactionEthereumSpecific): CreateTransactionEthereumSpecific.AsObject;
@@ -1950,6 +1993,7 @@ export namespace CreateTransactionEthereumSpecific {
     export type AsObject = {
         data: string,
         stakingRecipientWalletId?: string,
+        callMethod?: gincoinc_global_v1_gincoincglobalv1_enum_pb.EthereumCallMethod,
     }
 }
 
@@ -2327,6 +2371,8 @@ export class Transfer extends jspb.Message {
     setCosmosSpecific(value?: TransferCosmosSpecific): Transfer;
     getStakingEventType(): gincoinc_global_v1_gincoincglobalv1_enum_pb.StakingEventType;
     setStakingEventType(value: gincoinc_global_v1_gincoincglobalv1_enum_pb.StakingEventType): Transfer;
+    getMethod(): string;
+    setMethod(value: string): Transfer;
 
     serializeBinary(): Uint8Array;
     toObject(includeInstance?: boolean): Transfer.AsObject;
@@ -2363,6 +2409,7 @@ export namespace Transfer {
         updateTime?: google_protobuf_timestamp_pb.Timestamp.AsObject,
         cosmosSpecific?: TransferCosmosSpecific.AsObject,
         stakingEventType: gincoinc_global_v1_gincoincglobalv1_enum_pb.StakingEventType,
+        method: string,
     }
 }
 

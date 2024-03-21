@@ -18,10 +18,12 @@ var global = (function() { return this || window || global || self || Function('
 goog.exportSymbol('proto.gincoinc.global.v1.AddressType', null, global);
 goog.exportSymbol('proto.gincoinc.global.v1.Coin', null, global);
 goog.exportSymbol('proto.gincoinc.global.v1.CosmosMsgType', null, global);
+goog.exportSymbol('proto.gincoinc.global.v1.EthereumCallMethod', null, global);
 goog.exportSymbol('proto.gincoinc.global.v1.EthereumStakingHistoryType', null, global);
 goog.exportSymbol('proto.gincoinc.global.v1.EthereumStakingRewardLayerType', null, global);
 goog.exportSymbol('proto.gincoinc.global.v1.NemTransactionType', null, global);
 goog.exportSymbol('proto.gincoinc.global.v1.Network', null, global);
+goog.exportSymbol('proto.gincoinc.global.v1.SolanaRecentBlockhashType', null, global);
 goog.exportSymbol('proto.gincoinc.global.v1.StakingEventType', null, global);
 goog.exportSymbol('proto.gincoinc.global.v1.StakingValidatorStatus', null, global);
 goog.exportSymbol('proto.gincoinc.global.v1.SymbolTransactionType', null, global);
@@ -97,8 +99,14 @@ proto.gincoinc.global.v1.Coin = {
   COIN_HBAR: 60,
   COIN_JOC: 61,
   COIN_SOL: 62,
-  COIN_BSC: 63,
-  COIN_SDN: 10002
+  COIN_BNB: 63,
+  COIN_FLR: 64,
+  COIN_POLYGON_ERC20_OSHI: 65,
+  COIN_ARBITRUM_ERC20_ARB: 66,
+  COIN_SDN: 10002,
+  COIN_ERC20_SCDEV: 10003,
+  COIN_ERC20_SCQA: 10004,
+  COIN_ERC20_SCPROD: 10005
 };
 
 /**
@@ -110,6 +118,7 @@ proto.gincoinc.global.v1.Network = {
   NETWORK_BITCOIN_TESTNET: 2,
   NETWORK_ETHEREUM_MAINNET: 3,
   NETWORK_ETHEREUM_TESTNET: 4,
+  NETWORK_ETHEREUM_TESTNET_2: 59,
   NETWORK_LITECOIN_MAINNET: 5,
   NETWORK_LITECOIN_TESTNET: 6,
   NETWORK_BITCOINCASH_MAINNET: 7,
@@ -160,6 +169,10 @@ proto.gincoinc.global.v1.Network = {
   NETWORK_SOLANA_TESTNET: 52,
   NETWORK_BNB_SMART_CHAIN_MAINNET: 53,
   NETWORK_BNB_SMART_CHAIN_TESTNET: 54,
+  NETWORK_FLARE_MAINNET: 55,
+  NETWORK_FLARE_TESTNET: 56,
+  NETWORK_ARBITRUM_MAINNET: 57,
+  NETWORK_ARBITRUM_TESTNET: 58,
   NETWORK_SHIDEN_MAINNET: 10002
 };
 
@@ -328,6 +341,35 @@ proto.gincoinc.global.v1.EthereumStakingHistoryType = {
   ETHEREUM_STAKING_HISTORY_TYPE_REWARD_MEV: 3,
   ETHEREUM_STAKING_HISTORY_TYPE_START: 4,
   ETHEREUM_STAKING_HISTORY_TYPE_EXIT: 5
+};
+
+/**
+ * @enum {number}
+ */
+proto.gincoinc.global.v1.SolanaRecentBlockhashType = {
+  SOLANA_RECENT_BLOCKHASH_TYPE_INVALID: 0,
+  SOLANA_RECENT_BLOCKHASH_TYPE_FINALIZED: 1,
+  SOLANA_RECENT_BLOCKHASH_TYPE_CONFIRMED: 2,
+  SOLANA_RECENT_BLOCKHASH_TYPE_PROCESSED: 3
+};
+
+/**
+ * @enum {number}
+ */
+proto.gincoinc.global.v1.EthereumCallMethod = {
+  ETHEREUM_CALL_METHOD_INVALID: 0,
+  ETHEREUM_CALL_METHOD_PROGMAT_COIN_INITIALIZE: 1,
+  ETHEREUM_CALL_METHOD_PROGMAT_COIN_CONFIGURE_MINTER: 2,
+  ETHEREUM_CALL_METHOD_PROGMAT_COIN_MINT_AND_TRANSFER: 3,
+  ETHEREUM_CALL_METHOD_PROGMAT_COIN_MINT: 4,
+  ETHEREUM_CALL_METHOD_PROGMAT_COIN_BURN: 5,
+  ETHEREUM_CALL_METHOD_PROGMAT_COIN_ADD_TO_WHITELIST: 6,
+  ETHEREUM_CALL_METHOD_PROGMAT_COIN_REMOVE_FROM_WHITELIST: 7,
+  ETHEREUM_CALL_METHOD_PROGMAT_COIN_ADD_TO_BLACKLIST: 8,
+  ETHEREUM_CALL_METHOD_PROGMAT_COIN_REMOVE_FROM_BLACKLIST: 9,
+  ETHEREUM_CALL_METHOD_PROGMAT_COIN_CONFISCATE: 10,
+  ETHEREUM_CALL_METHOD_PROGMAT_COIN_PAUSE: 11,
+  ETHEREUM_CALL_METHOD_PROGMAT_COIN_UNPAUSE: 12
 };
 
 goog.object.extend(exports, proto.gincoinc.global.v1);
