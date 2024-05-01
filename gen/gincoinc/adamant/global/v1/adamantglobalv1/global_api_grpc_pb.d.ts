@@ -64,9 +64,11 @@ interface IGlobalAPIService extends grpc.ServiceDefinition<grpc.UntypedServiceIm
     signTransaction: IGlobalAPIService_ISignTransaction;
     signXRPInitTransactions: IGlobalAPIService_ISignXRPInitTransactions;
     sendTransaction: IGlobalAPIService_ISendTransaction;
+    resendTransaction: IGlobalAPIService_IResendTransaction;
     sendXRPInitTransactions: IGlobalAPIService_ISendXRPInitTransactions;
     cancelTransaction: IGlobalAPIService_ICancelTransaction;
     replaceTransaction: IGlobalAPIService_IReplaceTransaction;
+    isTransactionReplaceable: IGlobalAPIService_IIsTransactionReplaceable;
     getTransaction: IGlobalAPIService_IGetTransaction;
     getTransactionByTxID: IGlobalAPIService_IGetTransactionByTxID;
     listTransactions: IGlobalAPIService_IListTransactions;
@@ -567,6 +569,15 @@ interface IGlobalAPIService_ISendTransaction extends grpc.MethodDefinition<ginco
     responseSerialize: grpc.serialize<gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.SendTransactionResponse>;
     responseDeserialize: grpc.deserialize<gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.SendTransactionResponse>;
 }
+interface IGlobalAPIService_IResendTransaction extends grpc.MethodDefinition<gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.ResendTransactionRequest, gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.ResendTransactionResponse> {
+    path: "/adamant.global.v1.GlobalAPI/ResendTransaction";
+    requestStream: false;
+    responseStream: false;
+    requestSerialize: grpc.serialize<gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.ResendTransactionRequest>;
+    requestDeserialize: grpc.deserialize<gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.ResendTransactionRequest>;
+    responseSerialize: grpc.serialize<gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.ResendTransactionResponse>;
+    responseDeserialize: grpc.deserialize<gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.ResendTransactionResponse>;
+}
 interface IGlobalAPIService_ISendXRPInitTransactions extends grpc.MethodDefinition<gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.SendXRPInitTransactionsRequest, gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.SendXRPInitTransactionsResponse> {
     path: "/adamant.global.v1.GlobalAPI/SendXRPInitTransactions";
     requestStream: false;
@@ -593,6 +604,15 @@ interface IGlobalAPIService_IReplaceTransaction extends grpc.MethodDefinition<gi
     requestDeserialize: grpc.deserialize<gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.ReplaceTransactionRequest>;
     responseSerialize: grpc.serialize<gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.ReplaceTransactionResponse>;
     responseDeserialize: grpc.deserialize<gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.ReplaceTransactionResponse>;
+}
+interface IGlobalAPIService_IIsTransactionReplaceable extends grpc.MethodDefinition<gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.IsTransactionReplaceableRequest, gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.IsTransactionReplaceableResponse> {
+    path: "/adamant.global.v1.GlobalAPI/IsTransactionReplaceable";
+    requestStream: false;
+    responseStream: false;
+    requestSerialize: grpc.serialize<gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.IsTransactionReplaceableRequest>;
+    requestDeserialize: grpc.deserialize<gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.IsTransactionReplaceableRequest>;
+    responseSerialize: grpc.serialize<gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.IsTransactionReplaceableResponse>;
+    responseDeserialize: grpc.deserialize<gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.IsTransactionReplaceableResponse>;
 }
 interface IGlobalAPIService_IGetTransaction extends grpc.MethodDefinition<gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.GetTransactionRequest, gincoinc_adamant_global_v1_adamantglobalv1_model_pb.Transaction> {
     path: "/adamant.global.v1.GlobalAPI/GetTransaction";
@@ -1160,9 +1180,11 @@ export interface IGlobalAPIServer {
     signTransaction: grpc.handleUnaryCall<gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.SignTransactionRequest, google_protobuf_empty_pb.Empty>;
     signXRPInitTransactions: grpc.handleUnaryCall<gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.SignXRPInitTransactionsRequest, google_protobuf_empty_pb.Empty>;
     sendTransaction: grpc.handleUnaryCall<gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.SendTransactionRequest, gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.SendTransactionResponse>;
+    resendTransaction: grpc.handleUnaryCall<gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.ResendTransactionRequest, gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.ResendTransactionResponse>;
     sendXRPInitTransactions: grpc.handleUnaryCall<gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.SendXRPInitTransactionsRequest, gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.SendXRPInitTransactionsResponse>;
     cancelTransaction: grpc.handleUnaryCall<gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.CancelTransactionRequest, google_protobuf_empty_pb.Empty>;
     replaceTransaction: grpc.handleUnaryCall<gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.ReplaceTransactionRequest, gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.ReplaceTransactionResponse>;
+    isTransactionReplaceable: grpc.handleUnaryCall<gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.IsTransactionReplaceableRequest, gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.IsTransactionReplaceableResponse>;
     getTransaction: grpc.handleUnaryCall<gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.GetTransactionRequest, gincoinc_adamant_global_v1_adamantglobalv1_model_pb.Transaction>;
     getTransactionByTxID: grpc.handleUnaryCall<gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.GetTransactionByTxIDRequest, gincoinc_adamant_global_v1_adamantglobalv1_model_pb.Transaction>;
     listTransactions: grpc.handleUnaryCall<gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.ListTransactionsRequest, gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.ListTransactionsResponse>;
@@ -1370,6 +1392,9 @@ export interface IGlobalAPIClient {
     sendTransaction(request: gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.SendTransactionRequest, callback: (error: grpc.ServiceError | null, response: gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.SendTransactionResponse) => void): grpc.ClientUnaryCall;
     sendTransaction(request: gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.SendTransactionRequest, metadata: grpc.Metadata, callback: (error: grpc.ServiceError | null, response: gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.SendTransactionResponse) => void): grpc.ClientUnaryCall;
     sendTransaction(request: gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.SendTransactionRequest, metadata: grpc.Metadata, options: Partial<grpc.CallOptions>, callback: (error: grpc.ServiceError | null, response: gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.SendTransactionResponse) => void): grpc.ClientUnaryCall;
+    resendTransaction(request: gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.ResendTransactionRequest, callback: (error: grpc.ServiceError | null, response: gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.ResendTransactionResponse) => void): grpc.ClientUnaryCall;
+    resendTransaction(request: gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.ResendTransactionRequest, metadata: grpc.Metadata, callback: (error: grpc.ServiceError | null, response: gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.ResendTransactionResponse) => void): grpc.ClientUnaryCall;
+    resendTransaction(request: gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.ResendTransactionRequest, metadata: grpc.Metadata, options: Partial<grpc.CallOptions>, callback: (error: grpc.ServiceError | null, response: gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.ResendTransactionResponse) => void): grpc.ClientUnaryCall;
     sendXRPInitTransactions(request: gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.SendXRPInitTransactionsRequest, callback: (error: grpc.ServiceError | null, response: gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.SendXRPInitTransactionsResponse) => void): grpc.ClientUnaryCall;
     sendXRPInitTransactions(request: gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.SendXRPInitTransactionsRequest, metadata: grpc.Metadata, callback: (error: grpc.ServiceError | null, response: gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.SendXRPInitTransactionsResponse) => void): grpc.ClientUnaryCall;
     sendXRPInitTransactions(request: gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.SendXRPInitTransactionsRequest, metadata: grpc.Metadata, options: Partial<grpc.CallOptions>, callback: (error: grpc.ServiceError | null, response: gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.SendXRPInitTransactionsResponse) => void): grpc.ClientUnaryCall;
@@ -1379,6 +1404,9 @@ export interface IGlobalAPIClient {
     replaceTransaction(request: gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.ReplaceTransactionRequest, callback: (error: grpc.ServiceError | null, response: gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.ReplaceTransactionResponse) => void): grpc.ClientUnaryCall;
     replaceTransaction(request: gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.ReplaceTransactionRequest, metadata: grpc.Metadata, callback: (error: grpc.ServiceError | null, response: gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.ReplaceTransactionResponse) => void): grpc.ClientUnaryCall;
     replaceTransaction(request: gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.ReplaceTransactionRequest, metadata: grpc.Metadata, options: Partial<grpc.CallOptions>, callback: (error: grpc.ServiceError | null, response: gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.ReplaceTransactionResponse) => void): grpc.ClientUnaryCall;
+    isTransactionReplaceable(request: gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.IsTransactionReplaceableRequest, callback: (error: grpc.ServiceError | null, response: gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.IsTransactionReplaceableResponse) => void): grpc.ClientUnaryCall;
+    isTransactionReplaceable(request: gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.IsTransactionReplaceableRequest, metadata: grpc.Metadata, callback: (error: grpc.ServiceError | null, response: gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.IsTransactionReplaceableResponse) => void): grpc.ClientUnaryCall;
+    isTransactionReplaceable(request: gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.IsTransactionReplaceableRequest, metadata: grpc.Metadata, options: Partial<grpc.CallOptions>, callback: (error: grpc.ServiceError | null, response: gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.IsTransactionReplaceableResponse) => void): grpc.ClientUnaryCall;
     getTransaction(request: gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.GetTransactionRequest, callback: (error: grpc.ServiceError | null, response: gincoinc_adamant_global_v1_adamantglobalv1_model_pb.Transaction) => void): grpc.ClientUnaryCall;
     getTransaction(request: gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.GetTransactionRequest, metadata: grpc.Metadata, callback: (error: grpc.ServiceError | null, response: gincoinc_adamant_global_v1_adamantglobalv1_model_pb.Transaction) => void): grpc.ClientUnaryCall;
     getTransaction(request: gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.GetTransactionRequest, metadata: grpc.Metadata, options: Partial<grpc.CallOptions>, callback: (error: grpc.ServiceError | null, response: gincoinc_adamant_global_v1_adamantglobalv1_model_pb.Transaction) => void): grpc.ClientUnaryCall;
@@ -1701,6 +1729,9 @@ export class GlobalAPIClient extends grpc.Client implements IGlobalAPIClient {
     public sendTransaction(request: gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.SendTransactionRequest, callback: (error: grpc.ServiceError | null, response: gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.SendTransactionResponse) => void): grpc.ClientUnaryCall;
     public sendTransaction(request: gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.SendTransactionRequest, metadata: grpc.Metadata, callback: (error: grpc.ServiceError | null, response: gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.SendTransactionResponse) => void): grpc.ClientUnaryCall;
     public sendTransaction(request: gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.SendTransactionRequest, metadata: grpc.Metadata, options: Partial<grpc.CallOptions>, callback: (error: grpc.ServiceError | null, response: gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.SendTransactionResponse) => void): grpc.ClientUnaryCall;
+    public resendTransaction(request: gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.ResendTransactionRequest, callback: (error: grpc.ServiceError | null, response: gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.ResendTransactionResponse) => void): grpc.ClientUnaryCall;
+    public resendTransaction(request: gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.ResendTransactionRequest, metadata: grpc.Metadata, callback: (error: grpc.ServiceError | null, response: gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.ResendTransactionResponse) => void): grpc.ClientUnaryCall;
+    public resendTransaction(request: gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.ResendTransactionRequest, metadata: grpc.Metadata, options: Partial<grpc.CallOptions>, callback: (error: grpc.ServiceError | null, response: gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.ResendTransactionResponse) => void): grpc.ClientUnaryCall;
     public sendXRPInitTransactions(request: gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.SendXRPInitTransactionsRequest, callback: (error: grpc.ServiceError | null, response: gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.SendXRPInitTransactionsResponse) => void): grpc.ClientUnaryCall;
     public sendXRPInitTransactions(request: gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.SendXRPInitTransactionsRequest, metadata: grpc.Metadata, callback: (error: grpc.ServiceError | null, response: gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.SendXRPInitTransactionsResponse) => void): grpc.ClientUnaryCall;
     public sendXRPInitTransactions(request: gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.SendXRPInitTransactionsRequest, metadata: grpc.Metadata, options: Partial<grpc.CallOptions>, callback: (error: grpc.ServiceError | null, response: gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.SendXRPInitTransactionsResponse) => void): grpc.ClientUnaryCall;
@@ -1710,6 +1741,9 @@ export class GlobalAPIClient extends grpc.Client implements IGlobalAPIClient {
     public replaceTransaction(request: gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.ReplaceTransactionRequest, callback: (error: grpc.ServiceError | null, response: gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.ReplaceTransactionResponse) => void): grpc.ClientUnaryCall;
     public replaceTransaction(request: gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.ReplaceTransactionRequest, metadata: grpc.Metadata, callback: (error: grpc.ServiceError | null, response: gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.ReplaceTransactionResponse) => void): grpc.ClientUnaryCall;
     public replaceTransaction(request: gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.ReplaceTransactionRequest, metadata: grpc.Metadata, options: Partial<grpc.CallOptions>, callback: (error: grpc.ServiceError | null, response: gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.ReplaceTransactionResponse) => void): grpc.ClientUnaryCall;
+    public isTransactionReplaceable(request: gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.IsTransactionReplaceableRequest, callback: (error: grpc.ServiceError | null, response: gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.IsTransactionReplaceableResponse) => void): grpc.ClientUnaryCall;
+    public isTransactionReplaceable(request: gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.IsTransactionReplaceableRequest, metadata: grpc.Metadata, callback: (error: grpc.ServiceError | null, response: gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.IsTransactionReplaceableResponse) => void): grpc.ClientUnaryCall;
+    public isTransactionReplaceable(request: gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.IsTransactionReplaceableRequest, metadata: grpc.Metadata, options: Partial<grpc.CallOptions>, callback: (error: grpc.ServiceError | null, response: gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.IsTransactionReplaceableResponse) => void): grpc.ClientUnaryCall;
     public getTransaction(request: gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.GetTransactionRequest, callback: (error: grpc.ServiceError | null, response: gincoinc_adamant_global_v1_adamantglobalv1_model_pb.Transaction) => void): grpc.ClientUnaryCall;
     public getTransaction(request: gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.GetTransactionRequest, metadata: grpc.Metadata, callback: (error: grpc.ServiceError | null, response: gincoinc_adamant_global_v1_adamantglobalv1_model_pb.Transaction) => void): grpc.ClientUnaryCall;
     public getTransaction(request: gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.GetTransactionRequest, metadata: grpc.Metadata, options: Partial<grpc.CallOptions>, callback: (error: grpc.ServiceError | null, response: gincoinc_adamant_global_v1_adamantglobalv1_model_pb.Transaction) => void): grpc.ClientUnaryCall;

@@ -67,6 +67,8 @@ export class TransferUpdated extends jspb.Message {
     setSubstrateSpecific(value?: TransferUpdateSubstrateSpecific): TransferUpdated;
     getMethod(): string;
     setMethod(value: string): TransferUpdated;
+    getNetwork(): gincoinc_global_v1_gincoincglobalv1_enum_pb.Network;
+    setNetwork(value: gincoinc_global_v1_gincoincglobalv1_enum_pb.Network): TransferUpdated;
 
     serializeBinary(): Uint8Array;
     toObject(includeInstance?: boolean): TransferUpdated.AsObject;
@@ -104,6 +106,7 @@ export namespace TransferUpdated {
         cosmosSpecific?: TransferUpdateCosmosSpecific.AsObject,
         substrateSpecific?: TransferUpdateSubstrateSpecific.AsObject,
         method: string,
+        network: gincoinc_global_v1_gincoincglobalv1_enum_pb.Network,
     }
 }
 
