@@ -23,6 +23,7 @@ goog.exportSymbol('proto.gincoinc.global.v1.EthereumStakingHistoryType', null, g
 goog.exportSymbol('proto.gincoinc.global.v1.EthereumStakingRewardLayerType', null, global);
 goog.exportSymbol('proto.gincoinc.global.v1.NemTransactionType', null, global);
 goog.exportSymbol('proto.gincoinc.global.v1.Network', null, global);
+goog.exportSymbol('proto.gincoinc.global.v1.SolanaEventType', null, global);
 goog.exportSymbol('proto.gincoinc.global.v1.SolanaRecentBlockhashType', null, global);
 goog.exportSymbol('proto.gincoinc.global.v1.StakingEventType', null, global);
 goog.exportSymbol('proto.gincoinc.global.v1.StakingValidatorStatus', null, global);
@@ -103,6 +104,11 @@ proto.gincoinc.global.v1.Coin = {
   COIN_FLR: 64,
   COIN_POLYGON_ERC20_OSHI: 65,
   COIN_ARBITRUM_ERC20_ARB: 66,
+  COIN_KLAYTN_KIP7_BORA: 67,
+  COIN_ERC20_MASK: 68,
+  COIN_ERC20_SUP: 69,
+  COIN_ERC20_DM2P: 70,
+  COIN_APT: 71,
   COIN_SDN: 10002,
   COIN_ERC20_SCDEV: 10003,
   COIN_ERC20_SCQA: 10004,
@@ -171,8 +177,10 @@ proto.gincoinc.global.v1.Network = {
   NETWORK_BNB_SMART_CHAIN_TESTNET: 54,
   NETWORK_FLARE_MAINNET: 55,
   NETWORK_FLARE_TESTNET: 56,
-  NETWORK_ARBITRUM_MAINNET: 57,
-  NETWORK_ARBITRUM_TESTNET: 58,
+  NETWORK_ARBITRUM_ONE_MAINNET: 57,
+  NETWORK_ARBITRUM_ONE_TESTNET: 58,
+  NETWORK_APTOS_MAINNET: 60,
+  NETWORK_APTOS_TESTNET: 61,
   NETWORK_SHIDEN_MAINNET: 10002
 };
 
@@ -351,6 +359,20 @@ proto.gincoinc.global.v1.SolanaRecentBlockhashType = {
   SOLANA_RECENT_BLOCKHASH_TYPE_FINALIZED: 1,
   SOLANA_RECENT_BLOCKHASH_TYPE_CONFIRMED: 2,
   SOLANA_RECENT_BLOCKHASH_TYPE_PROCESSED: 3
+};
+
+/**
+ * @enum {number}
+ */
+proto.gincoinc.global.v1.SolanaEventType = {
+  SOLANA_EVENT_TYPE_INVALID: 0,
+  SOLANA_EVENT_TYPE_DELEGATE: 1,
+  SOLANA_EVENT_TYPE_DEACTIVATE: 2,
+  SOLANA_EVENT_TYPE_WITHDRAW: 3,
+  SOLANA_EVENT_TYPE_STAKE_INIT: 4,
+  SOLANA_EVENT_TYPE_REWARD: 5,
+  SOLANA_EVENT_TYPE_DELEGATE_COMPLETE: 6,
+  SOLANA_EVENT_TYPE_DEACTIVATE_COMPLETE: 7
 };
 
 /**

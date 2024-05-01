@@ -194,6 +194,29 @@ export namespace SendTransactionRequest {
     }
 }
 
+export class ResendTransactionRequest extends jspb.Message { 
+    getWalletId(): string;
+    setWalletId(value: string): ResendTransactionRequest;
+    getTransactionId(): string;
+    setTransactionId(value: string): ResendTransactionRequest;
+
+    serializeBinary(): Uint8Array;
+    toObject(includeInstance?: boolean): ResendTransactionRequest.AsObject;
+    static toObject(includeInstance: boolean, msg: ResendTransactionRequest): ResendTransactionRequest.AsObject;
+    static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+    static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+    static serializeBinaryToWriter(message: ResendTransactionRequest, writer: jspb.BinaryWriter): void;
+    static deserializeBinary(bytes: Uint8Array): ResendTransactionRequest;
+    static deserializeBinaryFromReader(message: ResendTransactionRequest, reader: jspb.BinaryReader): ResendTransactionRequest;
+}
+
+export namespace ResendTransactionRequest {
+    export type AsObject = {
+        walletId: string,
+        transactionId: string,
+    }
+}
+
 export class ProgmatCoinInitializeRequest extends jspb.Message { 
     getWalletId(): string;
     setWalletId(value: string): ProgmatCoinInitializeRequest;

@@ -208,7 +208,8 @@ proto.adamant.teller.v1.TransferUpdated.toObject = function(includeInstance, msg
     stringFee: jspb.Message.getFieldWithDefault(msg, 20, ""),
     cosmosSpecific: (f = msg.getCosmosSpecific()) && proto.adamant.teller.v1.TransferUpdateCosmosSpecific.toObject(includeInstance, f),
     substrateSpecific: (f = msg.getSubstrateSpecific()) && proto.adamant.teller.v1.TransferUpdateSubstrateSpecific.toObject(includeInstance, f),
-    method: jspb.Message.getFieldWithDefault(msg, 24, "")
+    method: jspb.Message.getFieldWithDefault(msg, 24, ""),
+    network: jspb.Message.getFieldWithDefault(msg, 25, 0)
   };
 
   if (includeInstance) {
@@ -343,6 +344,10 @@ proto.adamant.teller.v1.TransferUpdated.deserializeBinaryFromReader = function(m
     case 24:
       var value = /** @type {string} */ (reader.readString());
       msg.setMethod(value);
+      break;
+    case 25:
+      var value = /** @type {!proto.gincoinc.global.v1.Network} */ (reader.readEnum());
+      msg.setNetwork(value);
       break;
     default:
       reader.skipField();
@@ -541,6 +546,13 @@ proto.adamant.teller.v1.TransferUpdated.serializeBinaryToWriter = function(messa
   if (f.length > 0) {
     writer.writeString(
       24,
+      f
+    );
+  }
+  f = message.getNetwork();
+  if (f !== 0.0) {
+    writer.writeEnum(
+      25,
       f
     );
   }
@@ -1033,6 +1045,24 @@ proto.adamant.teller.v1.TransferUpdated.prototype.getMethod = function() {
  */
 proto.adamant.teller.v1.TransferUpdated.prototype.setMethod = function(value) {
   return jspb.Message.setProto3StringField(this, 24, value);
+};
+
+
+/**
+ * optional gincoinc.global.v1.Network network = 25;
+ * @return {!proto.gincoinc.global.v1.Network}
+ */
+proto.adamant.teller.v1.TransferUpdated.prototype.getNetwork = function() {
+  return /** @type {!proto.gincoinc.global.v1.Network} */ (jspb.Message.getFieldWithDefault(this, 25, 0));
+};
+
+
+/**
+ * @param {!proto.gincoinc.global.v1.Network} value
+ * @return {!proto.adamant.teller.v1.TransferUpdated} returns this
+ */
+proto.adamant.teller.v1.TransferUpdated.prototype.setNetwork = function(value) {
+  return jspb.Message.setProto3EnumField(this, 25, value);
 };
 
 

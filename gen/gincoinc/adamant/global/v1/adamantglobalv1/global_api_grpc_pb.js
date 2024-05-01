@@ -759,6 +759,28 @@ function deserialize_adamant_global_v1_IsDeletableWhitelistResponse(buffer_arg) 
   return gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.IsDeletableWhitelistResponse.deserializeBinary(new Uint8Array(buffer_arg));
 }
 
+function serialize_adamant_global_v1_IsTransactionReplaceableRequest(arg) {
+  if (!(arg instanceof gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.IsTransactionReplaceableRequest)) {
+    throw new Error('Expected argument of type adamant.global.v1.IsTransactionReplaceableRequest');
+  }
+  return Buffer.from(arg.serializeBinary());
+}
+
+function deserialize_adamant_global_v1_IsTransactionReplaceableRequest(buffer_arg) {
+  return gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.IsTransactionReplaceableRequest.deserializeBinary(new Uint8Array(buffer_arg));
+}
+
+function serialize_adamant_global_v1_IsTransactionReplaceableResponse(arg) {
+  if (!(arg instanceof gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.IsTransactionReplaceableResponse)) {
+    throw new Error('Expected argument of type adamant.global.v1.IsTransactionReplaceableResponse');
+  }
+  return Buffer.from(arg.serializeBinary());
+}
+
+function deserialize_adamant_global_v1_IsTransactionReplaceableResponse(buffer_arg) {
+  return gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.IsTransactionReplaceableResponse.deserializeBinary(new Uint8Array(buffer_arg));
+}
+
 function serialize_adamant_global_v1_LabeledAddress(arg) {
   if (!(arg instanceof gincoinc_adamant_global_v1_adamantglobalv1_model_pb.LabeledAddress)) {
     throw new Error('Expected argument of type adamant.global.v1.LabeledAddress');
@@ -1505,6 +1527,28 @@ function serialize_adamant_global_v1_ReplaceTransactionResponse(arg) {
 
 function deserialize_adamant_global_v1_ReplaceTransactionResponse(buffer_arg) {
   return gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.ReplaceTransactionResponse.deserializeBinary(new Uint8Array(buffer_arg));
+}
+
+function serialize_adamant_global_v1_ResendTransactionRequest(arg) {
+  if (!(arg instanceof gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.ResendTransactionRequest)) {
+    throw new Error('Expected argument of type adamant.global.v1.ResendTransactionRequest');
+  }
+  return Buffer.from(arg.serializeBinary());
+}
+
+function deserialize_adamant_global_v1_ResendTransactionRequest(buffer_arg) {
+  return gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.ResendTransactionRequest.deserializeBinary(new Uint8Array(buffer_arg));
+}
+
+function serialize_adamant_global_v1_ResendTransactionResponse(arg) {
+  if (!(arg instanceof gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.ResendTransactionResponse)) {
+    throw new Error('Expected argument of type adamant.global.v1.ResendTransactionResponse');
+  }
+  return Buffer.from(arg.serializeBinary());
+}
+
+function deserialize_adamant_global_v1_ResendTransactionResponse(buffer_arg) {
+  return gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.ResendTransactionResponse.deserializeBinary(new Uint8Array(buffer_arg));
 }
 
 function serialize_adamant_global_v1_ReviewLabeledAddressProposalRequest(arg) {
@@ -2512,6 +2556,17 @@ createTransaction: {
     responseSerialize: serialize_adamant_global_v1_SendTransactionResponse,
     responseDeserialize: deserialize_adamant_global_v1_SendTransactionResponse,
   },
+  resendTransaction: {
+    path: '/adamant.global.v1.GlobalAPI/ResendTransaction',
+    requestStream: false,
+    responseStream: false,
+    requestType: gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.ResendTransactionRequest,
+    responseType: gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.ResendTransactionResponse,
+    requestSerialize: serialize_adamant_global_v1_ResendTransactionRequest,
+    requestDeserialize: deserialize_adamant_global_v1_ResendTransactionRequest,
+    responseSerialize: serialize_adamant_global_v1_ResendTransactionResponse,
+    responseDeserialize: deserialize_adamant_global_v1_ResendTransactionResponse,
+  },
   sendXRPInitTransactions: {
     path: '/adamant.global.v1.GlobalAPI/SendXRPInitTransactions',
     requestStream: false,
@@ -2544,6 +2599,17 @@ createTransaction: {
     requestDeserialize: deserialize_adamant_global_v1_ReplaceTransactionRequest,
     responseSerialize: serialize_adamant_global_v1_ReplaceTransactionResponse,
     responseDeserialize: deserialize_adamant_global_v1_ReplaceTransactionResponse,
+  },
+  isTransactionReplaceable: {
+    path: '/adamant.global.v1.GlobalAPI/IsTransactionReplaceable',
+    requestStream: false,
+    responseStream: false,
+    requestType: gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.IsTransactionReplaceableRequest,
+    responseType: gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.IsTransactionReplaceableResponse,
+    requestSerialize: serialize_adamant_global_v1_IsTransactionReplaceableRequest,
+    requestDeserialize: deserialize_adamant_global_v1_IsTransactionReplaceableRequest,
+    responseSerialize: serialize_adamant_global_v1_IsTransactionReplaceableResponse,
+    responseDeserialize: deserialize_adamant_global_v1_IsTransactionReplaceableResponse,
   },
   getTransaction: {
     path: '/adamant.global.v1.GlobalAPI/GetTransaction',

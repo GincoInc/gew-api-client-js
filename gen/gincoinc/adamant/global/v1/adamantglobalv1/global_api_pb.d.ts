@@ -302,6 +302,11 @@ export class ListWalletsByFilterRequest extends jspb.Message {
     setOnlyIsStakingAvailable(value: boolean): ListWalletsByFilterRequest;
     getCoin(): gincoinc_global_v1_gincoincglobalv1_enum_pb.Coin;
     setCoin(value: gincoinc_global_v1_gincoincglobalv1_enum_pb.Coin): ListWalletsByFilterRequest;
+
+    hasNetwork(): boolean;
+    clearNetwork(): void;
+    getNetwork(): gincoinc_global_v1_gincoincglobalv1_enum_pb.Network | undefined;
+    setNetwork(value: gincoinc_global_v1_gincoincglobalv1_enum_pb.Network): ListWalletsByFilterRequest;
     clearWalletTypeList(): void;
     getWalletTypeList(): Array<gincoinc_adamant_global_v1_adamantglobalv1_enum_pb.WalletType>;
     setWalletTypeList(value: Array<gincoinc_adamant_global_v1_adamantglobalv1_enum_pb.WalletType>): ListWalletsByFilterRequest;
@@ -334,6 +339,7 @@ export namespace ListWalletsByFilterRequest {
         watchOnly: boolean,
         onlyIsStakingAvailable?: boolean,
         coin: gincoinc_global_v1_gincoincglobalv1_enum_pb.Coin,
+        network?: gincoinc_global_v1_gincoincglobalv1_enum_pb.Network,
         walletTypeList: Array<gincoinc_adamant_global_v1_adamantglobalv1_enum_pb.WalletType>,
         walletStateList: Array<gincoinc_adamant_global_v1_adamantglobalv1_enum_pb.WalletState>,
         pageSize: number,
@@ -762,6 +768,11 @@ export namespace ListWalletFlushSettingsResponse {
 export class UpdateWalletFlushSettingRequest extends jspb.Message { 
     getCoin(): gincoinc_global_v1_gincoincglobalv1_enum_pb.Coin;
     setCoin(value: gincoinc_global_v1_gincoincglobalv1_enum_pb.Coin): UpdateWalletFlushSettingRequest;
+
+    hasNetwork(): boolean;
+    clearNetwork(): void;
+    getNetwork(): gincoinc_global_v1_gincoincglobalv1_enum_pb.Network | undefined;
+    setNetwork(value: gincoinc_global_v1_gincoincglobalv1_enum_pb.Network): UpdateWalletFlushSettingRequest;
     getDestinationWalletId(): string;
     setDestinationWalletId(value: string): UpdateWalletFlushSettingRequest;
 
@@ -778,6 +789,7 @@ export class UpdateWalletFlushSettingRequest extends jspb.Message {
 export namespace UpdateWalletFlushSettingRequest {
     export type AsObject = {
         coin: gincoinc_global_v1_gincoincglobalv1_enum_pb.Coin,
+        network?: gincoinc_global_v1_gincoincglobalv1_enum_pb.Network,
         destinationWalletId: string,
     }
 }
@@ -897,6 +909,11 @@ export class CreateWalletGroupRequest extends jspb.Message {
     setName(value: string): CreateWalletGroupRequest;
     getCoin(): gincoinc_global_v1_gincoincglobalv1_enum_pb.Coin;
     setCoin(value: gincoinc_global_v1_gincoincglobalv1_enum_pb.Coin): CreateWalletGroupRequest;
+
+    hasNetwork(): boolean;
+    clearNetwork(): void;
+    getNetwork(): gincoinc_global_v1_gincoincglobalv1_enum_pb.Network | undefined;
+    setNetwork(value: gincoinc_global_v1_gincoincglobalv1_enum_pb.Network): CreateWalletGroupRequest;
     clearWalletIdsList(): void;
     getWalletIdsList(): Array<string>;
     setWalletIdsList(value: Array<string>): CreateWalletGroupRequest;
@@ -918,6 +935,7 @@ export namespace CreateWalletGroupRequest {
     export type AsObject = {
         name: string,
         coin: gincoinc_global_v1_gincoincglobalv1_enum_pb.Coin,
+        network?: gincoinc_global_v1_gincoincglobalv1_enum_pb.Network,
         walletIdsList: Array<string>,
         watchOnly: boolean,
     }
@@ -1703,6 +1721,21 @@ export class CreateTransactionRequest extends jspb.Message {
     getHederaSpecific(): gincoinc_adamant_global_v1_adamantglobalv1_model_pb.CreateTransactionHederaSpecific | undefined;
     setHederaSpecific(value?: gincoinc_adamant_global_v1_adamantglobalv1_model_pb.CreateTransactionHederaSpecific): CreateTransactionRequest;
 
+    hasSolanaSpecific(): boolean;
+    clearSolanaSpecific(): void;
+    getSolanaSpecific(): gincoinc_adamant_global_v1_adamantglobalv1_model_pb.CreateTransactionSolanaSpecific | undefined;
+    setSolanaSpecific(value?: gincoinc_adamant_global_v1_adamantglobalv1_model_pb.CreateTransactionSolanaSpecific): CreateTransactionRequest;
+
+    hasAptosSpecific(): boolean;
+    clearAptosSpecific(): void;
+    getAptosSpecific(): gincoinc_adamant_global_v1_adamantglobalv1_model_pb.CreateTransactionAptosSpecific | undefined;
+    setAptosSpecific(value?: gincoinc_adamant_global_v1_adamantglobalv1_model_pb.CreateTransactionAptosSpecific): CreateTransactionRequest;
+
+    hasUtxoSpecific(): boolean;
+    clearUtxoSpecific(): void;
+    getUtxoSpecific(): UtxoSpecific | undefined;
+    setUtxoSpecific(value?: UtxoSpecific): CreateTransactionRequest;
+
     serializeBinary(): Uint8Array;
     toObject(includeInstance?: boolean): CreateTransactionRequest.AsObject;
     static toObject(includeInstance: boolean, msg: CreateTransactionRequest): CreateTransactionRequest.AsObject;
@@ -1731,6 +1764,9 @@ export namespace CreateTransactionRequest {
         cosmosSpecific?: gincoinc_adamant_global_v1_adamantglobalv1_model_pb.CreateTransactionCosmosSpecific.AsObject,
         algorandSpecific?: gincoinc_adamant_global_v1_adamantglobalv1_model_pb.CreateTransactionAlgorandSpecific.AsObject,
         hederaSpecific?: gincoinc_adamant_global_v1_adamantglobalv1_model_pb.CreateTransactionHederaSpecific.AsObject,
+        solanaSpecific?: gincoinc_adamant_global_v1_adamantglobalv1_model_pb.CreateTransactionSolanaSpecific.AsObject,
+        aptosSpecific?: gincoinc_adamant_global_v1_adamantglobalv1_model_pb.CreateTransactionAptosSpecific.AsObject,
+        utxoSpecific?: UtxoSpecific.AsObject,
     }
 }
 
@@ -1934,6 +1970,52 @@ export namespace SendTransactionResponse {
     }
 }
 
+export class ResendTransactionRequest extends jspb.Message { 
+    getWalletId(): string;
+    setWalletId(value: string): ResendTransactionRequest;
+    getTransactionId(): string;
+    setTransactionId(value: string): ResendTransactionRequest;
+    getExecutorType(): gincoinc_adamant_global_v1_adamantglobalv1_enum_pb.ExecutorType;
+    setExecutorType(value: gincoinc_adamant_global_v1_adamantglobalv1_enum_pb.ExecutorType): ResendTransactionRequest;
+
+    serializeBinary(): Uint8Array;
+    toObject(includeInstance?: boolean): ResendTransactionRequest.AsObject;
+    static toObject(includeInstance: boolean, msg: ResendTransactionRequest): ResendTransactionRequest.AsObject;
+    static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+    static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+    static serializeBinaryToWriter(message: ResendTransactionRequest, writer: jspb.BinaryWriter): void;
+    static deserializeBinary(bytes: Uint8Array): ResendTransactionRequest;
+    static deserializeBinaryFromReader(message: ResendTransactionRequest, reader: jspb.BinaryReader): ResendTransactionRequest;
+}
+
+export namespace ResendTransactionRequest {
+    export type AsObject = {
+        walletId: string,
+        transactionId: string,
+        executorType: gincoinc_adamant_global_v1_adamantglobalv1_enum_pb.ExecutorType,
+    }
+}
+
+export class ResendTransactionResponse extends jspb.Message { 
+    getTxId(): string;
+    setTxId(value: string): ResendTransactionResponse;
+
+    serializeBinary(): Uint8Array;
+    toObject(includeInstance?: boolean): ResendTransactionResponse.AsObject;
+    static toObject(includeInstance: boolean, msg: ResendTransactionResponse): ResendTransactionResponse.AsObject;
+    static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+    static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+    static serializeBinaryToWriter(message: ResendTransactionResponse, writer: jspb.BinaryWriter): void;
+    static deserializeBinary(bytes: Uint8Array): ResendTransactionResponse;
+    static deserializeBinaryFromReader(message: ResendTransactionResponse, reader: jspb.BinaryReader): ResendTransactionResponse;
+}
+
+export namespace ResendTransactionResponse {
+    export type AsObject = {
+        txId: string,
+    }
+}
+
 export class SendXRPInitTransactionsRequest extends jspb.Message { 
     getWalletId(): string;
     setWalletId(value: string): SendXRPInitTransactionsRequest;
@@ -2090,6 +2172,49 @@ export namespace ReplaceTransactionResponse {
     }
 }
 
+export class IsTransactionReplaceableRequest extends jspb.Message { 
+    getWalletId(): string;
+    setWalletId(value: string): IsTransactionReplaceableRequest;
+    getTransactionId(): string;
+    setTransactionId(value: string): IsTransactionReplaceableRequest;
+
+    serializeBinary(): Uint8Array;
+    toObject(includeInstance?: boolean): IsTransactionReplaceableRequest.AsObject;
+    static toObject(includeInstance: boolean, msg: IsTransactionReplaceableRequest): IsTransactionReplaceableRequest.AsObject;
+    static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+    static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+    static serializeBinaryToWriter(message: IsTransactionReplaceableRequest, writer: jspb.BinaryWriter): void;
+    static deserializeBinary(bytes: Uint8Array): IsTransactionReplaceableRequest;
+    static deserializeBinaryFromReader(message: IsTransactionReplaceableRequest, reader: jspb.BinaryReader): IsTransactionReplaceableRequest;
+}
+
+export namespace IsTransactionReplaceableRequest {
+    export type AsObject = {
+        walletId: string,
+        transactionId: string,
+    }
+}
+
+export class IsTransactionReplaceableResponse extends jspb.Message { 
+    getIsTransactionReplacable(): boolean;
+    setIsTransactionReplacable(value: boolean): IsTransactionReplaceableResponse;
+
+    serializeBinary(): Uint8Array;
+    toObject(includeInstance?: boolean): IsTransactionReplaceableResponse.AsObject;
+    static toObject(includeInstance: boolean, msg: IsTransactionReplaceableResponse): IsTransactionReplaceableResponse.AsObject;
+    static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+    static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+    static serializeBinaryToWriter(message: IsTransactionReplaceableResponse, writer: jspb.BinaryWriter): void;
+    static deserializeBinary(bytes: Uint8Array): IsTransactionReplaceableResponse;
+    static deserializeBinaryFromReader(message: IsTransactionReplaceableResponse, reader: jspb.BinaryReader): IsTransactionReplaceableResponse;
+}
+
+export namespace IsTransactionReplaceableResponse {
+    export type AsObject = {
+        isTransactionReplacable: boolean,
+    }
+}
+
 export class GetTransactionRequest extends jspb.Message { 
     getWalletId(): string;
     setWalletId(value: string): GetTransactionRequest;
@@ -2179,6 +2304,11 @@ export class ListTransactionsByFilterRequest extends jspb.Message {
     setTxid(value: string): ListTransactionsByFilterRequest;
     getCoin(): gincoinc_global_v1_gincoincglobalv1_enum_pb.Coin;
     setCoin(value: gincoinc_global_v1_gincoincglobalv1_enum_pb.Coin): ListTransactionsByFilterRequest;
+
+    hasNetwork(): boolean;
+    clearNetwork(): void;
+    getNetwork(): gincoinc_global_v1_gincoincglobalv1_enum_pb.Network | undefined;
+    setNetwork(value: gincoinc_global_v1_gincoincglobalv1_enum_pb.Network): ListTransactionsByFilterRequest;
     clearWalletTypeList(): void;
     getWalletTypeList(): Array<gincoinc_adamant_global_v1_adamantglobalv1_enum_pb.WalletType>;
     setWalletTypeList(value: Array<gincoinc_adamant_global_v1_adamantglobalv1_enum_pb.WalletType>): ListTransactionsByFilterRequest;
@@ -2212,6 +2342,7 @@ export namespace ListTransactionsByFilterRequest {
         address: string,
         txid: string,
         coin: gincoinc_global_v1_gincoincglobalv1_enum_pb.Coin,
+        network?: gincoinc_global_v1_gincoincglobalv1_enum_pb.Network,
         walletTypeList: Array<gincoinc_adamant_global_v1_adamantglobalv1_enum_pb.WalletType>,
         transactionStateList: Array<gincoinc_adamant_global_v1_adamantglobalv1_enum_pb.TransactionState>,
         pageSize: number,
@@ -2440,6 +2571,11 @@ export class ListTransfersByFilterRequest extends jspb.Message {
     getEndTime(): google_protobuf_timestamp_pb.Timestamp | undefined;
     setEndTime(value?: google_protobuf_timestamp_pb.Timestamp): ListTransfersByFilterRequest;
 
+    hasNetwork(): boolean;
+    clearNetwork(): void;
+    getNetwork(): gincoinc_global_v1_gincoincglobalv1_enum_pb.Network | undefined;
+    setNetwork(value: gincoinc_global_v1_gincoincglobalv1_enum_pb.Network): ListTransfersByFilterRequest;
+
     serializeBinary(): Uint8Array;
     toObject(includeInstance?: boolean): ListTransfersByFilterRequest.AsObject;
     static toObject(includeInstance: boolean, msg: ListTransfersByFilterRequest): ListTransfersByFilterRequest.AsObject;
@@ -2467,6 +2603,7 @@ export namespace ListTransfersByFilterRequest {
         pageToken: string,
         startTime?: google_protobuf_timestamp_pb.Timestamp.AsObject,
         endTime?: google_protobuf_timestamp_pb.Timestamp.AsObject,
+        network?: gincoinc_global_v1_gincoincglobalv1_enum_pb.Network,
     }
 }
 
@@ -2533,6 +2670,11 @@ export class ListUncheckedTransfersByFilterRequest extends jspb.Message {
     getEndTime(): google_protobuf_timestamp_pb.Timestamp | undefined;
     setEndTime(value?: google_protobuf_timestamp_pb.Timestamp): ListUncheckedTransfersByFilterRequest;
 
+    hasNetwork(): boolean;
+    clearNetwork(): void;
+    getNetwork(): gincoinc_global_v1_gincoincglobalv1_enum_pb.Network | undefined;
+    setNetwork(value: gincoinc_global_v1_gincoincglobalv1_enum_pb.Network): ListUncheckedTransfersByFilterRequest;
+
     serializeBinary(): Uint8Array;
     toObject(includeInstance?: boolean): ListUncheckedTransfersByFilterRequest.AsObject;
     static toObject(includeInstance: boolean, msg: ListUncheckedTransfersByFilterRequest): ListUncheckedTransfersByFilterRequest.AsObject;
@@ -2559,6 +2701,7 @@ export namespace ListUncheckedTransfersByFilterRequest {
         transferType: gincoinc_global_v1_gincoincglobalv1_enum_pb.TransferType,
         startTime?: google_protobuf_timestamp_pb.Timestamp.AsObject,
         endTime?: google_protobuf_timestamp_pb.Timestamp.AsObject,
+        network?: gincoinc_global_v1_gincoincglobalv1_enum_pb.Network,
     }
 }
 
@@ -3208,6 +3351,16 @@ export class CalculateFeeRequest extends jspb.Message {
     getRbfSpecific(): CalculateFeeRbfSpecific | undefined;
     setRbfSpecific(value?: CalculateFeeRbfSpecific): CalculateFeeRequest;
 
+    hasUtxoSpecific(): boolean;
+    clearUtxoSpecific(): void;
+    getUtxoSpecific(): UtxoSpecific | undefined;
+    setUtxoSpecific(value?: UtxoSpecific): CalculateFeeRequest;
+
+    hasSolanaSpecific(): boolean;
+    clearSolanaSpecific(): void;
+    getSolanaSpecific(): CalculateFeeSolanaSpecific | undefined;
+    setSolanaSpecific(value?: CalculateFeeSolanaSpecific): CalculateFeeRequest;
+
     serializeBinary(): Uint8Array;
     toObject(includeInstance?: boolean): CalculateFeeRequest.AsObject;
     static toObject(includeInstance: boolean, msg: CalculateFeeRequest): CalculateFeeRequest.AsObject;
@@ -3233,6 +3386,8 @@ export namespace CalculateFeeRequest {
         cosmosSpecific?: CalculateFeeCosmosSpecific.AsObject,
         hederaSpecific?: CalculateFeeHederaSpecific.AsObject,
         rbfSpecific?: CalculateFeeRbfSpecific.AsObject,
+        utxoSpecific?: UtxoSpecific.AsObject,
+        solanaSpecific?: CalculateFeeSolanaSpecific.AsObject,
     }
 }
 
@@ -3368,6 +3523,26 @@ export namespace CalculateFeeHederaSpecific {
     }
 }
 
+export class CalculateFeeSolanaSpecific extends jspb.Message { 
+    getEventType(): gincoinc_global_v1_gincoincglobalv1_enum_pb.SolanaEventType;
+    setEventType(value: gincoinc_global_v1_gincoincglobalv1_enum_pb.SolanaEventType): CalculateFeeSolanaSpecific;
+
+    serializeBinary(): Uint8Array;
+    toObject(includeInstance?: boolean): CalculateFeeSolanaSpecific.AsObject;
+    static toObject(includeInstance: boolean, msg: CalculateFeeSolanaSpecific): CalculateFeeSolanaSpecific.AsObject;
+    static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+    static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+    static serializeBinaryToWriter(message: CalculateFeeSolanaSpecific, writer: jspb.BinaryWriter): void;
+    static deserializeBinary(bytes: Uint8Array): CalculateFeeSolanaSpecific;
+    static deserializeBinaryFromReader(message: CalculateFeeSolanaSpecific, reader: jspb.BinaryReader): CalculateFeeSolanaSpecific;
+}
+
+export namespace CalculateFeeSolanaSpecific {
+    export type AsObject = {
+        eventType: gincoinc_global_v1_gincoincglobalv1_enum_pb.SolanaEventType,
+    }
+}
+
 export class CalculateFeeRbfSpecific extends jspb.Message { 
     getTransactionId(): string;
     setTransactionId(value: string): CalculateFeeRbfSpecific;
@@ -3385,6 +3560,28 @@ export class CalculateFeeRbfSpecific extends jspb.Message {
 export namespace CalculateFeeRbfSpecific {
     export type AsObject = {
         transactionId: string,
+    }
+}
+
+export class UtxoSpecific extends jspb.Message { 
+    clearSelectedUtxosList(): void;
+    getSelectedUtxosList(): Array<gincoinc_adamant_global_v1_adamantglobalv1_model_pb.SelectedUTXO>;
+    setSelectedUtxosList(value: Array<gincoinc_adamant_global_v1_adamantglobalv1_model_pb.SelectedUTXO>): UtxoSpecific;
+    addSelectedUtxos(value?: gincoinc_adamant_global_v1_adamantglobalv1_model_pb.SelectedUTXO, index?: number): gincoinc_adamant_global_v1_adamantglobalv1_model_pb.SelectedUTXO;
+
+    serializeBinary(): Uint8Array;
+    toObject(includeInstance?: boolean): UtxoSpecific.AsObject;
+    static toObject(includeInstance: boolean, msg: UtxoSpecific): UtxoSpecific.AsObject;
+    static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+    static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+    static serializeBinaryToWriter(message: UtxoSpecific, writer: jspb.BinaryWriter): void;
+    static deserializeBinary(bytes: Uint8Array): UtxoSpecific;
+    static deserializeBinaryFromReader(message: UtxoSpecific, reader: jspb.BinaryReader): UtxoSpecific;
+}
+
+export namespace UtxoSpecific {
+    export type AsObject = {
+        selectedUtxosList: Array<gincoinc_adamant_global_v1_adamantglobalv1_model_pb.SelectedUTXO.AsObject>,
     }
 }
 
@@ -3454,6 +3651,11 @@ export class GetRecommendedFeeRateRequest extends jspb.Message {
     getCoin(): gincoinc_global_v1_gincoincglobalv1_enum_pb.Coin;
     setCoin(value: gincoinc_global_v1_gincoincglobalv1_enum_pb.Coin): GetRecommendedFeeRateRequest;
 
+    hasNetwork(): boolean;
+    clearNetwork(): void;
+    getNetwork(): gincoinc_global_v1_gincoincglobalv1_enum_pb.Network | undefined;
+    setNetwork(value: gincoinc_global_v1_gincoincglobalv1_enum_pb.Network): GetRecommendedFeeRateRequest;
+
     serializeBinary(): Uint8Array;
     toObject(includeInstance?: boolean): GetRecommendedFeeRateRequest.AsObject;
     static toObject(includeInstance: boolean, msg: GetRecommendedFeeRateRequest): GetRecommendedFeeRateRequest.AsObject;
@@ -3467,6 +3669,7 @@ export class GetRecommendedFeeRateRequest extends jspb.Message {
 export namespace GetRecommendedFeeRateRequest {
     export type AsObject = {
         coin: gincoinc_global_v1_gincoincglobalv1_enum_pb.Coin,
+        network?: gincoinc_global_v1_gincoincglobalv1_enum_pb.Network,
     }
 }
 
@@ -3643,6 +3846,11 @@ export class CreateLabeledAddressRequest extends jspb.Message {
     getAddress(): string;
     setAddress(value: string): CreateLabeledAddressRequest;
 
+    hasNetwork(): boolean;
+    clearNetwork(): void;
+    getNetwork(): gincoinc_global_v1_gincoincglobalv1_enum_pb.Network | undefined;
+    setNetwork(value: gincoinc_global_v1_gincoincglobalv1_enum_pb.Network): CreateLabeledAddressRequest;
+
     serializeBinary(): Uint8Array;
     toObject(includeInstance?: boolean): CreateLabeledAddressRequest.AsObject;
     static toObject(includeInstance: boolean, msg: CreateLabeledAddressRequest): CreateLabeledAddressRequest.AsObject;
@@ -3658,6 +3866,7 @@ export namespace CreateLabeledAddressRequest {
         name: string,
         coin: gincoinc_global_v1_gincoincglobalv1_enum_pb.Coin,
         address: string,
+        network?: gincoinc_global_v1_gincoincglobalv1_enum_pb.Network,
     }
 }
 
@@ -3691,6 +3900,11 @@ export class UpdateLabeledAddressRequest extends jspb.Message {
     getAddress(): string;
     setAddress(value: string): UpdateLabeledAddressRequest;
 
+    hasNetwork(): boolean;
+    clearNetwork(): void;
+    getNetwork(): gincoinc_global_v1_gincoincglobalv1_enum_pb.Network | undefined;
+    setNetwork(value: gincoinc_global_v1_gincoincglobalv1_enum_pb.Network): UpdateLabeledAddressRequest;
+
     serializeBinary(): Uint8Array;
     toObject(includeInstance?: boolean): UpdateLabeledAddressRequest.AsObject;
     static toObject(includeInstance: boolean, msg: UpdateLabeledAddressRequest): UpdateLabeledAddressRequest.AsObject;
@@ -3707,6 +3921,7 @@ export namespace UpdateLabeledAddressRequest {
         name: string,
         coin: gincoinc_global_v1_gincoincglobalv1_enum_pb.Coin,
         address: string,
+        network?: gincoinc_global_v1_gincoincglobalv1_enum_pb.Network,
     }
 }
 
@@ -3785,6 +4000,11 @@ export class ListLabeledAddressesByFilterRequest extends jspb.Message {
     getPageToken(): string;
     setPageToken(value: string): ListLabeledAddressesByFilterRequest;
 
+    hasNetwork(): boolean;
+    clearNetwork(): void;
+    getNetwork(): gincoinc_global_v1_gincoincglobalv1_enum_pb.Network | undefined;
+    setNetwork(value: gincoinc_global_v1_gincoincglobalv1_enum_pb.Network): ListLabeledAddressesByFilterRequest;
+
     serializeBinary(): Uint8Array;
     toObject(includeInstance?: boolean): ListLabeledAddressesByFilterRequest.AsObject;
     static toObject(includeInstance: boolean, msg: ListLabeledAddressesByFilterRequest): ListLabeledAddressesByFilterRequest.AsObject;
@@ -3804,6 +4024,7 @@ export namespace ListLabeledAddressesByFilterRequest {
         coin: gincoinc_global_v1_gincoincglobalv1_enum_pb.Coin,
         pageSize: number,
         pageToken: string,
+        network?: gincoinc_global_v1_gincoincglobalv1_enum_pb.Network,
     }
 }
 
@@ -3880,6 +4101,11 @@ export class CreateWhitelistRequest extends jspb.Message {
     setName(value: string): CreateWhitelistRequest;
     getCoin(): gincoinc_global_v1_gincoincglobalv1_enum_pb.Coin;
     setCoin(value: gincoinc_global_v1_gincoincglobalv1_enum_pb.Coin): CreateWhitelistRequest;
+
+    hasNetwork(): boolean;
+    clearNetwork(): void;
+    getNetwork(): gincoinc_global_v1_gincoincglobalv1_enum_pb.Network | undefined;
+    setNetwork(value: gincoinc_global_v1_gincoincglobalv1_enum_pb.Network): CreateWhitelistRequest;
     clearAddressIdsList(): void;
     getAddressIdsList(): Array<string>;
     setAddressIdsList(value: Array<string>): CreateWhitelistRequest;
@@ -3899,6 +4125,7 @@ export namespace CreateWhitelistRequest {
     export type AsObject = {
         name: string,
         coin: gincoinc_global_v1_gincoincglobalv1_enum_pb.Coin,
+        network?: gincoinc_global_v1_gincoincglobalv1_enum_pb.Network,
         addressIdsList: Array<string>,
     }
 }
@@ -3991,6 +4218,11 @@ export class ListWhitelistsByFilterRequest extends jspb.Message {
     setWhitelistName(value: string): ListWhitelistsByFilterRequest;
     getCoin(): gincoinc_global_v1_gincoincglobalv1_enum_pb.Coin;
     setCoin(value: gincoinc_global_v1_gincoincglobalv1_enum_pb.Coin): ListWhitelistsByFilterRequest;
+
+    hasNetwork(): boolean;
+    clearNetwork(): void;
+    getNetwork(): gincoinc_global_v1_gincoincglobalv1_enum_pb.Network | undefined;
+    setNetwork(value: gincoinc_global_v1_gincoincglobalv1_enum_pb.Network): ListWhitelistsByFilterRequest;
     getPageSize(): number;
     setPageSize(value: number): ListWhitelistsByFilterRequest;
     getPageToken(): string;
@@ -4012,6 +4244,7 @@ export namespace ListWhitelistsByFilterRequest {
         whitelistId: string,
         whitelistName: string,
         coin: gincoinc_global_v1_gincoincglobalv1_enum_pb.Coin,
+        network?: gincoinc_global_v1_gincoincglobalv1_enum_pb.Network,
         pageSize: number,
         pageToken: string,
     }
@@ -4123,6 +4356,11 @@ export class CreateTransferLimitRequest extends jspb.Message {
     setName(value: string): CreateTransferLimitRequest;
     getCoin(): gincoinc_global_v1_gincoincglobalv1_enum_pb.Coin;
     setCoin(value: gincoinc_global_v1_gincoincglobalv1_enum_pb.Coin): CreateTransferLimitRequest;
+
+    hasNetwork(): boolean;
+    clearNetwork(): void;
+    getNetwork(): gincoinc_global_v1_gincoincglobalv1_enum_pb.Network | undefined;
+    setNetwork(value: gincoinc_global_v1_gincoincglobalv1_enum_pb.Network): CreateTransferLimitRequest;
     clearTransferLimitsList(): void;
     getTransferLimitsList(): Array<gincoinc_adamant_global_v1_adamantglobalv1_model_pb.RequestTransferLimitEntry>;
     setTransferLimitsList(value: Array<gincoinc_adamant_global_v1_adamantglobalv1_model_pb.RequestTransferLimitEntry>): CreateTransferLimitRequest;
@@ -4142,6 +4380,7 @@ export namespace CreateTransferLimitRequest {
     export type AsObject = {
         name: string,
         coin: gincoinc_global_v1_gincoincglobalv1_enum_pb.Coin,
+        network?: gincoinc_global_v1_gincoincglobalv1_enum_pb.Network,
         transferLimitsList: Array<gincoinc_adamant_global_v1_adamantglobalv1_model_pb.RequestTransferLimitEntry.AsObject>,
     }
 }
@@ -4234,6 +4473,11 @@ export class ListTransferLimitsByFilterRequest extends jspb.Message {
     setTransferLimitName(value: string): ListTransferLimitsByFilterRequest;
     getCoin(): gincoinc_global_v1_gincoincglobalv1_enum_pb.Coin;
     setCoin(value: gincoinc_global_v1_gincoincglobalv1_enum_pb.Coin): ListTransferLimitsByFilterRequest;
+
+    hasNetwork(): boolean;
+    clearNetwork(): void;
+    getNetwork(): gincoinc_global_v1_gincoincglobalv1_enum_pb.Network | undefined;
+    setNetwork(value: gincoinc_global_v1_gincoincglobalv1_enum_pb.Network): ListTransferLimitsByFilterRequest;
     getPageSize(): number;
     setPageSize(value: number): ListTransferLimitsByFilterRequest;
     getPageToken(): string;
@@ -4255,6 +4499,7 @@ export namespace ListTransferLimitsByFilterRequest {
         transferLimitId: string,
         transferLimitName: string,
         coin: gincoinc_global_v1_gincoincglobalv1_enum_pb.Coin,
+        network?: gincoinc_global_v1_gincoincglobalv1_enum_pb.Network,
         pageSize: number,
         pageToken: string,
     }
@@ -4381,6 +4626,11 @@ export class CreatePolicyRequest extends jspb.Message {
     setName(value: string): CreatePolicyRequest;
     getCoin(): gincoinc_global_v1_gincoincglobalv1_enum_pb.Coin;
     setCoin(value: gincoinc_global_v1_gincoincglobalv1_enum_pb.Coin): CreatePolicyRequest;
+
+    hasNetwork(): boolean;
+    clearNetwork(): void;
+    getNetwork(): gincoinc_global_v1_gincoincglobalv1_enum_pb.Network | undefined;
+    setNetwork(value: gincoinc_global_v1_gincoincglobalv1_enum_pb.Network): CreatePolicyRequest;
     getType(): gincoinc_adamant_global_v1_adamantglobalv1_enum_pb.PolicyType;
     setType(value: gincoinc_adamant_global_v1_adamantglobalv1_enum_pb.PolicyType): CreatePolicyRequest;
     getWhitelistId(): string;
@@ -4402,6 +4652,7 @@ export namespace CreatePolicyRequest {
     export type AsObject = {
         name: string,
         coin: gincoinc_global_v1_gincoincglobalv1_enum_pb.Coin,
+        network?: gincoinc_global_v1_gincoincglobalv1_enum_pb.Network,
         type: gincoinc_adamant_global_v1_adamantglobalv1_enum_pb.PolicyType,
         whitelistId: string,
         transferLimitId: string,
@@ -4457,6 +4708,11 @@ export class ListPoliciesByFilterRequest extends jspb.Message {
     setPolicyName(value: string): ListPoliciesByFilterRequest;
     getCoin(): gincoinc_global_v1_gincoincglobalv1_enum_pb.Coin;
     setCoin(value: gincoinc_global_v1_gincoincglobalv1_enum_pb.Coin): ListPoliciesByFilterRequest;
+
+    hasNetwork(): boolean;
+    clearNetwork(): void;
+    getNetwork(): gincoinc_global_v1_gincoincglobalv1_enum_pb.Network | undefined;
+    setNetwork(value: gincoinc_global_v1_gincoincglobalv1_enum_pb.Network): ListPoliciesByFilterRequest;
     getPolicyType(): gincoinc_adamant_global_v1_adamantglobalv1_enum_pb.PolicyType;
     setPolicyType(value: gincoinc_adamant_global_v1_adamantglobalv1_enum_pb.PolicyType): ListPoliciesByFilterRequest;
     getPageSize(): number;
@@ -4480,6 +4736,7 @@ export namespace ListPoliciesByFilterRequest {
         policyId: string,
         policyName: string,
         coin: gincoinc_global_v1_gincoincglobalv1_enum_pb.Coin,
+        network?: gincoinc_global_v1_gincoincglobalv1_enum_pb.Network,
         policyType: gincoinc_adamant_global_v1_adamantglobalv1_enum_pb.PolicyType,
         pageSize: number,
         pageToken: string,
