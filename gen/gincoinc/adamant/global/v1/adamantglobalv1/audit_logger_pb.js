@@ -49,7 +49,7 @@ if (goog.DEBUG && !COMPILED) {
  * @private {!Array<number>}
  * @const
  */
-proto.adamant.global.v1.AuditLog.repeatedFields_ = [36,37,38,31];
+proto.adamant.global.v1.AuditLog.repeatedFields_ = [36,37,38,31,41,42];
 
 
 
@@ -121,7 +121,9 @@ proto.adamant.global.v1.AuditLog.toObject = function(includeInstance, msg) {
     newValidatorsList: (f = jspb.Message.getRepeatedField(msg, 38)) == null ? undefined : f,
     whitelistAddressesList: (f = jspb.Message.getRepeatedField(msg, 31)) == null ? undefined : f,
     eventTime: (f = msg.getEventTime()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f),
-    createTime: (f = msg.getCreateTime()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f)
+    createTime: (f = msg.getCreateTime()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f),
+    enabledMailsList: (f = jspb.Message.getRepeatedField(msg, 41)) == null ? undefined : f,
+    disabledMailsList: (f = jspb.Message.getRepeatedField(msg, 42)) == null ? undefined : f
   };
 
   if (includeInstance) {
@@ -319,6 +321,18 @@ proto.adamant.global.v1.AuditLog.deserializeBinaryFromReader = function(msg, rea
       var value = new google_protobuf_timestamp_pb.Timestamp;
       reader.readMessage(value,google_protobuf_timestamp_pb.Timestamp.deserializeBinaryFromReader);
       msg.setCreateTime(value);
+      break;
+    case 41:
+      var values = /** @type {!Array<!proto.adamant.global.v1.MailType>} */ (reader.isDelimited() ? reader.readPackedEnum() : [reader.readEnum()]);
+      for (var i = 0; i < values.length; i++) {
+        msg.addEnabledMails(values[i]);
+      }
+      break;
+    case 42:
+      var values = /** @type {!Array<!proto.adamant.global.v1.MailType>} */ (reader.isDelimited() ? reader.readPackedEnum() : [reader.readEnum()]);
+      for (var i = 0; i < values.length; i++) {
+        msg.addDisabledMails(values[i]);
+      }
       break;
     default:
       reader.skipField();
@@ -629,6 +643,20 @@ proto.adamant.global.v1.AuditLog.serializeBinaryToWriter = function(message, wri
       33,
       f,
       google_protobuf_timestamp_pb.Timestamp.serializeBinaryToWriter
+    );
+  }
+  f = message.getEnabledMailsList();
+  if (f.length > 0) {
+    writer.writePackedEnum(
+      41,
+      f
+    );
+  }
+  f = message.getDisabledMailsList();
+  if (f.length > 0) {
+    writer.writePackedEnum(
+      42,
+      f
     );
   }
 };
@@ -1465,6 +1493,80 @@ proto.adamant.global.v1.AuditLog.prototype.clearCreateTime = function() {
  */
 proto.adamant.global.v1.AuditLog.prototype.hasCreateTime = function() {
   return jspb.Message.getField(this, 33) != null;
+};
+
+
+/**
+ * repeated MailType enabled_mails = 41;
+ * @return {!Array<!proto.adamant.global.v1.MailType>}
+ */
+proto.adamant.global.v1.AuditLog.prototype.getEnabledMailsList = function() {
+  return /** @type {!Array<!proto.adamant.global.v1.MailType>} */ (jspb.Message.getRepeatedField(this, 41));
+};
+
+
+/**
+ * @param {!Array<!proto.adamant.global.v1.MailType>} value
+ * @return {!proto.adamant.global.v1.AuditLog} returns this
+ */
+proto.adamant.global.v1.AuditLog.prototype.setEnabledMailsList = function(value) {
+  return jspb.Message.setField(this, 41, value || []);
+};
+
+
+/**
+ * @param {!proto.adamant.global.v1.MailType} value
+ * @param {number=} opt_index
+ * @return {!proto.adamant.global.v1.AuditLog} returns this
+ */
+proto.adamant.global.v1.AuditLog.prototype.addEnabledMails = function(value, opt_index) {
+  return jspb.Message.addToRepeatedField(this, 41, value, opt_index);
+};
+
+
+/**
+ * Clears the list making it empty but non-null.
+ * @return {!proto.adamant.global.v1.AuditLog} returns this
+ */
+proto.adamant.global.v1.AuditLog.prototype.clearEnabledMailsList = function() {
+  return this.setEnabledMailsList([]);
+};
+
+
+/**
+ * repeated MailType disabled_mails = 42;
+ * @return {!Array<!proto.adamant.global.v1.MailType>}
+ */
+proto.adamant.global.v1.AuditLog.prototype.getDisabledMailsList = function() {
+  return /** @type {!Array<!proto.adamant.global.v1.MailType>} */ (jspb.Message.getRepeatedField(this, 42));
+};
+
+
+/**
+ * @param {!Array<!proto.adamant.global.v1.MailType>} value
+ * @return {!proto.adamant.global.v1.AuditLog} returns this
+ */
+proto.adamant.global.v1.AuditLog.prototype.setDisabledMailsList = function(value) {
+  return jspb.Message.setField(this, 42, value || []);
+};
+
+
+/**
+ * @param {!proto.adamant.global.v1.MailType} value
+ * @param {number=} opt_index
+ * @return {!proto.adamant.global.v1.AuditLog} returns this
+ */
+proto.adamant.global.v1.AuditLog.prototype.addDisabledMails = function(value, opt_index) {
+  return jspb.Message.addToRepeatedField(this, 42, value, opt_index);
+};
+
+
+/**
+ * Clears the list making it empty but non-null.
+ * @return {!proto.adamant.global.v1.AuditLog} returns this
+ */
+proto.adamant.global.v1.AuditLog.prototype.clearDisabledMailsList = function() {
+  return this.setDisabledMailsList([]);
 };
 
 

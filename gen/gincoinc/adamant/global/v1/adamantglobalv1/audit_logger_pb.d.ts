@@ -104,6 +104,14 @@ export class AuditLog extends jspb.Message {
     clearCreateTime(): void;
     getCreateTime(): google_protobuf_timestamp_pb.Timestamp | undefined;
     setCreateTime(value?: google_protobuf_timestamp_pb.Timestamp): AuditLog;
+    clearEnabledMailsList(): void;
+    getEnabledMailsList(): Array<gincoinc_adamant_global_v1_adamantglobalv1_enum_pb.MailType>;
+    setEnabledMailsList(value: Array<gincoinc_adamant_global_v1_adamantglobalv1_enum_pb.MailType>): AuditLog;
+    addEnabledMails(value: gincoinc_adamant_global_v1_adamantglobalv1_enum_pb.MailType, index?: number): gincoinc_adamant_global_v1_adamantglobalv1_enum_pb.MailType;
+    clearDisabledMailsList(): void;
+    getDisabledMailsList(): Array<gincoinc_adamant_global_v1_adamantglobalv1_enum_pb.MailType>;
+    setDisabledMailsList(value: Array<gincoinc_adamant_global_v1_adamantglobalv1_enum_pb.MailType>): AuditLog;
+    addDisabledMails(value: gincoinc_adamant_global_v1_adamantglobalv1_enum_pb.MailType, index?: number): gincoinc_adamant_global_v1_adamantglobalv1_enum_pb.MailType;
 
     serializeBinary(): Uint8Array;
     toObject(includeInstance?: boolean): AuditLog.AsObject;
@@ -157,5 +165,7 @@ export namespace AuditLog {
         whitelistAddressesList: Array<string>,
         eventTime?: google_protobuf_timestamp_pb.Timestamp.AsObject,
         createTime?: google_protobuf_timestamp_pb.Timestamp.AsObject,
+        enabledMailsList: Array<gincoinc_adamant_global_v1_adamantglobalv1_enum_pb.MailType>,
+        disabledMailsList: Array<gincoinc_adamant_global_v1_adamantglobalv1_enum_pb.MailType>,
     }
 }

@@ -600,3 +600,81 @@ export namespace ProgmatCoinUnpauseRequest {
         contractAddress: string,
     }
 }
+
+export class ListColdFeeDepositAddressesRequest extends jspb.Message { 
+
+    serializeBinary(): Uint8Array;
+    toObject(includeInstance?: boolean): ListColdFeeDepositAddressesRequest.AsObject;
+    static toObject(includeInstance: boolean, msg: ListColdFeeDepositAddressesRequest): ListColdFeeDepositAddressesRequest.AsObject;
+    static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+    static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+    static serializeBinaryToWriter(message: ListColdFeeDepositAddressesRequest, writer: jspb.BinaryWriter): void;
+    static deserializeBinary(bytes: Uint8Array): ListColdFeeDepositAddressesRequest;
+    static deserializeBinaryFromReader(message: ListColdFeeDepositAddressesRequest, reader: jspb.BinaryReader): ListColdFeeDepositAddressesRequest;
+}
+
+export namespace ListColdFeeDepositAddressesRequest {
+    export type AsObject = {
+    }
+}
+
+export class ListColdFeeDepositAddressesResponse extends jspb.Message { 
+    clearCallerAddressesList(): void;
+    getCallerAddressesList(): Array<gincoinc_adamant_global_v1_adamantglobalv1_model_pb.CallerAddress>;
+    setCallerAddressesList(value: Array<gincoinc_adamant_global_v1_adamantglobalv1_model_pb.CallerAddress>): ListColdFeeDepositAddressesResponse;
+    addCallerAddresses(value?: gincoinc_adamant_global_v1_adamantglobalv1_model_pb.CallerAddress, index?: number): gincoinc_adamant_global_v1_adamantglobalv1_model_pb.CallerAddress;
+
+    serializeBinary(): Uint8Array;
+    toObject(includeInstance?: boolean): ListColdFeeDepositAddressesResponse.AsObject;
+    static toObject(includeInstance: boolean, msg: ListColdFeeDepositAddressesResponse): ListColdFeeDepositAddressesResponse.AsObject;
+    static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+    static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+    static serializeBinaryToWriter(message: ListColdFeeDepositAddressesResponse, writer: jspb.BinaryWriter): void;
+    static deserializeBinary(bytes: Uint8Array): ListColdFeeDepositAddressesResponse;
+    static deserializeBinaryFromReader(message: ListColdFeeDepositAddressesResponse, reader: jspb.BinaryReader): ListColdFeeDepositAddressesResponse;
+}
+
+export namespace ListColdFeeDepositAddressesResponse {
+    export type AsObject = {
+        callerAddressesList: Array<gincoinc_adamant_global_v1_adamantglobalv1_model_pb.CallerAddress.AsObject>,
+    }
+}
+
+export class ListHotFeeDepositAddressesRequest extends jspb.Message { 
+
+    serializeBinary(): Uint8Array;
+    toObject(includeInstance?: boolean): ListHotFeeDepositAddressesRequest.AsObject;
+    static toObject(includeInstance: boolean, msg: ListHotFeeDepositAddressesRequest): ListHotFeeDepositAddressesRequest.AsObject;
+    static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+    static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+    static serializeBinaryToWriter(message: ListHotFeeDepositAddressesRequest, writer: jspb.BinaryWriter): void;
+    static deserializeBinary(bytes: Uint8Array): ListHotFeeDepositAddressesRequest;
+    static deserializeBinaryFromReader(message: ListHotFeeDepositAddressesRequest, reader: jspb.BinaryReader): ListHotFeeDepositAddressesRequest;
+}
+
+export namespace ListHotFeeDepositAddressesRequest {
+    export type AsObject = {
+    }
+}
+
+export class ListHotFeeDepositAddressesResponse extends jspb.Message { 
+    clearFeeDepositAddressesList(): void;
+    getFeeDepositAddressesList(): Array<gincoinc_adamant_global_v1_adamantglobalv1_model_pb.FeeDepositAddress>;
+    setFeeDepositAddressesList(value: Array<gincoinc_adamant_global_v1_adamantglobalv1_model_pb.FeeDepositAddress>): ListHotFeeDepositAddressesResponse;
+    addFeeDepositAddresses(value?: gincoinc_adamant_global_v1_adamantglobalv1_model_pb.FeeDepositAddress, index?: number): gincoinc_adamant_global_v1_adamantglobalv1_model_pb.FeeDepositAddress;
+
+    serializeBinary(): Uint8Array;
+    toObject(includeInstance?: boolean): ListHotFeeDepositAddressesResponse.AsObject;
+    static toObject(includeInstance: boolean, msg: ListHotFeeDepositAddressesResponse): ListHotFeeDepositAddressesResponse.AsObject;
+    static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+    static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+    static serializeBinaryToWriter(message: ListHotFeeDepositAddressesResponse, writer: jspb.BinaryWriter): void;
+    static deserializeBinary(bytes: Uint8Array): ListHotFeeDepositAddressesResponse;
+    static deserializeBinaryFromReader(message: ListHotFeeDepositAddressesResponse, reader: jspb.BinaryReader): ListHotFeeDepositAddressesResponse;
+}
+
+export namespace ListHotFeeDepositAddressesResponse {
+    export type AsObject = {
+        feeDepositAddressesList: Array<gincoinc_adamant_global_v1_adamantglobalv1_model_pb.FeeDepositAddress.AsObject>,
+    }
+}
