@@ -37,6 +37,8 @@ interface ITellerAPIService extends grpc.ServiceDefinition<grpc.UntypedServiceIm
     importAddress: ITellerAPIService_IImportAddress;
     getEthereumFeeAddress: ITellerAPIService_IGetEthereumFeeAddress;
     updateAddressBalance: ITellerAPIService_IUpdateAddressBalance;
+    listColdFeeDepositAddresses: ITellerAPIService_IListColdFeeDepositAddresses;
+    listHotFeeDepositAddresses: ITellerAPIService_IListHotFeeDepositAddresses;
     createTransaction: ITellerAPIService_ICreateTransaction;
     signTransaction: ITellerAPIService_ISignTransaction;
     sendTransaction: ITellerAPIService_ISendTransaction;
@@ -282,6 +284,24 @@ interface ITellerAPIService_IUpdateAddressBalance extends grpc.MethodDefinition<
     requestDeserialize: grpc.deserialize<gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.UpdateAddressBalanceRequest>;
     responseSerialize: grpc.serialize<google_protobuf_empty_pb.Empty>;
     responseDeserialize: grpc.deserialize<google_protobuf_empty_pb.Empty>;
+}
+interface ITellerAPIService_IListColdFeeDepositAddresses extends grpc.MethodDefinition<gincoinc_adamant_teller_v1_adamanttellerv1_teller_api_pb.ListColdFeeDepositAddressesRequest, gincoinc_adamant_teller_v1_adamanttellerv1_teller_api_pb.ListColdFeeDepositAddressesResponse> {
+    path: "/adamant.teller.v1.TellerAPI/ListColdFeeDepositAddresses";
+    requestStream: false;
+    responseStream: false;
+    requestSerialize: grpc.serialize<gincoinc_adamant_teller_v1_adamanttellerv1_teller_api_pb.ListColdFeeDepositAddressesRequest>;
+    requestDeserialize: grpc.deserialize<gincoinc_adamant_teller_v1_adamanttellerv1_teller_api_pb.ListColdFeeDepositAddressesRequest>;
+    responseSerialize: grpc.serialize<gincoinc_adamant_teller_v1_adamanttellerv1_teller_api_pb.ListColdFeeDepositAddressesResponse>;
+    responseDeserialize: grpc.deserialize<gincoinc_adamant_teller_v1_adamanttellerv1_teller_api_pb.ListColdFeeDepositAddressesResponse>;
+}
+interface ITellerAPIService_IListHotFeeDepositAddresses extends grpc.MethodDefinition<gincoinc_adamant_teller_v1_adamanttellerv1_teller_api_pb.ListHotFeeDepositAddressesRequest, gincoinc_adamant_teller_v1_adamanttellerv1_teller_api_pb.ListHotFeeDepositAddressesResponse> {
+    path: "/adamant.teller.v1.TellerAPI/ListHotFeeDepositAddresses";
+    requestStream: false;
+    responseStream: false;
+    requestSerialize: grpc.serialize<gincoinc_adamant_teller_v1_adamanttellerv1_teller_api_pb.ListHotFeeDepositAddressesRequest>;
+    requestDeserialize: grpc.deserialize<gincoinc_adamant_teller_v1_adamanttellerv1_teller_api_pb.ListHotFeeDepositAddressesRequest>;
+    responseSerialize: grpc.serialize<gincoinc_adamant_teller_v1_adamanttellerv1_teller_api_pb.ListHotFeeDepositAddressesResponse>;
+    responseDeserialize: grpc.deserialize<gincoinc_adamant_teller_v1_adamanttellerv1_teller_api_pb.ListHotFeeDepositAddressesResponse>;
 }
 interface ITellerAPIService_ICreateTransaction extends grpc.MethodDefinition<gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.CreateTransactionRequest, gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.CreateTransactionResponse> {
     path: "/adamant.teller.v1.TellerAPI/CreateTransaction";
@@ -643,6 +663,8 @@ export interface ITellerAPIServer {
     importAddress: grpc.handleUnaryCall<gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.ImportAddressRequest, google_protobuf_empty_pb.Empty>;
     getEthereumFeeAddress: grpc.handleUnaryCall<gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.GetEthereumFeeAddressRequest, gincoinc_adamant_global_v1_adamantglobalv1_model_pb.EthereumFeeAddress>;
     updateAddressBalance: grpc.handleUnaryCall<gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.UpdateAddressBalanceRequest, google_protobuf_empty_pb.Empty>;
+    listColdFeeDepositAddresses: grpc.handleUnaryCall<gincoinc_adamant_teller_v1_adamanttellerv1_teller_api_pb.ListColdFeeDepositAddressesRequest, gincoinc_adamant_teller_v1_adamanttellerv1_teller_api_pb.ListColdFeeDepositAddressesResponse>;
+    listHotFeeDepositAddresses: grpc.handleUnaryCall<gincoinc_adamant_teller_v1_adamanttellerv1_teller_api_pb.ListHotFeeDepositAddressesRequest, gincoinc_adamant_teller_v1_adamanttellerv1_teller_api_pb.ListHotFeeDepositAddressesResponse>;
     createTransaction: grpc.handleUnaryCall<gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.CreateTransactionRequest, gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.CreateTransactionResponse>;
     signTransaction: grpc.handleUnaryCall<gincoinc_adamant_teller_v1_adamanttellerv1_teller_api_pb.SignTransactionRequest, google_protobuf_empty_pb.Empty>;
     sendTransaction: grpc.handleUnaryCall<gincoinc_adamant_teller_v1_adamanttellerv1_teller_api_pb.SendTransactionRequest, gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.SendTransactionResponse>;
@@ -752,6 +774,12 @@ export interface ITellerAPIClient {
     updateAddressBalance(request: gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.UpdateAddressBalanceRequest, callback: (error: grpc.ServiceError | null, response: google_protobuf_empty_pb.Empty) => void): grpc.ClientUnaryCall;
     updateAddressBalance(request: gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.UpdateAddressBalanceRequest, metadata: grpc.Metadata, callback: (error: grpc.ServiceError | null, response: google_protobuf_empty_pb.Empty) => void): grpc.ClientUnaryCall;
     updateAddressBalance(request: gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.UpdateAddressBalanceRequest, metadata: grpc.Metadata, options: Partial<grpc.CallOptions>, callback: (error: grpc.ServiceError | null, response: google_protobuf_empty_pb.Empty) => void): grpc.ClientUnaryCall;
+    listColdFeeDepositAddresses(request: gincoinc_adamant_teller_v1_adamanttellerv1_teller_api_pb.ListColdFeeDepositAddressesRequest, callback: (error: grpc.ServiceError | null, response: gincoinc_adamant_teller_v1_adamanttellerv1_teller_api_pb.ListColdFeeDepositAddressesResponse) => void): grpc.ClientUnaryCall;
+    listColdFeeDepositAddresses(request: gincoinc_adamant_teller_v1_adamanttellerv1_teller_api_pb.ListColdFeeDepositAddressesRequest, metadata: grpc.Metadata, callback: (error: grpc.ServiceError | null, response: gincoinc_adamant_teller_v1_adamanttellerv1_teller_api_pb.ListColdFeeDepositAddressesResponse) => void): grpc.ClientUnaryCall;
+    listColdFeeDepositAddresses(request: gincoinc_adamant_teller_v1_adamanttellerv1_teller_api_pb.ListColdFeeDepositAddressesRequest, metadata: grpc.Metadata, options: Partial<grpc.CallOptions>, callback: (error: grpc.ServiceError | null, response: gincoinc_adamant_teller_v1_adamanttellerv1_teller_api_pb.ListColdFeeDepositAddressesResponse) => void): grpc.ClientUnaryCall;
+    listHotFeeDepositAddresses(request: gincoinc_adamant_teller_v1_adamanttellerv1_teller_api_pb.ListHotFeeDepositAddressesRequest, callback: (error: grpc.ServiceError | null, response: gincoinc_adamant_teller_v1_adamanttellerv1_teller_api_pb.ListHotFeeDepositAddressesResponse) => void): grpc.ClientUnaryCall;
+    listHotFeeDepositAddresses(request: gincoinc_adamant_teller_v1_adamanttellerv1_teller_api_pb.ListHotFeeDepositAddressesRequest, metadata: grpc.Metadata, callback: (error: grpc.ServiceError | null, response: gincoinc_adamant_teller_v1_adamanttellerv1_teller_api_pb.ListHotFeeDepositAddressesResponse) => void): grpc.ClientUnaryCall;
+    listHotFeeDepositAddresses(request: gincoinc_adamant_teller_v1_adamanttellerv1_teller_api_pb.ListHotFeeDepositAddressesRequest, metadata: grpc.Metadata, options: Partial<grpc.CallOptions>, callback: (error: grpc.ServiceError | null, response: gincoinc_adamant_teller_v1_adamanttellerv1_teller_api_pb.ListHotFeeDepositAddressesResponse) => void): grpc.ClientUnaryCall;
     createTransaction(request: gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.CreateTransactionRequest, callback: (error: grpc.ServiceError | null, response: gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.CreateTransactionResponse) => void): grpc.ClientUnaryCall;
     createTransaction(request: gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.CreateTransactionRequest, metadata: grpc.Metadata, callback: (error: grpc.ServiceError | null, response: gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.CreateTransactionResponse) => void): grpc.ClientUnaryCall;
     createTransaction(request: gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.CreateTransactionRequest, metadata: grpc.Metadata, options: Partial<grpc.CallOptions>, callback: (error: grpc.ServiceError | null, response: gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.CreateTransactionResponse) => void): grpc.ClientUnaryCall;
@@ -936,6 +964,12 @@ export class TellerAPIClient extends grpc.Client implements ITellerAPIClient {
     public updateAddressBalance(request: gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.UpdateAddressBalanceRequest, callback: (error: grpc.ServiceError | null, response: google_protobuf_empty_pb.Empty) => void): grpc.ClientUnaryCall;
     public updateAddressBalance(request: gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.UpdateAddressBalanceRequest, metadata: grpc.Metadata, callback: (error: grpc.ServiceError | null, response: google_protobuf_empty_pb.Empty) => void): grpc.ClientUnaryCall;
     public updateAddressBalance(request: gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.UpdateAddressBalanceRequest, metadata: grpc.Metadata, options: Partial<grpc.CallOptions>, callback: (error: grpc.ServiceError | null, response: google_protobuf_empty_pb.Empty) => void): grpc.ClientUnaryCall;
+    public listColdFeeDepositAddresses(request: gincoinc_adamant_teller_v1_adamanttellerv1_teller_api_pb.ListColdFeeDepositAddressesRequest, callback: (error: grpc.ServiceError | null, response: gincoinc_adamant_teller_v1_adamanttellerv1_teller_api_pb.ListColdFeeDepositAddressesResponse) => void): grpc.ClientUnaryCall;
+    public listColdFeeDepositAddresses(request: gincoinc_adamant_teller_v1_adamanttellerv1_teller_api_pb.ListColdFeeDepositAddressesRequest, metadata: grpc.Metadata, callback: (error: grpc.ServiceError | null, response: gincoinc_adamant_teller_v1_adamanttellerv1_teller_api_pb.ListColdFeeDepositAddressesResponse) => void): grpc.ClientUnaryCall;
+    public listColdFeeDepositAddresses(request: gincoinc_adamant_teller_v1_adamanttellerv1_teller_api_pb.ListColdFeeDepositAddressesRequest, metadata: grpc.Metadata, options: Partial<grpc.CallOptions>, callback: (error: grpc.ServiceError | null, response: gincoinc_adamant_teller_v1_adamanttellerv1_teller_api_pb.ListColdFeeDepositAddressesResponse) => void): grpc.ClientUnaryCall;
+    public listHotFeeDepositAddresses(request: gincoinc_adamant_teller_v1_adamanttellerv1_teller_api_pb.ListHotFeeDepositAddressesRequest, callback: (error: grpc.ServiceError | null, response: gincoinc_adamant_teller_v1_adamanttellerv1_teller_api_pb.ListHotFeeDepositAddressesResponse) => void): grpc.ClientUnaryCall;
+    public listHotFeeDepositAddresses(request: gincoinc_adamant_teller_v1_adamanttellerv1_teller_api_pb.ListHotFeeDepositAddressesRequest, metadata: grpc.Metadata, callback: (error: grpc.ServiceError | null, response: gincoinc_adamant_teller_v1_adamanttellerv1_teller_api_pb.ListHotFeeDepositAddressesResponse) => void): grpc.ClientUnaryCall;
+    public listHotFeeDepositAddresses(request: gincoinc_adamant_teller_v1_adamanttellerv1_teller_api_pb.ListHotFeeDepositAddressesRequest, metadata: grpc.Metadata, options: Partial<grpc.CallOptions>, callback: (error: grpc.ServiceError | null, response: gincoinc_adamant_teller_v1_adamanttellerv1_teller_api_pb.ListHotFeeDepositAddressesResponse) => void): grpc.ClientUnaryCall;
     public createTransaction(request: gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.CreateTransactionRequest, callback: (error: grpc.ServiceError | null, response: gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.CreateTransactionResponse) => void): grpc.ClientUnaryCall;
     public createTransaction(request: gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.CreateTransactionRequest, metadata: grpc.Metadata, callback: (error: grpc.ServiceError | null, response: gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.CreateTransactionResponse) => void): grpc.ClientUnaryCall;
     public createTransaction(request: gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.CreateTransactionRequest, metadata: grpc.Metadata, options: Partial<grpc.CallOptions>, callback: (error: grpc.ServiceError | null, response: gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.CreateTransactionResponse) => void): grpc.ClientUnaryCall;

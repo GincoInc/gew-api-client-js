@@ -775,6 +775,8 @@ export class UpdateWalletFlushSettingRequest extends jspb.Message {
     setNetwork(value: gincoinc_global_v1_gincoincglobalv1_enum_pb.Network): UpdateWalletFlushSettingRequest;
     getDestinationWalletId(): string;
     setDestinationWalletId(value: string): UpdateWalletFlushSettingRequest;
+    getFlushThreshold(): number;
+    setFlushThreshold(value: number): UpdateWalletFlushSettingRequest;
 
     serializeBinary(): Uint8Array;
     toObject(includeInstance?: boolean): UpdateWalletFlushSettingRequest.AsObject;
@@ -791,6 +793,7 @@ export namespace UpdateWalletFlushSettingRequest {
         coin: gincoinc_global_v1_gincoincglobalv1_enum_pb.Coin,
         network?: gincoinc_global_v1_gincoincglobalv1_enum_pb.Network,
         destinationWalletId: string,
+        flushThreshold: number,
     }
 }
 
@@ -5843,5 +5846,49 @@ export namespace ListStakingValidatorsResponse {
     export type AsObject = {
         stakingValidatorsList: Array<gincoinc_adamant_global_v1_adamantglobalv1_model_pb.StakingValidator.AsObject>,
         nextPageToken: string,
+    }
+}
+
+export class UpdateMailSettingsRequest extends jspb.Message { 
+    clearEnableMailTypesList(): void;
+    getEnableMailTypesList(): Array<gincoinc_adamant_global_v1_adamantglobalv1_enum_pb.MailType>;
+    setEnableMailTypesList(value: Array<gincoinc_adamant_global_v1_adamantglobalv1_enum_pb.MailType>): UpdateMailSettingsRequest;
+    addEnableMailTypes(value: gincoinc_adamant_global_v1_adamantglobalv1_enum_pb.MailType, index?: number): gincoinc_adamant_global_v1_adamantglobalv1_enum_pb.MailType;
+    clearDisableMailTypesList(): void;
+    getDisableMailTypesList(): Array<gincoinc_adamant_global_v1_adamantglobalv1_enum_pb.MailType>;
+    setDisableMailTypesList(value: Array<gincoinc_adamant_global_v1_adamantglobalv1_enum_pb.MailType>): UpdateMailSettingsRequest;
+    addDisableMailTypes(value: gincoinc_adamant_global_v1_adamantglobalv1_enum_pb.MailType, index?: number): gincoinc_adamant_global_v1_adamantglobalv1_enum_pb.MailType;
+
+    serializeBinary(): Uint8Array;
+    toObject(includeInstance?: boolean): UpdateMailSettingsRequest.AsObject;
+    static toObject(includeInstance: boolean, msg: UpdateMailSettingsRequest): UpdateMailSettingsRequest.AsObject;
+    static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+    static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+    static serializeBinaryToWriter(message: UpdateMailSettingsRequest, writer: jspb.BinaryWriter): void;
+    static deserializeBinary(bytes: Uint8Array): UpdateMailSettingsRequest;
+    static deserializeBinaryFromReader(message: UpdateMailSettingsRequest, reader: jspb.BinaryReader): UpdateMailSettingsRequest;
+}
+
+export namespace UpdateMailSettingsRequest {
+    export type AsObject = {
+        enableMailTypesList: Array<gincoinc_adamant_global_v1_adamantglobalv1_enum_pb.MailType>,
+        disableMailTypesList: Array<gincoinc_adamant_global_v1_adamantglobalv1_enum_pb.MailType>,
+    }
+}
+
+export class GetMailSettingsRequest extends jspb.Message { 
+
+    serializeBinary(): Uint8Array;
+    toObject(includeInstance?: boolean): GetMailSettingsRequest.AsObject;
+    static toObject(includeInstance: boolean, msg: GetMailSettingsRequest): GetMailSettingsRequest.AsObject;
+    static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+    static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+    static serializeBinaryToWriter(message: GetMailSettingsRequest, writer: jspb.BinaryWriter): void;
+    static deserializeBinary(bytes: Uint8Array): GetMailSettingsRequest;
+    static deserializeBinaryFromReader(message: GetMailSettingsRequest, reader: jspb.BinaryReader): GetMailSettingsRequest;
+}
+
+export namespace GetMailSettingsRequest {
+    export type AsObject = {
     }
 }

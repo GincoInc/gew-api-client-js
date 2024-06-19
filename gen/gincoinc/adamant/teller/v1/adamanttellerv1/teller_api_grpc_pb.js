@@ -846,6 +846,50 @@ function deserialize_adamant_teller_v1_InitializeXRPWalletRequest(buffer_arg) {
   return gincoinc_adamant_teller_v1_adamanttellerv1_teller_api_pb.InitializeXRPWalletRequest.deserializeBinary(new Uint8Array(buffer_arg));
 }
 
+function serialize_adamant_teller_v1_ListColdFeeDepositAddressesRequest(arg) {
+  if (!(arg instanceof gincoinc_adamant_teller_v1_adamanttellerv1_teller_api_pb.ListColdFeeDepositAddressesRequest)) {
+    throw new Error('Expected argument of type adamant.teller.v1.ListColdFeeDepositAddressesRequest');
+  }
+  return Buffer.from(arg.serializeBinary());
+}
+
+function deserialize_adamant_teller_v1_ListColdFeeDepositAddressesRequest(buffer_arg) {
+  return gincoinc_adamant_teller_v1_adamanttellerv1_teller_api_pb.ListColdFeeDepositAddressesRequest.deserializeBinary(new Uint8Array(buffer_arg));
+}
+
+function serialize_adamant_teller_v1_ListColdFeeDepositAddressesResponse(arg) {
+  if (!(arg instanceof gincoinc_adamant_teller_v1_adamanttellerv1_teller_api_pb.ListColdFeeDepositAddressesResponse)) {
+    throw new Error('Expected argument of type adamant.teller.v1.ListColdFeeDepositAddressesResponse');
+  }
+  return Buffer.from(arg.serializeBinary());
+}
+
+function deserialize_adamant_teller_v1_ListColdFeeDepositAddressesResponse(buffer_arg) {
+  return gincoinc_adamant_teller_v1_adamanttellerv1_teller_api_pb.ListColdFeeDepositAddressesResponse.deserializeBinary(new Uint8Array(buffer_arg));
+}
+
+function serialize_adamant_teller_v1_ListHotFeeDepositAddressesRequest(arg) {
+  if (!(arg instanceof gincoinc_adamant_teller_v1_adamanttellerv1_teller_api_pb.ListHotFeeDepositAddressesRequest)) {
+    throw new Error('Expected argument of type adamant.teller.v1.ListHotFeeDepositAddressesRequest');
+  }
+  return Buffer.from(arg.serializeBinary());
+}
+
+function deserialize_adamant_teller_v1_ListHotFeeDepositAddressesRequest(buffer_arg) {
+  return gincoinc_adamant_teller_v1_adamanttellerv1_teller_api_pb.ListHotFeeDepositAddressesRequest.deserializeBinary(new Uint8Array(buffer_arg));
+}
+
+function serialize_adamant_teller_v1_ListHotFeeDepositAddressesResponse(arg) {
+  if (!(arg instanceof gincoinc_adamant_teller_v1_adamanttellerv1_teller_api_pb.ListHotFeeDepositAddressesResponse)) {
+    throw new Error('Expected argument of type adamant.teller.v1.ListHotFeeDepositAddressesResponse');
+  }
+  return Buffer.from(arg.serializeBinary());
+}
+
+function deserialize_adamant_teller_v1_ListHotFeeDepositAddressesResponse(buffer_arg) {
+  return gincoinc_adamant_teller_v1_adamanttellerv1_teller_api_pb.ListHotFeeDepositAddressesResponse.deserializeBinary(new Uint8Array(buffer_arg));
+}
+
 function serialize_adamant_teller_v1_ProgmatCoinAddToBlacklistRequest(arg) {
   if (!(arg instanceof gincoinc_adamant_teller_v1_adamanttellerv1_teller_api_pb.ProgmatCoinAddToBlacklistRequest)) {
     throw new Error('Expected argument of type adamant.teller.v1.ProgmatCoinAddToBlacklistRequest');
@@ -1305,6 +1349,28 @@ getEthereumFeeAddress: {
     requestDeserialize: deserialize_adamant_global_v1_UpdateAddressBalanceRequest,
     responseSerialize: serialize_google_protobuf_Empty,
     responseDeserialize: deserialize_google_protobuf_Empty,
+  },
+  listColdFeeDepositAddresses: {
+    path: '/adamant.teller.v1.TellerAPI/ListColdFeeDepositAddresses',
+    requestStream: false,
+    responseStream: false,
+    requestType: gincoinc_adamant_teller_v1_adamanttellerv1_teller_api_pb.ListColdFeeDepositAddressesRequest,
+    responseType: gincoinc_adamant_teller_v1_adamanttellerv1_teller_api_pb.ListColdFeeDepositAddressesResponse,
+    requestSerialize: serialize_adamant_teller_v1_ListColdFeeDepositAddressesRequest,
+    requestDeserialize: deserialize_adamant_teller_v1_ListColdFeeDepositAddressesRequest,
+    responseSerialize: serialize_adamant_teller_v1_ListColdFeeDepositAddressesResponse,
+    responseDeserialize: deserialize_adamant_teller_v1_ListColdFeeDepositAddressesResponse,
+  },
+  listHotFeeDepositAddresses: {
+    path: '/adamant.teller.v1.TellerAPI/ListHotFeeDepositAddresses',
+    requestStream: false,
+    responseStream: false,
+    requestType: gincoinc_adamant_teller_v1_adamanttellerv1_teller_api_pb.ListHotFeeDepositAddressesRequest,
+    responseType: gincoinc_adamant_teller_v1_adamanttellerv1_teller_api_pb.ListHotFeeDepositAddressesResponse,
+    requestSerialize: serialize_adamant_teller_v1_ListHotFeeDepositAddressesRequest,
+    requestDeserialize: deserialize_adamant_teller_v1_ListHotFeeDepositAddressesRequest,
+    responseSerialize: serialize_adamant_teller_v1_ListHotFeeDepositAddressesResponse,
+    responseDeserialize: deserialize_adamant_teller_v1_ListHotFeeDepositAddressesResponse,
   },
   createTransaction: {
     path: '/adamant.teller.v1.TellerAPI/CreateTransaction',

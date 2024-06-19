@@ -42,6 +42,7 @@ message AuditLog {
   string labeled_address_id = 21;
   string address = 22;
   string address_name = 23;
+  // string message = 41;
   string transfer_limit_id = 24;
   string transfer_limit_name = 25;
   int64 transfer_one_time_limit = 26;
@@ -54,4 +55,6 @@ message AuditLog {
   repeated string whitelist_addresses = 31;
   google.protobuf.Timestamp event_time = 32;
   google.protobuf.Timestamp create_time = 33;
+  repeated adamant.global.v1.MailType enabled_mails = 41;
+  repeated adamant.global.v1.MailType disabled_mails = 42;
 }

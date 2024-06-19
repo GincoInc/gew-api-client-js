@@ -835,6 +835,11 @@ export class Transaction extends jspb.Message {
     getAptosSpecific(): AptosSpecific | undefined;
     setAptosSpecific(value?: AptosSpecific): Transaction;
 
+    hasDogecoinSpecific(): boolean;
+    clearDogecoinSpecific(): void;
+    getDogecoinSpecific(): DogecoinSpecific | undefined;
+    setDogecoinSpecific(value?: DogecoinSpecific): Transaction;
+
     hasCreateTime(): boolean;
     clearCreateTime(): void;
     getCreateTime(): google_protobuf_timestamp_pb.Timestamp | undefined;
@@ -901,6 +906,7 @@ export namespace Transaction {
         flareSpecific?: FlareSpecific.AsObject,
         arbitrumOneSpecific?: ArbitrumOneSpecific.AsObject,
         aptosSpecific?: AptosSpecific.AsObject,
+        dogecoinSpecific?: DogecoinSpecific.AsObject,
         createTime?: google_protobuf_timestamp_pb.Timestamp.AsObject,
         updateTime?: google_protobuf_timestamp_pb.Timestamp.AsObject,
     }
@@ -1139,6 +1145,33 @@ export class LitecoinSpecific extends jspb.Message {
 }
 
 export namespace LitecoinSpecific {
+    export type AsObject = {
+        txInputsList: Array<TxInput.AsObject>,
+        txOutputsList: Array<TxOutput.AsObject>,
+    }
+}
+
+export class DogecoinSpecific extends jspb.Message { 
+    clearTxInputsList(): void;
+    getTxInputsList(): Array<TxInput>;
+    setTxInputsList(value: Array<TxInput>): DogecoinSpecific;
+    addTxInputs(value?: TxInput, index?: number): TxInput;
+    clearTxOutputsList(): void;
+    getTxOutputsList(): Array<TxOutput>;
+    setTxOutputsList(value: Array<TxOutput>): DogecoinSpecific;
+    addTxOutputs(value?: TxOutput, index?: number): TxOutput;
+
+    serializeBinary(): Uint8Array;
+    toObject(includeInstance?: boolean): DogecoinSpecific.AsObject;
+    static toObject(includeInstance: boolean, msg: DogecoinSpecific): DogecoinSpecific.AsObject;
+    static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+    static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+    static serializeBinaryToWriter(message: DogecoinSpecific, writer: jspb.BinaryWriter): void;
+    static deserializeBinary(bytes: Uint8Array): DogecoinSpecific;
+    static deserializeBinaryFromReader(message: DogecoinSpecific, reader: jspb.BinaryReader): DogecoinSpecific;
+}
+
+export namespace DogecoinSpecific {
     export type AsObject = {
         txInputsList: Array<TxInput.AsObject>,
         txOutputsList: Array<TxOutput.AsObject>,
@@ -3544,6 +3577,8 @@ export class WalletFlushSetting extends jspb.Message {
     clearUpdateTime(): void;
     getUpdateTime(): google_protobuf_timestamp_pb.Timestamp | undefined;
     setUpdateTime(value?: google_protobuf_timestamp_pb.Timestamp): WalletFlushSetting;
+    getFlushThreshold(): number;
+    setFlushThreshold(value: number): WalletFlushSetting;
 
     serializeBinary(): Uint8Array;
     toObject(includeInstance?: boolean): WalletFlushSetting.AsObject;
@@ -3563,6 +3598,7 @@ export namespace WalletFlushSetting {
         destinationWalletId: string,
         createTime?: google_protobuf_timestamp_pb.Timestamp.AsObject,
         updateTime?: google_protobuf_timestamp_pb.Timestamp.AsObject,
+        flushThreshold: number,
     }
 }
 
