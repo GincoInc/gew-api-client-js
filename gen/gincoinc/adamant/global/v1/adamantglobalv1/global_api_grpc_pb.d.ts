@@ -73,6 +73,7 @@ interface IGlobalAPIService extends grpc.ServiceDefinition<grpc.UntypedServiceIm
     getTransactionByTxID: IGlobalAPIService_IGetTransactionByTxID;
     listTransactions: IGlobalAPIService_IListTransactions;
     listTransactionsByFilter: IGlobalAPIService_IListTransactionsByFilter;
+    listUnconfirmedTransactionsByFilter: IGlobalAPIService_IListUnconfirmedTransactionsByFilter;
     getSignInfo: IGlobalAPIService_IGetSignInfo;
     listSignInfo: IGlobalAPIService_IListSignInfo;
     listXRPInitSignInfo: IGlobalAPIService_IListXRPInitSignInfo;
@@ -650,6 +651,15 @@ interface IGlobalAPIService_IListTransactionsByFilter extends grpc.MethodDefinit
     responseSerialize: grpc.serialize<gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.ListTransactionsResponse>;
     responseDeserialize: grpc.deserialize<gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.ListTransactionsResponse>;
 }
+interface IGlobalAPIService_IListUnconfirmedTransactionsByFilter extends grpc.MethodDefinition<gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.ListUnconfirmedTransactionsByFilterRequest, gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.ListUnconfirmedTransactionsResponse> {
+    path: "/adamant.global.v1.GlobalAPI/ListUnconfirmedTransactionsByFilter";
+    requestStream: false;
+    responseStream: false;
+    requestSerialize: grpc.serialize<gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.ListUnconfirmedTransactionsByFilterRequest>;
+    requestDeserialize: grpc.deserialize<gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.ListUnconfirmedTransactionsByFilterRequest>;
+    responseSerialize: grpc.serialize<gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.ListUnconfirmedTransactionsResponse>;
+    responseDeserialize: grpc.deserialize<gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.ListUnconfirmedTransactionsResponse>;
+}
 interface IGlobalAPIService_IGetSignInfo extends grpc.MethodDefinition<gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.GetSignInfoRequest, gincoinc_adamant_global_v1_adamantglobalv1_model_pb.SignInfo> {
     path: "/adamant.global.v1.GlobalAPI/GetSignInfo";
     requestStream: false;
@@ -1189,6 +1199,7 @@ export interface IGlobalAPIServer {
     getTransactionByTxID: grpc.handleUnaryCall<gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.GetTransactionByTxIDRequest, gincoinc_adamant_global_v1_adamantglobalv1_model_pb.Transaction>;
     listTransactions: grpc.handleUnaryCall<gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.ListTransactionsRequest, gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.ListTransactionsResponse>;
     listTransactionsByFilter: grpc.handleUnaryCall<gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.ListTransactionsByFilterRequest, gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.ListTransactionsResponse>;
+    listUnconfirmedTransactionsByFilter: grpc.handleUnaryCall<gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.ListUnconfirmedTransactionsByFilterRequest, gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.ListUnconfirmedTransactionsResponse>;
     getSignInfo: grpc.handleUnaryCall<gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.GetSignInfoRequest, gincoinc_adamant_global_v1_adamantglobalv1_model_pb.SignInfo>;
     listSignInfo: grpc.handleUnaryCall<gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.ListSignInfoRequest, gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.ListSignInfoResponse>;
     listXRPInitSignInfo: grpc.handleUnaryCall<gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.ListXRPInitSignInfoRequest, gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.ListXRPInitSignInfoResponse>;
@@ -1419,6 +1430,9 @@ export interface IGlobalAPIClient {
     listTransactionsByFilter(request: gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.ListTransactionsByFilterRequest, callback: (error: grpc.ServiceError | null, response: gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.ListTransactionsResponse) => void): grpc.ClientUnaryCall;
     listTransactionsByFilter(request: gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.ListTransactionsByFilterRequest, metadata: grpc.Metadata, callback: (error: grpc.ServiceError | null, response: gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.ListTransactionsResponse) => void): grpc.ClientUnaryCall;
     listTransactionsByFilter(request: gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.ListTransactionsByFilterRequest, metadata: grpc.Metadata, options: Partial<grpc.CallOptions>, callback: (error: grpc.ServiceError | null, response: gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.ListTransactionsResponse) => void): grpc.ClientUnaryCall;
+    listUnconfirmedTransactionsByFilter(request: gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.ListUnconfirmedTransactionsByFilterRequest, callback: (error: grpc.ServiceError | null, response: gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.ListUnconfirmedTransactionsResponse) => void): grpc.ClientUnaryCall;
+    listUnconfirmedTransactionsByFilter(request: gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.ListUnconfirmedTransactionsByFilterRequest, metadata: grpc.Metadata, callback: (error: grpc.ServiceError | null, response: gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.ListUnconfirmedTransactionsResponse) => void): grpc.ClientUnaryCall;
+    listUnconfirmedTransactionsByFilter(request: gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.ListUnconfirmedTransactionsByFilterRequest, metadata: grpc.Metadata, options: Partial<grpc.CallOptions>, callback: (error: grpc.ServiceError | null, response: gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.ListUnconfirmedTransactionsResponse) => void): grpc.ClientUnaryCall;
     getSignInfo(request: gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.GetSignInfoRequest, callback: (error: grpc.ServiceError | null, response: gincoinc_adamant_global_v1_adamantglobalv1_model_pb.SignInfo) => void): grpc.ClientUnaryCall;
     getSignInfo(request: gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.GetSignInfoRequest, metadata: grpc.Metadata, callback: (error: grpc.ServiceError | null, response: gincoinc_adamant_global_v1_adamantglobalv1_model_pb.SignInfo) => void): grpc.ClientUnaryCall;
     getSignInfo(request: gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.GetSignInfoRequest, metadata: grpc.Metadata, options: Partial<grpc.CallOptions>, callback: (error: grpc.ServiceError | null, response: gincoinc_adamant_global_v1_adamantglobalv1_model_pb.SignInfo) => void): grpc.ClientUnaryCall;
@@ -1756,6 +1770,9 @@ export class GlobalAPIClient extends grpc.Client implements IGlobalAPIClient {
     public listTransactionsByFilter(request: gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.ListTransactionsByFilterRequest, callback: (error: grpc.ServiceError | null, response: gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.ListTransactionsResponse) => void): grpc.ClientUnaryCall;
     public listTransactionsByFilter(request: gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.ListTransactionsByFilterRequest, metadata: grpc.Metadata, callback: (error: grpc.ServiceError | null, response: gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.ListTransactionsResponse) => void): grpc.ClientUnaryCall;
     public listTransactionsByFilter(request: gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.ListTransactionsByFilterRequest, metadata: grpc.Metadata, options: Partial<grpc.CallOptions>, callback: (error: grpc.ServiceError | null, response: gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.ListTransactionsResponse) => void): grpc.ClientUnaryCall;
+    public listUnconfirmedTransactionsByFilter(request: gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.ListUnconfirmedTransactionsByFilterRequest, callback: (error: grpc.ServiceError | null, response: gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.ListUnconfirmedTransactionsResponse) => void): grpc.ClientUnaryCall;
+    public listUnconfirmedTransactionsByFilter(request: gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.ListUnconfirmedTransactionsByFilterRequest, metadata: grpc.Metadata, callback: (error: grpc.ServiceError | null, response: gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.ListUnconfirmedTransactionsResponse) => void): grpc.ClientUnaryCall;
+    public listUnconfirmedTransactionsByFilter(request: gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.ListUnconfirmedTransactionsByFilterRequest, metadata: grpc.Metadata, options: Partial<grpc.CallOptions>, callback: (error: grpc.ServiceError | null, response: gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.ListUnconfirmedTransactionsResponse) => void): grpc.ClientUnaryCall;
     public getSignInfo(request: gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.GetSignInfoRequest, callback: (error: grpc.ServiceError | null, response: gincoinc_adamant_global_v1_adamantglobalv1_model_pb.SignInfo) => void): grpc.ClientUnaryCall;
     public getSignInfo(request: gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.GetSignInfoRequest, metadata: grpc.Metadata, callback: (error: grpc.ServiceError | null, response: gincoinc_adamant_global_v1_adamantglobalv1_model_pb.SignInfo) => void): grpc.ClientUnaryCall;
     public getSignInfo(request: gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.GetSignInfoRequest, metadata: grpc.Metadata, options: Partial<grpc.CallOptions>, callback: (error: grpc.ServiceError | null, response: gincoinc_adamant_global_v1_adamantglobalv1_model_pb.SignInfo) => void): grpc.ClientUnaryCall;
