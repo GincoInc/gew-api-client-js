@@ -1320,6 +1320,28 @@ function deserialize_adamant_global_v1_ListTransfersResponse(buffer_arg) {
   return gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.ListTransfersResponse.deserializeBinary(new Uint8Array(buffer_arg));
 }
 
+function serialize_adamant_global_v1_ListUnconfirmedTransactionsByFilterRequest(arg) {
+  if (!(arg instanceof gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.ListUnconfirmedTransactionsByFilterRequest)) {
+    throw new Error('Expected argument of type adamant.global.v1.ListUnconfirmedTransactionsByFilterRequest');
+  }
+  return Buffer.from(arg.serializeBinary());
+}
+
+function deserialize_adamant_global_v1_ListUnconfirmedTransactionsByFilterRequest(buffer_arg) {
+  return gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.ListUnconfirmedTransactionsByFilterRequest.deserializeBinary(new Uint8Array(buffer_arg));
+}
+
+function serialize_adamant_global_v1_ListUnconfirmedTransactionsResponse(arg) {
+  if (!(arg instanceof gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.ListUnconfirmedTransactionsResponse)) {
+    throw new Error('Expected argument of type adamant.global.v1.ListUnconfirmedTransactionsResponse');
+  }
+  return Buffer.from(arg.serializeBinary());
+}
+
+function deserialize_adamant_global_v1_ListUnconfirmedTransactionsResponse(buffer_arg) {
+  return gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.ListUnconfirmedTransactionsResponse.deserializeBinary(new Uint8Array(buffer_arg));
+}
+
 function serialize_adamant_global_v1_ListWalletGroupsRequest(arg) {
   if (!(arg instanceof gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.ListWalletGroupsRequest)) {
     throw new Error('Expected argument of type adamant.global.v1.ListWalletGroupsRequest');
@@ -2654,6 +2676,18 @@ createTransaction: {
     requestDeserialize: deserialize_adamant_global_v1_ListTransactionsByFilterRequest,
     responseSerialize: serialize_adamant_global_v1_ListTransactionsResponse,
     responseDeserialize: deserialize_adamant_global_v1_ListTransactionsResponse,
+  },
+  // UnconfirmedTransaction
+listUnconfirmedTransactionsByFilter: {
+    path: '/adamant.global.v1.GlobalAPI/ListUnconfirmedTransactionsByFilter',
+    requestStream: false,
+    responseStream: false,
+    requestType: gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.ListUnconfirmedTransactionsByFilterRequest,
+    responseType: gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.ListUnconfirmedTransactionsResponse,
+    requestSerialize: serialize_adamant_global_v1_ListUnconfirmedTransactionsByFilterRequest,
+    requestDeserialize: deserialize_adamant_global_v1_ListUnconfirmedTransactionsByFilterRequest,
+    responseSerialize: serialize_adamant_global_v1_ListUnconfirmedTransactionsResponse,
+    responseDeserialize: deserialize_adamant_global_v1_ListUnconfirmedTransactionsResponse,
   },
   // SignInfo
 getSignInfo: {

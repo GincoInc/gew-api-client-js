@@ -637,6 +637,50 @@ function deserialize_adamant_global_v1_ListTransfersResponse(buffer_arg) {
   return gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.ListTransfersResponse.deserializeBinary(new Uint8Array(buffer_arg));
 }
 
+function serialize_adamant_global_v1_ListUTXOsRequest(arg) {
+  if (!(arg instanceof gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.ListUTXOsRequest)) {
+    throw new Error('Expected argument of type adamant.global.v1.ListUTXOsRequest');
+  }
+  return Buffer.from(arg.serializeBinary());
+}
+
+function deserialize_adamant_global_v1_ListUTXOsRequest(buffer_arg) {
+  return gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.ListUTXOsRequest.deserializeBinary(new Uint8Array(buffer_arg));
+}
+
+function serialize_adamant_global_v1_ListUTXOsResponse(arg) {
+  if (!(arg instanceof gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.ListUTXOsResponse)) {
+    throw new Error('Expected argument of type adamant.global.v1.ListUTXOsResponse');
+  }
+  return Buffer.from(arg.serializeBinary());
+}
+
+function deserialize_adamant_global_v1_ListUTXOsResponse(buffer_arg) {
+  return gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.ListUTXOsResponse.deserializeBinary(new Uint8Array(buffer_arg));
+}
+
+function serialize_adamant_global_v1_ListUnconfirmedTransactionsByFilterRequest(arg) {
+  if (!(arg instanceof gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.ListUnconfirmedTransactionsByFilterRequest)) {
+    throw new Error('Expected argument of type adamant.global.v1.ListUnconfirmedTransactionsByFilterRequest');
+  }
+  return Buffer.from(arg.serializeBinary());
+}
+
+function deserialize_adamant_global_v1_ListUnconfirmedTransactionsByFilterRequest(buffer_arg) {
+  return gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.ListUnconfirmedTransactionsByFilterRequest.deserializeBinary(new Uint8Array(buffer_arg));
+}
+
+function serialize_adamant_global_v1_ListUnconfirmedTransactionsResponse(arg) {
+  if (!(arg instanceof gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.ListUnconfirmedTransactionsResponse)) {
+    throw new Error('Expected argument of type adamant.global.v1.ListUnconfirmedTransactionsResponse');
+  }
+  return Buffer.from(arg.serializeBinary());
+}
+
+function deserialize_adamant_global_v1_ListUnconfirmedTransactionsResponse(buffer_arg) {
+  return gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.ListUnconfirmedTransactionsResponse.deserializeBinary(new Uint8Array(buffer_arg));
+}
+
 function serialize_adamant_global_v1_ListWalletsByFilterRequest(arg) {
   if (!(arg instanceof gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.ListWalletsByFilterRequest)) {
     throw new Error('Expected argument of type adamant.global.v1.ListWalletsByFilterRequest');
@@ -890,26 +934,48 @@ function deserialize_adamant_teller_v1_ListHotFeeDepositAddressesResponse(buffer
   return gincoinc_adamant_teller_v1_adamanttellerv1_teller_api_pb.ListHotFeeDepositAddressesResponse.deserializeBinary(new Uint8Array(buffer_arg));
 }
 
-function serialize_adamant_teller_v1_ProgmatCoinAddToBlacklistRequest(arg) {
-  if (!(arg instanceof gincoinc_adamant_teller_v1_adamanttellerv1_teller_api_pb.ProgmatCoinAddToBlacklistRequest)) {
-    throw new Error('Expected argument of type adamant.teller.v1.ProgmatCoinAddToBlacklistRequest');
+function serialize_adamant_teller_v1_ProgmatCoinBulkAddToBlacklistRequest(arg) {
+  if (!(arg instanceof gincoinc_adamant_teller_v1_adamanttellerv1_teller_api_pb.ProgmatCoinBulkAddToBlacklistRequest)) {
+    throw new Error('Expected argument of type adamant.teller.v1.ProgmatCoinBulkAddToBlacklistRequest');
   }
   return Buffer.from(arg.serializeBinary());
 }
 
-function deserialize_adamant_teller_v1_ProgmatCoinAddToBlacklistRequest(buffer_arg) {
-  return gincoinc_adamant_teller_v1_adamanttellerv1_teller_api_pb.ProgmatCoinAddToBlacklistRequest.deserializeBinary(new Uint8Array(buffer_arg));
+function deserialize_adamant_teller_v1_ProgmatCoinBulkAddToBlacklistRequest(buffer_arg) {
+  return gincoinc_adamant_teller_v1_adamanttellerv1_teller_api_pb.ProgmatCoinBulkAddToBlacklistRequest.deserializeBinary(new Uint8Array(buffer_arg));
 }
 
-function serialize_adamant_teller_v1_ProgmatCoinAddToWhitelistRequest(arg) {
-  if (!(arg instanceof gincoinc_adamant_teller_v1_adamanttellerv1_teller_api_pb.ProgmatCoinAddToWhitelistRequest)) {
-    throw new Error('Expected argument of type adamant.teller.v1.ProgmatCoinAddToWhitelistRequest');
+function serialize_adamant_teller_v1_ProgmatCoinBulkAddToWhitelistRequest(arg) {
+  if (!(arg instanceof gincoinc_adamant_teller_v1_adamanttellerv1_teller_api_pb.ProgmatCoinBulkAddToWhitelistRequest)) {
+    throw new Error('Expected argument of type adamant.teller.v1.ProgmatCoinBulkAddToWhitelistRequest');
   }
   return Buffer.from(arg.serializeBinary());
 }
 
-function deserialize_adamant_teller_v1_ProgmatCoinAddToWhitelistRequest(buffer_arg) {
-  return gincoinc_adamant_teller_v1_adamanttellerv1_teller_api_pb.ProgmatCoinAddToWhitelistRequest.deserializeBinary(new Uint8Array(buffer_arg));
+function deserialize_adamant_teller_v1_ProgmatCoinBulkAddToWhitelistRequest(buffer_arg) {
+  return gincoinc_adamant_teller_v1_adamanttellerv1_teller_api_pb.ProgmatCoinBulkAddToWhitelistRequest.deserializeBinary(new Uint8Array(buffer_arg));
+}
+
+function serialize_adamant_teller_v1_ProgmatCoinBulkRemoveFromBlacklistRequest(arg) {
+  if (!(arg instanceof gincoinc_adamant_teller_v1_adamanttellerv1_teller_api_pb.ProgmatCoinBulkRemoveFromBlacklistRequest)) {
+    throw new Error('Expected argument of type adamant.teller.v1.ProgmatCoinBulkRemoveFromBlacklistRequest');
+  }
+  return Buffer.from(arg.serializeBinary());
+}
+
+function deserialize_adamant_teller_v1_ProgmatCoinBulkRemoveFromBlacklistRequest(buffer_arg) {
+  return gincoinc_adamant_teller_v1_adamanttellerv1_teller_api_pb.ProgmatCoinBulkRemoveFromBlacklistRequest.deserializeBinary(new Uint8Array(buffer_arg));
+}
+
+function serialize_adamant_teller_v1_ProgmatCoinBulkRemoveFromWhitelistRequest(arg) {
+  if (!(arg instanceof gincoinc_adamant_teller_v1_adamanttellerv1_teller_api_pb.ProgmatCoinBulkRemoveFromWhitelistRequest)) {
+    throw new Error('Expected argument of type adamant.teller.v1.ProgmatCoinBulkRemoveFromWhitelistRequest');
+  }
+  return Buffer.from(arg.serializeBinary());
+}
+
+function deserialize_adamant_teller_v1_ProgmatCoinBulkRemoveFromWhitelistRequest(buffer_arg) {
+  return gincoinc_adamant_teller_v1_adamanttellerv1_teller_api_pb.ProgmatCoinBulkRemoveFromWhitelistRequest.deserializeBinary(new Uint8Array(buffer_arg));
 }
 
 function serialize_adamant_teller_v1_ProgmatCoinBurnRequest(arg) {
@@ -987,28 +1053,6 @@ function serialize_adamant_teller_v1_ProgmatCoinPauseRequest(arg) {
 
 function deserialize_adamant_teller_v1_ProgmatCoinPauseRequest(buffer_arg) {
   return gincoinc_adamant_teller_v1_adamanttellerv1_teller_api_pb.ProgmatCoinPauseRequest.deserializeBinary(new Uint8Array(buffer_arg));
-}
-
-function serialize_adamant_teller_v1_ProgmatCoinRemoveFromBlacklistRequest(arg) {
-  if (!(arg instanceof gincoinc_adamant_teller_v1_adamanttellerv1_teller_api_pb.ProgmatCoinRemoveFromBlacklistRequest)) {
-    throw new Error('Expected argument of type adamant.teller.v1.ProgmatCoinRemoveFromBlacklistRequest');
-  }
-  return Buffer.from(arg.serializeBinary());
-}
-
-function deserialize_adamant_teller_v1_ProgmatCoinRemoveFromBlacklistRequest(buffer_arg) {
-  return gincoinc_adamant_teller_v1_adamanttellerv1_teller_api_pb.ProgmatCoinRemoveFromBlacklistRequest.deserializeBinary(new Uint8Array(buffer_arg));
-}
-
-function serialize_adamant_teller_v1_ProgmatCoinRemoveFromWhitelistRequest(arg) {
-  if (!(arg instanceof gincoinc_adamant_teller_v1_adamanttellerv1_teller_api_pb.ProgmatCoinRemoveFromWhitelistRequest)) {
-    throw new Error('Expected argument of type adamant.teller.v1.ProgmatCoinRemoveFromWhitelistRequest');
-  }
-  return Buffer.from(arg.serializeBinary());
-}
-
-function deserialize_adamant_teller_v1_ProgmatCoinRemoveFromWhitelistRequest(buffer_arg) {
-  return gincoinc_adamant_teller_v1_adamanttellerv1_teller_api_pb.ProgmatCoinRemoveFromWhitelistRequest.deserializeBinary(new Uint8Array(buffer_arg));
 }
 
 function serialize_adamant_teller_v1_ProgmatCoinUnpauseRequest(arg) {
@@ -1226,6 +1270,17 @@ getWallet: {
     requestDeserialize: deserialize_adamant_global_v1_ListCosmosDelegateHistoriesRequest,
     responseSerialize: serialize_adamant_global_v1_ListCosmosDelegateHistoriesResponse,
     responseDeserialize: deserialize_adamant_global_v1_ListCosmosDelegateHistoriesResponse,
+  },
+  listUTXOs: {
+    path: '/adamant.teller.v1.TellerAPI/ListUTXOs',
+    requestStream: false,
+    responseStream: false,
+    requestType: gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.ListUTXOsRequest,
+    responseType: gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.ListUTXOsResponse,
+    requestSerialize: serialize_adamant_global_v1_ListUTXOsRequest,
+    requestDeserialize: deserialize_adamant_global_v1_ListUTXOsRequest,
+    responseSerialize: serialize_adamant_global_v1_ListUTXOsResponse,
+    responseDeserialize: deserialize_adamant_global_v1_ListUTXOsResponse,
   },
   // Create a new address for an existing wallet
 createAddress: {
@@ -1493,6 +1548,17 @@ getEthereumFeeAddress: {
     responseSerialize: serialize_adamant_global_v1_ListTransactionsResponse,
     responseDeserialize: deserialize_adamant_global_v1_ListTransactionsResponse,
   },
+  listUnconfirmedTransactionsByFilter: {
+    path: '/adamant.teller.v1.TellerAPI/ListUnconfirmedTransactionsByFilter',
+    requestStream: false,
+    responseStream: false,
+    requestType: gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.ListUnconfirmedTransactionsByFilterRequest,
+    responseType: gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.ListUnconfirmedTransactionsResponse,
+    requestSerialize: serialize_adamant_global_v1_ListUnconfirmedTransactionsByFilterRequest,
+    requestDeserialize: deserialize_adamant_global_v1_ListUnconfirmedTransactionsByFilterRequest,
+    responseSerialize: serialize_adamant_global_v1_ListUnconfirmedTransactionsResponse,
+    responseDeserialize: deserialize_adamant_global_v1_ListUnconfirmedTransactionsResponse,
+  },
   // Exit ethereum validators
 exitEthereumStakingValidators: {
     path: '/adamant.teller.v1.TellerAPI/ExitEthereumStakingValidators',
@@ -1709,47 +1775,47 @@ progmatCoinInitialize: {
     responseSerialize: serialize_adamant_global_v1_CreateTransactionResponse,
     responseDeserialize: deserialize_adamant_global_v1_CreateTransactionResponse,
   },
-  progmatCoinAddToWhitelist: {
-    path: '/adamant.teller.v1.TellerAPI/ProgmatCoinAddToWhitelist',
+  progmatCoinBulkAddToWhitelist: {
+    path: '/adamant.teller.v1.TellerAPI/ProgmatCoinBulkAddToWhitelist',
     requestStream: false,
     responseStream: false,
-    requestType: gincoinc_adamant_teller_v1_adamanttellerv1_teller_api_pb.ProgmatCoinAddToWhitelistRequest,
+    requestType: gincoinc_adamant_teller_v1_adamanttellerv1_teller_api_pb.ProgmatCoinBulkAddToWhitelistRequest,
     responseType: gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.CreateTransactionResponse,
-    requestSerialize: serialize_adamant_teller_v1_ProgmatCoinAddToWhitelistRequest,
-    requestDeserialize: deserialize_adamant_teller_v1_ProgmatCoinAddToWhitelistRequest,
+    requestSerialize: serialize_adamant_teller_v1_ProgmatCoinBulkAddToWhitelistRequest,
+    requestDeserialize: deserialize_adamant_teller_v1_ProgmatCoinBulkAddToWhitelistRequest,
     responseSerialize: serialize_adamant_global_v1_CreateTransactionResponse,
     responseDeserialize: deserialize_adamant_global_v1_CreateTransactionResponse,
   },
-  progmatCoinRemoveFromWhitelist: {
-    path: '/adamant.teller.v1.TellerAPI/ProgmatCoinRemoveFromWhitelist',
+  progmatCoinBulkRemoveFromWhitelist: {
+    path: '/adamant.teller.v1.TellerAPI/ProgmatCoinBulkRemoveFromWhitelist',
     requestStream: false,
     responseStream: false,
-    requestType: gincoinc_adamant_teller_v1_adamanttellerv1_teller_api_pb.ProgmatCoinRemoveFromWhitelistRequest,
+    requestType: gincoinc_adamant_teller_v1_adamanttellerv1_teller_api_pb.ProgmatCoinBulkRemoveFromWhitelistRequest,
     responseType: gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.CreateTransactionResponse,
-    requestSerialize: serialize_adamant_teller_v1_ProgmatCoinRemoveFromWhitelistRequest,
-    requestDeserialize: deserialize_adamant_teller_v1_ProgmatCoinRemoveFromWhitelistRequest,
+    requestSerialize: serialize_adamant_teller_v1_ProgmatCoinBulkRemoveFromWhitelistRequest,
+    requestDeserialize: deserialize_adamant_teller_v1_ProgmatCoinBulkRemoveFromWhitelistRequest,
     responseSerialize: serialize_adamant_global_v1_CreateTransactionResponse,
     responseDeserialize: deserialize_adamant_global_v1_CreateTransactionResponse,
   },
-  progmatCoinAddToBlacklist: {
-    path: '/adamant.teller.v1.TellerAPI/ProgmatCoinAddToBlacklist',
+  progmatCoinBulkAddToBlacklist: {
+    path: '/adamant.teller.v1.TellerAPI/ProgmatCoinBulkAddToBlacklist',
     requestStream: false,
     responseStream: false,
-    requestType: gincoinc_adamant_teller_v1_adamanttellerv1_teller_api_pb.ProgmatCoinAddToBlacklistRequest,
+    requestType: gincoinc_adamant_teller_v1_adamanttellerv1_teller_api_pb.ProgmatCoinBulkAddToBlacklistRequest,
     responseType: gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.CreateTransactionResponse,
-    requestSerialize: serialize_adamant_teller_v1_ProgmatCoinAddToBlacklistRequest,
-    requestDeserialize: deserialize_adamant_teller_v1_ProgmatCoinAddToBlacklistRequest,
+    requestSerialize: serialize_adamant_teller_v1_ProgmatCoinBulkAddToBlacklistRequest,
+    requestDeserialize: deserialize_adamant_teller_v1_ProgmatCoinBulkAddToBlacklistRequest,
     responseSerialize: serialize_adamant_global_v1_CreateTransactionResponse,
     responseDeserialize: deserialize_adamant_global_v1_CreateTransactionResponse,
   },
-  progmatCoinRemoveFromBlacklist: {
-    path: '/adamant.teller.v1.TellerAPI/ProgmatCoinRemoveFromBlacklist',
+  progmatCoinBulkRemoveFromBlacklist: {
+    path: '/adamant.teller.v1.TellerAPI/ProgmatCoinBulkRemoveFromBlacklist',
     requestStream: false,
     responseStream: false,
-    requestType: gincoinc_adamant_teller_v1_adamanttellerv1_teller_api_pb.ProgmatCoinRemoveFromBlacklistRequest,
+    requestType: gincoinc_adamant_teller_v1_adamanttellerv1_teller_api_pb.ProgmatCoinBulkRemoveFromBlacklistRequest,
     responseType: gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.CreateTransactionResponse,
-    requestSerialize: serialize_adamant_teller_v1_ProgmatCoinRemoveFromBlacklistRequest,
-    requestDeserialize: deserialize_adamant_teller_v1_ProgmatCoinRemoveFromBlacklistRequest,
+    requestSerialize: serialize_adamant_teller_v1_ProgmatCoinBulkRemoveFromBlacklistRequest,
+    requestDeserialize: deserialize_adamant_teller_v1_ProgmatCoinBulkRemoveFromBlacklistRequest,
     responseSerialize: serialize_adamant_global_v1_CreateTransactionResponse,
     responseDeserialize: deserialize_adamant_global_v1_CreateTransactionResponse,
   },

@@ -316,6 +316,11 @@ export class ProgmatCoinMintAndTransferRequest extends jspb.Message {
     getAmount(): string;
     setAmount(value: string): ProgmatCoinMintAndTransferRequest;
 
+    hasThroughAddress(): boolean;
+    clearThroughAddress(): void;
+    getThroughAddress(): string | undefined;
+    setThroughAddress(value: string): ProgmatCoinMintAndTransferRequest;
+
     serializeBinary(): Uint8Array;
     toObject(includeInstance?: boolean): ProgmatCoinMintAndTransferRequest.AsObject;
     static toObject(includeInstance: boolean, msg: ProgmatCoinMintAndTransferRequest): ProgmatCoinMintAndTransferRequest.AsObject;
@@ -334,6 +339,7 @@ export namespace ProgmatCoinMintAndTransferRequest {
         mintAddress: string,
         transferAddress: string,
         amount: string,
+        throughAddress?: string,
     }
 }
 
@@ -398,119 +404,139 @@ export namespace ProgmatCoinBurnRequest {
     }
 }
 
-export class ProgmatCoinAddToWhitelistRequest extends jspb.Message { 
+export class ProgmatCoinBulkAddToWhitelistRequest extends jspb.Message { 
     getWalletId(): string;
-    setWalletId(value: string): ProgmatCoinAddToWhitelistRequest;
+    setWalletId(value: string): ProgmatCoinBulkAddToWhitelistRequest;
     getFeeRate(): number;
-    setFeeRate(value: number): ProgmatCoinAddToWhitelistRequest;
+    setFeeRate(value: number): ProgmatCoinBulkAddToWhitelistRequest;
     getContractAddress(): string;
-    setContractAddress(value: string): ProgmatCoinAddToWhitelistRequest;
-    getAddress(): string;
-    setAddress(value: string): ProgmatCoinAddToWhitelistRequest;
+    setContractAddress(value: string): ProgmatCoinBulkAddToWhitelistRequest;
+    getUtilsAddress(): string;
+    setUtilsAddress(value: string): ProgmatCoinBulkAddToWhitelistRequest;
+    clearAddressesList(): void;
+    getAddressesList(): Array<string>;
+    setAddressesList(value: Array<string>): ProgmatCoinBulkAddToWhitelistRequest;
+    addAddresses(value: string, index?: number): string;
 
     serializeBinary(): Uint8Array;
-    toObject(includeInstance?: boolean): ProgmatCoinAddToWhitelistRequest.AsObject;
-    static toObject(includeInstance: boolean, msg: ProgmatCoinAddToWhitelistRequest): ProgmatCoinAddToWhitelistRequest.AsObject;
+    toObject(includeInstance?: boolean): ProgmatCoinBulkAddToWhitelistRequest.AsObject;
+    static toObject(includeInstance: boolean, msg: ProgmatCoinBulkAddToWhitelistRequest): ProgmatCoinBulkAddToWhitelistRequest.AsObject;
     static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
     static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
-    static serializeBinaryToWriter(message: ProgmatCoinAddToWhitelistRequest, writer: jspb.BinaryWriter): void;
-    static deserializeBinary(bytes: Uint8Array): ProgmatCoinAddToWhitelistRequest;
-    static deserializeBinaryFromReader(message: ProgmatCoinAddToWhitelistRequest, reader: jspb.BinaryReader): ProgmatCoinAddToWhitelistRequest;
+    static serializeBinaryToWriter(message: ProgmatCoinBulkAddToWhitelistRequest, writer: jspb.BinaryWriter): void;
+    static deserializeBinary(bytes: Uint8Array): ProgmatCoinBulkAddToWhitelistRequest;
+    static deserializeBinaryFromReader(message: ProgmatCoinBulkAddToWhitelistRequest, reader: jspb.BinaryReader): ProgmatCoinBulkAddToWhitelistRequest;
 }
 
-export namespace ProgmatCoinAddToWhitelistRequest {
+export namespace ProgmatCoinBulkAddToWhitelistRequest {
     export type AsObject = {
         walletId: string,
         feeRate: number,
         contractAddress: string,
-        address: string,
+        utilsAddress: string,
+        addressesList: Array<string>,
     }
 }
 
-export class ProgmatCoinRemoveFromWhitelistRequest extends jspb.Message { 
+export class ProgmatCoinBulkRemoveFromWhitelistRequest extends jspb.Message { 
     getWalletId(): string;
-    setWalletId(value: string): ProgmatCoinRemoveFromWhitelistRequest;
+    setWalletId(value: string): ProgmatCoinBulkRemoveFromWhitelistRequest;
     getFeeRate(): number;
-    setFeeRate(value: number): ProgmatCoinRemoveFromWhitelistRequest;
+    setFeeRate(value: number): ProgmatCoinBulkRemoveFromWhitelistRequest;
     getContractAddress(): string;
-    setContractAddress(value: string): ProgmatCoinRemoveFromWhitelistRequest;
-    getAddress(): string;
-    setAddress(value: string): ProgmatCoinRemoveFromWhitelistRequest;
+    setContractAddress(value: string): ProgmatCoinBulkRemoveFromWhitelistRequest;
+    getUtilsAddress(): string;
+    setUtilsAddress(value: string): ProgmatCoinBulkRemoveFromWhitelistRequest;
+    clearAddressesList(): void;
+    getAddressesList(): Array<string>;
+    setAddressesList(value: Array<string>): ProgmatCoinBulkRemoveFromWhitelistRequest;
+    addAddresses(value: string, index?: number): string;
 
     serializeBinary(): Uint8Array;
-    toObject(includeInstance?: boolean): ProgmatCoinRemoveFromWhitelistRequest.AsObject;
-    static toObject(includeInstance: boolean, msg: ProgmatCoinRemoveFromWhitelistRequest): ProgmatCoinRemoveFromWhitelistRequest.AsObject;
+    toObject(includeInstance?: boolean): ProgmatCoinBulkRemoveFromWhitelistRequest.AsObject;
+    static toObject(includeInstance: boolean, msg: ProgmatCoinBulkRemoveFromWhitelistRequest): ProgmatCoinBulkRemoveFromWhitelistRequest.AsObject;
     static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
     static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
-    static serializeBinaryToWriter(message: ProgmatCoinRemoveFromWhitelistRequest, writer: jspb.BinaryWriter): void;
-    static deserializeBinary(bytes: Uint8Array): ProgmatCoinRemoveFromWhitelistRequest;
-    static deserializeBinaryFromReader(message: ProgmatCoinRemoveFromWhitelistRequest, reader: jspb.BinaryReader): ProgmatCoinRemoveFromWhitelistRequest;
+    static serializeBinaryToWriter(message: ProgmatCoinBulkRemoveFromWhitelistRequest, writer: jspb.BinaryWriter): void;
+    static deserializeBinary(bytes: Uint8Array): ProgmatCoinBulkRemoveFromWhitelistRequest;
+    static deserializeBinaryFromReader(message: ProgmatCoinBulkRemoveFromWhitelistRequest, reader: jspb.BinaryReader): ProgmatCoinBulkRemoveFromWhitelistRequest;
 }
 
-export namespace ProgmatCoinRemoveFromWhitelistRequest {
+export namespace ProgmatCoinBulkRemoveFromWhitelistRequest {
     export type AsObject = {
         walletId: string,
         feeRate: number,
         contractAddress: string,
-        address: string,
+        utilsAddress: string,
+        addressesList: Array<string>,
     }
 }
 
-export class ProgmatCoinAddToBlacklistRequest extends jspb.Message { 
+export class ProgmatCoinBulkAddToBlacklistRequest extends jspb.Message { 
     getWalletId(): string;
-    setWalletId(value: string): ProgmatCoinAddToBlacklistRequest;
+    setWalletId(value: string): ProgmatCoinBulkAddToBlacklistRequest;
     getFeeRate(): number;
-    setFeeRate(value: number): ProgmatCoinAddToBlacklistRequest;
+    setFeeRate(value: number): ProgmatCoinBulkAddToBlacklistRequest;
     getContractAddress(): string;
-    setContractAddress(value: string): ProgmatCoinAddToBlacklistRequest;
-    getAddress(): string;
-    setAddress(value: string): ProgmatCoinAddToBlacklistRequest;
+    setContractAddress(value: string): ProgmatCoinBulkAddToBlacklistRequest;
+    getUtilsAddress(): string;
+    setUtilsAddress(value: string): ProgmatCoinBulkAddToBlacklistRequest;
+    clearAddressesList(): void;
+    getAddressesList(): Array<string>;
+    setAddressesList(value: Array<string>): ProgmatCoinBulkAddToBlacklistRequest;
+    addAddresses(value: string, index?: number): string;
 
     serializeBinary(): Uint8Array;
-    toObject(includeInstance?: boolean): ProgmatCoinAddToBlacklistRequest.AsObject;
-    static toObject(includeInstance: boolean, msg: ProgmatCoinAddToBlacklistRequest): ProgmatCoinAddToBlacklistRequest.AsObject;
+    toObject(includeInstance?: boolean): ProgmatCoinBulkAddToBlacklistRequest.AsObject;
+    static toObject(includeInstance: boolean, msg: ProgmatCoinBulkAddToBlacklistRequest): ProgmatCoinBulkAddToBlacklistRequest.AsObject;
     static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
     static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
-    static serializeBinaryToWriter(message: ProgmatCoinAddToBlacklistRequest, writer: jspb.BinaryWriter): void;
-    static deserializeBinary(bytes: Uint8Array): ProgmatCoinAddToBlacklistRequest;
-    static deserializeBinaryFromReader(message: ProgmatCoinAddToBlacklistRequest, reader: jspb.BinaryReader): ProgmatCoinAddToBlacklistRequest;
+    static serializeBinaryToWriter(message: ProgmatCoinBulkAddToBlacklistRequest, writer: jspb.BinaryWriter): void;
+    static deserializeBinary(bytes: Uint8Array): ProgmatCoinBulkAddToBlacklistRequest;
+    static deserializeBinaryFromReader(message: ProgmatCoinBulkAddToBlacklistRequest, reader: jspb.BinaryReader): ProgmatCoinBulkAddToBlacklistRequest;
 }
 
-export namespace ProgmatCoinAddToBlacklistRequest {
+export namespace ProgmatCoinBulkAddToBlacklistRequest {
     export type AsObject = {
         walletId: string,
         feeRate: number,
         contractAddress: string,
-        address: string,
+        utilsAddress: string,
+        addressesList: Array<string>,
     }
 }
 
-export class ProgmatCoinRemoveFromBlacklistRequest extends jspb.Message { 
+export class ProgmatCoinBulkRemoveFromBlacklistRequest extends jspb.Message { 
     getWalletId(): string;
-    setWalletId(value: string): ProgmatCoinRemoveFromBlacklistRequest;
+    setWalletId(value: string): ProgmatCoinBulkRemoveFromBlacklistRequest;
     getFeeRate(): number;
-    setFeeRate(value: number): ProgmatCoinRemoveFromBlacklistRequest;
+    setFeeRate(value: number): ProgmatCoinBulkRemoveFromBlacklistRequest;
     getContractAddress(): string;
-    setContractAddress(value: string): ProgmatCoinRemoveFromBlacklistRequest;
-    getAddress(): string;
-    setAddress(value: string): ProgmatCoinRemoveFromBlacklistRequest;
+    setContractAddress(value: string): ProgmatCoinBulkRemoveFromBlacklistRequest;
+    getUtilsAddress(): string;
+    setUtilsAddress(value: string): ProgmatCoinBulkRemoveFromBlacklistRequest;
+    clearAddressesList(): void;
+    getAddressesList(): Array<string>;
+    setAddressesList(value: Array<string>): ProgmatCoinBulkRemoveFromBlacklistRequest;
+    addAddresses(value: string, index?: number): string;
 
     serializeBinary(): Uint8Array;
-    toObject(includeInstance?: boolean): ProgmatCoinRemoveFromBlacklistRequest.AsObject;
-    static toObject(includeInstance: boolean, msg: ProgmatCoinRemoveFromBlacklistRequest): ProgmatCoinRemoveFromBlacklistRequest.AsObject;
+    toObject(includeInstance?: boolean): ProgmatCoinBulkRemoveFromBlacklistRequest.AsObject;
+    static toObject(includeInstance: boolean, msg: ProgmatCoinBulkRemoveFromBlacklistRequest): ProgmatCoinBulkRemoveFromBlacklistRequest.AsObject;
     static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
     static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
-    static serializeBinaryToWriter(message: ProgmatCoinRemoveFromBlacklistRequest, writer: jspb.BinaryWriter): void;
-    static deserializeBinary(bytes: Uint8Array): ProgmatCoinRemoveFromBlacklistRequest;
-    static deserializeBinaryFromReader(message: ProgmatCoinRemoveFromBlacklistRequest, reader: jspb.BinaryReader): ProgmatCoinRemoveFromBlacklistRequest;
+    static serializeBinaryToWriter(message: ProgmatCoinBulkRemoveFromBlacklistRequest, writer: jspb.BinaryWriter): void;
+    static deserializeBinary(bytes: Uint8Array): ProgmatCoinBulkRemoveFromBlacklistRequest;
+    static deserializeBinaryFromReader(message: ProgmatCoinBulkRemoveFromBlacklistRequest, reader: jspb.BinaryReader): ProgmatCoinBulkRemoveFromBlacklistRequest;
 }
 
-export namespace ProgmatCoinRemoveFromBlacklistRequest {
+export namespace ProgmatCoinBulkRemoveFromBlacklistRequest {
     export type AsObject = {
         walletId: string,
         feeRate: number,
         contractAddress: string,
-        address: string,
+        utilsAddress: string,
+        addressesList: Array<string>,
     }
 }
 

@@ -840,6 +840,11 @@ export class Transaction extends jspb.Message {
     getDogecoinSpecific(): DogecoinSpecific | undefined;
     setDogecoinSpecific(value?: DogecoinSpecific): Transaction;
 
+    hasAvalanchePlatformChainSpecific(): boolean;
+    clearAvalanchePlatformChainSpecific(): void;
+    getAvalanchePlatformChainSpecific(): AvalanchePlatformChainSpecific | undefined;
+    setAvalanchePlatformChainSpecific(value?: AvalanchePlatformChainSpecific): Transaction;
+
     hasCreateTime(): boolean;
     clearCreateTime(): void;
     getCreateTime(): google_protobuf_timestamp_pb.Timestamp | undefined;
@@ -907,8 +912,101 @@ export namespace Transaction {
         arbitrumOneSpecific?: ArbitrumOneSpecific.AsObject,
         aptosSpecific?: AptosSpecific.AsObject,
         dogecoinSpecific?: DogecoinSpecific.AsObject,
+        avalanchePlatformChainSpecific?: AvalanchePlatformChainSpecific.AsObject,
         createTime?: google_protobuf_timestamp_pb.Timestamp.AsObject,
         updateTime?: google_protobuf_timestamp_pb.Timestamp.AsObject,
+    }
+}
+
+export class UnconfirmedTransaction extends jspb.Message { 
+    getWalletId(): string;
+    setWalletId(value: string): UnconfirmedTransaction;
+    getTransactionId(): string;
+    setTransactionId(value: string): UnconfirmedTransaction;
+    getTxId(): string;
+    setTxId(value: string): UnconfirmedTransaction;
+    getValue(): number;
+    setValue(value: number): UnconfirmedTransaction;
+    getStringValue(): string;
+    setStringValue(value: string): UnconfirmedTransaction;
+    getAddress(): string;
+    setAddress(value: string): UnconfirmedTransaction;
+    getFee(): number;
+    setFee(value: number): UnconfirmedTransaction;
+    getStringFee(): string;
+    setStringFee(value: string): UnconfirmedTransaction;
+    getFeeRate(): number;
+    setFeeRate(value: number): UnconfirmedTransaction;
+
+    hasCreateTime(): boolean;
+    clearCreateTime(): void;
+    getCreateTime(): google_protobuf_timestamp_pb.Timestamp | undefined;
+    setCreateTime(value?: google_protobuf_timestamp_pb.Timestamp): UnconfirmedTransaction;
+
+    hasBitcoinSpecific(): boolean;
+    clearBitcoinSpecific(): void;
+    getBitcoinSpecific(): BitcoinSpecific | undefined;
+    setBitcoinSpecific(value?: BitcoinSpecific): UnconfirmedTransaction;
+
+    hasLitecoinSpecific(): boolean;
+    clearLitecoinSpecific(): void;
+    getLitecoinSpecific(): LitecoinSpecific | undefined;
+    setLitecoinSpecific(value?: LitecoinSpecific): UnconfirmedTransaction;
+
+    hasBitcoincashSpecific(): boolean;
+    clearBitcoincashSpecific(): void;
+    getBitcoincashSpecific(): BitcoincashSpecific | undefined;
+    setBitcoincashSpecific(value?: BitcoincashSpecific): UnconfirmedTransaction;
+
+    hasC0banSpecific(): boolean;
+    clearC0banSpecific(): void;
+    getC0banSpecific(): C0banSpecific | undefined;
+    setC0banSpecific(value?: C0banSpecific): UnconfirmedTransaction;
+
+    hasCardanoSpecific(): boolean;
+    clearCardanoSpecific(): void;
+    getCardanoSpecific(): CardanoSpecific | undefined;
+    setCardanoSpecific(value?: CardanoSpecific): UnconfirmedTransaction;
+
+    hasMonacoinSpecific(): boolean;
+    clearMonacoinSpecific(): void;
+    getMonacoinSpecific(): MonacoinSpecific | undefined;
+    setMonacoinSpecific(value?: MonacoinSpecific): UnconfirmedTransaction;
+
+    hasAvalanchePlatformChainSpecific(): boolean;
+    clearAvalanchePlatformChainSpecific(): void;
+    getAvalanchePlatformChainSpecific(): AvalanchePlatformChainSpecific | undefined;
+    setAvalanchePlatformChainSpecific(value?: AvalanchePlatformChainSpecific): UnconfirmedTransaction;
+
+    serializeBinary(): Uint8Array;
+    toObject(includeInstance?: boolean): UnconfirmedTransaction.AsObject;
+    static toObject(includeInstance: boolean, msg: UnconfirmedTransaction): UnconfirmedTransaction.AsObject;
+    static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+    static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+    static serializeBinaryToWriter(message: UnconfirmedTransaction, writer: jspb.BinaryWriter): void;
+    static deserializeBinary(bytes: Uint8Array): UnconfirmedTransaction;
+    static deserializeBinaryFromReader(message: UnconfirmedTransaction, reader: jspb.BinaryReader): UnconfirmedTransaction;
+}
+
+export namespace UnconfirmedTransaction {
+    export type AsObject = {
+        walletId: string,
+        transactionId: string,
+        txId: string,
+        value: number,
+        stringValue: string,
+        address: string,
+        fee: number,
+        stringFee: string,
+        feeRate: number,
+        createTime?: google_protobuf_timestamp_pb.Timestamp.AsObject,
+        bitcoinSpecific?: BitcoinSpecific.AsObject,
+        litecoinSpecific?: LitecoinSpecific.AsObject,
+        bitcoincashSpecific?: BitcoincashSpecific.AsObject,
+        c0banSpecific?: C0banSpecific.AsObject,
+        cardanoSpecific?: CardanoSpecific.AsObject,
+        monacoinSpecific?: MonacoinSpecific.AsObject,
+        avalanchePlatformChainSpecific?: AvalanchePlatformChainSpecific.AsObject,
     }
 }
 
@@ -1027,6 +1125,11 @@ export class UTXO extends jspb.Message {
     getCardanoSpecific(): CardanoUTXOSpecific | undefined;
     setCardanoSpecific(value?: CardanoUTXOSpecific): UTXO;
 
+    hasAvalanchePlatformChainSpecific(): boolean;
+    clearAvalanchePlatformChainSpecific(): void;
+    getAvalanchePlatformChainSpecific(): AvalanchePlatformChainUTXOSpecific | undefined;
+    setAvalanchePlatformChainSpecific(value?: AvalanchePlatformChainUTXOSpecific): UTXO;
+
     serializeBinary(): Uint8Array;
     toObject(includeInstance?: boolean): UTXO.AsObject;
     static toObject(includeInstance: boolean, msg: UTXO): UTXO.AsObject;
@@ -1046,6 +1149,7 @@ export namespace UTXO {
         address: string,
         transactionId: string,
         cardanoSpecific?: CardanoUTXOSpecific.AsObject,
+        avalanchePlatformChainSpecific?: AvalanchePlatformChainUTXOSpecific.AsObject,
     }
 }
 
@@ -1068,6 +1172,31 @@ export class CardanoUTXOSpecific extends jspb.Message {
 export namespace CardanoUTXOSpecific {
     export type AsObject = {
         tokensList: Array<CardanoCustomToken.AsObject>,
+    }
+}
+
+export class AvalanchePlatformChainUTXOSpecific extends jspb.Message { 
+    getThreshold(): number;
+    setThreshold(value: number): AvalanchePlatformChainUTXOSpecific;
+    clearAddressesList(): void;
+    getAddressesList(): Array<string>;
+    setAddressesList(value: Array<string>): AvalanchePlatformChainUTXOSpecific;
+    addAddresses(value: string, index?: number): string;
+
+    serializeBinary(): Uint8Array;
+    toObject(includeInstance?: boolean): AvalanchePlatformChainUTXOSpecific.AsObject;
+    static toObject(includeInstance: boolean, msg: AvalanchePlatformChainUTXOSpecific): AvalanchePlatformChainUTXOSpecific.AsObject;
+    static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+    static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+    static serializeBinaryToWriter(message: AvalanchePlatformChainUTXOSpecific, writer: jspb.BinaryWriter): void;
+    static deserializeBinary(bytes: Uint8Array): AvalanchePlatformChainUTXOSpecific;
+    static deserializeBinaryFromReader(message: AvalanchePlatformChainUTXOSpecific, reader: jspb.BinaryReader): AvalanchePlatformChainUTXOSpecific;
+}
+
+export namespace AvalanchePlatformChainUTXOSpecific {
+    export type AsObject = {
+        threshold: number,
+        addressesList: Array<string>,
     }
 }
 
@@ -1587,6 +1716,11 @@ export class AvalancheSpecific extends jspb.Message {
     getIsNextNonce(): boolean;
     setIsNextNonce(value: boolean): AvalancheSpecific;
 
+    hasAtomicTx(): boolean;
+    clearAtomicTx(): void;
+    getAtomicTx(): AtomicTx | undefined;
+    setAtomicTx(value?: AtomicTx): AvalancheSpecific;
+
     serializeBinary(): Uint8Array;
     toObject(includeInstance?: boolean): AvalancheSpecific.AsObject;
     static toObject(includeInstance: boolean, msg: AvalancheSpecific): AvalancheSpecific.AsObject;
@@ -1602,6 +1736,7 @@ export namespace AvalancheSpecific {
         gasLimit: number,
         nonce: number,
         isNextNonce: boolean,
+        atomicTx?: AtomicTx.AsObject,
     }
 }
 
@@ -1944,6 +2079,152 @@ export namespace ArbitrumOneSpecific {
     }
 }
 
+export class AtomicTx extends jspb.Message { 
+    getTxType(): gincoinc_global_v1_gincoincglobalv1_enum_pb.AvalancheTxType;
+    setTxType(value: gincoinc_global_v1_gincoincglobalv1_enum_pb.AvalancheTxType): AtomicTx;
+    clearTxInputsList(): void;
+    getTxInputsList(): Array<AvalancheTxInput>;
+    setTxInputsList(value: Array<AvalancheTxInput>): AtomicTx;
+    addTxInputs(value?: AvalancheTxInput, index?: number): AvalancheTxInput;
+    clearTxOutputsList(): void;
+    getTxOutputsList(): Array<AvalancheTxOutput>;
+    setTxOutputsList(value: Array<AvalancheTxOutput>): AtomicTx;
+    addTxOutputs(value?: AvalancheTxOutput, index?: number): AvalancheTxOutput;
+
+    serializeBinary(): Uint8Array;
+    toObject(includeInstance?: boolean): AtomicTx.AsObject;
+    static toObject(includeInstance: boolean, msg: AtomicTx): AtomicTx.AsObject;
+    static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+    static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+    static serializeBinaryToWriter(message: AtomicTx, writer: jspb.BinaryWriter): void;
+    static deserializeBinary(bytes: Uint8Array): AtomicTx;
+    static deserializeBinaryFromReader(message: AtomicTx, reader: jspb.BinaryReader): AtomicTx;
+}
+
+export namespace AtomicTx {
+    export type AsObject = {
+        txType: gincoinc_global_v1_gincoincglobalv1_enum_pb.AvalancheTxType,
+        txInputsList: Array<AvalancheTxInput.AsObject>,
+        txOutputsList: Array<AvalancheTxOutput.AsObject>,
+    }
+}
+
+export class AvalanchePlatformChainSpecific extends jspb.Message { 
+    getTxType(): gincoinc_global_v1_gincoincglobalv1_enum_pb.AvalancheTxType;
+    setTxType(value: gincoinc_global_v1_gincoincglobalv1_enum_pb.AvalancheTxType): AvalanchePlatformChainSpecific;
+    clearTxInputsList(): void;
+    getTxInputsList(): Array<AvalancheTxInput>;
+    setTxInputsList(value: Array<AvalancheTxInput>): AvalanchePlatformChainSpecific;
+    addTxInputs(value?: AvalancheTxInput, index?: number): AvalancheTxInput;
+    clearTxOutputsList(): void;
+    getTxOutputsList(): Array<AvalancheTxOutput>;
+    setTxOutputsList(value: Array<AvalancheTxOutput>): AvalanchePlatformChainSpecific;
+    addTxOutputs(value?: AvalancheTxOutput, index?: number): AvalancheTxOutput;
+    getStartTime(): number;
+    setStartTime(value: number): AvalanchePlatformChainSpecific;
+    getEndTime(): number;
+    setEndTime(value: number): AvalanchePlatformChainSpecific;
+
+    serializeBinary(): Uint8Array;
+    toObject(includeInstance?: boolean): AvalanchePlatformChainSpecific.AsObject;
+    static toObject(includeInstance: boolean, msg: AvalanchePlatformChainSpecific): AvalanchePlatformChainSpecific.AsObject;
+    static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+    static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+    static serializeBinaryToWriter(message: AvalanchePlatformChainSpecific, writer: jspb.BinaryWriter): void;
+    static deserializeBinary(bytes: Uint8Array): AvalanchePlatformChainSpecific;
+    static deserializeBinaryFromReader(message: AvalanchePlatformChainSpecific, reader: jspb.BinaryReader): AvalanchePlatformChainSpecific;
+}
+
+export namespace AvalanchePlatformChainSpecific {
+    export type AsObject = {
+        txType: gincoinc_global_v1_gincoincglobalv1_enum_pb.AvalancheTxType,
+        txInputsList: Array<AvalancheTxInput.AsObject>,
+        txOutputsList: Array<AvalancheTxOutput.AsObject>,
+        startTime: number,
+        endTime: number,
+    }
+}
+
+export class AvalancheTxInput extends jspb.Message { 
+    getTxId(): string;
+    setTxId(value: string): AvalancheTxInput;
+    getInputIndex(): number;
+    setInputIndex(value: number): AvalancheTxInput;
+    getInputIndexType(): number;
+    setInputIndexType(value: number): AvalancheTxInput;
+    getValue(): number;
+    setValue(value: number): AvalancheTxInput;
+    getStringValue(): string;
+    setStringValue(value: string): AvalancheTxInput;
+    clearAddressIndicesList(): void;
+    getAddressIndicesList(): Array<number>;
+    setAddressIndicesList(value: Array<number>): AvalancheTxInput;
+    addAddressIndices(value: number, index?: number): number;
+
+    serializeBinary(): Uint8Array;
+    toObject(includeInstance?: boolean): AvalancheTxInput.AsObject;
+    static toObject(includeInstance: boolean, msg: AvalancheTxInput): AvalancheTxInput.AsObject;
+    static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+    static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+    static serializeBinaryToWriter(message: AvalancheTxInput, writer: jspb.BinaryWriter): void;
+    static deserializeBinary(bytes: Uint8Array): AvalancheTxInput;
+    static deserializeBinaryFromReader(message: AvalancheTxInput, reader: jspb.BinaryReader): AvalancheTxInput;
+}
+
+export namespace AvalancheTxInput {
+    export type AsObject = {
+        txId: string,
+        inputIndex: number,
+        inputIndexType: number,
+        value: number,
+        stringValue: string,
+        addressIndicesList: Array<number>,
+    }
+}
+
+export class AvalancheTxOutput extends jspb.Message { 
+    getOutputIndex(): number;
+    setOutputIndex(value: number): AvalancheTxOutput;
+    getOutputType(): number;
+    setOutputType(value: number): AvalancheTxOutput;
+    getValue(): number;
+    setValue(value: number): AvalancheTxOutput;
+    getStringValue(): string;
+    setStringValue(value: string): AvalancheTxOutput;
+    getLocktime(): number;
+    setLocktime(value: number): AvalancheTxOutput;
+    getThreshold(): number;
+    setThreshold(value: number): AvalancheTxOutput;
+    getIsChange(): boolean;
+    setIsChange(value: boolean): AvalancheTxOutput;
+    clearAddressesList(): void;
+    getAddressesList(): Array<string>;
+    setAddressesList(value: Array<string>): AvalancheTxOutput;
+    addAddresses(value: string, index?: number): string;
+
+    serializeBinary(): Uint8Array;
+    toObject(includeInstance?: boolean): AvalancheTxOutput.AsObject;
+    static toObject(includeInstance: boolean, msg: AvalancheTxOutput): AvalancheTxOutput.AsObject;
+    static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+    static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+    static serializeBinaryToWriter(message: AvalancheTxOutput, writer: jspb.BinaryWriter): void;
+    static deserializeBinary(bytes: Uint8Array): AvalancheTxOutput;
+    static deserializeBinaryFromReader(message: AvalancheTxOutput, reader: jspb.BinaryReader): AvalancheTxOutput;
+}
+
+export namespace AvalancheTxOutput {
+    export type AsObject = {
+        outputIndex: number,
+        outputType: number,
+        value: number,
+        stringValue: string,
+        locktime: number,
+        threshold: number,
+        isChange: boolean,
+        addressesList: Array<string>,
+    }
+}
+
 export class CreateTransactionSubstrateSpecific extends jspb.Message { 
     getTransactionId(): string;
     setTransactionId(value: string): CreateTransactionSubstrateSpecific;
@@ -2094,6 +2375,11 @@ export class CreateTransactionEthereumSpecific extends jspb.Message {
     getCallMethod(): gincoinc_global_v1_gincoincglobalv1_enum_pb.EthereumCallMethod | undefined;
     setCallMethod(value: gincoinc_global_v1_gincoincglobalv1_enum_pb.EthereumCallMethod): CreateTransactionEthereumSpecific;
 
+    hasUtilsAddress(): boolean;
+    clearUtilsAddress(): void;
+    getUtilsAddress(): string | undefined;
+    setUtilsAddress(value: string): CreateTransactionEthereumSpecific;
+
     serializeBinary(): Uint8Array;
     toObject(includeInstance?: boolean): CreateTransactionEthereumSpecific.AsObject;
     static toObject(includeInstance: boolean, msg: CreateTransactionEthereumSpecific): CreateTransactionEthereumSpecific.AsObject;
@@ -2109,6 +2395,7 @@ export namespace CreateTransactionEthereumSpecific {
         data: string,
         stakingRecipientWalletId?: string,
         callMethod?: gincoinc_global_v1_gincoincglobalv1_enum_pb.EthereumCallMethod,
+        utilsAddress?: string,
     }
 }
 
@@ -2218,6 +2505,84 @@ export class CreateTransactionAptosSpecific extends jspb.Message {
 export namespace CreateTransactionAptosSpecific {
     export type AsObject = {
         expiration?: number,
+    }
+}
+
+export class CreateTransactionAvalancheSpecific extends jspb.Message { 
+
+    hasTxType(): boolean;
+    clearTxType(): void;
+    getTxType(): gincoinc_global_v1_gincoincglobalv1_enum_pb.AvalancheTxType | undefined;
+    setTxType(value: gincoinc_global_v1_gincoincglobalv1_enum_pb.AvalancheTxType): CreateTransactionAvalancheSpecific;
+
+    hasImportTxSpecific(): boolean;
+    clearImportTxSpecific(): void;
+    getImportTxSpecific(): ImportTxSpecific | undefined;
+    setImportTxSpecific(value?: ImportTxSpecific): CreateTransactionAvalancheSpecific;
+
+    hasStakingSpecific(): boolean;
+    clearStakingSpecific(): void;
+    getStakingSpecific(): StakingSpecific | undefined;
+    setStakingSpecific(value?: StakingSpecific): CreateTransactionAvalancheSpecific;
+
+    serializeBinary(): Uint8Array;
+    toObject(includeInstance?: boolean): CreateTransactionAvalancheSpecific.AsObject;
+    static toObject(includeInstance: boolean, msg: CreateTransactionAvalancheSpecific): CreateTransactionAvalancheSpecific.AsObject;
+    static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+    static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+    static serializeBinaryToWriter(message: CreateTransactionAvalancheSpecific, writer: jspb.BinaryWriter): void;
+    static deserializeBinary(bytes: Uint8Array): CreateTransactionAvalancheSpecific;
+    static deserializeBinaryFromReader(message: CreateTransactionAvalancheSpecific, reader: jspb.BinaryReader): CreateTransactionAvalancheSpecific;
+}
+
+export namespace CreateTransactionAvalancheSpecific {
+    export type AsObject = {
+        txType?: gincoinc_global_v1_gincoincglobalv1_enum_pb.AvalancheTxType,
+        importTxSpecific?: ImportTxSpecific.AsObject,
+        stakingSpecific?: StakingSpecific.AsObject,
+    }
+}
+
+export class ImportTxSpecific extends jspb.Message { 
+    getTxId(): string;
+    setTxId(value: string): ImportTxSpecific;
+
+    serializeBinary(): Uint8Array;
+    toObject(includeInstance?: boolean): ImportTxSpecific.AsObject;
+    static toObject(includeInstance: boolean, msg: ImportTxSpecific): ImportTxSpecific.AsObject;
+    static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+    static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+    static serializeBinaryToWriter(message: ImportTxSpecific, writer: jspb.BinaryWriter): void;
+    static deserializeBinary(bytes: Uint8Array): ImportTxSpecific;
+    static deserializeBinaryFromReader(message: ImportTxSpecific, reader: jspb.BinaryReader): ImportTxSpecific;
+}
+
+export namespace ImportTxSpecific {
+    export type AsObject = {
+        txId: string,
+    }
+}
+
+export class StakingSpecific extends jspb.Message { 
+    getStartTime(): number;
+    setStartTime(value: number): StakingSpecific;
+    getEndTime(): number;
+    setEndTime(value: number): StakingSpecific;
+
+    serializeBinary(): Uint8Array;
+    toObject(includeInstance?: boolean): StakingSpecific.AsObject;
+    static toObject(includeInstance: boolean, msg: StakingSpecific): StakingSpecific.AsObject;
+    static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+    static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+    static serializeBinaryToWriter(message: StakingSpecific, writer: jspb.BinaryWriter): void;
+    static deserializeBinary(bytes: Uint8Array): StakingSpecific;
+    static deserializeBinaryFromReader(message: StakingSpecific, reader: jspb.BinaryReader): StakingSpecific;
+}
+
+export namespace StakingSpecific {
+    export type AsObject = {
+        startTime: number,
+        endTime: number,
     }
 }
 
@@ -4034,6 +4399,11 @@ export class StakingHistory extends jspb.Message {
     getEthereumSpecific(): StakingHistoryEthereumSpecific | undefined;
     setEthereumSpecific(value?: StakingHistoryEthereumSpecific): StakingHistory;
 
+    hasAvalancheSpecific(): boolean;
+    clearAvalancheSpecific(): void;
+    getAvalancheSpecific(): StakingHistoryAvalancheSpecific | undefined;
+    setAvalancheSpecific(value?: StakingHistoryAvalancheSpecific): StakingHistory;
+
     hasCreateTime(): boolean;
     clearCreateTime(): void;
     getCreateTime(): google_protobuf_timestamp_pb.Timestamp | undefined;
@@ -4069,6 +4439,7 @@ export namespace StakingHistory {
         eventType: gincoinc_global_v1_gincoincglobalv1_enum_pb.StakingEventType,
         eventId: string,
         ethereumSpecific?: StakingHistoryEthereumSpecific.AsObject,
+        avalancheSpecific?: StakingHistoryAvalancheSpecific.AsObject,
         createTime?: google_protobuf_timestamp_pb.Timestamp.AsObject,
         updateTime?: google_protobuf_timestamp_pb.Timestamp.AsObject,
     }
@@ -4112,6 +4483,37 @@ export namespace StakingHistoryEthereumSpecific {
         blockNumber: number,
         blockTime?: google_protobuf_timestamp_pb.Timestamp.AsObject,
         historyType: gincoinc_global_v1_gincoincglobalv1_enum_pb.EthereumStakingHistoryType,
+    }
+}
+
+export class StakingHistoryAvalancheSpecific extends jspb.Message { 
+    getStartTime(): number;
+    setStartTime(value: number): StakingHistoryAvalancheSpecific;
+    getEndTime(): number;
+    setEndTime(value: number): StakingHistoryAvalancheSpecific;
+    getRewardsOwnerThreshold(): number;
+    setRewardsOwnerThreshold(value: number): StakingHistoryAvalancheSpecific;
+    clearRewardsOwnerAddressesList(): void;
+    getRewardsOwnerAddressesList(): Array<string>;
+    setRewardsOwnerAddressesList(value: Array<string>): StakingHistoryAvalancheSpecific;
+    addRewardsOwnerAddresses(value: string, index?: number): string;
+
+    serializeBinary(): Uint8Array;
+    toObject(includeInstance?: boolean): StakingHistoryAvalancheSpecific.AsObject;
+    static toObject(includeInstance: boolean, msg: StakingHistoryAvalancheSpecific): StakingHistoryAvalancheSpecific.AsObject;
+    static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+    static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+    static serializeBinaryToWriter(message: StakingHistoryAvalancheSpecific, writer: jspb.BinaryWriter): void;
+    static deserializeBinary(bytes: Uint8Array): StakingHistoryAvalancheSpecific;
+    static deserializeBinaryFromReader(message: StakingHistoryAvalancheSpecific, reader: jspb.BinaryReader): StakingHistoryAvalancheSpecific;
+}
+
+export namespace StakingHistoryAvalancheSpecific {
+    export type AsObject = {
+        startTime: number,
+        endTime: number,
+        rewardsOwnerThreshold: number,
+        rewardsOwnerAddressesList: Array<string>,
     }
 }
 
