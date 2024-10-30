@@ -59,8 +59,10 @@ interface IGlobalAPIService extends grpc.ServiceDefinition<grpc.UntypedServiceIm
     listCallers: IGlobalAPIService_IListCallers;
     listFeeDeposits: IGlobalAPIService_IListFeeDeposits;
     registerKey: IGlobalAPIService_IRegisterKey;
+    getSignerPubKey: IGlobalAPIService_IGetSignerPubKey;
     createTransaction: IGlobalAPIService_ICreateTransaction;
     createXRPInitTransactions: IGlobalAPIService_ICreateXRPInitTransactions;
+    createContractCreationTransaction: IGlobalAPIService_ICreateContractCreationTransaction;
     signTransaction: IGlobalAPIService_ISignTransaction;
     signXRPInitTransactions: IGlobalAPIService_ISignXRPInitTransactions;
     sendTransaction: IGlobalAPIService_ISendTransaction;
@@ -525,6 +527,15 @@ interface IGlobalAPIService_IRegisterKey extends grpc.MethodDefinition<gincoinc_
     responseSerialize: grpc.serialize<gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.RegisterKeyResponse>;
     responseDeserialize: grpc.deserialize<gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.RegisterKeyResponse>;
 }
+interface IGlobalAPIService_IGetSignerPubKey extends grpc.MethodDefinition<gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.GetSignerPubKeyRequest, gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.GetSignerPubKeyResponse> {
+    path: "/adamant.global.v1.GlobalAPI/GetSignerPubKey";
+    requestStream: false;
+    responseStream: false;
+    requestSerialize: grpc.serialize<gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.GetSignerPubKeyRequest>;
+    requestDeserialize: grpc.deserialize<gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.GetSignerPubKeyRequest>;
+    responseSerialize: grpc.serialize<gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.GetSignerPubKeyResponse>;
+    responseDeserialize: grpc.deserialize<gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.GetSignerPubKeyResponse>;
+}
 interface IGlobalAPIService_ICreateTransaction extends grpc.MethodDefinition<gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.CreateTransactionRequest, gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.CreateTransactionResponse> {
     path: "/adamant.global.v1.GlobalAPI/CreateTransaction";
     requestStream: false;
@@ -542,6 +553,15 @@ interface IGlobalAPIService_ICreateXRPInitTransactions extends grpc.MethodDefini
     requestDeserialize: grpc.deserialize<gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.CreateXRPInitTransactionsRequest>;
     responseSerialize: grpc.serialize<google_protobuf_empty_pb.Empty>;
     responseDeserialize: grpc.deserialize<google_protobuf_empty_pb.Empty>;
+}
+interface IGlobalAPIService_ICreateContractCreationTransaction extends grpc.MethodDefinition<gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.CreateContractCreationTransactionRequest, gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.CreateContractCreationTransactionResponse> {
+    path: "/adamant.global.v1.GlobalAPI/CreateContractCreationTransaction";
+    requestStream: false;
+    responseStream: false;
+    requestSerialize: grpc.serialize<gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.CreateContractCreationTransactionRequest>;
+    requestDeserialize: grpc.deserialize<gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.CreateContractCreationTransactionRequest>;
+    responseSerialize: grpc.serialize<gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.CreateContractCreationTransactionResponse>;
+    responseDeserialize: grpc.deserialize<gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.CreateContractCreationTransactionResponse>;
 }
 interface IGlobalAPIService_ISignTransaction extends grpc.MethodDefinition<gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.SignTransactionRequest, google_protobuf_empty_pb.Empty> {
     path: "/adamant.global.v1.GlobalAPI/SignTransaction";
@@ -1185,8 +1205,10 @@ export interface IGlobalAPIServer {
     listCallers: grpc.handleUnaryCall<gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.ListCallersRequest, gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.ListCallersResponse>;
     listFeeDeposits: grpc.handleUnaryCall<gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.ListFeeDepositsRequest, gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.ListFeeDepositsResponse>;
     registerKey: grpc.handleUnaryCall<gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.RegisterKeyRequest, gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.RegisterKeyResponse>;
+    getSignerPubKey: grpc.handleUnaryCall<gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.GetSignerPubKeyRequest, gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.GetSignerPubKeyResponse>;
     createTransaction: grpc.handleUnaryCall<gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.CreateTransactionRequest, gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.CreateTransactionResponse>;
     createXRPInitTransactions: grpc.handleUnaryCall<gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.CreateXRPInitTransactionsRequest, google_protobuf_empty_pb.Empty>;
+    createContractCreationTransaction: grpc.handleUnaryCall<gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.CreateContractCreationTransactionRequest, gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.CreateContractCreationTransactionResponse>;
     signTransaction: grpc.handleUnaryCall<gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.SignTransactionRequest, google_protobuf_empty_pb.Empty>;
     signXRPInitTransactions: grpc.handleUnaryCall<gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.SignXRPInitTransactionsRequest, google_protobuf_empty_pb.Empty>;
     sendTransaction: grpc.handleUnaryCall<gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.SendTransactionRequest, gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.SendTransactionResponse>;
@@ -1388,12 +1410,18 @@ export interface IGlobalAPIClient {
     registerKey(request: gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.RegisterKeyRequest, callback: (error: grpc.ServiceError | null, response: gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.RegisterKeyResponse) => void): grpc.ClientUnaryCall;
     registerKey(request: gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.RegisterKeyRequest, metadata: grpc.Metadata, callback: (error: grpc.ServiceError | null, response: gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.RegisterKeyResponse) => void): grpc.ClientUnaryCall;
     registerKey(request: gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.RegisterKeyRequest, metadata: grpc.Metadata, options: Partial<grpc.CallOptions>, callback: (error: grpc.ServiceError | null, response: gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.RegisterKeyResponse) => void): grpc.ClientUnaryCall;
+    getSignerPubKey(request: gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.GetSignerPubKeyRequest, callback: (error: grpc.ServiceError | null, response: gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.GetSignerPubKeyResponse) => void): grpc.ClientUnaryCall;
+    getSignerPubKey(request: gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.GetSignerPubKeyRequest, metadata: grpc.Metadata, callback: (error: grpc.ServiceError | null, response: gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.GetSignerPubKeyResponse) => void): grpc.ClientUnaryCall;
+    getSignerPubKey(request: gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.GetSignerPubKeyRequest, metadata: grpc.Metadata, options: Partial<grpc.CallOptions>, callback: (error: grpc.ServiceError | null, response: gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.GetSignerPubKeyResponse) => void): grpc.ClientUnaryCall;
     createTransaction(request: gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.CreateTransactionRequest, callback: (error: grpc.ServiceError | null, response: gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.CreateTransactionResponse) => void): grpc.ClientUnaryCall;
     createTransaction(request: gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.CreateTransactionRequest, metadata: grpc.Metadata, callback: (error: grpc.ServiceError | null, response: gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.CreateTransactionResponse) => void): grpc.ClientUnaryCall;
     createTransaction(request: gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.CreateTransactionRequest, metadata: grpc.Metadata, options: Partial<grpc.CallOptions>, callback: (error: grpc.ServiceError | null, response: gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.CreateTransactionResponse) => void): grpc.ClientUnaryCall;
     createXRPInitTransactions(request: gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.CreateXRPInitTransactionsRequest, callback: (error: grpc.ServiceError | null, response: google_protobuf_empty_pb.Empty) => void): grpc.ClientUnaryCall;
     createXRPInitTransactions(request: gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.CreateXRPInitTransactionsRequest, metadata: grpc.Metadata, callback: (error: grpc.ServiceError | null, response: google_protobuf_empty_pb.Empty) => void): grpc.ClientUnaryCall;
     createXRPInitTransactions(request: gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.CreateXRPInitTransactionsRequest, metadata: grpc.Metadata, options: Partial<grpc.CallOptions>, callback: (error: grpc.ServiceError | null, response: google_protobuf_empty_pb.Empty) => void): grpc.ClientUnaryCall;
+    createContractCreationTransaction(request: gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.CreateContractCreationTransactionRequest, callback: (error: grpc.ServiceError | null, response: gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.CreateContractCreationTransactionResponse) => void): grpc.ClientUnaryCall;
+    createContractCreationTransaction(request: gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.CreateContractCreationTransactionRequest, metadata: grpc.Metadata, callback: (error: grpc.ServiceError | null, response: gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.CreateContractCreationTransactionResponse) => void): grpc.ClientUnaryCall;
+    createContractCreationTransaction(request: gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.CreateContractCreationTransactionRequest, metadata: grpc.Metadata, options: Partial<grpc.CallOptions>, callback: (error: grpc.ServiceError | null, response: gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.CreateContractCreationTransactionResponse) => void): grpc.ClientUnaryCall;
     signTransaction(request: gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.SignTransactionRequest, callback: (error: grpc.ServiceError | null, response: google_protobuf_empty_pb.Empty) => void): grpc.ClientUnaryCall;
     signTransaction(request: gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.SignTransactionRequest, metadata: grpc.Metadata, callback: (error: grpc.ServiceError | null, response: google_protobuf_empty_pb.Empty) => void): grpc.ClientUnaryCall;
     signTransaction(request: gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.SignTransactionRequest, metadata: grpc.Metadata, options: Partial<grpc.CallOptions>, callback: (error: grpc.ServiceError | null, response: google_protobuf_empty_pb.Empty) => void): grpc.ClientUnaryCall;
@@ -1728,12 +1756,18 @@ export class GlobalAPIClient extends grpc.Client implements IGlobalAPIClient {
     public registerKey(request: gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.RegisterKeyRequest, callback: (error: grpc.ServiceError | null, response: gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.RegisterKeyResponse) => void): grpc.ClientUnaryCall;
     public registerKey(request: gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.RegisterKeyRequest, metadata: grpc.Metadata, callback: (error: grpc.ServiceError | null, response: gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.RegisterKeyResponse) => void): grpc.ClientUnaryCall;
     public registerKey(request: gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.RegisterKeyRequest, metadata: grpc.Metadata, options: Partial<grpc.CallOptions>, callback: (error: grpc.ServiceError | null, response: gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.RegisterKeyResponse) => void): grpc.ClientUnaryCall;
+    public getSignerPubKey(request: gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.GetSignerPubKeyRequest, callback: (error: grpc.ServiceError | null, response: gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.GetSignerPubKeyResponse) => void): grpc.ClientUnaryCall;
+    public getSignerPubKey(request: gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.GetSignerPubKeyRequest, metadata: grpc.Metadata, callback: (error: grpc.ServiceError | null, response: gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.GetSignerPubKeyResponse) => void): grpc.ClientUnaryCall;
+    public getSignerPubKey(request: gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.GetSignerPubKeyRequest, metadata: grpc.Metadata, options: Partial<grpc.CallOptions>, callback: (error: grpc.ServiceError | null, response: gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.GetSignerPubKeyResponse) => void): grpc.ClientUnaryCall;
     public createTransaction(request: gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.CreateTransactionRequest, callback: (error: grpc.ServiceError | null, response: gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.CreateTransactionResponse) => void): grpc.ClientUnaryCall;
     public createTransaction(request: gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.CreateTransactionRequest, metadata: grpc.Metadata, callback: (error: grpc.ServiceError | null, response: gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.CreateTransactionResponse) => void): grpc.ClientUnaryCall;
     public createTransaction(request: gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.CreateTransactionRequest, metadata: grpc.Metadata, options: Partial<grpc.CallOptions>, callback: (error: grpc.ServiceError | null, response: gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.CreateTransactionResponse) => void): grpc.ClientUnaryCall;
     public createXRPInitTransactions(request: gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.CreateXRPInitTransactionsRequest, callback: (error: grpc.ServiceError | null, response: google_protobuf_empty_pb.Empty) => void): grpc.ClientUnaryCall;
     public createXRPInitTransactions(request: gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.CreateXRPInitTransactionsRequest, metadata: grpc.Metadata, callback: (error: grpc.ServiceError | null, response: google_protobuf_empty_pb.Empty) => void): grpc.ClientUnaryCall;
     public createXRPInitTransactions(request: gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.CreateXRPInitTransactionsRequest, metadata: grpc.Metadata, options: Partial<grpc.CallOptions>, callback: (error: grpc.ServiceError | null, response: google_protobuf_empty_pb.Empty) => void): grpc.ClientUnaryCall;
+    public createContractCreationTransaction(request: gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.CreateContractCreationTransactionRequest, callback: (error: grpc.ServiceError | null, response: gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.CreateContractCreationTransactionResponse) => void): grpc.ClientUnaryCall;
+    public createContractCreationTransaction(request: gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.CreateContractCreationTransactionRequest, metadata: grpc.Metadata, callback: (error: grpc.ServiceError | null, response: gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.CreateContractCreationTransactionResponse) => void): grpc.ClientUnaryCall;
+    public createContractCreationTransaction(request: gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.CreateContractCreationTransactionRequest, metadata: grpc.Metadata, options: Partial<grpc.CallOptions>, callback: (error: grpc.ServiceError | null, response: gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.CreateContractCreationTransactionResponse) => void): grpc.ClientUnaryCall;
     public signTransaction(request: gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.SignTransactionRequest, callback: (error: grpc.ServiceError | null, response: google_protobuf_empty_pb.Empty) => void): grpc.ClientUnaryCall;
     public signTransaction(request: gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.SignTransactionRequest, metadata: grpc.Metadata, callback: (error: grpc.ServiceError | null, response: google_protobuf_empty_pb.Empty) => void): grpc.ClientUnaryCall;
     public signTransaction(request: gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.SignTransactionRequest, metadata: grpc.Metadata, options: Partial<grpc.CallOptions>, callback: (error: grpc.ServiceError | null, response: google_protobuf_empty_pb.Empty) => void): grpc.ClientUnaryCall;

@@ -20,6 +20,7 @@ goog.exportSymbol('proto.gincoinc.global.v1.AvalancheInputType', null, global);
 goog.exportSymbol('proto.gincoinc.global.v1.AvalancheOutputType', null, global);
 goog.exportSymbol('proto.gincoinc.global.v1.AvalancheTxType', null, global);
 goog.exportSymbol('proto.gincoinc.global.v1.Coin', null, global);
+goog.exportSymbol('proto.gincoinc.global.v1.ContractCreationType', null, global);
 goog.exportSymbol('proto.gincoinc.global.v1.CosmosMsgType', null, global);
 goog.exportSymbol('proto.gincoinc.global.v1.EthereumCallMethod', null, global);
 goog.exportSymbol('proto.gincoinc.global.v1.EthereumStakingHistoryType', null, global);
@@ -113,10 +114,36 @@ proto.gincoinc.global.v1.Coin = {
   COIN_ERC20_DM2P: 70,
   COIN_APT: 71,
   COIN_DOGE: 72,
+  COIN_POLYGON_ERC20_SNPT: 73,
   COIN_SDN: 10002,
   COIN_ERC20_SCDEV: 10003,
   COIN_ERC20_SCQA: 10004,
-  COIN_ERC20_SCPROD: 10005
+  COIN_ERC20_SCPROD: 10005,
+  COIN_ERC20_COINSCDEV: 10006,
+  COIN_ERC20_COINSCQA: 10007,
+  COIN_ERC20_COINSCPROD: 10008,
+  COIN_ERC20_COIN1: 10009,
+  COIN_ERC20_COIN2: 10010,
+  COIN_ERC20_COIN3: 10011,
+  COIN_ERC20_COIN4: 10012,
+  COIN_ERC20_COIN5: 10013,
+  COIN_ERC20_COIN6: 10014,
+  COIN_ERC20_COIN7: 10015,
+  COIN_ERC20_COIN8: 10016,
+  COIN_ERC20_COIN9: 10017,
+  COIN_ERC20_COIN10: 10018,
+  COIN_ERC20_COIN11: 10019,
+  COIN_ERC20_COIN12: 10020,
+  COIN_ERC20_COIN13: 10021,
+  COIN_ERC20_COIN14: 10022,
+  COIN_ERC20_COIN15: 10023,
+  COIN_ERC20_COIN: 10024,
+  COIN_ERC20_PREUAT1: 10025,
+  COIN_ERC20_PREUAT2: 10026,
+  COIN_ERC20_PREUAT3: 10027,
+  COIN_ERC20_PREUAT4: 10028,
+  COIN_ERC20_DEVCOIN1: 10029,
+  COIN_ERC20_DEVCOIN2: 10030
 };
 
 /**
@@ -400,7 +427,10 @@ proto.gincoinc.global.v1.EthereumCallMethod = {
   ETHEREUM_CALL_METHOD_PROGMAT_COIN_CONFISCATE: 10,
   ETHEREUM_CALL_METHOD_PROGMAT_COIN_PAUSE: 11,
   ETHEREUM_CALL_METHOD_PROGMAT_COIN_UNPAUSE: 12,
-  ETHEREUM_CALL_METHOD_PROGMAT_COIN_MINT_AND_TRANSFER_INTERMEDIARY: 13
+  ETHEREUM_CALL_METHOD_PROGMAT_COIN_MINT_AND_TRANSFER_INTERMEDIARY: 13,
+  ETHEREUM_CALL_METHOD_PROGMAT_COIN_GRANT_WHITE_AND_BLACK_LISTER: 14,
+  ETHEREUM_CALL_METHOD_PROGMAT_COIN_CONTRACT_CREATION: 15,
+  ETHEREUM_CALL_METHOD_PROGMAT_COIN_UPGRADE_TO_AND_CALL: 16
 };
 
 /**
@@ -435,6 +465,15 @@ proto.gincoinc.global.v1.AvalancheOutputType = {
   AVALANCHE_OUTPUT_TYPE_EVM_OUTPUT: 3,
   AVALANCHE_OUTPUT_TYPE_STAKE_OUTPUT: 4,
   AVALANCHE_OUTPUT_TYPE_OWNERS_OUTPUT: 5
+};
+
+/**
+ * @enum {number}
+ */
+proto.gincoinc.global.v1.ContractCreationType = {
+  CONTRACT_CREATION_TYPE_INVALID: 0,
+  CONTRACT_CREATION_TYPE_IMPL: 1,
+  CONTRACT_CREATION_TYPE_UTILS: 2
 };
 
 goog.object.extend(exports, proto.gincoinc.global.v1);

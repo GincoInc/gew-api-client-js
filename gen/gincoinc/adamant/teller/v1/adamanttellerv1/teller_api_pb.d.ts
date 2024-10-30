@@ -627,6 +627,64 @@ export namespace ProgmatCoinUnpauseRequest {
     }
 }
 
+export class ProgmatCoinGrantWhiteAndBlackListerRequest extends jspb.Message { 
+    getWalletId(): string;
+    setWalletId(value: string): ProgmatCoinGrantWhiteAndBlackListerRequest;
+    getFeeRate(): number;
+    setFeeRate(value: number): ProgmatCoinGrantWhiteAndBlackListerRequest;
+    getContractAddress(): string;
+    setContractAddress(value: string): ProgmatCoinGrantWhiteAndBlackListerRequest;
+    getUtilsAddress(): string;
+    setUtilsAddress(value: string): ProgmatCoinGrantWhiteAndBlackListerRequest;
+
+    serializeBinary(): Uint8Array;
+    toObject(includeInstance?: boolean): ProgmatCoinGrantWhiteAndBlackListerRequest.AsObject;
+    static toObject(includeInstance: boolean, msg: ProgmatCoinGrantWhiteAndBlackListerRequest): ProgmatCoinGrantWhiteAndBlackListerRequest.AsObject;
+    static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+    static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+    static serializeBinaryToWriter(message: ProgmatCoinGrantWhiteAndBlackListerRequest, writer: jspb.BinaryWriter): void;
+    static deserializeBinary(bytes: Uint8Array): ProgmatCoinGrantWhiteAndBlackListerRequest;
+    static deserializeBinaryFromReader(message: ProgmatCoinGrantWhiteAndBlackListerRequest, reader: jspb.BinaryReader): ProgmatCoinGrantWhiteAndBlackListerRequest;
+}
+
+export namespace ProgmatCoinGrantWhiteAndBlackListerRequest {
+    export type AsObject = {
+        walletId: string,
+        feeRate: number,
+        contractAddress: string,
+        utilsAddress: string,
+    }
+}
+
+export class ProgmatCoinUpgradeToAndCallRequest extends jspb.Message { 
+    getWalletId(): string;
+    setWalletId(value: string): ProgmatCoinUpgradeToAndCallRequest;
+    getFeeRate(): number;
+    setFeeRate(value: number): ProgmatCoinUpgradeToAndCallRequest;
+    getProxyContractAddress(): string;
+    setProxyContractAddress(value: string): ProgmatCoinUpgradeToAndCallRequest;
+    getImplContractAddress(): string;
+    setImplContractAddress(value: string): ProgmatCoinUpgradeToAndCallRequest;
+
+    serializeBinary(): Uint8Array;
+    toObject(includeInstance?: boolean): ProgmatCoinUpgradeToAndCallRequest.AsObject;
+    static toObject(includeInstance: boolean, msg: ProgmatCoinUpgradeToAndCallRequest): ProgmatCoinUpgradeToAndCallRequest.AsObject;
+    static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+    static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+    static serializeBinaryToWriter(message: ProgmatCoinUpgradeToAndCallRequest, writer: jspb.BinaryWriter): void;
+    static deserializeBinary(bytes: Uint8Array): ProgmatCoinUpgradeToAndCallRequest;
+    static deserializeBinaryFromReader(message: ProgmatCoinUpgradeToAndCallRequest, reader: jspb.BinaryReader): ProgmatCoinUpgradeToAndCallRequest;
+}
+
+export namespace ProgmatCoinUpgradeToAndCallRequest {
+    export type AsObject = {
+        walletId: string,
+        feeRate: number,
+        proxyContractAddress: string,
+        implContractAddress: string,
+    }
+}
+
 export class ListColdFeeDepositAddressesRequest extends jspb.Message { 
 
     serializeBinary(): Uint8Array;

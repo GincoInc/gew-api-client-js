@@ -287,6 +287,10 @@ message TxInput {
   uint32 tx_index = 2;
   double value = 3;
   string string_value = 4;
+  uint32 tx_input_index = 5;
+  string address = 6;
+  string witness_script = 7;
+  uint32 n_sequence = 8;
 }
 
 // The model of transaction output
@@ -295,6 +299,7 @@ message TxOutput {
   double value = 2;
   string string_value = 3;
   bool is_change = 4;
+  uint32 tx_output_index = 5;
 }
 
 // The model of UTXO
@@ -362,6 +367,9 @@ message EthereumSpecific {
   uint64 expiration = 5;
   string data = 6; // data
   bool is_staking_transaction = 7;
+  string from_address = 8;
+  string token_address = 9;
+  uint64 chain_id = 10;
 }
 
 // The model of XRP specific fields of transaction
@@ -370,6 +378,7 @@ message XrpSpecific {
   uint32 destination_tag = 2;
   gincoinc.global.v1.XRPTransactionType tx_type = 3;
   bool is_next_sequence_number = 4;
+  string from_address = 5;
 }
 
 // The model of Tron specific fields of transaction
@@ -847,7 +856,7 @@ message LabeledAddress {
   google.protobuf.Timestamp create_time = 7; // the time at which the labeled address was created
   google.protobuf.Timestamp update_time = 8; // the time at which the labeled address was updated
   gincoinc.global.v1.Network network = 9;
-  // string message = 10; // message
+  string message = 10; // message
 }
 
 // The model of proposal to update labeled address information
@@ -858,7 +867,7 @@ message LabeledAddressProposal {
   string approver_name = 4;
   string proposed_address = 5;
   bool address_is_reviewed = 6;
-  // string proposed_message = 7;
+  string proposed_message = 7;
 }
 
 // The model of whitelist
@@ -1187,4 +1196,46 @@ message StakingValidator {
   int64 expiration_time = 10; // expiration time
   google.protobuf.Timestamp create_time = 11; // the time at which the staking validator was created
   google.protobuf.Timestamp update_time = 12; // the time at which the staking validator was updated
+}
+
+// The model of PreTransactionThreshold
+message PreTransactionThreshold {
+  string pre_transaction_threshold_id = 1;
+  gincoinc.global.v1.Coin coin = 2;
+  gincoinc.global.v1.Network network = 3;
+  double value = 4;
+  PreTransactionThresholdProposal proposal = 5;
+  google.protobuf.Timestamp create_time = 6;
+  google.protobuf.Timestamp update_time = 7;
+}
+
+message PreTransactionThresholdProposal {
+  string pre_transaction_threshold_id = 1;
+  string proposal_id = 2;
+  string requester_account_id = 3;
+  string requester_name = 4;
+  string approver_account_id = 5;
+  string approver_name = 6;
+  double proposed_value = 7;
+  bool is_reviewed = 8;
+}
+
+message CreatePreTransactionThresholdRequest {
+  gincoinc.global.v1.Coin coin = 1;
+  gincoinc.global.v1.Network network = 2;
+  double value = 3;
+}
+
+message CreatePreTransactionThresholdResponse {
+  string pre_transaction_threshold_id = 1;
+}
+
+message UpdatePreTransactionThresholdRequest {
+  string pre_transaction_threshold_id = 1;
+  double value = 2;
+}
+
+message ReviewPreTransactionThresholdProposalRequest {
+  string pre_transaction_threshold_id = 1;
+  bool approve = 2;
 }

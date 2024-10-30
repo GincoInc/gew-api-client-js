@@ -68,6 +68,8 @@ export class AuditLog extends jspb.Message {
     setAddress(value: string): AuditLog;
     getAddressName(): string;
     setAddressName(value: string): AuditLog;
+    getMessage(): string;
+    setMessage(value: string): AuditLog;
     getTransferLimitId(): string;
     setTransferLimitId(value: string): AuditLog;
     getTransferLimitName(): string;
@@ -112,6 +114,12 @@ export class AuditLog extends jspb.Message {
     getDisabledMailsList(): Array<gincoinc_adamant_global_v1_adamantglobalv1_enum_pb.MailType>;
     setDisabledMailsList(value: Array<gincoinc_adamant_global_v1_adamantglobalv1_enum_pb.MailType>): AuditLog;
     addDisabledMails(value: gincoinc_adamant_global_v1_adamantglobalv1_enum_pb.MailType, index?: number): gincoinc_adamant_global_v1_adamantglobalv1_enum_pb.MailType;
+    getNetwork(): gincoinc_global_v1_gincoincglobalv1_enum_pb.Network;
+    setNetwork(value: gincoinc_global_v1_gincoincglobalv1_enum_pb.Network): AuditLog;
+    getPreTransactionThreshold(): number;
+    setPreTransactionThreshold(value: number): AuditLog;
+    getPreTransactionThresholdId(): string;
+    setPreTransactionThresholdId(value: string): AuditLog;
 
     serializeBinary(): Uint8Array;
     toObject(includeInstance?: boolean): AuditLog.AsObject;
@@ -153,6 +161,7 @@ export namespace AuditLog {
         labeledAddressId: string,
         address: string,
         addressName: string,
+        message: string,
         transferLimitId: string,
         transferLimitName: string,
         transferOneTimeLimit: number,
@@ -167,5 +176,8 @@ export namespace AuditLog {
         createTime?: google_protobuf_timestamp_pb.Timestamp.AsObject,
         enabledMailsList: Array<gincoinc_adamant_global_v1_adamantglobalv1_enum_pb.MailType>,
         disabledMailsList: Array<gincoinc_adamant_global_v1_adamantglobalv1_enum_pb.MailType>,
+        network: gincoinc_global_v1_gincoincglobalv1_enum_pb.Network,
+        preTransactionThreshold: number,
+        preTransactionThresholdId: string,
     }
 }

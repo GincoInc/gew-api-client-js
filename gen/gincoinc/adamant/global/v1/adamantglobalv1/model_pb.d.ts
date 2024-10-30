@@ -1057,6 +1057,14 @@ export class TxInput extends jspb.Message {
     setValue(value: number): TxInput;
     getStringValue(): string;
     setStringValue(value: string): TxInput;
+    getTxInputIndex(): number;
+    setTxInputIndex(value: number): TxInput;
+    getAddress(): string;
+    setAddress(value: string): TxInput;
+    getWitnessScript(): string;
+    setWitnessScript(value: string): TxInput;
+    getNSequence(): number;
+    setNSequence(value: number): TxInput;
 
     serializeBinary(): Uint8Array;
     toObject(includeInstance?: boolean): TxInput.AsObject;
@@ -1074,6 +1082,10 @@ export namespace TxInput {
         txIndex: number,
         value: number,
         stringValue: string,
+        txInputIndex: number,
+        address: string,
+        witnessScript: string,
+        nSequence: number,
     }
 }
 
@@ -1086,6 +1098,8 @@ export class TxOutput extends jspb.Message {
     setStringValue(value: string): TxOutput;
     getIsChange(): boolean;
     setIsChange(value: boolean): TxOutput;
+    getTxOutputIndex(): number;
+    setTxOutputIndex(value: number): TxOutput;
 
     serializeBinary(): Uint8Array;
     toObject(includeInstance?: boolean): TxOutput.AsObject;
@@ -1103,6 +1117,7 @@ export namespace TxOutput {
         value: number,
         stringValue: string,
         isChange: boolean,
+        txOutputIndex: number,
     }
 }
 
@@ -1349,6 +1364,12 @@ export class EthereumSpecific extends jspb.Message {
     setData(value: string): EthereumSpecific;
     getIsStakingTransaction(): boolean;
     setIsStakingTransaction(value: boolean): EthereumSpecific;
+    getFromAddress(): string;
+    setFromAddress(value: string): EthereumSpecific;
+    getTokenAddress(): string;
+    setTokenAddress(value: string): EthereumSpecific;
+    getChainId(): number;
+    setChainId(value: number): EthereumSpecific;
 
     serializeBinary(): Uint8Array;
     toObject(includeInstance?: boolean): EthereumSpecific.AsObject;
@@ -1369,6 +1390,9 @@ export namespace EthereumSpecific {
         expiration: number,
         data: string,
         isStakingTransaction: boolean,
+        fromAddress: string,
+        tokenAddress: string,
+        chainId: number,
     }
 }
 
@@ -1381,6 +1405,8 @@ export class XrpSpecific extends jspb.Message {
     setTxType(value: gincoinc_global_v1_gincoincglobalv1_enum_pb.XRPTransactionType): XrpSpecific;
     getIsNextSequenceNumber(): boolean;
     setIsNextSequenceNumber(value: boolean): XrpSpecific;
+    getFromAddress(): string;
+    setFromAddress(value: string): XrpSpecific;
 
     serializeBinary(): Uint8Array;
     toObject(includeInstance?: boolean): XrpSpecific.AsObject;
@@ -1398,6 +1424,7 @@ export namespace XrpSpecific {
         destinationTag: number,
         txType: gincoinc_global_v1_gincoincglobalv1_enum_pb.XRPTransactionType,
         isNextSequenceNumber: boolean,
+        fromAddress: string,
     }
 }
 
@@ -3218,6 +3245,8 @@ export class LabeledAddress extends jspb.Message {
     setUpdateTime(value?: google_protobuf_timestamp_pb.Timestamp): LabeledAddress;
     getNetwork(): gincoinc_global_v1_gincoincglobalv1_enum_pb.Network;
     setNetwork(value: gincoinc_global_v1_gincoincglobalv1_enum_pb.Network): LabeledAddress;
+    getMessage(): string;
+    setMessage(value: string): LabeledAddress;
 
     serializeBinary(): Uint8Array;
     toObject(includeInstance?: boolean): LabeledAddress.AsObject;
@@ -3239,6 +3268,7 @@ export namespace LabeledAddress {
         createTime?: google_protobuf_timestamp_pb.Timestamp.AsObject,
         updateTime?: google_protobuf_timestamp_pb.Timestamp.AsObject,
         network: gincoinc_global_v1_gincoincglobalv1_enum_pb.Network,
+        message: string,
     }
 }
 
@@ -3255,6 +3285,8 @@ export class LabeledAddressProposal extends jspb.Message {
     setProposedAddress(value: string): LabeledAddressProposal;
     getAddressIsReviewed(): boolean;
     setAddressIsReviewed(value: boolean): LabeledAddressProposal;
+    getProposedMessage(): string;
+    setProposedMessage(value: string): LabeledAddressProposal;
 
     serializeBinary(): Uint8Array;
     toObject(includeInstance?: boolean): LabeledAddressProposal.AsObject;
@@ -3274,6 +3306,7 @@ export namespace LabeledAddressProposal {
         approverName: string,
         proposedAddress: string,
         addressIsReviewed: boolean,
+        proposedMessage: string,
     }
 }
 
@@ -4573,5 +4606,185 @@ export namespace StakingValidator {
         expirationTime: number,
         createTime?: google_protobuf_timestamp_pb.Timestamp.AsObject,
         updateTime?: google_protobuf_timestamp_pb.Timestamp.AsObject,
+    }
+}
+
+export class PreTransactionThreshold extends jspb.Message { 
+    getPreTransactionThresholdId(): string;
+    setPreTransactionThresholdId(value: string): PreTransactionThreshold;
+    getCoin(): gincoinc_global_v1_gincoincglobalv1_enum_pb.Coin;
+    setCoin(value: gincoinc_global_v1_gincoincglobalv1_enum_pb.Coin): PreTransactionThreshold;
+    getNetwork(): gincoinc_global_v1_gincoincglobalv1_enum_pb.Network;
+    setNetwork(value: gincoinc_global_v1_gincoincglobalv1_enum_pb.Network): PreTransactionThreshold;
+    getValue(): number;
+    setValue(value: number): PreTransactionThreshold;
+
+    hasProposal(): boolean;
+    clearProposal(): void;
+    getProposal(): PreTransactionThresholdProposal | undefined;
+    setProposal(value?: PreTransactionThresholdProposal): PreTransactionThreshold;
+
+    hasCreateTime(): boolean;
+    clearCreateTime(): void;
+    getCreateTime(): google_protobuf_timestamp_pb.Timestamp | undefined;
+    setCreateTime(value?: google_protobuf_timestamp_pb.Timestamp): PreTransactionThreshold;
+
+    hasUpdateTime(): boolean;
+    clearUpdateTime(): void;
+    getUpdateTime(): google_protobuf_timestamp_pb.Timestamp | undefined;
+    setUpdateTime(value?: google_protobuf_timestamp_pb.Timestamp): PreTransactionThreshold;
+
+    serializeBinary(): Uint8Array;
+    toObject(includeInstance?: boolean): PreTransactionThreshold.AsObject;
+    static toObject(includeInstance: boolean, msg: PreTransactionThreshold): PreTransactionThreshold.AsObject;
+    static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+    static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+    static serializeBinaryToWriter(message: PreTransactionThreshold, writer: jspb.BinaryWriter): void;
+    static deserializeBinary(bytes: Uint8Array): PreTransactionThreshold;
+    static deserializeBinaryFromReader(message: PreTransactionThreshold, reader: jspb.BinaryReader): PreTransactionThreshold;
+}
+
+export namespace PreTransactionThreshold {
+    export type AsObject = {
+        preTransactionThresholdId: string,
+        coin: gincoinc_global_v1_gincoincglobalv1_enum_pb.Coin,
+        network: gincoinc_global_v1_gincoincglobalv1_enum_pb.Network,
+        value: number,
+        proposal?: PreTransactionThresholdProposal.AsObject,
+        createTime?: google_protobuf_timestamp_pb.Timestamp.AsObject,
+        updateTime?: google_protobuf_timestamp_pb.Timestamp.AsObject,
+    }
+}
+
+export class PreTransactionThresholdProposal extends jspb.Message { 
+    getPreTransactionThresholdId(): string;
+    setPreTransactionThresholdId(value: string): PreTransactionThresholdProposal;
+    getProposalId(): string;
+    setProposalId(value: string): PreTransactionThresholdProposal;
+    getRequesterAccountId(): string;
+    setRequesterAccountId(value: string): PreTransactionThresholdProposal;
+    getRequesterName(): string;
+    setRequesterName(value: string): PreTransactionThresholdProposal;
+    getApproverAccountId(): string;
+    setApproverAccountId(value: string): PreTransactionThresholdProposal;
+    getApproverName(): string;
+    setApproverName(value: string): PreTransactionThresholdProposal;
+    getProposedValue(): number;
+    setProposedValue(value: number): PreTransactionThresholdProposal;
+    getIsReviewed(): boolean;
+    setIsReviewed(value: boolean): PreTransactionThresholdProposal;
+
+    serializeBinary(): Uint8Array;
+    toObject(includeInstance?: boolean): PreTransactionThresholdProposal.AsObject;
+    static toObject(includeInstance: boolean, msg: PreTransactionThresholdProposal): PreTransactionThresholdProposal.AsObject;
+    static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+    static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+    static serializeBinaryToWriter(message: PreTransactionThresholdProposal, writer: jspb.BinaryWriter): void;
+    static deserializeBinary(bytes: Uint8Array): PreTransactionThresholdProposal;
+    static deserializeBinaryFromReader(message: PreTransactionThresholdProposal, reader: jspb.BinaryReader): PreTransactionThresholdProposal;
+}
+
+export namespace PreTransactionThresholdProposal {
+    export type AsObject = {
+        preTransactionThresholdId: string,
+        proposalId: string,
+        requesterAccountId: string,
+        requesterName: string,
+        approverAccountId: string,
+        approverName: string,
+        proposedValue: number,
+        isReviewed: boolean,
+    }
+}
+
+export class CreatePreTransactionThresholdRequest extends jspb.Message { 
+    getCoin(): gincoinc_global_v1_gincoincglobalv1_enum_pb.Coin;
+    setCoin(value: gincoinc_global_v1_gincoincglobalv1_enum_pb.Coin): CreatePreTransactionThresholdRequest;
+    getNetwork(): gincoinc_global_v1_gincoincglobalv1_enum_pb.Network;
+    setNetwork(value: gincoinc_global_v1_gincoincglobalv1_enum_pb.Network): CreatePreTransactionThresholdRequest;
+    getValue(): number;
+    setValue(value: number): CreatePreTransactionThresholdRequest;
+
+    serializeBinary(): Uint8Array;
+    toObject(includeInstance?: boolean): CreatePreTransactionThresholdRequest.AsObject;
+    static toObject(includeInstance: boolean, msg: CreatePreTransactionThresholdRequest): CreatePreTransactionThresholdRequest.AsObject;
+    static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+    static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+    static serializeBinaryToWriter(message: CreatePreTransactionThresholdRequest, writer: jspb.BinaryWriter): void;
+    static deserializeBinary(bytes: Uint8Array): CreatePreTransactionThresholdRequest;
+    static deserializeBinaryFromReader(message: CreatePreTransactionThresholdRequest, reader: jspb.BinaryReader): CreatePreTransactionThresholdRequest;
+}
+
+export namespace CreatePreTransactionThresholdRequest {
+    export type AsObject = {
+        coin: gincoinc_global_v1_gincoincglobalv1_enum_pb.Coin,
+        network: gincoinc_global_v1_gincoincglobalv1_enum_pb.Network,
+        value: number,
+    }
+}
+
+export class CreatePreTransactionThresholdResponse extends jspb.Message { 
+    getPreTransactionThresholdId(): string;
+    setPreTransactionThresholdId(value: string): CreatePreTransactionThresholdResponse;
+
+    serializeBinary(): Uint8Array;
+    toObject(includeInstance?: boolean): CreatePreTransactionThresholdResponse.AsObject;
+    static toObject(includeInstance: boolean, msg: CreatePreTransactionThresholdResponse): CreatePreTransactionThresholdResponse.AsObject;
+    static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+    static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+    static serializeBinaryToWriter(message: CreatePreTransactionThresholdResponse, writer: jspb.BinaryWriter): void;
+    static deserializeBinary(bytes: Uint8Array): CreatePreTransactionThresholdResponse;
+    static deserializeBinaryFromReader(message: CreatePreTransactionThresholdResponse, reader: jspb.BinaryReader): CreatePreTransactionThresholdResponse;
+}
+
+export namespace CreatePreTransactionThresholdResponse {
+    export type AsObject = {
+        preTransactionThresholdId: string,
+    }
+}
+
+export class UpdatePreTransactionThresholdRequest extends jspb.Message { 
+    getPreTransactionThresholdId(): string;
+    setPreTransactionThresholdId(value: string): UpdatePreTransactionThresholdRequest;
+    getValue(): number;
+    setValue(value: number): UpdatePreTransactionThresholdRequest;
+
+    serializeBinary(): Uint8Array;
+    toObject(includeInstance?: boolean): UpdatePreTransactionThresholdRequest.AsObject;
+    static toObject(includeInstance: boolean, msg: UpdatePreTransactionThresholdRequest): UpdatePreTransactionThresholdRequest.AsObject;
+    static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+    static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+    static serializeBinaryToWriter(message: UpdatePreTransactionThresholdRequest, writer: jspb.BinaryWriter): void;
+    static deserializeBinary(bytes: Uint8Array): UpdatePreTransactionThresholdRequest;
+    static deserializeBinaryFromReader(message: UpdatePreTransactionThresholdRequest, reader: jspb.BinaryReader): UpdatePreTransactionThresholdRequest;
+}
+
+export namespace UpdatePreTransactionThresholdRequest {
+    export type AsObject = {
+        preTransactionThresholdId: string,
+        value: number,
+    }
+}
+
+export class ReviewPreTransactionThresholdProposalRequest extends jspb.Message { 
+    getPreTransactionThresholdId(): string;
+    setPreTransactionThresholdId(value: string): ReviewPreTransactionThresholdProposalRequest;
+    getApprove(): boolean;
+    setApprove(value: boolean): ReviewPreTransactionThresholdProposalRequest;
+
+    serializeBinary(): Uint8Array;
+    toObject(includeInstance?: boolean): ReviewPreTransactionThresholdProposalRequest.AsObject;
+    static toObject(includeInstance: boolean, msg: ReviewPreTransactionThresholdProposalRequest): ReviewPreTransactionThresholdProposalRequest.AsObject;
+    static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+    static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+    static serializeBinaryToWriter(message: ReviewPreTransactionThresholdProposalRequest, writer: jspb.BinaryWriter): void;
+    static deserializeBinary(bytes: Uint8Array): ReviewPreTransactionThresholdProposalRequest;
+    static deserializeBinaryFromReader(message: ReviewPreTransactionThresholdProposalRequest, reader: jspb.BinaryReader): ReviewPreTransactionThresholdProposalRequest;
+}
+
+export namespace ReviewPreTransactionThresholdProposalRequest {
+    export type AsObject = {
+        preTransactionThresholdId: string,
+        approve: boolean,
     }
 }

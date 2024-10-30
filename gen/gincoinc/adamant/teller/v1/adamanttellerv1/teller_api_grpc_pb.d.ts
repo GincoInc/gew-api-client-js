@@ -41,6 +41,7 @@ interface ITellerAPIService extends grpc.ServiceDefinition<grpc.UntypedServiceIm
     listColdFeeDepositAddresses: ITellerAPIService_IListColdFeeDepositAddresses;
     listHotFeeDepositAddresses: ITellerAPIService_IListHotFeeDepositAddresses;
     createTransaction: ITellerAPIService_ICreateTransaction;
+    createContractCreationTransaction: ITellerAPIService_ICreateContractCreationTransaction;
     signTransaction: ITellerAPIService_ISignTransaction;
     sendTransaction: ITellerAPIService_ISendTransaction;
     resendTransaction: ITellerAPIService_IResendTransaction;
@@ -78,6 +79,9 @@ interface ITellerAPIService extends grpc.ServiceDefinition<grpc.UntypedServiceIm
     progmatCoinConfiscate: ITellerAPIService_IProgmatCoinConfiscate;
     progmatCoinPause: ITellerAPIService_IProgmatCoinPause;
     progmatCoinUnpause: ITellerAPIService_IProgmatCoinUnpause;
+    progmatCoinGrantWhiteAndBlackLister: ITellerAPIService_IProgmatCoinGrantWhiteAndBlackLister;
+    progmatCoinUpgradeToAndCall: ITellerAPIService_IProgmatCoinUpgradeToAndCall;
+    listPreTransactionThresholdsByFilter: ITellerAPIService_IListPreTransactionThresholdsByFilter;
 }
 
 interface ITellerAPIService_ICreateWallet extends grpc.MethodDefinition<gincoinc_adamant_teller_v1_adamanttellerv1_teller_api_pb.CreateWalletRequest, gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.CreateWalletResponse> {
@@ -322,6 +326,15 @@ interface ITellerAPIService_ICreateTransaction extends grpc.MethodDefinition<gin
     requestDeserialize: grpc.deserialize<gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.CreateTransactionRequest>;
     responseSerialize: grpc.serialize<gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.CreateTransactionResponse>;
     responseDeserialize: grpc.deserialize<gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.CreateTransactionResponse>;
+}
+interface ITellerAPIService_ICreateContractCreationTransaction extends grpc.MethodDefinition<gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.CreateContractCreationTransactionRequest, gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.CreateContractCreationTransactionResponse> {
+    path: "/adamant.teller.v1.TellerAPI/CreateContractCreationTransaction";
+    requestStream: false;
+    responseStream: false;
+    requestSerialize: grpc.serialize<gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.CreateContractCreationTransactionRequest>;
+    requestDeserialize: grpc.deserialize<gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.CreateContractCreationTransactionRequest>;
+    responseSerialize: grpc.serialize<gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.CreateContractCreationTransactionResponse>;
+    responseDeserialize: grpc.deserialize<gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.CreateContractCreationTransactionResponse>;
 }
 interface ITellerAPIService_ISignTransaction extends grpc.MethodDefinition<gincoinc_adamant_teller_v1_adamanttellerv1_teller_api_pb.SignTransactionRequest, google_protobuf_empty_pb.Empty> {
     path: "/adamant.teller.v1.TellerAPI/SignTransaction";
@@ -656,6 +669,33 @@ interface ITellerAPIService_IProgmatCoinUnpause extends grpc.MethodDefinition<gi
     responseSerialize: grpc.serialize<gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.CreateTransactionResponse>;
     responseDeserialize: grpc.deserialize<gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.CreateTransactionResponse>;
 }
+interface ITellerAPIService_IProgmatCoinGrantWhiteAndBlackLister extends grpc.MethodDefinition<gincoinc_adamant_teller_v1_adamanttellerv1_teller_api_pb.ProgmatCoinGrantWhiteAndBlackListerRequest, gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.CreateTransactionResponse> {
+    path: "/adamant.teller.v1.TellerAPI/ProgmatCoinGrantWhiteAndBlackLister";
+    requestStream: false;
+    responseStream: false;
+    requestSerialize: grpc.serialize<gincoinc_adamant_teller_v1_adamanttellerv1_teller_api_pb.ProgmatCoinGrantWhiteAndBlackListerRequest>;
+    requestDeserialize: grpc.deserialize<gincoinc_adamant_teller_v1_adamanttellerv1_teller_api_pb.ProgmatCoinGrantWhiteAndBlackListerRequest>;
+    responseSerialize: grpc.serialize<gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.CreateTransactionResponse>;
+    responseDeserialize: grpc.deserialize<gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.CreateTransactionResponse>;
+}
+interface ITellerAPIService_IProgmatCoinUpgradeToAndCall extends grpc.MethodDefinition<gincoinc_adamant_teller_v1_adamanttellerv1_teller_api_pb.ProgmatCoinUpgradeToAndCallRequest, gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.CreateTransactionResponse> {
+    path: "/adamant.teller.v1.TellerAPI/ProgmatCoinUpgradeToAndCall";
+    requestStream: false;
+    responseStream: false;
+    requestSerialize: grpc.serialize<gincoinc_adamant_teller_v1_adamanttellerv1_teller_api_pb.ProgmatCoinUpgradeToAndCallRequest>;
+    requestDeserialize: grpc.deserialize<gincoinc_adamant_teller_v1_adamanttellerv1_teller_api_pb.ProgmatCoinUpgradeToAndCallRequest>;
+    responseSerialize: grpc.serialize<gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.CreateTransactionResponse>;
+    responseDeserialize: grpc.deserialize<gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.CreateTransactionResponse>;
+}
+interface ITellerAPIService_IListPreTransactionThresholdsByFilter extends grpc.MethodDefinition<gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.ListPreTransactionThresholdsByFilterRequest, gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.ListPreTransactionThresholdsByFilterResponse> {
+    path: "/adamant.teller.v1.TellerAPI/ListPreTransactionThresholdsByFilter";
+    requestStream: false;
+    responseStream: false;
+    requestSerialize: grpc.serialize<gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.ListPreTransactionThresholdsByFilterRequest>;
+    requestDeserialize: grpc.deserialize<gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.ListPreTransactionThresholdsByFilterRequest>;
+    responseSerialize: grpc.serialize<gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.ListPreTransactionThresholdsByFilterResponse>;
+    responseDeserialize: grpc.deserialize<gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.ListPreTransactionThresholdsByFilterResponse>;
+}
 
 export const TellerAPIService: ITellerAPIService;
 
@@ -687,6 +727,7 @@ export interface ITellerAPIServer {
     listColdFeeDepositAddresses: grpc.handleUnaryCall<gincoinc_adamant_teller_v1_adamanttellerv1_teller_api_pb.ListColdFeeDepositAddressesRequest, gincoinc_adamant_teller_v1_adamanttellerv1_teller_api_pb.ListColdFeeDepositAddressesResponse>;
     listHotFeeDepositAddresses: grpc.handleUnaryCall<gincoinc_adamant_teller_v1_adamanttellerv1_teller_api_pb.ListHotFeeDepositAddressesRequest, gincoinc_adamant_teller_v1_adamanttellerv1_teller_api_pb.ListHotFeeDepositAddressesResponse>;
     createTransaction: grpc.handleUnaryCall<gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.CreateTransactionRequest, gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.CreateTransactionResponse>;
+    createContractCreationTransaction: grpc.handleUnaryCall<gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.CreateContractCreationTransactionRequest, gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.CreateContractCreationTransactionResponse>;
     signTransaction: grpc.handleUnaryCall<gincoinc_adamant_teller_v1_adamanttellerv1_teller_api_pb.SignTransactionRequest, google_protobuf_empty_pb.Empty>;
     sendTransaction: grpc.handleUnaryCall<gincoinc_adamant_teller_v1_adamanttellerv1_teller_api_pb.SendTransactionRequest, gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.SendTransactionResponse>;
     resendTransaction: grpc.handleUnaryCall<gincoinc_adamant_teller_v1_adamanttellerv1_teller_api_pb.ResendTransactionRequest, gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.ResendTransactionResponse>;
@@ -724,6 +765,9 @@ export interface ITellerAPIServer {
     progmatCoinConfiscate: grpc.handleUnaryCall<gincoinc_adamant_teller_v1_adamanttellerv1_teller_api_pb.ProgmatCoinConfiscateRequest, gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.CreateTransactionResponse>;
     progmatCoinPause: grpc.handleUnaryCall<gincoinc_adamant_teller_v1_adamanttellerv1_teller_api_pb.ProgmatCoinPauseRequest, gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.CreateTransactionResponse>;
     progmatCoinUnpause: grpc.handleUnaryCall<gincoinc_adamant_teller_v1_adamanttellerv1_teller_api_pb.ProgmatCoinUnpauseRequest, gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.CreateTransactionResponse>;
+    progmatCoinGrantWhiteAndBlackLister: grpc.handleUnaryCall<gincoinc_adamant_teller_v1_adamanttellerv1_teller_api_pb.ProgmatCoinGrantWhiteAndBlackListerRequest, gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.CreateTransactionResponse>;
+    progmatCoinUpgradeToAndCall: grpc.handleUnaryCall<gincoinc_adamant_teller_v1_adamanttellerv1_teller_api_pb.ProgmatCoinUpgradeToAndCallRequest, gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.CreateTransactionResponse>;
+    listPreTransactionThresholdsByFilter: grpc.handleUnaryCall<gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.ListPreTransactionThresholdsByFilterRequest, gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.ListPreTransactionThresholdsByFilterResponse>;
 }
 
 export interface ITellerAPIClient {
@@ -808,6 +852,9 @@ export interface ITellerAPIClient {
     createTransaction(request: gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.CreateTransactionRequest, callback: (error: grpc.ServiceError | null, response: gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.CreateTransactionResponse) => void): grpc.ClientUnaryCall;
     createTransaction(request: gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.CreateTransactionRequest, metadata: grpc.Metadata, callback: (error: grpc.ServiceError | null, response: gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.CreateTransactionResponse) => void): grpc.ClientUnaryCall;
     createTransaction(request: gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.CreateTransactionRequest, metadata: grpc.Metadata, options: Partial<grpc.CallOptions>, callback: (error: grpc.ServiceError | null, response: gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.CreateTransactionResponse) => void): grpc.ClientUnaryCall;
+    createContractCreationTransaction(request: gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.CreateContractCreationTransactionRequest, callback: (error: grpc.ServiceError | null, response: gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.CreateContractCreationTransactionResponse) => void): grpc.ClientUnaryCall;
+    createContractCreationTransaction(request: gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.CreateContractCreationTransactionRequest, metadata: grpc.Metadata, callback: (error: grpc.ServiceError | null, response: gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.CreateContractCreationTransactionResponse) => void): grpc.ClientUnaryCall;
+    createContractCreationTransaction(request: gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.CreateContractCreationTransactionRequest, metadata: grpc.Metadata, options: Partial<grpc.CallOptions>, callback: (error: grpc.ServiceError | null, response: gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.CreateContractCreationTransactionResponse) => void): grpc.ClientUnaryCall;
     signTransaction(request: gincoinc_adamant_teller_v1_adamanttellerv1_teller_api_pb.SignTransactionRequest, callback: (error: grpc.ServiceError | null, response: google_protobuf_empty_pb.Empty) => void): grpc.ClientUnaryCall;
     signTransaction(request: gincoinc_adamant_teller_v1_adamanttellerv1_teller_api_pb.SignTransactionRequest, metadata: grpc.Metadata, callback: (error: grpc.ServiceError | null, response: google_protobuf_empty_pb.Empty) => void): grpc.ClientUnaryCall;
     signTransaction(request: gincoinc_adamant_teller_v1_adamanttellerv1_teller_api_pb.SignTransactionRequest, metadata: grpc.Metadata, options: Partial<grpc.CallOptions>, callback: (error: grpc.ServiceError | null, response: google_protobuf_empty_pb.Empty) => void): grpc.ClientUnaryCall;
@@ -919,6 +966,15 @@ export interface ITellerAPIClient {
     progmatCoinUnpause(request: gincoinc_adamant_teller_v1_adamanttellerv1_teller_api_pb.ProgmatCoinUnpauseRequest, callback: (error: grpc.ServiceError | null, response: gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.CreateTransactionResponse) => void): grpc.ClientUnaryCall;
     progmatCoinUnpause(request: gincoinc_adamant_teller_v1_adamanttellerv1_teller_api_pb.ProgmatCoinUnpauseRequest, metadata: grpc.Metadata, callback: (error: grpc.ServiceError | null, response: gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.CreateTransactionResponse) => void): grpc.ClientUnaryCall;
     progmatCoinUnpause(request: gincoinc_adamant_teller_v1_adamanttellerv1_teller_api_pb.ProgmatCoinUnpauseRequest, metadata: grpc.Metadata, options: Partial<grpc.CallOptions>, callback: (error: grpc.ServiceError | null, response: gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.CreateTransactionResponse) => void): grpc.ClientUnaryCall;
+    progmatCoinGrantWhiteAndBlackLister(request: gincoinc_adamant_teller_v1_adamanttellerv1_teller_api_pb.ProgmatCoinGrantWhiteAndBlackListerRequest, callback: (error: grpc.ServiceError | null, response: gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.CreateTransactionResponse) => void): grpc.ClientUnaryCall;
+    progmatCoinGrantWhiteAndBlackLister(request: gincoinc_adamant_teller_v1_adamanttellerv1_teller_api_pb.ProgmatCoinGrantWhiteAndBlackListerRequest, metadata: grpc.Metadata, callback: (error: grpc.ServiceError | null, response: gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.CreateTransactionResponse) => void): grpc.ClientUnaryCall;
+    progmatCoinGrantWhiteAndBlackLister(request: gincoinc_adamant_teller_v1_adamanttellerv1_teller_api_pb.ProgmatCoinGrantWhiteAndBlackListerRequest, metadata: grpc.Metadata, options: Partial<grpc.CallOptions>, callback: (error: grpc.ServiceError | null, response: gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.CreateTransactionResponse) => void): grpc.ClientUnaryCall;
+    progmatCoinUpgradeToAndCall(request: gincoinc_adamant_teller_v1_adamanttellerv1_teller_api_pb.ProgmatCoinUpgradeToAndCallRequest, callback: (error: grpc.ServiceError | null, response: gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.CreateTransactionResponse) => void): grpc.ClientUnaryCall;
+    progmatCoinUpgradeToAndCall(request: gincoinc_adamant_teller_v1_adamanttellerv1_teller_api_pb.ProgmatCoinUpgradeToAndCallRequest, metadata: grpc.Metadata, callback: (error: grpc.ServiceError | null, response: gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.CreateTransactionResponse) => void): grpc.ClientUnaryCall;
+    progmatCoinUpgradeToAndCall(request: gincoinc_adamant_teller_v1_adamanttellerv1_teller_api_pb.ProgmatCoinUpgradeToAndCallRequest, metadata: grpc.Metadata, options: Partial<grpc.CallOptions>, callback: (error: grpc.ServiceError | null, response: gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.CreateTransactionResponse) => void): grpc.ClientUnaryCall;
+    listPreTransactionThresholdsByFilter(request: gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.ListPreTransactionThresholdsByFilterRequest, callback: (error: grpc.ServiceError | null, response: gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.ListPreTransactionThresholdsByFilterResponse) => void): grpc.ClientUnaryCall;
+    listPreTransactionThresholdsByFilter(request: gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.ListPreTransactionThresholdsByFilterRequest, metadata: grpc.Metadata, callback: (error: grpc.ServiceError | null, response: gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.ListPreTransactionThresholdsByFilterResponse) => void): grpc.ClientUnaryCall;
+    listPreTransactionThresholdsByFilter(request: gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.ListPreTransactionThresholdsByFilterRequest, metadata: grpc.Metadata, options: Partial<grpc.CallOptions>, callback: (error: grpc.ServiceError | null, response: gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.ListPreTransactionThresholdsByFilterResponse) => void): grpc.ClientUnaryCall;
 }
 
 export class TellerAPIClient extends grpc.Client implements ITellerAPIClient {
@@ -1004,6 +1060,9 @@ export class TellerAPIClient extends grpc.Client implements ITellerAPIClient {
     public createTransaction(request: gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.CreateTransactionRequest, callback: (error: grpc.ServiceError | null, response: gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.CreateTransactionResponse) => void): grpc.ClientUnaryCall;
     public createTransaction(request: gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.CreateTransactionRequest, metadata: grpc.Metadata, callback: (error: grpc.ServiceError | null, response: gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.CreateTransactionResponse) => void): grpc.ClientUnaryCall;
     public createTransaction(request: gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.CreateTransactionRequest, metadata: grpc.Metadata, options: Partial<grpc.CallOptions>, callback: (error: grpc.ServiceError | null, response: gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.CreateTransactionResponse) => void): grpc.ClientUnaryCall;
+    public createContractCreationTransaction(request: gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.CreateContractCreationTransactionRequest, callback: (error: grpc.ServiceError | null, response: gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.CreateContractCreationTransactionResponse) => void): grpc.ClientUnaryCall;
+    public createContractCreationTransaction(request: gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.CreateContractCreationTransactionRequest, metadata: grpc.Metadata, callback: (error: grpc.ServiceError | null, response: gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.CreateContractCreationTransactionResponse) => void): grpc.ClientUnaryCall;
+    public createContractCreationTransaction(request: gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.CreateContractCreationTransactionRequest, metadata: grpc.Metadata, options: Partial<grpc.CallOptions>, callback: (error: grpc.ServiceError | null, response: gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.CreateContractCreationTransactionResponse) => void): grpc.ClientUnaryCall;
     public signTransaction(request: gincoinc_adamant_teller_v1_adamanttellerv1_teller_api_pb.SignTransactionRequest, callback: (error: grpc.ServiceError | null, response: google_protobuf_empty_pb.Empty) => void): grpc.ClientUnaryCall;
     public signTransaction(request: gincoinc_adamant_teller_v1_adamanttellerv1_teller_api_pb.SignTransactionRequest, metadata: grpc.Metadata, callback: (error: grpc.ServiceError | null, response: google_protobuf_empty_pb.Empty) => void): grpc.ClientUnaryCall;
     public signTransaction(request: gincoinc_adamant_teller_v1_adamanttellerv1_teller_api_pb.SignTransactionRequest, metadata: grpc.Metadata, options: Partial<grpc.CallOptions>, callback: (error: grpc.ServiceError | null, response: google_protobuf_empty_pb.Empty) => void): grpc.ClientUnaryCall;
@@ -1115,4 +1174,13 @@ export class TellerAPIClient extends grpc.Client implements ITellerAPIClient {
     public progmatCoinUnpause(request: gincoinc_adamant_teller_v1_adamanttellerv1_teller_api_pb.ProgmatCoinUnpauseRequest, callback: (error: grpc.ServiceError | null, response: gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.CreateTransactionResponse) => void): grpc.ClientUnaryCall;
     public progmatCoinUnpause(request: gincoinc_adamant_teller_v1_adamanttellerv1_teller_api_pb.ProgmatCoinUnpauseRequest, metadata: grpc.Metadata, callback: (error: grpc.ServiceError | null, response: gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.CreateTransactionResponse) => void): grpc.ClientUnaryCall;
     public progmatCoinUnpause(request: gincoinc_adamant_teller_v1_adamanttellerv1_teller_api_pb.ProgmatCoinUnpauseRequest, metadata: grpc.Metadata, options: Partial<grpc.CallOptions>, callback: (error: grpc.ServiceError | null, response: gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.CreateTransactionResponse) => void): grpc.ClientUnaryCall;
+    public progmatCoinGrantWhiteAndBlackLister(request: gincoinc_adamant_teller_v1_adamanttellerv1_teller_api_pb.ProgmatCoinGrantWhiteAndBlackListerRequest, callback: (error: grpc.ServiceError | null, response: gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.CreateTransactionResponse) => void): grpc.ClientUnaryCall;
+    public progmatCoinGrantWhiteAndBlackLister(request: gincoinc_adamant_teller_v1_adamanttellerv1_teller_api_pb.ProgmatCoinGrantWhiteAndBlackListerRequest, metadata: grpc.Metadata, callback: (error: grpc.ServiceError | null, response: gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.CreateTransactionResponse) => void): grpc.ClientUnaryCall;
+    public progmatCoinGrantWhiteAndBlackLister(request: gincoinc_adamant_teller_v1_adamanttellerv1_teller_api_pb.ProgmatCoinGrantWhiteAndBlackListerRequest, metadata: grpc.Metadata, options: Partial<grpc.CallOptions>, callback: (error: grpc.ServiceError | null, response: gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.CreateTransactionResponse) => void): grpc.ClientUnaryCall;
+    public progmatCoinUpgradeToAndCall(request: gincoinc_adamant_teller_v1_adamanttellerv1_teller_api_pb.ProgmatCoinUpgradeToAndCallRequest, callback: (error: grpc.ServiceError | null, response: gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.CreateTransactionResponse) => void): grpc.ClientUnaryCall;
+    public progmatCoinUpgradeToAndCall(request: gincoinc_adamant_teller_v1_adamanttellerv1_teller_api_pb.ProgmatCoinUpgradeToAndCallRequest, metadata: grpc.Metadata, callback: (error: grpc.ServiceError | null, response: gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.CreateTransactionResponse) => void): grpc.ClientUnaryCall;
+    public progmatCoinUpgradeToAndCall(request: gincoinc_adamant_teller_v1_adamanttellerv1_teller_api_pb.ProgmatCoinUpgradeToAndCallRequest, metadata: grpc.Metadata, options: Partial<grpc.CallOptions>, callback: (error: grpc.ServiceError | null, response: gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.CreateTransactionResponse) => void): grpc.ClientUnaryCall;
+    public listPreTransactionThresholdsByFilter(request: gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.ListPreTransactionThresholdsByFilterRequest, callback: (error: grpc.ServiceError | null, response: gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.ListPreTransactionThresholdsByFilterResponse) => void): grpc.ClientUnaryCall;
+    public listPreTransactionThresholdsByFilter(request: gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.ListPreTransactionThresholdsByFilterRequest, metadata: grpc.Metadata, callback: (error: grpc.ServiceError | null, response: gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.ListPreTransactionThresholdsByFilterResponse) => void): grpc.ClientUnaryCall;
+    public listPreTransactionThresholdsByFilter(request: gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.ListPreTransactionThresholdsByFilterRequest, metadata: grpc.Metadata, options: Partial<grpc.CallOptions>, callback: (error: grpc.ServiceError | null, response: gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.ListPreTransactionThresholdsByFilterResponse) => void): grpc.ClientUnaryCall;
 }

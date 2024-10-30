@@ -110,6 +110,7 @@ proto.adamant.global.v1.AuditLog.toObject = function(includeInstance, msg) {
     labeledAddressId: jspb.Message.getFieldWithDefault(msg, 21, ""),
     address: jspb.Message.getFieldWithDefault(msg, 22, ""),
     addressName: jspb.Message.getFieldWithDefault(msg, 23, ""),
+    message: jspb.Message.getFieldWithDefault(msg, 43, ""),
     transferLimitId: jspb.Message.getFieldWithDefault(msg, 24, ""),
     transferLimitName: jspb.Message.getFieldWithDefault(msg, 25, ""),
     transferOneTimeLimit: jspb.Message.getFieldWithDefault(msg, 26, 0),
@@ -123,7 +124,10 @@ proto.adamant.global.v1.AuditLog.toObject = function(includeInstance, msg) {
     eventTime: (f = msg.getEventTime()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f),
     createTime: (f = msg.getCreateTime()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f),
     enabledMailsList: (f = jspb.Message.getRepeatedField(msg, 41)) == null ? undefined : f,
-    disabledMailsList: (f = jspb.Message.getRepeatedField(msg, 42)) == null ? undefined : f
+    disabledMailsList: (f = jspb.Message.getRepeatedField(msg, 42)) == null ? undefined : f,
+    network: jspb.Message.getFieldWithDefault(msg, 44, 0),
+    preTransactionThreshold: jspb.Message.getFloatingPointFieldWithDefault(msg, 45, 0.0),
+    preTransactionThresholdId: jspb.Message.getFieldWithDefault(msg, 46, "")
   };
 
   if (includeInstance) {
@@ -272,6 +276,10 @@ proto.adamant.global.v1.AuditLog.deserializeBinaryFromReader = function(msg, rea
       var value = /** @type {string} */ (reader.readString());
       msg.setAddressName(value);
       break;
+    case 43:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setMessage(value);
+      break;
     case 24:
       var value = /** @type {string} */ (reader.readString());
       msg.setTransferLimitId(value);
@@ -333,6 +341,18 @@ proto.adamant.global.v1.AuditLog.deserializeBinaryFromReader = function(msg, rea
       for (var i = 0; i < values.length; i++) {
         msg.addDisabledMails(values[i]);
       }
+      break;
+    case 44:
+      var value = /** @type {!proto.gincoinc.global.v1.Network} */ (reader.readEnum());
+      msg.setNetwork(value);
+      break;
+    case 45:
+      var value = /** @type {number} */ (reader.readDouble());
+      msg.setPreTransactionThreshold(value);
+      break;
+    case 46:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setPreTransactionThresholdId(value);
       break;
     default:
       reader.skipField();
@@ -559,6 +579,13 @@ proto.adamant.global.v1.AuditLog.serializeBinaryToWriter = function(message, wri
       f
     );
   }
+  f = message.getMessage();
+  if (f.length > 0) {
+    writer.writeString(
+      43,
+      f
+    );
+  }
   f = message.getTransferLimitId();
   if (f.length > 0) {
     writer.writeString(
@@ -656,6 +683,27 @@ proto.adamant.global.v1.AuditLog.serializeBinaryToWriter = function(message, wri
   if (f.length > 0) {
     writer.writePackedEnum(
       42,
+      f
+    );
+  }
+  f = message.getNetwork();
+  if (f !== 0.0) {
+    writer.writeEnum(
+      44,
+      f
+    );
+  }
+  f = message.getPreTransactionThreshold();
+  if (f !== 0.0) {
+    writer.writeDouble(
+      45,
+      f
+    );
+  }
+  f = message.getPreTransactionThresholdId();
+  if (f.length > 0) {
+    writer.writeString(
+      46,
       f
     );
   }
@@ -1186,6 +1234,24 @@ proto.adamant.global.v1.AuditLog.prototype.setAddressName = function(value) {
 
 
 /**
+ * optional string message = 43;
+ * @return {string}
+ */
+proto.adamant.global.v1.AuditLog.prototype.getMessage = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 43, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.adamant.global.v1.AuditLog} returns this
+ */
+proto.adamant.global.v1.AuditLog.prototype.setMessage = function(value) {
+  return jspb.Message.setProto3StringField(this, 43, value);
+};
+
+
+/**
  * optional string transfer_limit_id = 24;
  * @return {string}
  */
@@ -1567,6 +1633,60 @@ proto.adamant.global.v1.AuditLog.prototype.addDisabledMails = function(value, op
  */
 proto.adamant.global.v1.AuditLog.prototype.clearDisabledMailsList = function() {
   return this.setDisabledMailsList([]);
+};
+
+
+/**
+ * optional gincoinc.global.v1.Network network = 44;
+ * @return {!proto.gincoinc.global.v1.Network}
+ */
+proto.adamant.global.v1.AuditLog.prototype.getNetwork = function() {
+  return /** @type {!proto.gincoinc.global.v1.Network} */ (jspb.Message.getFieldWithDefault(this, 44, 0));
+};
+
+
+/**
+ * @param {!proto.gincoinc.global.v1.Network} value
+ * @return {!proto.adamant.global.v1.AuditLog} returns this
+ */
+proto.adamant.global.v1.AuditLog.prototype.setNetwork = function(value) {
+  return jspb.Message.setProto3EnumField(this, 44, value);
+};
+
+
+/**
+ * optional double pre_transaction_threshold = 45;
+ * @return {number}
+ */
+proto.adamant.global.v1.AuditLog.prototype.getPreTransactionThreshold = function() {
+  return /** @type {number} */ (jspb.Message.getFloatingPointFieldWithDefault(this, 45, 0.0));
+};
+
+
+/**
+ * @param {number} value
+ * @return {!proto.adamant.global.v1.AuditLog} returns this
+ */
+proto.adamant.global.v1.AuditLog.prototype.setPreTransactionThreshold = function(value) {
+  return jspb.Message.setProto3FloatField(this, 45, value);
+};
+
+
+/**
+ * optional string pre_transaction_threshold_id = 46;
+ * @return {string}
+ */
+proto.adamant.global.v1.AuditLog.prototype.getPreTransactionThresholdId = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 46, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.adamant.global.v1.AuditLog} returns this
+ */
+proto.adamant.global.v1.AuditLog.prototype.setPreTransactionThresholdId = function(value) {
+  return jspb.Message.setProto3StringField(this, 46, value);
 };
 
 

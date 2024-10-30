@@ -121,6 +121,28 @@ function deserialize_adamant_global_v1_CreateAddressResponse(buffer_arg) {
   return gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.CreateAddressResponse.deserializeBinary(new Uint8Array(buffer_arg));
 }
 
+function serialize_adamant_global_v1_CreateContractCreationTransactionRequest(arg) {
+  if (!(arg instanceof gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.CreateContractCreationTransactionRequest)) {
+    throw new Error('Expected argument of type adamant.global.v1.CreateContractCreationTransactionRequest');
+  }
+  return Buffer.from(arg.serializeBinary());
+}
+
+function deserialize_adamant_global_v1_CreateContractCreationTransactionRequest(buffer_arg) {
+  return gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.CreateContractCreationTransactionRequest.deserializeBinary(new Uint8Array(buffer_arg));
+}
+
+function serialize_adamant_global_v1_CreateContractCreationTransactionResponse(arg) {
+  if (!(arg instanceof gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.CreateContractCreationTransactionResponse)) {
+    throw new Error('Expected argument of type adamant.global.v1.CreateContractCreationTransactionResponse');
+  }
+  return Buffer.from(arg.serializeBinary());
+}
+
+function deserialize_adamant_global_v1_CreateContractCreationTransactionResponse(buffer_arg) {
+  return gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.CreateContractCreationTransactionResponse.deserializeBinary(new Uint8Array(buffer_arg));
+}
+
 function serialize_adamant_global_v1_CreateLabeledAddressRequest(arg) {
   if (!(arg instanceof gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.CreateLabeledAddressRequest)) {
     throw new Error('Expected argument of type adamant.global.v1.CreateLabeledAddressRequest');
@@ -559,6 +581,28 @@ function serialize_adamant_global_v1_GetSignInfoRequest(arg) {
 
 function deserialize_adamant_global_v1_GetSignInfoRequest(buffer_arg) {
   return gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.GetSignInfoRequest.deserializeBinary(new Uint8Array(buffer_arg));
+}
+
+function serialize_adamant_global_v1_GetSignerPubKeyRequest(arg) {
+  if (!(arg instanceof gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.GetSignerPubKeyRequest)) {
+    throw new Error('Expected argument of type adamant.global.v1.GetSignerPubKeyRequest');
+  }
+  return Buffer.from(arg.serializeBinary());
+}
+
+function deserialize_adamant_global_v1_GetSignerPubKeyRequest(buffer_arg) {
+  return gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.GetSignerPubKeyRequest.deserializeBinary(new Uint8Array(buffer_arg));
+}
+
+function serialize_adamant_global_v1_GetSignerPubKeyResponse(arg) {
+  if (!(arg instanceof gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.GetSignerPubKeyResponse)) {
+    throw new Error('Expected argument of type adamant.global.v1.GetSignerPubKeyResponse');
+  }
+  return Buffer.from(arg.serializeBinary());
+}
+
+function deserialize_adamant_global_v1_GetSignerPubKeyResponse(buffer_arg) {
+  return gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.GetSignerPubKeyResponse.deserializeBinary(new Uint8Array(buffer_arg));
 }
 
 function serialize_adamant_global_v1_GetSpendableBalanceRequest(arg) {
@@ -2522,6 +2566,17 @@ registerKey: {
     responseSerialize: serialize_adamant_global_v1_RegisterKeyResponse,
     responseDeserialize: deserialize_adamant_global_v1_RegisterKeyResponse,
   },
+  getSignerPubKey: {
+    path: '/adamant.global.v1.GlobalAPI/GetSignerPubKey',
+    requestStream: false,
+    responseStream: false,
+    requestType: gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.GetSignerPubKeyRequest,
+    responseType: gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.GetSignerPubKeyResponse,
+    requestSerialize: serialize_adamant_global_v1_GetSignerPubKeyRequest,
+    requestDeserialize: deserialize_adamant_global_v1_GetSignerPubKeyRequest,
+    responseSerialize: serialize_adamant_global_v1_GetSignerPubKeyResponse,
+    responseDeserialize: deserialize_adamant_global_v1_GetSignerPubKeyResponse,
+  },
   // Transaction
 createTransaction: {
     path: '/adamant.global.v1.GlobalAPI/CreateTransaction',
@@ -2544,6 +2599,17 @@ createTransaction: {
     requestDeserialize: deserialize_adamant_global_v1_CreateXRPInitTransactionsRequest,
     responseSerialize: serialize_google_protobuf_Empty,
     responseDeserialize: deserialize_google_protobuf_Empty,
+  },
+  createContractCreationTransaction: {
+    path: '/adamant.global.v1.GlobalAPI/CreateContractCreationTransaction',
+    requestStream: false,
+    responseStream: false,
+    requestType: gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.CreateContractCreationTransactionRequest,
+    responseType: gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.CreateContractCreationTransactionResponse,
+    requestSerialize: serialize_adamant_global_v1_CreateContractCreationTransactionRequest,
+    requestDeserialize: deserialize_adamant_global_v1_CreateContractCreationTransactionRequest,
+    responseSerialize: serialize_adamant_global_v1_CreateContractCreationTransactionResponse,
+    responseDeserialize: deserialize_adamant_global_v1_CreateContractCreationTransactionResponse,
   },
   signTransaction: {
     path: '/adamant.global.v1.GlobalAPI/SignTransaction',
