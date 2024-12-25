@@ -29,11 +29,13 @@ var google_protobuf_timestamp_pb = require('google-protobuf/google/protobuf/time
 goog.object.extend(proto, google_protobuf_timestamp_pb);
 var validate_validate_pb = require('../../../../../validate/validate_pb.js');
 goog.object.extend(proto, validate_validate_pb);
+goog.exportSymbol('proto.adamant.global.v1.ApprovePreTransactionRequest', null, global);
 goog.exportSymbol('proto.adamant.global.v1.ApproveTransactionRequest', null, global);
 goog.exportSymbol('proto.adamant.global.v1.ApproveWalletRequest', null, global);
 goog.exportSymbol('proto.adamant.global.v1.ArchiveWalletRequest', null, global);
 goog.exportSymbol('proto.adamant.global.v1.BatchGetWalletsWithoutBalanceRequest', null, global);
 goog.exportSymbol('proto.adamant.global.v1.BatchGetWalletsWithoutBalanceResponse', null, global);
+goog.exportSymbol('proto.adamant.global.v1.BulkReviewBlacklistAddressProposalRequest', null, global);
 goog.exportSymbol('proto.adamant.global.v1.CalculateFeeAvalancheSpecific', null, global);
 goog.exportSymbol('proto.adamant.global.v1.CalculateFeeCosmosSpecific', null, global);
 goog.exportSymbol('proto.adamant.global.v1.CalculateFeeEthereumSpecific', null, global);
@@ -45,11 +47,14 @@ goog.exportSymbol('proto.adamant.global.v1.CalculateFeeResponse', null, global);
 goog.exportSymbol('proto.adamant.global.v1.CalculateFeeSolanaSpecific', null, global);
 goog.exportSymbol('proto.adamant.global.v1.CalculateFeeSubstrateSpecific', null, global);
 goog.exportSymbol('proto.adamant.global.v1.CalculateFeeSymbolSpecific', null, global);
+goog.exportSymbol('proto.adamant.global.v1.CancelPreTransactionRequest', null, global);
 goog.exportSymbol('proto.adamant.global.v1.CancelTransactionRequest', null, global);
 goog.exportSymbol('proto.adamant.global.v1.CancelWalletRequest', null, global);
 goog.exportSymbol('proto.adamant.global.v1.CosmosDelegateHistory', null, global);
 goog.exportSymbol('proto.adamant.global.v1.CreateAddressRequest', null, global);
 goog.exportSymbol('proto.adamant.global.v1.CreateAddressResponse', null, global);
+goog.exportSymbol('proto.adamant.global.v1.CreateBlacklistAddressRequest', null, global);
+goog.exportSymbol('proto.adamant.global.v1.CreateBlacklistAddressResponse', null, global);
 goog.exportSymbol('proto.adamant.global.v1.CreateContractCreationTransactionRequest', null, global);
 goog.exportSymbol('proto.adamant.global.v1.CreateContractCreationTransactionResponse', null, global);
 goog.exportSymbol('proto.adamant.global.v1.CreateEventTriggeredMessageRequest', null, global);
@@ -61,6 +66,10 @@ goog.exportSymbol('proto.adamant.global.v1.CreateLabeledAddressRequest', null, g
 goog.exportSymbol('proto.adamant.global.v1.CreateLabeledAddressResponse', null, global);
 goog.exportSymbol('proto.adamant.global.v1.CreatePolicyRequest', null, global);
 goog.exportSymbol('proto.adamant.global.v1.CreatePolicyResponse', null, global);
+goog.exportSymbol('proto.adamant.global.v1.CreatePreTransactionRequest', null, global);
+goog.exportSymbol('proto.adamant.global.v1.CreatePreTransactionResponse', null, global);
+goog.exportSymbol('proto.adamant.global.v1.CreatePreTransactionThresholdRequest', null, global);
+goog.exportSymbol('proto.adamant.global.v1.CreatePreTransactionThresholdResponse', null, global);
 goog.exportSymbol('proto.adamant.global.v1.CreateTransactionRequest', null, global);
 goog.exportSymbol('proto.adamant.global.v1.CreateTransactionResponse', null, global);
 goog.exportSymbol('proto.adamant.global.v1.CreateTransferLimitRequest', null, global);
@@ -99,6 +108,9 @@ goog.exportSymbol('proto.adamant.global.v1.GetAddressByAddressRequest', null, gl
 goog.exportSymbol('proto.adamant.global.v1.GetAddressByIndexRequest', null, global);
 goog.exportSymbol('proto.adamant.global.v1.GetAddressRequest', null, global);
 goog.exportSymbol('proto.adamant.global.v1.GetAddressWithoutBalanceByIndexRequest', null, global);
+goog.exportSymbol('proto.adamant.global.v1.GetBlacklistAddressRequest', null, global);
+goog.exportSymbol('proto.adamant.global.v1.GetBlacklistStorageSignedURLRequest', null, global);
+goog.exportSymbol('proto.adamant.global.v1.GetBlacklistStorageSignedURLResponse', null, global);
 goog.exportSymbol('proto.adamant.global.v1.GetCosmosBalanceRequest', null, global);
 goog.exportSymbol('proto.adamant.global.v1.GetCosmosBalanceResponse', null, global);
 goog.exportSymbol('proto.adamant.global.v1.GetEthereumFeeAddressRequest', null, global);
@@ -147,6 +159,10 @@ goog.exportSymbol('proto.adamant.global.v1.ListBalanceSnapshotsRequest', null, g
 goog.exportSymbol('proto.adamant.global.v1.ListBalanceSnapshotsResponse', null, global);
 goog.exportSymbol('proto.adamant.global.v1.ListBaseWalletsRequest', null, global);
 goog.exportSymbol('proto.adamant.global.v1.ListBaseWalletsResponse', null, global);
+goog.exportSymbol('proto.adamant.global.v1.ListBlacklistAddressFilesRequest', null, global);
+goog.exportSymbol('proto.adamant.global.v1.ListBlacklistAddressFilesResponse', null, global);
+goog.exportSymbol('proto.adamant.global.v1.ListBlacklistAddressesByFilterRequest', null, global);
+goog.exportSymbol('proto.adamant.global.v1.ListBlacklistAddressesByFilterResponse', null, global);
 goog.exportSymbol('proto.adamant.global.v1.ListCallersRequest', null, global);
 goog.exportSymbol('proto.adamant.global.v1.ListCallersResponse', null, global);
 goog.exportSymbol('proto.adamant.global.v1.ListCompensationFeeHistoriesRequest', null, global);
@@ -168,12 +184,18 @@ goog.exportSymbol('proto.adamant.global.v1.ListLabeledAddressesByFilterRequest',
 goog.exportSymbol('proto.adamant.global.v1.ListLabeledAddressesByFilterResponse', null, global);
 goog.exportSymbol('proto.adamant.global.v1.ListLabeledAddressesRequest', null, global);
 goog.exportSymbol('proto.adamant.global.v1.ListLabeledAddressesResponse', null, global);
+goog.exportSymbol('proto.adamant.global.v1.ListNFTWalletsByFilterRequest', null, global);
+goog.exportSymbol('proto.adamant.global.v1.ListNFTWalletsResponse', null, global);
+goog.exportSymbol('proto.adamant.global.v1.ListNFTsByFilterRequest', null, global);
+goog.exportSymbol('proto.adamant.global.v1.ListNFTsResponse', null, global);
 goog.exportSymbol('proto.adamant.global.v1.ListPoliciesByFilterRequest', null, global);
 goog.exportSymbol('proto.adamant.global.v1.ListPoliciesByFilterResponse', null, global);
 goog.exportSymbol('proto.adamant.global.v1.ListPoliciesRequest', null, global);
 goog.exportSymbol('proto.adamant.global.v1.ListPoliciesResponse', null, global);
 goog.exportSymbol('proto.adamant.global.v1.ListPreTransactionThresholdsByFilterRequest', null, global);
 goog.exportSymbol('proto.adamant.global.v1.ListPreTransactionThresholdsByFilterResponse', null, global);
+goog.exportSymbol('proto.adamant.global.v1.ListPreTransactionsByFilterRequest', null, global);
+goog.exportSymbol('proto.adamant.global.v1.ListPreTransactionsByFilterResponse', null, global);
 goog.exportSymbol('proto.adamant.global.v1.ListSignInfoRequest', null, global);
 goog.exportSymbol('proto.adamant.global.v1.ListSignInfoResponse', null, global);
 goog.exportSymbol('proto.adamant.global.v1.ListStakingHistoriesByFilterRequest', null, global);
@@ -224,12 +246,15 @@ goog.exportSymbol('proto.adamant.global.v1.RefreshStakingWalletClaimableRewardRe
 goog.exportSymbol('proto.adamant.global.v1.RefreshStakingWalletClaimableRewardResponse', null, global);
 goog.exportSymbol('proto.adamant.global.v1.RegisterKeyRequest', null, global);
 goog.exportSymbol('proto.adamant.global.v1.RegisterKeyResponse', null, global);
+goog.exportSymbol('proto.adamant.global.v1.RejectPreTransactionRequest', null, global);
 goog.exportSymbol('proto.adamant.global.v1.ReplaceTransactionRequest', null, global);
 goog.exportSymbol('proto.adamant.global.v1.ReplaceTransactionResponse', null, global);
 goog.exportSymbol('proto.adamant.global.v1.ResendTransactionRequest', null, global);
 goog.exportSymbol('proto.adamant.global.v1.ResendTransactionResponse', null, global);
+goog.exportSymbol('proto.adamant.global.v1.ReviewBlacklistAddressProposalRequest', null, global);
 goog.exportSymbol('proto.adamant.global.v1.ReviewLabeledAddressProposalRequest', null, global);
 goog.exportSymbol('proto.adamant.global.v1.ReviewPolicyProposalRequest', null, global);
+goog.exportSymbol('proto.adamant.global.v1.ReviewPreTransactionThresholdProposalRequest', null, global);
 goog.exportSymbol('proto.adamant.global.v1.ReviewTransferLimitProposalRequest', null, global);
 goog.exportSymbol('proto.adamant.global.v1.ReviewWalletProposalRequest', null, global);
 goog.exportSymbol('proto.adamant.global.v1.SendInitTransactionRequest', null, global);
@@ -247,11 +272,13 @@ goog.exportSymbol('proto.adamant.global.v1.SignTransactionRequest', null, global
 goog.exportSymbol('proto.adamant.global.v1.SignXRPInitTransactionsRequest', null, global);
 goog.exportSymbol('proto.adamant.global.v1.UnArchiveWalletRequest', null, global);
 goog.exportSymbol('proto.adamant.global.v1.UpdateAddressBalanceRequest', null, global);
+goog.exportSymbol('proto.adamant.global.v1.UpdateBlacklistAddressRequest', null, global);
 goog.exportSymbol('proto.adamant.global.v1.UpdateDestinationWalletIDRequest', null, global);
 goog.exportSymbol('proto.adamant.global.v1.UpdateEventTriggeredMessageRequest', null, global);
 goog.exportSymbol('proto.adamant.global.v1.UpdateLabeledAddressRequest', null, global);
 goog.exportSymbol('proto.adamant.global.v1.UpdateMailSettingsRequest', null, global);
 goog.exportSymbol('proto.adamant.global.v1.UpdatePolicyRequest', null, global);
+goog.exportSymbol('proto.adamant.global.v1.UpdatePreTransactionThresholdRequest', null, global);
 goog.exportSymbol('proto.adamant.global.v1.UpdateShouldCheckRemittanceFlagRequest', null, global);
 goog.exportSymbol('proto.adamant.global.v1.UpdateTransferLimitNameRequest', null, global);
 goog.exportSymbol('proto.adamant.global.v1.UpdateTransferLimitRequest', null, global);
@@ -626,6 +653,48 @@ if (goog.DEBUG && !COMPILED) {
    * @override
    */
   proto.adamant.global.v1.ListStakingWalletsResponse.displayName = 'proto.adamant.global.v1.ListStakingWalletsResponse';
+}
+/**
+ * Generated by JsPbCodeGenerator.
+ * @param {Array=} opt_data Optional initial data array, typically from a
+ * server response, or constructed directly in Javascript. The array is used
+ * in place and becomes part of the constructed object. It is not cloned.
+ * If no data is provided, the constructed object will be empty, but still
+ * valid.
+ * @extends {jspb.Message}
+ * @constructor
+ */
+proto.adamant.global.v1.ListNFTWalletsByFilterRequest = function(opt_data) {
+  jspb.Message.initialize(this, opt_data, 0, -1, proto.adamant.global.v1.ListNFTWalletsByFilterRequest.repeatedFields_, null);
+};
+goog.inherits(proto.adamant.global.v1.ListNFTWalletsByFilterRequest, jspb.Message);
+if (goog.DEBUG && !COMPILED) {
+  /**
+   * @public
+   * @override
+   */
+  proto.adamant.global.v1.ListNFTWalletsByFilterRequest.displayName = 'proto.adamant.global.v1.ListNFTWalletsByFilterRequest';
+}
+/**
+ * Generated by JsPbCodeGenerator.
+ * @param {Array=} opt_data Optional initial data array, typically from a
+ * server response, or constructed directly in Javascript. The array is used
+ * in place and becomes part of the constructed object. It is not cloned.
+ * If no data is provided, the constructed object will be empty, but still
+ * valid.
+ * @extends {jspb.Message}
+ * @constructor
+ */
+proto.adamant.global.v1.ListNFTWalletsResponse = function(opt_data) {
+  jspb.Message.initialize(this, opt_data, 0, -1, proto.adamant.global.v1.ListNFTWalletsResponse.repeatedFields_, null);
+};
+goog.inherits(proto.adamant.global.v1.ListNFTWalletsResponse, jspb.Message);
+if (goog.DEBUG && !COMPILED) {
+  /**
+   * @public
+   * @override
+   */
+  proto.adamant.global.v1.ListNFTWalletsResponse.displayName = 'proto.adamant.global.v1.ListNFTWalletsResponse';
 }
 /**
  * Generated by JsPbCodeGenerator.
@@ -1739,6 +1808,153 @@ if (goog.DEBUG && !COMPILED) {
    * @override
    */
   proto.adamant.global.v1.ImportAddressRequest.displayName = 'proto.adamant.global.v1.ImportAddressRequest';
+}
+/**
+ * Generated by JsPbCodeGenerator.
+ * @param {Array=} opt_data Optional initial data array, typically from a
+ * server response, or constructed directly in Javascript. The array is used
+ * in place and becomes part of the constructed object. It is not cloned.
+ * If no data is provided, the constructed object will be empty, but still
+ * valid.
+ * @extends {jspb.Message}
+ * @constructor
+ */
+proto.adamant.global.v1.CreatePreTransactionRequest = function(opt_data) {
+  jspb.Message.initialize(this, opt_data, 0, -1, proto.adamant.global.v1.CreatePreTransactionRequest.repeatedFields_, null);
+};
+goog.inherits(proto.adamant.global.v1.CreatePreTransactionRequest, jspb.Message);
+if (goog.DEBUG && !COMPILED) {
+  /**
+   * @public
+   * @override
+   */
+  proto.adamant.global.v1.CreatePreTransactionRequest.displayName = 'proto.adamant.global.v1.CreatePreTransactionRequest';
+}
+/**
+ * Generated by JsPbCodeGenerator.
+ * @param {Array=} opt_data Optional initial data array, typically from a
+ * server response, or constructed directly in Javascript. The array is used
+ * in place and becomes part of the constructed object. It is not cloned.
+ * If no data is provided, the constructed object will be empty, but still
+ * valid.
+ * @extends {jspb.Message}
+ * @constructor
+ */
+proto.adamant.global.v1.CreatePreTransactionResponse = function(opt_data) {
+  jspb.Message.initialize(this, opt_data, 0, -1, null, null);
+};
+goog.inherits(proto.adamant.global.v1.CreatePreTransactionResponse, jspb.Message);
+if (goog.DEBUG && !COMPILED) {
+  /**
+   * @public
+   * @override
+   */
+  proto.adamant.global.v1.CreatePreTransactionResponse.displayName = 'proto.adamant.global.v1.CreatePreTransactionResponse';
+}
+/**
+ * Generated by JsPbCodeGenerator.
+ * @param {Array=} opt_data Optional initial data array, typically from a
+ * server response, or constructed directly in Javascript. The array is used
+ * in place and becomes part of the constructed object. It is not cloned.
+ * If no data is provided, the constructed object will be empty, but still
+ * valid.
+ * @extends {jspb.Message}
+ * @constructor
+ */
+proto.adamant.global.v1.ApprovePreTransactionRequest = function(opt_data) {
+  jspb.Message.initialize(this, opt_data, 0, -1, null, null);
+};
+goog.inherits(proto.adamant.global.v1.ApprovePreTransactionRequest, jspb.Message);
+if (goog.DEBUG && !COMPILED) {
+  /**
+   * @public
+   * @override
+   */
+  proto.adamant.global.v1.ApprovePreTransactionRequest.displayName = 'proto.adamant.global.v1.ApprovePreTransactionRequest';
+}
+/**
+ * Generated by JsPbCodeGenerator.
+ * @param {Array=} opt_data Optional initial data array, typically from a
+ * server response, or constructed directly in Javascript. The array is used
+ * in place and becomes part of the constructed object. It is not cloned.
+ * If no data is provided, the constructed object will be empty, but still
+ * valid.
+ * @extends {jspb.Message}
+ * @constructor
+ */
+proto.adamant.global.v1.RejectPreTransactionRequest = function(opt_data) {
+  jspb.Message.initialize(this, opt_data, 0, -1, null, null);
+};
+goog.inherits(proto.adamant.global.v1.RejectPreTransactionRequest, jspb.Message);
+if (goog.DEBUG && !COMPILED) {
+  /**
+   * @public
+   * @override
+   */
+  proto.adamant.global.v1.RejectPreTransactionRequest.displayName = 'proto.adamant.global.v1.RejectPreTransactionRequest';
+}
+/**
+ * Generated by JsPbCodeGenerator.
+ * @param {Array=} opt_data Optional initial data array, typically from a
+ * server response, or constructed directly in Javascript. The array is used
+ * in place and becomes part of the constructed object. It is not cloned.
+ * If no data is provided, the constructed object will be empty, but still
+ * valid.
+ * @extends {jspb.Message}
+ * @constructor
+ */
+proto.adamant.global.v1.CancelPreTransactionRequest = function(opt_data) {
+  jspb.Message.initialize(this, opt_data, 0, -1, null, null);
+};
+goog.inherits(proto.adamant.global.v1.CancelPreTransactionRequest, jspb.Message);
+if (goog.DEBUG && !COMPILED) {
+  /**
+   * @public
+   * @override
+   */
+  proto.adamant.global.v1.CancelPreTransactionRequest.displayName = 'proto.adamant.global.v1.CancelPreTransactionRequest';
+}
+/**
+ * Generated by JsPbCodeGenerator.
+ * @param {Array=} opt_data Optional initial data array, typically from a
+ * server response, or constructed directly in Javascript. The array is used
+ * in place and becomes part of the constructed object. It is not cloned.
+ * If no data is provided, the constructed object will be empty, but still
+ * valid.
+ * @extends {jspb.Message}
+ * @constructor
+ */
+proto.adamant.global.v1.ListPreTransactionsByFilterRequest = function(opt_data) {
+  jspb.Message.initialize(this, opt_data, 0, -1, proto.adamant.global.v1.ListPreTransactionsByFilterRequest.repeatedFields_, null);
+};
+goog.inherits(proto.adamant.global.v1.ListPreTransactionsByFilterRequest, jspb.Message);
+if (goog.DEBUG && !COMPILED) {
+  /**
+   * @public
+   * @override
+   */
+  proto.adamant.global.v1.ListPreTransactionsByFilterRequest.displayName = 'proto.adamant.global.v1.ListPreTransactionsByFilterRequest';
+}
+/**
+ * Generated by JsPbCodeGenerator.
+ * @param {Array=} opt_data Optional initial data array, typically from a
+ * server response, or constructed directly in Javascript. The array is used
+ * in place and becomes part of the constructed object. It is not cloned.
+ * If no data is provided, the constructed object will be empty, but still
+ * valid.
+ * @extends {jspb.Message}
+ * @constructor
+ */
+proto.adamant.global.v1.ListPreTransactionsByFilterResponse = function(opt_data) {
+  jspb.Message.initialize(this, opt_data, 0, -1, proto.adamant.global.v1.ListPreTransactionsByFilterResponse.repeatedFields_, null);
+};
+goog.inherits(proto.adamant.global.v1.ListPreTransactionsByFilterResponse, jspb.Message);
+if (goog.DEBUG && !COMPILED) {
+  /**
+   * @public
+   * @override
+   */
+  proto.adamant.global.v1.ListPreTransactionsByFilterResponse.displayName = 'proto.adamant.global.v1.ListPreTransactionsByFilterResponse';
 }
 /**
  * Generated by JsPbCodeGenerator.
@@ -5257,6 +5473,48 @@ if (goog.DEBUG && !COMPILED) {
  * @extends {jspb.Message}
  * @constructor
  */
+proto.adamant.global.v1.ListNFTsByFilterRequest = function(opt_data) {
+  jspb.Message.initialize(this, opt_data, 0, -1, null, null);
+};
+goog.inherits(proto.adamant.global.v1.ListNFTsByFilterRequest, jspb.Message);
+if (goog.DEBUG && !COMPILED) {
+  /**
+   * @public
+   * @override
+   */
+  proto.adamant.global.v1.ListNFTsByFilterRequest.displayName = 'proto.adamant.global.v1.ListNFTsByFilterRequest';
+}
+/**
+ * Generated by JsPbCodeGenerator.
+ * @param {Array=} opt_data Optional initial data array, typically from a
+ * server response, or constructed directly in Javascript. The array is used
+ * in place and becomes part of the constructed object. It is not cloned.
+ * If no data is provided, the constructed object will be empty, but still
+ * valid.
+ * @extends {jspb.Message}
+ * @constructor
+ */
+proto.adamant.global.v1.ListNFTsResponse = function(opt_data) {
+  jspb.Message.initialize(this, opt_data, 0, -1, proto.adamant.global.v1.ListNFTsResponse.repeatedFields_, null);
+};
+goog.inherits(proto.adamant.global.v1.ListNFTsResponse, jspb.Message);
+if (goog.DEBUG && !COMPILED) {
+  /**
+   * @public
+   * @override
+   */
+  proto.adamant.global.v1.ListNFTsResponse.displayName = 'proto.adamant.global.v1.ListNFTsResponse';
+}
+/**
+ * Generated by JsPbCodeGenerator.
+ * @param {Array=} opt_data Optional initial data array, typically from a
+ * server response, or constructed directly in Javascript. The array is used
+ * in place and becomes part of the constructed object. It is not cloned.
+ * If no data is provided, the constructed object will be empty, but still
+ * valid.
+ * @extends {jspb.Message}
+ * @constructor
+ */
 proto.adamant.global.v1.UpdateMailSettingsRequest = function(opt_data) {
   jspb.Message.initialize(this, opt_data, 0, -1, proto.adamant.global.v1.UpdateMailSettingsRequest.repeatedFields_, null);
 };
@@ -5330,6 +5588,342 @@ if (goog.DEBUG && !COMPILED) {
    * @override
    */
   proto.adamant.global.v1.ListPreTransactionThresholdsByFilterResponse.displayName = 'proto.adamant.global.v1.ListPreTransactionThresholdsByFilterResponse';
+}
+/**
+ * Generated by JsPbCodeGenerator.
+ * @param {Array=} opt_data Optional initial data array, typically from a
+ * server response, or constructed directly in Javascript. The array is used
+ * in place and becomes part of the constructed object. It is not cloned.
+ * If no data is provided, the constructed object will be empty, but still
+ * valid.
+ * @extends {jspb.Message}
+ * @constructor
+ */
+proto.adamant.global.v1.CreatePreTransactionThresholdRequest = function(opt_data) {
+  jspb.Message.initialize(this, opt_data, 0, -1, null, null);
+};
+goog.inherits(proto.adamant.global.v1.CreatePreTransactionThresholdRequest, jspb.Message);
+if (goog.DEBUG && !COMPILED) {
+  /**
+   * @public
+   * @override
+   */
+  proto.adamant.global.v1.CreatePreTransactionThresholdRequest.displayName = 'proto.adamant.global.v1.CreatePreTransactionThresholdRequest';
+}
+/**
+ * Generated by JsPbCodeGenerator.
+ * @param {Array=} opt_data Optional initial data array, typically from a
+ * server response, or constructed directly in Javascript. The array is used
+ * in place and becomes part of the constructed object. It is not cloned.
+ * If no data is provided, the constructed object will be empty, but still
+ * valid.
+ * @extends {jspb.Message}
+ * @constructor
+ */
+proto.adamant.global.v1.CreatePreTransactionThresholdResponse = function(opt_data) {
+  jspb.Message.initialize(this, opt_data, 0, -1, null, null);
+};
+goog.inherits(proto.adamant.global.v1.CreatePreTransactionThresholdResponse, jspb.Message);
+if (goog.DEBUG && !COMPILED) {
+  /**
+   * @public
+   * @override
+   */
+  proto.adamant.global.v1.CreatePreTransactionThresholdResponse.displayName = 'proto.adamant.global.v1.CreatePreTransactionThresholdResponse';
+}
+/**
+ * Generated by JsPbCodeGenerator.
+ * @param {Array=} opt_data Optional initial data array, typically from a
+ * server response, or constructed directly in Javascript. The array is used
+ * in place and becomes part of the constructed object. It is not cloned.
+ * If no data is provided, the constructed object will be empty, but still
+ * valid.
+ * @extends {jspb.Message}
+ * @constructor
+ */
+proto.adamant.global.v1.UpdatePreTransactionThresholdRequest = function(opt_data) {
+  jspb.Message.initialize(this, opt_data, 0, -1, null, null);
+};
+goog.inherits(proto.adamant.global.v1.UpdatePreTransactionThresholdRequest, jspb.Message);
+if (goog.DEBUG && !COMPILED) {
+  /**
+   * @public
+   * @override
+   */
+  proto.adamant.global.v1.UpdatePreTransactionThresholdRequest.displayName = 'proto.adamant.global.v1.UpdatePreTransactionThresholdRequest';
+}
+/**
+ * Generated by JsPbCodeGenerator.
+ * @param {Array=} opt_data Optional initial data array, typically from a
+ * server response, or constructed directly in Javascript. The array is used
+ * in place and becomes part of the constructed object. It is not cloned.
+ * If no data is provided, the constructed object will be empty, but still
+ * valid.
+ * @extends {jspb.Message}
+ * @constructor
+ */
+proto.adamant.global.v1.ReviewPreTransactionThresholdProposalRequest = function(opt_data) {
+  jspb.Message.initialize(this, opt_data, 0, -1, null, null);
+};
+goog.inherits(proto.adamant.global.v1.ReviewPreTransactionThresholdProposalRequest, jspb.Message);
+if (goog.DEBUG && !COMPILED) {
+  /**
+   * @public
+   * @override
+   */
+  proto.adamant.global.v1.ReviewPreTransactionThresholdProposalRequest.displayName = 'proto.adamant.global.v1.ReviewPreTransactionThresholdProposalRequest';
+}
+/**
+ * Generated by JsPbCodeGenerator.
+ * @param {Array=} opt_data Optional initial data array, typically from a
+ * server response, or constructed directly in Javascript. The array is used
+ * in place and becomes part of the constructed object. It is not cloned.
+ * If no data is provided, the constructed object will be empty, but still
+ * valid.
+ * @extends {jspb.Message}
+ * @constructor
+ */
+proto.adamant.global.v1.ListBlacklistAddressesByFilterRequest = function(opt_data) {
+  jspb.Message.initialize(this, opt_data, 0, -1, null, null);
+};
+goog.inherits(proto.adamant.global.v1.ListBlacklistAddressesByFilterRequest, jspb.Message);
+if (goog.DEBUG && !COMPILED) {
+  /**
+   * @public
+   * @override
+   */
+  proto.adamant.global.v1.ListBlacklistAddressesByFilterRequest.displayName = 'proto.adamant.global.v1.ListBlacklistAddressesByFilterRequest';
+}
+/**
+ * Generated by JsPbCodeGenerator.
+ * @param {Array=} opt_data Optional initial data array, typically from a
+ * server response, or constructed directly in Javascript. The array is used
+ * in place and becomes part of the constructed object. It is not cloned.
+ * If no data is provided, the constructed object will be empty, but still
+ * valid.
+ * @extends {jspb.Message}
+ * @constructor
+ */
+proto.adamant.global.v1.ListBlacklistAddressesByFilterResponse = function(opt_data) {
+  jspb.Message.initialize(this, opt_data, 0, -1, proto.adamant.global.v1.ListBlacklistAddressesByFilterResponse.repeatedFields_, null);
+};
+goog.inherits(proto.adamant.global.v1.ListBlacklistAddressesByFilterResponse, jspb.Message);
+if (goog.DEBUG && !COMPILED) {
+  /**
+   * @public
+   * @override
+   */
+  proto.adamant.global.v1.ListBlacklistAddressesByFilterResponse.displayName = 'proto.adamant.global.v1.ListBlacklistAddressesByFilterResponse';
+}
+/**
+ * Generated by JsPbCodeGenerator.
+ * @param {Array=} opt_data Optional initial data array, typically from a
+ * server response, or constructed directly in Javascript. The array is used
+ * in place and becomes part of the constructed object. It is not cloned.
+ * If no data is provided, the constructed object will be empty, but still
+ * valid.
+ * @extends {jspb.Message}
+ * @constructor
+ */
+proto.adamant.global.v1.CreateBlacklistAddressResponse = function(opt_data) {
+  jspb.Message.initialize(this, opt_data, 0, -1, null, null);
+};
+goog.inherits(proto.adamant.global.v1.CreateBlacklistAddressResponse, jspb.Message);
+if (goog.DEBUG && !COMPILED) {
+  /**
+   * @public
+   * @override
+   */
+  proto.adamant.global.v1.CreateBlacklistAddressResponse.displayName = 'proto.adamant.global.v1.CreateBlacklistAddressResponse';
+}
+/**
+ * Generated by JsPbCodeGenerator.
+ * @param {Array=} opt_data Optional initial data array, typically from a
+ * server response, or constructed directly in Javascript. The array is used
+ * in place and becomes part of the constructed object. It is not cloned.
+ * If no data is provided, the constructed object will be empty, but still
+ * valid.
+ * @extends {jspb.Message}
+ * @constructor
+ */
+proto.adamant.global.v1.CreateBlacklistAddressRequest = function(opt_data) {
+  jspb.Message.initialize(this, opt_data, 0, -1, null, null);
+};
+goog.inherits(proto.adamant.global.v1.CreateBlacklistAddressRequest, jspb.Message);
+if (goog.DEBUG && !COMPILED) {
+  /**
+   * @public
+   * @override
+   */
+  proto.adamant.global.v1.CreateBlacklistAddressRequest.displayName = 'proto.adamant.global.v1.CreateBlacklistAddressRequest';
+}
+/**
+ * Generated by JsPbCodeGenerator.
+ * @param {Array=} opt_data Optional initial data array, typically from a
+ * server response, or constructed directly in Javascript. The array is used
+ * in place and becomes part of the constructed object. It is not cloned.
+ * If no data is provided, the constructed object will be empty, but still
+ * valid.
+ * @extends {jspb.Message}
+ * @constructor
+ */
+proto.adamant.global.v1.GetBlacklistAddressRequest = function(opt_data) {
+  jspb.Message.initialize(this, opt_data, 0, -1, null, null);
+};
+goog.inherits(proto.adamant.global.v1.GetBlacklistAddressRequest, jspb.Message);
+if (goog.DEBUG && !COMPILED) {
+  /**
+   * @public
+   * @override
+   */
+  proto.adamant.global.v1.GetBlacklistAddressRequest.displayName = 'proto.adamant.global.v1.GetBlacklistAddressRequest';
+}
+/**
+ * Generated by JsPbCodeGenerator.
+ * @param {Array=} opt_data Optional initial data array, typically from a
+ * server response, or constructed directly in Javascript. The array is used
+ * in place and becomes part of the constructed object. It is not cloned.
+ * If no data is provided, the constructed object will be empty, but still
+ * valid.
+ * @extends {jspb.Message}
+ * @constructor
+ */
+proto.adamant.global.v1.UpdateBlacklistAddressRequest = function(opt_data) {
+  jspb.Message.initialize(this, opt_data, 0, -1, null, null);
+};
+goog.inherits(proto.adamant.global.v1.UpdateBlacklistAddressRequest, jspb.Message);
+if (goog.DEBUG && !COMPILED) {
+  /**
+   * @public
+   * @override
+   */
+  proto.adamant.global.v1.UpdateBlacklistAddressRequest.displayName = 'proto.adamant.global.v1.UpdateBlacklistAddressRequest';
+}
+/**
+ * Generated by JsPbCodeGenerator.
+ * @param {Array=} opt_data Optional initial data array, typically from a
+ * server response, or constructed directly in Javascript. The array is used
+ * in place and becomes part of the constructed object. It is not cloned.
+ * If no data is provided, the constructed object will be empty, but still
+ * valid.
+ * @extends {jspb.Message}
+ * @constructor
+ */
+proto.adamant.global.v1.ReviewBlacklistAddressProposalRequest = function(opt_data) {
+  jspb.Message.initialize(this, opt_data, 0, -1, null, null);
+};
+goog.inherits(proto.adamant.global.v1.ReviewBlacklistAddressProposalRequest, jspb.Message);
+if (goog.DEBUG && !COMPILED) {
+  /**
+   * @public
+   * @override
+   */
+  proto.adamant.global.v1.ReviewBlacklistAddressProposalRequest.displayName = 'proto.adamant.global.v1.ReviewBlacklistAddressProposalRequest';
+}
+/**
+ * Generated by JsPbCodeGenerator.
+ * @param {Array=} opt_data Optional initial data array, typically from a
+ * server response, or constructed directly in Javascript. The array is used
+ * in place and becomes part of the constructed object. It is not cloned.
+ * If no data is provided, the constructed object will be empty, but still
+ * valid.
+ * @extends {jspb.Message}
+ * @constructor
+ */
+proto.adamant.global.v1.BulkReviewBlacklistAddressProposalRequest = function(opt_data) {
+  jspb.Message.initialize(this, opt_data, 0, -1, null, null);
+};
+goog.inherits(proto.adamant.global.v1.BulkReviewBlacklistAddressProposalRequest, jspb.Message);
+if (goog.DEBUG && !COMPILED) {
+  /**
+   * @public
+   * @override
+   */
+  proto.adamant.global.v1.BulkReviewBlacklistAddressProposalRequest.displayName = 'proto.adamant.global.v1.BulkReviewBlacklistAddressProposalRequest';
+}
+/**
+ * Generated by JsPbCodeGenerator.
+ * @param {Array=} opt_data Optional initial data array, typically from a
+ * server response, or constructed directly in Javascript. The array is used
+ * in place and becomes part of the constructed object. It is not cloned.
+ * If no data is provided, the constructed object will be empty, but still
+ * valid.
+ * @extends {jspb.Message}
+ * @constructor
+ */
+proto.adamant.global.v1.GetBlacklistStorageSignedURLRequest = function(opt_data) {
+  jspb.Message.initialize(this, opt_data, 0, -1, null, null);
+};
+goog.inherits(proto.adamant.global.v1.GetBlacklistStorageSignedURLRequest, jspb.Message);
+if (goog.DEBUG && !COMPILED) {
+  /**
+   * @public
+   * @override
+   */
+  proto.adamant.global.v1.GetBlacklistStorageSignedURLRequest.displayName = 'proto.adamant.global.v1.GetBlacklistStorageSignedURLRequest';
+}
+/**
+ * Generated by JsPbCodeGenerator.
+ * @param {Array=} opt_data Optional initial data array, typically from a
+ * server response, or constructed directly in Javascript. The array is used
+ * in place and becomes part of the constructed object. It is not cloned.
+ * If no data is provided, the constructed object will be empty, but still
+ * valid.
+ * @extends {jspb.Message}
+ * @constructor
+ */
+proto.adamant.global.v1.GetBlacklistStorageSignedURLResponse = function(opt_data) {
+  jspb.Message.initialize(this, opt_data, 0, -1, null, null);
+};
+goog.inherits(proto.adamant.global.v1.GetBlacklistStorageSignedURLResponse, jspb.Message);
+if (goog.DEBUG && !COMPILED) {
+  /**
+   * @public
+   * @override
+   */
+  proto.adamant.global.v1.GetBlacklistStorageSignedURLResponse.displayName = 'proto.adamant.global.v1.GetBlacklistStorageSignedURLResponse';
+}
+/**
+ * Generated by JsPbCodeGenerator.
+ * @param {Array=} opt_data Optional initial data array, typically from a
+ * server response, or constructed directly in Javascript. The array is used
+ * in place and becomes part of the constructed object. It is not cloned.
+ * If no data is provided, the constructed object will be empty, but still
+ * valid.
+ * @extends {jspb.Message}
+ * @constructor
+ */
+proto.adamant.global.v1.ListBlacklistAddressFilesRequest = function(opt_data) {
+  jspb.Message.initialize(this, opt_data, 0, -1, null, null);
+};
+goog.inherits(proto.adamant.global.v1.ListBlacklistAddressFilesRequest, jspb.Message);
+if (goog.DEBUG && !COMPILED) {
+  /**
+   * @public
+   * @override
+   */
+  proto.adamant.global.v1.ListBlacklistAddressFilesRequest.displayName = 'proto.adamant.global.v1.ListBlacklistAddressFilesRequest';
+}
+/**
+ * Generated by JsPbCodeGenerator.
+ * @param {Array=} opt_data Optional initial data array, typically from a
+ * server response, or constructed directly in Javascript. The array is used
+ * in place and becomes part of the constructed object. It is not cloned.
+ * If no data is provided, the constructed object will be empty, but still
+ * valid.
+ * @extends {jspb.Message}
+ * @constructor
+ */
+proto.adamant.global.v1.ListBlacklistAddressFilesResponse = function(opt_data) {
+  jspb.Message.initialize(this, opt_data, 0, -1, proto.adamant.global.v1.ListBlacklistAddressFilesResponse.repeatedFields_, null);
+};
+goog.inherits(proto.adamant.global.v1.ListBlacklistAddressFilesResponse, jspb.Message);
+if (goog.DEBUG && !COMPILED) {
+  /**
+   * @public
+   * @override
+   */
+  proto.adamant.global.v1.ListBlacklistAddressFilesResponse.displayName = 'proto.adamant.global.v1.ListBlacklistAddressFilesResponse';
 }
 
 
@@ -8882,6 +9476,615 @@ proto.adamant.global.v1.ListStakingWalletsResponse.prototype.getNextPageToken = 
  * @return {!proto.adamant.global.v1.ListStakingWalletsResponse} returns this
  */
 proto.adamant.global.v1.ListStakingWalletsResponse.prototype.setNextPageToken = function(value) {
+  return jspb.Message.setProto3StringField(this, 2, value);
+};
+
+
+
+/**
+ * List of repeated fields within this message type.
+ * @private {!Array<number>}
+ * @const
+ */
+proto.adamant.global.v1.ListNFTWalletsByFilterRequest.repeatedFields_ = [6,7];
+
+
+
+if (jspb.Message.GENERATE_TO_OBJECT) {
+/**
+ * Creates an object representation of this proto.
+ * Field names that are reserved in JavaScript and will be renamed to pb_name.
+ * Optional fields that are not set will be set to undefined.
+ * To access a reserved field use, foo.pb_<name>, eg, foo.pb_default.
+ * For the list of reserved names please see:
+ *     net/proto2/compiler/js/internal/generator.cc#kKeyword.
+ * @param {boolean=} opt_includeInstance Deprecated. whether to include the
+ *     JSPB instance for transitional soy proto support:
+ *     http://goto/soy-param-migration
+ * @return {!Object}
+ */
+proto.adamant.global.v1.ListNFTWalletsByFilterRequest.prototype.toObject = function(opt_includeInstance) {
+  return proto.adamant.global.v1.ListNFTWalletsByFilterRequest.toObject(opt_includeInstance, this);
+};
+
+
+/**
+ * Static version of the {@see toObject} method.
+ * @param {boolean|undefined} includeInstance Deprecated. Whether to include
+ *     the JSPB instance for transitional soy proto support:
+ *     http://goto/soy-param-migration
+ * @param {!proto.adamant.global.v1.ListNFTWalletsByFilterRequest} msg The msg instance to transform.
+ * @return {!Object}
+ * @suppress {unusedLocalVariables} f is only used for nested messages
+ */
+proto.adamant.global.v1.ListNFTWalletsByFilterRequest.toObject = function(includeInstance, msg) {
+  var f, obj = {
+    filterType: jspb.Message.getFieldWithDefault(msg, 1, 0),
+    walletId: jspb.Message.getFieldWithDefault(msg, 2, ""),
+    walletName: jspb.Message.getFieldWithDefault(msg, 3, ""),
+    address: jspb.Message.getFieldWithDefault(msg, 4, ""),
+    coin: jspb.Message.getFieldWithDefault(msg, 5, 0),
+    walletTypeList: (f = jspb.Message.getRepeatedField(msg, 6)) == null ? undefined : f,
+    walletStateList: (f = jspb.Message.getRepeatedField(msg, 7)) == null ? undefined : f,
+    pageSize: jspb.Message.getFieldWithDefault(msg, 8, 0),
+    pageToken: jspb.Message.getFieldWithDefault(msg, 9, "")
+  };
+
+  if (includeInstance) {
+    obj.$jspbMessageInstance = msg;
+  }
+  return obj;
+};
+}
+
+
+/**
+ * Deserializes binary data (in protobuf wire format).
+ * @param {jspb.ByteSource} bytes The bytes to deserialize.
+ * @return {!proto.adamant.global.v1.ListNFTWalletsByFilterRequest}
+ */
+proto.adamant.global.v1.ListNFTWalletsByFilterRequest.deserializeBinary = function(bytes) {
+  var reader = new jspb.BinaryReader(bytes);
+  var msg = new proto.adamant.global.v1.ListNFTWalletsByFilterRequest;
+  return proto.adamant.global.v1.ListNFTWalletsByFilterRequest.deserializeBinaryFromReader(msg, reader);
+};
+
+
+/**
+ * Deserializes binary data (in protobuf wire format) from the
+ * given reader into the given message object.
+ * @param {!proto.adamant.global.v1.ListNFTWalletsByFilterRequest} msg The message object to deserialize into.
+ * @param {!jspb.BinaryReader} reader The BinaryReader to use.
+ * @return {!proto.adamant.global.v1.ListNFTWalletsByFilterRequest}
+ */
+proto.adamant.global.v1.ListNFTWalletsByFilterRequest.deserializeBinaryFromReader = function(msg, reader) {
+  while (reader.nextField()) {
+    if (reader.isEndGroup()) {
+      break;
+    }
+    var field = reader.getFieldNumber();
+    switch (field) {
+    case 1:
+      var value = /** @type {!proto.adamant.global.v1.ListFilterType} */ (reader.readEnum());
+      msg.setFilterType(value);
+      break;
+    case 2:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setWalletId(value);
+      break;
+    case 3:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setWalletName(value);
+      break;
+    case 4:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setAddress(value);
+      break;
+    case 5:
+      var value = /** @type {!proto.gincoinc.global.v1.Coin} */ (reader.readEnum());
+      msg.setCoin(value);
+      break;
+    case 6:
+      var values = /** @type {!Array<!proto.adamant.global.v1.WalletType>} */ (reader.isDelimited() ? reader.readPackedEnum() : [reader.readEnum()]);
+      for (var i = 0; i < values.length; i++) {
+        msg.addWalletType(values[i]);
+      }
+      break;
+    case 7:
+      var values = /** @type {!Array<!proto.adamant.global.v1.WalletState>} */ (reader.isDelimited() ? reader.readPackedEnum() : [reader.readEnum()]);
+      for (var i = 0; i < values.length; i++) {
+        msg.addWalletState(values[i]);
+      }
+      break;
+    case 8:
+      var value = /** @type {number} */ (reader.readUint32());
+      msg.setPageSize(value);
+      break;
+    case 9:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setPageToken(value);
+      break;
+    default:
+      reader.skipField();
+      break;
+    }
+  }
+  return msg;
+};
+
+
+/**
+ * Serializes the message to binary data (in protobuf wire format).
+ * @return {!Uint8Array}
+ */
+proto.adamant.global.v1.ListNFTWalletsByFilterRequest.prototype.serializeBinary = function() {
+  var writer = new jspb.BinaryWriter();
+  proto.adamant.global.v1.ListNFTWalletsByFilterRequest.serializeBinaryToWriter(this, writer);
+  return writer.getResultBuffer();
+};
+
+
+/**
+ * Serializes the given message to binary data (in protobuf wire
+ * format), writing to the given BinaryWriter.
+ * @param {!proto.adamant.global.v1.ListNFTWalletsByFilterRequest} message
+ * @param {!jspb.BinaryWriter} writer
+ * @suppress {unusedLocalVariables} f is only used for nested messages
+ */
+proto.adamant.global.v1.ListNFTWalletsByFilterRequest.serializeBinaryToWriter = function(message, writer) {
+  var f = undefined;
+  f = message.getFilterType();
+  if (f !== 0.0) {
+    writer.writeEnum(
+      1,
+      f
+    );
+  }
+  f = message.getWalletId();
+  if (f.length > 0) {
+    writer.writeString(
+      2,
+      f
+    );
+  }
+  f = message.getWalletName();
+  if (f.length > 0) {
+    writer.writeString(
+      3,
+      f
+    );
+  }
+  f = message.getAddress();
+  if (f.length > 0) {
+    writer.writeString(
+      4,
+      f
+    );
+  }
+  f = message.getCoin();
+  if (f !== 0.0) {
+    writer.writeEnum(
+      5,
+      f
+    );
+  }
+  f = message.getWalletTypeList();
+  if (f.length > 0) {
+    writer.writePackedEnum(
+      6,
+      f
+    );
+  }
+  f = message.getWalletStateList();
+  if (f.length > 0) {
+    writer.writePackedEnum(
+      7,
+      f
+    );
+  }
+  f = message.getPageSize();
+  if (f !== 0) {
+    writer.writeUint32(
+      8,
+      f
+    );
+  }
+  f = message.getPageToken();
+  if (f.length > 0) {
+    writer.writeString(
+      9,
+      f
+    );
+  }
+};
+
+
+/**
+ * optional ListFilterType filter_type = 1;
+ * @return {!proto.adamant.global.v1.ListFilterType}
+ */
+proto.adamant.global.v1.ListNFTWalletsByFilterRequest.prototype.getFilterType = function() {
+  return /** @type {!proto.adamant.global.v1.ListFilterType} */ (jspb.Message.getFieldWithDefault(this, 1, 0));
+};
+
+
+/**
+ * @param {!proto.adamant.global.v1.ListFilterType} value
+ * @return {!proto.adamant.global.v1.ListNFTWalletsByFilterRequest} returns this
+ */
+proto.adamant.global.v1.ListNFTWalletsByFilterRequest.prototype.setFilterType = function(value) {
+  return jspb.Message.setProto3EnumField(this, 1, value);
+};
+
+
+/**
+ * optional string wallet_id = 2;
+ * @return {string}
+ */
+proto.adamant.global.v1.ListNFTWalletsByFilterRequest.prototype.getWalletId = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 2, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.adamant.global.v1.ListNFTWalletsByFilterRequest} returns this
+ */
+proto.adamant.global.v1.ListNFTWalletsByFilterRequest.prototype.setWalletId = function(value) {
+  return jspb.Message.setProto3StringField(this, 2, value);
+};
+
+
+/**
+ * optional string wallet_name = 3;
+ * @return {string}
+ */
+proto.adamant.global.v1.ListNFTWalletsByFilterRequest.prototype.getWalletName = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 3, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.adamant.global.v1.ListNFTWalletsByFilterRequest} returns this
+ */
+proto.adamant.global.v1.ListNFTWalletsByFilterRequest.prototype.setWalletName = function(value) {
+  return jspb.Message.setProto3StringField(this, 3, value);
+};
+
+
+/**
+ * optional string address = 4;
+ * @return {string}
+ */
+proto.adamant.global.v1.ListNFTWalletsByFilterRequest.prototype.getAddress = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 4, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.adamant.global.v1.ListNFTWalletsByFilterRequest} returns this
+ */
+proto.adamant.global.v1.ListNFTWalletsByFilterRequest.prototype.setAddress = function(value) {
+  return jspb.Message.setProto3StringField(this, 4, value);
+};
+
+
+/**
+ * optional gincoinc.global.v1.Coin coin = 5;
+ * @return {!proto.gincoinc.global.v1.Coin}
+ */
+proto.adamant.global.v1.ListNFTWalletsByFilterRequest.prototype.getCoin = function() {
+  return /** @type {!proto.gincoinc.global.v1.Coin} */ (jspb.Message.getFieldWithDefault(this, 5, 0));
+};
+
+
+/**
+ * @param {!proto.gincoinc.global.v1.Coin} value
+ * @return {!proto.adamant.global.v1.ListNFTWalletsByFilterRequest} returns this
+ */
+proto.adamant.global.v1.ListNFTWalletsByFilterRequest.prototype.setCoin = function(value) {
+  return jspb.Message.setProto3EnumField(this, 5, value);
+};
+
+
+/**
+ * repeated WalletType wallet_type = 6;
+ * @return {!Array<!proto.adamant.global.v1.WalletType>}
+ */
+proto.adamant.global.v1.ListNFTWalletsByFilterRequest.prototype.getWalletTypeList = function() {
+  return /** @type {!Array<!proto.adamant.global.v1.WalletType>} */ (jspb.Message.getRepeatedField(this, 6));
+};
+
+
+/**
+ * @param {!Array<!proto.adamant.global.v1.WalletType>} value
+ * @return {!proto.adamant.global.v1.ListNFTWalletsByFilterRequest} returns this
+ */
+proto.adamant.global.v1.ListNFTWalletsByFilterRequest.prototype.setWalletTypeList = function(value) {
+  return jspb.Message.setField(this, 6, value || []);
+};
+
+
+/**
+ * @param {!proto.adamant.global.v1.WalletType} value
+ * @param {number=} opt_index
+ * @return {!proto.adamant.global.v1.ListNFTWalletsByFilterRequest} returns this
+ */
+proto.adamant.global.v1.ListNFTWalletsByFilterRequest.prototype.addWalletType = function(value, opt_index) {
+  return jspb.Message.addToRepeatedField(this, 6, value, opt_index);
+};
+
+
+/**
+ * Clears the list making it empty but non-null.
+ * @return {!proto.adamant.global.v1.ListNFTWalletsByFilterRequest} returns this
+ */
+proto.adamant.global.v1.ListNFTWalletsByFilterRequest.prototype.clearWalletTypeList = function() {
+  return this.setWalletTypeList([]);
+};
+
+
+/**
+ * repeated WalletState wallet_state = 7;
+ * @return {!Array<!proto.adamant.global.v1.WalletState>}
+ */
+proto.adamant.global.v1.ListNFTWalletsByFilterRequest.prototype.getWalletStateList = function() {
+  return /** @type {!Array<!proto.adamant.global.v1.WalletState>} */ (jspb.Message.getRepeatedField(this, 7));
+};
+
+
+/**
+ * @param {!Array<!proto.adamant.global.v1.WalletState>} value
+ * @return {!proto.adamant.global.v1.ListNFTWalletsByFilterRequest} returns this
+ */
+proto.adamant.global.v1.ListNFTWalletsByFilterRequest.prototype.setWalletStateList = function(value) {
+  return jspb.Message.setField(this, 7, value || []);
+};
+
+
+/**
+ * @param {!proto.adamant.global.v1.WalletState} value
+ * @param {number=} opt_index
+ * @return {!proto.adamant.global.v1.ListNFTWalletsByFilterRequest} returns this
+ */
+proto.adamant.global.v1.ListNFTWalletsByFilterRequest.prototype.addWalletState = function(value, opt_index) {
+  return jspb.Message.addToRepeatedField(this, 7, value, opt_index);
+};
+
+
+/**
+ * Clears the list making it empty but non-null.
+ * @return {!proto.adamant.global.v1.ListNFTWalletsByFilterRequest} returns this
+ */
+proto.adamant.global.v1.ListNFTWalletsByFilterRequest.prototype.clearWalletStateList = function() {
+  return this.setWalletStateList([]);
+};
+
+
+/**
+ * optional uint32 page_size = 8;
+ * @return {number}
+ */
+proto.adamant.global.v1.ListNFTWalletsByFilterRequest.prototype.getPageSize = function() {
+  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 8, 0));
+};
+
+
+/**
+ * @param {number} value
+ * @return {!proto.adamant.global.v1.ListNFTWalletsByFilterRequest} returns this
+ */
+proto.adamant.global.v1.ListNFTWalletsByFilterRequest.prototype.setPageSize = function(value) {
+  return jspb.Message.setProto3IntField(this, 8, value);
+};
+
+
+/**
+ * optional string page_token = 9;
+ * @return {string}
+ */
+proto.adamant.global.v1.ListNFTWalletsByFilterRequest.prototype.getPageToken = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 9, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.adamant.global.v1.ListNFTWalletsByFilterRequest} returns this
+ */
+proto.adamant.global.v1.ListNFTWalletsByFilterRequest.prototype.setPageToken = function(value) {
+  return jspb.Message.setProto3StringField(this, 9, value);
+};
+
+
+
+/**
+ * List of repeated fields within this message type.
+ * @private {!Array<number>}
+ * @const
+ */
+proto.adamant.global.v1.ListNFTWalletsResponse.repeatedFields_ = [1];
+
+
+
+if (jspb.Message.GENERATE_TO_OBJECT) {
+/**
+ * Creates an object representation of this proto.
+ * Field names that are reserved in JavaScript and will be renamed to pb_name.
+ * Optional fields that are not set will be set to undefined.
+ * To access a reserved field use, foo.pb_<name>, eg, foo.pb_default.
+ * For the list of reserved names please see:
+ *     net/proto2/compiler/js/internal/generator.cc#kKeyword.
+ * @param {boolean=} opt_includeInstance Deprecated. whether to include the
+ *     JSPB instance for transitional soy proto support:
+ *     http://goto/soy-param-migration
+ * @return {!Object}
+ */
+proto.adamant.global.v1.ListNFTWalletsResponse.prototype.toObject = function(opt_includeInstance) {
+  return proto.adamant.global.v1.ListNFTWalletsResponse.toObject(opt_includeInstance, this);
+};
+
+
+/**
+ * Static version of the {@see toObject} method.
+ * @param {boolean|undefined} includeInstance Deprecated. Whether to include
+ *     the JSPB instance for transitional soy proto support:
+ *     http://goto/soy-param-migration
+ * @param {!proto.adamant.global.v1.ListNFTWalletsResponse} msg The msg instance to transform.
+ * @return {!Object}
+ * @suppress {unusedLocalVariables} f is only used for nested messages
+ */
+proto.adamant.global.v1.ListNFTWalletsResponse.toObject = function(includeInstance, msg) {
+  var f, obj = {
+    nftWalletsList: jspb.Message.toObjectList(msg.getNftWalletsList(),
+    gincoinc_adamant_global_v1_adamantglobalv1_model_pb.NFTWallet.toObject, includeInstance),
+    nextPageToken: jspb.Message.getFieldWithDefault(msg, 2, "")
+  };
+
+  if (includeInstance) {
+    obj.$jspbMessageInstance = msg;
+  }
+  return obj;
+};
+}
+
+
+/**
+ * Deserializes binary data (in protobuf wire format).
+ * @param {jspb.ByteSource} bytes The bytes to deserialize.
+ * @return {!proto.adamant.global.v1.ListNFTWalletsResponse}
+ */
+proto.adamant.global.v1.ListNFTWalletsResponse.deserializeBinary = function(bytes) {
+  var reader = new jspb.BinaryReader(bytes);
+  var msg = new proto.adamant.global.v1.ListNFTWalletsResponse;
+  return proto.adamant.global.v1.ListNFTWalletsResponse.deserializeBinaryFromReader(msg, reader);
+};
+
+
+/**
+ * Deserializes binary data (in protobuf wire format) from the
+ * given reader into the given message object.
+ * @param {!proto.adamant.global.v1.ListNFTWalletsResponse} msg The message object to deserialize into.
+ * @param {!jspb.BinaryReader} reader The BinaryReader to use.
+ * @return {!proto.adamant.global.v1.ListNFTWalletsResponse}
+ */
+proto.adamant.global.v1.ListNFTWalletsResponse.deserializeBinaryFromReader = function(msg, reader) {
+  while (reader.nextField()) {
+    if (reader.isEndGroup()) {
+      break;
+    }
+    var field = reader.getFieldNumber();
+    switch (field) {
+    case 1:
+      var value = new gincoinc_adamant_global_v1_adamantglobalv1_model_pb.NFTWallet;
+      reader.readMessage(value,gincoinc_adamant_global_v1_adamantglobalv1_model_pb.NFTWallet.deserializeBinaryFromReader);
+      msg.addNftWallets(value);
+      break;
+    case 2:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setNextPageToken(value);
+      break;
+    default:
+      reader.skipField();
+      break;
+    }
+  }
+  return msg;
+};
+
+
+/**
+ * Serializes the message to binary data (in protobuf wire format).
+ * @return {!Uint8Array}
+ */
+proto.adamant.global.v1.ListNFTWalletsResponse.prototype.serializeBinary = function() {
+  var writer = new jspb.BinaryWriter();
+  proto.adamant.global.v1.ListNFTWalletsResponse.serializeBinaryToWriter(this, writer);
+  return writer.getResultBuffer();
+};
+
+
+/**
+ * Serializes the given message to binary data (in protobuf wire
+ * format), writing to the given BinaryWriter.
+ * @param {!proto.adamant.global.v1.ListNFTWalletsResponse} message
+ * @param {!jspb.BinaryWriter} writer
+ * @suppress {unusedLocalVariables} f is only used for nested messages
+ */
+proto.adamant.global.v1.ListNFTWalletsResponse.serializeBinaryToWriter = function(message, writer) {
+  var f = undefined;
+  f = message.getNftWalletsList();
+  if (f.length > 0) {
+    writer.writeRepeatedMessage(
+      1,
+      f,
+      gincoinc_adamant_global_v1_adamantglobalv1_model_pb.NFTWallet.serializeBinaryToWriter
+    );
+  }
+  f = message.getNextPageToken();
+  if (f.length > 0) {
+    writer.writeString(
+      2,
+      f
+    );
+  }
+};
+
+
+/**
+ * repeated NFTWallet nft_wallets = 1;
+ * @return {!Array<!proto.adamant.global.v1.NFTWallet>}
+ */
+proto.adamant.global.v1.ListNFTWalletsResponse.prototype.getNftWalletsList = function() {
+  return /** @type{!Array<!proto.adamant.global.v1.NFTWallet>} */ (
+    jspb.Message.getRepeatedWrapperField(this, gincoinc_adamant_global_v1_adamantglobalv1_model_pb.NFTWallet, 1));
+};
+
+
+/**
+ * @param {!Array<!proto.adamant.global.v1.NFTWallet>} value
+ * @return {!proto.adamant.global.v1.ListNFTWalletsResponse} returns this
+*/
+proto.adamant.global.v1.ListNFTWalletsResponse.prototype.setNftWalletsList = function(value) {
+  return jspb.Message.setRepeatedWrapperField(this, 1, value);
+};
+
+
+/**
+ * @param {!proto.adamant.global.v1.NFTWallet=} opt_value
+ * @param {number=} opt_index
+ * @return {!proto.adamant.global.v1.NFTWallet}
+ */
+proto.adamant.global.v1.ListNFTWalletsResponse.prototype.addNftWallets = function(opt_value, opt_index) {
+  return jspb.Message.addToRepeatedWrapperField(this, 1, opt_value, proto.adamant.global.v1.NFTWallet, opt_index);
+};
+
+
+/**
+ * Clears the list making it empty but non-null.
+ * @return {!proto.adamant.global.v1.ListNFTWalletsResponse} returns this
+ */
+proto.adamant.global.v1.ListNFTWalletsResponse.prototype.clearNftWalletsList = function() {
+  return this.setNftWalletsList([]);
+};
+
+
+/**
+ * optional string next_page_token = 2;
+ * @return {string}
+ */
+proto.adamant.global.v1.ListNFTWalletsResponse.prototype.getNextPageToken = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 2, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.adamant.global.v1.ListNFTWalletsResponse} returns this
+ */
+proto.adamant.global.v1.ListNFTWalletsResponse.prototype.setNextPageToken = function(value) {
   return jspb.Message.setProto3StringField(this, 2, value);
 };
 
@@ -17457,6 +18660,1544 @@ proto.adamant.global.v1.ImportAddressRequest.prototype.setIsChangeAddress = func
  * @private {!Array<number>}
  * @const
  */
+proto.adamant.global.v1.CreatePreTransactionRequest.repeatedFields_ = [4];
+
+
+
+if (jspb.Message.GENERATE_TO_OBJECT) {
+/**
+ * Creates an object representation of this proto.
+ * Field names that are reserved in JavaScript and will be renamed to pb_name.
+ * Optional fields that are not set will be set to undefined.
+ * To access a reserved field use, foo.pb_<name>, eg, foo.pb_default.
+ * For the list of reserved names please see:
+ *     net/proto2/compiler/js/internal/generator.cc#kKeyword.
+ * @param {boolean=} opt_includeInstance Deprecated. whether to include the
+ *     JSPB instance for transitional soy proto support:
+ *     http://goto/soy-param-migration
+ * @return {!Object}
+ */
+proto.adamant.global.v1.CreatePreTransactionRequest.prototype.toObject = function(opt_includeInstance) {
+  return proto.adamant.global.v1.CreatePreTransactionRequest.toObject(opt_includeInstance, this);
+};
+
+
+/**
+ * Static version of the {@see toObject} method.
+ * @param {boolean|undefined} includeInstance Deprecated. Whether to include
+ *     the JSPB instance for transitional soy proto support:
+ *     http://goto/soy-param-migration
+ * @param {!proto.adamant.global.v1.CreatePreTransactionRequest} msg The msg instance to transform.
+ * @return {!Object}
+ * @suppress {unusedLocalVariables} f is only used for nested messages
+ */
+proto.adamant.global.v1.CreatePreTransactionRequest.toObject = function(includeInstance, msg) {
+  var f, obj = {
+    coin: jspb.Message.getFieldWithDefault(msg, 1, 0),
+    network: jspb.Message.getFieldWithDefault(msg, 2, 0),
+    externalId: jspb.Message.getFieldWithDefault(msg, 3, ""),
+    detailsList: jspb.Message.toObjectList(msg.getDetailsList(),
+    gincoinc_adamant_global_v1_adamantglobalv1_model_pb.PreTransactionDetail.toObject, includeInstance)
+  };
+
+  if (includeInstance) {
+    obj.$jspbMessageInstance = msg;
+  }
+  return obj;
+};
+}
+
+
+/**
+ * Deserializes binary data (in protobuf wire format).
+ * @param {jspb.ByteSource} bytes The bytes to deserialize.
+ * @return {!proto.adamant.global.v1.CreatePreTransactionRequest}
+ */
+proto.adamant.global.v1.CreatePreTransactionRequest.deserializeBinary = function(bytes) {
+  var reader = new jspb.BinaryReader(bytes);
+  var msg = new proto.adamant.global.v1.CreatePreTransactionRequest;
+  return proto.adamant.global.v1.CreatePreTransactionRequest.deserializeBinaryFromReader(msg, reader);
+};
+
+
+/**
+ * Deserializes binary data (in protobuf wire format) from the
+ * given reader into the given message object.
+ * @param {!proto.adamant.global.v1.CreatePreTransactionRequest} msg The message object to deserialize into.
+ * @param {!jspb.BinaryReader} reader The BinaryReader to use.
+ * @return {!proto.adamant.global.v1.CreatePreTransactionRequest}
+ */
+proto.adamant.global.v1.CreatePreTransactionRequest.deserializeBinaryFromReader = function(msg, reader) {
+  while (reader.nextField()) {
+    if (reader.isEndGroup()) {
+      break;
+    }
+    var field = reader.getFieldNumber();
+    switch (field) {
+    case 1:
+      var value = /** @type {!proto.gincoinc.global.v1.Coin} */ (reader.readEnum());
+      msg.setCoin(value);
+      break;
+    case 2:
+      var value = /** @type {!proto.gincoinc.global.v1.Network} */ (reader.readEnum());
+      msg.setNetwork(value);
+      break;
+    case 3:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setExternalId(value);
+      break;
+    case 4:
+      var value = new gincoinc_adamant_global_v1_adamantglobalv1_model_pb.PreTransactionDetail;
+      reader.readMessage(value,gincoinc_adamant_global_v1_adamantglobalv1_model_pb.PreTransactionDetail.deserializeBinaryFromReader);
+      msg.addDetails(value);
+      break;
+    default:
+      reader.skipField();
+      break;
+    }
+  }
+  return msg;
+};
+
+
+/**
+ * Serializes the message to binary data (in protobuf wire format).
+ * @return {!Uint8Array}
+ */
+proto.adamant.global.v1.CreatePreTransactionRequest.prototype.serializeBinary = function() {
+  var writer = new jspb.BinaryWriter();
+  proto.adamant.global.v1.CreatePreTransactionRequest.serializeBinaryToWriter(this, writer);
+  return writer.getResultBuffer();
+};
+
+
+/**
+ * Serializes the given message to binary data (in protobuf wire
+ * format), writing to the given BinaryWriter.
+ * @param {!proto.adamant.global.v1.CreatePreTransactionRequest} message
+ * @param {!jspb.BinaryWriter} writer
+ * @suppress {unusedLocalVariables} f is only used for nested messages
+ */
+proto.adamant.global.v1.CreatePreTransactionRequest.serializeBinaryToWriter = function(message, writer) {
+  var f = undefined;
+  f = message.getCoin();
+  if (f !== 0.0) {
+    writer.writeEnum(
+      1,
+      f
+    );
+  }
+  f = message.getNetwork();
+  if (f !== 0.0) {
+    writer.writeEnum(
+      2,
+      f
+    );
+  }
+  f = message.getExternalId();
+  if (f.length > 0) {
+    writer.writeString(
+      3,
+      f
+    );
+  }
+  f = message.getDetailsList();
+  if (f.length > 0) {
+    writer.writeRepeatedMessage(
+      4,
+      f,
+      gincoinc_adamant_global_v1_adamantglobalv1_model_pb.PreTransactionDetail.serializeBinaryToWriter
+    );
+  }
+};
+
+
+/**
+ * optional gincoinc.global.v1.Coin coin = 1;
+ * @return {!proto.gincoinc.global.v1.Coin}
+ */
+proto.adamant.global.v1.CreatePreTransactionRequest.prototype.getCoin = function() {
+  return /** @type {!proto.gincoinc.global.v1.Coin} */ (jspb.Message.getFieldWithDefault(this, 1, 0));
+};
+
+
+/**
+ * @param {!proto.gincoinc.global.v1.Coin} value
+ * @return {!proto.adamant.global.v1.CreatePreTransactionRequest} returns this
+ */
+proto.adamant.global.v1.CreatePreTransactionRequest.prototype.setCoin = function(value) {
+  return jspb.Message.setProto3EnumField(this, 1, value);
+};
+
+
+/**
+ * optional gincoinc.global.v1.Network network = 2;
+ * @return {!proto.gincoinc.global.v1.Network}
+ */
+proto.adamant.global.v1.CreatePreTransactionRequest.prototype.getNetwork = function() {
+  return /** @type {!proto.gincoinc.global.v1.Network} */ (jspb.Message.getFieldWithDefault(this, 2, 0));
+};
+
+
+/**
+ * @param {!proto.gincoinc.global.v1.Network} value
+ * @return {!proto.adamant.global.v1.CreatePreTransactionRequest} returns this
+ */
+proto.adamant.global.v1.CreatePreTransactionRequest.prototype.setNetwork = function(value) {
+  return jspb.Message.setProto3EnumField(this, 2, value);
+};
+
+
+/**
+ * optional string external_id = 3;
+ * @return {string}
+ */
+proto.adamant.global.v1.CreatePreTransactionRequest.prototype.getExternalId = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 3, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.adamant.global.v1.CreatePreTransactionRequest} returns this
+ */
+proto.adamant.global.v1.CreatePreTransactionRequest.prototype.setExternalId = function(value) {
+  return jspb.Message.setProto3StringField(this, 3, value);
+};
+
+
+/**
+ * repeated PreTransactionDetail details = 4;
+ * @return {!Array<!proto.adamant.global.v1.PreTransactionDetail>}
+ */
+proto.adamant.global.v1.CreatePreTransactionRequest.prototype.getDetailsList = function() {
+  return /** @type{!Array<!proto.adamant.global.v1.PreTransactionDetail>} */ (
+    jspb.Message.getRepeatedWrapperField(this, gincoinc_adamant_global_v1_adamantglobalv1_model_pb.PreTransactionDetail, 4));
+};
+
+
+/**
+ * @param {!Array<!proto.adamant.global.v1.PreTransactionDetail>} value
+ * @return {!proto.adamant.global.v1.CreatePreTransactionRequest} returns this
+*/
+proto.adamant.global.v1.CreatePreTransactionRequest.prototype.setDetailsList = function(value) {
+  return jspb.Message.setRepeatedWrapperField(this, 4, value);
+};
+
+
+/**
+ * @param {!proto.adamant.global.v1.PreTransactionDetail=} opt_value
+ * @param {number=} opt_index
+ * @return {!proto.adamant.global.v1.PreTransactionDetail}
+ */
+proto.adamant.global.v1.CreatePreTransactionRequest.prototype.addDetails = function(opt_value, opt_index) {
+  return jspb.Message.addToRepeatedWrapperField(this, 4, opt_value, proto.adamant.global.v1.PreTransactionDetail, opt_index);
+};
+
+
+/**
+ * Clears the list making it empty but non-null.
+ * @return {!proto.adamant.global.v1.CreatePreTransactionRequest} returns this
+ */
+proto.adamant.global.v1.CreatePreTransactionRequest.prototype.clearDetailsList = function() {
+  return this.setDetailsList([]);
+};
+
+
+
+
+
+if (jspb.Message.GENERATE_TO_OBJECT) {
+/**
+ * Creates an object representation of this proto.
+ * Field names that are reserved in JavaScript and will be renamed to pb_name.
+ * Optional fields that are not set will be set to undefined.
+ * To access a reserved field use, foo.pb_<name>, eg, foo.pb_default.
+ * For the list of reserved names please see:
+ *     net/proto2/compiler/js/internal/generator.cc#kKeyword.
+ * @param {boolean=} opt_includeInstance Deprecated. whether to include the
+ *     JSPB instance for transitional soy proto support:
+ *     http://goto/soy-param-migration
+ * @return {!Object}
+ */
+proto.adamant.global.v1.CreatePreTransactionResponse.prototype.toObject = function(opt_includeInstance) {
+  return proto.adamant.global.v1.CreatePreTransactionResponse.toObject(opt_includeInstance, this);
+};
+
+
+/**
+ * Static version of the {@see toObject} method.
+ * @param {boolean|undefined} includeInstance Deprecated. Whether to include
+ *     the JSPB instance for transitional soy proto support:
+ *     http://goto/soy-param-migration
+ * @param {!proto.adamant.global.v1.CreatePreTransactionResponse} msg The msg instance to transform.
+ * @return {!Object}
+ * @suppress {unusedLocalVariables} f is only used for nested messages
+ */
+proto.adamant.global.v1.CreatePreTransactionResponse.toObject = function(includeInstance, msg) {
+  var f, obj = {
+    preTransactionId: jspb.Message.getFieldWithDefault(msg, 1, "")
+  };
+
+  if (includeInstance) {
+    obj.$jspbMessageInstance = msg;
+  }
+  return obj;
+};
+}
+
+
+/**
+ * Deserializes binary data (in protobuf wire format).
+ * @param {jspb.ByteSource} bytes The bytes to deserialize.
+ * @return {!proto.adamant.global.v1.CreatePreTransactionResponse}
+ */
+proto.adamant.global.v1.CreatePreTransactionResponse.deserializeBinary = function(bytes) {
+  var reader = new jspb.BinaryReader(bytes);
+  var msg = new proto.adamant.global.v1.CreatePreTransactionResponse;
+  return proto.adamant.global.v1.CreatePreTransactionResponse.deserializeBinaryFromReader(msg, reader);
+};
+
+
+/**
+ * Deserializes binary data (in protobuf wire format) from the
+ * given reader into the given message object.
+ * @param {!proto.adamant.global.v1.CreatePreTransactionResponse} msg The message object to deserialize into.
+ * @param {!jspb.BinaryReader} reader The BinaryReader to use.
+ * @return {!proto.adamant.global.v1.CreatePreTransactionResponse}
+ */
+proto.adamant.global.v1.CreatePreTransactionResponse.deserializeBinaryFromReader = function(msg, reader) {
+  while (reader.nextField()) {
+    if (reader.isEndGroup()) {
+      break;
+    }
+    var field = reader.getFieldNumber();
+    switch (field) {
+    case 1:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setPreTransactionId(value);
+      break;
+    default:
+      reader.skipField();
+      break;
+    }
+  }
+  return msg;
+};
+
+
+/**
+ * Serializes the message to binary data (in protobuf wire format).
+ * @return {!Uint8Array}
+ */
+proto.adamant.global.v1.CreatePreTransactionResponse.prototype.serializeBinary = function() {
+  var writer = new jspb.BinaryWriter();
+  proto.adamant.global.v1.CreatePreTransactionResponse.serializeBinaryToWriter(this, writer);
+  return writer.getResultBuffer();
+};
+
+
+/**
+ * Serializes the given message to binary data (in protobuf wire
+ * format), writing to the given BinaryWriter.
+ * @param {!proto.adamant.global.v1.CreatePreTransactionResponse} message
+ * @param {!jspb.BinaryWriter} writer
+ * @suppress {unusedLocalVariables} f is only used for nested messages
+ */
+proto.adamant.global.v1.CreatePreTransactionResponse.serializeBinaryToWriter = function(message, writer) {
+  var f = undefined;
+  f = message.getPreTransactionId();
+  if (f.length > 0) {
+    writer.writeString(
+      1,
+      f
+    );
+  }
+};
+
+
+/**
+ * optional string pre_transaction_id = 1;
+ * @return {string}
+ */
+proto.adamant.global.v1.CreatePreTransactionResponse.prototype.getPreTransactionId = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 1, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.adamant.global.v1.CreatePreTransactionResponse} returns this
+ */
+proto.adamant.global.v1.CreatePreTransactionResponse.prototype.setPreTransactionId = function(value) {
+  return jspb.Message.setProto3StringField(this, 1, value);
+};
+
+
+
+
+
+if (jspb.Message.GENERATE_TO_OBJECT) {
+/**
+ * Creates an object representation of this proto.
+ * Field names that are reserved in JavaScript and will be renamed to pb_name.
+ * Optional fields that are not set will be set to undefined.
+ * To access a reserved field use, foo.pb_<name>, eg, foo.pb_default.
+ * For the list of reserved names please see:
+ *     net/proto2/compiler/js/internal/generator.cc#kKeyword.
+ * @param {boolean=} opt_includeInstance Deprecated. whether to include the
+ *     JSPB instance for transitional soy proto support:
+ *     http://goto/soy-param-migration
+ * @return {!Object}
+ */
+proto.adamant.global.v1.ApprovePreTransactionRequest.prototype.toObject = function(opt_includeInstance) {
+  return proto.adamant.global.v1.ApprovePreTransactionRequest.toObject(opt_includeInstance, this);
+};
+
+
+/**
+ * Static version of the {@see toObject} method.
+ * @param {boolean|undefined} includeInstance Deprecated. Whether to include
+ *     the JSPB instance for transitional soy proto support:
+ *     http://goto/soy-param-migration
+ * @param {!proto.adamant.global.v1.ApprovePreTransactionRequest} msg The msg instance to transform.
+ * @return {!Object}
+ * @suppress {unusedLocalVariables} f is only used for nested messages
+ */
+proto.adamant.global.v1.ApprovePreTransactionRequest.toObject = function(includeInstance, msg) {
+  var f, obj = {
+    preTransactionId: jspb.Message.getFieldWithDefault(msg, 1, "")
+  };
+
+  if (includeInstance) {
+    obj.$jspbMessageInstance = msg;
+  }
+  return obj;
+};
+}
+
+
+/**
+ * Deserializes binary data (in protobuf wire format).
+ * @param {jspb.ByteSource} bytes The bytes to deserialize.
+ * @return {!proto.adamant.global.v1.ApprovePreTransactionRequest}
+ */
+proto.adamant.global.v1.ApprovePreTransactionRequest.deserializeBinary = function(bytes) {
+  var reader = new jspb.BinaryReader(bytes);
+  var msg = new proto.adamant.global.v1.ApprovePreTransactionRequest;
+  return proto.adamant.global.v1.ApprovePreTransactionRequest.deserializeBinaryFromReader(msg, reader);
+};
+
+
+/**
+ * Deserializes binary data (in protobuf wire format) from the
+ * given reader into the given message object.
+ * @param {!proto.adamant.global.v1.ApprovePreTransactionRequest} msg The message object to deserialize into.
+ * @param {!jspb.BinaryReader} reader The BinaryReader to use.
+ * @return {!proto.adamant.global.v1.ApprovePreTransactionRequest}
+ */
+proto.adamant.global.v1.ApprovePreTransactionRequest.deserializeBinaryFromReader = function(msg, reader) {
+  while (reader.nextField()) {
+    if (reader.isEndGroup()) {
+      break;
+    }
+    var field = reader.getFieldNumber();
+    switch (field) {
+    case 1:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setPreTransactionId(value);
+      break;
+    default:
+      reader.skipField();
+      break;
+    }
+  }
+  return msg;
+};
+
+
+/**
+ * Serializes the message to binary data (in protobuf wire format).
+ * @return {!Uint8Array}
+ */
+proto.adamant.global.v1.ApprovePreTransactionRequest.prototype.serializeBinary = function() {
+  var writer = new jspb.BinaryWriter();
+  proto.adamant.global.v1.ApprovePreTransactionRequest.serializeBinaryToWriter(this, writer);
+  return writer.getResultBuffer();
+};
+
+
+/**
+ * Serializes the given message to binary data (in protobuf wire
+ * format), writing to the given BinaryWriter.
+ * @param {!proto.adamant.global.v1.ApprovePreTransactionRequest} message
+ * @param {!jspb.BinaryWriter} writer
+ * @suppress {unusedLocalVariables} f is only used for nested messages
+ */
+proto.adamant.global.v1.ApprovePreTransactionRequest.serializeBinaryToWriter = function(message, writer) {
+  var f = undefined;
+  f = message.getPreTransactionId();
+  if (f.length > 0) {
+    writer.writeString(
+      1,
+      f
+    );
+  }
+};
+
+
+/**
+ * optional string pre_transaction_id = 1;
+ * @return {string}
+ */
+proto.adamant.global.v1.ApprovePreTransactionRequest.prototype.getPreTransactionId = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 1, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.adamant.global.v1.ApprovePreTransactionRequest} returns this
+ */
+proto.adamant.global.v1.ApprovePreTransactionRequest.prototype.setPreTransactionId = function(value) {
+  return jspb.Message.setProto3StringField(this, 1, value);
+};
+
+
+
+
+
+if (jspb.Message.GENERATE_TO_OBJECT) {
+/**
+ * Creates an object representation of this proto.
+ * Field names that are reserved in JavaScript and will be renamed to pb_name.
+ * Optional fields that are not set will be set to undefined.
+ * To access a reserved field use, foo.pb_<name>, eg, foo.pb_default.
+ * For the list of reserved names please see:
+ *     net/proto2/compiler/js/internal/generator.cc#kKeyword.
+ * @param {boolean=} opt_includeInstance Deprecated. whether to include the
+ *     JSPB instance for transitional soy proto support:
+ *     http://goto/soy-param-migration
+ * @return {!Object}
+ */
+proto.adamant.global.v1.RejectPreTransactionRequest.prototype.toObject = function(opt_includeInstance) {
+  return proto.adamant.global.v1.RejectPreTransactionRequest.toObject(opt_includeInstance, this);
+};
+
+
+/**
+ * Static version of the {@see toObject} method.
+ * @param {boolean|undefined} includeInstance Deprecated. Whether to include
+ *     the JSPB instance for transitional soy proto support:
+ *     http://goto/soy-param-migration
+ * @param {!proto.adamant.global.v1.RejectPreTransactionRequest} msg The msg instance to transform.
+ * @return {!Object}
+ * @suppress {unusedLocalVariables} f is only used for nested messages
+ */
+proto.adamant.global.v1.RejectPreTransactionRequest.toObject = function(includeInstance, msg) {
+  var f, obj = {
+    preTransactionId: jspb.Message.getFieldWithDefault(msg, 1, "")
+  };
+
+  if (includeInstance) {
+    obj.$jspbMessageInstance = msg;
+  }
+  return obj;
+};
+}
+
+
+/**
+ * Deserializes binary data (in protobuf wire format).
+ * @param {jspb.ByteSource} bytes The bytes to deserialize.
+ * @return {!proto.adamant.global.v1.RejectPreTransactionRequest}
+ */
+proto.adamant.global.v1.RejectPreTransactionRequest.deserializeBinary = function(bytes) {
+  var reader = new jspb.BinaryReader(bytes);
+  var msg = new proto.adamant.global.v1.RejectPreTransactionRequest;
+  return proto.adamant.global.v1.RejectPreTransactionRequest.deserializeBinaryFromReader(msg, reader);
+};
+
+
+/**
+ * Deserializes binary data (in protobuf wire format) from the
+ * given reader into the given message object.
+ * @param {!proto.adamant.global.v1.RejectPreTransactionRequest} msg The message object to deserialize into.
+ * @param {!jspb.BinaryReader} reader The BinaryReader to use.
+ * @return {!proto.adamant.global.v1.RejectPreTransactionRequest}
+ */
+proto.adamant.global.v1.RejectPreTransactionRequest.deserializeBinaryFromReader = function(msg, reader) {
+  while (reader.nextField()) {
+    if (reader.isEndGroup()) {
+      break;
+    }
+    var field = reader.getFieldNumber();
+    switch (field) {
+    case 1:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setPreTransactionId(value);
+      break;
+    default:
+      reader.skipField();
+      break;
+    }
+  }
+  return msg;
+};
+
+
+/**
+ * Serializes the message to binary data (in protobuf wire format).
+ * @return {!Uint8Array}
+ */
+proto.adamant.global.v1.RejectPreTransactionRequest.prototype.serializeBinary = function() {
+  var writer = new jspb.BinaryWriter();
+  proto.adamant.global.v1.RejectPreTransactionRequest.serializeBinaryToWriter(this, writer);
+  return writer.getResultBuffer();
+};
+
+
+/**
+ * Serializes the given message to binary data (in protobuf wire
+ * format), writing to the given BinaryWriter.
+ * @param {!proto.adamant.global.v1.RejectPreTransactionRequest} message
+ * @param {!jspb.BinaryWriter} writer
+ * @suppress {unusedLocalVariables} f is only used for nested messages
+ */
+proto.adamant.global.v1.RejectPreTransactionRequest.serializeBinaryToWriter = function(message, writer) {
+  var f = undefined;
+  f = message.getPreTransactionId();
+  if (f.length > 0) {
+    writer.writeString(
+      1,
+      f
+    );
+  }
+};
+
+
+/**
+ * optional string pre_transaction_id = 1;
+ * @return {string}
+ */
+proto.adamant.global.v1.RejectPreTransactionRequest.prototype.getPreTransactionId = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 1, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.adamant.global.v1.RejectPreTransactionRequest} returns this
+ */
+proto.adamant.global.v1.RejectPreTransactionRequest.prototype.setPreTransactionId = function(value) {
+  return jspb.Message.setProto3StringField(this, 1, value);
+};
+
+
+
+
+
+if (jspb.Message.GENERATE_TO_OBJECT) {
+/**
+ * Creates an object representation of this proto.
+ * Field names that are reserved in JavaScript and will be renamed to pb_name.
+ * Optional fields that are not set will be set to undefined.
+ * To access a reserved field use, foo.pb_<name>, eg, foo.pb_default.
+ * For the list of reserved names please see:
+ *     net/proto2/compiler/js/internal/generator.cc#kKeyword.
+ * @param {boolean=} opt_includeInstance Deprecated. whether to include the
+ *     JSPB instance for transitional soy proto support:
+ *     http://goto/soy-param-migration
+ * @return {!Object}
+ */
+proto.adamant.global.v1.CancelPreTransactionRequest.prototype.toObject = function(opt_includeInstance) {
+  return proto.adamant.global.v1.CancelPreTransactionRequest.toObject(opt_includeInstance, this);
+};
+
+
+/**
+ * Static version of the {@see toObject} method.
+ * @param {boolean|undefined} includeInstance Deprecated. Whether to include
+ *     the JSPB instance for transitional soy proto support:
+ *     http://goto/soy-param-migration
+ * @param {!proto.adamant.global.v1.CancelPreTransactionRequest} msg The msg instance to transform.
+ * @return {!Object}
+ * @suppress {unusedLocalVariables} f is only used for nested messages
+ */
+proto.adamant.global.v1.CancelPreTransactionRequest.toObject = function(includeInstance, msg) {
+  var f, obj = {
+    preTransactionId: jspb.Message.getFieldWithDefault(msg, 1, "")
+  };
+
+  if (includeInstance) {
+    obj.$jspbMessageInstance = msg;
+  }
+  return obj;
+};
+}
+
+
+/**
+ * Deserializes binary data (in protobuf wire format).
+ * @param {jspb.ByteSource} bytes The bytes to deserialize.
+ * @return {!proto.adamant.global.v1.CancelPreTransactionRequest}
+ */
+proto.adamant.global.v1.CancelPreTransactionRequest.deserializeBinary = function(bytes) {
+  var reader = new jspb.BinaryReader(bytes);
+  var msg = new proto.adamant.global.v1.CancelPreTransactionRequest;
+  return proto.adamant.global.v1.CancelPreTransactionRequest.deserializeBinaryFromReader(msg, reader);
+};
+
+
+/**
+ * Deserializes binary data (in protobuf wire format) from the
+ * given reader into the given message object.
+ * @param {!proto.adamant.global.v1.CancelPreTransactionRequest} msg The message object to deserialize into.
+ * @param {!jspb.BinaryReader} reader The BinaryReader to use.
+ * @return {!proto.adamant.global.v1.CancelPreTransactionRequest}
+ */
+proto.adamant.global.v1.CancelPreTransactionRequest.deserializeBinaryFromReader = function(msg, reader) {
+  while (reader.nextField()) {
+    if (reader.isEndGroup()) {
+      break;
+    }
+    var field = reader.getFieldNumber();
+    switch (field) {
+    case 1:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setPreTransactionId(value);
+      break;
+    default:
+      reader.skipField();
+      break;
+    }
+  }
+  return msg;
+};
+
+
+/**
+ * Serializes the message to binary data (in protobuf wire format).
+ * @return {!Uint8Array}
+ */
+proto.adamant.global.v1.CancelPreTransactionRequest.prototype.serializeBinary = function() {
+  var writer = new jspb.BinaryWriter();
+  proto.adamant.global.v1.CancelPreTransactionRequest.serializeBinaryToWriter(this, writer);
+  return writer.getResultBuffer();
+};
+
+
+/**
+ * Serializes the given message to binary data (in protobuf wire
+ * format), writing to the given BinaryWriter.
+ * @param {!proto.adamant.global.v1.CancelPreTransactionRequest} message
+ * @param {!jspb.BinaryWriter} writer
+ * @suppress {unusedLocalVariables} f is only used for nested messages
+ */
+proto.adamant.global.v1.CancelPreTransactionRequest.serializeBinaryToWriter = function(message, writer) {
+  var f = undefined;
+  f = message.getPreTransactionId();
+  if (f.length > 0) {
+    writer.writeString(
+      1,
+      f
+    );
+  }
+};
+
+
+/**
+ * optional string pre_transaction_id = 1;
+ * @return {string}
+ */
+proto.adamant.global.v1.CancelPreTransactionRequest.prototype.getPreTransactionId = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 1, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.adamant.global.v1.CancelPreTransactionRequest} returns this
+ */
+proto.adamant.global.v1.CancelPreTransactionRequest.prototype.setPreTransactionId = function(value) {
+  return jspb.Message.setProto3StringField(this, 1, value);
+};
+
+
+
+/**
+ * List of repeated fields within this message type.
+ * @private {!Array<number>}
+ * @const
+ */
+proto.adamant.global.v1.ListPreTransactionsByFilterRequest.repeatedFields_ = [6];
+
+
+
+if (jspb.Message.GENERATE_TO_OBJECT) {
+/**
+ * Creates an object representation of this proto.
+ * Field names that are reserved in JavaScript and will be renamed to pb_name.
+ * Optional fields that are not set will be set to undefined.
+ * To access a reserved field use, foo.pb_<name>, eg, foo.pb_default.
+ * For the list of reserved names please see:
+ *     net/proto2/compiler/js/internal/generator.cc#kKeyword.
+ * @param {boolean=} opt_includeInstance Deprecated. whether to include the
+ *     JSPB instance for transitional soy proto support:
+ *     http://goto/soy-param-migration
+ * @return {!Object}
+ */
+proto.adamant.global.v1.ListPreTransactionsByFilterRequest.prototype.toObject = function(opt_includeInstance) {
+  return proto.adamant.global.v1.ListPreTransactionsByFilterRequest.toObject(opt_includeInstance, this);
+};
+
+
+/**
+ * Static version of the {@see toObject} method.
+ * @param {boolean|undefined} includeInstance Deprecated. Whether to include
+ *     the JSPB instance for transitional soy proto support:
+ *     http://goto/soy-param-migration
+ * @param {!proto.adamant.global.v1.ListPreTransactionsByFilterRequest} msg The msg instance to transform.
+ * @return {!Object}
+ * @suppress {unusedLocalVariables} f is only used for nested messages
+ */
+proto.adamant.global.v1.ListPreTransactionsByFilterRequest.toObject = function(includeInstance, msg) {
+  var f, obj = {
+    filterType: jspb.Message.getFieldWithDefault(msg, 1, 0),
+    preTransactionId: jspb.Message.getFieldWithDefault(msg, 2, ""),
+    externalId: jspb.Message.getFieldWithDefault(msg, 3, ""),
+    coin: jspb.Message.getFieldWithDefault(msg, 4, 0),
+    network: jspb.Message.getFieldWithDefault(msg, 5, 0),
+    preTransactionStateList: (f = jspb.Message.getRepeatedField(msg, 6)) == null ? undefined : f,
+    startTime: (f = msg.getStartTime()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f),
+    endTime: (f = msg.getEndTime()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f),
+    pageSize: jspb.Message.getFieldWithDefault(msg, 9, 0),
+    pageToken: jspb.Message.getFieldWithDefault(msg, 10, "")
+  };
+
+  if (includeInstance) {
+    obj.$jspbMessageInstance = msg;
+  }
+  return obj;
+};
+}
+
+
+/**
+ * Deserializes binary data (in protobuf wire format).
+ * @param {jspb.ByteSource} bytes The bytes to deserialize.
+ * @return {!proto.adamant.global.v1.ListPreTransactionsByFilterRequest}
+ */
+proto.adamant.global.v1.ListPreTransactionsByFilterRequest.deserializeBinary = function(bytes) {
+  var reader = new jspb.BinaryReader(bytes);
+  var msg = new proto.adamant.global.v1.ListPreTransactionsByFilterRequest;
+  return proto.adamant.global.v1.ListPreTransactionsByFilterRequest.deserializeBinaryFromReader(msg, reader);
+};
+
+
+/**
+ * Deserializes binary data (in protobuf wire format) from the
+ * given reader into the given message object.
+ * @param {!proto.adamant.global.v1.ListPreTransactionsByFilterRequest} msg The message object to deserialize into.
+ * @param {!jspb.BinaryReader} reader The BinaryReader to use.
+ * @return {!proto.adamant.global.v1.ListPreTransactionsByFilterRequest}
+ */
+proto.adamant.global.v1.ListPreTransactionsByFilterRequest.deserializeBinaryFromReader = function(msg, reader) {
+  while (reader.nextField()) {
+    if (reader.isEndGroup()) {
+      break;
+    }
+    var field = reader.getFieldNumber();
+    switch (field) {
+    case 1:
+      var value = /** @type {!proto.adamant.global.v1.ListFilterType} */ (reader.readEnum());
+      msg.setFilterType(value);
+      break;
+    case 2:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setPreTransactionId(value);
+      break;
+    case 3:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setExternalId(value);
+      break;
+    case 4:
+      var value = /** @type {!proto.gincoinc.global.v1.Coin} */ (reader.readEnum());
+      msg.setCoin(value);
+      break;
+    case 5:
+      var value = /** @type {!proto.gincoinc.global.v1.Network} */ (reader.readEnum());
+      msg.setNetwork(value);
+      break;
+    case 6:
+      var values = /** @type {!Array<!proto.adamant.global.v1.PreTransactionState>} */ (reader.isDelimited() ? reader.readPackedEnum() : [reader.readEnum()]);
+      for (var i = 0; i < values.length; i++) {
+        msg.addPreTransactionState(values[i]);
+      }
+      break;
+    case 7:
+      var value = new google_protobuf_timestamp_pb.Timestamp;
+      reader.readMessage(value,google_protobuf_timestamp_pb.Timestamp.deserializeBinaryFromReader);
+      msg.setStartTime(value);
+      break;
+    case 8:
+      var value = new google_protobuf_timestamp_pb.Timestamp;
+      reader.readMessage(value,google_protobuf_timestamp_pb.Timestamp.deserializeBinaryFromReader);
+      msg.setEndTime(value);
+      break;
+    case 9:
+      var value = /** @type {number} */ (reader.readUint32());
+      msg.setPageSize(value);
+      break;
+    case 10:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setPageToken(value);
+      break;
+    default:
+      reader.skipField();
+      break;
+    }
+  }
+  return msg;
+};
+
+
+/**
+ * Serializes the message to binary data (in protobuf wire format).
+ * @return {!Uint8Array}
+ */
+proto.adamant.global.v1.ListPreTransactionsByFilterRequest.prototype.serializeBinary = function() {
+  var writer = new jspb.BinaryWriter();
+  proto.adamant.global.v1.ListPreTransactionsByFilterRequest.serializeBinaryToWriter(this, writer);
+  return writer.getResultBuffer();
+};
+
+
+/**
+ * Serializes the given message to binary data (in protobuf wire
+ * format), writing to the given BinaryWriter.
+ * @param {!proto.adamant.global.v1.ListPreTransactionsByFilterRequest} message
+ * @param {!jspb.BinaryWriter} writer
+ * @suppress {unusedLocalVariables} f is only used for nested messages
+ */
+proto.adamant.global.v1.ListPreTransactionsByFilterRequest.serializeBinaryToWriter = function(message, writer) {
+  var f = undefined;
+  f = message.getFilterType();
+  if (f !== 0.0) {
+    writer.writeEnum(
+      1,
+      f
+    );
+  }
+  f = /** @type {string} */ (jspb.Message.getField(message, 2));
+  if (f != null) {
+    writer.writeString(
+      2,
+      f
+    );
+  }
+  f = /** @type {string} */ (jspb.Message.getField(message, 3));
+  if (f != null) {
+    writer.writeString(
+      3,
+      f
+    );
+  }
+  f = /** @type {!proto.gincoinc.global.v1.Coin} */ (jspb.Message.getField(message, 4));
+  if (f != null) {
+    writer.writeEnum(
+      4,
+      f
+    );
+  }
+  f = /** @type {!proto.gincoinc.global.v1.Network} */ (jspb.Message.getField(message, 5));
+  if (f != null) {
+    writer.writeEnum(
+      5,
+      f
+    );
+  }
+  f = message.getPreTransactionStateList();
+  if (f.length > 0) {
+    writer.writePackedEnum(
+      6,
+      f
+    );
+  }
+  f = message.getStartTime();
+  if (f != null) {
+    writer.writeMessage(
+      7,
+      f,
+      google_protobuf_timestamp_pb.Timestamp.serializeBinaryToWriter
+    );
+  }
+  f = message.getEndTime();
+  if (f != null) {
+    writer.writeMessage(
+      8,
+      f,
+      google_protobuf_timestamp_pb.Timestamp.serializeBinaryToWriter
+    );
+  }
+  f = /** @type {number} */ (jspb.Message.getField(message, 9));
+  if (f != null) {
+    writer.writeUint32(
+      9,
+      f
+    );
+  }
+  f = /** @type {string} */ (jspb.Message.getField(message, 10));
+  if (f != null) {
+    writer.writeString(
+      10,
+      f
+    );
+  }
+};
+
+
+/**
+ * optional ListFilterType filter_type = 1;
+ * @return {!proto.adamant.global.v1.ListFilterType}
+ */
+proto.adamant.global.v1.ListPreTransactionsByFilterRequest.prototype.getFilterType = function() {
+  return /** @type {!proto.adamant.global.v1.ListFilterType} */ (jspb.Message.getFieldWithDefault(this, 1, 0));
+};
+
+
+/**
+ * @param {!proto.adamant.global.v1.ListFilterType} value
+ * @return {!proto.adamant.global.v1.ListPreTransactionsByFilterRequest} returns this
+ */
+proto.adamant.global.v1.ListPreTransactionsByFilterRequest.prototype.setFilterType = function(value) {
+  return jspb.Message.setProto3EnumField(this, 1, value);
+};
+
+
+/**
+ * optional string pre_transaction_id = 2;
+ * @return {string}
+ */
+proto.adamant.global.v1.ListPreTransactionsByFilterRequest.prototype.getPreTransactionId = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 2, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.adamant.global.v1.ListPreTransactionsByFilterRequest} returns this
+ */
+proto.adamant.global.v1.ListPreTransactionsByFilterRequest.prototype.setPreTransactionId = function(value) {
+  return jspb.Message.setField(this, 2, value);
+};
+
+
+/**
+ * Clears the field making it undefined.
+ * @return {!proto.adamant.global.v1.ListPreTransactionsByFilterRequest} returns this
+ */
+proto.adamant.global.v1.ListPreTransactionsByFilterRequest.prototype.clearPreTransactionId = function() {
+  return jspb.Message.setField(this, 2, undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.adamant.global.v1.ListPreTransactionsByFilterRequest.prototype.hasPreTransactionId = function() {
+  return jspb.Message.getField(this, 2) != null;
+};
+
+
+/**
+ * optional string external_id = 3;
+ * @return {string}
+ */
+proto.adamant.global.v1.ListPreTransactionsByFilterRequest.prototype.getExternalId = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 3, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.adamant.global.v1.ListPreTransactionsByFilterRequest} returns this
+ */
+proto.adamant.global.v1.ListPreTransactionsByFilterRequest.prototype.setExternalId = function(value) {
+  return jspb.Message.setField(this, 3, value);
+};
+
+
+/**
+ * Clears the field making it undefined.
+ * @return {!proto.adamant.global.v1.ListPreTransactionsByFilterRequest} returns this
+ */
+proto.adamant.global.v1.ListPreTransactionsByFilterRequest.prototype.clearExternalId = function() {
+  return jspb.Message.setField(this, 3, undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.adamant.global.v1.ListPreTransactionsByFilterRequest.prototype.hasExternalId = function() {
+  return jspb.Message.getField(this, 3) != null;
+};
+
+
+/**
+ * optional gincoinc.global.v1.Coin coin = 4;
+ * @return {!proto.gincoinc.global.v1.Coin}
+ */
+proto.adamant.global.v1.ListPreTransactionsByFilterRequest.prototype.getCoin = function() {
+  return /** @type {!proto.gincoinc.global.v1.Coin} */ (jspb.Message.getFieldWithDefault(this, 4, 0));
+};
+
+
+/**
+ * @param {!proto.gincoinc.global.v1.Coin} value
+ * @return {!proto.adamant.global.v1.ListPreTransactionsByFilterRequest} returns this
+ */
+proto.adamant.global.v1.ListPreTransactionsByFilterRequest.prototype.setCoin = function(value) {
+  return jspb.Message.setField(this, 4, value);
+};
+
+
+/**
+ * Clears the field making it undefined.
+ * @return {!proto.adamant.global.v1.ListPreTransactionsByFilterRequest} returns this
+ */
+proto.adamant.global.v1.ListPreTransactionsByFilterRequest.prototype.clearCoin = function() {
+  return jspb.Message.setField(this, 4, undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.adamant.global.v1.ListPreTransactionsByFilterRequest.prototype.hasCoin = function() {
+  return jspb.Message.getField(this, 4) != null;
+};
+
+
+/**
+ * optional gincoinc.global.v1.Network network = 5;
+ * @return {!proto.gincoinc.global.v1.Network}
+ */
+proto.adamant.global.v1.ListPreTransactionsByFilterRequest.prototype.getNetwork = function() {
+  return /** @type {!proto.gincoinc.global.v1.Network} */ (jspb.Message.getFieldWithDefault(this, 5, 0));
+};
+
+
+/**
+ * @param {!proto.gincoinc.global.v1.Network} value
+ * @return {!proto.adamant.global.v1.ListPreTransactionsByFilterRequest} returns this
+ */
+proto.adamant.global.v1.ListPreTransactionsByFilterRequest.prototype.setNetwork = function(value) {
+  return jspb.Message.setField(this, 5, value);
+};
+
+
+/**
+ * Clears the field making it undefined.
+ * @return {!proto.adamant.global.v1.ListPreTransactionsByFilterRequest} returns this
+ */
+proto.adamant.global.v1.ListPreTransactionsByFilterRequest.prototype.clearNetwork = function() {
+  return jspb.Message.setField(this, 5, undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.adamant.global.v1.ListPreTransactionsByFilterRequest.prototype.hasNetwork = function() {
+  return jspb.Message.getField(this, 5) != null;
+};
+
+
+/**
+ * repeated PreTransactionState pre_transaction_state = 6;
+ * @return {!Array<!proto.adamant.global.v1.PreTransactionState>}
+ */
+proto.adamant.global.v1.ListPreTransactionsByFilterRequest.prototype.getPreTransactionStateList = function() {
+  return /** @type {!Array<!proto.adamant.global.v1.PreTransactionState>} */ (jspb.Message.getRepeatedField(this, 6));
+};
+
+
+/**
+ * @param {!Array<!proto.adamant.global.v1.PreTransactionState>} value
+ * @return {!proto.adamant.global.v1.ListPreTransactionsByFilterRequest} returns this
+ */
+proto.adamant.global.v1.ListPreTransactionsByFilterRequest.prototype.setPreTransactionStateList = function(value) {
+  return jspb.Message.setField(this, 6, value || []);
+};
+
+
+/**
+ * @param {!proto.adamant.global.v1.PreTransactionState} value
+ * @param {number=} opt_index
+ * @return {!proto.adamant.global.v1.ListPreTransactionsByFilterRequest} returns this
+ */
+proto.adamant.global.v1.ListPreTransactionsByFilterRequest.prototype.addPreTransactionState = function(value, opt_index) {
+  return jspb.Message.addToRepeatedField(this, 6, value, opt_index);
+};
+
+
+/**
+ * Clears the list making it empty but non-null.
+ * @return {!proto.adamant.global.v1.ListPreTransactionsByFilterRequest} returns this
+ */
+proto.adamant.global.v1.ListPreTransactionsByFilterRequest.prototype.clearPreTransactionStateList = function() {
+  return this.setPreTransactionStateList([]);
+};
+
+
+/**
+ * optional google.protobuf.Timestamp start_time = 7;
+ * @return {?proto.google.protobuf.Timestamp}
+ */
+proto.adamant.global.v1.ListPreTransactionsByFilterRequest.prototype.getStartTime = function() {
+  return /** @type{?proto.google.protobuf.Timestamp} */ (
+    jspb.Message.getWrapperField(this, google_protobuf_timestamp_pb.Timestamp, 7));
+};
+
+
+/**
+ * @param {?proto.google.protobuf.Timestamp|undefined} value
+ * @return {!proto.adamant.global.v1.ListPreTransactionsByFilterRequest} returns this
+*/
+proto.adamant.global.v1.ListPreTransactionsByFilterRequest.prototype.setStartTime = function(value) {
+  return jspb.Message.setWrapperField(this, 7, value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
+ * @return {!proto.adamant.global.v1.ListPreTransactionsByFilterRequest} returns this
+ */
+proto.adamant.global.v1.ListPreTransactionsByFilterRequest.prototype.clearStartTime = function() {
+  return this.setStartTime(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.adamant.global.v1.ListPreTransactionsByFilterRequest.prototype.hasStartTime = function() {
+  return jspb.Message.getField(this, 7) != null;
+};
+
+
+/**
+ * optional google.protobuf.Timestamp end_time = 8;
+ * @return {?proto.google.protobuf.Timestamp}
+ */
+proto.adamant.global.v1.ListPreTransactionsByFilterRequest.prototype.getEndTime = function() {
+  return /** @type{?proto.google.protobuf.Timestamp} */ (
+    jspb.Message.getWrapperField(this, google_protobuf_timestamp_pb.Timestamp, 8));
+};
+
+
+/**
+ * @param {?proto.google.protobuf.Timestamp|undefined} value
+ * @return {!proto.adamant.global.v1.ListPreTransactionsByFilterRequest} returns this
+*/
+proto.adamant.global.v1.ListPreTransactionsByFilterRequest.prototype.setEndTime = function(value) {
+  return jspb.Message.setWrapperField(this, 8, value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
+ * @return {!proto.adamant.global.v1.ListPreTransactionsByFilterRequest} returns this
+ */
+proto.adamant.global.v1.ListPreTransactionsByFilterRequest.prototype.clearEndTime = function() {
+  return this.setEndTime(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.adamant.global.v1.ListPreTransactionsByFilterRequest.prototype.hasEndTime = function() {
+  return jspb.Message.getField(this, 8) != null;
+};
+
+
+/**
+ * optional uint32 page_size = 9;
+ * @return {number}
+ */
+proto.adamant.global.v1.ListPreTransactionsByFilterRequest.prototype.getPageSize = function() {
+  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 9, 0));
+};
+
+
+/**
+ * @param {number} value
+ * @return {!proto.adamant.global.v1.ListPreTransactionsByFilterRequest} returns this
+ */
+proto.adamant.global.v1.ListPreTransactionsByFilterRequest.prototype.setPageSize = function(value) {
+  return jspb.Message.setField(this, 9, value);
+};
+
+
+/**
+ * Clears the field making it undefined.
+ * @return {!proto.adamant.global.v1.ListPreTransactionsByFilterRequest} returns this
+ */
+proto.adamant.global.v1.ListPreTransactionsByFilterRequest.prototype.clearPageSize = function() {
+  return jspb.Message.setField(this, 9, undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.adamant.global.v1.ListPreTransactionsByFilterRequest.prototype.hasPageSize = function() {
+  return jspb.Message.getField(this, 9) != null;
+};
+
+
+/**
+ * optional string page_token = 10;
+ * @return {string}
+ */
+proto.adamant.global.v1.ListPreTransactionsByFilterRequest.prototype.getPageToken = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 10, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.adamant.global.v1.ListPreTransactionsByFilterRequest} returns this
+ */
+proto.adamant.global.v1.ListPreTransactionsByFilterRequest.prototype.setPageToken = function(value) {
+  return jspb.Message.setField(this, 10, value);
+};
+
+
+/**
+ * Clears the field making it undefined.
+ * @return {!proto.adamant.global.v1.ListPreTransactionsByFilterRequest} returns this
+ */
+proto.adamant.global.v1.ListPreTransactionsByFilterRequest.prototype.clearPageToken = function() {
+  return jspb.Message.setField(this, 10, undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.adamant.global.v1.ListPreTransactionsByFilterRequest.prototype.hasPageToken = function() {
+  return jspb.Message.getField(this, 10) != null;
+};
+
+
+
+/**
+ * List of repeated fields within this message type.
+ * @private {!Array<number>}
+ * @const
+ */
+proto.adamant.global.v1.ListPreTransactionsByFilterResponse.repeatedFields_ = [1];
+
+
+
+if (jspb.Message.GENERATE_TO_OBJECT) {
+/**
+ * Creates an object representation of this proto.
+ * Field names that are reserved in JavaScript and will be renamed to pb_name.
+ * Optional fields that are not set will be set to undefined.
+ * To access a reserved field use, foo.pb_<name>, eg, foo.pb_default.
+ * For the list of reserved names please see:
+ *     net/proto2/compiler/js/internal/generator.cc#kKeyword.
+ * @param {boolean=} opt_includeInstance Deprecated. whether to include the
+ *     JSPB instance for transitional soy proto support:
+ *     http://goto/soy-param-migration
+ * @return {!Object}
+ */
+proto.adamant.global.v1.ListPreTransactionsByFilterResponse.prototype.toObject = function(opt_includeInstance) {
+  return proto.adamant.global.v1.ListPreTransactionsByFilterResponse.toObject(opt_includeInstance, this);
+};
+
+
+/**
+ * Static version of the {@see toObject} method.
+ * @param {boolean|undefined} includeInstance Deprecated. Whether to include
+ *     the JSPB instance for transitional soy proto support:
+ *     http://goto/soy-param-migration
+ * @param {!proto.adamant.global.v1.ListPreTransactionsByFilterResponse} msg The msg instance to transform.
+ * @return {!Object}
+ * @suppress {unusedLocalVariables} f is only used for nested messages
+ */
+proto.adamant.global.v1.ListPreTransactionsByFilterResponse.toObject = function(includeInstance, msg) {
+  var f, obj = {
+    preTransactionsList: jspb.Message.toObjectList(msg.getPreTransactionsList(),
+    gincoinc_adamant_global_v1_adamantglobalv1_model_pb.PreTransaction.toObject, includeInstance),
+    nextPageToken: jspb.Message.getFieldWithDefault(msg, 2, "")
+  };
+
+  if (includeInstance) {
+    obj.$jspbMessageInstance = msg;
+  }
+  return obj;
+};
+}
+
+
+/**
+ * Deserializes binary data (in protobuf wire format).
+ * @param {jspb.ByteSource} bytes The bytes to deserialize.
+ * @return {!proto.adamant.global.v1.ListPreTransactionsByFilterResponse}
+ */
+proto.adamant.global.v1.ListPreTransactionsByFilterResponse.deserializeBinary = function(bytes) {
+  var reader = new jspb.BinaryReader(bytes);
+  var msg = new proto.adamant.global.v1.ListPreTransactionsByFilterResponse;
+  return proto.adamant.global.v1.ListPreTransactionsByFilterResponse.deserializeBinaryFromReader(msg, reader);
+};
+
+
+/**
+ * Deserializes binary data (in protobuf wire format) from the
+ * given reader into the given message object.
+ * @param {!proto.adamant.global.v1.ListPreTransactionsByFilterResponse} msg The message object to deserialize into.
+ * @param {!jspb.BinaryReader} reader The BinaryReader to use.
+ * @return {!proto.adamant.global.v1.ListPreTransactionsByFilterResponse}
+ */
+proto.adamant.global.v1.ListPreTransactionsByFilterResponse.deserializeBinaryFromReader = function(msg, reader) {
+  while (reader.nextField()) {
+    if (reader.isEndGroup()) {
+      break;
+    }
+    var field = reader.getFieldNumber();
+    switch (field) {
+    case 1:
+      var value = new gincoinc_adamant_global_v1_adamantglobalv1_model_pb.PreTransaction;
+      reader.readMessage(value,gincoinc_adamant_global_v1_adamantglobalv1_model_pb.PreTransaction.deserializeBinaryFromReader);
+      msg.addPreTransactions(value);
+      break;
+    case 2:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setNextPageToken(value);
+      break;
+    default:
+      reader.skipField();
+      break;
+    }
+  }
+  return msg;
+};
+
+
+/**
+ * Serializes the message to binary data (in protobuf wire format).
+ * @return {!Uint8Array}
+ */
+proto.adamant.global.v1.ListPreTransactionsByFilterResponse.prototype.serializeBinary = function() {
+  var writer = new jspb.BinaryWriter();
+  proto.adamant.global.v1.ListPreTransactionsByFilterResponse.serializeBinaryToWriter(this, writer);
+  return writer.getResultBuffer();
+};
+
+
+/**
+ * Serializes the given message to binary data (in protobuf wire
+ * format), writing to the given BinaryWriter.
+ * @param {!proto.adamant.global.v1.ListPreTransactionsByFilterResponse} message
+ * @param {!jspb.BinaryWriter} writer
+ * @suppress {unusedLocalVariables} f is only used for nested messages
+ */
+proto.adamant.global.v1.ListPreTransactionsByFilterResponse.serializeBinaryToWriter = function(message, writer) {
+  var f = undefined;
+  f = message.getPreTransactionsList();
+  if (f.length > 0) {
+    writer.writeRepeatedMessage(
+      1,
+      f,
+      gincoinc_adamant_global_v1_adamantglobalv1_model_pb.PreTransaction.serializeBinaryToWriter
+    );
+  }
+  f = message.getNextPageToken();
+  if (f.length > 0) {
+    writer.writeString(
+      2,
+      f
+    );
+  }
+};
+
+
+/**
+ * repeated PreTransaction pre_transactions = 1;
+ * @return {!Array<!proto.adamant.global.v1.PreTransaction>}
+ */
+proto.adamant.global.v1.ListPreTransactionsByFilterResponse.prototype.getPreTransactionsList = function() {
+  return /** @type{!Array<!proto.adamant.global.v1.PreTransaction>} */ (
+    jspb.Message.getRepeatedWrapperField(this, gincoinc_adamant_global_v1_adamantglobalv1_model_pb.PreTransaction, 1));
+};
+
+
+/**
+ * @param {!Array<!proto.adamant.global.v1.PreTransaction>} value
+ * @return {!proto.adamant.global.v1.ListPreTransactionsByFilterResponse} returns this
+*/
+proto.adamant.global.v1.ListPreTransactionsByFilterResponse.prototype.setPreTransactionsList = function(value) {
+  return jspb.Message.setRepeatedWrapperField(this, 1, value);
+};
+
+
+/**
+ * @param {!proto.adamant.global.v1.PreTransaction=} opt_value
+ * @param {number=} opt_index
+ * @return {!proto.adamant.global.v1.PreTransaction}
+ */
+proto.adamant.global.v1.ListPreTransactionsByFilterResponse.prototype.addPreTransactions = function(opt_value, opt_index) {
+  return jspb.Message.addToRepeatedWrapperField(this, 1, opt_value, proto.adamant.global.v1.PreTransaction, opt_index);
+};
+
+
+/**
+ * Clears the list making it empty but non-null.
+ * @return {!proto.adamant.global.v1.ListPreTransactionsByFilterResponse} returns this
+ */
+proto.adamant.global.v1.ListPreTransactionsByFilterResponse.prototype.clearPreTransactionsList = function() {
+  return this.setPreTransactionsList([]);
+};
+
+
+/**
+ * optional string next_page_token = 2;
+ * @return {string}
+ */
+proto.adamant.global.v1.ListPreTransactionsByFilterResponse.prototype.getNextPageToken = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 2, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.adamant.global.v1.ListPreTransactionsByFilterResponse} returns this
+ */
+proto.adamant.global.v1.ListPreTransactionsByFilterResponse.prototype.setNextPageToken = function(value) {
+  return jspb.Message.setProto3StringField(this, 2, value);
+};
+
+
+
+/**
+ * List of repeated fields within this message type.
+ * @private {!Array<number>}
+ * @const
+ */
 proto.adamant.global.v1.CreateTransactionRequest.repeatedFields_ = [3];
 
 
@@ -17510,7 +20251,9 @@ proto.adamant.global.v1.CreateTransactionRequest.toObject = function(includeInst
     solanaSpecific: (f = msg.getSolanaSpecific()) && gincoinc_adamant_global_v1_adamantglobalv1_model_pb.CreateTransactionSolanaSpecific.toObject(includeInstance, f),
     aptosSpecific: (f = msg.getAptosSpecific()) && gincoinc_adamant_global_v1_adamantglobalv1_model_pb.CreateTransactionAptosSpecific.toObject(includeInstance, f),
     avalancheSpecific: (f = msg.getAvalancheSpecific()) && gincoinc_adamant_global_v1_adamantglobalv1_model_pb.CreateTransactionAvalancheSpecific.toObject(includeInstance, f),
-    utxoSpecific: (f = msg.getUtxoSpecific()) && proto.adamant.global.v1.UtxoSpecific.toObject(includeInstance, f)
+    nftSpecific: (f = msg.getNftSpecific()) && gincoinc_adamant_global_v1_adamantglobalv1_model_pb.CreateTransactionNFTSpecific.toObject(includeInstance, f),
+    utxoSpecific: (f = msg.getUtxoSpecific()) && proto.adamant.global.v1.UtxoSpecific.toObject(includeInstance, f),
+    preTransactionId: jspb.Message.getFieldWithDefault(msg, 21, "")
   };
 
   if (includeInstance) {
@@ -17636,10 +20379,19 @@ proto.adamant.global.v1.CreateTransactionRequest.deserializeBinaryFromReader = f
       reader.readMessage(value,gincoinc_adamant_global_v1_adamantglobalv1_model_pb.CreateTransactionAvalancheSpecific.deserializeBinaryFromReader);
       msg.setAvalancheSpecific(value);
       break;
+    case 22:
+      var value = new gincoinc_adamant_global_v1_adamantglobalv1_model_pb.CreateTransactionNFTSpecific;
+      reader.readMessage(value,gincoinc_adamant_global_v1_adamantglobalv1_model_pb.CreateTransactionNFTSpecific.deserializeBinaryFromReader);
+      msg.setNftSpecific(value);
+      break;
     case 18:
       var value = new proto.adamant.global.v1.UtxoSpecific;
       reader.readMessage(value,proto.adamant.global.v1.UtxoSpecific.deserializeBinaryFromReader);
       msg.setUtxoSpecific(value);
+      break;
+    case 21:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setPreTransactionId(value);
       break;
     default:
       reader.skipField();
@@ -17816,12 +20568,27 @@ proto.adamant.global.v1.CreateTransactionRequest.serializeBinaryToWriter = funct
       gincoinc_adamant_global_v1_adamantglobalv1_model_pb.CreateTransactionAvalancheSpecific.serializeBinaryToWriter
     );
   }
+  f = message.getNftSpecific();
+  if (f != null) {
+    writer.writeMessage(
+      22,
+      f,
+      gincoinc_adamant_global_v1_adamantglobalv1_model_pb.CreateTransactionNFTSpecific.serializeBinaryToWriter
+    );
+  }
   f = message.getUtxoSpecific();
   if (f != null) {
     writer.writeMessage(
       18,
       f,
       proto.adamant.global.v1.UtxoSpecific.serializeBinaryToWriter
+    );
+  }
+  f = /** @type {string} */ (jspb.Message.getField(message, 21));
+  if (f != null) {
+    writer.writeString(
+      21,
+      f
     );
   }
 };
@@ -18418,6 +21185,43 @@ proto.adamant.global.v1.CreateTransactionRequest.prototype.hasAvalancheSpecific 
 
 
 /**
+ * optional CreateTransactionNFTSpecific nft_specific = 22;
+ * @return {?proto.adamant.global.v1.CreateTransactionNFTSpecific}
+ */
+proto.adamant.global.v1.CreateTransactionRequest.prototype.getNftSpecific = function() {
+  return /** @type{?proto.adamant.global.v1.CreateTransactionNFTSpecific} */ (
+    jspb.Message.getWrapperField(this, gincoinc_adamant_global_v1_adamantglobalv1_model_pb.CreateTransactionNFTSpecific, 22));
+};
+
+
+/**
+ * @param {?proto.adamant.global.v1.CreateTransactionNFTSpecific|undefined} value
+ * @return {!proto.adamant.global.v1.CreateTransactionRequest} returns this
+*/
+proto.adamant.global.v1.CreateTransactionRequest.prototype.setNftSpecific = function(value) {
+  return jspb.Message.setWrapperField(this, 22, value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
+ * @return {!proto.adamant.global.v1.CreateTransactionRequest} returns this
+ */
+proto.adamant.global.v1.CreateTransactionRequest.prototype.clearNftSpecific = function() {
+  return this.setNftSpecific(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.adamant.global.v1.CreateTransactionRequest.prototype.hasNftSpecific = function() {
+  return jspb.Message.getField(this, 22) != null;
+};
+
+
+/**
  * optional UtxoSpecific utxo_specific = 18;
  * @return {?proto.adamant.global.v1.UtxoSpecific}
  */
@@ -18451,6 +21255,42 @@ proto.adamant.global.v1.CreateTransactionRequest.prototype.clearUtxoSpecific = f
  */
 proto.adamant.global.v1.CreateTransactionRequest.prototype.hasUtxoSpecific = function() {
   return jspb.Message.getField(this, 18) != null;
+};
+
+
+/**
+ * optional string pre_transaction_id = 21;
+ * @return {string}
+ */
+proto.adamant.global.v1.CreateTransactionRequest.prototype.getPreTransactionId = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 21, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.adamant.global.v1.CreateTransactionRequest} returns this
+ */
+proto.adamant.global.v1.CreateTransactionRequest.prototype.setPreTransactionId = function(value) {
+  return jspb.Message.setField(this, 21, value);
+};
+
+
+/**
+ * Clears the field making it undefined.
+ * @return {!proto.adamant.global.v1.CreateTransactionRequest} returns this
+ */
+proto.adamant.global.v1.CreateTransactionRequest.prototype.clearPreTransactionId = function() {
+  return jspb.Message.setField(this, 21, undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.adamant.global.v1.CreateTransactionRequest.prototype.hasPreTransactionId = function() {
+  return jspb.Message.getField(this, 21) != null;
 };
 
 
@@ -34488,7 +37328,9 @@ proto.adamant.global.v1.ListAuditLogsRequest.toObject = function(includeInstance
     auditLogGroup: jspb.Message.getFieldWithDefault(msg, 1, 0),
     accountId: jspb.Message.getFieldWithDefault(msg, 2, ""),
     pageSize: jspb.Message.getFieldWithDefault(msg, 3, 0),
-    pageToken: jspb.Message.getFieldWithDefault(msg, 4, "")
+    pageToken: jspb.Message.getFieldWithDefault(msg, 4, ""),
+    startEventTime: (f = msg.getStartEventTime()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f),
+    endEventTime: (f = msg.getEndEventTime()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -34540,6 +37382,16 @@ proto.adamant.global.v1.ListAuditLogsRequest.deserializeBinaryFromReader = funct
     case 4:
       var value = /** @type {string} */ (reader.readString());
       msg.setPageToken(value);
+      break;
+    case 5:
+      var value = new google_protobuf_timestamp_pb.Timestamp;
+      reader.readMessage(value,google_protobuf_timestamp_pb.Timestamp.deserializeBinaryFromReader);
+      msg.setStartEventTime(value);
+      break;
+    case 6:
+      var value = new google_protobuf_timestamp_pb.Timestamp;
+      reader.readMessage(value,google_protobuf_timestamp_pb.Timestamp.deserializeBinaryFromReader);
+      msg.setEndEventTime(value);
       break;
     default:
       reader.skipField();
@@ -34596,6 +37448,22 @@ proto.adamant.global.v1.ListAuditLogsRequest.serializeBinaryToWriter = function(
     writer.writeString(
       4,
       f
+    );
+  }
+  f = message.getStartEventTime();
+  if (f != null) {
+    writer.writeMessage(
+      5,
+      f,
+      google_protobuf_timestamp_pb.Timestamp.serializeBinaryToWriter
+    );
+  }
+  f = message.getEndEventTime();
+  if (f != null) {
+    writer.writeMessage(
+      6,
+      f,
+      google_protobuf_timestamp_pb.Timestamp.serializeBinaryToWriter
     );
   }
 };
@@ -34670,6 +37538,80 @@ proto.adamant.global.v1.ListAuditLogsRequest.prototype.getPageToken = function()
  */
 proto.adamant.global.v1.ListAuditLogsRequest.prototype.setPageToken = function(value) {
   return jspb.Message.setProto3StringField(this, 4, value);
+};
+
+
+/**
+ * optional google.protobuf.Timestamp start_event_time = 5;
+ * @return {?proto.google.protobuf.Timestamp}
+ */
+proto.adamant.global.v1.ListAuditLogsRequest.prototype.getStartEventTime = function() {
+  return /** @type{?proto.google.protobuf.Timestamp} */ (
+    jspb.Message.getWrapperField(this, google_protobuf_timestamp_pb.Timestamp, 5));
+};
+
+
+/**
+ * @param {?proto.google.protobuf.Timestamp|undefined} value
+ * @return {!proto.adamant.global.v1.ListAuditLogsRequest} returns this
+*/
+proto.adamant.global.v1.ListAuditLogsRequest.prototype.setStartEventTime = function(value) {
+  return jspb.Message.setWrapperField(this, 5, value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
+ * @return {!proto.adamant.global.v1.ListAuditLogsRequest} returns this
+ */
+proto.adamant.global.v1.ListAuditLogsRequest.prototype.clearStartEventTime = function() {
+  return this.setStartEventTime(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.adamant.global.v1.ListAuditLogsRequest.prototype.hasStartEventTime = function() {
+  return jspb.Message.getField(this, 5) != null;
+};
+
+
+/**
+ * optional google.protobuf.Timestamp end_event_time = 6;
+ * @return {?proto.google.protobuf.Timestamp}
+ */
+proto.adamant.global.v1.ListAuditLogsRequest.prototype.getEndEventTime = function() {
+  return /** @type{?proto.google.protobuf.Timestamp} */ (
+    jspb.Message.getWrapperField(this, google_protobuf_timestamp_pb.Timestamp, 6));
+};
+
+
+/**
+ * @param {?proto.google.protobuf.Timestamp|undefined} value
+ * @return {!proto.adamant.global.v1.ListAuditLogsRequest} returns this
+*/
+proto.adamant.global.v1.ListAuditLogsRequest.prototype.setEndEventTime = function(value) {
+  return jspb.Message.setWrapperField(this, 6, value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
+ * @return {!proto.adamant.global.v1.ListAuditLogsRequest} returns this
+ */
+proto.adamant.global.v1.ListAuditLogsRequest.prototype.clearEndEventTime = function() {
+  return this.setEndEventTime(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.adamant.global.v1.ListAuditLogsRequest.prototype.hasEndEventTime = function() {
+  return jspb.Message.getField(this, 6) != null;
 };
 
 
@@ -44410,6 +47352,9 @@ proto.adamant.global.v1.DownloadResourceRequest.toObject = function(includeInsta
     downloadResourceType: jspb.Message.getFieldWithDefault(msg, 1, 0),
     watchOnly: jspb.Message.getBooleanFieldWithDefault(msg, 5, false),
     walletId: jspb.Message.getFieldWithDefault(msg, 2, ""),
+    isActivated: jspb.Message.getBooleanFieldWithDefault(msg, 6, false),
+    status: jspb.Message.getFieldWithDefault(msg, 7, 0),
+    network: jspb.Message.getFieldWithDefault(msg, 8, 0),
     startTime: (f = msg.getStartTime()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f),
     endTime: (f = msg.getEndTime()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f)
   };
@@ -44459,6 +47404,18 @@ proto.adamant.global.v1.DownloadResourceRequest.deserializeBinaryFromReader = fu
     case 2:
       var value = /** @type {string} */ (reader.readString());
       msg.setWalletId(value);
+      break;
+    case 6:
+      var value = /** @type {boolean} */ (reader.readBool());
+      msg.setIsActivated(value);
+      break;
+    case 7:
+      var value = /** @type {!proto.adamant.global.v1.BlacklistAddressStatus} */ (reader.readEnum());
+      msg.setStatus(value);
+      break;
+    case 8:
+      var value = /** @type {!proto.gincoinc.global.v1.Network} */ (reader.readEnum());
+      msg.setNetwork(value);
       break;
     case 3:
       var value = new google_protobuf_timestamp_pb.Timestamp;
@@ -44517,6 +47474,27 @@ proto.adamant.global.v1.DownloadResourceRequest.serializeBinaryToWriter = functi
   if (f.length > 0) {
     writer.writeString(
       2,
+      f
+    );
+  }
+  f = /** @type {boolean} */ (jspb.Message.getField(message, 6));
+  if (f != null) {
+    writer.writeBool(
+      6,
+      f
+    );
+  }
+  f = /** @type {!proto.adamant.global.v1.BlacklistAddressStatus} */ (jspb.Message.getField(message, 7));
+  if (f != null) {
+    writer.writeEnum(
+      7,
+      f
+    );
+  }
+  f = /** @type {!proto.gincoinc.global.v1.Network} */ (jspb.Message.getField(message, 8));
+  if (f != null) {
+    writer.writeEnum(
+      8,
       f
     );
   }
@@ -44590,6 +47568,114 @@ proto.adamant.global.v1.DownloadResourceRequest.prototype.getWalletId = function
  */
 proto.adamant.global.v1.DownloadResourceRequest.prototype.setWalletId = function(value) {
   return jspb.Message.setProto3StringField(this, 2, value);
+};
+
+
+/**
+ * optional bool is_activated = 6;
+ * @return {boolean}
+ */
+proto.adamant.global.v1.DownloadResourceRequest.prototype.getIsActivated = function() {
+  return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 6, false));
+};
+
+
+/**
+ * @param {boolean} value
+ * @return {!proto.adamant.global.v1.DownloadResourceRequest} returns this
+ */
+proto.adamant.global.v1.DownloadResourceRequest.prototype.setIsActivated = function(value) {
+  return jspb.Message.setField(this, 6, value);
+};
+
+
+/**
+ * Clears the field making it undefined.
+ * @return {!proto.adamant.global.v1.DownloadResourceRequest} returns this
+ */
+proto.adamant.global.v1.DownloadResourceRequest.prototype.clearIsActivated = function() {
+  return jspb.Message.setField(this, 6, undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.adamant.global.v1.DownloadResourceRequest.prototype.hasIsActivated = function() {
+  return jspb.Message.getField(this, 6) != null;
+};
+
+
+/**
+ * optional BlacklistAddressStatus status = 7;
+ * @return {!proto.adamant.global.v1.BlacklistAddressStatus}
+ */
+proto.adamant.global.v1.DownloadResourceRequest.prototype.getStatus = function() {
+  return /** @type {!proto.adamant.global.v1.BlacklistAddressStatus} */ (jspb.Message.getFieldWithDefault(this, 7, 0));
+};
+
+
+/**
+ * @param {!proto.adamant.global.v1.BlacklistAddressStatus} value
+ * @return {!proto.adamant.global.v1.DownloadResourceRequest} returns this
+ */
+proto.adamant.global.v1.DownloadResourceRequest.prototype.setStatus = function(value) {
+  return jspb.Message.setField(this, 7, value);
+};
+
+
+/**
+ * Clears the field making it undefined.
+ * @return {!proto.adamant.global.v1.DownloadResourceRequest} returns this
+ */
+proto.adamant.global.v1.DownloadResourceRequest.prototype.clearStatus = function() {
+  return jspb.Message.setField(this, 7, undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.adamant.global.v1.DownloadResourceRequest.prototype.hasStatus = function() {
+  return jspb.Message.getField(this, 7) != null;
+};
+
+
+/**
+ * optional gincoinc.global.v1.Network network = 8;
+ * @return {!proto.gincoinc.global.v1.Network}
+ */
+proto.adamant.global.v1.DownloadResourceRequest.prototype.getNetwork = function() {
+  return /** @type {!proto.gincoinc.global.v1.Network} */ (jspb.Message.getFieldWithDefault(this, 8, 0));
+};
+
+
+/**
+ * @param {!proto.gincoinc.global.v1.Network} value
+ * @return {!proto.adamant.global.v1.DownloadResourceRequest} returns this
+ */
+proto.adamant.global.v1.DownloadResourceRequest.prototype.setNetwork = function(value) {
+  return jspb.Message.setField(this, 8, value);
+};
+
+
+/**
+ * Clears the field making it undefined.
+ * @return {!proto.adamant.global.v1.DownloadResourceRequest} returns this
+ */
+proto.adamant.global.v1.DownloadResourceRequest.prototype.clearNetwork = function() {
+  return jspb.Message.setField(this, 8, undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.adamant.global.v1.DownloadResourceRequest.prototype.hasNetwork = function() {
+  return jspb.Message.getField(this, 8) != null;
 };
 
 
@@ -49407,6 +52493,500 @@ proto.adamant.global.v1.ListStakingValidatorsResponse.prototype.setNextPageToken
 
 
 
+
+
+if (jspb.Message.GENERATE_TO_OBJECT) {
+/**
+ * Creates an object representation of this proto.
+ * Field names that are reserved in JavaScript and will be renamed to pb_name.
+ * Optional fields that are not set will be set to undefined.
+ * To access a reserved field use, foo.pb_<name>, eg, foo.pb_default.
+ * For the list of reserved names please see:
+ *     net/proto2/compiler/js/internal/generator.cc#kKeyword.
+ * @param {boolean=} opt_includeInstance Deprecated. whether to include the
+ *     JSPB instance for transitional soy proto support:
+ *     http://goto/soy-param-migration
+ * @return {!Object}
+ */
+proto.adamant.global.v1.ListNFTsByFilterRequest.prototype.toObject = function(opt_includeInstance) {
+  return proto.adamant.global.v1.ListNFTsByFilterRequest.toObject(opt_includeInstance, this);
+};
+
+
+/**
+ * Static version of the {@see toObject} method.
+ * @param {boolean|undefined} includeInstance Deprecated. Whether to include
+ *     the JSPB instance for transitional soy proto support:
+ *     http://goto/soy-param-migration
+ * @param {!proto.adamant.global.v1.ListNFTsByFilterRequest} msg The msg instance to transform.
+ * @return {!Object}
+ * @suppress {unusedLocalVariables} f is only used for nested messages
+ */
+proto.adamant.global.v1.ListNFTsByFilterRequest.toObject = function(includeInstance, msg) {
+  var f, obj = {
+    filterType: jspb.Message.getFieldWithDefault(msg, 1, 0),
+    walletId: jspb.Message.getFieldWithDefault(msg, 2, ""),
+    tokenId: jspb.Message.getFieldWithDefault(msg, 3, ""),
+    tokenName: jspb.Message.getFieldWithDefault(msg, 4, ""),
+    metadata: jspb.Message.getFieldWithDefault(msg, 5, "")
+  };
+
+  if (includeInstance) {
+    obj.$jspbMessageInstance = msg;
+  }
+  return obj;
+};
+}
+
+
+/**
+ * Deserializes binary data (in protobuf wire format).
+ * @param {jspb.ByteSource} bytes The bytes to deserialize.
+ * @return {!proto.adamant.global.v1.ListNFTsByFilterRequest}
+ */
+proto.adamant.global.v1.ListNFTsByFilterRequest.deserializeBinary = function(bytes) {
+  var reader = new jspb.BinaryReader(bytes);
+  var msg = new proto.adamant.global.v1.ListNFTsByFilterRequest;
+  return proto.adamant.global.v1.ListNFTsByFilterRequest.deserializeBinaryFromReader(msg, reader);
+};
+
+
+/**
+ * Deserializes binary data (in protobuf wire format) from the
+ * given reader into the given message object.
+ * @param {!proto.adamant.global.v1.ListNFTsByFilterRequest} msg The message object to deserialize into.
+ * @param {!jspb.BinaryReader} reader The BinaryReader to use.
+ * @return {!proto.adamant.global.v1.ListNFTsByFilterRequest}
+ */
+proto.adamant.global.v1.ListNFTsByFilterRequest.deserializeBinaryFromReader = function(msg, reader) {
+  while (reader.nextField()) {
+    if (reader.isEndGroup()) {
+      break;
+    }
+    var field = reader.getFieldNumber();
+    switch (field) {
+    case 1:
+      var value = /** @type {!proto.adamant.global.v1.ListFilterType} */ (reader.readEnum());
+      msg.setFilterType(value);
+      break;
+    case 2:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setWalletId(value);
+      break;
+    case 3:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setTokenId(value);
+      break;
+    case 4:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setTokenName(value);
+      break;
+    case 5:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setMetadata(value);
+      break;
+    default:
+      reader.skipField();
+      break;
+    }
+  }
+  return msg;
+};
+
+
+/**
+ * Serializes the message to binary data (in protobuf wire format).
+ * @return {!Uint8Array}
+ */
+proto.adamant.global.v1.ListNFTsByFilterRequest.prototype.serializeBinary = function() {
+  var writer = new jspb.BinaryWriter();
+  proto.adamant.global.v1.ListNFTsByFilterRequest.serializeBinaryToWriter(this, writer);
+  return writer.getResultBuffer();
+};
+
+
+/**
+ * Serializes the given message to binary data (in protobuf wire
+ * format), writing to the given BinaryWriter.
+ * @param {!proto.adamant.global.v1.ListNFTsByFilterRequest} message
+ * @param {!jspb.BinaryWriter} writer
+ * @suppress {unusedLocalVariables} f is only used for nested messages
+ */
+proto.adamant.global.v1.ListNFTsByFilterRequest.serializeBinaryToWriter = function(message, writer) {
+  var f = undefined;
+  f = message.getFilterType();
+  if (f !== 0.0) {
+    writer.writeEnum(
+      1,
+      f
+    );
+  }
+  f = message.getWalletId();
+  if (f.length > 0) {
+    writer.writeString(
+      2,
+      f
+    );
+  }
+  f = /** @type {string} */ (jspb.Message.getField(message, 3));
+  if (f != null) {
+    writer.writeString(
+      3,
+      f
+    );
+  }
+  f = /** @type {string} */ (jspb.Message.getField(message, 4));
+  if (f != null) {
+    writer.writeString(
+      4,
+      f
+    );
+  }
+  f = /** @type {string} */ (jspb.Message.getField(message, 5));
+  if (f != null) {
+    writer.writeString(
+      5,
+      f
+    );
+  }
+};
+
+
+/**
+ * optional ListFilterType filter_type = 1;
+ * @return {!proto.adamant.global.v1.ListFilterType}
+ */
+proto.adamant.global.v1.ListNFTsByFilterRequest.prototype.getFilterType = function() {
+  return /** @type {!proto.adamant.global.v1.ListFilterType} */ (jspb.Message.getFieldWithDefault(this, 1, 0));
+};
+
+
+/**
+ * @param {!proto.adamant.global.v1.ListFilterType} value
+ * @return {!proto.adamant.global.v1.ListNFTsByFilterRequest} returns this
+ */
+proto.adamant.global.v1.ListNFTsByFilterRequest.prototype.setFilterType = function(value) {
+  return jspb.Message.setProto3EnumField(this, 1, value);
+};
+
+
+/**
+ * optional string wallet_id = 2;
+ * @return {string}
+ */
+proto.adamant.global.v1.ListNFTsByFilterRequest.prototype.getWalletId = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 2, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.adamant.global.v1.ListNFTsByFilterRequest} returns this
+ */
+proto.adamant.global.v1.ListNFTsByFilterRequest.prototype.setWalletId = function(value) {
+  return jspb.Message.setProto3StringField(this, 2, value);
+};
+
+
+/**
+ * optional string token_id = 3;
+ * @return {string}
+ */
+proto.adamant.global.v1.ListNFTsByFilterRequest.prototype.getTokenId = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 3, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.adamant.global.v1.ListNFTsByFilterRequest} returns this
+ */
+proto.adamant.global.v1.ListNFTsByFilterRequest.prototype.setTokenId = function(value) {
+  return jspb.Message.setField(this, 3, value);
+};
+
+
+/**
+ * Clears the field making it undefined.
+ * @return {!proto.adamant.global.v1.ListNFTsByFilterRequest} returns this
+ */
+proto.adamant.global.v1.ListNFTsByFilterRequest.prototype.clearTokenId = function() {
+  return jspb.Message.setField(this, 3, undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.adamant.global.v1.ListNFTsByFilterRequest.prototype.hasTokenId = function() {
+  return jspb.Message.getField(this, 3) != null;
+};
+
+
+/**
+ * optional string token_name = 4;
+ * @return {string}
+ */
+proto.adamant.global.v1.ListNFTsByFilterRequest.prototype.getTokenName = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 4, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.adamant.global.v1.ListNFTsByFilterRequest} returns this
+ */
+proto.adamant.global.v1.ListNFTsByFilterRequest.prototype.setTokenName = function(value) {
+  return jspb.Message.setField(this, 4, value);
+};
+
+
+/**
+ * Clears the field making it undefined.
+ * @return {!proto.adamant.global.v1.ListNFTsByFilterRequest} returns this
+ */
+proto.adamant.global.v1.ListNFTsByFilterRequest.prototype.clearTokenName = function() {
+  return jspb.Message.setField(this, 4, undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.adamant.global.v1.ListNFTsByFilterRequest.prototype.hasTokenName = function() {
+  return jspb.Message.getField(this, 4) != null;
+};
+
+
+/**
+ * optional string metadata = 5;
+ * @return {string}
+ */
+proto.adamant.global.v1.ListNFTsByFilterRequest.prototype.getMetadata = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 5, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.adamant.global.v1.ListNFTsByFilterRequest} returns this
+ */
+proto.adamant.global.v1.ListNFTsByFilterRequest.prototype.setMetadata = function(value) {
+  return jspb.Message.setField(this, 5, value);
+};
+
+
+/**
+ * Clears the field making it undefined.
+ * @return {!proto.adamant.global.v1.ListNFTsByFilterRequest} returns this
+ */
+proto.adamant.global.v1.ListNFTsByFilterRequest.prototype.clearMetadata = function() {
+  return jspb.Message.setField(this, 5, undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.adamant.global.v1.ListNFTsByFilterRequest.prototype.hasMetadata = function() {
+  return jspb.Message.getField(this, 5) != null;
+};
+
+
+
+/**
+ * List of repeated fields within this message type.
+ * @private {!Array<number>}
+ * @const
+ */
+proto.adamant.global.v1.ListNFTsResponse.repeatedFields_ = [1];
+
+
+
+if (jspb.Message.GENERATE_TO_OBJECT) {
+/**
+ * Creates an object representation of this proto.
+ * Field names that are reserved in JavaScript and will be renamed to pb_name.
+ * Optional fields that are not set will be set to undefined.
+ * To access a reserved field use, foo.pb_<name>, eg, foo.pb_default.
+ * For the list of reserved names please see:
+ *     net/proto2/compiler/js/internal/generator.cc#kKeyword.
+ * @param {boolean=} opt_includeInstance Deprecated. whether to include the
+ *     JSPB instance for transitional soy proto support:
+ *     http://goto/soy-param-migration
+ * @return {!Object}
+ */
+proto.adamant.global.v1.ListNFTsResponse.prototype.toObject = function(opt_includeInstance) {
+  return proto.adamant.global.v1.ListNFTsResponse.toObject(opt_includeInstance, this);
+};
+
+
+/**
+ * Static version of the {@see toObject} method.
+ * @param {boolean|undefined} includeInstance Deprecated. Whether to include
+ *     the JSPB instance for transitional soy proto support:
+ *     http://goto/soy-param-migration
+ * @param {!proto.adamant.global.v1.ListNFTsResponse} msg The msg instance to transform.
+ * @return {!Object}
+ * @suppress {unusedLocalVariables} f is only used for nested messages
+ */
+proto.adamant.global.v1.ListNFTsResponse.toObject = function(includeInstance, msg) {
+  var f, obj = {
+    nftsList: jspb.Message.toObjectList(msg.getNftsList(),
+    gincoinc_adamant_global_v1_adamantglobalv1_model_pb.NFT.toObject, includeInstance),
+    nextPageToken: jspb.Message.getFieldWithDefault(msg, 2, "")
+  };
+
+  if (includeInstance) {
+    obj.$jspbMessageInstance = msg;
+  }
+  return obj;
+};
+}
+
+
+/**
+ * Deserializes binary data (in protobuf wire format).
+ * @param {jspb.ByteSource} bytes The bytes to deserialize.
+ * @return {!proto.adamant.global.v1.ListNFTsResponse}
+ */
+proto.adamant.global.v1.ListNFTsResponse.deserializeBinary = function(bytes) {
+  var reader = new jspb.BinaryReader(bytes);
+  var msg = new proto.adamant.global.v1.ListNFTsResponse;
+  return proto.adamant.global.v1.ListNFTsResponse.deserializeBinaryFromReader(msg, reader);
+};
+
+
+/**
+ * Deserializes binary data (in protobuf wire format) from the
+ * given reader into the given message object.
+ * @param {!proto.adamant.global.v1.ListNFTsResponse} msg The message object to deserialize into.
+ * @param {!jspb.BinaryReader} reader The BinaryReader to use.
+ * @return {!proto.adamant.global.v1.ListNFTsResponse}
+ */
+proto.adamant.global.v1.ListNFTsResponse.deserializeBinaryFromReader = function(msg, reader) {
+  while (reader.nextField()) {
+    if (reader.isEndGroup()) {
+      break;
+    }
+    var field = reader.getFieldNumber();
+    switch (field) {
+    case 1:
+      var value = new gincoinc_adamant_global_v1_adamantglobalv1_model_pb.NFT;
+      reader.readMessage(value,gincoinc_adamant_global_v1_adamantglobalv1_model_pb.NFT.deserializeBinaryFromReader);
+      msg.addNfts(value);
+      break;
+    case 2:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setNextPageToken(value);
+      break;
+    default:
+      reader.skipField();
+      break;
+    }
+  }
+  return msg;
+};
+
+
+/**
+ * Serializes the message to binary data (in protobuf wire format).
+ * @return {!Uint8Array}
+ */
+proto.adamant.global.v1.ListNFTsResponse.prototype.serializeBinary = function() {
+  var writer = new jspb.BinaryWriter();
+  proto.adamant.global.v1.ListNFTsResponse.serializeBinaryToWriter(this, writer);
+  return writer.getResultBuffer();
+};
+
+
+/**
+ * Serializes the given message to binary data (in protobuf wire
+ * format), writing to the given BinaryWriter.
+ * @param {!proto.adamant.global.v1.ListNFTsResponse} message
+ * @param {!jspb.BinaryWriter} writer
+ * @suppress {unusedLocalVariables} f is only used for nested messages
+ */
+proto.adamant.global.v1.ListNFTsResponse.serializeBinaryToWriter = function(message, writer) {
+  var f = undefined;
+  f = message.getNftsList();
+  if (f.length > 0) {
+    writer.writeRepeatedMessage(
+      1,
+      f,
+      gincoinc_adamant_global_v1_adamantglobalv1_model_pb.NFT.serializeBinaryToWriter
+    );
+  }
+  f = message.getNextPageToken();
+  if (f.length > 0) {
+    writer.writeString(
+      2,
+      f
+    );
+  }
+};
+
+
+/**
+ * repeated NFT nfts = 1;
+ * @return {!Array<!proto.adamant.global.v1.NFT>}
+ */
+proto.adamant.global.v1.ListNFTsResponse.prototype.getNftsList = function() {
+  return /** @type{!Array<!proto.adamant.global.v1.NFT>} */ (
+    jspb.Message.getRepeatedWrapperField(this, gincoinc_adamant_global_v1_adamantglobalv1_model_pb.NFT, 1));
+};
+
+
+/**
+ * @param {!Array<!proto.adamant.global.v1.NFT>} value
+ * @return {!proto.adamant.global.v1.ListNFTsResponse} returns this
+*/
+proto.adamant.global.v1.ListNFTsResponse.prototype.setNftsList = function(value) {
+  return jspb.Message.setRepeatedWrapperField(this, 1, value);
+};
+
+
+/**
+ * @param {!proto.adamant.global.v1.NFT=} opt_value
+ * @param {number=} opt_index
+ * @return {!proto.adamant.global.v1.NFT}
+ */
+proto.adamant.global.v1.ListNFTsResponse.prototype.addNfts = function(opt_value, opt_index) {
+  return jspb.Message.addToRepeatedWrapperField(this, 1, opt_value, proto.adamant.global.v1.NFT, opt_index);
+};
+
+
+/**
+ * Clears the list making it empty but non-null.
+ * @return {!proto.adamant.global.v1.ListNFTsResponse} returns this
+ */
+proto.adamant.global.v1.ListNFTsResponse.prototype.clearNftsList = function() {
+  return this.setNftsList([]);
+};
+
+
+/**
+ * optional string next_page_token = 2;
+ * @return {string}
+ */
+proto.adamant.global.v1.ListNFTsResponse.prototype.getNextPageToken = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 2, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.adamant.global.v1.ListNFTsResponse} returns this
+ */
+proto.adamant.global.v1.ListNFTsResponse.prototype.setNextPageToken = function(value) {
+  return jspb.Message.setProto3StringField(this, 2, value);
+};
+
+
+
 /**
  * List of repeated fields within this message type.
  * @private {!Array<number>}
@@ -50272,6 +53852,3154 @@ proto.adamant.global.v1.ListPreTransactionThresholdsByFilterResponse.prototype.g
  * @return {!proto.adamant.global.v1.ListPreTransactionThresholdsByFilterResponse} returns this
  */
 proto.adamant.global.v1.ListPreTransactionThresholdsByFilterResponse.prototype.setNextPageToken = function(value) {
+  return jspb.Message.setProto3StringField(this, 2, value);
+};
+
+
+
+
+
+if (jspb.Message.GENERATE_TO_OBJECT) {
+/**
+ * Creates an object representation of this proto.
+ * Field names that are reserved in JavaScript and will be renamed to pb_name.
+ * Optional fields that are not set will be set to undefined.
+ * To access a reserved field use, foo.pb_<name>, eg, foo.pb_default.
+ * For the list of reserved names please see:
+ *     net/proto2/compiler/js/internal/generator.cc#kKeyword.
+ * @param {boolean=} opt_includeInstance Deprecated. whether to include the
+ *     JSPB instance for transitional soy proto support:
+ *     http://goto/soy-param-migration
+ * @return {!Object}
+ */
+proto.adamant.global.v1.CreatePreTransactionThresholdRequest.prototype.toObject = function(opt_includeInstance) {
+  return proto.adamant.global.v1.CreatePreTransactionThresholdRequest.toObject(opt_includeInstance, this);
+};
+
+
+/**
+ * Static version of the {@see toObject} method.
+ * @param {boolean|undefined} includeInstance Deprecated. Whether to include
+ *     the JSPB instance for transitional soy proto support:
+ *     http://goto/soy-param-migration
+ * @param {!proto.adamant.global.v1.CreatePreTransactionThresholdRequest} msg The msg instance to transform.
+ * @return {!Object}
+ * @suppress {unusedLocalVariables} f is only used for nested messages
+ */
+proto.adamant.global.v1.CreatePreTransactionThresholdRequest.toObject = function(includeInstance, msg) {
+  var f, obj = {
+    coin: jspb.Message.getFieldWithDefault(msg, 1, 0),
+    network: jspb.Message.getFieldWithDefault(msg, 2, 0),
+    value: jspb.Message.getFloatingPointFieldWithDefault(msg, 3, 0.0)
+  };
+
+  if (includeInstance) {
+    obj.$jspbMessageInstance = msg;
+  }
+  return obj;
+};
+}
+
+
+/**
+ * Deserializes binary data (in protobuf wire format).
+ * @param {jspb.ByteSource} bytes The bytes to deserialize.
+ * @return {!proto.adamant.global.v1.CreatePreTransactionThresholdRequest}
+ */
+proto.adamant.global.v1.CreatePreTransactionThresholdRequest.deserializeBinary = function(bytes) {
+  var reader = new jspb.BinaryReader(bytes);
+  var msg = new proto.adamant.global.v1.CreatePreTransactionThresholdRequest;
+  return proto.adamant.global.v1.CreatePreTransactionThresholdRequest.deserializeBinaryFromReader(msg, reader);
+};
+
+
+/**
+ * Deserializes binary data (in protobuf wire format) from the
+ * given reader into the given message object.
+ * @param {!proto.adamant.global.v1.CreatePreTransactionThresholdRequest} msg The message object to deserialize into.
+ * @param {!jspb.BinaryReader} reader The BinaryReader to use.
+ * @return {!proto.adamant.global.v1.CreatePreTransactionThresholdRequest}
+ */
+proto.adamant.global.v1.CreatePreTransactionThresholdRequest.deserializeBinaryFromReader = function(msg, reader) {
+  while (reader.nextField()) {
+    if (reader.isEndGroup()) {
+      break;
+    }
+    var field = reader.getFieldNumber();
+    switch (field) {
+    case 1:
+      var value = /** @type {!proto.gincoinc.global.v1.Coin} */ (reader.readEnum());
+      msg.setCoin(value);
+      break;
+    case 2:
+      var value = /** @type {!proto.gincoinc.global.v1.Network} */ (reader.readEnum());
+      msg.setNetwork(value);
+      break;
+    case 3:
+      var value = /** @type {number} */ (reader.readDouble());
+      msg.setValue(value);
+      break;
+    default:
+      reader.skipField();
+      break;
+    }
+  }
+  return msg;
+};
+
+
+/**
+ * Serializes the message to binary data (in protobuf wire format).
+ * @return {!Uint8Array}
+ */
+proto.adamant.global.v1.CreatePreTransactionThresholdRequest.prototype.serializeBinary = function() {
+  var writer = new jspb.BinaryWriter();
+  proto.adamant.global.v1.CreatePreTransactionThresholdRequest.serializeBinaryToWriter(this, writer);
+  return writer.getResultBuffer();
+};
+
+
+/**
+ * Serializes the given message to binary data (in protobuf wire
+ * format), writing to the given BinaryWriter.
+ * @param {!proto.adamant.global.v1.CreatePreTransactionThresholdRequest} message
+ * @param {!jspb.BinaryWriter} writer
+ * @suppress {unusedLocalVariables} f is only used for nested messages
+ */
+proto.adamant.global.v1.CreatePreTransactionThresholdRequest.serializeBinaryToWriter = function(message, writer) {
+  var f = undefined;
+  f = message.getCoin();
+  if (f !== 0.0) {
+    writer.writeEnum(
+      1,
+      f
+    );
+  }
+  f = message.getNetwork();
+  if (f !== 0.0) {
+    writer.writeEnum(
+      2,
+      f
+    );
+  }
+  f = message.getValue();
+  if (f !== 0.0) {
+    writer.writeDouble(
+      3,
+      f
+    );
+  }
+};
+
+
+/**
+ * optional gincoinc.global.v1.Coin coin = 1;
+ * @return {!proto.gincoinc.global.v1.Coin}
+ */
+proto.adamant.global.v1.CreatePreTransactionThresholdRequest.prototype.getCoin = function() {
+  return /** @type {!proto.gincoinc.global.v1.Coin} */ (jspb.Message.getFieldWithDefault(this, 1, 0));
+};
+
+
+/**
+ * @param {!proto.gincoinc.global.v1.Coin} value
+ * @return {!proto.adamant.global.v1.CreatePreTransactionThresholdRequest} returns this
+ */
+proto.adamant.global.v1.CreatePreTransactionThresholdRequest.prototype.setCoin = function(value) {
+  return jspb.Message.setProto3EnumField(this, 1, value);
+};
+
+
+/**
+ * optional gincoinc.global.v1.Network network = 2;
+ * @return {!proto.gincoinc.global.v1.Network}
+ */
+proto.adamant.global.v1.CreatePreTransactionThresholdRequest.prototype.getNetwork = function() {
+  return /** @type {!proto.gincoinc.global.v1.Network} */ (jspb.Message.getFieldWithDefault(this, 2, 0));
+};
+
+
+/**
+ * @param {!proto.gincoinc.global.v1.Network} value
+ * @return {!proto.adamant.global.v1.CreatePreTransactionThresholdRequest} returns this
+ */
+proto.adamant.global.v1.CreatePreTransactionThresholdRequest.prototype.setNetwork = function(value) {
+  return jspb.Message.setProto3EnumField(this, 2, value);
+};
+
+
+/**
+ * optional double value = 3;
+ * @return {number}
+ */
+proto.adamant.global.v1.CreatePreTransactionThresholdRequest.prototype.getValue = function() {
+  return /** @type {number} */ (jspb.Message.getFloatingPointFieldWithDefault(this, 3, 0.0));
+};
+
+
+/**
+ * @param {number} value
+ * @return {!proto.adamant.global.v1.CreatePreTransactionThresholdRequest} returns this
+ */
+proto.adamant.global.v1.CreatePreTransactionThresholdRequest.prototype.setValue = function(value) {
+  return jspb.Message.setProto3FloatField(this, 3, value);
+};
+
+
+
+
+
+if (jspb.Message.GENERATE_TO_OBJECT) {
+/**
+ * Creates an object representation of this proto.
+ * Field names that are reserved in JavaScript and will be renamed to pb_name.
+ * Optional fields that are not set will be set to undefined.
+ * To access a reserved field use, foo.pb_<name>, eg, foo.pb_default.
+ * For the list of reserved names please see:
+ *     net/proto2/compiler/js/internal/generator.cc#kKeyword.
+ * @param {boolean=} opt_includeInstance Deprecated. whether to include the
+ *     JSPB instance for transitional soy proto support:
+ *     http://goto/soy-param-migration
+ * @return {!Object}
+ */
+proto.adamant.global.v1.CreatePreTransactionThresholdResponse.prototype.toObject = function(opt_includeInstance) {
+  return proto.adamant.global.v1.CreatePreTransactionThresholdResponse.toObject(opt_includeInstance, this);
+};
+
+
+/**
+ * Static version of the {@see toObject} method.
+ * @param {boolean|undefined} includeInstance Deprecated. Whether to include
+ *     the JSPB instance for transitional soy proto support:
+ *     http://goto/soy-param-migration
+ * @param {!proto.adamant.global.v1.CreatePreTransactionThresholdResponse} msg The msg instance to transform.
+ * @return {!Object}
+ * @suppress {unusedLocalVariables} f is only used for nested messages
+ */
+proto.adamant.global.v1.CreatePreTransactionThresholdResponse.toObject = function(includeInstance, msg) {
+  var f, obj = {
+    preTransactionThresholdId: jspb.Message.getFieldWithDefault(msg, 1, "")
+  };
+
+  if (includeInstance) {
+    obj.$jspbMessageInstance = msg;
+  }
+  return obj;
+};
+}
+
+
+/**
+ * Deserializes binary data (in protobuf wire format).
+ * @param {jspb.ByteSource} bytes The bytes to deserialize.
+ * @return {!proto.adamant.global.v1.CreatePreTransactionThresholdResponse}
+ */
+proto.adamant.global.v1.CreatePreTransactionThresholdResponse.deserializeBinary = function(bytes) {
+  var reader = new jspb.BinaryReader(bytes);
+  var msg = new proto.adamant.global.v1.CreatePreTransactionThresholdResponse;
+  return proto.adamant.global.v1.CreatePreTransactionThresholdResponse.deserializeBinaryFromReader(msg, reader);
+};
+
+
+/**
+ * Deserializes binary data (in protobuf wire format) from the
+ * given reader into the given message object.
+ * @param {!proto.adamant.global.v1.CreatePreTransactionThresholdResponse} msg The message object to deserialize into.
+ * @param {!jspb.BinaryReader} reader The BinaryReader to use.
+ * @return {!proto.adamant.global.v1.CreatePreTransactionThresholdResponse}
+ */
+proto.adamant.global.v1.CreatePreTransactionThresholdResponse.deserializeBinaryFromReader = function(msg, reader) {
+  while (reader.nextField()) {
+    if (reader.isEndGroup()) {
+      break;
+    }
+    var field = reader.getFieldNumber();
+    switch (field) {
+    case 1:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setPreTransactionThresholdId(value);
+      break;
+    default:
+      reader.skipField();
+      break;
+    }
+  }
+  return msg;
+};
+
+
+/**
+ * Serializes the message to binary data (in protobuf wire format).
+ * @return {!Uint8Array}
+ */
+proto.adamant.global.v1.CreatePreTransactionThresholdResponse.prototype.serializeBinary = function() {
+  var writer = new jspb.BinaryWriter();
+  proto.adamant.global.v1.CreatePreTransactionThresholdResponse.serializeBinaryToWriter(this, writer);
+  return writer.getResultBuffer();
+};
+
+
+/**
+ * Serializes the given message to binary data (in protobuf wire
+ * format), writing to the given BinaryWriter.
+ * @param {!proto.adamant.global.v1.CreatePreTransactionThresholdResponse} message
+ * @param {!jspb.BinaryWriter} writer
+ * @suppress {unusedLocalVariables} f is only used for nested messages
+ */
+proto.adamant.global.v1.CreatePreTransactionThresholdResponse.serializeBinaryToWriter = function(message, writer) {
+  var f = undefined;
+  f = message.getPreTransactionThresholdId();
+  if (f.length > 0) {
+    writer.writeString(
+      1,
+      f
+    );
+  }
+};
+
+
+/**
+ * optional string pre_transaction_threshold_id = 1;
+ * @return {string}
+ */
+proto.adamant.global.v1.CreatePreTransactionThresholdResponse.prototype.getPreTransactionThresholdId = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 1, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.adamant.global.v1.CreatePreTransactionThresholdResponse} returns this
+ */
+proto.adamant.global.v1.CreatePreTransactionThresholdResponse.prototype.setPreTransactionThresholdId = function(value) {
+  return jspb.Message.setProto3StringField(this, 1, value);
+};
+
+
+
+
+
+if (jspb.Message.GENERATE_TO_OBJECT) {
+/**
+ * Creates an object representation of this proto.
+ * Field names that are reserved in JavaScript and will be renamed to pb_name.
+ * Optional fields that are not set will be set to undefined.
+ * To access a reserved field use, foo.pb_<name>, eg, foo.pb_default.
+ * For the list of reserved names please see:
+ *     net/proto2/compiler/js/internal/generator.cc#kKeyword.
+ * @param {boolean=} opt_includeInstance Deprecated. whether to include the
+ *     JSPB instance for transitional soy proto support:
+ *     http://goto/soy-param-migration
+ * @return {!Object}
+ */
+proto.adamant.global.v1.UpdatePreTransactionThresholdRequest.prototype.toObject = function(opt_includeInstance) {
+  return proto.adamant.global.v1.UpdatePreTransactionThresholdRequest.toObject(opt_includeInstance, this);
+};
+
+
+/**
+ * Static version of the {@see toObject} method.
+ * @param {boolean|undefined} includeInstance Deprecated. Whether to include
+ *     the JSPB instance for transitional soy proto support:
+ *     http://goto/soy-param-migration
+ * @param {!proto.adamant.global.v1.UpdatePreTransactionThresholdRequest} msg The msg instance to transform.
+ * @return {!Object}
+ * @suppress {unusedLocalVariables} f is only used for nested messages
+ */
+proto.adamant.global.v1.UpdatePreTransactionThresholdRequest.toObject = function(includeInstance, msg) {
+  var f, obj = {
+    preTransactionThresholdId: jspb.Message.getFieldWithDefault(msg, 1, ""),
+    value: jspb.Message.getFloatingPointFieldWithDefault(msg, 2, 0.0)
+  };
+
+  if (includeInstance) {
+    obj.$jspbMessageInstance = msg;
+  }
+  return obj;
+};
+}
+
+
+/**
+ * Deserializes binary data (in protobuf wire format).
+ * @param {jspb.ByteSource} bytes The bytes to deserialize.
+ * @return {!proto.adamant.global.v1.UpdatePreTransactionThresholdRequest}
+ */
+proto.adamant.global.v1.UpdatePreTransactionThresholdRequest.deserializeBinary = function(bytes) {
+  var reader = new jspb.BinaryReader(bytes);
+  var msg = new proto.adamant.global.v1.UpdatePreTransactionThresholdRequest;
+  return proto.adamant.global.v1.UpdatePreTransactionThresholdRequest.deserializeBinaryFromReader(msg, reader);
+};
+
+
+/**
+ * Deserializes binary data (in protobuf wire format) from the
+ * given reader into the given message object.
+ * @param {!proto.adamant.global.v1.UpdatePreTransactionThresholdRequest} msg The message object to deserialize into.
+ * @param {!jspb.BinaryReader} reader The BinaryReader to use.
+ * @return {!proto.adamant.global.v1.UpdatePreTransactionThresholdRequest}
+ */
+proto.adamant.global.v1.UpdatePreTransactionThresholdRequest.deserializeBinaryFromReader = function(msg, reader) {
+  while (reader.nextField()) {
+    if (reader.isEndGroup()) {
+      break;
+    }
+    var field = reader.getFieldNumber();
+    switch (field) {
+    case 1:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setPreTransactionThresholdId(value);
+      break;
+    case 2:
+      var value = /** @type {number} */ (reader.readDouble());
+      msg.setValue(value);
+      break;
+    default:
+      reader.skipField();
+      break;
+    }
+  }
+  return msg;
+};
+
+
+/**
+ * Serializes the message to binary data (in protobuf wire format).
+ * @return {!Uint8Array}
+ */
+proto.adamant.global.v1.UpdatePreTransactionThresholdRequest.prototype.serializeBinary = function() {
+  var writer = new jspb.BinaryWriter();
+  proto.adamant.global.v1.UpdatePreTransactionThresholdRequest.serializeBinaryToWriter(this, writer);
+  return writer.getResultBuffer();
+};
+
+
+/**
+ * Serializes the given message to binary data (in protobuf wire
+ * format), writing to the given BinaryWriter.
+ * @param {!proto.adamant.global.v1.UpdatePreTransactionThresholdRequest} message
+ * @param {!jspb.BinaryWriter} writer
+ * @suppress {unusedLocalVariables} f is only used for nested messages
+ */
+proto.adamant.global.v1.UpdatePreTransactionThresholdRequest.serializeBinaryToWriter = function(message, writer) {
+  var f = undefined;
+  f = message.getPreTransactionThresholdId();
+  if (f.length > 0) {
+    writer.writeString(
+      1,
+      f
+    );
+  }
+  f = message.getValue();
+  if (f !== 0.0) {
+    writer.writeDouble(
+      2,
+      f
+    );
+  }
+};
+
+
+/**
+ * optional string pre_transaction_threshold_id = 1;
+ * @return {string}
+ */
+proto.adamant.global.v1.UpdatePreTransactionThresholdRequest.prototype.getPreTransactionThresholdId = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 1, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.adamant.global.v1.UpdatePreTransactionThresholdRequest} returns this
+ */
+proto.adamant.global.v1.UpdatePreTransactionThresholdRequest.prototype.setPreTransactionThresholdId = function(value) {
+  return jspb.Message.setProto3StringField(this, 1, value);
+};
+
+
+/**
+ * optional double value = 2;
+ * @return {number}
+ */
+proto.adamant.global.v1.UpdatePreTransactionThresholdRequest.prototype.getValue = function() {
+  return /** @type {number} */ (jspb.Message.getFloatingPointFieldWithDefault(this, 2, 0.0));
+};
+
+
+/**
+ * @param {number} value
+ * @return {!proto.adamant.global.v1.UpdatePreTransactionThresholdRequest} returns this
+ */
+proto.adamant.global.v1.UpdatePreTransactionThresholdRequest.prototype.setValue = function(value) {
+  return jspb.Message.setProto3FloatField(this, 2, value);
+};
+
+
+
+
+
+if (jspb.Message.GENERATE_TO_OBJECT) {
+/**
+ * Creates an object representation of this proto.
+ * Field names that are reserved in JavaScript and will be renamed to pb_name.
+ * Optional fields that are not set will be set to undefined.
+ * To access a reserved field use, foo.pb_<name>, eg, foo.pb_default.
+ * For the list of reserved names please see:
+ *     net/proto2/compiler/js/internal/generator.cc#kKeyword.
+ * @param {boolean=} opt_includeInstance Deprecated. whether to include the
+ *     JSPB instance for transitional soy proto support:
+ *     http://goto/soy-param-migration
+ * @return {!Object}
+ */
+proto.adamant.global.v1.ReviewPreTransactionThresholdProposalRequest.prototype.toObject = function(opt_includeInstance) {
+  return proto.adamant.global.v1.ReviewPreTransactionThresholdProposalRequest.toObject(opt_includeInstance, this);
+};
+
+
+/**
+ * Static version of the {@see toObject} method.
+ * @param {boolean|undefined} includeInstance Deprecated. Whether to include
+ *     the JSPB instance for transitional soy proto support:
+ *     http://goto/soy-param-migration
+ * @param {!proto.adamant.global.v1.ReviewPreTransactionThresholdProposalRequest} msg The msg instance to transform.
+ * @return {!Object}
+ * @suppress {unusedLocalVariables} f is only used for nested messages
+ */
+proto.adamant.global.v1.ReviewPreTransactionThresholdProposalRequest.toObject = function(includeInstance, msg) {
+  var f, obj = {
+    preTransactionThresholdId: jspb.Message.getFieldWithDefault(msg, 1, ""),
+    approve: jspb.Message.getBooleanFieldWithDefault(msg, 2, false)
+  };
+
+  if (includeInstance) {
+    obj.$jspbMessageInstance = msg;
+  }
+  return obj;
+};
+}
+
+
+/**
+ * Deserializes binary data (in protobuf wire format).
+ * @param {jspb.ByteSource} bytes The bytes to deserialize.
+ * @return {!proto.adamant.global.v1.ReviewPreTransactionThresholdProposalRequest}
+ */
+proto.adamant.global.v1.ReviewPreTransactionThresholdProposalRequest.deserializeBinary = function(bytes) {
+  var reader = new jspb.BinaryReader(bytes);
+  var msg = new proto.adamant.global.v1.ReviewPreTransactionThresholdProposalRequest;
+  return proto.adamant.global.v1.ReviewPreTransactionThresholdProposalRequest.deserializeBinaryFromReader(msg, reader);
+};
+
+
+/**
+ * Deserializes binary data (in protobuf wire format) from the
+ * given reader into the given message object.
+ * @param {!proto.adamant.global.v1.ReviewPreTransactionThresholdProposalRequest} msg The message object to deserialize into.
+ * @param {!jspb.BinaryReader} reader The BinaryReader to use.
+ * @return {!proto.adamant.global.v1.ReviewPreTransactionThresholdProposalRequest}
+ */
+proto.adamant.global.v1.ReviewPreTransactionThresholdProposalRequest.deserializeBinaryFromReader = function(msg, reader) {
+  while (reader.nextField()) {
+    if (reader.isEndGroup()) {
+      break;
+    }
+    var field = reader.getFieldNumber();
+    switch (field) {
+    case 1:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setPreTransactionThresholdId(value);
+      break;
+    case 2:
+      var value = /** @type {boolean} */ (reader.readBool());
+      msg.setApprove(value);
+      break;
+    default:
+      reader.skipField();
+      break;
+    }
+  }
+  return msg;
+};
+
+
+/**
+ * Serializes the message to binary data (in protobuf wire format).
+ * @return {!Uint8Array}
+ */
+proto.adamant.global.v1.ReviewPreTransactionThresholdProposalRequest.prototype.serializeBinary = function() {
+  var writer = new jspb.BinaryWriter();
+  proto.adamant.global.v1.ReviewPreTransactionThresholdProposalRequest.serializeBinaryToWriter(this, writer);
+  return writer.getResultBuffer();
+};
+
+
+/**
+ * Serializes the given message to binary data (in protobuf wire
+ * format), writing to the given BinaryWriter.
+ * @param {!proto.adamant.global.v1.ReviewPreTransactionThresholdProposalRequest} message
+ * @param {!jspb.BinaryWriter} writer
+ * @suppress {unusedLocalVariables} f is only used for nested messages
+ */
+proto.adamant.global.v1.ReviewPreTransactionThresholdProposalRequest.serializeBinaryToWriter = function(message, writer) {
+  var f = undefined;
+  f = message.getPreTransactionThresholdId();
+  if (f.length > 0) {
+    writer.writeString(
+      1,
+      f
+    );
+  }
+  f = message.getApprove();
+  if (f) {
+    writer.writeBool(
+      2,
+      f
+    );
+  }
+};
+
+
+/**
+ * optional string pre_transaction_threshold_id = 1;
+ * @return {string}
+ */
+proto.adamant.global.v1.ReviewPreTransactionThresholdProposalRequest.prototype.getPreTransactionThresholdId = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 1, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.adamant.global.v1.ReviewPreTransactionThresholdProposalRequest} returns this
+ */
+proto.adamant.global.v1.ReviewPreTransactionThresholdProposalRequest.prototype.setPreTransactionThresholdId = function(value) {
+  return jspb.Message.setProto3StringField(this, 1, value);
+};
+
+
+/**
+ * optional bool approve = 2;
+ * @return {boolean}
+ */
+proto.adamant.global.v1.ReviewPreTransactionThresholdProposalRequest.prototype.getApprove = function() {
+  return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 2, false));
+};
+
+
+/**
+ * @param {boolean} value
+ * @return {!proto.adamant.global.v1.ReviewPreTransactionThresholdProposalRequest} returns this
+ */
+proto.adamant.global.v1.ReviewPreTransactionThresholdProposalRequest.prototype.setApprove = function(value) {
+  return jspb.Message.setProto3BooleanField(this, 2, value);
+};
+
+
+
+
+
+if (jspb.Message.GENERATE_TO_OBJECT) {
+/**
+ * Creates an object representation of this proto.
+ * Field names that are reserved in JavaScript and will be renamed to pb_name.
+ * Optional fields that are not set will be set to undefined.
+ * To access a reserved field use, foo.pb_<name>, eg, foo.pb_default.
+ * For the list of reserved names please see:
+ *     net/proto2/compiler/js/internal/generator.cc#kKeyword.
+ * @param {boolean=} opt_includeInstance Deprecated. whether to include the
+ *     JSPB instance for transitional soy proto support:
+ *     http://goto/soy-param-migration
+ * @return {!Object}
+ */
+proto.adamant.global.v1.ListBlacklistAddressesByFilterRequest.prototype.toObject = function(opt_includeInstance) {
+  return proto.adamant.global.v1.ListBlacklistAddressesByFilterRequest.toObject(opt_includeInstance, this);
+};
+
+
+/**
+ * Static version of the {@see toObject} method.
+ * @param {boolean|undefined} includeInstance Deprecated. Whether to include
+ *     the JSPB instance for transitional soy proto support:
+ *     http://goto/soy-param-migration
+ * @param {!proto.adamant.global.v1.ListBlacklistAddressesByFilterRequest} msg The msg instance to transform.
+ * @return {!Object}
+ * @suppress {unusedLocalVariables} f is only used for nested messages
+ */
+proto.adamant.global.v1.ListBlacklistAddressesByFilterRequest.toObject = function(includeInstance, msg) {
+  var f, obj = {
+    filterType: jspb.Message.getFieldWithDefault(msg, 1, 0),
+    blacklistAddressId: jspb.Message.getFieldWithDefault(msg, 2, ""),
+    address: jspb.Message.getFieldWithDefault(msg, 3, ""),
+    fileId: jspb.Message.getFieldWithDefault(msg, 4, ""),
+    externalId: jspb.Message.getFieldWithDefault(msg, 12, ""),
+    isActivated: jspb.Message.getBooleanFieldWithDefault(msg, 5, false),
+    status: jspb.Message.getFieldWithDefault(msg, 6, 0),
+    network: jspb.Message.getFieldWithDefault(msg, 7, 0),
+    startTime: (f = msg.getStartTime()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f),
+    endTime: (f = msg.getEndTime()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f),
+    pageSize: jspb.Message.getFieldWithDefault(msg, 10, 0),
+    pageToken: jspb.Message.getFieldWithDefault(msg, 11, "")
+  };
+
+  if (includeInstance) {
+    obj.$jspbMessageInstance = msg;
+  }
+  return obj;
+};
+}
+
+
+/**
+ * Deserializes binary data (in protobuf wire format).
+ * @param {jspb.ByteSource} bytes The bytes to deserialize.
+ * @return {!proto.adamant.global.v1.ListBlacklistAddressesByFilterRequest}
+ */
+proto.adamant.global.v1.ListBlacklistAddressesByFilterRequest.deserializeBinary = function(bytes) {
+  var reader = new jspb.BinaryReader(bytes);
+  var msg = new proto.adamant.global.v1.ListBlacklistAddressesByFilterRequest;
+  return proto.adamant.global.v1.ListBlacklistAddressesByFilterRequest.deserializeBinaryFromReader(msg, reader);
+};
+
+
+/**
+ * Deserializes binary data (in protobuf wire format) from the
+ * given reader into the given message object.
+ * @param {!proto.adamant.global.v1.ListBlacklistAddressesByFilterRequest} msg The message object to deserialize into.
+ * @param {!jspb.BinaryReader} reader The BinaryReader to use.
+ * @return {!proto.adamant.global.v1.ListBlacklistAddressesByFilterRequest}
+ */
+proto.adamant.global.v1.ListBlacklistAddressesByFilterRequest.deserializeBinaryFromReader = function(msg, reader) {
+  while (reader.nextField()) {
+    if (reader.isEndGroup()) {
+      break;
+    }
+    var field = reader.getFieldNumber();
+    switch (field) {
+    case 1:
+      var value = /** @type {!proto.adamant.global.v1.ListFilterType} */ (reader.readEnum());
+      msg.setFilterType(value);
+      break;
+    case 2:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setBlacklistAddressId(value);
+      break;
+    case 3:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setAddress(value);
+      break;
+    case 4:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setFileId(value);
+      break;
+    case 12:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setExternalId(value);
+      break;
+    case 5:
+      var value = /** @type {boolean} */ (reader.readBool());
+      msg.setIsActivated(value);
+      break;
+    case 6:
+      var value = /** @type {!proto.adamant.global.v1.BlacklistAddressStatus} */ (reader.readEnum());
+      msg.setStatus(value);
+      break;
+    case 7:
+      var value = /** @type {!proto.gincoinc.global.v1.Network} */ (reader.readEnum());
+      msg.setNetwork(value);
+      break;
+    case 8:
+      var value = new google_protobuf_timestamp_pb.Timestamp;
+      reader.readMessage(value,google_protobuf_timestamp_pb.Timestamp.deserializeBinaryFromReader);
+      msg.setStartTime(value);
+      break;
+    case 9:
+      var value = new google_protobuf_timestamp_pb.Timestamp;
+      reader.readMessage(value,google_protobuf_timestamp_pb.Timestamp.deserializeBinaryFromReader);
+      msg.setEndTime(value);
+      break;
+    case 10:
+      var value = /** @type {number} */ (reader.readUint32());
+      msg.setPageSize(value);
+      break;
+    case 11:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setPageToken(value);
+      break;
+    default:
+      reader.skipField();
+      break;
+    }
+  }
+  return msg;
+};
+
+
+/**
+ * Serializes the message to binary data (in protobuf wire format).
+ * @return {!Uint8Array}
+ */
+proto.adamant.global.v1.ListBlacklistAddressesByFilterRequest.prototype.serializeBinary = function() {
+  var writer = new jspb.BinaryWriter();
+  proto.adamant.global.v1.ListBlacklistAddressesByFilterRequest.serializeBinaryToWriter(this, writer);
+  return writer.getResultBuffer();
+};
+
+
+/**
+ * Serializes the given message to binary data (in protobuf wire
+ * format), writing to the given BinaryWriter.
+ * @param {!proto.adamant.global.v1.ListBlacklistAddressesByFilterRequest} message
+ * @param {!jspb.BinaryWriter} writer
+ * @suppress {unusedLocalVariables} f is only used for nested messages
+ */
+proto.adamant.global.v1.ListBlacklistAddressesByFilterRequest.serializeBinaryToWriter = function(message, writer) {
+  var f = undefined;
+  f = message.getFilterType();
+  if (f !== 0.0) {
+    writer.writeEnum(
+      1,
+      f
+    );
+  }
+  f = /** @type {string} */ (jspb.Message.getField(message, 2));
+  if (f != null) {
+    writer.writeString(
+      2,
+      f
+    );
+  }
+  f = /** @type {string} */ (jspb.Message.getField(message, 3));
+  if (f != null) {
+    writer.writeString(
+      3,
+      f
+    );
+  }
+  f = /** @type {string} */ (jspb.Message.getField(message, 4));
+  if (f != null) {
+    writer.writeString(
+      4,
+      f
+    );
+  }
+  f = /** @type {string} */ (jspb.Message.getField(message, 12));
+  if (f != null) {
+    writer.writeString(
+      12,
+      f
+    );
+  }
+  f = /** @type {boolean} */ (jspb.Message.getField(message, 5));
+  if (f != null) {
+    writer.writeBool(
+      5,
+      f
+    );
+  }
+  f = /** @type {!proto.adamant.global.v1.BlacklistAddressStatus} */ (jspb.Message.getField(message, 6));
+  if (f != null) {
+    writer.writeEnum(
+      6,
+      f
+    );
+  }
+  f = /** @type {!proto.gincoinc.global.v1.Network} */ (jspb.Message.getField(message, 7));
+  if (f != null) {
+    writer.writeEnum(
+      7,
+      f
+    );
+  }
+  f = message.getStartTime();
+  if (f != null) {
+    writer.writeMessage(
+      8,
+      f,
+      google_protobuf_timestamp_pb.Timestamp.serializeBinaryToWriter
+    );
+  }
+  f = message.getEndTime();
+  if (f != null) {
+    writer.writeMessage(
+      9,
+      f,
+      google_protobuf_timestamp_pb.Timestamp.serializeBinaryToWriter
+    );
+  }
+  f = /** @type {number} */ (jspb.Message.getField(message, 10));
+  if (f != null) {
+    writer.writeUint32(
+      10,
+      f
+    );
+  }
+  f = /** @type {string} */ (jspb.Message.getField(message, 11));
+  if (f != null) {
+    writer.writeString(
+      11,
+      f
+    );
+  }
+};
+
+
+/**
+ * optional ListFilterType filter_type = 1;
+ * @return {!proto.adamant.global.v1.ListFilterType}
+ */
+proto.adamant.global.v1.ListBlacklistAddressesByFilterRequest.prototype.getFilterType = function() {
+  return /** @type {!proto.adamant.global.v1.ListFilterType} */ (jspb.Message.getFieldWithDefault(this, 1, 0));
+};
+
+
+/**
+ * @param {!proto.adamant.global.v1.ListFilterType} value
+ * @return {!proto.adamant.global.v1.ListBlacklistAddressesByFilterRequest} returns this
+ */
+proto.adamant.global.v1.ListBlacklistAddressesByFilterRequest.prototype.setFilterType = function(value) {
+  return jspb.Message.setProto3EnumField(this, 1, value);
+};
+
+
+/**
+ * optional string blacklist_address_id = 2;
+ * @return {string}
+ */
+proto.adamant.global.v1.ListBlacklistAddressesByFilterRequest.prototype.getBlacklistAddressId = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 2, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.adamant.global.v1.ListBlacklistAddressesByFilterRequest} returns this
+ */
+proto.adamant.global.v1.ListBlacklistAddressesByFilterRequest.prototype.setBlacklistAddressId = function(value) {
+  return jspb.Message.setField(this, 2, value);
+};
+
+
+/**
+ * Clears the field making it undefined.
+ * @return {!proto.adamant.global.v1.ListBlacklistAddressesByFilterRequest} returns this
+ */
+proto.adamant.global.v1.ListBlacklistAddressesByFilterRequest.prototype.clearBlacklistAddressId = function() {
+  return jspb.Message.setField(this, 2, undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.adamant.global.v1.ListBlacklistAddressesByFilterRequest.prototype.hasBlacklistAddressId = function() {
+  return jspb.Message.getField(this, 2) != null;
+};
+
+
+/**
+ * optional string address = 3;
+ * @return {string}
+ */
+proto.adamant.global.v1.ListBlacklistAddressesByFilterRequest.prototype.getAddress = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 3, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.adamant.global.v1.ListBlacklistAddressesByFilterRequest} returns this
+ */
+proto.adamant.global.v1.ListBlacklistAddressesByFilterRequest.prototype.setAddress = function(value) {
+  return jspb.Message.setField(this, 3, value);
+};
+
+
+/**
+ * Clears the field making it undefined.
+ * @return {!proto.adamant.global.v1.ListBlacklistAddressesByFilterRequest} returns this
+ */
+proto.adamant.global.v1.ListBlacklistAddressesByFilterRequest.prototype.clearAddress = function() {
+  return jspb.Message.setField(this, 3, undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.adamant.global.v1.ListBlacklistAddressesByFilterRequest.prototype.hasAddress = function() {
+  return jspb.Message.getField(this, 3) != null;
+};
+
+
+/**
+ * optional string file_id = 4;
+ * @return {string}
+ */
+proto.adamant.global.v1.ListBlacklistAddressesByFilterRequest.prototype.getFileId = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 4, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.adamant.global.v1.ListBlacklistAddressesByFilterRequest} returns this
+ */
+proto.adamant.global.v1.ListBlacklistAddressesByFilterRequest.prototype.setFileId = function(value) {
+  return jspb.Message.setField(this, 4, value);
+};
+
+
+/**
+ * Clears the field making it undefined.
+ * @return {!proto.adamant.global.v1.ListBlacklistAddressesByFilterRequest} returns this
+ */
+proto.adamant.global.v1.ListBlacklistAddressesByFilterRequest.prototype.clearFileId = function() {
+  return jspb.Message.setField(this, 4, undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.adamant.global.v1.ListBlacklistAddressesByFilterRequest.prototype.hasFileId = function() {
+  return jspb.Message.getField(this, 4) != null;
+};
+
+
+/**
+ * optional string external_id = 12;
+ * @return {string}
+ */
+proto.adamant.global.v1.ListBlacklistAddressesByFilterRequest.prototype.getExternalId = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 12, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.adamant.global.v1.ListBlacklistAddressesByFilterRequest} returns this
+ */
+proto.adamant.global.v1.ListBlacklistAddressesByFilterRequest.prototype.setExternalId = function(value) {
+  return jspb.Message.setField(this, 12, value);
+};
+
+
+/**
+ * Clears the field making it undefined.
+ * @return {!proto.adamant.global.v1.ListBlacklistAddressesByFilterRequest} returns this
+ */
+proto.adamant.global.v1.ListBlacklistAddressesByFilterRequest.prototype.clearExternalId = function() {
+  return jspb.Message.setField(this, 12, undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.adamant.global.v1.ListBlacklistAddressesByFilterRequest.prototype.hasExternalId = function() {
+  return jspb.Message.getField(this, 12) != null;
+};
+
+
+/**
+ * optional bool is_activated = 5;
+ * @return {boolean}
+ */
+proto.adamant.global.v1.ListBlacklistAddressesByFilterRequest.prototype.getIsActivated = function() {
+  return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 5, false));
+};
+
+
+/**
+ * @param {boolean} value
+ * @return {!proto.adamant.global.v1.ListBlacklistAddressesByFilterRequest} returns this
+ */
+proto.adamant.global.v1.ListBlacklistAddressesByFilterRequest.prototype.setIsActivated = function(value) {
+  return jspb.Message.setField(this, 5, value);
+};
+
+
+/**
+ * Clears the field making it undefined.
+ * @return {!proto.adamant.global.v1.ListBlacklistAddressesByFilterRequest} returns this
+ */
+proto.adamant.global.v1.ListBlacklistAddressesByFilterRequest.prototype.clearIsActivated = function() {
+  return jspb.Message.setField(this, 5, undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.adamant.global.v1.ListBlacklistAddressesByFilterRequest.prototype.hasIsActivated = function() {
+  return jspb.Message.getField(this, 5) != null;
+};
+
+
+/**
+ * optional BlacklistAddressStatus status = 6;
+ * @return {!proto.adamant.global.v1.BlacklistAddressStatus}
+ */
+proto.adamant.global.v1.ListBlacklistAddressesByFilterRequest.prototype.getStatus = function() {
+  return /** @type {!proto.adamant.global.v1.BlacklistAddressStatus} */ (jspb.Message.getFieldWithDefault(this, 6, 0));
+};
+
+
+/**
+ * @param {!proto.adamant.global.v1.BlacklistAddressStatus} value
+ * @return {!proto.adamant.global.v1.ListBlacklistAddressesByFilterRequest} returns this
+ */
+proto.adamant.global.v1.ListBlacklistAddressesByFilterRequest.prototype.setStatus = function(value) {
+  return jspb.Message.setField(this, 6, value);
+};
+
+
+/**
+ * Clears the field making it undefined.
+ * @return {!proto.adamant.global.v1.ListBlacklistAddressesByFilterRequest} returns this
+ */
+proto.adamant.global.v1.ListBlacklistAddressesByFilterRequest.prototype.clearStatus = function() {
+  return jspb.Message.setField(this, 6, undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.adamant.global.v1.ListBlacklistAddressesByFilterRequest.prototype.hasStatus = function() {
+  return jspb.Message.getField(this, 6) != null;
+};
+
+
+/**
+ * optional gincoinc.global.v1.Network network = 7;
+ * @return {!proto.gincoinc.global.v1.Network}
+ */
+proto.adamant.global.v1.ListBlacklistAddressesByFilterRequest.prototype.getNetwork = function() {
+  return /** @type {!proto.gincoinc.global.v1.Network} */ (jspb.Message.getFieldWithDefault(this, 7, 0));
+};
+
+
+/**
+ * @param {!proto.gincoinc.global.v1.Network} value
+ * @return {!proto.adamant.global.v1.ListBlacklistAddressesByFilterRequest} returns this
+ */
+proto.adamant.global.v1.ListBlacklistAddressesByFilterRequest.prototype.setNetwork = function(value) {
+  return jspb.Message.setField(this, 7, value);
+};
+
+
+/**
+ * Clears the field making it undefined.
+ * @return {!proto.adamant.global.v1.ListBlacklistAddressesByFilterRequest} returns this
+ */
+proto.adamant.global.v1.ListBlacklistAddressesByFilterRequest.prototype.clearNetwork = function() {
+  return jspb.Message.setField(this, 7, undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.adamant.global.v1.ListBlacklistAddressesByFilterRequest.prototype.hasNetwork = function() {
+  return jspb.Message.getField(this, 7) != null;
+};
+
+
+/**
+ * optional google.protobuf.Timestamp start_time = 8;
+ * @return {?proto.google.protobuf.Timestamp}
+ */
+proto.adamant.global.v1.ListBlacklistAddressesByFilterRequest.prototype.getStartTime = function() {
+  return /** @type{?proto.google.protobuf.Timestamp} */ (
+    jspb.Message.getWrapperField(this, google_protobuf_timestamp_pb.Timestamp, 8));
+};
+
+
+/**
+ * @param {?proto.google.protobuf.Timestamp|undefined} value
+ * @return {!proto.adamant.global.v1.ListBlacklistAddressesByFilterRequest} returns this
+*/
+proto.adamant.global.v1.ListBlacklistAddressesByFilterRequest.prototype.setStartTime = function(value) {
+  return jspb.Message.setWrapperField(this, 8, value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
+ * @return {!proto.adamant.global.v1.ListBlacklistAddressesByFilterRequest} returns this
+ */
+proto.adamant.global.v1.ListBlacklistAddressesByFilterRequest.prototype.clearStartTime = function() {
+  return this.setStartTime(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.adamant.global.v1.ListBlacklistAddressesByFilterRequest.prototype.hasStartTime = function() {
+  return jspb.Message.getField(this, 8) != null;
+};
+
+
+/**
+ * optional google.protobuf.Timestamp end_time = 9;
+ * @return {?proto.google.protobuf.Timestamp}
+ */
+proto.adamant.global.v1.ListBlacklistAddressesByFilterRequest.prototype.getEndTime = function() {
+  return /** @type{?proto.google.protobuf.Timestamp} */ (
+    jspb.Message.getWrapperField(this, google_protobuf_timestamp_pb.Timestamp, 9));
+};
+
+
+/**
+ * @param {?proto.google.protobuf.Timestamp|undefined} value
+ * @return {!proto.adamant.global.v1.ListBlacklistAddressesByFilterRequest} returns this
+*/
+proto.adamant.global.v1.ListBlacklistAddressesByFilterRequest.prototype.setEndTime = function(value) {
+  return jspb.Message.setWrapperField(this, 9, value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
+ * @return {!proto.adamant.global.v1.ListBlacklistAddressesByFilterRequest} returns this
+ */
+proto.adamant.global.v1.ListBlacklistAddressesByFilterRequest.prototype.clearEndTime = function() {
+  return this.setEndTime(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.adamant.global.v1.ListBlacklistAddressesByFilterRequest.prototype.hasEndTime = function() {
+  return jspb.Message.getField(this, 9) != null;
+};
+
+
+/**
+ * optional uint32 page_size = 10;
+ * @return {number}
+ */
+proto.adamant.global.v1.ListBlacklistAddressesByFilterRequest.prototype.getPageSize = function() {
+  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 10, 0));
+};
+
+
+/**
+ * @param {number} value
+ * @return {!proto.adamant.global.v1.ListBlacklistAddressesByFilterRequest} returns this
+ */
+proto.adamant.global.v1.ListBlacklistAddressesByFilterRequest.prototype.setPageSize = function(value) {
+  return jspb.Message.setField(this, 10, value);
+};
+
+
+/**
+ * Clears the field making it undefined.
+ * @return {!proto.adamant.global.v1.ListBlacklistAddressesByFilterRequest} returns this
+ */
+proto.adamant.global.v1.ListBlacklistAddressesByFilterRequest.prototype.clearPageSize = function() {
+  return jspb.Message.setField(this, 10, undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.adamant.global.v1.ListBlacklistAddressesByFilterRequest.prototype.hasPageSize = function() {
+  return jspb.Message.getField(this, 10) != null;
+};
+
+
+/**
+ * optional string page_token = 11;
+ * @return {string}
+ */
+proto.adamant.global.v1.ListBlacklistAddressesByFilterRequest.prototype.getPageToken = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 11, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.adamant.global.v1.ListBlacklistAddressesByFilterRequest} returns this
+ */
+proto.adamant.global.v1.ListBlacklistAddressesByFilterRequest.prototype.setPageToken = function(value) {
+  return jspb.Message.setField(this, 11, value);
+};
+
+
+/**
+ * Clears the field making it undefined.
+ * @return {!proto.adamant.global.v1.ListBlacklistAddressesByFilterRequest} returns this
+ */
+proto.adamant.global.v1.ListBlacklistAddressesByFilterRequest.prototype.clearPageToken = function() {
+  return jspb.Message.setField(this, 11, undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.adamant.global.v1.ListBlacklistAddressesByFilterRequest.prototype.hasPageToken = function() {
+  return jspb.Message.getField(this, 11) != null;
+};
+
+
+
+/**
+ * List of repeated fields within this message type.
+ * @private {!Array<number>}
+ * @const
+ */
+proto.adamant.global.v1.ListBlacklistAddressesByFilterResponse.repeatedFields_ = [1];
+
+
+
+if (jspb.Message.GENERATE_TO_OBJECT) {
+/**
+ * Creates an object representation of this proto.
+ * Field names that are reserved in JavaScript and will be renamed to pb_name.
+ * Optional fields that are not set will be set to undefined.
+ * To access a reserved field use, foo.pb_<name>, eg, foo.pb_default.
+ * For the list of reserved names please see:
+ *     net/proto2/compiler/js/internal/generator.cc#kKeyword.
+ * @param {boolean=} opt_includeInstance Deprecated. whether to include the
+ *     JSPB instance for transitional soy proto support:
+ *     http://goto/soy-param-migration
+ * @return {!Object}
+ */
+proto.adamant.global.v1.ListBlacklistAddressesByFilterResponse.prototype.toObject = function(opt_includeInstance) {
+  return proto.adamant.global.v1.ListBlacklistAddressesByFilterResponse.toObject(opt_includeInstance, this);
+};
+
+
+/**
+ * Static version of the {@see toObject} method.
+ * @param {boolean|undefined} includeInstance Deprecated. Whether to include
+ *     the JSPB instance for transitional soy proto support:
+ *     http://goto/soy-param-migration
+ * @param {!proto.adamant.global.v1.ListBlacklistAddressesByFilterResponse} msg The msg instance to transform.
+ * @return {!Object}
+ * @suppress {unusedLocalVariables} f is only used for nested messages
+ */
+proto.adamant.global.v1.ListBlacklistAddressesByFilterResponse.toObject = function(includeInstance, msg) {
+  var f, obj = {
+    addressesList: jspb.Message.toObjectList(msg.getAddressesList(),
+    gincoinc_adamant_global_v1_adamantglobalv1_model_pb.BlacklistAddress.toObject, includeInstance),
+    nextPageToken: jspb.Message.getFieldWithDefault(msg, 2, "")
+  };
+
+  if (includeInstance) {
+    obj.$jspbMessageInstance = msg;
+  }
+  return obj;
+};
+}
+
+
+/**
+ * Deserializes binary data (in protobuf wire format).
+ * @param {jspb.ByteSource} bytes The bytes to deserialize.
+ * @return {!proto.adamant.global.v1.ListBlacklistAddressesByFilterResponse}
+ */
+proto.adamant.global.v1.ListBlacklistAddressesByFilterResponse.deserializeBinary = function(bytes) {
+  var reader = new jspb.BinaryReader(bytes);
+  var msg = new proto.adamant.global.v1.ListBlacklistAddressesByFilterResponse;
+  return proto.adamant.global.v1.ListBlacklistAddressesByFilterResponse.deserializeBinaryFromReader(msg, reader);
+};
+
+
+/**
+ * Deserializes binary data (in protobuf wire format) from the
+ * given reader into the given message object.
+ * @param {!proto.adamant.global.v1.ListBlacklistAddressesByFilterResponse} msg The message object to deserialize into.
+ * @param {!jspb.BinaryReader} reader The BinaryReader to use.
+ * @return {!proto.adamant.global.v1.ListBlacklistAddressesByFilterResponse}
+ */
+proto.adamant.global.v1.ListBlacklistAddressesByFilterResponse.deserializeBinaryFromReader = function(msg, reader) {
+  while (reader.nextField()) {
+    if (reader.isEndGroup()) {
+      break;
+    }
+    var field = reader.getFieldNumber();
+    switch (field) {
+    case 1:
+      var value = new gincoinc_adamant_global_v1_adamantglobalv1_model_pb.BlacklistAddress;
+      reader.readMessage(value,gincoinc_adamant_global_v1_adamantglobalv1_model_pb.BlacklistAddress.deserializeBinaryFromReader);
+      msg.addAddresses(value);
+      break;
+    case 2:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setNextPageToken(value);
+      break;
+    default:
+      reader.skipField();
+      break;
+    }
+  }
+  return msg;
+};
+
+
+/**
+ * Serializes the message to binary data (in protobuf wire format).
+ * @return {!Uint8Array}
+ */
+proto.adamant.global.v1.ListBlacklistAddressesByFilterResponse.prototype.serializeBinary = function() {
+  var writer = new jspb.BinaryWriter();
+  proto.adamant.global.v1.ListBlacklistAddressesByFilterResponse.serializeBinaryToWriter(this, writer);
+  return writer.getResultBuffer();
+};
+
+
+/**
+ * Serializes the given message to binary data (in protobuf wire
+ * format), writing to the given BinaryWriter.
+ * @param {!proto.adamant.global.v1.ListBlacklistAddressesByFilterResponse} message
+ * @param {!jspb.BinaryWriter} writer
+ * @suppress {unusedLocalVariables} f is only used for nested messages
+ */
+proto.adamant.global.v1.ListBlacklistAddressesByFilterResponse.serializeBinaryToWriter = function(message, writer) {
+  var f = undefined;
+  f = message.getAddressesList();
+  if (f.length > 0) {
+    writer.writeRepeatedMessage(
+      1,
+      f,
+      gincoinc_adamant_global_v1_adamantglobalv1_model_pb.BlacklistAddress.serializeBinaryToWriter
+    );
+  }
+  f = message.getNextPageToken();
+  if (f.length > 0) {
+    writer.writeString(
+      2,
+      f
+    );
+  }
+};
+
+
+/**
+ * repeated BlacklistAddress addresses = 1;
+ * @return {!Array<!proto.adamant.global.v1.BlacklistAddress>}
+ */
+proto.adamant.global.v1.ListBlacklistAddressesByFilterResponse.prototype.getAddressesList = function() {
+  return /** @type{!Array<!proto.adamant.global.v1.BlacklistAddress>} */ (
+    jspb.Message.getRepeatedWrapperField(this, gincoinc_adamant_global_v1_adamantglobalv1_model_pb.BlacklistAddress, 1));
+};
+
+
+/**
+ * @param {!Array<!proto.adamant.global.v1.BlacklistAddress>} value
+ * @return {!proto.adamant.global.v1.ListBlacklistAddressesByFilterResponse} returns this
+*/
+proto.adamant.global.v1.ListBlacklistAddressesByFilterResponse.prototype.setAddressesList = function(value) {
+  return jspb.Message.setRepeatedWrapperField(this, 1, value);
+};
+
+
+/**
+ * @param {!proto.adamant.global.v1.BlacklistAddress=} opt_value
+ * @param {number=} opt_index
+ * @return {!proto.adamant.global.v1.BlacklistAddress}
+ */
+proto.adamant.global.v1.ListBlacklistAddressesByFilterResponse.prototype.addAddresses = function(opt_value, opt_index) {
+  return jspb.Message.addToRepeatedWrapperField(this, 1, opt_value, proto.adamant.global.v1.BlacklistAddress, opt_index);
+};
+
+
+/**
+ * Clears the list making it empty but non-null.
+ * @return {!proto.adamant.global.v1.ListBlacklistAddressesByFilterResponse} returns this
+ */
+proto.adamant.global.v1.ListBlacklistAddressesByFilterResponse.prototype.clearAddressesList = function() {
+  return this.setAddressesList([]);
+};
+
+
+/**
+ * optional string next_page_token = 2;
+ * @return {string}
+ */
+proto.adamant.global.v1.ListBlacklistAddressesByFilterResponse.prototype.getNextPageToken = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 2, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.adamant.global.v1.ListBlacklistAddressesByFilterResponse} returns this
+ */
+proto.adamant.global.v1.ListBlacklistAddressesByFilterResponse.prototype.setNextPageToken = function(value) {
+  return jspb.Message.setProto3StringField(this, 2, value);
+};
+
+
+
+
+
+if (jspb.Message.GENERATE_TO_OBJECT) {
+/**
+ * Creates an object representation of this proto.
+ * Field names that are reserved in JavaScript and will be renamed to pb_name.
+ * Optional fields that are not set will be set to undefined.
+ * To access a reserved field use, foo.pb_<name>, eg, foo.pb_default.
+ * For the list of reserved names please see:
+ *     net/proto2/compiler/js/internal/generator.cc#kKeyword.
+ * @param {boolean=} opt_includeInstance Deprecated. whether to include the
+ *     JSPB instance for transitional soy proto support:
+ *     http://goto/soy-param-migration
+ * @return {!Object}
+ */
+proto.adamant.global.v1.CreateBlacklistAddressResponse.prototype.toObject = function(opt_includeInstance) {
+  return proto.adamant.global.v1.CreateBlacklistAddressResponse.toObject(opt_includeInstance, this);
+};
+
+
+/**
+ * Static version of the {@see toObject} method.
+ * @param {boolean|undefined} includeInstance Deprecated. Whether to include
+ *     the JSPB instance for transitional soy proto support:
+ *     http://goto/soy-param-migration
+ * @param {!proto.adamant.global.v1.CreateBlacklistAddressResponse} msg The msg instance to transform.
+ * @return {!Object}
+ * @suppress {unusedLocalVariables} f is only used for nested messages
+ */
+proto.adamant.global.v1.CreateBlacklistAddressResponse.toObject = function(includeInstance, msg) {
+  var f, obj = {
+    blacklistAddressId: jspb.Message.getFieldWithDefault(msg, 1, "")
+  };
+
+  if (includeInstance) {
+    obj.$jspbMessageInstance = msg;
+  }
+  return obj;
+};
+}
+
+
+/**
+ * Deserializes binary data (in protobuf wire format).
+ * @param {jspb.ByteSource} bytes The bytes to deserialize.
+ * @return {!proto.adamant.global.v1.CreateBlacklistAddressResponse}
+ */
+proto.adamant.global.v1.CreateBlacklistAddressResponse.deserializeBinary = function(bytes) {
+  var reader = new jspb.BinaryReader(bytes);
+  var msg = new proto.adamant.global.v1.CreateBlacklistAddressResponse;
+  return proto.adamant.global.v1.CreateBlacklistAddressResponse.deserializeBinaryFromReader(msg, reader);
+};
+
+
+/**
+ * Deserializes binary data (in protobuf wire format) from the
+ * given reader into the given message object.
+ * @param {!proto.adamant.global.v1.CreateBlacklistAddressResponse} msg The message object to deserialize into.
+ * @param {!jspb.BinaryReader} reader The BinaryReader to use.
+ * @return {!proto.adamant.global.v1.CreateBlacklistAddressResponse}
+ */
+proto.adamant.global.v1.CreateBlacklistAddressResponse.deserializeBinaryFromReader = function(msg, reader) {
+  while (reader.nextField()) {
+    if (reader.isEndGroup()) {
+      break;
+    }
+    var field = reader.getFieldNumber();
+    switch (field) {
+    case 1:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setBlacklistAddressId(value);
+      break;
+    default:
+      reader.skipField();
+      break;
+    }
+  }
+  return msg;
+};
+
+
+/**
+ * Serializes the message to binary data (in protobuf wire format).
+ * @return {!Uint8Array}
+ */
+proto.adamant.global.v1.CreateBlacklistAddressResponse.prototype.serializeBinary = function() {
+  var writer = new jspb.BinaryWriter();
+  proto.adamant.global.v1.CreateBlacklistAddressResponse.serializeBinaryToWriter(this, writer);
+  return writer.getResultBuffer();
+};
+
+
+/**
+ * Serializes the given message to binary data (in protobuf wire
+ * format), writing to the given BinaryWriter.
+ * @param {!proto.adamant.global.v1.CreateBlacklistAddressResponse} message
+ * @param {!jspb.BinaryWriter} writer
+ * @suppress {unusedLocalVariables} f is only used for nested messages
+ */
+proto.adamant.global.v1.CreateBlacklistAddressResponse.serializeBinaryToWriter = function(message, writer) {
+  var f = undefined;
+  f = message.getBlacklistAddressId();
+  if (f.length > 0) {
+    writer.writeString(
+      1,
+      f
+    );
+  }
+};
+
+
+/**
+ * optional string blacklist_address_id = 1;
+ * @return {string}
+ */
+proto.adamant.global.v1.CreateBlacklistAddressResponse.prototype.getBlacklistAddressId = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 1, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.adamant.global.v1.CreateBlacklistAddressResponse} returns this
+ */
+proto.adamant.global.v1.CreateBlacklistAddressResponse.prototype.setBlacklistAddressId = function(value) {
+  return jspb.Message.setProto3StringField(this, 1, value);
+};
+
+
+
+
+
+if (jspb.Message.GENERATE_TO_OBJECT) {
+/**
+ * Creates an object representation of this proto.
+ * Field names that are reserved in JavaScript and will be renamed to pb_name.
+ * Optional fields that are not set will be set to undefined.
+ * To access a reserved field use, foo.pb_<name>, eg, foo.pb_default.
+ * For the list of reserved names please see:
+ *     net/proto2/compiler/js/internal/generator.cc#kKeyword.
+ * @param {boolean=} opt_includeInstance Deprecated. whether to include the
+ *     JSPB instance for transitional soy proto support:
+ *     http://goto/soy-param-migration
+ * @return {!Object}
+ */
+proto.adamant.global.v1.CreateBlacklistAddressRequest.prototype.toObject = function(opt_includeInstance) {
+  return proto.adamant.global.v1.CreateBlacklistAddressRequest.toObject(opt_includeInstance, this);
+};
+
+
+/**
+ * Static version of the {@see toObject} method.
+ * @param {boolean|undefined} includeInstance Deprecated. Whether to include
+ *     the JSPB instance for transitional soy proto support:
+ *     http://goto/soy-param-migration
+ * @param {!proto.adamant.global.v1.CreateBlacklistAddressRequest} msg The msg instance to transform.
+ * @return {!Object}
+ * @suppress {unusedLocalVariables} f is only used for nested messages
+ */
+proto.adamant.global.v1.CreateBlacklistAddressRequest.toObject = function(includeInstance, msg) {
+  var f, obj = {
+    address: jspb.Message.getFieldWithDefault(msg, 1, ""),
+    network: jspb.Message.getFieldWithDefault(msg, 2, 0),
+    externalId: jspb.Message.getFieldWithDefault(msg, 3, "")
+  };
+
+  if (includeInstance) {
+    obj.$jspbMessageInstance = msg;
+  }
+  return obj;
+};
+}
+
+
+/**
+ * Deserializes binary data (in protobuf wire format).
+ * @param {jspb.ByteSource} bytes The bytes to deserialize.
+ * @return {!proto.adamant.global.v1.CreateBlacklistAddressRequest}
+ */
+proto.adamant.global.v1.CreateBlacklistAddressRequest.deserializeBinary = function(bytes) {
+  var reader = new jspb.BinaryReader(bytes);
+  var msg = new proto.adamant.global.v1.CreateBlacklistAddressRequest;
+  return proto.adamant.global.v1.CreateBlacklistAddressRequest.deserializeBinaryFromReader(msg, reader);
+};
+
+
+/**
+ * Deserializes binary data (in protobuf wire format) from the
+ * given reader into the given message object.
+ * @param {!proto.adamant.global.v1.CreateBlacklistAddressRequest} msg The message object to deserialize into.
+ * @param {!jspb.BinaryReader} reader The BinaryReader to use.
+ * @return {!proto.adamant.global.v1.CreateBlacklistAddressRequest}
+ */
+proto.adamant.global.v1.CreateBlacklistAddressRequest.deserializeBinaryFromReader = function(msg, reader) {
+  while (reader.nextField()) {
+    if (reader.isEndGroup()) {
+      break;
+    }
+    var field = reader.getFieldNumber();
+    switch (field) {
+    case 1:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setAddress(value);
+      break;
+    case 2:
+      var value = /** @type {!proto.gincoinc.global.v1.Network} */ (reader.readEnum());
+      msg.setNetwork(value);
+      break;
+    case 3:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setExternalId(value);
+      break;
+    default:
+      reader.skipField();
+      break;
+    }
+  }
+  return msg;
+};
+
+
+/**
+ * Serializes the message to binary data (in protobuf wire format).
+ * @return {!Uint8Array}
+ */
+proto.adamant.global.v1.CreateBlacklistAddressRequest.prototype.serializeBinary = function() {
+  var writer = new jspb.BinaryWriter();
+  proto.adamant.global.v1.CreateBlacklistAddressRequest.serializeBinaryToWriter(this, writer);
+  return writer.getResultBuffer();
+};
+
+
+/**
+ * Serializes the given message to binary data (in protobuf wire
+ * format), writing to the given BinaryWriter.
+ * @param {!proto.adamant.global.v1.CreateBlacklistAddressRequest} message
+ * @param {!jspb.BinaryWriter} writer
+ * @suppress {unusedLocalVariables} f is only used for nested messages
+ */
+proto.adamant.global.v1.CreateBlacklistAddressRequest.serializeBinaryToWriter = function(message, writer) {
+  var f = undefined;
+  f = message.getAddress();
+  if (f.length > 0) {
+    writer.writeString(
+      1,
+      f
+    );
+  }
+  f = message.getNetwork();
+  if (f !== 0.0) {
+    writer.writeEnum(
+      2,
+      f
+    );
+  }
+  f = /** @type {string} */ (jspb.Message.getField(message, 3));
+  if (f != null) {
+    writer.writeString(
+      3,
+      f
+    );
+  }
+};
+
+
+/**
+ * optional string address = 1;
+ * @return {string}
+ */
+proto.adamant.global.v1.CreateBlacklistAddressRequest.prototype.getAddress = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 1, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.adamant.global.v1.CreateBlacklistAddressRequest} returns this
+ */
+proto.adamant.global.v1.CreateBlacklistAddressRequest.prototype.setAddress = function(value) {
+  return jspb.Message.setProto3StringField(this, 1, value);
+};
+
+
+/**
+ * optional gincoinc.global.v1.Network network = 2;
+ * @return {!proto.gincoinc.global.v1.Network}
+ */
+proto.adamant.global.v1.CreateBlacklistAddressRequest.prototype.getNetwork = function() {
+  return /** @type {!proto.gincoinc.global.v1.Network} */ (jspb.Message.getFieldWithDefault(this, 2, 0));
+};
+
+
+/**
+ * @param {!proto.gincoinc.global.v1.Network} value
+ * @return {!proto.adamant.global.v1.CreateBlacklistAddressRequest} returns this
+ */
+proto.adamant.global.v1.CreateBlacklistAddressRequest.prototype.setNetwork = function(value) {
+  return jspb.Message.setProto3EnumField(this, 2, value);
+};
+
+
+/**
+ * optional string external_id = 3;
+ * @return {string}
+ */
+proto.adamant.global.v1.CreateBlacklistAddressRequest.prototype.getExternalId = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 3, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.adamant.global.v1.CreateBlacklistAddressRequest} returns this
+ */
+proto.adamant.global.v1.CreateBlacklistAddressRequest.prototype.setExternalId = function(value) {
+  return jspb.Message.setField(this, 3, value);
+};
+
+
+/**
+ * Clears the field making it undefined.
+ * @return {!proto.adamant.global.v1.CreateBlacklistAddressRequest} returns this
+ */
+proto.adamant.global.v1.CreateBlacklistAddressRequest.prototype.clearExternalId = function() {
+  return jspb.Message.setField(this, 3, undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.adamant.global.v1.CreateBlacklistAddressRequest.prototype.hasExternalId = function() {
+  return jspb.Message.getField(this, 3) != null;
+};
+
+
+
+
+
+if (jspb.Message.GENERATE_TO_OBJECT) {
+/**
+ * Creates an object representation of this proto.
+ * Field names that are reserved in JavaScript and will be renamed to pb_name.
+ * Optional fields that are not set will be set to undefined.
+ * To access a reserved field use, foo.pb_<name>, eg, foo.pb_default.
+ * For the list of reserved names please see:
+ *     net/proto2/compiler/js/internal/generator.cc#kKeyword.
+ * @param {boolean=} opt_includeInstance Deprecated. whether to include the
+ *     JSPB instance for transitional soy proto support:
+ *     http://goto/soy-param-migration
+ * @return {!Object}
+ */
+proto.adamant.global.v1.GetBlacklistAddressRequest.prototype.toObject = function(opt_includeInstance) {
+  return proto.adamant.global.v1.GetBlacklistAddressRequest.toObject(opt_includeInstance, this);
+};
+
+
+/**
+ * Static version of the {@see toObject} method.
+ * @param {boolean|undefined} includeInstance Deprecated. Whether to include
+ *     the JSPB instance for transitional soy proto support:
+ *     http://goto/soy-param-migration
+ * @param {!proto.adamant.global.v1.GetBlacklistAddressRequest} msg The msg instance to transform.
+ * @return {!Object}
+ * @suppress {unusedLocalVariables} f is only used for nested messages
+ */
+proto.adamant.global.v1.GetBlacklistAddressRequest.toObject = function(includeInstance, msg) {
+  var f, obj = {
+    blacklistAddressId: jspb.Message.getFieldWithDefault(msg, 1, "")
+  };
+
+  if (includeInstance) {
+    obj.$jspbMessageInstance = msg;
+  }
+  return obj;
+};
+}
+
+
+/**
+ * Deserializes binary data (in protobuf wire format).
+ * @param {jspb.ByteSource} bytes The bytes to deserialize.
+ * @return {!proto.adamant.global.v1.GetBlacklistAddressRequest}
+ */
+proto.adamant.global.v1.GetBlacklistAddressRequest.deserializeBinary = function(bytes) {
+  var reader = new jspb.BinaryReader(bytes);
+  var msg = new proto.adamant.global.v1.GetBlacklistAddressRequest;
+  return proto.adamant.global.v1.GetBlacklistAddressRequest.deserializeBinaryFromReader(msg, reader);
+};
+
+
+/**
+ * Deserializes binary data (in protobuf wire format) from the
+ * given reader into the given message object.
+ * @param {!proto.adamant.global.v1.GetBlacklistAddressRequest} msg The message object to deserialize into.
+ * @param {!jspb.BinaryReader} reader The BinaryReader to use.
+ * @return {!proto.adamant.global.v1.GetBlacklistAddressRequest}
+ */
+proto.adamant.global.v1.GetBlacklistAddressRequest.deserializeBinaryFromReader = function(msg, reader) {
+  while (reader.nextField()) {
+    if (reader.isEndGroup()) {
+      break;
+    }
+    var field = reader.getFieldNumber();
+    switch (field) {
+    case 1:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setBlacklistAddressId(value);
+      break;
+    default:
+      reader.skipField();
+      break;
+    }
+  }
+  return msg;
+};
+
+
+/**
+ * Serializes the message to binary data (in protobuf wire format).
+ * @return {!Uint8Array}
+ */
+proto.adamant.global.v1.GetBlacklistAddressRequest.prototype.serializeBinary = function() {
+  var writer = new jspb.BinaryWriter();
+  proto.adamant.global.v1.GetBlacklistAddressRequest.serializeBinaryToWriter(this, writer);
+  return writer.getResultBuffer();
+};
+
+
+/**
+ * Serializes the given message to binary data (in protobuf wire
+ * format), writing to the given BinaryWriter.
+ * @param {!proto.adamant.global.v1.GetBlacklistAddressRequest} message
+ * @param {!jspb.BinaryWriter} writer
+ * @suppress {unusedLocalVariables} f is only used for nested messages
+ */
+proto.adamant.global.v1.GetBlacklistAddressRequest.serializeBinaryToWriter = function(message, writer) {
+  var f = undefined;
+  f = message.getBlacklistAddressId();
+  if (f.length > 0) {
+    writer.writeString(
+      1,
+      f
+    );
+  }
+};
+
+
+/**
+ * optional string blacklist_address_id = 1;
+ * @return {string}
+ */
+proto.adamant.global.v1.GetBlacklistAddressRequest.prototype.getBlacklistAddressId = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 1, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.adamant.global.v1.GetBlacklistAddressRequest} returns this
+ */
+proto.adamant.global.v1.GetBlacklistAddressRequest.prototype.setBlacklistAddressId = function(value) {
+  return jspb.Message.setProto3StringField(this, 1, value);
+};
+
+
+
+
+
+if (jspb.Message.GENERATE_TO_OBJECT) {
+/**
+ * Creates an object representation of this proto.
+ * Field names that are reserved in JavaScript and will be renamed to pb_name.
+ * Optional fields that are not set will be set to undefined.
+ * To access a reserved field use, foo.pb_<name>, eg, foo.pb_default.
+ * For the list of reserved names please see:
+ *     net/proto2/compiler/js/internal/generator.cc#kKeyword.
+ * @param {boolean=} opt_includeInstance Deprecated. whether to include the
+ *     JSPB instance for transitional soy proto support:
+ *     http://goto/soy-param-migration
+ * @return {!Object}
+ */
+proto.adamant.global.v1.UpdateBlacklistAddressRequest.prototype.toObject = function(opt_includeInstance) {
+  return proto.adamant.global.v1.UpdateBlacklistAddressRequest.toObject(opt_includeInstance, this);
+};
+
+
+/**
+ * Static version of the {@see toObject} method.
+ * @param {boolean|undefined} includeInstance Deprecated. Whether to include
+ *     the JSPB instance for transitional soy proto support:
+ *     http://goto/soy-param-migration
+ * @param {!proto.adamant.global.v1.UpdateBlacklistAddressRequest} msg The msg instance to transform.
+ * @return {!Object}
+ * @suppress {unusedLocalVariables} f is only used for nested messages
+ */
+proto.adamant.global.v1.UpdateBlacklistAddressRequest.toObject = function(includeInstance, msg) {
+  var f, obj = {
+    blacklistAddressId: jspb.Message.getFieldWithDefault(msg, 1, ""),
+    activate: jspb.Message.getBooleanFieldWithDefault(msg, 2, false)
+  };
+
+  if (includeInstance) {
+    obj.$jspbMessageInstance = msg;
+  }
+  return obj;
+};
+}
+
+
+/**
+ * Deserializes binary data (in protobuf wire format).
+ * @param {jspb.ByteSource} bytes The bytes to deserialize.
+ * @return {!proto.adamant.global.v1.UpdateBlacklistAddressRequest}
+ */
+proto.adamant.global.v1.UpdateBlacklistAddressRequest.deserializeBinary = function(bytes) {
+  var reader = new jspb.BinaryReader(bytes);
+  var msg = new proto.adamant.global.v1.UpdateBlacklistAddressRequest;
+  return proto.adamant.global.v1.UpdateBlacklistAddressRequest.deserializeBinaryFromReader(msg, reader);
+};
+
+
+/**
+ * Deserializes binary data (in protobuf wire format) from the
+ * given reader into the given message object.
+ * @param {!proto.adamant.global.v1.UpdateBlacklistAddressRequest} msg The message object to deserialize into.
+ * @param {!jspb.BinaryReader} reader The BinaryReader to use.
+ * @return {!proto.adamant.global.v1.UpdateBlacklistAddressRequest}
+ */
+proto.adamant.global.v1.UpdateBlacklistAddressRequest.deserializeBinaryFromReader = function(msg, reader) {
+  while (reader.nextField()) {
+    if (reader.isEndGroup()) {
+      break;
+    }
+    var field = reader.getFieldNumber();
+    switch (field) {
+    case 1:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setBlacklistAddressId(value);
+      break;
+    case 2:
+      var value = /** @type {boolean} */ (reader.readBool());
+      msg.setActivate(value);
+      break;
+    default:
+      reader.skipField();
+      break;
+    }
+  }
+  return msg;
+};
+
+
+/**
+ * Serializes the message to binary data (in protobuf wire format).
+ * @return {!Uint8Array}
+ */
+proto.adamant.global.v1.UpdateBlacklistAddressRequest.prototype.serializeBinary = function() {
+  var writer = new jspb.BinaryWriter();
+  proto.adamant.global.v1.UpdateBlacklistAddressRequest.serializeBinaryToWriter(this, writer);
+  return writer.getResultBuffer();
+};
+
+
+/**
+ * Serializes the given message to binary data (in protobuf wire
+ * format), writing to the given BinaryWriter.
+ * @param {!proto.adamant.global.v1.UpdateBlacklistAddressRequest} message
+ * @param {!jspb.BinaryWriter} writer
+ * @suppress {unusedLocalVariables} f is only used for nested messages
+ */
+proto.adamant.global.v1.UpdateBlacklistAddressRequest.serializeBinaryToWriter = function(message, writer) {
+  var f = undefined;
+  f = message.getBlacklistAddressId();
+  if (f.length > 0) {
+    writer.writeString(
+      1,
+      f
+    );
+  }
+  f = message.getActivate();
+  if (f) {
+    writer.writeBool(
+      2,
+      f
+    );
+  }
+};
+
+
+/**
+ * optional string blacklist_address_id = 1;
+ * @return {string}
+ */
+proto.adamant.global.v1.UpdateBlacklistAddressRequest.prototype.getBlacklistAddressId = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 1, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.adamant.global.v1.UpdateBlacklistAddressRequest} returns this
+ */
+proto.adamant.global.v1.UpdateBlacklistAddressRequest.prototype.setBlacklistAddressId = function(value) {
+  return jspb.Message.setProto3StringField(this, 1, value);
+};
+
+
+/**
+ * optional bool activate = 2;
+ * @return {boolean}
+ */
+proto.adamant.global.v1.UpdateBlacklistAddressRequest.prototype.getActivate = function() {
+  return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 2, false));
+};
+
+
+/**
+ * @param {boolean} value
+ * @return {!proto.adamant.global.v1.UpdateBlacklistAddressRequest} returns this
+ */
+proto.adamant.global.v1.UpdateBlacklistAddressRequest.prototype.setActivate = function(value) {
+  return jspb.Message.setProto3BooleanField(this, 2, value);
+};
+
+
+
+
+
+if (jspb.Message.GENERATE_TO_OBJECT) {
+/**
+ * Creates an object representation of this proto.
+ * Field names that are reserved in JavaScript and will be renamed to pb_name.
+ * Optional fields that are not set will be set to undefined.
+ * To access a reserved field use, foo.pb_<name>, eg, foo.pb_default.
+ * For the list of reserved names please see:
+ *     net/proto2/compiler/js/internal/generator.cc#kKeyword.
+ * @param {boolean=} opt_includeInstance Deprecated. whether to include the
+ *     JSPB instance for transitional soy proto support:
+ *     http://goto/soy-param-migration
+ * @return {!Object}
+ */
+proto.adamant.global.v1.ReviewBlacklistAddressProposalRequest.prototype.toObject = function(opt_includeInstance) {
+  return proto.adamant.global.v1.ReviewBlacklistAddressProposalRequest.toObject(opt_includeInstance, this);
+};
+
+
+/**
+ * Static version of the {@see toObject} method.
+ * @param {boolean|undefined} includeInstance Deprecated. Whether to include
+ *     the JSPB instance for transitional soy proto support:
+ *     http://goto/soy-param-migration
+ * @param {!proto.adamant.global.v1.ReviewBlacklistAddressProposalRequest} msg The msg instance to transform.
+ * @return {!Object}
+ * @suppress {unusedLocalVariables} f is only used for nested messages
+ */
+proto.adamant.global.v1.ReviewBlacklistAddressProposalRequest.toObject = function(includeInstance, msg) {
+  var f, obj = {
+    blacklistAddressId: jspb.Message.getFieldWithDefault(msg, 1, ""),
+    approve: jspb.Message.getBooleanFieldWithDefault(msg, 2, false)
+  };
+
+  if (includeInstance) {
+    obj.$jspbMessageInstance = msg;
+  }
+  return obj;
+};
+}
+
+
+/**
+ * Deserializes binary data (in protobuf wire format).
+ * @param {jspb.ByteSource} bytes The bytes to deserialize.
+ * @return {!proto.adamant.global.v1.ReviewBlacklistAddressProposalRequest}
+ */
+proto.adamant.global.v1.ReviewBlacklistAddressProposalRequest.deserializeBinary = function(bytes) {
+  var reader = new jspb.BinaryReader(bytes);
+  var msg = new proto.adamant.global.v1.ReviewBlacklistAddressProposalRequest;
+  return proto.adamant.global.v1.ReviewBlacklistAddressProposalRequest.deserializeBinaryFromReader(msg, reader);
+};
+
+
+/**
+ * Deserializes binary data (in protobuf wire format) from the
+ * given reader into the given message object.
+ * @param {!proto.adamant.global.v1.ReviewBlacklistAddressProposalRequest} msg The message object to deserialize into.
+ * @param {!jspb.BinaryReader} reader The BinaryReader to use.
+ * @return {!proto.adamant.global.v1.ReviewBlacklistAddressProposalRequest}
+ */
+proto.adamant.global.v1.ReviewBlacklistAddressProposalRequest.deserializeBinaryFromReader = function(msg, reader) {
+  while (reader.nextField()) {
+    if (reader.isEndGroup()) {
+      break;
+    }
+    var field = reader.getFieldNumber();
+    switch (field) {
+    case 1:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setBlacklistAddressId(value);
+      break;
+    case 2:
+      var value = /** @type {boolean} */ (reader.readBool());
+      msg.setApprove(value);
+      break;
+    default:
+      reader.skipField();
+      break;
+    }
+  }
+  return msg;
+};
+
+
+/**
+ * Serializes the message to binary data (in protobuf wire format).
+ * @return {!Uint8Array}
+ */
+proto.adamant.global.v1.ReviewBlacklistAddressProposalRequest.prototype.serializeBinary = function() {
+  var writer = new jspb.BinaryWriter();
+  proto.adamant.global.v1.ReviewBlacklistAddressProposalRequest.serializeBinaryToWriter(this, writer);
+  return writer.getResultBuffer();
+};
+
+
+/**
+ * Serializes the given message to binary data (in protobuf wire
+ * format), writing to the given BinaryWriter.
+ * @param {!proto.adamant.global.v1.ReviewBlacklistAddressProposalRequest} message
+ * @param {!jspb.BinaryWriter} writer
+ * @suppress {unusedLocalVariables} f is only used for nested messages
+ */
+proto.adamant.global.v1.ReviewBlacklistAddressProposalRequest.serializeBinaryToWriter = function(message, writer) {
+  var f = undefined;
+  f = message.getBlacklistAddressId();
+  if (f.length > 0) {
+    writer.writeString(
+      1,
+      f
+    );
+  }
+  f = message.getApprove();
+  if (f) {
+    writer.writeBool(
+      2,
+      f
+    );
+  }
+};
+
+
+/**
+ * optional string blacklist_address_id = 1;
+ * @return {string}
+ */
+proto.adamant.global.v1.ReviewBlacklistAddressProposalRequest.prototype.getBlacklistAddressId = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 1, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.adamant.global.v1.ReviewBlacklistAddressProposalRequest} returns this
+ */
+proto.adamant.global.v1.ReviewBlacklistAddressProposalRequest.prototype.setBlacklistAddressId = function(value) {
+  return jspb.Message.setProto3StringField(this, 1, value);
+};
+
+
+/**
+ * optional bool approve = 2;
+ * @return {boolean}
+ */
+proto.adamant.global.v1.ReviewBlacklistAddressProposalRequest.prototype.getApprove = function() {
+  return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 2, false));
+};
+
+
+/**
+ * @param {boolean} value
+ * @return {!proto.adamant.global.v1.ReviewBlacklistAddressProposalRequest} returns this
+ */
+proto.adamant.global.v1.ReviewBlacklistAddressProposalRequest.prototype.setApprove = function(value) {
+  return jspb.Message.setProto3BooleanField(this, 2, value);
+};
+
+
+
+
+
+if (jspb.Message.GENERATE_TO_OBJECT) {
+/**
+ * Creates an object representation of this proto.
+ * Field names that are reserved in JavaScript and will be renamed to pb_name.
+ * Optional fields that are not set will be set to undefined.
+ * To access a reserved field use, foo.pb_<name>, eg, foo.pb_default.
+ * For the list of reserved names please see:
+ *     net/proto2/compiler/js/internal/generator.cc#kKeyword.
+ * @param {boolean=} opt_includeInstance Deprecated. whether to include the
+ *     JSPB instance for transitional soy proto support:
+ *     http://goto/soy-param-migration
+ * @return {!Object}
+ */
+proto.adamant.global.v1.BulkReviewBlacklistAddressProposalRequest.prototype.toObject = function(opt_includeInstance) {
+  return proto.adamant.global.v1.BulkReviewBlacklistAddressProposalRequest.toObject(opt_includeInstance, this);
+};
+
+
+/**
+ * Static version of the {@see toObject} method.
+ * @param {boolean|undefined} includeInstance Deprecated. Whether to include
+ *     the JSPB instance for transitional soy proto support:
+ *     http://goto/soy-param-migration
+ * @param {!proto.adamant.global.v1.BulkReviewBlacklistAddressProposalRequest} msg The msg instance to transform.
+ * @return {!Object}
+ * @suppress {unusedLocalVariables} f is only used for nested messages
+ */
+proto.adamant.global.v1.BulkReviewBlacklistAddressProposalRequest.toObject = function(includeInstance, msg) {
+  var f, obj = {
+    fileId: jspb.Message.getFieldWithDefault(msg, 1, ""),
+    approve: jspb.Message.getBooleanFieldWithDefault(msg, 2, false)
+  };
+
+  if (includeInstance) {
+    obj.$jspbMessageInstance = msg;
+  }
+  return obj;
+};
+}
+
+
+/**
+ * Deserializes binary data (in protobuf wire format).
+ * @param {jspb.ByteSource} bytes The bytes to deserialize.
+ * @return {!proto.adamant.global.v1.BulkReviewBlacklistAddressProposalRequest}
+ */
+proto.adamant.global.v1.BulkReviewBlacklistAddressProposalRequest.deserializeBinary = function(bytes) {
+  var reader = new jspb.BinaryReader(bytes);
+  var msg = new proto.adamant.global.v1.BulkReviewBlacklistAddressProposalRequest;
+  return proto.adamant.global.v1.BulkReviewBlacklistAddressProposalRequest.deserializeBinaryFromReader(msg, reader);
+};
+
+
+/**
+ * Deserializes binary data (in protobuf wire format) from the
+ * given reader into the given message object.
+ * @param {!proto.adamant.global.v1.BulkReviewBlacklistAddressProposalRequest} msg The message object to deserialize into.
+ * @param {!jspb.BinaryReader} reader The BinaryReader to use.
+ * @return {!proto.adamant.global.v1.BulkReviewBlacklistAddressProposalRequest}
+ */
+proto.adamant.global.v1.BulkReviewBlacklistAddressProposalRequest.deserializeBinaryFromReader = function(msg, reader) {
+  while (reader.nextField()) {
+    if (reader.isEndGroup()) {
+      break;
+    }
+    var field = reader.getFieldNumber();
+    switch (field) {
+    case 1:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setFileId(value);
+      break;
+    case 2:
+      var value = /** @type {boolean} */ (reader.readBool());
+      msg.setApprove(value);
+      break;
+    default:
+      reader.skipField();
+      break;
+    }
+  }
+  return msg;
+};
+
+
+/**
+ * Serializes the message to binary data (in protobuf wire format).
+ * @return {!Uint8Array}
+ */
+proto.adamant.global.v1.BulkReviewBlacklistAddressProposalRequest.prototype.serializeBinary = function() {
+  var writer = new jspb.BinaryWriter();
+  proto.adamant.global.v1.BulkReviewBlacklistAddressProposalRequest.serializeBinaryToWriter(this, writer);
+  return writer.getResultBuffer();
+};
+
+
+/**
+ * Serializes the given message to binary data (in protobuf wire
+ * format), writing to the given BinaryWriter.
+ * @param {!proto.adamant.global.v1.BulkReviewBlacklistAddressProposalRequest} message
+ * @param {!jspb.BinaryWriter} writer
+ * @suppress {unusedLocalVariables} f is only used for nested messages
+ */
+proto.adamant.global.v1.BulkReviewBlacklistAddressProposalRequest.serializeBinaryToWriter = function(message, writer) {
+  var f = undefined;
+  f = message.getFileId();
+  if (f.length > 0) {
+    writer.writeString(
+      1,
+      f
+    );
+  }
+  f = message.getApprove();
+  if (f) {
+    writer.writeBool(
+      2,
+      f
+    );
+  }
+};
+
+
+/**
+ * optional string file_id = 1;
+ * @return {string}
+ */
+proto.adamant.global.v1.BulkReviewBlacklistAddressProposalRequest.prototype.getFileId = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 1, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.adamant.global.v1.BulkReviewBlacklistAddressProposalRequest} returns this
+ */
+proto.adamant.global.v1.BulkReviewBlacklistAddressProposalRequest.prototype.setFileId = function(value) {
+  return jspb.Message.setProto3StringField(this, 1, value);
+};
+
+
+/**
+ * optional bool approve = 2;
+ * @return {boolean}
+ */
+proto.adamant.global.v1.BulkReviewBlacklistAddressProposalRequest.prototype.getApprove = function() {
+  return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 2, false));
+};
+
+
+/**
+ * @param {boolean} value
+ * @return {!proto.adamant.global.v1.BulkReviewBlacklistAddressProposalRequest} returns this
+ */
+proto.adamant.global.v1.BulkReviewBlacklistAddressProposalRequest.prototype.setApprove = function(value) {
+  return jspb.Message.setProto3BooleanField(this, 2, value);
+};
+
+
+
+
+
+if (jspb.Message.GENERATE_TO_OBJECT) {
+/**
+ * Creates an object representation of this proto.
+ * Field names that are reserved in JavaScript and will be renamed to pb_name.
+ * Optional fields that are not set will be set to undefined.
+ * To access a reserved field use, foo.pb_<name>, eg, foo.pb_default.
+ * For the list of reserved names please see:
+ *     net/proto2/compiler/js/internal/generator.cc#kKeyword.
+ * @param {boolean=} opt_includeInstance Deprecated. whether to include the
+ *     JSPB instance for transitional soy proto support:
+ *     http://goto/soy-param-migration
+ * @return {!Object}
+ */
+proto.adamant.global.v1.GetBlacklistStorageSignedURLRequest.prototype.toObject = function(opt_includeInstance) {
+  return proto.adamant.global.v1.GetBlacklistStorageSignedURLRequest.toObject(opt_includeInstance, this);
+};
+
+
+/**
+ * Static version of the {@see toObject} method.
+ * @param {boolean|undefined} includeInstance Deprecated. Whether to include
+ *     the JSPB instance for transitional soy proto support:
+ *     http://goto/soy-param-migration
+ * @param {!proto.adamant.global.v1.GetBlacklistStorageSignedURLRequest} msg The msg instance to transform.
+ * @return {!Object}
+ * @suppress {unusedLocalVariables} f is only used for nested messages
+ */
+proto.adamant.global.v1.GetBlacklistStorageSignedURLRequest.toObject = function(includeInstance, msg) {
+  var f, obj = {
+    network: jspb.Message.getFieldWithDefault(msg, 7, 0),
+    fileName: jspb.Message.getFieldWithDefault(msg, 2, "")
+  };
+
+  if (includeInstance) {
+    obj.$jspbMessageInstance = msg;
+  }
+  return obj;
+};
+}
+
+
+/**
+ * Deserializes binary data (in protobuf wire format).
+ * @param {jspb.ByteSource} bytes The bytes to deserialize.
+ * @return {!proto.adamant.global.v1.GetBlacklistStorageSignedURLRequest}
+ */
+proto.adamant.global.v1.GetBlacklistStorageSignedURLRequest.deserializeBinary = function(bytes) {
+  var reader = new jspb.BinaryReader(bytes);
+  var msg = new proto.adamant.global.v1.GetBlacklistStorageSignedURLRequest;
+  return proto.adamant.global.v1.GetBlacklistStorageSignedURLRequest.deserializeBinaryFromReader(msg, reader);
+};
+
+
+/**
+ * Deserializes binary data (in protobuf wire format) from the
+ * given reader into the given message object.
+ * @param {!proto.adamant.global.v1.GetBlacklistStorageSignedURLRequest} msg The message object to deserialize into.
+ * @param {!jspb.BinaryReader} reader The BinaryReader to use.
+ * @return {!proto.adamant.global.v1.GetBlacklistStorageSignedURLRequest}
+ */
+proto.adamant.global.v1.GetBlacklistStorageSignedURLRequest.deserializeBinaryFromReader = function(msg, reader) {
+  while (reader.nextField()) {
+    if (reader.isEndGroup()) {
+      break;
+    }
+    var field = reader.getFieldNumber();
+    switch (field) {
+    case 7:
+      var value = /** @type {!proto.gincoinc.global.v1.Network} */ (reader.readEnum());
+      msg.setNetwork(value);
+      break;
+    case 2:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setFileName(value);
+      break;
+    default:
+      reader.skipField();
+      break;
+    }
+  }
+  return msg;
+};
+
+
+/**
+ * Serializes the message to binary data (in protobuf wire format).
+ * @return {!Uint8Array}
+ */
+proto.adamant.global.v1.GetBlacklistStorageSignedURLRequest.prototype.serializeBinary = function() {
+  var writer = new jspb.BinaryWriter();
+  proto.adamant.global.v1.GetBlacklistStorageSignedURLRequest.serializeBinaryToWriter(this, writer);
+  return writer.getResultBuffer();
+};
+
+
+/**
+ * Serializes the given message to binary data (in protobuf wire
+ * format), writing to the given BinaryWriter.
+ * @param {!proto.adamant.global.v1.GetBlacklistStorageSignedURLRequest} message
+ * @param {!jspb.BinaryWriter} writer
+ * @suppress {unusedLocalVariables} f is only used for nested messages
+ */
+proto.adamant.global.v1.GetBlacklistStorageSignedURLRequest.serializeBinaryToWriter = function(message, writer) {
+  var f = undefined;
+  f = message.getNetwork();
+  if (f !== 0.0) {
+    writer.writeEnum(
+      7,
+      f
+    );
+  }
+  f = message.getFileName();
+  if (f.length > 0) {
+    writer.writeString(
+      2,
+      f
+    );
+  }
+};
+
+
+/**
+ * optional gincoinc.global.v1.Network network = 7;
+ * @return {!proto.gincoinc.global.v1.Network}
+ */
+proto.adamant.global.v1.GetBlacklistStorageSignedURLRequest.prototype.getNetwork = function() {
+  return /** @type {!proto.gincoinc.global.v1.Network} */ (jspb.Message.getFieldWithDefault(this, 7, 0));
+};
+
+
+/**
+ * @param {!proto.gincoinc.global.v1.Network} value
+ * @return {!proto.adamant.global.v1.GetBlacklistStorageSignedURLRequest} returns this
+ */
+proto.adamant.global.v1.GetBlacklistStorageSignedURLRequest.prototype.setNetwork = function(value) {
+  return jspb.Message.setProto3EnumField(this, 7, value);
+};
+
+
+/**
+ * optional string file_name = 2;
+ * @return {string}
+ */
+proto.adamant.global.v1.GetBlacklistStorageSignedURLRequest.prototype.getFileName = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 2, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.adamant.global.v1.GetBlacklistStorageSignedURLRequest} returns this
+ */
+proto.adamant.global.v1.GetBlacklistStorageSignedURLRequest.prototype.setFileName = function(value) {
+  return jspb.Message.setProto3StringField(this, 2, value);
+};
+
+
+
+
+
+if (jspb.Message.GENERATE_TO_OBJECT) {
+/**
+ * Creates an object representation of this proto.
+ * Field names that are reserved in JavaScript and will be renamed to pb_name.
+ * Optional fields that are not set will be set to undefined.
+ * To access a reserved field use, foo.pb_<name>, eg, foo.pb_default.
+ * For the list of reserved names please see:
+ *     net/proto2/compiler/js/internal/generator.cc#kKeyword.
+ * @param {boolean=} opt_includeInstance Deprecated. whether to include the
+ *     JSPB instance for transitional soy proto support:
+ *     http://goto/soy-param-migration
+ * @return {!Object}
+ */
+proto.adamant.global.v1.GetBlacklistStorageSignedURLResponse.prototype.toObject = function(opt_includeInstance) {
+  return proto.adamant.global.v1.GetBlacklistStorageSignedURLResponse.toObject(opt_includeInstance, this);
+};
+
+
+/**
+ * Static version of the {@see toObject} method.
+ * @param {boolean|undefined} includeInstance Deprecated. Whether to include
+ *     the JSPB instance for transitional soy proto support:
+ *     http://goto/soy-param-migration
+ * @param {!proto.adamant.global.v1.GetBlacklistStorageSignedURLResponse} msg The msg instance to transform.
+ * @return {!Object}
+ * @suppress {unusedLocalVariables} f is only used for nested messages
+ */
+proto.adamant.global.v1.GetBlacklistStorageSignedURLResponse.toObject = function(includeInstance, msg) {
+  var f, obj = {
+    url: jspb.Message.getFieldWithDefault(msg, 1, "")
+  };
+
+  if (includeInstance) {
+    obj.$jspbMessageInstance = msg;
+  }
+  return obj;
+};
+}
+
+
+/**
+ * Deserializes binary data (in protobuf wire format).
+ * @param {jspb.ByteSource} bytes The bytes to deserialize.
+ * @return {!proto.adamant.global.v1.GetBlacklistStorageSignedURLResponse}
+ */
+proto.adamant.global.v1.GetBlacklistStorageSignedURLResponse.deserializeBinary = function(bytes) {
+  var reader = new jspb.BinaryReader(bytes);
+  var msg = new proto.adamant.global.v1.GetBlacklistStorageSignedURLResponse;
+  return proto.adamant.global.v1.GetBlacklistStorageSignedURLResponse.deserializeBinaryFromReader(msg, reader);
+};
+
+
+/**
+ * Deserializes binary data (in protobuf wire format) from the
+ * given reader into the given message object.
+ * @param {!proto.adamant.global.v1.GetBlacklistStorageSignedURLResponse} msg The message object to deserialize into.
+ * @param {!jspb.BinaryReader} reader The BinaryReader to use.
+ * @return {!proto.adamant.global.v1.GetBlacklistStorageSignedURLResponse}
+ */
+proto.adamant.global.v1.GetBlacklistStorageSignedURLResponse.deserializeBinaryFromReader = function(msg, reader) {
+  while (reader.nextField()) {
+    if (reader.isEndGroup()) {
+      break;
+    }
+    var field = reader.getFieldNumber();
+    switch (field) {
+    case 1:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setUrl(value);
+      break;
+    default:
+      reader.skipField();
+      break;
+    }
+  }
+  return msg;
+};
+
+
+/**
+ * Serializes the message to binary data (in protobuf wire format).
+ * @return {!Uint8Array}
+ */
+proto.adamant.global.v1.GetBlacklistStorageSignedURLResponse.prototype.serializeBinary = function() {
+  var writer = new jspb.BinaryWriter();
+  proto.adamant.global.v1.GetBlacklistStorageSignedURLResponse.serializeBinaryToWriter(this, writer);
+  return writer.getResultBuffer();
+};
+
+
+/**
+ * Serializes the given message to binary data (in protobuf wire
+ * format), writing to the given BinaryWriter.
+ * @param {!proto.adamant.global.v1.GetBlacklistStorageSignedURLResponse} message
+ * @param {!jspb.BinaryWriter} writer
+ * @suppress {unusedLocalVariables} f is only used for nested messages
+ */
+proto.adamant.global.v1.GetBlacklistStorageSignedURLResponse.serializeBinaryToWriter = function(message, writer) {
+  var f = undefined;
+  f = message.getUrl();
+  if (f.length > 0) {
+    writer.writeString(
+      1,
+      f
+    );
+  }
+};
+
+
+/**
+ * optional string url = 1;
+ * @return {string}
+ */
+proto.adamant.global.v1.GetBlacklistStorageSignedURLResponse.prototype.getUrl = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 1, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.adamant.global.v1.GetBlacklistStorageSignedURLResponse} returns this
+ */
+proto.adamant.global.v1.GetBlacklistStorageSignedURLResponse.prototype.setUrl = function(value) {
+  return jspb.Message.setProto3StringField(this, 1, value);
+};
+
+
+
+
+
+if (jspb.Message.GENERATE_TO_OBJECT) {
+/**
+ * Creates an object representation of this proto.
+ * Field names that are reserved in JavaScript and will be renamed to pb_name.
+ * Optional fields that are not set will be set to undefined.
+ * To access a reserved field use, foo.pb_<name>, eg, foo.pb_default.
+ * For the list of reserved names please see:
+ *     net/proto2/compiler/js/internal/generator.cc#kKeyword.
+ * @param {boolean=} opt_includeInstance Deprecated. whether to include the
+ *     JSPB instance for transitional soy proto support:
+ *     http://goto/soy-param-migration
+ * @return {!Object}
+ */
+proto.adamant.global.v1.ListBlacklistAddressFilesRequest.prototype.toObject = function(opt_includeInstance) {
+  return proto.adamant.global.v1.ListBlacklistAddressFilesRequest.toObject(opt_includeInstance, this);
+};
+
+
+/**
+ * Static version of the {@see toObject} method.
+ * @param {boolean|undefined} includeInstance Deprecated. Whether to include
+ *     the JSPB instance for transitional soy proto support:
+ *     http://goto/soy-param-migration
+ * @param {!proto.adamant.global.v1.ListBlacklistAddressFilesRequest} msg The msg instance to transform.
+ * @return {!Object}
+ * @suppress {unusedLocalVariables} f is only used for nested messages
+ */
+proto.adamant.global.v1.ListBlacklistAddressFilesRequest.toObject = function(includeInstance, msg) {
+  var f, obj = {
+    status: jspb.Message.getFieldWithDefault(msg, 1, 0),
+    pageSize: jspb.Message.getFieldWithDefault(msg, 2, 0),
+    pageToken: jspb.Message.getFieldWithDefault(msg, 3, "")
+  };
+
+  if (includeInstance) {
+    obj.$jspbMessageInstance = msg;
+  }
+  return obj;
+};
+}
+
+
+/**
+ * Deserializes binary data (in protobuf wire format).
+ * @param {jspb.ByteSource} bytes The bytes to deserialize.
+ * @return {!proto.adamant.global.v1.ListBlacklistAddressFilesRequest}
+ */
+proto.adamant.global.v1.ListBlacklistAddressFilesRequest.deserializeBinary = function(bytes) {
+  var reader = new jspb.BinaryReader(bytes);
+  var msg = new proto.adamant.global.v1.ListBlacklistAddressFilesRequest;
+  return proto.adamant.global.v1.ListBlacklistAddressFilesRequest.deserializeBinaryFromReader(msg, reader);
+};
+
+
+/**
+ * Deserializes binary data (in protobuf wire format) from the
+ * given reader into the given message object.
+ * @param {!proto.adamant.global.v1.ListBlacklistAddressFilesRequest} msg The message object to deserialize into.
+ * @param {!jspb.BinaryReader} reader The BinaryReader to use.
+ * @return {!proto.adamant.global.v1.ListBlacklistAddressFilesRequest}
+ */
+proto.adamant.global.v1.ListBlacklistAddressFilesRequest.deserializeBinaryFromReader = function(msg, reader) {
+  while (reader.nextField()) {
+    if (reader.isEndGroup()) {
+      break;
+    }
+    var field = reader.getFieldNumber();
+    switch (field) {
+    case 1:
+      var value = /** @type {!proto.adamant.global.v1.BlacklistAddressStatus} */ (reader.readEnum());
+      msg.setStatus(value);
+      break;
+    case 2:
+      var value = /** @type {number} */ (reader.readUint32());
+      msg.setPageSize(value);
+      break;
+    case 3:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setPageToken(value);
+      break;
+    default:
+      reader.skipField();
+      break;
+    }
+  }
+  return msg;
+};
+
+
+/**
+ * Serializes the message to binary data (in protobuf wire format).
+ * @return {!Uint8Array}
+ */
+proto.adamant.global.v1.ListBlacklistAddressFilesRequest.prototype.serializeBinary = function() {
+  var writer = new jspb.BinaryWriter();
+  proto.adamant.global.v1.ListBlacklistAddressFilesRequest.serializeBinaryToWriter(this, writer);
+  return writer.getResultBuffer();
+};
+
+
+/**
+ * Serializes the given message to binary data (in protobuf wire
+ * format), writing to the given BinaryWriter.
+ * @param {!proto.adamant.global.v1.ListBlacklistAddressFilesRequest} message
+ * @param {!jspb.BinaryWriter} writer
+ * @suppress {unusedLocalVariables} f is only used for nested messages
+ */
+proto.adamant.global.v1.ListBlacklistAddressFilesRequest.serializeBinaryToWriter = function(message, writer) {
+  var f = undefined;
+  f = message.getStatus();
+  if (f !== 0.0) {
+    writer.writeEnum(
+      1,
+      f
+    );
+  }
+  f = /** @type {number} */ (jspb.Message.getField(message, 2));
+  if (f != null) {
+    writer.writeUint32(
+      2,
+      f
+    );
+  }
+  f = /** @type {string} */ (jspb.Message.getField(message, 3));
+  if (f != null) {
+    writer.writeString(
+      3,
+      f
+    );
+  }
+};
+
+
+/**
+ * optional BlacklistAddressStatus status = 1;
+ * @return {!proto.adamant.global.v1.BlacklistAddressStatus}
+ */
+proto.adamant.global.v1.ListBlacklistAddressFilesRequest.prototype.getStatus = function() {
+  return /** @type {!proto.adamant.global.v1.BlacklistAddressStatus} */ (jspb.Message.getFieldWithDefault(this, 1, 0));
+};
+
+
+/**
+ * @param {!proto.adamant.global.v1.BlacklistAddressStatus} value
+ * @return {!proto.adamant.global.v1.ListBlacklistAddressFilesRequest} returns this
+ */
+proto.adamant.global.v1.ListBlacklistAddressFilesRequest.prototype.setStatus = function(value) {
+  return jspb.Message.setProto3EnumField(this, 1, value);
+};
+
+
+/**
+ * optional uint32 page_size = 2;
+ * @return {number}
+ */
+proto.adamant.global.v1.ListBlacklistAddressFilesRequest.prototype.getPageSize = function() {
+  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 2, 0));
+};
+
+
+/**
+ * @param {number} value
+ * @return {!proto.adamant.global.v1.ListBlacklistAddressFilesRequest} returns this
+ */
+proto.adamant.global.v1.ListBlacklistAddressFilesRequest.prototype.setPageSize = function(value) {
+  return jspb.Message.setField(this, 2, value);
+};
+
+
+/**
+ * Clears the field making it undefined.
+ * @return {!proto.adamant.global.v1.ListBlacklistAddressFilesRequest} returns this
+ */
+proto.adamant.global.v1.ListBlacklistAddressFilesRequest.prototype.clearPageSize = function() {
+  return jspb.Message.setField(this, 2, undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.adamant.global.v1.ListBlacklistAddressFilesRequest.prototype.hasPageSize = function() {
+  return jspb.Message.getField(this, 2) != null;
+};
+
+
+/**
+ * optional string page_token = 3;
+ * @return {string}
+ */
+proto.adamant.global.v1.ListBlacklistAddressFilesRequest.prototype.getPageToken = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 3, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.adamant.global.v1.ListBlacklistAddressFilesRequest} returns this
+ */
+proto.adamant.global.v1.ListBlacklistAddressFilesRequest.prototype.setPageToken = function(value) {
+  return jspb.Message.setField(this, 3, value);
+};
+
+
+/**
+ * Clears the field making it undefined.
+ * @return {!proto.adamant.global.v1.ListBlacklistAddressFilesRequest} returns this
+ */
+proto.adamant.global.v1.ListBlacklistAddressFilesRequest.prototype.clearPageToken = function() {
+  return jspb.Message.setField(this, 3, undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.adamant.global.v1.ListBlacklistAddressFilesRequest.prototype.hasPageToken = function() {
+  return jspb.Message.getField(this, 3) != null;
+};
+
+
+
+/**
+ * List of repeated fields within this message type.
+ * @private {!Array<number>}
+ * @const
+ */
+proto.adamant.global.v1.ListBlacklistAddressFilesResponse.repeatedFields_ = [1];
+
+
+
+if (jspb.Message.GENERATE_TO_OBJECT) {
+/**
+ * Creates an object representation of this proto.
+ * Field names that are reserved in JavaScript and will be renamed to pb_name.
+ * Optional fields that are not set will be set to undefined.
+ * To access a reserved field use, foo.pb_<name>, eg, foo.pb_default.
+ * For the list of reserved names please see:
+ *     net/proto2/compiler/js/internal/generator.cc#kKeyword.
+ * @param {boolean=} opt_includeInstance Deprecated. whether to include the
+ *     JSPB instance for transitional soy proto support:
+ *     http://goto/soy-param-migration
+ * @return {!Object}
+ */
+proto.adamant.global.v1.ListBlacklistAddressFilesResponse.prototype.toObject = function(opt_includeInstance) {
+  return proto.adamant.global.v1.ListBlacklistAddressFilesResponse.toObject(opt_includeInstance, this);
+};
+
+
+/**
+ * Static version of the {@see toObject} method.
+ * @param {boolean|undefined} includeInstance Deprecated. Whether to include
+ *     the JSPB instance for transitional soy proto support:
+ *     http://goto/soy-param-migration
+ * @param {!proto.adamant.global.v1.ListBlacklistAddressFilesResponse} msg The msg instance to transform.
+ * @return {!Object}
+ * @suppress {unusedLocalVariables} f is only used for nested messages
+ */
+proto.adamant.global.v1.ListBlacklistAddressFilesResponse.toObject = function(includeInstance, msg) {
+  var f, obj = {
+    filesList: jspb.Message.toObjectList(msg.getFilesList(),
+    gincoinc_adamant_global_v1_adamantglobalv1_model_pb.BlacklistAddressFile.toObject, includeInstance),
+    nextPageToken: jspb.Message.getFieldWithDefault(msg, 2, "")
+  };
+
+  if (includeInstance) {
+    obj.$jspbMessageInstance = msg;
+  }
+  return obj;
+};
+}
+
+
+/**
+ * Deserializes binary data (in protobuf wire format).
+ * @param {jspb.ByteSource} bytes The bytes to deserialize.
+ * @return {!proto.adamant.global.v1.ListBlacklistAddressFilesResponse}
+ */
+proto.adamant.global.v1.ListBlacklistAddressFilesResponse.deserializeBinary = function(bytes) {
+  var reader = new jspb.BinaryReader(bytes);
+  var msg = new proto.adamant.global.v1.ListBlacklistAddressFilesResponse;
+  return proto.adamant.global.v1.ListBlacklistAddressFilesResponse.deserializeBinaryFromReader(msg, reader);
+};
+
+
+/**
+ * Deserializes binary data (in protobuf wire format) from the
+ * given reader into the given message object.
+ * @param {!proto.adamant.global.v1.ListBlacklistAddressFilesResponse} msg The message object to deserialize into.
+ * @param {!jspb.BinaryReader} reader The BinaryReader to use.
+ * @return {!proto.adamant.global.v1.ListBlacklistAddressFilesResponse}
+ */
+proto.adamant.global.v1.ListBlacklistAddressFilesResponse.deserializeBinaryFromReader = function(msg, reader) {
+  while (reader.nextField()) {
+    if (reader.isEndGroup()) {
+      break;
+    }
+    var field = reader.getFieldNumber();
+    switch (field) {
+    case 1:
+      var value = new gincoinc_adamant_global_v1_adamantglobalv1_model_pb.BlacklistAddressFile;
+      reader.readMessage(value,gincoinc_adamant_global_v1_adamantglobalv1_model_pb.BlacklistAddressFile.deserializeBinaryFromReader);
+      msg.addFiles(value);
+      break;
+    case 2:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setNextPageToken(value);
+      break;
+    default:
+      reader.skipField();
+      break;
+    }
+  }
+  return msg;
+};
+
+
+/**
+ * Serializes the message to binary data (in protobuf wire format).
+ * @return {!Uint8Array}
+ */
+proto.adamant.global.v1.ListBlacklistAddressFilesResponse.prototype.serializeBinary = function() {
+  var writer = new jspb.BinaryWriter();
+  proto.adamant.global.v1.ListBlacklistAddressFilesResponse.serializeBinaryToWriter(this, writer);
+  return writer.getResultBuffer();
+};
+
+
+/**
+ * Serializes the given message to binary data (in protobuf wire
+ * format), writing to the given BinaryWriter.
+ * @param {!proto.adamant.global.v1.ListBlacklistAddressFilesResponse} message
+ * @param {!jspb.BinaryWriter} writer
+ * @suppress {unusedLocalVariables} f is only used for nested messages
+ */
+proto.adamant.global.v1.ListBlacklistAddressFilesResponse.serializeBinaryToWriter = function(message, writer) {
+  var f = undefined;
+  f = message.getFilesList();
+  if (f.length > 0) {
+    writer.writeRepeatedMessage(
+      1,
+      f,
+      gincoinc_adamant_global_v1_adamantglobalv1_model_pb.BlacklistAddressFile.serializeBinaryToWriter
+    );
+  }
+  f = message.getNextPageToken();
+  if (f.length > 0) {
+    writer.writeString(
+      2,
+      f
+    );
+  }
+};
+
+
+/**
+ * repeated BlacklistAddressFile files = 1;
+ * @return {!Array<!proto.adamant.global.v1.BlacklistAddressFile>}
+ */
+proto.adamant.global.v1.ListBlacklistAddressFilesResponse.prototype.getFilesList = function() {
+  return /** @type{!Array<!proto.adamant.global.v1.BlacklistAddressFile>} */ (
+    jspb.Message.getRepeatedWrapperField(this, gincoinc_adamant_global_v1_adamantglobalv1_model_pb.BlacklistAddressFile, 1));
+};
+
+
+/**
+ * @param {!Array<!proto.adamant.global.v1.BlacklistAddressFile>} value
+ * @return {!proto.adamant.global.v1.ListBlacklistAddressFilesResponse} returns this
+*/
+proto.adamant.global.v1.ListBlacklistAddressFilesResponse.prototype.setFilesList = function(value) {
+  return jspb.Message.setRepeatedWrapperField(this, 1, value);
+};
+
+
+/**
+ * @param {!proto.adamant.global.v1.BlacklistAddressFile=} opt_value
+ * @param {number=} opt_index
+ * @return {!proto.adamant.global.v1.BlacklistAddressFile}
+ */
+proto.adamant.global.v1.ListBlacklistAddressFilesResponse.prototype.addFiles = function(opt_value, opt_index) {
+  return jspb.Message.addToRepeatedWrapperField(this, 1, opt_value, proto.adamant.global.v1.BlacklistAddressFile, opt_index);
+};
+
+
+/**
+ * Clears the list making it empty but non-null.
+ * @return {!proto.adamant.global.v1.ListBlacklistAddressFilesResponse} returns this
+ */
+proto.adamant.global.v1.ListBlacklistAddressFilesResponse.prototype.clearFilesList = function() {
+  return this.setFilesList([]);
+};
+
+
+/**
+ * optional string next_page_token = 2;
+ * @return {string}
+ */
+proto.adamant.global.v1.ListBlacklistAddressFilesResponse.prototype.getNextPageToken = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 2, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.adamant.global.v1.ListBlacklistAddressFilesResponse} returns this
+ */
+proto.adamant.global.v1.ListBlacklistAddressFilesResponse.prototype.setNextPageToken = function(value) {
   return jspb.Message.setProto3StringField(this, 2, value);
 };
 

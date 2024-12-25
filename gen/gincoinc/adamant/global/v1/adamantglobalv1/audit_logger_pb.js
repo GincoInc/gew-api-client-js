@@ -101,6 +101,8 @@ proto.adamant.global.v1.AuditLog.toObject = function(includeInstance, msg) {
     walletGroupId: jspb.Message.getFieldWithDefault(msg, 34, ""),
     walletGroupName: jspb.Message.getFieldWithDefault(msg, 35, ""),
     walletNamesList: (f = jspb.Message.getRepeatedField(msg, 36)) == null ? undefined : f,
+    preTransactionId: jspb.Message.getFieldWithDefault(msg, 50, ""),
+    preTransactionExternalId: jspb.Message.getFieldWithDefault(msg, 53, ""),
     transactionId: jspb.Message.getFieldWithDefault(msg, 15, ""),
     coinType: jspb.Message.getFieldWithDefault(msg, 16, 0),
     stringValue: jspb.Message.getFieldWithDefault(msg, 17, ""),
@@ -127,7 +129,14 @@ proto.adamant.global.v1.AuditLog.toObject = function(includeInstance, msg) {
     disabledMailsList: (f = jspb.Message.getRepeatedField(msg, 42)) == null ? undefined : f,
     network: jspb.Message.getFieldWithDefault(msg, 44, 0),
     preTransactionThreshold: jspb.Message.getFloatingPointFieldWithDefault(msg, 45, 0.0),
-    preTransactionThresholdId: jspb.Message.getFieldWithDefault(msg, 46, "")
+    preTransactionThresholdId: jspb.Message.getFieldWithDefault(msg, 46, ""),
+    blacklistAddressId: jspb.Message.getFieldWithDefault(msg, 47, ""),
+    fileName: jspb.Message.getFieldWithDefault(msg, 48, ""),
+    addressCount: jspb.Message.getFieldWithDefault(msg, 49, 0),
+    previousTransactionId: jspb.Message.getFieldWithDefault(msg, 51, ""),
+    newTransactionId: jspb.Message.getFieldWithDefault(msg, 52, ""),
+    activate: jspb.Message.getBooleanFieldWithDefault(msg, 54, false),
+    fileId: jspb.Message.getFieldWithDefault(msg, 55, "")
   };
 
   if (includeInstance) {
@@ -239,6 +248,14 @@ proto.adamant.global.v1.AuditLog.deserializeBinaryFromReader = function(msg, rea
     case 36:
       var value = /** @type {string} */ (reader.readString());
       msg.addWalletNames(value);
+      break;
+    case 50:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setPreTransactionId(value);
+      break;
+    case 53:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setPreTransactionExternalId(value);
       break;
     case 15:
       var value = /** @type {string} */ (reader.readString());
@@ -353,6 +370,34 @@ proto.adamant.global.v1.AuditLog.deserializeBinaryFromReader = function(msg, rea
     case 46:
       var value = /** @type {string} */ (reader.readString());
       msg.setPreTransactionThresholdId(value);
+      break;
+    case 47:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setBlacklistAddressId(value);
+      break;
+    case 48:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setFileName(value);
+      break;
+    case 49:
+      var value = /** @type {number} */ (reader.readInt64());
+      msg.setAddressCount(value);
+      break;
+    case 51:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setPreviousTransactionId(value);
+      break;
+    case 52:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setNewTransactionId(value);
+      break;
+    case 54:
+      var value = /** @type {boolean} */ (reader.readBool());
+      msg.setActivate(value);
+      break;
+    case 55:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setFileId(value);
       break;
     default:
       reader.skipField();
@@ -513,6 +558,20 @@ proto.adamant.global.v1.AuditLog.serializeBinaryToWriter = function(message, wri
   if (f.length > 0) {
     writer.writeRepeatedString(
       36,
+      f
+    );
+  }
+  f = message.getPreTransactionId();
+  if (f.length > 0) {
+    writer.writeString(
+      50,
+      f
+    );
+  }
+  f = message.getPreTransactionExternalId();
+  if (f.length > 0) {
+    writer.writeString(
+      53,
       f
     );
   }
@@ -704,6 +763,55 @@ proto.adamant.global.v1.AuditLog.serializeBinaryToWriter = function(message, wri
   if (f.length > 0) {
     writer.writeString(
       46,
+      f
+    );
+  }
+  f = message.getBlacklistAddressId();
+  if (f.length > 0) {
+    writer.writeString(
+      47,
+      f
+    );
+  }
+  f = message.getFileName();
+  if (f.length > 0) {
+    writer.writeString(
+      48,
+      f
+    );
+  }
+  f = message.getAddressCount();
+  if (f !== 0) {
+    writer.writeInt64(
+      49,
+      f
+    );
+  }
+  f = message.getPreviousTransactionId();
+  if (f.length > 0) {
+    writer.writeString(
+      51,
+      f
+    );
+  }
+  f = message.getNewTransactionId();
+  if (f.length > 0) {
+    writer.writeString(
+      52,
+      f
+    );
+  }
+  f = message.getActivate();
+  if (f) {
+    writer.writeBool(
+      54,
+      f
+    );
+  }
+  f = message.getFileId();
+  if (f.length > 0) {
+    writer.writeString(
+      55,
       f
     );
   }
@@ -1068,6 +1176,42 @@ proto.adamant.global.v1.AuditLog.prototype.addWalletNames = function(value, opt_
  */
 proto.adamant.global.v1.AuditLog.prototype.clearWalletNamesList = function() {
   return this.setWalletNamesList([]);
+};
+
+
+/**
+ * optional string pre_transaction_id = 50;
+ * @return {string}
+ */
+proto.adamant.global.v1.AuditLog.prototype.getPreTransactionId = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 50, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.adamant.global.v1.AuditLog} returns this
+ */
+proto.adamant.global.v1.AuditLog.prototype.setPreTransactionId = function(value) {
+  return jspb.Message.setProto3StringField(this, 50, value);
+};
+
+
+/**
+ * optional string pre_transaction_external_id = 53;
+ * @return {string}
+ */
+proto.adamant.global.v1.AuditLog.prototype.getPreTransactionExternalId = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 53, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.adamant.global.v1.AuditLog} returns this
+ */
+proto.adamant.global.v1.AuditLog.prototype.setPreTransactionExternalId = function(value) {
+  return jspb.Message.setProto3StringField(this, 53, value);
 };
 
 
@@ -1687,6 +1831,132 @@ proto.adamant.global.v1.AuditLog.prototype.getPreTransactionThresholdId = functi
  */
 proto.adamant.global.v1.AuditLog.prototype.setPreTransactionThresholdId = function(value) {
   return jspb.Message.setProto3StringField(this, 46, value);
+};
+
+
+/**
+ * optional string blacklist_address_id = 47;
+ * @return {string}
+ */
+proto.adamant.global.v1.AuditLog.prototype.getBlacklistAddressId = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 47, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.adamant.global.v1.AuditLog} returns this
+ */
+proto.adamant.global.v1.AuditLog.prototype.setBlacklistAddressId = function(value) {
+  return jspb.Message.setProto3StringField(this, 47, value);
+};
+
+
+/**
+ * optional string file_name = 48;
+ * @return {string}
+ */
+proto.adamant.global.v1.AuditLog.prototype.getFileName = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 48, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.adamant.global.v1.AuditLog} returns this
+ */
+proto.adamant.global.v1.AuditLog.prototype.setFileName = function(value) {
+  return jspb.Message.setProto3StringField(this, 48, value);
+};
+
+
+/**
+ * optional int64 address_count = 49;
+ * @return {number}
+ */
+proto.adamant.global.v1.AuditLog.prototype.getAddressCount = function() {
+  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 49, 0));
+};
+
+
+/**
+ * @param {number} value
+ * @return {!proto.adamant.global.v1.AuditLog} returns this
+ */
+proto.adamant.global.v1.AuditLog.prototype.setAddressCount = function(value) {
+  return jspb.Message.setProto3IntField(this, 49, value);
+};
+
+
+/**
+ * optional string previous_transaction_id = 51;
+ * @return {string}
+ */
+proto.adamant.global.v1.AuditLog.prototype.getPreviousTransactionId = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 51, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.adamant.global.v1.AuditLog} returns this
+ */
+proto.adamant.global.v1.AuditLog.prototype.setPreviousTransactionId = function(value) {
+  return jspb.Message.setProto3StringField(this, 51, value);
+};
+
+
+/**
+ * optional string new_transaction_id = 52;
+ * @return {string}
+ */
+proto.adamant.global.v1.AuditLog.prototype.getNewTransactionId = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 52, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.adamant.global.v1.AuditLog} returns this
+ */
+proto.adamant.global.v1.AuditLog.prototype.setNewTransactionId = function(value) {
+  return jspb.Message.setProto3StringField(this, 52, value);
+};
+
+
+/**
+ * optional bool activate = 54;
+ * @return {boolean}
+ */
+proto.adamant.global.v1.AuditLog.prototype.getActivate = function() {
+  return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 54, false));
+};
+
+
+/**
+ * @param {boolean} value
+ * @return {!proto.adamant.global.v1.AuditLog} returns this
+ */
+proto.adamant.global.v1.AuditLog.prototype.setActivate = function(value) {
+  return jspb.Message.setProto3BooleanField(this, 54, value);
+};
+
+
+/**
+ * optional string file_id = 55;
+ * @return {string}
+ */
+proto.adamant.global.v1.AuditLog.prototype.getFileId = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 55, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.adamant.global.v1.AuditLog} returns this
+ */
+proto.adamant.global.v1.AuditLog.prototype.setFileId = function(value) {
+  return jspb.Message.setProto3StringField(this, 55, value);
 };
 
 

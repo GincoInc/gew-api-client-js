@@ -1100,6 +1100,50 @@ function deserialize_adamant_global_v1_ListLabeledAddressesResponse(buffer_arg) 
   return gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.ListLabeledAddressesResponse.deserializeBinary(new Uint8Array(buffer_arg));
 }
 
+function serialize_adamant_global_v1_ListNFTWalletsByFilterRequest(arg) {
+  if (!(arg instanceof gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.ListNFTWalletsByFilterRequest)) {
+    throw new Error('Expected argument of type adamant.global.v1.ListNFTWalletsByFilterRequest');
+  }
+  return Buffer.from(arg.serializeBinary());
+}
+
+function deserialize_adamant_global_v1_ListNFTWalletsByFilterRequest(buffer_arg) {
+  return gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.ListNFTWalletsByFilterRequest.deserializeBinary(new Uint8Array(buffer_arg));
+}
+
+function serialize_adamant_global_v1_ListNFTWalletsResponse(arg) {
+  if (!(arg instanceof gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.ListNFTWalletsResponse)) {
+    throw new Error('Expected argument of type adamant.global.v1.ListNFTWalletsResponse');
+  }
+  return Buffer.from(arg.serializeBinary());
+}
+
+function deserialize_adamant_global_v1_ListNFTWalletsResponse(buffer_arg) {
+  return gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.ListNFTWalletsResponse.deserializeBinary(new Uint8Array(buffer_arg));
+}
+
+function serialize_adamant_global_v1_ListNFTsByFilterRequest(arg) {
+  if (!(arg instanceof gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.ListNFTsByFilterRequest)) {
+    throw new Error('Expected argument of type adamant.global.v1.ListNFTsByFilterRequest');
+  }
+  return Buffer.from(arg.serializeBinary());
+}
+
+function deserialize_adamant_global_v1_ListNFTsByFilterRequest(buffer_arg) {
+  return gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.ListNFTsByFilterRequest.deserializeBinary(new Uint8Array(buffer_arg));
+}
+
+function serialize_adamant_global_v1_ListNFTsResponse(arg) {
+  if (!(arg instanceof gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.ListNFTsResponse)) {
+    throw new Error('Expected argument of type adamant.global.v1.ListNFTsResponse');
+  }
+  return Buffer.from(arg.serializeBinary());
+}
+
+function deserialize_adamant_global_v1_ListNFTsResponse(buffer_arg) {
+  return gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.ListNFTsResponse.deserializeBinary(new Uint8Array(buffer_arg));
+}
+
 function serialize_adamant_global_v1_ListPoliciesByFilterRequest(arg) {
   if (!(arg instanceof gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.ListPoliciesByFilterRequest)) {
     throw new Error('Expected argument of type adamant.global.v1.ListPoliciesByFilterRequest');
@@ -2174,6 +2218,17 @@ getWallet: {
     requestDeserialize: deserialize_adamant_global_v1_ListStakingWalletsByFilterRequest,
     responseSerialize: serialize_adamant_global_v1_ListStakingWalletsResponse,
     responseDeserialize: deserialize_adamant_global_v1_ListStakingWalletsResponse,
+  },
+  listNFTWalletsByFilter: {
+    path: '/adamant.global.v1.GlobalAPI/ListNFTWalletsByFilter',
+    requestStream: false,
+    responseStream: false,
+    requestType: gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.ListNFTWalletsByFilterRequest,
+    responseType: gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.ListNFTWalletsResponse,
+    requestSerialize: serialize_adamant_global_v1_ListNFTWalletsByFilterRequest,
+    requestDeserialize: deserialize_adamant_global_v1_ListNFTWalletsByFilterRequest,
+    responseSerialize: serialize_adamant_global_v1_ListNFTWalletsResponse,
+    responseDeserialize: deserialize_adamant_global_v1_ListNFTWalletsResponse,
   },
   updateWalletName: {
     path: '/adamant.global.v1.GlobalAPI/UpdateWalletName',
@@ -3351,6 +3406,18 @@ listStakingValidatorsByFilter: {
     requestDeserialize: deserialize_adamant_global_v1_ListStakingValidatorsByFilterRequest,
     responseSerialize: serialize_adamant_global_v1_ListStakingValidatorsResponse,
     responseDeserialize: deserialize_adamant_global_v1_ListStakingValidatorsResponse,
+  },
+  // NFT
+listNFTsByFilter: {
+    path: '/adamant.global.v1.GlobalAPI/ListNFTsByFilter',
+    requestStream: false,
+    responseStream: false,
+    requestType: gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.ListNFTsByFilterRequest,
+    responseType: gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.ListNFTsResponse,
+    requestSerialize: serialize_adamant_global_v1_ListNFTsByFilterRequest,
+    requestDeserialize: deserialize_adamant_global_v1_ListNFTsByFilterRequest,
+    responseSerialize: serialize_adamant_global_v1_ListNFTsResponse,
+    responseDeserialize: deserialize_adamant_global_v1_ListNFTsResponse,
   },
 };
 

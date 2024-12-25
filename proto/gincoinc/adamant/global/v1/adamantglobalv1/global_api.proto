@@ -30,6 +30,7 @@ service GlobalAPI {
   rpc ListWalletsByFilter(ListWalletsByFilterRequest) returns (ListWalletsResponse) {}
   rpc ListBaseWallets(ListBaseWalletsRequest) returns (ListBaseWalletsResponse) {}
   rpc ListStakingWalletsByFilter(ListStakingWalletsByFilterRequest) returns (ListStakingWalletsResponse) {}
+  rpc ListNFTWalletsByFilter(ListNFTWalletsByFilterRequest) returns (ListNFTWalletsResponse) {}
   rpc UpdateWalletName(UpdateWalletNameRequest) returns (google.protobuf.Empty) {}
   rpc UpdateWalletValidation(UpdateWalletValidationRequest) returns (google.protobuf.Empty) {}
   rpc UpdateWalletPolicy(UpdateWalletPolicyRequest) returns (google.protobuf.Empty) {}
@@ -173,6 +174,9 @@ service GlobalAPI {
 
   // StakingValidators
   rpc ListStakingValidatorsByFilter(ListStakingValidatorsByFilterRequest) returns (ListStakingValidatorsResponse) {}
+
+  // NFT
+  rpc ListNFTsByFilter(ListNFTsByFilterRequest) returns (ListNFTsResponse) {}
 }
 
 // =============================================================================
@@ -394,6 +398,46 @@ message ListStakingWalletsByFilterRequest {
 
 message ListStakingWalletsResponse {
   repeated StakingWallet staking_wallets = 1;
+  string next_page_token = 2;
+}
+
+message ListNFTWalletsByFilterRequest {
+  ListFilterType filter_type = 1 [(validate.rules).enum = {
+    defined_only: true,
+    not_in: [
+      0
+    ]
+  }];
+  // optional
+  string wallet_id = 2;
+
+  // optional
+  string wallet_name = 3 [(validate.rules).string = {
+    max_len: 40
+  }];
+
+  // optional
+  string address = 4;
+
+  // optional
+  gincoinc.global.v1.Coin coin = 5 [(validate.rules).enum = {
+    defined_only: true
+  }];
+
+  repeated WalletType wallet_type = 6;
+  repeated WalletState wallet_state = 7;
+
+  // optional
+  uint32 page_size = 8 [(validate.rules).uint32.lte = 100];
+
+  // optional
+  string page_token = 9 [(validate.rules).string = {
+    pattern: "^$|^[ABCDEFGHIJKLMNOPQRSTUVWXYZ234567]{16}$"
+  }];
+}
+
+message ListNFTWalletsResponse {
+  repeated NFTWallet nft_wallets = 1;
   string next_page_token = 2;
 }
 
@@ -765,6 +809,89 @@ message ImportAddressRequest {
 }
 
 // -----------------------------------------------------------------------------
+// PreTransaction
+// -----------------------------------------------------------------------------
+
+message CreatePreTransactionRequest {
+  gincoinc.global.v1.Coin coin = 1 [(validate.rules).enum = {
+    defined_only: true,
+    not_in: [
+      0
+    ]
+  }];
+
+  gincoinc.global.v1.Network network = 2 [(validate.rules).enum = {
+    defined_only: true
+  }];
+
+  string external_id = 3 [(validate.rules).string.min_len = 1];
+
+  // Use single format for single recipient transaction and multi-recipient transaction
+  repeated PreTransactionDetail details = 4;
+}
+
+message CreatePreTransactionResponse {
+  string pre_transaction_id = 1;
+}
+
+message ApprovePreTransactionRequest {
+  string pre_transaction_id = 1 [(validate.rules).string = {
+    pattern: "^[0-9a-f]{8}-[0-9a-f]{4}-4[0-9a-f]{3}-[89ab][0-9a-f]{3}-[0-9a-f]{12}$"
+  }];
+}
+
+message RejectPreTransactionRequest {
+  string pre_transaction_id = 1 [(validate.rules).string = {
+    pattern: "^[0-9a-f]{8}-[0-9a-f]{4}-4[0-9a-f]{3}-[89ab][0-9a-f]{3}-[0-9a-f]{12}$"
+  }];
+}
+
+message CancelPreTransactionRequest {
+  string pre_transaction_id = 1 [(validate.rules).string = {
+    pattern: "^[0-9a-f]{8}-[0-9a-f]{4}-4[0-9a-f]{3}-[89ab][0-9a-f]{3}-[0-9a-f]{12}$"
+  }];
+}
+
+message ListPreTransactionsByFilterRequest {
+  ListFilterType filter_type = 1 [(validate.rules).enum = {
+    defined_only: true,
+    not_in: [
+      0
+    ]
+  }];
+
+  optional string pre_transaction_id = 2 [(validate.rules).string = {
+    pattern: "^$|^[0-9a-f]{8}-[0-9a-f]{4}-4[0-9a-f]{3}-[89ab][0-9a-f]{3}-[0-9a-f]{12}$"
+  }];
+
+  optional string external_id = 3;
+
+  optional gincoinc.global.v1.Coin coin = 4 [(validate.rules).enum = {
+    defined_only: true
+  }];
+
+  optional gincoinc.global.v1.Network network = 5 [(validate.rules).enum = {
+    defined_only: true
+  }];
+
+  repeated PreTransactionState pre_transaction_state = 6;
+
+  optional google.protobuf.Timestamp start_time = 7;
+  optional google.protobuf.Timestamp end_time = 8;
+
+  optional uint32 page_size = 9 [(validate.rules).uint32.lte = 100];
+
+  optional string page_token = 10 [(validate.rules).string = {
+    pattern: "^$|^[ABCDEFGHIJKLMNOPQRSTUVWXYZ234567]{16}$"
+  }];
+}
+
+message ListPreTransactionsByFilterResponse {
+  repeated PreTransaction pre_transactions = 1;
+  string next_page_token = 2;
+}
+
+// -----------------------------------------------------------------------------
 // Transaction
 // -----------------------------------------------------------------------------
 
@@ -790,7 +917,11 @@ message CreateTransactionRequest {
   adamant.global.v1.CreateTransactionSolanaSpecific solana_specific = 17;
   adamant.global.v1.CreateTransactionAptosSpecific aptos_specific = 19;
   adamant.global.v1.CreateTransactionAvalancheSpecific avalanche_specific = 20;
+  adamant.global.v1.CreateTransactionNFTSpecific nft_specific = 22;
   adamant.global.v1.UtxoSpecific utxo_specific = 18;
+  optional string pre_transaction_id = 21 [(validate.rules).string = {
+    pattern: "^[0-9a-f]{8}-[0-9a-f]{4}-4[0-9a-f]{3}-[89ab][0-9a-f]{3}-[0-9a-f]{12}$"
+  }];
 }
 
 message CreateTransactionResponse {
@@ -1561,6 +1692,8 @@ message ListAuditLogsRequest {
   string page_token = 4 [(validate.rules).string = {
     pattern: "^$|^[ABCDEFGHIJKLMNOPQRSTUVWXYZ234567]{16}$"
   }];
+  optional google.protobuf.Timestamp start_event_time = 5;
+  optional google.protobuf.Timestamp end_event_time = 6;
 }
 
 message ListAuditLogsResponse {
@@ -2108,6 +2241,11 @@ message DownloadResourceRequest {
   adamant.global.v1.DownloadResourceType download_resource_type = 1;
   bool watch_only = 5;
   string wallet_id = 2;
+  optional bool is_activated = 6;
+  optional BlacklistAddressStatus status = 7;
+  optional gincoinc.global.v1.Network network = 8 [(validate.rules).enum = {
+    defined_only: true
+  }];
   google.protobuf.Timestamp start_time = 3;
   google.protobuf.Timestamp end_time = 4;
 }
@@ -2337,6 +2475,32 @@ message ListStakingValidatorsResponse {
 }
 
 // -----------------------------------------------------------------------------
+// NFT
+// -----------------------------------------------------------------------------
+
+message ListNFTsByFilterRequest {
+  ListFilterType filter_type = 1 [(validate.rules).enum = {
+    defined_only: true,
+    not_in: [
+      0
+    ]
+  }];
+
+  string wallet_id = 2;
+
+  optional string token_id = 3;
+
+  optional string token_name = 4;
+
+  optional string metadata = 5;
+}
+
+message ListNFTsResponse {
+  repeated NFT nfts = 1;
+  string next_page_token = 2;
+}
+
+// -----------------------------------------------------------------------------
 // MailSettings
 // -----------------------------------------------------------------------------
 
@@ -2378,5 +2542,133 @@ message ListPreTransactionThresholdsByFilterRequest {
 
 message ListPreTransactionThresholdsByFilterResponse {
   repeated PreTransactionThreshold pre_transaction_thresholds = 1;
+  string next_page_token = 2;
+}
+
+message CreatePreTransactionThresholdRequest {
+  gincoinc.global.v1.Coin coin = 1;
+  gincoinc.global.v1.Network network = 2;
+  double value = 3;
+}
+
+message CreatePreTransactionThresholdResponse {
+  string pre_transaction_threshold_id = 1;
+}
+
+message UpdatePreTransactionThresholdRequest {
+  string pre_transaction_threshold_id = 1;
+  double value = 2;
+}
+
+message ReviewPreTransactionThresholdProposalRequest {
+  string pre_transaction_threshold_id = 1;
+  bool approve = 2;
+}
+
+// -----------------------------------------------------------------------------
+// BlacklistAddress
+// -----------------------------------------------------------------------------
+
+message ListBlacklistAddressesByFilterRequest {
+  ListFilterType filter_type = 1 [(validate.rules).enum = {
+    defined_only: true
+  }];
+
+  optional string blacklist_address_id = 2 [(validate.rules).string = {
+    pattern: "^$|^[0-9a-f]{8}-[0-9a-f]{4}-4[0-9a-f]{3}-[89ab][0-9a-f]{3}-[0-9a-f]{12}$"
+  }];
+
+  optional string address = 3;
+
+  optional string file_id = 4;
+
+  optional string external_id = 12;
+
+  optional bool is_activated = 5;
+
+  optional BlacklistAddressStatus status = 6;
+
+  optional gincoinc.global.v1.Network network = 7 [(validate.rules).enum = {
+    defined_only: true
+  }];
+
+  optional google.protobuf.Timestamp start_time = 8;
+
+  optional google.protobuf.Timestamp end_time = 9;
+
+  optional uint32 page_size = 10 [(validate.rules).uint32.lte = 100];
+
+  optional string page_token = 11 [(validate.rules).string = {
+    pattern: "^$|^[ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789]{1,16}$"
+  }];
+}
+
+message ListBlacklistAddressesByFilterResponse {
+  repeated BlacklistAddress addresses = 1;
+  string next_page_token = 2;
+}
+
+message CreateBlacklistAddressResponse {
+  string blacklist_address_id = 1 [(validate.rules).string = {
+    pattern: "^[0-9a-f]{8}-[0-9a-f]{4}-4[0-9a-f]{3}-[89ab][0-9a-f]{3}-[0-9a-f]{12}$"
+  }];
+}
+
+message CreateBlacklistAddressRequest {
+  string address = 1;
+  gincoinc.global.v1.Network network = 2 [(validate.rules).enum = {
+    defined_only: true
+  }];
+  optional string external_id = 3;
+}
+
+message GetBlacklistAddressRequest {
+  string blacklist_address_id = 1 [(validate.rules).string = {
+    pattern: "^[0-9a-f]{8}-[0-9a-f]{4}-4[0-9a-f]{3}-[89ab][0-9a-f]{3}-[0-9a-f]{12}$"
+  }];
+}
+
+message UpdateBlacklistAddressRequest {
+  string blacklist_address_id = 1 [(validate.rules).string = {
+    pattern: "^[0-9a-f]{8}-[0-9a-f]{4}-4[0-9a-f]{3}-[89ab][0-9a-f]{3}-[0-9a-f]{12}$"
+  }];
+  bool activate = 2;
+}
+
+message ReviewBlacklistAddressProposalRequest {
+  string blacklist_address_id = 1 [(validate.rules).string = {
+    pattern: "^[0-9a-f]{8}-[0-9a-f]{4}-4[0-9a-f]{3}-[89ab][0-9a-f]{3}-[0-9a-f]{12}$"
+  }];
+  bool approve = 2;
+}
+
+message BulkReviewBlacklistAddressProposalRequest {
+  string file_id = 1;
+  bool approve = 2;
+}
+
+message GetBlacklistStorageSignedURLRequest {
+  gincoinc.global.v1.Network network = 7 [(validate.rules).enum = {
+    defined_only: true
+  }];
+  string file_name = 2;
+}
+
+message GetBlacklistStorageSignedURLResponse {
+  string url = 1;
+}
+
+message ListBlacklistAddressFilesRequest {
+  BlacklistAddressStatus status = 1;
+
+  optional uint32 page_size = 2 [(validate.rules).uint32.lte = 100];
+
+  optional string page_token = 3 [(validate.rules).string = {
+    pattern: "^$|^[ABCDEFGHIJKLMNOPQRSTUVWXYZ234567]{16}$"
+  }];
+}
+
+message ListBlacklistAddressFilesResponse {
+  repeated BlacklistAddressFile files = 1;
   string next_page_token = 2;
 }

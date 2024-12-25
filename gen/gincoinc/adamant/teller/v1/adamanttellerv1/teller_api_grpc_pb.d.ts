@@ -19,6 +19,7 @@ interface ITellerAPIService extends grpc.ServiceDefinition<grpc.UntypedServiceIm
     listWallets: ITellerAPIService_IListWallets;
     listWalletsByFilter: ITellerAPIService_IListWalletsByFilter;
     listStakingWalletsByFilter: ITellerAPIService_IListStakingWalletsByFilter;
+    listNFTWalletsByFilter: ITellerAPIService_IListNFTWalletsByFilter;
     listBaseWallets: ITellerAPIService_IListBaseWallets;
     getSpendableBalance: ITellerAPIService_IGetSpendableBalance;
     initializeXRPWallet: ITellerAPIService_IInitializeXRPWallet;
@@ -40,6 +41,9 @@ interface ITellerAPIService extends grpc.ServiceDefinition<grpc.UntypedServiceIm
     updateAddressBalance: ITellerAPIService_IUpdateAddressBalance;
     listColdFeeDepositAddresses: ITellerAPIService_IListColdFeeDepositAddresses;
     listHotFeeDepositAddresses: ITellerAPIService_IListHotFeeDepositAddresses;
+    createPreTransaction: ITellerAPIService_ICreatePreTransaction;
+    listPreTransactionsByFilter: ITellerAPIService_IListPreTransactionsByFilter;
+    cancelPreTransaction: ITellerAPIService_ICancelPreTransaction;
     createTransaction: ITellerAPIService_ICreateTransaction;
     createContractCreationTransaction: ITellerAPIService_ICreateContractCreationTransaction;
     signTransaction: ITellerAPIService_ISignTransaction;
@@ -66,6 +70,7 @@ interface ITellerAPIService extends grpc.ServiceDefinition<grpc.UntypedServiceIm
     listAuditLogs: ITellerAPIService_IListAuditLogs;
     listStakingHistoriesByFilter: ITellerAPIService_IListStakingHistoriesByFilter;
     listStakingValidatorsByFilter: ITellerAPIService_IListStakingValidatorsByFilter;
+    listNFTsByFilter: ITellerAPIService_IListNFTsByFilter;
     signMessage: ITellerAPIService_ISignMessage;
     progmatCoinInitialize: ITellerAPIService_IProgmatCoinInitialize;
     progmatCoinConfigureMinter: ITellerAPIService_IProgmatCoinConfigureMinter;
@@ -82,6 +87,8 @@ interface ITellerAPIService extends grpc.ServiceDefinition<grpc.UntypedServiceIm
     progmatCoinGrantWhiteAndBlackLister: ITellerAPIService_IProgmatCoinGrantWhiteAndBlackLister;
     progmatCoinUpgradeToAndCall: ITellerAPIService_IProgmatCoinUpgradeToAndCall;
     listPreTransactionThresholdsByFilter: ITellerAPIService_IListPreTransactionThresholdsByFilter;
+    listBlacklistAddressesByFilter: ITellerAPIService_IListBlacklistAddressesByFilter;
+    listBlacklistAddressFiles: ITellerAPIService_IListBlacklistAddressFiles;
 }
 
 interface ITellerAPIService_ICreateWallet extends grpc.MethodDefinition<gincoinc_adamant_teller_v1_adamanttellerv1_teller_api_pb.CreateWalletRequest, gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.CreateWalletResponse> {
@@ -128,6 +135,15 @@ interface ITellerAPIService_IListStakingWalletsByFilter extends grpc.MethodDefin
     requestDeserialize: grpc.deserialize<gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.ListStakingWalletsByFilterRequest>;
     responseSerialize: grpc.serialize<gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.ListStakingWalletsResponse>;
     responseDeserialize: grpc.deserialize<gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.ListStakingWalletsResponse>;
+}
+interface ITellerAPIService_IListNFTWalletsByFilter extends grpc.MethodDefinition<gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.ListNFTWalletsByFilterRequest, gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.ListNFTWalletsResponse> {
+    path: "/adamant.teller.v1.TellerAPI/ListNFTWalletsByFilter";
+    requestStream: false;
+    responseStream: false;
+    requestSerialize: grpc.serialize<gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.ListNFTWalletsByFilterRequest>;
+    requestDeserialize: grpc.deserialize<gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.ListNFTWalletsByFilterRequest>;
+    responseSerialize: grpc.serialize<gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.ListNFTWalletsResponse>;
+    responseDeserialize: grpc.deserialize<gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.ListNFTWalletsResponse>;
 }
 interface ITellerAPIService_IListBaseWallets extends grpc.MethodDefinition<gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.ListBaseWalletsRequest, gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.ListBaseWalletsResponse> {
     path: "/adamant.teller.v1.TellerAPI/ListBaseWallets";
@@ -317,6 +333,33 @@ interface ITellerAPIService_IListHotFeeDepositAddresses extends grpc.MethodDefin
     requestDeserialize: grpc.deserialize<gincoinc_adamant_teller_v1_adamanttellerv1_teller_api_pb.ListHotFeeDepositAddressesRequest>;
     responseSerialize: grpc.serialize<gincoinc_adamant_teller_v1_adamanttellerv1_teller_api_pb.ListHotFeeDepositAddressesResponse>;
     responseDeserialize: grpc.deserialize<gincoinc_adamant_teller_v1_adamanttellerv1_teller_api_pb.ListHotFeeDepositAddressesResponse>;
+}
+interface ITellerAPIService_ICreatePreTransaction extends grpc.MethodDefinition<gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.CreatePreTransactionRequest, gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.CreatePreTransactionResponse> {
+    path: "/adamant.teller.v1.TellerAPI/CreatePreTransaction";
+    requestStream: false;
+    responseStream: false;
+    requestSerialize: grpc.serialize<gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.CreatePreTransactionRequest>;
+    requestDeserialize: grpc.deserialize<gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.CreatePreTransactionRequest>;
+    responseSerialize: grpc.serialize<gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.CreatePreTransactionResponse>;
+    responseDeserialize: grpc.deserialize<gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.CreatePreTransactionResponse>;
+}
+interface ITellerAPIService_IListPreTransactionsByFilter extends grpc.MethodDefinition<gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.ListPreTransactionsByFilterRequest, gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.ListPreTransactionsByFilterResponse> {
+    path: "/adamant.teller.v1.TellerAPI/ListPreTransactionsByFilter";
+    requestStream: false;
+    responseStream: false;
+    requestSerialize: grpc.serialize<gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.ListPreTransactionsByFilterRequest>;
+    requestDeserialize: grpc.deserialize<gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.ListPreTransactionsByFilterRequest>;
+    responseSerialize: grpc.serialize<gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.ListPreTransactionsByFilterResponse>;
+    responseDeserialize: grpc.deserialize<gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.ListPreTransactionsByFilterResponse>;
+}
+interface ITellerAPIService_ICancelPreTransaction extends grpc.MethodDefinition<gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.CancelPreTransactionRequest, google_protobuf_empty_pb.Empty> {
+    path: "/adamant.teller.v1.TellerAPI/CancelPreTransaction";
+    requestStream: false;
+    responseStream: false;
+    requestSerialize: grpc.serialize<gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.CancelPreTransactionRequest>;
+    requestDeserialize: grpc.deserialize<gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.CancelPreTransactionRequest>;
+    responseSerialize: grpc.serialize<google_protobuf_empty_pb.Empty>;
+    responseDeserialize: grpc.deserialize<google_protobuf_empty_pb.Empty>;
 }
 interface ITellerAPIService_ICreateTransaction extends grpc.MethodDefinition<gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.CreateTransactionRequest, gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.CreateTransactionResponse> {
     path: "/adamant.teller.v1.TellerAPI/CreateTransaction";
@@ -552,6 +595,15 @@ interface ITellerAPIService_IListStakingValidatorsByFilter extends grpc.MethodDe
     responseSerialize: grpc.serialize<gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.ListStakingValidatorsResponse>;
     responseDeserialize: grpc.deserialize<gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.ListStakingValidatorsResponse>;
 }
+interface ITellerAPIService_IListNFTsByFilter extends grpc.MethodDefinition<gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.ListNFTsByFilterRequest, gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.ListNFTsResponse> {
+    path: "/adamant.teller.v1.TellerAPI/ListNFTsByFilter";
+    requestStream: false;
+    responseStream: false;
+    requestSerialize: grpc.serialize<gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.ListNFTsByFilterRequest>;
+    requestDeserialize: grpc.deserialize<gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.ListNFTsByFilterRequest>;
+    responseSerialize: grpc.serialize<gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.ListNFTsResponse>;
+    responseDeserialize: grpc.deserialize<gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.ListNFTsResponse>;
+}
 interface ITellerAPIService_ISignMessage extends grpc.MethodDefinition<gincoinc_adamant_teller_v1_adamanttellerv1_teller_api_pb.SignMessageRequest, gincoinc_adamant_teller_v1_adamanttellerv1_teller_api_pb.SignMessageResponse> {
     path: "/adamant.teller.v1.TellerAPI/SignMessage";
     requestStream: false;
@@ -696,6 +748,24 @@ interface ITellerAPIService_IListPreTransactionThresholdsByFilter extends grpc.M
     responseSerialize: grpc.serialize<gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.ListPreTransactionThresholdsByFilterResponse>;
     responseDeserialize: grpc.deserialize<gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.ListPreTransactionThresholdsByFilterResponse>;
 }
+interface ITellerAPIService_IListBlacklistAddressesByFilter extends grpc.MethodDefinition<gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.ListBlacklistAddressesByFilterRequest, gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.ListBlacklistAddressesByFilterResponse> {
+    path: "/adamant.teller.v1.TellerAPI/ListBlacklistAddressesByFilter";
+    requestStream: false;
+    responseStream: false;
+    requestSerialize: grpc.serialize<gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.ListBlacklistAddressesByFilterRequest>;
+    requestDeserialize: grpc.deserialize<gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.ListBlacklistAddressesByFilterRequest>;
+    responseSerialize: grpc.serialize<gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.ListBlacklistAddressesByFilterResponse>;
+    responseDeserialize: grpc.deserialize<gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.ListBlacklistAddressesByFilterResponse>;
+}
+interface ITellerAPIService_IListBlacklistAddressFiles extends grpc.MethodDefinition<gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.ListBlacklistAddressFilesRequest, gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.ListBlacklistAddressFilesResponse> {
+    path: "/adamant.teller.v1.TellerAPI/ListBlacklistAddressFiles";
+    requestStream: false;
+    responseStream: false;
+    requestSerialize: grpc.serialize<gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.ListBlacklistAddressFilesRequest>;
+    requestDeserialize: grpc.deserialize<gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.ListBlacklistAddressFilesRequest>;
+    responseSerialize: grpc.serialize<gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.ListBlacklistAddressFilesResponse>;
+    responseDeserialize: grpc.deserialize<gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.ListBlacklistAddressFilesResponse>;
+}
 
 export const TellerAPIService: ITellerAPIService;
 
@@ -705,6 +775,7 @@ export interface ITellerAPIServer {
     listWallets: grpc.handleUnaryCall<gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.ListWalletsRequest, gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.ListWalletsResponse>;
     listWalletsByFilter: grpc.handleUnaryCall<gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.ListWalletsByFilterRequest, gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.ListWalletsResponse>;
     listStakingWalletsByFilter: grpc.handleUnaryCall<gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.ListStakingWalletsByFilterRequest, gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.ListStakingWalletsResponse>;
+    listNFTWalletsByFilter: grpc.handleUnaryCall<gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.ListNFTWalletsByFilterRequest, gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.ListNFTWalletsResponse>;
     listBaseWallets: grpc.handleUnaryCall<gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.ListBaseWalletsRequest, gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.ListBaseWalletsResponse>;
     getSpendableBalance: grpc.handleUnaryCall<gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.GetSpendableBalanceRequest, gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.GetSpendableBalanceResponse>;
     initializeXRPWallet: grpc.handleUnaryCall<gincoinc_adamant_teller_v1_adamanttellerv1_teller_api_pb.InitializeXRPWalletRequest, google_protobuf_empty_pb.Empty>;
@@ -726,6 +797,9 @@ export interface ITellerAPIServer {
     updateAddressBalance: grpc.handleUnaryCall<gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.UpdateAddressBalanceRequest, google_protobuf_empty_pb.Empty>;
     listColdFeeDepositAddresses: grpc.handleUnaryCall<gincoinc_adamant_teller_v1_adamanttellerv1_teller_api_pb.ListColdFeeDepositAddressesRequest, gincoinc_adamant_teller_v1_adamanttellerv1_teller_api_pb.ListColdFeeDepositAddressesResponse>;
     listHotFeeDepositAddresses: grpc.handleUnaryCall<gincoinc_adamant_teller_v1_adamanttellerv1_teller_api_pb.ListHotFeeDepositAddressesRequest, gincoinc_adamant_teller_v1_adamanttellerv1_teller_api_pb.ListHotFeeDepositAddressesResponse>;
+    createPreTransaction: grpc.handleUnaryCall<gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.CreatePreTransactionRequest, gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.CreatePreTransactionResponse>;
+    listPreTransactionsByFilter: grpc.handleUnaryCall<gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.ListPreTransactionsByFilterRequest, gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.ListPreTransactionsByFilterResponse>;
+    cancelPreTransaction: grpc.handleUnaryCall<gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.CancelPreTransactionRequest, google_protobuf_empty_pb.Empty>;
     createTransaction: grpc.handleUnaryCall<gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.CreateTransactionRequest, gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.CreateTransactionResponse>;
     createContractCreationTransaction: grpc.handleUnaryCall<gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.CreateContractCreationTransactionRequest, gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.CreateContractCreationTransactionResponse>;
     signTransaction: grpc.handleUnaryCall<gincoinc_adamant_teller_v1_adamanttellerv1_teller_api_pb.SignTransactionRequest, google_protobuf_empty_pb.Empty>;
@@ -752,6 +826,7 @@ export interface ITellerAPIServer {
     listAuditLogs: grpc.handleUnaryCall<gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.ListAuditLogsRequest, gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.ListAuditLogsResponse>;
     listStakingHistoriesByFilter: grpc.handleUnaryCall<gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.ListStakingHistoriesByFilterRequest, gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.ListStakingHistoriesResponse>;
     listStakingValidatorsByFilter: grpc.handleUnaryCall<gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.ListStakingValidatorsByFilterRequest, gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.ListStakingValidatorsResponse>;
+    listNFTsByFilter: grpc.handleUnaryCall<gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.ListNFTsByFilterRequest, gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.ListNFTsResponse>;
     signMessage: grpc.handleUnaryCall<gincoinc_adamant_teller_v1_adamanttellerv1_teller_api_pb.SignMessageRequest, gincoinc_adamant_teller_v1_adamanttellerv1_teller_api_pb.SignMessageResponse>;
     progmatCoinInitialize: grpc.handleUnaryCall<gincoinc_adamant_teller_v1_adamanttellerv1_teller_api_pb.ProgmatCoinInitializeRequest, gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.CreateTransactionResponse>;
     progmatCoinConfigureMinter: grpc.handleUnaryCall<gincoinc_adamant_teller_v1_adamanttellerv1_teller_api_pb.ProgmatCoinConfigureMinterRequest, gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.CreateTransactionResponse>;
@@ -768,6 +843,8 @@ export interface ITellerAPIServer {
     progmatCoinGrantWhiteAndBlackLister: grpc.handleUnaryCall<gincoinc_adamant_teller_v1_adamanttellerv1_teller_api_pb.ProgmatCoinGrantWhiteAndBlackListerRequest, gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.CreateTransactionResponse>;
     progmatCoinUpgradeToAndCall: grpc.handleUnaryCall<gincoinc_adamant_teller_v1_adamanttellerv1_teller_api_pb.ProgmatCoinUpgradeToAndCallRequest, gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.CreateTransactionResponse>;
     listPreTransactionThresholdsByFilter: grpc.handleUnaryCall<gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.ListPreTransactionThresholdsByFilterRequest, gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.ListPreTransactionThresholdsByFilterResponse>;
+    listBlacklistAddressesByFilter: grpc.handleUnaryCall<gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.ListBlacklistAddressesByFilterRequest, gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.ListBlacklistAddressesByFilterResponse>;
+    listBlacklistAddressFiles: grpc.handleUnaryCall<gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.ListBlacklistAddressFilesRequest, gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.ListBlacklistAddressFilesResponse>;
 }
 
 export interface ITellerAPIClient {
@@ -786,6 +863,9 @@ export interface ITellerAPIClient {
     listStakingWalletsByFilter(request: gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.ListStakingWalletsByFilterRequest, callback: (error: grpc.ServiceError | null, response: gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.ListStakingWalletsResponse) => void): grpc.ClientUnaryCall;
     listStakingWalletsByFilter(request: gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.ListStakingWalletsByFilterRequest, metadata: grpc.Metadata, callback: (error: grpc.ServiceError | null, response: gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.ListStakingWalletsResponse) => void): grpc.ClientUnaryCall;
     listStakingWalletsByFilter(request: gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.ListStakingWalletsByFilterRequest, metadata: grpc.Metadata, options: Partial<grpc.CallOptions>, callback: (error: grpc.ServiceError | null, response: gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.ListStakingWalletsResponse) => void): grpc.ClientUnaryCall;
+    listNFTWalletsByFilter(request: gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.ListNFTWalletsByFilterRequest, callback: (error: grpc.ServiceError | null, response: gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.ListNFTWalletsResponse) => void): grpc.ClientUnaryCall;
+    listNFTWalletsByFilter(request: gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.ListNFTWalletsByFilterRequest, metadata: grpc.Metadata, callback: (error: grpc.ServiceError | null, response: gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.ListNFTWalletsResponse) => void): grpc.ClientUnaryCall;
+    listNFTWalletsByFilter(request: gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.ListNFTWalletsByFilterRequest, metadata: grpc.Metadata, options: Partial<grpc.CallOptions>, callback: (error: grpc.ServiceError | null, response: gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.ListNFTWalletsResponse) => void): grpc.ClientUnaryCall;
     listBaseWallets(request: gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.ListBaseWalletsRequest, callback: (error: grpc.ServiceError | null, response: gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.ListBaseWalletsResponse) => void): grpc.ClientUnaryCall;
     listBaseWallets(request: gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.ListBaseWalletsRequest, metadata: grpc.Metadata, callback: (error: grpc.ServiceError | null, response: gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.ListBaseWalletsResponse) => void): grpc.ClientUnaryCall;
     listBaseWallets(request: gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.ListBaseWalletsRequest, metadata: grpc.Metadata, options: Partial<grpc.CallOptions>, callback: (error: grpc.ServiceError | null, response: gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.ListBaseWalletsResponse) => void): grpc.ClientUnaryCall;
@@ -849,6 +929,15 @@ export interface ITellerAPIClient {
     listHotFeeDepositAddresses(request: gincoinc_adamant_teller_v1_adamanttellerv1_teller_api_pb.ListHotFeeDepositAddressesRequest, callback: (error: grpc.ServiceError | null, response: gincoinc_adamant_teller_v1_adamanttellerv1_teller_api_pb.ListHotFeeDepositAddressesResponse) => void): grpc.ClientUnaryCall;
     listHotFeeDepositAddresses(request: gincoinc_adamant_teller_v1_adamanttellerv1_teller_api_pb.ListHotFeeDepositAddressesRequest, metadata: grpc.Metadata, callback: (error: grpc.ServiceError | null, response: gincoinc_adamant_teller_v1_adamanttellerv1_teller_api_pb.ListHotFeeDepositAddressesResponse) => void): grpc.ClientUnaryCall;
     listHotFeeDepositAddresses(request: gincoinc_adamant_teller_v1_adamanttellerv1_teller_api_pb.ListHotFeeDepositAddressesRequest, metadata: grpc.Metadata, options: Partial<grpc.CallOptions>, callback: (error: grpc.ServiceError | null, response: gincoinc_adamant_teller_v1_adamanttellerv1_teller_api_pb.ListHotFeeDepositAddressesResponse) => void): grpc.ClientUnaryCall;
+    createPreTransaction(request: gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.CreatePreTransactionRequest, callback: (error: grpc.ServiceError | null, response: gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.CreatePreTransactionResponse) => void): grpc.ClientUnaryCall;
+    createPreTransaction(request: gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.CreatePreTransactionRequest, metadata: grpc.Metadata, callback: (error: grpc.ServiceError | null, response: gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.CreatePreTransactionResponse) => void): grpc.ClientUnaryCall;
+    createPreTransaction(request: gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.CreatePreTransactionRequest, metadata: grpc.Metadata, options: Partial<grpc.CallOptions>, callback: (error: grpc.ServiceError | null, response: gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.CreatePreTransactionResponse) => void): grpc.ClientUnaryCall;
+    listPreTransactionsByFilter(request: gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.ListPreTransactionsByFilterRequest, callback: (error: grpc.ServiceError | null, response: gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.ListPreTransactionsByFilterResponse) => void): grpc.ClientUnaryCall;
+    listPreTransactionsByFilter(request: gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.ListPreTransactionsByFilterRequest, metadata: grpc.Metadata, callback: (error: grpc.ServiceError | null, response: gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.ListPreTransactionsByFilterResponse) => void): grpc.ClientUnaryCall;
+    listPreTransactionsByFilter(request: gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.ListPreTransactionsByFilterRequest, metadata: grpc.Metadata, options: Partial<grpc.CallOptions>, callback: (error: grpc.ServiceError | null, response: gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.ListPreTransactionsByFilterResponse) => void): grpc.ClientUnaryCall;
+    cancelPreTransaction(request: gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.CancelPreTransactionRequest, callback: (error: grpc.ServiceError | null, response: google_protobuf_empty_pb.Empty) => void): grpc.ClientUnaryCall;
+    cancelPreTransaction(request: gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.CancelPreTransactionRequest, metadata: grpc.Metadata, callback: (error: grpc.ServiceError | null, response: google_protobuf_empty_pb.Empty) => void): grpc.ClientUnaryCall;
+    cancelPreTransaction(request: gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.CancelPreTransactionRequest, metadata: grpc.Metadata, options: Partial<grpc.CallOptions>, callback: (error: grpc.ServiceError | null, response: google_protobuf_empty_pb.Empty) => void): grpc.ClientUnaryCall;
     createTransaction(request: gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.CreateTransactionRequest, callback: (error: grpc.ServiceError | null, response: gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.CreateTransactionResponse) => void): grpc.ClientUnaryCall;
     createTransaction(request: gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.CreateTransactionRequest, metadata: grpc.Metadata, callback: (error: grpc.ServiceError | null, response: gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.CreateTransactionResponse) => void): grpc.ClientUnaryCall;
     createTransaction(request: gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.CreateTransactionRequest, metadata: grpc.Metadata, options: Partial<grpc.CallOptions>, callback: (error: grpc.ServiceError | null, response: gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.CreateTransactionResponse) => void): grpc.ClientUnaryCall;
@@ -927,6 +1016,9 @@ export interface ITellerAPIClient {
     listStakingValidatorsByFilter(request: gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.ListStakingValidatorsByFilterRequest, callback: (error: grpc.ServiceError | null, response: gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.ListStakingValidatorsResponse) => void): grpc.ClientUnaryCall;
     listStakingValidatorsByFilter(request: gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.ListStakingValidatorsByFilterRequest, metadata: grpc.Metadata, callback: (error: grpc.ServiceError | null, response: gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.ListStakingValidatorsResponse) => void): grpc.ClientUnaryCall;
     listStakingValidatorsByFilter(request: gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.ListStakingValidatorsByFilterRequest, metadata: grpc.Metadata, options: Partial<grpc.CallOptions>, callback: (error: grpc.ServiceError | null, response: gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.ListStakingValidatorsResponse) => void): grpc.ClientUnaryCall;
+    listNFTsByFilter(request: gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.ListNFTsByFilterRequest, callback: (error: grpc.ServiceError | null, response: gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.ListNFTsResponse) => void): grpc.ClientUnaryCall;
+    listNFTsByFilter(request: gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.ListNFTsByFilterRequest, metadata: grpc.Metadata, callback: (error: grpc.ServiceError | null, response: gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.ListNFTsResponse) => void): grpc.ClientUnaryCall;
+    listNFTsByFilter(request: gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.ListNFTsByFilterRequest, metadata: grpc.Metadata, options: Partial<grpc.CallOptions>, callback: (error: grpc.ServiceError | null, response: gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.ListNFTsResponse) => void): grpc.ClientUnaryCall;
     signMessage(request: gincoinc_adamant_teller_v1_adamanttellerv1_teller_api_pb.SignMessageRequest, callback: (error: grpc.ServiceError | null, response: gincoinc_adamant_teller_v1_adamanttellerv1_teller_api_pb.SignMessageResponse) => void): grpc.ClientUnaryCall;
     signMessage(request: gincoinc_adamant_teller_v1_adamanttellerv1_teller_api_pb.SignMessageRequest, metadata: grpc.Metadata, callback: (error: grpc.ServiceError | null, response: gincoinc_adamant_teller_v1_adamanttellerv1_teller_api_pb.SignMessageResponse) => void): grpc.ClientUnaryCall;
     signMessage(request: gincoinc_adamant_teller_v1_adamanttellerv1_teller_api_pb.SignMessageRequest, metadata: grpc.Metadata, options: Partial<grpc.CallOptions>, callback: (error: grpc.ServiceError | null, response: gincoinc_adamant_teller_v1_adamanttellerv1_teller_api_pb.SignMessageResponse) => void): grpc.ClientUnaryCall;
@@ -975,6 +1067,12 @@ export interface ITellerAPIClient {
     listPreTransactionThresholdsByFilter(request: gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.ListPreTransactionThresholdsByFilterRequest, callback: (error: grpc.ServiceError | null, response: gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.ListPreTransactionThresholdsByFilterResponse) => void): grpc.ClientUnaryCall;
     listPreTransactionThresholdsByFilter(request: gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.ListPreTransactionThresholdsByFilterRequest, metadata: grpc.Metadata, callback: (error: grpc.ServiceError | null, response: gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.ListPreTransactionThresholdsByFilterResponse) => void): grpc.ClientUnaryCall;
     listPreTransactionThresholdsByFilter(request: gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.ListPreTransactionThresholdsByFilterRequest, metadata: grpc.Metadata, options: Partial<grpc.CallOptions>, callback: (error: grpc.ServiceError | null, response: gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.ListPreTransactionThresholdsByFilterResponse) => void): grpc.ClientUnaryCall;
+    listBlacklistAddressesByFilter(request: gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.ListBlacklistAddressesByFilterRequest, callback: (error: grpc.ServiceError | null, response: gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.ListBlacklistAddressesByFilterResponse) => void): grpc.ClientUnaryCall;
+    listBlacklistAddressesByFilter(request: gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.ListBlacklistAddressesByFilterRequest, metadata: grpc.Metadata, callback: (error: grpc.ServiceError | null, response: gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.ListBlacklistAddressesByFilterResponse) => void): grpc.ClientUnaryCall;
+    listBlacklistAddressesByFilter(request: gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.ListBlacklistAddressesByFilterRequest, metadata: grpc.Metadata, options: Partial<grpc.CallOptions>, callback: (error: grpc.ServiceError | null, response: gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.ListBlacklistAddressesByFilterResponse) => void): grpc.ClientUnaryCall;
+    listBlacklistAddressFiles(request: gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.ListBlacklistAddressFilesRequest, callback: (error: grpc.ServiceError | null, response: gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.ListBlacklistAddressFilesResponse) => void): grpc.ClientUnaryCall;
+    listBlacklistAddressFiles(request: gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.ListBlacklistAddressFilesRequest, metadata: grpc.Metadata, callback: (error: grpc.ServiceError | null, response: gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.ListBlacklistAddressFilesResponse) => void): grpc.ClientUnaryCall;
+    listBlacklistAddressFiles(request: gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.ListBlacklistAddressFilesRequest, metadata: grpc.Metadata, options: Partial<grpc.CallOptions>, callback: (error: grpc.ServiceError | null, response: gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.ListBlacklistAddressFilesResponse) => void): grpc.ClientUnaryCall;
 }
 
 export class TellerAPIClient extends grpc.Client implements ITellerAPIClient {
@@ -994,6 +1092,9 @@ export class TellerAPIClient extends grpc.Client implements ITellerAPIClient {
     public listStakingWalletsByFilter(request: gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.ListStakingWalletsByFilterRequest, callback: (error: grpc.ServiceError | null, response: gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.ListStakingWalletsResponse) => void): grpc.ClientUnaryCall;
     public listStakingWalletsByFilter(request: gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.ListStakingWalletsByFilterRequest, metadata: grpc.Metadata, callback: (error: grpc.ServiceError | null, response: gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.ListStakingWalletsResponse) => void): grpc.ClientUnaryCall;
     public listStakingWalletsByFilter(request: gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.ListStakingWalletsByFilterRequest, metadata: grpc.Metadata, options: Partial<grpc.CallOptions>, callback: (error: grpc.ServiceError | null, response: gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.ListStakingWalletsResponse) => void): grpc.ClientUnaryCall;
+    public listNFTWalletsByFilter(request: gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.ListNFTWalletsByFilterRequest, callback: (error: grpc.ServiceError | null, response: gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.ListNFTWalletsResponse) => void): grpc.ClientUnaryCall;
+    public listNFTWalletsByFilter(request: gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.ListNFTWalletsByFilterRequest, metadata: grpc.Metadata, callback: (error: grpc.ServiceError | null, response: gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.ListNFTWalletsResponse) => void): grpc.ClientUnaryCall;
+    public listNFTWalletsByFilter(request: gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.ListNFTWalletsByFilterRequest, metadata: grpc.Metadata, options: Partial<grpc.CallOptions>, callback: (error: grpc.ServiceError | null, response: gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.ListNFTWalletsResponse) => void): grpc.ClientUnaryCall;
     public listBaseWallets(request: gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.ListBaseWalletsRequest, callback: (error: grpc.ServiceError | null, response: gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.ListBaseWalletsResponse) => void): grpc.ClientUnaryCall;
     public listBaseWallets(request: gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.ListBaseWalletsRequest, metadata: grpc.Metadata, callback: (error: grpc.ServiceError | null, response: gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.ListBaseWalletsResponse) => void): grpc.ClientUnaryCall;
     public listBaseWallets(request: gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.ListBaseWalletsRequest, metadata: grpc.Metadata, options: Partial<grpc.CallOptions>, callback: (error: grpc.ServiceError | null, response: gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.ListBaseWalletsResponse) => void): grpc.ClientUnaryCall;
@@ -1057,6 +1158,15 @@ export class TellerAPIClient extends grpc.Client implements ITellerAPIClient {
     public listHotFeeDepositAddresses(request: gincoinc_adamant_teller_v1_adamanttellerv1_teller_api_pb.ListHotFeeDepositAddressesRequest, callback: (error: grpc.ServiceError | null, response: gincoinc_adamant_teller_v1_adamanttellerv1_teller_api_pb.ListHotFeeDepositAddressesResponse) => void): grpc.ClientUnaryCall;
     public listHotFeeDepositAddresses(request: gincoinc_adamant_teller_v1_adamanttellerv1_teller_api_pb.ListHotFeeDepositAddressesRequest, metadata: grpc.Metadata, callback: (error: grpc.ServiceError | null, response: gincoinc_adamant_teller_v1_adamanttellerv1_teller_api_pb.ListHotFeeDepositAddressesResponse) => void): grpc.ClientUnaryCall;
     public listHotFeeDepositAddresses(request: gincoinc_adamant_teller_v1_adamanttellerv1_teller_api_pb.ListHotFeeDepositAddressesRequest, metadata: grpc.Metadata, options: Partial<grpc.CallOptions>, callback: (error: grpc.ServiceError | null, response: gincoinc_adamant_teller_v1_adamanttellerv1_teller_api_pb.ListHotFeeDepositAddressesResponse) => void): grpc.ClientUnaryCall;
+    public createPreTransaction(request: gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.CreatePreTransactionRequest, callback: (error: grpc.ServiceError | null, response: gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.CreatePreTransactionResponse) => void): grpc.ClientUnaryCall;
+    public createPreTransaction(request: gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.CreatePreTransactionRequest, metadata: grpc.Metadata, callback: (error: grpc.ServiceError | null, response: gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.CreatePreTransactionResponse) => void): grpc.ClientUnaryCall;
+    public createPreTransaction(request: gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.CreatePreTransactionRequest, metadata: grpc.Metadata, options: Partial<grpc.CallOptions>, callback: (error: grpc.ServiceError | null, response: gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.CreatePreTransactionResponse) => void): grpc.ClientUnaryCall;
+    public listPreTransactionsByFilter(request: gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.ListPreTransactionsByFilterRequest, callback: (error: grpc.ServiceError | null, response: gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.ListPreTransactionsByFilterResponse) => void): grpc.ClientUnaryCall;
+    public listPreTransactionsByFilter(request: gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.ListPreTransactionsByFilterRequest, metadata: grpc.Metadata, callback: (error: grpc.ServiceError | null, response: gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.ListPreTransactionsByFilterResponse) => void): grpc.ClientUnaryCall;
+    public listPreTransactionsByFilter(request: gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.ListPreTransactionsByFilterRequest, metadata: grpc.Metadata, options: Partial<grpc.CallOptions>, callback: (error: grpc.ServiceError | null, response: gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.ListPreTransactionsByFilterResponse) => void): grpc.ClientUnaryCall;
+    public cancelPreTransaction(request: gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.CancelPreTransactionRequest, callback: (error: grpc.ServiceError | null, response: google_protobuf_empty_pb.Empty) => void): grpc.ClientUnaryCall;
+    public cancelPreTransaction(request: gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.CancelPreTransactionRequest, metadata: grpc.Metadata, callback: (error: grpc.ServiceError | null, response: google_protobuf_empty_pb.Empty) => void): grpc.ClientUnaryCall;
+    public cancelPreTransaction(request: gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.CancelPreTransactionRequest, metadata: grpc.Metadata, options: Partial<grpc.CallOptions>, callback: (error: grpc.ServiceError | null, response: google_protobuf_empty_pb.Empty) => void): grpc.ClientUnaryCall;
     public createTransaction(request: gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.CreateTransactionRequest, callback: (error: grpc.ServiceError | null, response: gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.CreateTransactionResponse) => void): grpc.ClientUnaryCall;
     public createTransaction(request: gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.CreateTransactionRequest, metadata: grpc.Metadata, callback: (error: grpc.ServiceError | null, response: gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.CreateTransactionResponse) => void): grpc.ClientUnaryCall;
     public createTransaction(request: gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.CreateTransactionRequest, metadata: grpc.Metadata, options: Partial<grpc.CallOptions>, callback: (error: grpc.ServiceError | null, response: gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.CreateTransactionResponse) => void): grpc.ClientUnaryCall;
@@ -1135,6 +1245,9 @@ export class TellerAPIClient extends grpc.Client implements ITellerAPIClient {
     public listStakingValidatorsByFilter(request: gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.ListStakingValidatorsByFilterRequest, callback: (error: grpc.ServiceError | null, response: gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.ListStakingValidatorsResponse) => void): grpc.ClientUnaryCall;
     public listStakingValidatorsByFilter(request: gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.ListStakingValidatorsByFilterRequest, metadata: grpc.Metadata, callback: (error: grpc.ServiceError | null, response: gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.ListStakingValidatorsResponse) => void): grpc.ClientUnaryCall;
     public listStakingValidatorsByFilter(request: gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.ListStakingValidatorsByFilterRequest, metadata: grpc.Metadata, options: Partial<grpc.CallOptions>, callback: (error: grpc.ServiceError | null, response: gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.ListStakingValidatorsResponse) => void): grpc.ClientUnaryCall;
+    public listNFTsByFilter(request: gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.ListNFTsByFilterRequest, callback: (error: grpc.ServiceError | null, response: gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.ListNFTsResponse) => void): grpc.ClientUnaryCall;
+    public listNFTsByFilter(request: gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.ListNFTsByFilterRequest, metadata: grpc.Metadata, callback: (error: grpc.ServiceError | null, response: gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.ListNFTsResponse) => void): grpc.ClientUnaryCall;
+    public listNFTsByFilter(request: gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.ListNFTsByFilterRequest, metadata: grpc.Metadata, options: Partial<grpc.CallOptions>, callback: (error: grpc.ServiceError | null, response: gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.ListNFTsResponse) => void): grpc.ClientUnaryCall;
     public signMessage(request: gincoinc_adamant_teller_v1_adamanttellerv1_teller_api_pb.SignMessageRequest, callback: (error: grpc.ServiceError | null, response: gincoinc_adamant_teller_v1_adamanttellerv1_teller_api_pb.SignMessageResponse) => void): grpc.ClientUnaryCall;
     public signMessage(request: gincoinc_adamant_teller_v1_adamanttellerv1_teller_api_pb.SignMessageRequest, metadata: grpc.Metadata, callback: (error: grpc.ServiceError | null, response: gincoinc_adamant_teller_v1_adamanttellerv1_teller_api_pb.SignMessageResponse) => void): grpc.ClientUnaryCall;
     public signMessage(request: gincoinc_adamant_teller_v1_adamanttellerv1_teller_api_pb.SignMessageRequest, metadata: grpc.Metadata, options: Partial<grpc.CallOptions>, callback: (error: grpc.ServiceError | null, response: gincoinc_adamant_teller_v1_adamanttellerv1_teller_api_pb.SignMessageResponse) => void): grpc.ClientUnaryCall;
@@ -1183,4 +1296,10 @@ export class TellerAPIClient extends grpc.Client implements ITellerAPIClient {
     public listPreTransactionThresholdsByFilter(request: gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.ListPreTransactionThresholdsByFilterRequest, callback: (error: grpc.ServiceError | null, response: gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.ListPreTransactionThresholdsByFilterResponse) => void): grpc.ClientUnaryCall;
     public listPreTransactionThresholdsByFilter(request: gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.ListPreTransactionThresholdsByFilterRequest, metadata: grpc.Metadata, callback: (error: grpc.ServiceError | null, response: gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.ListPreTransactionThresholdsByFilterResponse) => void): grpc.ClientUnaryCall;
     public listPreTransactionThresholdsByFilter(request: gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.ListPreTransactionThresholdsByFilterRequest, metadata: grpc.Metadata, options: Partial<grpc.CallOptions>, callback: (error: grpc.ServiceError | null, response: gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.ListPreTransactionThresholdsByFilterResponse) => void): grpc.ClientUnaryCall;
+    public listBlacklistAddressesByFilter(request: gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.ListBlacklistAddressesByFilterRequest, callback: (error: grpc.ServiceError | null, response: gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.ListBlacklistAddressesByFilterResponse) => void): grpc.ClientUnaryCall;
+    public listBlacklistAddressesByFilter(request: gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.ListBlacklistAddressesByFilterRequest, metadata: grpc.Metadata, callback: (error: grpc.ServiceError | null, response: gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.ListBlacklistAddressesByFilterResponse) => void): grpc.ClientUnaryCall;
+    public listBlacklistAddressesByFilter(request: gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.ListBlacklistAddressesByFilterRequest, metadata: grpc.Metadata, options: Partial<grpc.CallOptions>, callback: (error: grpc.ServiceError | null, response: gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.ListBlacklistAddressesByFilterResponse) => void): grpc.ClientUnaryCall;
+    public listBlacklistAddressFiles(request: gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.ListBlacklistAddressFilesRequest, callback: (error: grpc.ServiceError | null, response: gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.ListBlacklistAddressFilesResponse) => void): grpc.ClientUnaryCall;
+    public listBlacklistAddressFiles(request: gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.ListBlacklistAddressFilesRequest, metadata: grpc.Metadata, callback: (error: grpc.ServiceError | null, response: gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.ListBlacklistAddressFilesResponse) => void): grpc.ClientUnaryCall;
+    public listBlacklistAddressFiles(request: gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.ListBlacklistAddressFilesRequest, metadata: grpc.Metadata, options: Partial<grpc.CallOptions>, callback: (error: grpc.ServiceError | null, response: gincoinc_adamant_global_v1_adamantglobalv1_global_api_pb.ListBlacklistAddressFilesResponse) => void): grpc.ClientUnaryCall;
 }

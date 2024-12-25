@@ -24,6 +24,7 @@ service TellerAPI {
   rpc ListWallets(adamant.global.v1.ListWalletsRequest) returns (adamant.global.v1.ListWalletsResponse) {}
   rpc ListWalletsByFilter(adamant.global.v1.ListWalletsByFilterRequest) returns (adamant.global.v1.ListWalletsResponse) {}
   rpc ListStakingWalletsByFilter(adamant.global.v1.ListStakingWalletsByFilterRequest) returns (adamant.global.v1.ListStakingWalletsResponse) {}
+  rpc ListNFTWalletsByFilter(adamant.global.v1.ListNFTWalletsByFilterRequest) returns (adamant.global.v1.ListNFTWalletsResponse) {}
   rpc ListBaseWallets(adamant.global.v1.ListBaseWalletsRequest) returns (adamant.global.v1.ListBaseWalletsResponse) {}
   rpc GetSpendableBalance(adamant.global.v1.GetSpendableBalanceRequest) returns (adamant.global.v1.GetSpendableBalanceResponse) {}
   rpc InitializeXRPWallet(InitializeXRPWalletRequest) returns (google.protobuf.Empty) {}
@@ -50,6 +51,11 @@ service TellerAPI {
 
   rpc ListColdFeeDepositAddresses(ListColdFeeDepositAddressesRequest) returns (ListColdFeeDepositAddressesResponse) {}
   rpc ListHotFeeDepositAddresses(ListHotFeeDepositAddressesRequest) returns (ListHotFeeDepositAddressesResponse) {}
+
+  // PreTransaction
+  rpc CreatePreTransaction(adamant.global.v1.CreatePreTransactionRequest) returns (adamant.global.v1.CreatePreTransactionResponse) {}
+  rpc ListPreTransactionsByFilter(adamant.global.v1.ListPreTransactionsByFilterRequest) returns (adamant.global.v1.ListPreTransactionsByFilterResponse) {}
+  rpc CancelPreTransaction(adamant.global.v1.CancelPreTransactionRequest) returns (google.protobuf.Empty) {}
 
   rpc CreateTransaction(adamant.global.v1.CreateTransactionRequest) returns (adamant.global.v1.CreateTransactionResponse) {}
   rpc CreateContractCreationTransaction(adamant.global.v1.CreateContractCreationTransactionRequest) returns (adamant.global.v1.CreateContractCreationTransactionResponse) {}
@@ -91,6 +97,8 @@ service TellerAPI {
 
   rpc ListStakingValidatorsByFilter(adamant.global.v1.ListStakingValidatorsByFilterRequest) returns (adamant.global.v1.ListStakingValidatorsResponse) {}
 
+  rpc ListNFTsByFilter(adamant.global.v1.ListNFTsByFilterRequest) returns (adamant.global.v1.ListNFTsResponse) {}
+
   rpc SignMessage(SignMessageRequest) returns (SignMessageResponse) {}
 
   // ProgmatCoin
@@ -111,6 +119,10 @@ service TellerAPI {
 
   // PreTransactionThreshold
   rpc ListPreTransactionThresholdsByFilter(adamant.global.v1.ListPreTransactionThresholdsByFilterRequest) returns (adamant.global.v1.ListPreTransactionThresholdsByFilterResponse) {}
+
+  // BlacklistAddress
+  rpc ListBlacklistAddressesByFilter(adamant.global.v1.ListBlacklistAddressesByFilterRequest) returns (adamant.global.v1.ListBlacklistAddressesByFilterResponse) {}
+  rpc ListBlacklistAddressFiles(adamant.global.v1.ListBlacklistAddressFilesRequest) returns (adamant.global.v1.ListBlacklistAddressFilesResponse) {}
 }
 
 message CreateWalletRequest {
