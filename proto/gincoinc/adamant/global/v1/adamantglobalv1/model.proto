@@ -99,6 +99,25 @@ message StakingWallet {
   google.protobuf.Timestamp update_time = 18; // the time at which the wallet was updated
 }
 
+// The NFT wallet model
+message NFTWallet {
+  string owner_id = 1; // organization id
+  string wallet_id = 2; // id
+  string name = 3; // name
+  gincoinc.global.v1.Coin coin = 4; // The type of asset
+  WalletType wallet_type = 5; // type
+  gincoinc.global.v1.AddressType address_type = 6; // type of address
+  WalletState state = 7; // state
+  string address = 8; // address
+  repeated NFTOwnership nft_ownerships = 9; // nft ownership
+  google.protobuf.Timestamp create_time = 10; // the time at which the wallet was created
+  google.protobuf.Timestamp update_time = 11; // the time at which the wallet was updated
+}
+
+message NFTOwnership {
+  gincoinc.global.v1.Coin coin = 1;
+}
+
 // The model of proposal to update wallet information
 message WalletProposal {
   adamant.global.v1.WalletProposalType proposal_type = 7; // The type of the proposal
@@ -195,6 +214,25 @@ message AddressWithBalance {
   string string_fee_balance = 5; // The string-typed string fee balance corresponding to the address
 }
 
+// The model of pre transaction
+message PreTransaction {
+  string pre_transaction_id = 1; // id
+  string owner_id = 2; // organization id
+  string external_id = 3; // external withdrawal id
+  gincoinc.global.v1.Coin coin = 4; // The type of coin
+  gincoinc.global.v1.Network network = 5; // Network
+  repeated PreTransactionDetail details = 6; // Details about recipients
+  PreTransactionState state = 7; // The state of pre-transaction
+  string transaction_id = 8; // transaction id for which pre-transaction is used
+  google.protobuf.Timestamp create_time = 9; // the time at which the pre transaction was created
+  google.protobuf.Timestamp update_time = 10; // the time at which the pre transaction was updated
+}
+
+message PreTransactionDetail {
+  string address = 1;
+  string string_value = 2;
+}
+
 // The model of transaction
 message Transaction {
   string wallet_id = 1; // The id of wallet
@@ -244,6 +282,7 @@ message Transaction {
   AptosSpecific aptos_specific = 49; // The Flare specific fields
   DogecoinSpecific dogecoin_specific = 50; // THe Doge specific fields
   AvalanchePlatformChainSpecific avalanche_platform_chain_specific = 51; // The Avalanche Platform Chain specific fields
+  QuorumSpecific quorum_specific = 52; // The Quorum specific fields
   google.protobuf.Timestamp create_time = 18; // the time at which the transaction was created
   google.protobuf.Timestamp update_time = 19; // the time at which the transaction was updated
 }
@@ -287,6 +326,10 @@ message TxInput {
   uint32 tx_index = 2;
   double value = 3;
   string string_value = 4;
+  uint32 tx_input_index = 5;
+  string address = 6;
+  string witness_script = 7;
+  uint32 n_sequence = 8;
 }
 
 // The model of transaction output
@@ -295,6 +338,7 @@ message TxOutput {
   double value = 2;
   string string_value = 3;
   bool is_change = 4;
+  uint32 tx_output_index = 5;
 }
 
 // The model of UTXO
@@ -326,7 +370,7 @@ message AvalanchePlatformChainUTXOSpecific {
 message CardanoCustomToken {
   string policy_id = 1;
   string asset_name = 2;
-  double value = 3;
+  uint64 value = 3;
 }
 
 // The model of Bitcoin specific fields of transaction
@@ -362,6 +406,9 @@ message EthereumSpecific {
   uint64 expiration = 5;
   string data = 6; // data
   bool is_staking_transaction = 7;
+  string from_address = 8;
+  string token_address = 9;
+  uint64 chain_id = 10;
 }
 
 // The model of XRP specific fields of transaction
@@ -370,6 +417,7 @@ message XrpSpecific {
   uint32 destination_tag = 2;
   gincoinc.global.v1.XRPTransactionType tx_type = 3;
   bool is_next_sequence_number = 4;
+  string from_address = 5;
 }
 
 // The model of Tron specific fields of transaction
@@ -394,6 +442,7 @@ message StellarSpecific {
 message CardanoSpecific {
   repeated TxInput tx_inputs = 1;
   repeated TxOutput tx_outputs = 2;
+  repeated CardanoCustomToken tokens = 3;
 }
 
 // The model of Substrate specific fields of transaction
@@ -432,6 +481,10 @@ message PolygonSpecific {
   uint64 gas_limit = 1;
   uint64 nonce = 2;
   bool is_next_nonce = 3;
+  string data = 4;
+  string from_address = 5;
+  string token_address = 6;
+  uint64 chain_id = 7;
 }
 
 // The model of Klaytn specific fields of transaction
@@ -456,6 +509,11 @@ message AvalancheSpecific {
   uint64 nonce = 2;
   bool is_next_nonce = 3;
   AtomicTx atomic_tx = 4;
+  string from_address = 5;
+  string token_address = 6;
+  uint64 chain_id = 7;
+  uint64 max_priority_fee_per_gas = 8;
+  gincoinc.global.v1.AvalancheTxType tx_type = 9;
 }
 
 // The model of Oasys specific fields of transaction
@@ -463,6 +521,9 @@ message OasysSpecific {
   uint64 gas_limit = 1;
   uint64 nonce = 2;
   bool is_next_nonce = 3;
+  string from_address = 4;
+  string token_address = 5;
+  uint64 chain_id = 6;
 }
 
 // The model of Xdc specific fields of transaction
@@ -519,6 +580,9 @@ message JapanOpenChainSpecific {
 message SolanaSpecific {
   uint64 expiration = 1;
   gincoinc.global.v1.SolanaEventType event_type = 2;
+  string from_address = 3;
+  string recent_blockhash = 4;
+  uint32 priority_fee_unit_limit = 5;
 }
 
 // The model of Aptos specific fields of transaction
@@ -534,6 +598,8 @@ message BNBSmartChainSpecific {
   uint64 gas_limit = 1;
   uint64 nonce = 2;
   bool is_next_nonce = 3;
+  string from_address = 4;
+  string token_address = 5;
 }
 
 // The model of Flare specific fields of transaction
@@ -582,6 +648,13 @@ message AvalancheTxOutput {
   uint32 threshold = 6;
   bool is_change = 7;
   repeated string addresses = 8;
+}
+
+// The model of Quorum specific fields of transaction
+message QuorumSpecific {
+  uint64 gas_limit = 1;
+  uint64 nonce = 2;
+  bool is_next_nonce = 3;
 }
 
 // The model of Substrate specific fields of CreateTransaction
@@ -661,6 +734,13 @@ message CreateTransactionAvalancheSpecific {
   optional gincoinc.global.v1.AvalancheTxType tx_type = 1;
   optional ImportTxSpecific import_tx_specific = 2;
   optional StakingSpecific staking_specific = 3;
+}
+
+// The model of NFTSpecific fields of CreateTransaction
+message CreateTransactionNFTSpecific {
+  optional gincoinc.global.v1.NFTCallMethod nft_call_method = 1;
+  repeated string token_ids = 2;
+  repeated string metadata_jsons = 3;
 }
 
 message ImportTxSpecific {
@@ -847,7 +927,7 @@ message LabeledAddress {
   google.protobuf.Timestamp create_time = 7; // the time at which the labeled address was created
   google.protobuf.Timestamp update_time = 8; // the time at which the labeled address was updated
   gincoinc.global.v1.Network network = 9;
-  // string message = 10; // message
+  string message = 10; // message
 }
 
 // The model of proposal to update labeled address information
@@ -858,7 +938,7 @@ message LabeledAddressProposal {
   string approver_name = 4;
   string proposed_address = 5;
   bool address_is_reviewed = 6;
-  // string proposed_message = 7;
+  string proposed_message = 7;
 }
 
 // The model of whitelist
@@ -1187,4 +1267,87 @@ message StakingValidator {
   int64 expiration_time = 10; // expiration time
   google.protobuf.Timestamp create_time = 11; // the time at which the staking validator was created
   google.protobuf.Timestamp update_time = 12; // the time at which the staking validator was updated
+}
+
+// The model of NFT
+message NFT {
+  AssetType asset_type = 1;
+  string name = 2;
+  string symbol = 3;
+  string token_id = 4;
+  string token_uri = 5;
+  string token_data = 6;
+  string token_json_metadata = 7;
+}
+
+enum AssetType {
+  ASSET_TYPE_INVALID = 0;
+  ASSET_TYPE_ERC721 = 1;
+}
+
+// The model of PreTransactionThreshold
+message PreTransactionThreshold {
+  string pre_transaction_threshold_id = 1;
+  gincoinc.global.v1.Coin coin = 2;
+  gincoinc.global.v1.Network network = 3;
+  double value = 4;
+  PreTransactionThresholdProposal proposal = 5;
+  google.protobuf.Timestamp create_time = 6;
+  google.protobuf.Timestamp update_time = 7;
+}
+
+message PreTransactionThresholdProposal {
+  string pre_transaction_threshold_id = 1;
+  string proposal_id = 2;
+  string requester_account_id = 3;
+  string requester_name = 4;
+  string approver_account_id = 5;
+  string approver_name = 6;
+  double proposed_value = 7;
+  bool is_reviewed = 8;
+}
+
+message BlacklistAddress {
+  string blacklist_address_id = 1;
+  string applied_proposal_id = 2;
+  string pending_proposal_id = 13;
+  gincoinc.global.v1.Network network = 3;
+  string address = 4;
+  bool is_activated = 5;
+  BlacklistAddressStatus status = 6;
+  string external_id = 7;
+  google.protobuf.Timestamp create_time = 8;
+  google.protobuf.Timestamp update_time = 9;
+  optional string file_id = 10;
+  optional string file_name = 11;
+  optional BlacklistAddressProposal applied_proposal = 12;
+  optional BlacklistAddressProposal pending_proposal = 14;
+}
+
+message BlacklistAddressProposal {
+  string blacklist_address_proposal_id = 1;
+  string blacklist_address_id = 2;
+  string requester_account_id = 3;
+  string requester_name = 4;
+  string approver_account_id = 5;
+  string approver_name = 6;
+  BlacklistAddressDiff diff = 7;
+}
+
+message BlacklistAddressDiff {
+  bool is_activated = 1;
+}
+
+message BlacklistAddressFile {
+  string file_id = 1;
+  string file_name = 2;
+  gincoinc.global.v1.Network network = 3;
+  BlacklistAddressStatus status = 4;
+  uint32 address_count = 5;
+  string requester_account_id = 6;
+  string requester_name = 7;
+  string approver_account_id = 8;
+  string approver_name = 9;
+  google.protobuf.Timestamp create_time = 10;
+  google.protobuf.Timestamp update_time = 11;
 }

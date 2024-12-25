@@ -50,6 +50,10 @@ export class AuditLog extends jspb.Message {
     getWalletNamesList(): Array<string>;
     setWalletNamesList(value: Array<string>): AuditLog;
     addWalletNames(value: string, index?: number): string;
+    getPreTransactionId(): string;
+    setPreTransactionId(value: string): AuditLog;
+    getPreTransactionExternalId(): string;
+    setPreTransactionExternalId(value: string): AuditLog;
     getTransactionId(): string;
     setTransactionId(value: string): AuditLog;
     getCoinType(): gincoinc_global_v1_gincoincglobalv1_enum_pb.Coin;
@@ -68,6 +72,8 @@ export class AuditLog extends jspb.Message {
     setAddress(value: string): AuditLog;
     getAddressName(): string;
     setAddressName(value: string): AuditLog;
+    getMessage(): string;
+    setMessage(value: string): AuditLog;
     getTransferLimitId(): string;
     setTransferLimitId(value: string): AuditLog;
     getTransferLimitName(): string;
@@ -112,6 +118,26 @@ export class AuditLog extends jspb.Message {
     getDisabledMailsList(): Array<gincoinc_adamant_global_v1_adamantglobalv1_enum_pb.MailType>;
     setDisabledMailsList(value: Array<gincoinc_adamant_global_v1_adamantglobalv1_enum_pb.MailType>): AuditLog;
     addDisabledMails(value: gincoinc_adamant_global_v1_adamantglobalv1_enum_pb.MailType, index?: number): gincoinc_adamant_global_v1_adamantglobalv1_enum_pb.MailType;
+    getNetwork(): gincoinc_global_v1_gincoincglobalv1_enum_pb.Network;
+    setNetwork(value: gincoinc_global_v1_gincoincglobalv1_enum_pb.Network): AuditLog;
+    getPreTransactionThreshold(): number;
+    setPreTransactionThreshold(value: number): AuditLog;
+    getPreTransactionThresholdId(): string;
+    setPreTransactionThresholdId(value: string): AuditLog;
+    getBlacklistAddressId(): string;
+    setBlacklistAddressId(value: string): AuditLog;
+    getFileName(): string;
+    setFileName(value: string): AuditLog;
+    getAddressCount(): number;
+    setAddressCount(value: number): AuditLog;
+    getPreviousTransactionId(): string;
+    setPreviousTransactionId(value: string): AuditLog;
+    getNewTransactionId(): string;
+    setNewTransactionId(value: string): AuditLog;
+    getActivate(): boolean;
+    setActivate(value: boolean): AuditLog;
+    getFileId(): string;
+    setFileId(value: string): AuditLog;
 
     serializeBinary(): Uint8Array;
     toObject(includeInstance?: boolean): AuditLog.AsObject;
@@ -144,6 +170,8 @@ export namespace AuditLog {
         walletGroupId: string,
         walletGroupName: string,
         walletNamesList: Array<string>,
+        preTransactionId: string,
+        preTransactionExternalId: string,
         transactionId: string,
         coinType: gincoinc_global_v1_gincoincglobalv1_enum_pb.Coin,
         stringValue: string,
@@ -153,6 +181,7 @@ export namespace AuditLog {
         labeledAddressId: string,
         address: string,
         addressName: string,
+        message: string,
         transferLimitId: string,
         transferLimitName: string,
         transferOneTimeLimit: number,
@@ -167,5 +196,15 @@ export namespace AuditLog {
         createTime?: google_protobuf_timestamp_pb.Timestamp.AsObject,
         enabledMailsList: Array<gincoinc_adamant_global_v1_adamantglobalv1_enum_pb.MailType>,
         disabledMailsList: Array<gincoinc_adamant_global_v1_adamantglobalv1_enum_pb.MailType>,
+        network: gincoinc_global_v1_gincoincglobalv1_enum_pb.Network,
+        preTransactionThreshold: number,
+        preTransactionThresholdId: string,
+        blacklistAddressId: string,
+        fileName: string,
+        addressCount: number,
+        previousTransactionId: string,
+        newTransactionId: string,
+        activate: boolean,
+        fileId: string,
     }
 }

@@ -312,6 +312,84 @@ export namespace StakingWallet {
     }
 }
 
+export class NFTWallet extends jspb.Message { 
+    getOwnerId(): string;
+    setOwnerId(value: string): NFTWallet;
+    getWalletId(): string;
+    setWalletId(value: string): NFTWallet;
+    getName(): string;
+    setName(value: string): NFTWallet;
+    getCoin(): gincoinc_global_v1_gincoincglobalv1_enum_pb.Coin;
+    setCoin(value: gincoinc_global_v1_gincoincglobalv1_enum_pb.Coin): NFTWallet;
+    getWalletType(): gincoinc_adamant_global_v1_adamantglobalv1_enum_pb.WalletType;
+    setWalletType(value: gincoinc_adamant_global_v1_adamantglobalv1_enum_pb.WalletType): NFTWallet;
+    getAddressType(): gincoinc_global_v1_gincoincglobalv1_enum_pb.AddressType;
+    setAddressType(value: gincoinc_global_v1_gincoincglobalv1_enum_pb.AddressType): NFTWallet;
+    getState(): gincoinc_adamant_global_v1_adamantglobalv1_enum_pb.WalletState;
+    setState(value: gincoinc_adamant_global_v1_adamantglobalv1_enum_pb.WalletState): NFTWallet;
+    getAddress(): string;
+    setAddress(value: string): NFTWallet;
+    clearNftOwnershipsList(): void;
+    getNftOwnershipsList(): Array<NFTOwnership>;
+    setNftOwnershipsList(value: Array<NFTOwnership>): NFTWallet;
+    addNftOwnerships(value?: NFTOwnership, index?: number): NFTOwnership;
+
+    hasCreateTime(): boolean;
+    clearCreateTime(): void;
+    getCreateTime(): google_protobuf_timestamp_pb.Timestamp | undefined;
+    setCreateTime(value?: google_protobuf_timestamp_pb.Timestamp): NFTWallet;
+
+    hasUpdateTime(): boolean;
+    clearUpdateTime(): void;
+    getUpdateTime(): google_protobuf_timestamp_pb.Timestamp | undefined;
+    setUpdateTime(value?: google_protobuf_timestamp_pb.Timestamp): NFTWallet;
+
+    serializeBinary(): Uint8Array;
+    toObject(includeInstance?: boolean): NFTWallet.AsObject;
+    static toObject(includeInstance: boolean, msg: NFTWallet): NFTWallet.AsObject;
+    static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+    static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+    static serializeBinaryToWriter(message: NFTWallet, writer: jspb.BinaryWriter): void;
+    static deserializeBinary(bytes: Uint8Array): NFTWallet;
+    static deserializeBinaryFromReader(message: NFTWallet, reader: jspb.BinaryReader): NFTWallet;
+}
+
+export namespace NFTWallet {
+    export type AsObject = {
+        ownerId: string,
+        walletId: string,
+        name: string,
+        coin: gincoinc_global_v1_gincoincglobalv1_enum_pb.Coin,
+        walletType: gincoinc_adamant_global_v1_adamantglobalv1_enum_pb.WalletType,
+        addressType: gincoinc_global_v1_gincoincglobalv1_enum_pb.AddressType,
+        state: gincoinc_adamant_global_v1_adamantglobalv1_enum_pb.WalletState,
+        address: string,
+        nftOwnershipsList: Array<NFTOwnership.AsObject>,
+        createTime?: google_protobuf_timestamp_pb.Timestamp.AsObject,
+        updateTime?: google_protobuf_timestamp_pb.Timestamp.AsObject,
+    }
+}
+
+export class NFTOwnership extends jspb.Message { 
+    getCoin(): gincoinc_global_v1_gincoincglobalv1_enum_pb.Coin;
+    setCoin(value: gincoinc_global_v1_gincoincglobalv1_enum_pb.Coin): NFTOwnership;
+
+    serializeBinary(): Uint8Array;
+    toObject(includeInstance?: boolean): NFTOwnership.AsObject;
+    static toObject(includeInstance: boolean, msg: NFTOwnership): NFTOwnership.AsObject;
+    static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+    static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+    static serializeBinaryToWriter(message: NFTOwnership, writer: jspb.BinaryWriter): void;
+    static deserializeBinary(bytes: Uint8Array): NFTOwnership;
+    static deserializeBinaryFromReader(message: NFTOwnership, reader: jspb.BinaryReader): NFTOwnership;
+}
+
+export namespace NFTOwnership {
+    export type AsObject = {
+        coin: gincoinc_global_v1_gincoincglobalv1_enum_pb.Coin,
+    }
+}
+
 export class WalletProposal extends jspb.Message { 
     getProposalType(): gincoinc_adamant_global_v1_adamantglobalv1_enum_pb.WalletProposalType;
     setProposalType(value: gincoinc_adamant_global_v1_adamantglobalv1_enum_pb.WalletProposalType): WalletProposal;
@@ -654,6 +732,84 @@ export namespace AddressWithBalance {
     }
 }
 
+export class PreTransaction extends jspb.Message { 
+    getPreTransactionId(): string;
+    setPreTransactionId(value: string): PreTransaction;
+    getOwnerId(): string;
+    setOwnerId(value: string): PreTransaction;
+    getExternalId(): string;
+    setExternalId(value: string): PreTransaction;
+    getCoin(): gincoinc_global_v1_gincoincglobalv1_enum_pb.Coin;
+    setCoin(value: gincoinc_global_v1_gincoincglobalv1_enum_pb.Coin): PreTransaction;
+    getNetwork(): gincoinc_global_v1_gincoincglobalv1_enum_pb.Network;
+    setNetwork(value: gincoinc_global_v1_gincoincglobalv1_enum_pb.Network): PreTransaction;
+    clearDetailsList(): void;
+    getDetailsList(): Array<PreTransactionDetail>;
+    setDetailsList(value: Array<PreTransactionDetail>): PreTransaction;
+    addDetails(value?: PreTransactionDetail, index?: number): PreTransactionDetail;
+    getState(): gincoinc_adamant_global_v1_adamantglobalv1_enum_pb.PreTransactionState;
+    setState(value: gincoinc_adamant_global_v1_adamantglobalv1_enum_pb.PreTransactionState): PreTransaction;
+    getTransactionId(): string;
+    setTransactionId(value: string): PreTransaction;
+
+    hasCreateTime(): boolean;
+    clearCreateTime(): void;
+    getCreateTime(): google_protobuf_timestamp_pb.Timestamp | undefined;
+    setCreateTime(value?: google_protobuf_timestamp_pb.Timestamp): PreTransaction;
+
+    hasUpdateTime(): boolean;
+    clearUpdateTime(): void;
+    getUpdateTime(): google_protobuf_timestamp_pb.Timestamp | undefined;
+    setUpdateTime(value?: google_protobuf_timestamp_pb.Timestamp): PreTransaction;
+
+    serializeBinary(): Uint8Array;
+    toObject(includeInstance?: boolean): PreTransaction.AsObject;
+    static toObject(includeInstance: boolean, msg: PreTransaction): PreTransaction.AsObject;
+    static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+    static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+    static serializeBinaryToWriter(message: PreTransaction, writer: jspb.BinaryWriter): void;
+    static deserializeBinary(bytes: Uint8Array): PreTransaction;
+    static deserializeBinaryFromReader(message: PreTransaction, reader: jspb.BinaryReader): PreTransaction;
+}
+
+export namespace PreTransaction {
+    export type AsObject = {
+        preTransactionId: string,
+        ownerId: string,
+        externalId: string,
+        coin: gincoinc_global_v1_gincoincglobalv1_enum_pb.Coin,
+        network: gincoinc_global_v1_gincoincglobalv1_enum_pb.Network,
+        detailsList: Array<PreTransactionDetail.AsObject>,
+        state: gincoinc_adamant_global_v1_adamantglobalv1_enum_pb.PreTransactionState,
+        transactionId: string,
+        createTime?: google_protobuf_timestamp_pb.Timestamp.AsObject,
+        updateTime?: google_protobuf_timestamp_pb.Timestamp.AsObject,
+    }
+}
+
+export class PreTransactionDetail extends jspb.Message { 
+    getAddress(): string;
+    setAddress(value: string): PreTransactionDetail;
+    getStringValue(): string;
+    setStringValue(value: string): PreTransactionDetail;
+
+    serializeBinary(): Uint8Array;
+    toObject(includeInstance?: boolean): PreTransactionDetail.AsObject;
+    static toObject(includeInstance: boolean, msg: PreTransactionDetail): PreTransactionDetail.AsObject;
+    static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+    static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+    static serializeBinaryToWriter(message: PreTransactionDetail, writer: jspb.BinaryWriter): void;
+    static deserializeBinary(bytes: Uint8Array): PreTransactionDetail;
+    static deserializeBinaryFromReader(message: PreTransactionDetail, reader: jspb.BinaryReader): PreTransactionDetail;
+}
+
+export namespace PreTransactionDetail {
+    export type AsObject = {
+        address: string,
+        stringValue: string,
+    }
+}
+
 export class Transaction extends jspb.Message { 
     getWalletId(): string;
     setWalletId(value: string): Transaction;
@@ -845,6 +1001,11 @@ export class Transaction extends jspb.Message {
     getAvalanchePlatformChainSpecific(): AvalanchePlatformChainSpecific | undefined;
     setAvalanchePlatformChainSpecific(value?: AvalanchePlatformChainSpecific): Transaction;
 
+    hasQuorumSpecific(): boolean;
+    clearQuorumSpecific(): void;
+    getQuorumSpecific(): QuorumSpecific | undefined;
+    setQuorumSpecific(value?: QuorumSpecific): Transaction;
+
     hasCreateTime(): boolean;
     clearCreateTime(): void;
     getCreateTime(): google_protobuf_timestamp_pb.Timestamp | undefined;
@@ -913,6 +1074,7 @@ export namespace Transaction {
         aptosSpecific?: AptosSpecific.AsObject,
         dogecoinSpecific?: DogecoinSpecific.AsObject,
         avalanchePlatformChainSpecific?: AvalanchePlatformChainSpecific.AsObject,
+        quorumSpecific?: QuorumSpecific.AsObject,
         createTime?: google_protobuf_timestamp_pb.Timestamp.AsObject,
         updateTime?: google_protobuf_timestamp_pb.Timestamp.AsObject,
     }
@@ -1057,6 +1219,14 @@ export class TxInput extends jspb.Message {
     setValue(value: number): TxInput;
     getStringValue(): string;
     setStringValue(value: string): TxInput;
+    getTxInputIndex(): number;
+    setTxInputIndex(value: number): TxInput;
+    getAddress(): string;
+    setAddress(value: string): TxInput;
+    getWitnessScript(): string;
+    setWitnessScript(value: string): TxInput;
+    getNSequence(): number;
+    setNSequence(value: number): TxInput;
 
     serializeBinary(): Uint8Array;
     toObject(includeInstance?: boolean): TxInput.AsObject;
@@ -1074,6 +1244,10 @@ export namespace TxInput {
         txIndex: number,
         value: number,
         stringValue: string,
+        txInputIndex: number,
+        address: string,
+        witnessScript: string,
+        nSequence: number,
     }
 }
 
@@ -1086,6 +1260,8 @@ export class TxOutput extends jspb.Message {
     setStringValue(value: string): TxOutput;
     getIsChange(): boolean;
     setIsChange(value: boolean): TxOutput;
+    getTxOutputIndex(): number;
+    setTxOutputIndex(value: number): TxOutput;
 
     serializeBinary(): Uint8Array;
     toObject(includeInstance?: boolean): TxOutput.AsObject;
@@ -1103,6 +1279,7 @@ export namespace TxOutput {
         value: number,
         stringValue: string,
         isChange: boolean,
+        txOutputIndex: number,
     }
 }
 
@@ -1349,6 +1526,12 @@ export class EthereumSpecific extends jspb.Message {
     setData(value: string): EthereumSpecific;
     getIsStakingTransaction(): boolean;
     setIsStakingTransaction(value: boolean): EthereumSpecific;
+    getFromAddress(): string;
+    setFromAddress(value: string): EthereumSpecific;
+    getTokenAddress(): string;
+    setTokenAddress(value: string): EthereumSpecific;
+    getChainId(): number;
+    setChainId(value: number): EthereumSpecific;
 
     serializeBinary(): Uint8Array;
     toObject(includeInstance?: boolean): EthereumSpecific.AsObject;
@@ -1369,6 +1552,9 @@ export namespace EthereumSpecific {
         expiration: number,
         data: string,
         isStakingTransaction: boolean,
+        fromAddress: string,
+        tokenAddress: string,
+        chainId: number,
     }
 }
 
@@ -1381,6 +1567,8 @@ export class XrpSpecific extends jspb.Message {
     setTxType(value: gincoinc_global_v1_gincoincglobalv1_enum_pb.XRPTransactionType): XrpSpecific;
     getIsNextSequenceNumber(): boolean;
     setIsNextSequenceNumber(value: boolean): XrpSpecific;
+    getFromAddress(): string;
+    setFromAddress(value: string): XrpSpecific;
 
     serializeBinary(): Uint8Array;
     toObject(includeInstance?: boolean): XrpSpecific.AsObject;
@@ -1398,6 +1586,7 @@ export namespace XrpSpecific {
         destinationTag: number,
         txType: gincoinc_global_v1_gincoincglobalv1_enum_pb.XRPTransactionType,
         isNextSequenceNumber: boolean,
+        fromAddress: string,
     }
 }
 
@@ -1483,6 +1672,10 @@ export class CardanoSpecific extends jspb.Message {
     getTxOutputsList(): Array<TxOutput>;
     setTxOutputsList(value: Array<TxOutput>): CardanoSpecific;
     addTxOutputs(value?: TxOutput, index?: number): TxOutput;
+    clearTokensList(): void;
+    getTokensList(): Array<CardanoCustomToken>;
+    setTokensList(value: Array<CardanoCustomToken>): CardanoSpecific;
+    addTokens(value?: CardanoCustomToken, index?: number): CardanoCustomToken;
 
     serializeBinary(): Uint8Array;
     toObject(includeInstance?: boolean): CardanoSpecific.AsObject;
@@ -1498,6 +1691,7 @@ export namespace CardanoSpecific {
     export type AsObject = {
         txInputsList: Array<TxInput.AsObject>,
         txOutputsList: Array<TxOutput.AsObject>,
+        tokensList: Array<CardanoCustomToken.AsObject>,
     }
 }
 
@@ -1629,6 +1823,14 @@ export class PolygonSpecific extends jspb.Message {
     setNonce(value: number): PolygonSpecific;
     getIsNextNonce(): boolean;
     setIsNextNonce(value: boolean): PolygonSpecific;
+    getData(): string;
+    setData(value: string): PolygonSpecific;
+    getFromAddress(): string;
+    setFromAddress(value: string): PolygonSpecific;
+    getTokenAddress(): string;
+    setTokenAddress(value: string): PolygonSpecific;
+    getChainId(): number;
+    setChainId(value: number): PolygonSpecific;
 
     serializeBinary(): Uint8Array;
     toObject(includeInstance?: boolean): PolygonSpecific.AsObject;
@@ -1645,6 +1847,10 @@ export namespace PolygonSpecific {
         gasLimit: number,
         nonce: number,
         isNextNonce: boolean,
+        data: string,
+        fromAddress: string,
+        tokenAddress: string,
+        chainId: number,
     }
 }
 
@@ -1720,6 +1926,16 @@ export class AvalancheSpecific extends jspb.Message {
     clearAtomicTx(): void;
     getAtomicTx(): AtomicTx | undefined;
     setAtomicTx(value?: AtomicTx): AvalancheSpecific;
+    getFromAddress(): string;
+    setFromAddress(value: string): AvalancheSpecific;
+    getTokenAddress(): string;
+    setTokenAddress(value: string): AvalancheSpecific;
+    getChainId(): number;
+    setChainId(value: number): AvalancheSpecific;
+    getMaxPriorityFeePerGas(): number;
+    setMaxPriorityFeePerGas(value: number): AvalancheSpecific;
+    getTxType(): gincoinc_global_v1_gincoincglobalv1_enum_pb.AvalancheTxType;
+    setTxType(value: gincoinc_global_v1_gincoincglobalv1_enum_pb.AvalancheTxType): AvalancheSpecific;
 
     serializeBinary(): Uint8Array;
     toObject(includeInstance?: boolean): AvalancheSpecific.AsObject;
@@ -1737,6 +1953,11 @@ export namespace AvalancheSpecific {
         nonce: number,
         isNextNonce: boolean,
         atomicTx?: AtomicTx.AsObject,
+        fromAddress: string,
+        tokenAddress: string,
+        chainId: number,
+        maxPriorityFeePerGas: number,
+        txType: gincoinc_global_v1_gincoincglobalv1_enum_pb.AvalancheTxType,
     }
 }
 
@@ -1747,6 +1968,12 @@ export class OasysSpecific extends jspb.Message {
     setNonce(value: number): OasysSpecific;
     getIsNextNonce(): boolean;
     setIsNextNonce(value: boolean): OasysSpecific;
+    getFromAddress(): string;
+    setFromAddress(value: string): OasysSpecific;
+    getTokenAddress(): string;
+    setTokenAddress(value: string): OasysSpecific;
+    getChainId(): number;
+    setChainId(value: number): OasysSpecific;
 
     serializeBinary(): Uint8Array;
     toObject(includeInstance?: boolean): OasysSpecific.AsObject;
@@ -1763,6 +1990,9 @@ export namespace OasysSpecific {
         gasLimit: number,
         nonce: number,
         isNextNonce: boolean,
+        fromAddress: string,
+        tokenAddress: string,
+        chainId: number,
     }
 }
 
@@ -1951,6 +2181,12 @@ export class SolanaSpecific extends jspb.Message {
     setExpiration(value: number): SolanaSpecific;
     getEventType(): gincoinc_global_v1_gincoincglobalv1_enum_pb.SolanaEventType;
     setEventType(value: gincoinc_global_v1_gincoincglobalv1_enum_pb.SolanaEventType): SolanaSpecific;
+    getFromAddress(): string;
+    setFromAddress(value: string): SolanaSpecific;
+    getRecentBlockhash(): string;
+    setRecentBlockhash(value: string): SolanaSpecific;
+    getPriorityFeeUnitLimit(): number;
+    setPriorityFeeUnitLimit(value: number): SolanaSpecific;
 
     serializeBinary(): Uint8Array;
     toObject(includeInstance?: boolean): SolanaSpecific.AsObject;
@@ -1966,6 +2202,9 @@ export namespace SolanaSpecific {
     export type AsObject = {
         expiration: number,
         eventType: gincoinc_global_v1_gincoincglobalv1_enum_pb.SolanaEventType,
+        fromAddress: string,
+        recentBlockhash: string,
+        priorityFeeUnitLimit: number,
     }
 }
 
@@ -2005,6 +2244,10 @@ export class BNBSmartChainSpecific extends jspb.Message {
     setNonce(value: number): BNBSmartChainSpecific;
     getIsNextNonce(): boolean;
     setIsNextNonce(value: boolean): BNBSmartChainSpecific;
+    getFromAddress(): string;
+    setFromAddress(value: string): BNBSmartChainSpecific;
+    getTokenAddress(): string;
+    setTokenAddress(value: string): BNBSmartChainSpecific;
 
     serializeBinary(): Uint8Array;
     toObject(includeInstance?: boolean): BNBSmartChainSpecific.AsObject;
@@ -2021,6 +2264,8 @@ export namespace BNBSmartChainSpecific {
         gasLimit: number,
         nonce: number,
         isNextNonce: boolean,
+        fromAddress: string,
+        tokenAddress: string,
     }
 }
 
@@ -2222,6 +2467,32 @@ export namespace AvalancheTxOutput {
         threshold: number,
         isChange: boolean,
         addressesList: Array<string>,
+    }
+}
+
+export class QuorumSpecific extends jspb.Message { 
+    getGasLimit(): number;
+    setGasLimit(value: number): QuorumSpecific;
+    getNonce(): number;
+    setNonce(value: number): QuorumSpecific;
+    getIsNextNonce(): boolean;
+    setIsNextNonce(value: boolean): QuorumSpecific;
+
+    serializeBinary(): Uint8Array;
+    toObject(includeInstance?: boolean): QuorumSpecific.AsObject;
+    static toObject(includeInstance: boolean, msg: QuorumSpecific): QuorumSpecific.AsObject;
+    static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+    static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+    static serializeBinaryToWriter(message: QuorumSpecific, writer: jspb.BinaryWriter): void;
+    static deserializeBinary(bytes: Uint8Array): QuorumSpecific;
+    static deserializeBinaryFromReader(message: QuorumSpecific, reader: jspb.BinaryReader): QuorumSpecific;
+}
+
+export namespace QuorumSpecific {
+    export type AsObject = {
+        gasLimit: number,
+        nonce: number,
+        isNextNonce: boolean,
     }
 }
 
@@ -2540,6 +2811,39 @@ export namespace CreateTransactionAvalancheSpecific {
         txType?: gincoinc_global_v1_gincoincglobalv1_enum_pb.AvalancheTxType,
         importTxSpecific?: ImportTxSpecific.AsObject,
         stakingSpecific?: StakingSpecific.AsObject,
+    }
+}
+
+export class CreateTransactionNFTSpecific extends jspb.Message { 
+
+    hasNftCallMethod(): boolean;
+    clearNftCallMethod(): void;
+    getNftCallMethod(): gincoinc_global_v1_gincoincglobalv1_enum_pb.NFTCallMethod | undefined;
+    setNftCallMethod(value: gincoinc_global_v1_gincoincglobalv1_enum_pb.NFTCallMethod): CreateTransactionNFTSpecific;
+    clearTokenIdsList(): void;
+    getTokenIdsList(): Array<string>;
+    setTokenIdsList(value: Array<string>): CreateTransactionNFTSpecific;
+    addTokenIds(value: string, index?: number): string;
+    clearMetadataJsonsList(): void;
+    getMetadataJsonsList(): Array<string>;
+    setMetadataJsonsList(value: Array<string>): CreateTransactionNFTSpecific;
+    addMetadataJsons(value: string, index?: number): string;
+
+    serializeBinary(): Uint8Array;
+    toObject(includeInstance?: boolean): CreateTransactionNFTSpecific.AsObject;
+    static toObject(includeInstance: boolean, msg: CreateTransactionNFTSpecific): CreateTransactionNFTSpecific.AsObject;
+    static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+    static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+    static serializeBinaryToWriter(message: CreateTransactionNFTSpecific, writer: jspb.BinaryWriter): void;
+    static deserializeBinary(bytes: Uint8Array): CreateTransactionNFTSpecific;
+    static deserializeBinaryFromReader(message: CreateTransactionNFTSpecific, reader: jspb.BinaryReader): CreateTransactionNFTSpecific;
+}
+
+export namespace CreateTransactionNFTSpecific {
+    export type AsObject = {
+        nftCallMethod?: gincoinc_global_v1_gincoincglobalv1_enum_pb.NFTCallMethod,
+        tokenIdsList: Array<string>,
+        metadataJsonsList: Array<string>,
     }
 }
 
@@ -3218,6 +3522,8 @@ export class LabeledAddress extends jspb.Message {
     setUpdateTime(value?: google_protobuf_timestamp_pb.Timestamp): LabeledAddress;
     getNetwork(): gincoinc_global_v1_gincoincglobalv1_enum_pb.Network;
     setNetwork(value: gincoinc_global_v1_gincoincglobalv1_enum_pb.Network): LabeledAddress;
+    getMessage(): string;
+    setMessage(value: string): LabeledAddress;
 
     serializeBinary(): Uint8Array;
     toObject(includeInstance?: boolean): LabeledAddress.AsObject;
@@ -3239,6 +3545,7 @@ export namespace LabeledAddress {
         createTime?: google_protobuf_timestamp_pb.Timestamp.AsObject,
         updateTime?: google_protobuf_timestamp_pb.Timestamp.AsObject,
         network: gincoinc_global_v1_gincoincglobalv1_enum_pb.Network,
+        message: string,
     }
 }
 
@@ -3255,6 +3562,8 @@ export class LabeledAddressProposal extends jspb.Message {
     setProposedAddress(value: string): LabeledAddressProposal;
     getAddressIsReviewed(): boolean;
     setAddressIsReviewed(value: boolean): LabeledAddressProposal;
+    getProposedMessage(): string;
+    setProposedMessage(value: string): LabeledAddressProposal;
 
     serializeBinary(): Uint8Array;
     toObject(includeInstance?: boolean): LabeledAddressProposal.AsObject;
@@ -3274,6 +3583,7 @@ export namespace LabeledAddressProposal {
         approverName: string,
         proposedAddress: string,
         addressIsReviewed: boolean,
+        proposedMessage: string,
     }
 }
 
@@ -4574,4 +4884,329 @@ export namespace StakingValidator {
         createTime?: google_protobuf_timestamp_pb.Timestamp.AsObject,
         updateTime?: google_protobuf_timestamp_pb.Timestamp.AsObject,
     }
+}
+
+export class NFT extends jspb.Message { 
+    getAssetType(): AssetType;
+    setAssetType(value: AssetType): NFT;
+    getName(): string;
+    setName(value: string): NFT;
+    getSymbol(): string;
+    setSymbol(value: string): NFT;
+    getTokenId(): string;
+    setTokenId(value: string): NFT;
+    getTokenUri(): string;
+    setTokenUri(value: string): NFT;
+    getTokenData(): string;
+    setTokenData(value: string): NFT;
+    getTokenJsonMetadata(): string;
+    setTokenJsonMetadata(value: string): NFT;
+
+    serializeBinary(): Uint8Array;
+    toObject(includeInstance?: boolean): NFT.AsObject;
+    static toObject(includeInstance: boolean, msg: NFT): NFT.AsObject;
+    static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+    static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+    static serializeBinaryToWriter(message: NFT, writer: jspb.BinaryWriter): void;
+    static deserializeBinary(bytes: Uint8Array): NFT;
+    static deserializeBinaryFromReader(message: NFT, reader: jspb.BinaryReader): NFT;
+}
+
+export namespace NFT {
+    export type AsObject = {
+        assetType: AssetType,
+        name: string,
+        symbol: string,
+        tokenId: string,
+        tokenUri: string,
+        tokenData: string,
+        tokenJsonMetadata: string,
+    }
+}
+
+export class PreTransactionThreshold extends jspb.Message { 
+    getPreTransactionThresholdId(): string;
+    setPreTransactionThresholdId(value: string): PreTransactionThreshold;
+    getCoin(): gincoinc_global_v1_gincoincglobalv1_enum_pb.Coin;
+    setCoin(value: gincoinc_global_v1_gincoincglobalv1_enum_pb.Coin): PreTransactionThreshold;
+    getNetwork(): gincoinc_global_v1_gincoincglobalv1_enum_pb.Network;
+    setNetwork(value: gincoinc_global_v1_gincoincglobalv1_enum_pb.Network): PreTransactionThreshold;
+    getValue(): number;
+    setValue(value: number): PreTransactionThreshold;
+
+    hasProposal(): boolean;
+    clearProposal(): void;
+    getProposal(): PreTransactionThresholdProposal | undefined;
+    setProposal(value?: PreTransactionThresholdProposal): PreTransactionThreshold;
+
+    hasCreateTime(): boolean;
+    clearCreateTime(): void;
+    getCreateTime(): google_protobuf_timestamp_pb.Timestamp | undefined;
+    setCreateTime(value?: google_protobuf_timestamp_pb.Timestamp): PreTransactionThreshold;
+
+    hasUpdateTime(): boolean;
+    clearUpdateTime(): void;
+    getUpdateTime(): google_protobuf_timestamp_pb.Timestamp | undefined;
+    setUpdateTime(value?: google_protobuf_timestamp_pb.Timestamp): PreTransactionThreshold;
+
+    serializeBinary(): Uint8Array;
+    toObject(includeInstance?: boolean): PreTransactionThreshold.AsObject;
+    static toObject(includeInstance: boolean, msg: PreTransactionThreshold): PreTransactionThreshold.AsObject;
+    static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+    static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+    static serializeBinaryToWriter(message: PreTransactionThreshold, writer: jspb.BinaryWriter): void;
+    static deserializeBinary(bytes: Uint8Array): PreTransactionThreshold;
+    static deserializeBinaryFromReader(message: PreTransactionThreshold, reader: jspb.BinaryReader): PreTransactionThreshold;
+}
+
+export namespace PreTransactionThreshold {
+    export type AsObject = {
+        preTransactionThresholdId: string,
+        coin: gincoinc_global_v1_gincoincglobalv1_enum_pb.Coin,
+        network: gincoinc_global_v1_gincoincglobalv1_enum_pb.Network,
+        value: number,
+        proposal?: PreTransactionThresholdProposal.AsObject,
+        createTime?: google_protobuf_timestamp_pb.Timestamp.AsObject,
+        updateTime?: google_protobuf_timestamp_pb.Timestamp.AsObject,
+    }
+}
+
+export class PreTransactionThresholdProposal extends jspb.Message { 
+    getPreTransactionThresholdId(): string;
+    setPreTransactionThresholdId(value: string): PreTransactionThresholdProposal;
+    getProposalId(): string;
+    setProposalId(value: string): PreTransactionThresholdProposal;
+    getRequesterAccountId(): string;
+    setRequesterAccountId(value: string): PreTransactionThresholdProposal;
+    getRequesterName(): string;
+    setRequesterName(value: string): PreTransactionThresholdProposal;
+    getApproverAccountId(): string;
+    setApproverAccountId(value: string): PreTransactionThresholdProposal;
+    getApproverName(): string;
+    setApproverName(value: string): PreTransactionThresholdProposal;
+    getProposedValue(): number;
+    setProposedValue(value: number): PreTransactionThresholdProposal;
+    getIsReviewed(): boolean;
+    setIsReviewed(value: boolean): PreTransactionThresholdProposal;
+
+    serializeBinary(): Uint8Array;
+    toObject(includeInstance?: boolean): PreTransactionThresholdProposal.AsObject;
+    static toObject(includeInstance: boolean, msg: PreTransactionThresholdProposal): PreTransactionThresholdProposal.AsObject;
+    static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+    static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+    static serializeBinaryToWriter(message: PreTransactionThresholdProposal, writer: jspb.BinaryWriter): void;
+    static deserializeBinary(bytes: Uint8Array): PreTransactionThresholdProposal;
+    static deserializeBinaryFromReader(message: PreTransactionThresholdProposal, reader: jspb.BinaryReader): PreTransactionThresholdProposal;
+}
+
+export namespace PreTransactionThresholdProposal {
+    export type AsObject = {
+        preTransactionThresholdId: string,
+        proposalId: string,
+        requesterAccountId: string,
+        requesterName: string,
+        approverAccountId: string,
+        approverName: string,
+        proposedValue: number,
+        isReviewed: boolean,
+    }
+}
+
+export class BlacklistAddress extends jspb.Message { 
+    getBlacklistAddressId(): string;
+    setBlacklistAddressId(value: string): BlacklistAddress;
+    getAppliedProposalId(): string;
+    setAppliedProposalId(value: string): BlacklistAddress;
+    getPendingProposalId(): string;
+    setPendingProposalId(value: string): BlacklistAddress;
+    getNetwork(): gincoinc_global_v1_gincoincglobalv1_enum_pb.Network;
+    setNetwork(value: gincoinc_global_v1_gincoincglobalv1_enum_pb.Network): BlacklistAddress;
+    getAddress(): string;
+    setAddress(value: string): BlacklistAddress;
+    getIsActivated(): boolean;
+    setIsActivated(value: boolean): BlacklistAddress;
+    getStatus(): gincoinc_adamant_global_v1_adamantglobalv1_enum_pb.BlacklistAddressStatus;
+    setStatus(value: gincoinc_adamant_global_v1_adamantglobalv1_enum_pb.BlacklistAddressStatus): BlacklistAddress;
+    getExternalId(): string;
+    setExternalId(value: string): BlacklistAddress;
+
+    hasCreateTime(): boolean;
+    clearCreateTime(): void;
+    getCreateTime(): google_protobuf_timestamp_pb.Timestamp | undefined;
+    setCreateTime(value?: google_protobuf_timestamp_pb.Timestamp): BlacklistAddress;
+
+    hasUpdateTime(): boolean;
+    clearUpdateTime(): void;
+    getUpdateTime(): google_protobuf_timestamp_pb.Timestamp | undefined;
+    setUpdateTime(value?: google_protobuf_timestamp_pb.Timestamp): BlacklistAddress;
+
+    hasFileId(): boolean;
+    clearFileId(): void;
+    getFileId(): string | undefined;
+    setFileId(value: string): BlacklistAddress;
+
+    hasFileName(): boolean;
+    clearFileName(): void;
+    getFileName(): string | undefined;
+    setFileName(value: string): BlacklistAddress;
+
+    hasAppliedProposal(): boolean;
+    clearAppliedProposal(): void;
+    getAppliedProposal(): BlacklistAddressProposal | undefined;
+    setAppliedProposal(value?: BlacklistAddressProposal): BlacklistAddress;
+
+    hasPendingProposal(): boolean;
+    clearPendingProposal(): void;
+    getPendingProposal(): BlacklistAddressProposal | undefined;
+    setPendingProposal(value?: BlacklistAddressProposal): BlacklistAddress;
+
+    serializeBinary(): Uint8Array;
+    toObject(includeInstance?: boolean): BlacklistAddress.AsObject;
+    static toObject(includeInstance: boolean, msg: BlacklistAddress): BlacklistAddress.AsObject;
+    static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+    static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+    static serializeBinaryToWriter(message: BlacklistAddress, writer: jspb.BinaryWriter): void;
+    static deserializeBinary(bytes: Uint8Array): BlacklistAddress;
+    static deserializeBinaryFromReader(message: BlacklistAddress, reader: jspb.BinaryReader): BlacklistAddress;
+}
+
+export namespace BlacklistAddress {
+    export type AsObject = {
+        blacklistAddressId: string,
+        appliedProposalId: string,
+        pendingProposalId: string,
+        network: gincoinc_global_v1_gincoincglobalv1_enum_pb.Network,
+        address: string,
+        isActivated: boolean,
+        status: gincoinc_adamant_global_v1_adamantglobalv1_enum_pb.BlacklistAddressStatus,
+        externalId: string,
+        createTime?: google_protobuf_timestamp_pb.Timestamp.AsObject,
+        updateTime?: google_protobuf_timestamp_pb.Timestamp.AsObject,
+        fileId?: string,
+        fileName?: string,
+        appliedProposal?: BlacklistAddressProposal.AsObject,
+        pendingProposal?: BlacklistAddressProposal.AsObject,
+    }
+}
+
+export class BlacklistAddressProposal extends jspb.Message { 
+    getBlacklistAddressProposalId(): string;
+    setBlacklistAddressProposalId(value: string): BlacklistAddressProposal;
+    getBlacklistAddressId(): string;
+    setBlacklistAddressId(value: string): BlacklistAddressProposal;
+    getRequesterAccountId(): string;
+    setRequesterAccountId(value: string): BlacklistAddressProposal;
+    getRequesterName(): string;
+    setRequesterName(value: string): BlacklistAddressProposal;
+    getApproverAccountId(): string;
+    setApproverAccountId(value: string): BlacklistAddressProposal;
+    getApproverName(): string;
+    setApproverName(value: string): BlacklistAddressProposal;
+
+    hasDiff(): boolean;
+    clearDiff(): void;
+    getDiff(): BlacklistAddressDiff | undefined;
+    setDiff(value?: BlacklistAddressDiff): BlacklistAddressProposal;
+
+    serializeBinary(): Uint8Array;
+    toObject(includeInstance?: boolean): BlacklistAddressProposal.AsObject;
+    static toObject(includeInstance: boolean, msg: BlacklistAddressProposal): BlacklistAddressProposal.AsObject;
+    static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+    static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+    static serializeBinaryToWriter(message: BlacklistAddressProposal, writer: jspb.BinaryWriter): void;
+    static deserializeBinary(bytes: Uint8Array): BlacklistAddressProposal;
+    static deserializeBinaryFromReader(message: BlacklistAddressProposal, reader: jspb.BinaryReader): BlacklistAddressProposal;
+}
+
+export namespace BlacklistAddressProposal {
+    export type AsObject = {
+        blacklistAddressProposalId: string,
+        blacklistAddressId: string,
+        requesterAccountId: string,
+        requesterName: string,
+        approverAccountId: string,
+        approverName: string,
+        diff?: BlacklistAddressDiff.AsObject,
+    }
+}
+
+export class BlacklistAddressDiff extends jspb.Message { 
+    getIsActivated(): boolean;
+    setIsActivated(value: boolean): BlacklistAddressDiff;
+
+    serializeBinary(): Uint8Array;
+    toObject(includeInstance?: boolean): BlacklistAddressDiff.AsObject;
+    static toObject(includeInstance: boolean, msg: BlacklistAddressDiff): BlacklistAddressDiff.AsObject;
+    static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+    static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+    static serializeBinaryToWriter(message: BlacklistAddressDiff, writer: jspb.BinaryWriter): void;
+    static deserializeBinary(bytes: Uint8Array): BlacklistAddressDiff;
+    static deserializeBinaryFromReader(message: BlacklistAddressDiff, reader: jspb.BinaryReader): BlacklistAddressDiff;
+}
+
+export namespace BlacklistAddressDiff {
+    export type AsObject = {
+        isActivated: boolean,
+    }
+}
+
+export class BlacklistAddressFile extends jspb.Message { 
+    getFileId(): string;
+    setFileId(value: string): BlacklistAddressFile;
+    getFileName(): string;
+    setFileName(value: string): BlacklistAddressFile;
+    getNetwork(): gincoinc_global_v1_gincoincglobalv1_enum_pb.Network;
+    setNetwork(value: gincoinc_global_v1_gincoincglobalv1_enum_pb.Network): BlacklistAddressFile;
+    getStatus(): gincoinc_adamant_global_v1_adamantglobalv1_enum_pb.BlacklistAddressStatus;
+    setStatus(value: gincoinc_adamant_global_v1_adamantglobalv1_enum_pb.BlacklistAddressStatus): BlacklistAddressFile;
+    getAddressCount(): number;
+    setAddressCount(value: number): BlacklistAddressFile;
+    getRequesterAccountId(): string;
+    setRequesterAccountId(value: string): BlacklistAddressFile;
+    getRequesterName(): string;
+    setRequesterName(value: string): BlacklistAddressFile;
+    getApproverAccountId(): string;
+    setApproverAccountId(value: string): BlacklistAddressFile;
+    getApproverName(): string;
+    setApproverName(value: string): BlacklistAddressFile;
+
+    hasCreateTime(): boolean;
+    clearCreateTime(): void;
+    getCreateTime(): google_protobuf_timestamp_pb.Timestamp | undefined;
+    setCreateTime(value?: google_protobuf_timestamp_pb.Timestamp): BlacklistAddressFile;
+
+    hasUpdateTime(): boolean;
+    clearUpdateTime(): void;
+    getUpdateTime(): google_protobuf_timestamp_pb.Timestamp | undefined;
+    setUpdateTime(value?: google_protobuf_timestamp_pb.Timestamp): BlacklistAddressFile;
+
+    serializeBinary(): Uint8Array;
+    toObject(includeInstance?: boolean): BlacklistAddressFile.AsObject;
+    static toObject(includeInstance: boolean, msg: BlacklistAddressFile): BlacklistAddressFile.AsObject;
+    static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+    static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+    static serializeBinaryToWriter(message: BlacklistAddressFile, writer: jspb.BinaryWriter): void;
+    static deserializeBinary(bytes: Uint8Array): BlacklistAddressFile;
+    static deserializeBinaryFromReader(message: BlacklistAddressFile, reader: jspb.BinaryReader): BlacklistAddressFile;
+}
+
+export namespace BlacklistAddressFile {
+    export type AsObject = {
+        fileId: string,
+        fileName: string,
+        network: gincoinc_global_v1_gincoincglobalv1_enum_pb.Network,
+        status: gincoinc_adamant_global_v1_adamantglobalv1_enum_pb.BlacklistAddressStatus,
+        addressCount: number,
+        requesterAccountId: string,
+        requesterName: string,
+        approverAccountId: string,
+        approverName: string,
+        createTime?: google_protobuf_timestamp_pb.Timestamp.AsObject,
+        updateTime?: google_protobuf_timestamp_pb.Timestamp.AsObject,
+    }
+}
+
+export enum AssetType {
+    ASSET_TYPE_INVALID = 0,
+    ASSET_TYPE_ERC721 = 1,
 }
