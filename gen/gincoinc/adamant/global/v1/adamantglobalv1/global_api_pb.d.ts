@@ -2069,10 +2069,20 @@ export class CreateTransactionRequest extends jspb.Message {
     getNftSpecific(): gincoinc_adamant_global_v1_adamantglobalv1_model_pb.CreateTransactionNFTSpecific | undefined;
     setNftSpecific(value?: gincoinc_adamant_global_v1_adamantglobalv1_model_pb.CreateTransactionNFTSpecific): CreateTransactionRequest;
 
+    hasTonSpecific(): boolean;
+    clearTonSpecific(): void;
+    getTonSpecific(): gincoinc_adamant_global_v1_adamantglobalv1_model_pb.CreateTransactionTonSpecific | undefined;
+    setTonSpecific(value?: gincoinc_adamant_global_v1_adamantglobalv1_model_pb.CreateTransactionTonSpecific): CreateTransactionRequest;
+
     hasUtxoSpecific(): boolean;
     clearUtxoSpecific(): void;
     getUtxoSpecific(): UtxoSpecific | undefined;
     setUtxoSpecific(value?: UtxoSpecific): CreateTransactionRequest;
+
+    hasSuiSpecific(): boolean;
+    clearSuiSpecific(): void;
+    getSuiSpecific(): gincoinc_adamant_global_v1_adamantglobalv1_model_pb.CreateTransactionSuiSpecific | undefined;
+    setSuiSpecific(value?: gincoinc_adamant_global_v1_adamantglobalv1_model_pb.CreateTransactionSuiSpecific): CreateTransactionRequest;
 
     hasPreTransactionId(): boolean;
     clearPreTransactionId(): void;
@@ -2111,7 +2121,9 @@ export namespace CreateTransactionRequest {
         aptosSpecific?: gincoinc_adamant_global_v1_adamantglobalv1_model_pb.CreateTransactionAptosSpecific.AsObject,
         avalancheSpecific?: gincoinc_adamant_global_v1_adamantglobalv1_model_pb.CreateTransactionAvalancheSpecific.AsObject,
         nftSpecific?: gincoinc_adamant_global_v1_adamantglobalv1_model_pb.CreateTransactionNFTSpecific.AsObject,
+        tonSpecific?: gincoinc_adamant_global_v1_adamantglobalv1_model_pb.CreateTransactionTonSpecific.AsObject,
         utxoSpecific?: UtxoSpecific.AsObject,
+        suiSpecific?: gincoinc_adamant_global_v1_adamantglobalv1_model_pb.CreateTransactionSuiSpecific.AsObject,
         preTransactionId?: string,
     }
 }
@@ -3859,6 +3871,16 @@ export class CalculateFeeRequest extends jspb.Message {
     getAvalancheSpecific(): CalculateFeeAvalancheSpecific | undefined;
     setAvalancheSpecific(value?: CalculateFeeAvalancheSpecific): CalculateFeeRequest;
 
+    hasSuiSpecific(): boolean;
+    clearSuiSpecific(): void;
+    getSuiSpecific(): CalculateFeeSuiSpecific | undefined;
+    setSuiSpecific(value?: CalculateFeeSuiSpecific): CalculateFeeRequest;
+
+    hasTonSpecific(): boolean;
+    clearTonSpecific(): void;
+    getTonSpecific(): CalculateFeeTonSpecific | undefined;
+    setTonSpecific(value?: CalculateFeeTonSpecific): CalculateFeeRequest;
+
     serializeBinary(): Uint8Array;
     toObject(includeInstance?: boolean): CalculateFeeRequest.AsObject;
     static toObject(includeInstance: boolean, msg: CalculateFeeRequest): CalculateFeeRequest.AsObject;
@@ -3887,6 +3909,8 @@ export namespace CalculateFeeRequest {
         utxoSpecific?: UtxoSpecific.AsObject,
         solanaSpecific?: CalculateFeeSolanaSpecific.AsObject,
         avalancheSpecific?: CalculateFeeAvalancheSpecific.AsObject,
+        suiSpecific?: CalculateFeeSuiSpecific.AsObject,
+        tonSpecific?: CalculateFeeTonSpecific.AsObject,
     }
 }
 
@@ -4062,6 +4086,29 @@ export namespace CalculateFeeRbfSpecific {
     }
 }
 
+export class CalculateFeeTonSpecific extends jspb.Message { 
+    getExpiration(): number;
+    setExpiration(value: number): CalculateFeeTonSpecific;
+    getMemo(): string;
+    setMemo(value: string): CalculateFeeTonSpecific;
+
+    serializeBinary(): Uint8Array;
+    toObject(includeInstance?: boolean): CalculateFeeTonSpecific.AsObject;
+    static toObject(includeInstance: boolean, msg: CalculateFeeTonSpecific): CalculateFeeTonSpecific.AsObject;
+    static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+    static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+    static serializeBinaryToWriter(message: CalculateFeeTonSpecific, writer: jspb.BinaryWriter): void;
+    static deserializeBinary(bytes: Uint8Array): CalculateFeeTonSpecific;
+    static deserializeBinaryFromReader(message: CalculateFeeTonSpecific, reader: jspb.BinaryReader): CalculateFeeTonSpecific;
+}
+
+export namespace CalculateFeeTonSpecific {
+    export type AsObject = {
+        expiration: number,
+        memo: string,
+    }
+}
+
 export class UtxoSpecific extends jspb.Message { 
     clearSelectedUtxosList(): void;
     getSelectedUtxosList(): Array<gincoinc_adamant_global_v1_adamantglobalv1_model_pb.SelectedUTXO>;
@@ -4104,6 +4151,26 @@ export class CalculateFeeAvalancheSpecific extends jspb.Message {
 export namespace CalculateFeeAvalancheSpecific {
     export type AsObject = {
         txType?: gincoinc_global_v1_gincoincglobalv1_enum_pb.AvalancheTxType,
+    }
+}
+
+export class CalculateFeeSuiSpecific extends jspb.Message { 
+    getSendAll(): boolean;
+    setSendAll(value: boolean): CalculateFeeSuiSpecific;
+
+    serializeBinary(): Uint8Array;
+    toObject(includeInstance?: boolean): CalculateFeeSuiSpecific.AsObject;
+    static toObject(includeInstance: boolean, msg: CalculateFeeSuiSpecific): CalculateFeeSuiSpecific.AsObject;
+    static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+    static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+    static serializeBinaryToWriter(message: CalculateFeeSuiSpecific, writer: jspb.BinaryWriter): void;
+    static deserializeBinary(bytes: Uint8Array): CalculateFeeSuiSpecific;
+    static deserializeBinaryFromReader(message: CalculateFeeSuiSpecific, reader: jspb.BinaryReader): CalculateFeeSuiSpecific;
+}
+
+export namespace CalculateFeeSuiSpecific {
+    export type AsObject = {
+        sendAll: boolean,
     }
 }
 
@@ -6430,6 +6497,10 @@ export class ListNFTsByFilterRequest extends jspb.Message {
     clearMetadata(): void;
     getMetadata(): string | undefined;
     setMetadata(value: string): ListNFTsByFilterRequest;
+    getPageSize(): number;
+    setPageSize(value: number): ListNFTsByFilterRequest;
+    getPageToken(): string;
+    setPageToken(value: string): ListNFTsByFilterRequest;
 
     serializeBinary(): Uint8Array;
     toObject(includeInstance?: boolean): ListNFTsByFilterRequest.AsObject;
@@ -6448,6 +6519,8 @@ export namespace ListNFTsByFilterRequest {
         tokenId?: string,
         tokenName?: string,
         metadata?: string,
+        pageSize: number,
+        pageToken: string,
     }
 }
 
