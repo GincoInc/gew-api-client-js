@@ -817,8 +817,6 @@ export class Transaction extends jspb.Message {
     setTransactionId(value: string): Transaction;
     getCoin(): gincoinc_global_v1_gincoincglobalv1_enum_pb.Coin;
     setCoin(value: gincoinc_global_v1_gincoincglobalv1_enum_pb.Coin): Transaction;
-    getNetwork(): gincoinc_global_v1_gincoincglobalv1_enum_pb.Network;
-    setNetwork(value: gincoinc_global_v1_gincoincglobalv1_enum_pb.Network): Transaction;
     getTxId(): string;
     setTxId(value: string): Transaction;
     getAddress(): string;
@@ -846,15 +844,30 @@ export class Transaction extends jspb.Message {
     setMembersList(value: Array<TransactionMember>): Transaction;
     addMembers(value?: TransactionMember, index?: number): TransactionMember;
 
-    hasBitcoinSpecific(): boolean;
-    clearBitcoinSpecific(): void;
-    getBitcoinSpecific(): BitcoinSpecific | undefined;
-    setBitcoinSpecific(value?: BitcoinSpecific): Transaction;
+    hasCreateTime(): boolean;
+    clearCreateTime(): void;
+    getCreateTime(): google_protobuf_timestamp_pb.Timestamp | undefined;
+    setCreateTime(value?: google_protobuf_timestamp_pb.Timestamp): Transaction;
+
+    hasUpdateTime(): boolean;
+    clearUpdateTime(): void;
+    getUpdateTime(): google_protobuf_timestamp_pb.Timestamp | undefined;
+    setUpdateTime(value?: google_protobuf_timestamp_pb.Timestamp): Transaction;
 
     hasEthereumSpecific(): boolean;
     clearEthereumSpecific(): void;
     getEthereumSpecific(): EthereumSpecific | undefined;
     setEthereumSpecific(value?: EthereumSpecific): Transaction;
+
+    hasXrpSpecific(): boolean;
+    clearXrpSpecific(): void;
+    getXrpSpecific(): XrpSpecific | undefined;
+    setXrpSpecific(value?: XrpSpecific): Transaction;
+
+    hasBitcoinSpecific(): boolean;
+    clearBitcoinSpecific(): void;
+    getBitcoinSpecific(): BitcoinSpecific | undefined;
+    setBitcoinSpecific(value?: BitcoinSpecific): Transaction;
 
     hasLitecoinSpecific(): boolean;
     clearLitecoinSpecific(): void;
@@ -865,11 +878,6 @@ export class Transaction extends jspb.Message {
     clearBitcoincashSpecific(): void;
     getBitcoincashSpecific(): BitcoincashSpecific | undefined;
     setBitcoincashSpecific(value?: BitcoincashSpecific): Transaction;
-
-    hasXrpSpecific(): boolean;
-    clearXrpSpecific(): void;
-    getXrpSpecific(): XrpSpecific | undefined;
-    setXrpSpecific(value?: XrpSpecific): Transaction;
 
     hasTronSpecific(): boolean;
     clearTronSpecific(): void;
@@ -980,6 +988,8 @@ export class Transaction extends jspb.Message {
     clearFlareSpecific(): void;
     getFlareSpecific(): FlareSpecific | undefined;
     setFlareSpecific(value?: FlareSpecific): Transaction;
+    getNetwork(): gincoinc_global_v1_gincoincglobalv1_enum_pb.Network;
+    setNetwork(value: gincoinc_global_v1_gincoincglobalv1_enum_pb.Network): Transaction;
 
     hasArbitrumOneSpecific(): boolean;
     clearArbitrumOneSpecific(): void;
@@ -1006,15 +1016,15 @@ export class Transaction extends jspb.Message {
     getQuorumSpecific(): QuorumSpecific | undefined;
     setQuorumSpecific(value?: QuorumSpecific): Transaction;
 
-    hasCreateTime(): boolean;
-    clearCreateTime(): void;
-    getCreateTime(): google_protobuf_timestamp_pb.Timestamp | undefined;
-    setCreateTime(value?: google_protobuf_timestamp_pb.Timestamp): Transaction;
+    hasTonSpecific(): boolean;
+    clearTonSpecific(): void;
+    getTonSpecific(): TonSpecific | undefined;
+    setTonSpecific(value?: TonSpecific): Transaction;
 
-    hasUpdateTime(): boolean;
-    clearUpdateTime(): void;
-    getUpdateTime(): google_protobuf_timestamp_pb.Timestamp | undefined;
-    setUpdateTime(value?: google_protobuf_timestamp_pb.Timestamp): Transaction;
+    hasSuiSpecific(): boolean;
+    clearSuiSpecific(): void;
+    getSuiSpecific(): SuiSpecific | undefined;
+    setSuiSpecific(value?: SuiSpecific): Transaction;
 
     serializeBinary(): Uint8Array;
     toObject(includeInstance?: boolean): Transaction.AsObject;
@@ -1031,7 +1041,6 @@ export namespace Transaction {
         walletId: string,
         transactionId: string,
         coin: gincoinc_global_v1_gincoincglobalv1_enum_pb.Coin,
-        network: gincoinc_global_v1_gincoincglobalv1_enum_pb.Network,
         txId: string,
         address: string,
         value: number,
@@ -1043,11 +1052,13 @@ export namespace Transaction {
         state: gincoinc_adamant_global_v1_adamantglobalv1_enum_pb.TransactionState,
         signedKeysList: Array<Key.AsObject>,
         membersList: Array<TransactionMember.AsObject>,
-        bitcoinSpecific?: BitcoinSpecific.AsObject,
+        createTime?: google_protobuf_timestamp_pb.Timestamp.AsObject,
+        updateTime?: google_protobuf_timestamp_pb.Timestamp.AsObject,
         ethereumSpecific?: EthereumSpecific.AsObject,
+        xrpSpecific?: XrpSpecific.AsObject,
+        bitcoinSpecific?: BitcoinSpecific.AsObject,
         litecoinSpecific?: LitecoinSpecific.AsObject,
         bitcoincashSpecific?: BitcoincashSpecific.AsObject,
-        xrpSpecific?: XrpSpecific.AsObject,
         tronSpecific?: TronSpecific.AsObject,
         c0banSpecific?: C0banSpecific.AsObject,
         stellarSpecific?: StellarSpecific.AsObject,
@@ -1070,13 +1081,14 @@ export namespace Transaction {
         solanaSpecific?: SolanaSpecific.AsObject,
         bnbSmartChainSpecific?: BNBSmartChainSpecific.AsObject,
         flareSpecific?: FlareSpecific.AsObject,
+        network: gincoinc_global_v1_gincoincglobalv1_enum_pb.Network,
         arbitrumOneSpecific?: ArbitrumOneSpecific.AsObject,
         aptosSpecific?: AptosSpecific.AsObject,
         dogecoinSpecific?: DogecoinSpecific.AsObject,
         avalanchePlatformChainSpecific?: AvalanchePlatformChainSpecific.AsObject,
         quorumSpecific?: QuorumSpecific.AsObject,
-        createTime?: google_protobuf_timestamp_pb.Timestamp.AsObject,
-        updateTime?: google_protobuf_timestamp_pb.Timestamp.AsObject,
+        tonSpecific?: TonSpecific.AsObject,
+        suiSpecific?: SuiSpecific.AsObject,
     }
 }
 
@@ -1227,6 +1239,8 @@ export class TxInput extends jspb.Message {
     setWitnessScript(value: string): TxInput;
     getNSequence(): number;
     setNSequence(value: number): TxInput;
+    getAddressType(): gincoinc_global_v1_gincoincglobalv1_enum_pb.AddressType;
+    setAddressType(value: gincoinc_global_v1_gincoincglobalv1_enum_pb.AddressType): TxInput;
 
     serializeBinary(): Uint8Array;
     toObject(includeInstance?: boolean): TxInput.AsObject;
@@ -1248,6 +1262,7 @@ export namespace TxInput {
         address: string,
         witnessScript: string,
         nSequence: number,
+        addressType: gincoinc_global_v1_gincoincglobalv1_enum_pb.AddressType,
     }
 }
 
@@ -1593,6 +1608,12 @@ export namespace XrpSpecific {
 export class TronSpecific extends jspb.Message { 
     getExpiration(): number;
     setExpiration(value: number): TronSpecific;
+    getTimestamp(): number;
+    setTimestamp(value: number): TronSpecific;
+    getBlockId(): string;
+    setBlockId(value: string): TronSpecific;
+    getFromAddress(): string;
+    setFromAddress(value: string): TronSpecific;
 
     serializeBinary(): Uint8Array;
     toObject(includeInstance?: boolean): TronSpecific.AsObject;
@@ -1607,6 +1628,9 @@ export class TronSpecific extends jspb.Message {
 export namespace TronSpecific {
     export type AsObject = {
         expiration: number,
+        timestamp: number,
+        blockId: string,
+        fromAddress: string,
     }
 }
 
@@ -2187,6 +2211,8 @@ export class SolanaSpecific extends jspb.Message {
     setRecentBlockhash(value: string): SolanaSpecific;
     getPriorityFeeUnitLimit(): number;
     setPriorityFeeUnitLimit(value: number): SolanaSpecific;
+    getCallerAddress(): string;
+    setCallerAddress(value: string): SolanaSpecific;
 
     serializeBinary(): Uint8Array;
     toObject(includeInstance?: boolean): SolanaSpecific.AsObject;
@@ -2205,6 +2231,7 @@ export namespace SolanaSpecific {
         fromAddress: string,
         recentBlockhash: string,
         priorityFeeUnitLimit: number,
+        callerAddress: string,
     }
 }
 
@@ -2390,6 +2417,58 @@ export namespace AvalanchePlatformChainSpecific {
     }
 }
 
+export class TonSpecific extends jspb.Message { 
+    getExpiration(): number;
+    setExpiration(value: number): TonSpecific;
+    getMemo(): string;
+    setMemo(value: string): TonSpecific;
+    getSequenceNumber(): number;
+    setSequenceNumber(value: number): TonSpecific;
+    getFromAddress(): string;
+    setFromAddress(value: string): TonSpecific;
+    getIsNextSequenceNumber(): boolean;
+    setIsNextSequenceNumber(value: boolean): TonSpecific;
+
+    serializeBinary(): Uint8Array;
+    toObject(includeInstance?: boolean): TonSpecific.AsObject;
+    static toObject(includeInstance: boolean, msg: TonSpecific): TonSpecific.AsObject;
+    static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+    static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+    static serializeBinaryToWriter(message: TonSpecific, writer: jspb.BinaryWriter): void;
+    static deserializeBinary(bytes: Uint8Array): TonSpecific;
+    static deserializeBinaryFromReader(message: TonSpecific, reader: jspb.BinaryReader): TonSpecific;
+}
+
+export namespace TonSpecific {
+    export type AsObject = {
+        expiration: number,
+        memo: string,
+        sequenceNumber: number,
+        fromAddress: string,
+        isNextSequenceNumber: boolean,
+    }
+}
+
+export class SuiSpecific extends jspb.Message { 
+    getSendAll(): boolean;
+    setSendAll(value: boolean): SuiSpecific;
+
+    serializeBinary(): Uint8Array;
+    toObject(includeInstance?: boolean): SuiSpecific.AsObject;
+    static toObject(includeInstance: boolean, msg: SuiSpecific): SuiSpecific.AsObject;
+    static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+    static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+    static serializeBinaryToWriter(message: SuiSpecific, writer: jspb.BinaryWriter): void;
+    static deserializeBinary(bytes: Uint8Array): SuiSpecific;
+    static deserializeBinaryFromReader(message: SuiSpecific, reader: jspb.BinaryReader): SuiSpecific;
+}
+
+export namespace SuiSpecific {
+    export type AsObject = {
+        sendAll: boolean,
+    }
+}
+
 export class AvalancheTxInput extends jspb.Message { 
     getTxId(): string;
     setTxId(value: string): AvalancheTxInput;
@@ -2477,6 +2556,14 @@ export class QuorumSpecific extends jspb.Message {
     setNonce(value: number): QuorumSpecific;
     getIsNextNonce(): boolean;
     setIsNextNonce(value: boolean): QuorumSpecific;
+    getData(): string;
+    setData(value: string): QuorumSpecific;
+    getChainId(): number;
+    setChainId(value: number): QuorumSpecific;
+    getFromAddress(): string;
+    setFromAddress(value: string): QuorumSpecific;
+    getTokenAddress(): string;
+    setTokenAddress(value: string): QuorumSpecific;
 
     serializeBinary(): Uint8Array;
     toObject(includeInstance?: boolean): QuorumSpecific.AsObject;
@@ -2493,6 +2580,10 @@ export namespace QuorumSpecific {
         gasLimit: number,
         nonce: number,
         isNextNonce: boolean,
+        data: string,
+        chainId: number,
+        fromAddress: string,
+        tokenAddress: string,
     }
 }
 
@@ -2814,6 +2905,32 @@ export namespace CreateTransactionAvalancheSpecific {
     }
 }
 
+export class CreateTransactionTonSpecific extends jspb.Message { 
+    getExpiration(): number;
+    setExpiration(value: number): CreateTransactionTonSpecific;
+    getMemo(): string;
+    setMemo(value: string): CreateTransactionTonSpecific;
+    getSendAll(): boolean;
+    setSendAll(value: boolean): CreateTransactionTonSpecific;
+
+    serializeBinary(): Uint8Array;
+    toObject(includeInstance?: boolean): CreateTransactionTonSpecific.AsObject;
+    static toObject(includeInstance: boolean, msg: CreateTransactionTonSpecific): CreateTransactionTonSpecific.AsObject;
+    static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+    static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+    static serializeBinaryToWriter(message: CreateTransactionTonSpecific, writer: jspb.BinaryWriter): void;
+    static deserializeBinary(bytes: Uint8Array): CreateTransactionTonSpecific;
+    static deserializeBinaryFromReader(message: CreateTransactionTonSpecific, reader: jspb.BinaryReader): CreateTransactionTonSpecific;
+}
+
+export namespace CreateTransactionTonSpecific {
+    export type AsObject = {
+        expiration: number,
+        memo: string,
+        sendAll: boolean,
+    }
+}
+
 export class CreateTransactionNFTSpecific extends jspb.Message { 
 
     hasNftCallMethod(): boolean;
@@ -2948,6 +3065,26 @@ export class SubstrateMultisigTransaction extends jspb.Message {
     clearUpdateTime(): void;
     getUpdateTime(): google_protobuf_timestamp_pb.Timestamp | undefined;
     setUpdateTime(value?: google_protobuf_timestamp_pb.Timestamp): SubstrateMultisigTransaction;
+    getSectionIndex(): number;
+    setSectionIndex(value: number): SubstrateMultisigTransaction;
+    getMethodIndex(): number;
+    setMethodIndex(value: number): SubstrateMultisigTransaction;
+    getCallSectionIndex(): number;
+    setCallSectionIndex(value: number): SubstrateMultisigTransaction;
+    getCallMethodIndex(): number;
+    setCallMethodIndex(value: number): SubstrateMultisigTransaction;
+    getMaxWeight(): number;
+    setMaxWeight(value: number): SubstrateMultisigTransaction;
+    getProofSize(): number;
+    setProofSize(value: number): SubstrateMultisigTransaction;
+    getEra(): number;
+    setEra(value: number): SubstrateMultisigTransaction;
+    getSpecVersion(): number;
+    setSpecVersion(value: number): SubstrateMultisigTransaction;
+    getTransactionVersion(): number;
+    setTransactionVersion(value: number): SubstrateMultisigTransaction;
+    getGenesisHash(): string;
+    setGenesisHash(value: string): SubstrateMultisigTransaction;
 
     serializeBinary(): Uint8Array;
     toObject(includeInstance?: boolean): SubstrateMultisigTransaction.AsObject;
@@ -2975,6 +3112,16 @@ export namespace SubstrateMultisigTransaction {
         state: gincoinc_adamant_global_v1_adamantglobalv1_enum_pb.TransactionState,
         createTime?: google_protobuf_timestamp_pb.Timestamp.AsObject,
         updateTime?: google_protobuf_timestamp_pb.Timestamp.AsObject,
+        sectionIndex: number,
+        methodIndex: number,
+        callSectionIndex: number,
+        callMethodIndex: number,
+        maxWeight: number,
+        proofSize: number,
+        era: number,
+        specVersion: number,
+        transactionVersion: number,
+        genesisHash: string,
     }
 }
 
@@ -2985,8 +3132,6 @@ export class NemMultisigTransaction extends jspb.Message {
     setTransactionId(value: string): NemMultisigTransaction;
     getNemMultisigTransactionId(): string;
     setNemMultisigTransactionId(value: string): NemMultisigTransaction;
-    getAccountId(): string;
-    setAccountId(value: string): NemMultisigTransaction;
     getTxType(): gincoinc_global_v1_gincoincglobalv1_enum_pb.NemTransactionType;
     setTxType(value: gincoinc_global_v1_gincoincglobalv1_enum_pb.NemTransactionType): NemMultisigTransaction;
     getData(): string;
@@ -3005,6 +3150,8 @@ export class NemMultisigTransaction extends jspb.Message {
     clearUpdateTime(): void;
     getUpdateTime(): google_protobuf_timestamp_pb.Timestamp | undefined;
     setUpdateTime(value?: google_protobuf_timestamp_pb.Timestamp): NemMultisigTransaction;
+    getAccountId(): string;
+    setAccountId(value: string): NemMultisigTransaction;
 
     serializeBinary(): Uint8Array;
     toObject(includeInstance?: boolean): NemMultisigTransaction.AsObject;
@@ -3021,13 +3168,13 @@ export namespace NemMultisigTransaction {
         walletId: string,
         transactionId: string,
         nemMultisigTransactionId: string,
-        accountId: string,
         txType: gincoinc_global_v1_gincoincglobalv1_enum_pb.NemTransactionType,
         data: string,
         signature: string,
         state: gincoinc_adamant_global_v1_adamantglobalv1_enum_pb.TransactionState,
         createTime?: google_protobuf_timestamp_pb.Timestamp.AsObject,
         updateTime?: google_protobuf_timestamp_pb.Timestamp.AsObject,
+        accountId: string,
     }
 }
 
@@ -3038,8 +3185,6 @@ export class SymbolMultisigTransaction extends jspb.Message {
     setTransactionId(value: string): SymbolMultisigTransaction;
     getSymbolMultisigTransactionId(): string;
     setSymbolMultisigTransactionId(value: string): SymbolMultisigTransaction;
-    getAccountId(): string;
-    setAccountId(value: string): SymbolMultisigTransaction;
     getTxType(): gincoinc_global_v1_gincoincglobalv1_enum_pb.SymbolTransactionType;
     setTxType(value: gincoinc_global_v1_gincoincglobalv1_enum_pb.SymbolTransactionType): SymbolMultisigTransaction;
     getData(): string;
@@ -3058,6 +3203,8 @@ export class SymbolMultisigTransaction extends jspb.Message {
     clearUpdateTime(): void;
     getUpdateTime(): google_protobuf_timestamp_pb.Timestamp | undefined;
     setUpdateTime(value?: google_protobuf_timestamp_pb.Timestamp): SymbolMultisigTransaction;
+    getAccountId(): string;
+    setAccountId(value: string): SymbolMultisigTransaction;
 
     serializeBinary(): Uint8Array;
     toObject(includeInstance?: boolean): SymbolMultisigTransaction.AsObject;
@@ -3074,13 +3221,13 @@ export namespace SymbolMultisigTransaction {
         walletId: string,
         transactionId: string,
         symbolMultisigTransactionId: string,
-        accountId: string,
         txType: gincoinc_global_v1_gincoincglobalv1_enum_pb.SymbolTransactionType,
         data: string,
         signature: string,
         state: gincoinc_adamant_global_v1_adamantglobalv1_enum_pb.TransactionState,
         createTime?: google_protobuf_timestamp_pb.Timestamp.AsObject,
         updateTime?: google_protobuf_timestamp_pb.Timestamp.AsObject,
+        accountId: string,
     }
 }
 
@@ -3097,20 +3244,20 @@ export class SignInfo extends jspb.Message {
     setCoin(value: gincoinc_global_v1_gincoincglobalv1_enum_pb.Coin): SignInfo;
     getTxId(): string;
     setTxId(value: string): SignInfo;
-    getSignIndex(): number;
-    setSignIndex(value: number): SignInfo;
     getSignMessage(): string;
     setSignMessage(value: string): SignInfo;
     getHdChange(): number;
     setHdChange(value: number): SignInfo;
     getHdIndex(): number;
     setHdIndex(value: number): SignInfo;
-    getNetwork(): gincoinc_global_v1_gincoincglobalv1_enum_pb.Network;
-    setNetwork(value: gincoinc_global_v1_gincoincglobalv1_enum_pb.Network): SignInfo;
     clearSignTxInputsList(): void;
     getSignTxInputsList(): Array<SignTxInput>;
     setSignTxInputsList(value: Array<SignTxInput>): SignInfo;
     addSignTxInputs(value?: SignTxInput, index?: number): SignTxInput;
+    getSignIndex(): number;
+    setSignIndex(value: number): SignInfo;
+    getNetwork(): gincoinc_global_v1_gincoincglobalv1_enum_pb.Network;
+    setNetwork(value: gincoinc_global_v1_gincoincglobalv1_enum_pb.Network): SignInfo;
 
     serializeBinary(): Uint8Array;
     toObject(includeInstance?: boolean): SignInfo.AsObject;
@@ -3130,12 +3277,12 @@ export namespace SignInfo {
         hdAccount: number,
         coin: gincoinc_global_v1_gincoincglobalv1_enum_pb.Coin,
         txId: string,
-        signIndex: number,
         signMessage: string,
         hdChange: number,
         hdIndex: number,
-        network: gincoinc_global_v1_gincoincglobalv1_enum_pb.Network,
         signTxInputsList: Array<SignTxInput.AsObject>,
+        signIndex: number,
+        network: gincoinc_global_v1_gincoincglobalv1_enum_pb.Network,
     }
 }
 
@@ -5203,6 +5350,26 @@ export namespace BlacklistAddressFile {
         approverName: string,
         createTime?: google_protobuf_timestamp_pb.Timestamp.AsObject,
         updateTime?: google_protobuf_timestamp_pb.Timestamp.AsObject,
+    }
+}
+
+export class CreateTransactionSuiSpecific extends jspb.Message { 
+    getSendAll(): boolean;
+    setSendAll(value: boolean): CreateTransactionSuiSpecific;
+
+    serializeBinary(): Uint8Array;
+    toObject(includeInstance?: boolean): CreateTransactionSuiSpecific.AsObject;
+    static toObject(includeInstance: boolean, msg: CreateTransactionSuiSpecific): CreateTransactionSuiSpecific.AsObject;
+    static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+    static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+    static serializeBinaryToWriter(message: CreateTransactionSuiSpecific, writer: jspb.BinaryWriter): void;
+    static deserializeBinary(bytes: Uint8Array): CreateTransactionSuiSpecific;
+    static deserializeBinaryFromReader(message: CreateTransactionSuiSpecific, reader: jspb.BinaryReader): CreateTransactionSuiSpecific;
+}
+
+export namespace CreateTransactionSuiSpecific {
+    export type AsObject = {
+        sendAll: boolean,
     }
 }
 
